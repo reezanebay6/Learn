@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<!-- saved from url=(0077)https://www.git-tower.com/learn/git/faq/difference-between-git-fetch-git-pull -->
+<html lang="en" class="wf-museosans-n3-active wf-museosans-i3-active wf-museosans-n7-active wf-museoslab-n3-active wf-museoslab-i3-active wf-museoslab-n7-active wf-museoslab-n5-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>What's the difference between "git fetch" and "git pull"?</title>
+
+    
+    <link rel="shortcut icon" href="https://www.git-tower.com/learn/assets/img/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+
+    <meta name="description" content="Our learn section helps you get started with various web and software skills. Free online books, videos, and ebooks get you off the ground as quickly as possible.">
+    <meta name="keywords" content="git, version control, vcs, tutorial, help, learn, ebook, video, subversion">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="What&#39;s the difference between &quot;git fetch&quot; and &quot;git pull&quot;?">
+<meta property="og:image" content="https://tower-website-ftkdppxp1xaznovg.netdna-ssl.com/learn/assets/img/social/learn_og_image@2x.png">
+<meta property="og:description" content="Our learn section helps you get started with various web and software skills. Free online books, videos, and ebooks get you off the ground as quickly as possible.">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@fournova">
+<meta name="twitter:title" content="What&#39;s the difference between &quot;git fetch&quot; and &quot;git pull&quot;?">
+<meta name="twitter:description" content="Our learn section helps you get started with various web and software skills. Free online books, videos, and ebooks get you off the ground as quickly as possible.">
+<meta name="twitter:image:src" content="https://tower-website-ftkdppxp1xaznovg.netdna-ssl.com/learn/assets/img/social/learn_og_image@2x.png">
+
+    <!-- CSS inclusions -->
+    <link rel="stylesheet" href="./What&#39;s the difference between _git fetch_ and _git pull___files/content.css">
+    <!-- Javascript inclusions -->
+    <script type="text/javascript" async="" src="./What&#39;s the difference between _git fetch_ and _git pull___files/linkid.js"></script><script src="./What&#39;s the difference between _git fetch_ and _git pull___files/545953992196333" async=""></script><script async="" src="./What&#39;s the difference between _git fetch_ and _git pull___files/fbevents.js"></script><script type="text/javascript" async="" src="./What&#39;s the difference between _git fetch_ and _git pull___files/conversion_async.js"></script><script type="text/javascript" async="" src="./What&#39;s the difference between _git fetch_ and _git pull___files/analytics.js"></script><script async="" src="./What&#39;s the difference between _git fetch_ and _git pull___files/gtm.js"></script><script src="./What&#39;s the difference between _git fetch_ and _git pull___files/jquery.min.js"></script>
+    <script async="" src="./What&#39;s the difference between _git fetch_ and _git pull___files/content-min.js"></script>    <script type="text/javascript">
+  (function() {
+    var config = {
+      kitId: 'bbe4dgk'
+    };
+    $.ajax({
+      url: '//use.typekit.net/' + config.kitId + '.js',
+      dataType: 'script',
+      cache: true,
+      success: function() {
+        try { Typekit.load(config); } catch (e) {}
+      }
+    });
+  })();
+</script><style type="text/css">.tk-museo-sans{font-family:"museo-sans",sans-serif;}.tk-museo-slab{font-family:"museo-slab",serif;}</style><style type="text/css">@font-face{font-family:museo-sans;src:url(https://use.typekit.net/af/736167/00000000000000000000e7fe/27/l?subset_id=2&fvd=n3&v=3) format("woff2"),url(https://use.typekit.net/af/736167/00000000000000000000e7fe/27/d?subset_id=2&fvd=n3&v=3) format("woff"),url(https://use.typekit.net/af/736167/00000000000000000000e7fe/27/a?subset_id=2&fvd=n3&v=3) format("opentype");font-weight:300;font-style:normal;}@font-face{font-family:museo-sans;src:url(https://use.typekit.net/af/afd626/00000000000000000000e802/27/l?subset_id=2&fvd=i3&v=3) format("woff2"),url(https://use.typekit.net/af/afd626/00000000000000000000e802/27/d?subset_id=2&fvd=i3&v=3) format("woff"),url(https://use.typekit.net/af/afd626/00000000000000000000e802/27/a?subset_id=2&fvd=i3&v=3) format("opentype");font-weight:300;font-style:italic;}@font-face{font-family:museo-sans;src:url(https://use.typekit.net/af/585dc6/00000000000000000000e805/27/l?subset_id=2&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/585dc6/00000000000000000000e805/27/d?subset_id=2&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/585dc6/00000000000000000000e805/27/a?subset_id=2&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;}@font-face{font-family:museo-slab;src:url(https://use.typekit.net/af/c4d53f/0000000000000000000100fe/27/l?subset_id=2&fvd=n3&v=3) format("woff2"),url(https://use.typekit.net/af/c4d53f/0000000000000000000100fe/27/d?subset_id=2&fvd=n3&v=3) format("woff"),url(https://use.typekit.net/af/c4d53f/0000000000000000000100fe/27/a?subset_id=2&fvd=n3&v=3) format("opentype");font-weight:300;font-style:normal;}@font-face{font-family:museo-slab;src:url(https://use.typekit.net/af/9daf12/000000000000000000010141/27/l?subset_id=2&fvd=i3&v=3) format("woff2"),url(https://use.typekit.net/af/9daf12/000000000000000000010141/27/d?subset_id=2&fvd=i3&v=3) format("woff"),url(https://use.typekit.net/af/9daf12/000000000000000000010141/27/a?subset_id=2&fvd=i3&v=3) format("opentype");font-weight:300;font-style:italic;}@font-face{font-family:museo-slab;src:url(https://use.typekit.net/af/13f056/000000000000000000012043/27/l?subset_id=2&fvd=n5&v=3) format("woff2"),url(https://use.typekit.net/af/13f056/000000000000000000012043/27/d?subset_id=2&fvd=n5&v=3) format("woff"),url(https://use.typekit.net/af/13f056/000000000000000000012043/27/a?subset_id=2&fvd=n5&v=3) format("opentype");font-weight:500;font-style:normal;}@font-face{font-family:museo-slab;src:url(https://use.typekit.net/af/194e8d/000000000000000000011aff/27/l?subset_id=2&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/194e8d/000000000000000000011aff/27/d?subset_id=2&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/194e8d/000000000000000000011aff/27/a?subset_id=2&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;}</style>
+        
+  </head>
+
+  <body class="body--default body--git__faq__difference-between-git-fetch-git-pull">
+    <!-- Google Tag Manager -->
+    <noscript>&lt;iframe src="//www.googletagmanager.com/ns.html?id=GTM-PQTPB9"
+    height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PQTPB9');</script>
+    <!-- End Google Tag Manager -->
+<div id="header" class="section dark">
+	<div id="navigation" class="light">
+		<div class="frame">
+  		<div class="tower-branding hide--small">
+  		  <a class="analytics--click" href="https://www.git-tower.com/?utm_source=learn-git&amp;utm_medium=navigation&amp;utm_campaign=learn-git" target="_blank">
+          <img src="./What&#39;s the difference between _git fetch_ and _git pull___files/tower-logo-claim.svg">
+        </a>
+  		</div>
+			<ul class="main-navigation">
+				<li><a href="https://www.git-tower.com/learn">Home</a></li>
+				<li><a href="https://www.git-tower.com/blog" target="_blank">Blog</a></li>
+				
+				<li class="more-content">
+  				<a href="https://www.git-tower.com/learn/git/faq/difference-between-git-fetch-git-pull#"><span>More Learning Content</span></a>
+  				
+  				<ul>
+    				<li class="dropdown__item--title">Git</li>
+    				<li><a href="https://www.git-tower.com/learn/git/ebook">ebook</a></li>
+    				<li><a href="https://www.git-tower.com/learn/git/videos">videos</a></li>
+    				<li><a href="https://www.git-tower.com/learn/git/email-course">email course</a></li>
+    				<li><a href="https://www.git-tower.com/learn/git/faq">FAQ</a></li>
+    				<li class="dropdown__item--title">Web Development</li>
+    				<li><a href="https://www.git-tower.com/learn/website-optimization">Website Optimization</a></li>
+    				<li><a href="https://www.git-tower.com/learn/bourbon-neat-bitters">Bourbon, Neat, and Bitters</a></li>
+    				<li><a href="https://www.git-tower.com/learn/build-your-own-blog">Design &amp; develop your own blog</a></li>
+    				<li class="dropdown__item--title">Cheat Sheets</li>
+    				<li><a href="https://www.git-tower.com/learn/cheat-sheets/git">Git</a></li>
+    				<li><a href="https://www.git-tower.com/learn/cheat-sheets/git-for-svn">Git for Subversion Users</a></li>
+    				<li><a href="https://www.git-tower.com/learn/cheat-sheets/vcs-workflow">Workflow of Version Control</a></li>
+    				<li><a href="https://www.git-tower.com/learn/cheat-sheets/website-optimization">Website Optimization</a></li>
+    				<li><a href="https://www.git-tower.com/learn/cheat-sheets/xcode">Xcode</a></li>
+    				<li><a href="https://www.git-tower.com/learn/cheat-sheets/cli">Command Line 101</a></li>
+    				<li><a href="https://www.git-tower.com/learn/cheat-sheets/bourbon-neat-bitters">Bourbon, Bitters, and Neat</a></li>
+  				</ul>
+        </li>
+        
+			</ul>
+		</div>
+	</div>
+	<div class="frame">
+    <h1 class="header__headline">Git Questions &amp; Answers</h1><h2 class="header__subline">Frequently asked questions around Git &amp; Version Control</h2><div class="keyvisual"></div>
+<style type="text/css">
+.keyvisual {
+  background-image:url(https://tower-website-ftkdppxp1xaznovg.netdna-ssl.com/learn/assets/img/keyvisual/reader_dark.png);
+}
+</style>
+	</div>
+</div>
+
+
+
+<aside id="sharing-sidebar">
+  <a class="button social-button--twitter analytics--click" onclick="FN.socialShare(&#39;twitter&#39;, false, &#39;What\&#39;s the difference between " git="" fetch"="" and="" "git="" pull"?="" ');"="" href="javascript:void(0);"></a>
+  <a class="button social-button--googleplus analytics--click" onclick="FN.socialShare(&#39;google+&#39;, false, &#39;What\&#39;s the difference between " git="" fetch"="" and="" "git="" pull"?="" ');"="" href="javascript:void(0);"></a>
+  <a class="button social-button--facebook analytics--click" onclick="FN.socialShare(&#39;facebook&#39;, false, &#39;What\&#39;s the difference between " git="" fetch"="" and="" "git="" pull"?="" ');"="" href="javascript:void(0);"></a>
+  <a class="button social-button--linkedin analytics--click" onclick="FN.socialShare(&#39;linkedin&#39;, false, &#39;What\&#39;s the difference between " git="" fetch"="" and="" "git="" pull"?="" ');"="" href="javascript:void(0);"></a>
+</aside>
+
+<div id="read" class="section bright">
+	<div class="frame">    
+		<div id="content">
+			<a name="start"></a>
+      			<div id="chapter">
+        
+        <h2>What's the difference between <span style="font-weight:bold; font-family: &#39;Courier&#39;, monospace;">git fetch</span> and <span style="font-weight:bold; font-family: &#39;Courier&#39;, monospace;">git pull</span>?</h2>
+<p>Before we talk about the <em>differences</em> between these two commands, let's stress their similarities: both are used to <strong>download</strong> new data from a remote repository.</p>
+<p>Downloading data is an essential step in your daily work - because the remote data you are looking at in your local repository is just a "snapshot". It's only as up-to-date as the last time you <strong>explicitly</strong> downloaded fresh data from the remote with "fetch" or "pull". It's vital to keep this fact in mind when inspecting remote branches and commits!</p>
+<p>Let's now look at the fine but important differences between "fetch" and "pull".</p>
+<h3 id="chapter_fetch">Fetch</h3>
+<pre><code><span class="cli-prompt">$ git fetch origin</span>
+</code></pre>
+<p><strong>git fetch</strong> really only downloads new data from a remote repository - but it doesn't integrate any of this new data into your working files. Fetch is great for getting a fresh view on all the things that happened in a remote repository.<br>
+Due to it's "harmless" nature, you can rest assured: fetch will never manipulate, destroy, or screw up anything. This means you can never fetch often enough.</p>
+<div class="box concept">
+<h5>Tip</h5>
+<h4>Auto-Fetching in Tower</h4>
+<p>
+In case you are using the <a href="https://www.git-tower.com/?utm_source=learn-website&amp;utm_campaign=git-faq&amp;utm_medium=faq" target="_blank">Tower Git client</a>, you don't have to fetch <em>manually</em> all the time: Tower fetches for you background, <strong>regularly and automatically</strong>.
+</p>
+</div>
+<h3 id="chapter_pull">Pull</h3>
+<pre><code><span class="cli-prompt">$ git pull origin master</span>
+</code></pre>
+<p><strong>git pull</strong>, in contrast, is used with a different goal in mind: to update your current HEAD branch with the latest changes from the remote server. This means that pull not only downloads new data; it also directly <strong>integrates</strong> it into your current working copy files. This has a couple of consequences:</p>
+<ul>
+<li>Since "git pull" tries to merge remote changes with your local ones, a so-called "merge conflict" can occur. Check out our in-depth tutorial on <a href="https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/merge-conflicts">How to deal with merge conflicts</a> for more information.</li>
+<li>Like for many other actions, it's highly recommended to start a "git pull" only with a clean working copy. This means that you should <em>not</em> have any uncommitted local changes before you pull. Use Git's Stash feature to <a href="https://www.git-tower.com/learn/git/ebook/en/command-line/branching-merging/stashing">save your local changes temporarily</a>.</li>
+</ul>
+<p><br></p>
+<h3 id="chapter_learn+more">Learn More</h3>
+<ul>
+<li>Check out the chapter <a href="https://www.git-tower.com/learn/git/ebook/en/command-line/remote-repositories/inspecting-remote-data">Inspecting Remote Data</a> in our free online book</li>
+<li>More <a href="https://www.git-tower.com/learn/git/faq">frequently asked questions</a> about Git &amp; version control</li>
+</ul>        
+      </div>
+          </div>
+  </div>
+</div>
+
+<div id="signup" class="section dark signup--cheatsheet-package">
+	<div class="frame">
+		<h4>Get our <em>Free</em> Cheat Sheet Package</h4>
+		<div class="signup--icon">
+      <img src="./What&#39;s the difference between _git fetch_ and _git pull___files/cheat-sheet-package@2x.png">
+    </div>
+    <div class="signup--content">
+      <p>Download six of our most popular cheat sheets for <strong>free</strong>! Git, Command Line 101, Website Optimization, Xcode and more...</p>
+      <form class="newsletter-form analytics--submit" autocomplete="off">
+  <input type="hidden" name="action" value="subscribe">
+  <input type="hidden" name="listName" value="tower">
+
+    <div class="newsletter-form__groups">
+        <div class="row" style="display:none">
+      <input class="signup-group__item" name="groups[ad737e3518]" type="checkbox" value="1" checked="checked" id="signup-group_ad737e3518"> 
+      <label for="signup-group_ad737e3518">New content and updates</label>
+    </div>
+      </div>
+    
+  <div class="newsletter-form__signup">
+    <input type="text" name="email" placeholder="Your email address">
+    <input type="submit" value="" class="newsletter-form__signup-button">
+  </div>
+
+    <input type="hidden" name="source[product]" value="learn-website">
+      <input type="hidden" name="source[URI]" value="git/faq/difference-between-git-fetch-git-pull/cheatsheet-package">
+      <input type="hidden" name="source[OS]" value="other">
+      <input type="hidden" name="tags[I_CHEATPKG]" value="true">
+    <h6 class="request-notice">We won't send you spam. Unsubscribe at any time.</h6>
+</form>
+		</div>
+  </div>
+</div>
+<div id="about" class="section bright">
+	<div class="frame">
+		<h2>About Us</h2>
+		<a class="icon-wrap analytics--click" href="https://www.git-tower.com/?utm_source=learn-git&amp;utm_medium=about-us&amp;utm_campaign=learn-git" target="_blank"><div class="icon sprite-general bright"></div></a>
+		<div class="sans">
+			<p>As the makers of <a class="analytics--click" href="https://www.git-tower.com/?utm_source=learn-git&amp;utm_medium=about-us&amp;utm_campaign=learn-git" target="_blank">Tower</a>, the best Git client for Mac and Windows, we help over 80,000 users in companies like Apple, Google, Amazon, Twitter, and Ebay get the most out of Git.</p>
+			<p>Just like with Tower, our mission with this platform is to help people become better professionals.</p>
+      <p>That's why we provide our guides, videos, and cheat sheets (about version control with Git and lots of other topics) for free.</p>
+		</div>
+		<div class="footer">
+			<div class="sprite-general logo-fournova bright"></div>
+			<h6 class="sans"><p>Copyright © 2013-2017 fournova Software GmbH | <a href="https://www.git-tower.com/learn/imprint">Imprint</a></p></h6>
+		</div>
+	</div>
+</div>
+
+
+
+<script type="text/javascript" id="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","545953992196333");fbq("track","PageView");</script>
+<noscript>&lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=545953992196333&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;</noscript>
+</body></html>

@@ -1,0 +1,8 @@
+array(3) {
+  ["pid"]=>
+  string(9) "bidswitch"
+  ["a_uid"]=>
+  string(32) "db945be513ba01823d0f2b7fe0bfc3e6"
+  ["p_uid"]=>
+  string(36) "14fa0fd7-ed5c-4ed0-af82-aae35e935ca7"
+}

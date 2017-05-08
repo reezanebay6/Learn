@@ -1,0 +1,24 @@
+1) sudo a2enmod rewrite - to enable mod_rewrite in ubuntu ( once you enable this only you can work with drupal since drupal needs mod_rewrite)
+
+2) sudo -i gedit /etc/hosts -  to edit hosts file in gedit with root privliage
+	sudo nano laravel.conf - to edit hosts file in nano editor this is dos editor
+3) sudo service apache2 restart - to restart apache server
+4) tar -zxvf dde.tar.gz - to extract tar file , here extracting dde.tar.gz
+5) tar -zcvf dde.tar.gz dde - to create tar file , here creating tar file with all subfolders of dde folder.
+6) mv doctor_finder_dde.tar.gz /var/www/ = moving file doctor_finder_dde.tar.gz from current location to /var/www/
+7) sudo dpkg -i elasticsearch-1.7.2.deb -  installing debian file in ubuntu
+8) Steps to install rpm in ubunut
+	Run this command to install alien and other necessary packages:
+
+	sudo apt-get install alien dpkg-dev debhelper build-essential
+
+	To convert a package from rpm to debian format, use this command syntax. The sudo may not be necessary, but we’ll include it just in case.
+
+	sudo alien packagename.rpm
+
+	To install the package, you’ll use the dpkg utility, which is the internal package management tool behind debian and Ubuntu.
+
+	sudo dpkg -i packagename.deb
+
+9) sudo a2dissite 000-default.conf - for disabling 000-default.conf file., basically this is the apache file to add all virtual host
+10) sudo a2ensite laravel.conf -  for enabling laravel.conf file , which was put in /etc/apache2/sites-available location, basically if we want to put virtual host for single site means then we can do like this conf file , but if we want many virtual host then we need to put in 000-default.conf

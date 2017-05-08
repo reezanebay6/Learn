@@ -1,0 +1,2255 @@
+<!DOCTYPE html>
+<!-- saved from url=(0515)https://disqus.com/embed/comments/?base=default&f=sitepointproduction&t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&s_o=default&l=#version=d3a5970415e73b8455175a98b1861579 -->
+<html lang="en" dir="ltr" class="js no-touch localstorage sessionstorage contenteditable use-opacity-transitions"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Disqus Comments</title>
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <style>
+        .alert--warning {
+            border-radius: 3px;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            background-color: #FFE070;
+            color: #A47703;
+        }
+
+        .alert--warning a,
+        .alert--warning a:hover,
+        .alert--warning strong {
+            color: #A47703;
+            font-weight: bold;
+        }
+
+        .alert--error p,
+        .alert--warning p {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        
+        </style>
+    
+    <style>
+        html {
+            overflow: hidden;
+        }
+
+        #error {
+            display: none;
+        }
+
+        .clearfix:after {
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        
+    </style>
+
+<script src="./cb=gapi.loaded_0" async=""></script><script crossorigin="anonymous" id="bootstrap-script" data-app="lounge" src="./lounge.load.d3a5970415e73b8455175a98b1861579.js"></script><meta http-equiv="Content-Security-Policy" content="script-src https:;"><link rel="stylesheet" href="./lounge.1338080c7d626298e3eb715cb658042e.css"><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lounge/main" src="./lounge.bundle.9c5e9911b88094ee43deca4e32c55daf.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="remote/config" src="./config.js"></script><style id="css_1493729270295"></style><!--<base target="_parent">--><base href="." target="_parent"><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ga" src="./ga.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="fb" src="./sdk.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="gapi" src="./api.js" gapi_processed="true"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_loader{background-color:#f6f7f9;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f9;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head>
+<body>
+    
+
+    
+    <div id="error" class="alert--error">
+        <p>We were unable to load Disqus. If you are a moderator please see our <a href="https://docs.disqus.com/help/83/"> troubleshooting guide</a>. </p>
+    </div>
+
+    
+    <script type="text/json" id="disqus-forumData">{"session":{"canModerate":false,"audienceSyncVerified":false,"mustVerify":false,"canReply":true,"mustVerifyEmail":false},"features":{},"forum":{"founder":"5935034","twitterName":"","guidelines":null,"favicon":{"permalink":"https://disqus.com/api/forums/favicons/sitepointproduction.jpg","cache":"https://c.disquscdn.com/uploads/forums/269/7744/favicon.png"},"disableDisqusBranding":false,"daysAlive":0,"createdAt":"2013-12-01T18:16:08.677391","category":"Culture","raw_guidelines":null,"id":"sitepointproduction","installCompleted":true,"pk":"2697744","channel":null,"description":"\u003cp>Learn to be a better web developer on SitePoint. \u003c/p>","raw_description":"Learn to be a better web developer on SitePoint. ","permissions":{},"name":"SitePoint","language":"en","settings":{"supportLevel":3,"adsDRNativeEnabled":false,"colorScheme":"auto","adsVideoEnabled":false,"allowAnonPost":true,"ssoRequired":false,"unapproveLinks":true,"linkAffiliationEnabled":false,"adsProductLinksThumbnailsEnabled":false,"adsProductStoriesEnabled":false,"organicDiscoveryEnabled":false,"disable3rdPartyTrackers":false,"adsProductDisplayEnabled":false,"discoveryMax":false,"adsProductLinksEnabled":false,"hasCustomAvatar":true,"moderatorText":"SitePoint Staff","adsEnabled":false,"adsPositionTopEnabled":false,"allowMedia":false,"adultContent":false,"promotedDiscoveryEnabled":false,"allowAnonVotes":false,"adsProductVideoEnabled":false,"mustVerify":true,"discoveryThumbnailsEnabled":false,"mustVerifyEmail":true,"audienceSyncEnabled":false,"typeface":"auto","adsPositionBottomEnabled":false,"mediaembedEnabled":false,"discoveryLocked":false,"validateAllPosts":false,"adsSettingsLocked":false,"isVIP":false,"adsPositionInthreadEnabled":false},"organizationId":432181,"url":"http://www.sitepoint.com","daysThreadAlive":0,"avatar":{"small":{"permalink":"https://disqus.com/api/forums/avatars/sitepointproduction.jpg?size=32","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450"},"large":{"permalink":"https://disqus.com/api/forums/avatars/sitepointproduction.jpg?size=92","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"}},"signedUrl":"http://disq.us/?url=http%3A%2F%2Fwww.sitepoint.com&key=MTQiGi0vYGABlO97EaYfxg"}}</script>
+
+    
+    <script type="text/json" id="disqus-threadData">{"cursor":{"hasPrev":false,"prev":null,"total":21,"hasNext":false,"next":"1:0:0"},"code":0,"response":{"lastModified":1468225383,"posts":[{"dislikes":0,"numReports":0,"likes":4,"message":"\u003cp>that's the worst solution for namespacing a language I've ever seen. Why the hell couldn't it be made like in java!\u003cbr>Reason I don't like this solution is, that all this means even more typing in the Editor, IDE (if used). Especially if it doesn't have any support for namespaces.\u003c/p>\u003cp>Imagine the amount of information you have to type into php files:\u003cbr>-&gt; I have to address the php file with \"namespace\"\u003cbr>-&gt; I have to include the file rather than just importing it (in both cases typing is needed, I know)\u003cbr>-&gt; I have to use a full qualified namespace for each class or constant or static function I want to use\u003c/p>\u003cp>-cs-\u003c/p>","id":"1146876064","isHighlighted":false,"author":{"name":"carstep","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450"},"large":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"signedUrl":"","isAnonymous":true},"media":[],"isSpam":false,"isDeletedByAuthor":false,"createdAt":"2009-07-13T13:40:52","parent":null,"isApproved":true,"isDeleted":false,"isFlagged":false,"raw_message":"that's the worst solution for namespacing a language I've ever seen. Why the hell couldn't it be made like in java!\nReason I don't like this solution is, that all this means even more typing in the Editor, IDE (if used). Especially if it doesn't have any support for namespaces.\n\nImagine the amount of information you have to type into php files:\n-&#62; I have to address the php file with \"namespace\"\n-&#62; I have to include the file rather than just importing it (in both cases typing is needed, I know)\n-&#62; I have to use a full qualified namespace for each class or constant or static function I want to use\n\n-cs-","canVote":false,"thread":"2015684792","forum":"sitepointproduction","depth":0,"points":4,"moderationLabels":["anonymous"],"isEdited":false},{"dislikes":0,"numReports":1,"likes":0,"message":"\u003cp>xqt, Craig Buckler thank you for the info.\u003cbr>Yes I do remember that I've seen some code examples wih the double-colon (::).\u003c/p>","id":"1146876148","isHighlighted":false,"author":{"name":"lordspace","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450"},"large":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"signedUrl":"","isAnonymous":true},"media":[],"isSpam":false,"isDeletedByAuthor":false,"createdAt":"2009-07-15T13:32:13","parent":null,"isApproved":true,"isDeleted":false,"isFlagged":true,"raw_message":"xqt, Craig Buckler thank you for the info.\nYes I do remember that I've seen some code examples wih the double-colon (::).","canVote":false,"thread":"2015684792","forum":"sitepointproduction","depth":0,"points":0,"moderationLabels":["anonymous","flagged"],"isEdited":false},{"dislikes":0,"numReports":1,"likes":0,"message":"\u003cp>@lordspace\u003cbr>xqt is correct.\u003c/p>\u003cp>A double-colon (::) was originally proposed and implemented in betas. I'm not sure when and why it changed -- but it was probably to stop any confusion with static methods. However, you will still find many articles that refer to double colons.\u003c/p>","id":"1146876135","isHighlighted":false,"author":{"name":"Craig Buckler","url":"http://www.optimalworks.net/","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450"},"large":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"signedUrl":"http://disq.us/?url=http%3A%2F%2Fwww.optimalworks.net%2F&key=BIHSJ2DBKsxo57bXA8mUjg","isAnonymous":true},"media":[],"isSpam":false,"isDeletedByAuthor":false,"createdAt":"2009-07-14T19:03:42","parent":null,"isApproved":true,"isDeleted":false,"isFlagged":true,"raw_message":"@lordspace\nxqt is correct.\n\nA double-colon (::) was originally proposed and implemented in betas. I'm not sure when and why it changed -- but it was probably to stop any confusion with static methods. However, you will still find many articles that refer to double colons.","canVote":false,"thread":"2015684792","forum":"sitepointproduction","depth":0,"points":0,"moderationLabels":["anonymous","flagged"],"isEdited":false},{"dislikes":0,"numReports":0,"likes":0,"message":"\u003cp>@lordspace\u003cbr>no, the backslash \"\" is a non-configurable delimiter\u003c/p>","id":"1146876131","isHighlighted":false,"author":{"name":"xqt","url":"http://weboholic.de/","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450"},"large":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"signedUrl":"http://disq.us/?url=http%3A%2F%2Fweboholic.de%2F&key=lbcJOfhCllZnwvboNtdeaA","isAnonymous":true},"media":[],"isSpam":false,"isDeletedByAuthor":false,"createdAt":"2009-07-14T18:19:21","parent":null,"isApproved":true,"isDeleted":false,"isFlagged":false,"raw_message":"@lordspace\nno, the backslash \"\" is a non-configurable delimiter","canVote":false,"thread":"2015684792","forum":"sitepointproduction","depth":0,"points":0,"moderationLabels":["anonymous"],"isEdited":false},{"dislikes":0,"numReports":0,"likes":0,"message":"\u003cp>Can one use \"/\" or \".\" instead of \"\" ?\u003c/p>","id":"1146876128","isHighlighted":false,"author":{"name":"lordspace","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450"},"large":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"signedUrl":"","isAnonymous":true},"media":[],"isSpam":false,"isDeletedByAuthor":false,"createdAt":"2009-07-14T17:21:05","parent":null,"isApproved":true,"isDeleted":false,"isFlagged":false,"raw_message":"Can one use \"/\" or \".\" instead of \"\" ?","canVote":false,"thread":"2015684792","forum":"sitepointproduction","depth":0,"points":0,"moderationLabels":["anonymous"],"isEdited":false},{"dislikes":0,"numReports":0,"likes":0,"message":"\u003cp>I think it's time to move on to python.\u003c/p>","id":"1146876125","isHighlighted":false,"author":{"name":"Sean Nieuwoudt","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450"},"large":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"signedUrl":"","isAnonymous":true},"media":[],"isSpam":false,"isDeletedByAuthor":false,"createdAt":"2009-07-14T16:48:58","parent":null,"isApproved":true,"isDeleted":false,"isFlagged":false,"raw_message":"I think it's time to move on to python.","canVote":false,"thread":"2015684792","forum":"sitepointproduction","depth":0,"points":0,"moderationLabels":["anonymous"],"isEdited":false},{"dislikes":0,"numReports":0,"likes":0,"message":"\u003cp>\u003ca href=\"http://disq.us/url?url=http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F2009%2F07%2F14%2Fphp-namespaces-import-alias-resolution%3AEcM8VyNX9xAwpM702uBCye_VYEI&amp;cuid=2697744\" rel=\"nofollow noopener\">Part 2 is now available...\u003c/a>\u003c/p>","id":"1146876121","isHighlighted":false,"author":{"name":"Craig Buckler","url":"http://www.optimalworks.net/","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450"},"large":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"signedUrl":"http://disq.us/?url=http%3A%2F%2Fwww.optimalworks.net%2F&key=BIHSJ2DBKsxo57bXA8mUjg","isAnonymous":true},"media":[],"isSpam":false,"isDeletedByAuthor":false,"createdAt":"2009-07-14T12:09:03","parent":null,"isApproved":true,"isDeleted":false,"isFlagged":false,"raw_message":"\u003ca href=\"http://www.sitepoint.com/blogs/2009/07/14/php-namespaces-import-alias-resolution\" rel=\"nofollow\">Part 2 is now available...\u003c/a>","canVote":false,"thread":"2015684792","forum":"sitepointproduction","depth":0,"points":0,"moderationLabels":["anonymous"],"isEdited":false},{"dislikes":0,"numReports":0,"likes":0,"message":"\u003cp>@skunkbad\u003cbr>No, namespaces are not mandatory. Your non-namespaced code exists in a 'global space' -- like it did before PHP 5.3.\u003c/p>\u003cp>If your application needs to support lower versions of PHP, then namespaces should be avoided for now. However, as we move on, I suspect many more applications will use namespaces. That can only be a good thing.\u003c/p>","id":"1146876115","isHighlighted":false,"author":{"name":"Craig Buckler","url":"http://www.optimalworks.net/","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450"},"large":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"signedUrl":"http://disq.us/?url=http%3A%2F%2Fwww.optimalworks.net%2F&key=BIHSJ2DBKsxo57bXA8mUjg","isAnonymous":true},"media":[],"isSpam":false,"isDeletedByAuthor":false,"createdAt":"2009-07-14T12:08:05","parent":null,"isApproved":true,"isDeleted":false,"isFlagged":false,"raw_message":"@skunkbad\nNo, namespaces are not mandatory. Your non-namespaced code exists in a 'global space' -- like it did before PHP 5.3.\n\nIf your application needs to support lower versions of PHP, then namespaces should be avoided for now. However, as we move on, I suspect many more applications will use namespaces. That can only be a good thing.","canVote":false,"thread":"2015684792","forum":"sitepointproduction","depth":0,"points":0,"moderationLabels":["anonymous"],"isEdited":false},{"dislikes":0,"numReports":0,"likes":0,"message":"\u003cp>Really thanks for the information.\u003c/p>","id":"1146876113","isHighlighted":false,"author":{"name":"biswa","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450"},"large":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"signedUrl":"","isAnonymous":true},"media":[],"isSpam":false,"isDeletedByAuthor":false,"createdAt":"2009-07-14T11:30:48","parent":null,"isApproved":true,"isDeleted":false,"isFlagged":false,"raw_message":"Really thanks for the information.","canVote":false,"thread":"2015684792","forum":"sitepointproduction","depth":0,"points":0,"moderationLabels":["anonymous"],"isEdited":false},{"dislikes":0,"numReports":0,"likes":0,"message":"\u003cp>will the namespace usage by mandatory?\u003c/p>","id":"1146876109","isHighlighted":false,"author":{"name":"skunkbad","url":"http://www.brianswebdesign.com/","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450"},"large":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"signedUrl":"http://disq.us/?url=http%3A%2F%2Fwww.brianswebdesign.com%2F&key=vHpu3m1eAB_rq-pY3BW9wA","isAnonymous":true},"media":[],"isSpam":false,"isDeletedByAuthor":false,"createdAt":"2009-07-14T08:23:15","parent":null,"isApproved":true,"isDeleted":false,"isFlagged":false,"raw_message":"will the namespace usage by mandatory?","canVote":false,"thread":"2015684792","forum":"sitepointproduction","depth":0,"points":0,"moderationLabels":["anonymous"],"isEdited":false},{"dislikes":0,"numReports":0,"likes":0,"message":"\u003cp>Yet another reason it's time to fork PHP.\u003c/p>","id":"1146876103","isHighlighted":false,"author":{"name":"Adrian","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450"},"large":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"signedUrl":"","isAnonymous":true},"media":[],"isSpam":false,"isDeletedByAuthor":false,"createdAt":"2009-07-14T02:31:54","parent":null,"isApproved":true,"isDeleted":false,"isFlagged":false,"raw_message":"Yet another reason it's time to fork PHP.","canVote":false,"thread":"2015684792","forum":"sitepointproduction","depth":0,"points":0,"moderationLabels":["anonymous"],"isEdited":false},{"dislikes":0,"numReports":0,"likes":0,"message":"\u003cp>Interesting article Craig.\u003c/p>\u003cp>I'm waiting for parts 2 &amp; 3 as well but part 1 has me thinking.\u003c/p>\u003cp>Andrew\u003c/p>","id":"1146876100","isHighlighted":false,"author":{"name":"awasson","url":"http://www.lunadesign.org/","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450"},"large":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"signedUrl":"http://disq.us/?url=http%3A%2F%2Fwww.lunadesign.org%2F&key=Pey1z-DsAMAOLzVMI6sUZg","isAnonymous":true},"media":[],"isSpam":false,"isDeletedByAuthor":false,"createdAt":"2009-07-14T01:14:26","parent":null,"isApproved":true,"isDeleted":false,"isFlagged":false,"raw_message":"Interesting article Craig.\n\nI'm waiting for parts 2 &#38; 3 as well but part 1 has me thinking.\n\nAndrew","canVote":false,"thread":"2015684792","forum":"sitepointproduction","depth":0,"points":0,"moderationLabels":["anonymous"],"isEdited":false},{"dislikes":0,"numReports":0,"likes":0,"message":"\u003cp>@Craig Buckler\u003c/p>\u003cp>okok, I wait for the next 2 parts engaged\u003c/p>\u003cp>-cs-\u003c/p>","id":"1146876097","isHighlighted":false,"author":{"name":"carstep","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450"},"large":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"signedUrl":"","isAnonymous":true},"media":[],"isSpam":false,"isDeletedByAuthor":false,"createdAt":"2009-07-14T00:04:37","parent":null,"isApproved":true,"isDeleted":false,"isFlagged":false,"raw_message":"@Craig Buckler\n\nokok, I wait for the next 2 parts engaged\n\n-cs-","canVote":false,"thread":"2015684792","forum":"sitepointproduction","depth":0,"points":0,"moderationLabels":["anonymous"],"isEdited":false},{"dislikes":0,"numReports":0,"likes":0,"message":"\u003cp>@carestep\u003cbr>Note that this is part 1 of a 3-part article. Tomorrow, we will cover the use statement and how PHP resolves namespace names. The next day, we look at autoloading namespaced code and a few advanced options.\u003c/p>\u003cp>PHP's syntax is very similar to C#. Java uses non-hierarchical packages, but it's the much the same concept.\u003c/p>","id":"1146876094","isHighlighted":false,"author":{"name":"Craig Buckler","url":"http://www.optimalworks.net/","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450"},"large":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"signedUrl":"http://disq.us/?url=http%3A%2F%2Fwww.optimalworks.net%2F&key=BIHSJ2DBKsxo57bXA8mUjg","isAnonymous":true},"media":[],"isSpam":false,"isDeletedByAuthor":false,"createdAt":"2009-07-13T21:39:12","parent":null,"isApproved":true,"isDeleted":false,"isFlagged":false,"raw_message":"@carestep\nNote that this is part 1 of a 3-part article. Tomorrow, we will cover the use statement and how PHP resolves namespace names. The next day, we look at autoloading namespaced code and a few advanced options.\n\nPHP's syntax is very similar to C#. Java uses non-hierarchical packages, but it's the much the same concept.","canVote":false,"thread":"2015684792","forum":"sitepointproduction","depth":0,"points":0,"moderationLabels":["anonymous"],"isEdited":false},{"dislikes":0,"numReports":0,"likes":0,"message":"\u003cp>Your post has invalid PHP syntax.  You can't combine bracketed namespaces and unbracketed namespaces in the same file.\u003c/p>","id":"1146876093","isHighlighted":false,"author":{"name":"Greg Beaver","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450"},"large":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"signedUrl":"","isAnonymous":true},"media":[],"isSpam":false,"isDeletedByAuthor":false,"createdAt":"2009-07-13T20:54:01","parent":null,"isApproved":true,"isDeleted":false,"isFlagged":false,"raw_message":"Your post has invalid PHP syntax.  You can't combine bracketed namespaces and unbracketed namespaces in the same file.","canVote":false,"thread":"2015684792","forum":"sitepointproduction","depth":0,"points":0,"moderationLabels":["anonymous"],"isEdited":false},{"dislikes":0,"numReports":0,"likes":0,"message":"\u003cp>@Crowe, I don't follow what you mean with \"use namespace\" if you define a namespace you can use every function, class, constant without using the namespace prefix. Also sub-namespace only needs first level below the current namespace.\u003c/p>\u003cp>For example for \"AppLib1\" if you have an object that needs to access an object in \"AppLib1Sub\" you only need \"SubObjectName\" but any object in \"AppLib1\" can be access as \"ObjectName\".\u003c/p>","id":"1146876091","isHighlighted":false,"author":{"name":"logic_earth","url":"http://logicearth.wordpress.com/","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450"},"large":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"signedUrl":"http://disq.us/?url=http%3A%2F%2Flogicearth.wordpress.com%2F&key=g6khLbuuHJUhSn9Db24R4w","isAnonymous":true},"media":[],"isSpam":false,"isDeletedByAuthor":false,"createdAt":"2009-07-13T20:00:01","parent":null,"isApproved":true,"isDeleted":false,"isFlagged":false,"raw_message":"@Crowe, I don't follow what you mean with \"use namespace\" if you define a namespace you can use every function, class, constant without using the namespace prefix. Also sub-namespace only needs first level below the current namespace.\n\nFor example for \"AppLib1\" if you have an object that needs to access an object in \"AppLib1Sub\" you only need \"SubObjectName\" but any object in \"AppLib1\" can be access as \"ObjectName\".","canVote":false,"thread":"2015684792","forum":"sitepointproduction","depth":0,"points":0,"moderationLabels":["anonymous"],"isEdited":false},{"dislikes":0,"numReports":0,"likes":0,"message":"\u003cp>When you are defining the name space in your library you get to do like:\u003c/p>\u003cp>\u003ccode>namespace AppLib1; \u003c/code>\u003c/p>\u003cp>It would be nice if you could also use something like this in your \"myapp\" example:\u003c/p>\u003cp>\u003ccode>use namespace AppLib1; \u003c/code>\u003c/p>\u003cp>Which would cause all the functions/objects, etc. to automatically have the namespace added.\u003c/p>\u003cp>Otherwise, namespaces provide little improvement over just using some obscure naming convention or prefixes.\u003c/p>","id":"1146876089","isHighlighted":false,"author":{"name":"Crowe","url":"http://www.lit.org/","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450"},"large":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"signedUrl":"http://disq.us/?url=http%3A%2F%2Fwww.lit.org%2F&key=OVGpfuD4cUVvCSRGnOjlPg","isAnonymous":true},"media":[],"isSpam":false,"isDeletedByAuthor":false,"createdAt":"2009-07-13T18:49:39","parent":null,"isApproved":true,"isDeleted":false,"isFlagged":false,"raw_message":"When you are defining the name space in your library you get to do like:\n\n\u003ccode>namespace AppLib1; \u003c/code>\n\nIt would be nice if you could also use something like this in your \"myapp\" example:\n\n\u003ccode>use namespace AppLib1; \u003c/code>\n\nWhich would cause all the functions/objects, etc. to automatically have the namespace added. \n\nOtherwise, namespaces provide little improvement over just using some obscure naming convention or prefixes.","canVote":false,"thread":"2015684792","forum":"sitepointproduction","depth":0,"points":0,"moderationLabels":["anonymous"],"isEdited":false},{"dislikes":0,"numReports":0,"likes":0,"message":"\u003cp>@logic_earth\u003c/p>\u003cp>I missed you reply. Just realized it. Sure your reply points out some of my opinions as well.\u003cbr>To say the through autoloading and namespacing are similar techniques and could have been merged almost perfectly.\u003c/p>\u003cp>-cs-\u003c/p>","id":"1146876085","isHighlighted":false,"author":{"name":"carstep","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450"},"large":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"signedUrl":"","isAnonymous":true},"media":[],"isSpam":false,"isDeletedByAuthor":false,"createdAt":"2009-07-13T16:59:17","parent":null,"isApproved":true,"isDeleted":false,"isFlagged":false,"raw_message":"@logic_earth\n\nI missed you reply. Just realized it. Sure your reply points out some of my opinions as well.\nTo say the through autoloading and namespacing are similar techniques and could have been merged almost perfectly.\n\n\n-cs-","canVote":false,"thread":"2015684792","forum":"sitepointproduction","depth":0,"points":0,"moderationLabels":["anonymous"],"isEdited":false},{"dislikes":0,"numReports":0,"likes":0,"message":"\u003cp>@Jory Greets\u003c/p>\u003cp>I know well that PHP != Java. I apologize for comparing Java namespaces / package architecture to the PHP one, but typing as much in case of PHP is for me a bit overhauled \"technique\". I was using Java only with well equipped IDE's there comes my opinion that packaging in Java is more convenient. Yes my first reaction was shocking and misleading in this comparison but my reasons remained unchanged, explaining it below.\u003c/p>\u003cp>1. I remember. Even java could have used an autoloading mechanism alike (see point 2.)\u003cbr>2. Maybe. With a little more intelligent namespacing \"technique\" this could have been avoided, e.g. using automatized auto-loading mechanism for namespaces\u003cbr>3. No (in case of), conflicting classes can throw php error, to correct them using proper namespaces instead. Only in these cases should file including / namespace including mechanism used, regarding point 2.\u003c/p>\u003cp>My only goal was to highlight, how many repetitive action you have to do using namespaces.\u003c/p>\u003cp>Yes, Java is not perfect as well, I don't use it much often.\u003c/p>\u003cp>-cs- \u003cbr>P.S.: sorry, English is not my native so fine tuning sentences is not my strongest skill :-)\u003c/p>","id":"1146876082","isHighlighted":false,"author":{"name":"carstep","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450"},"large":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"signedUrl":"","isAnonymous":true},"media":[],"isSpam":false,"isDeletedByAuthor":false,"createdAt":"2009-07-13T16:55:55","parent":null,"isApproved":true,"isDeleted":false,"isFlagged":false,"raw_message":"@Jory Greets\n\nI know well that PHP != Java. I apologize for comparing Java namespaces / package architecture to the PHP one, but typing as much in case of PHP is for me a bit overhauled \"technique\". I was using Java only with well equipped IDE's there comes my opinion that packaging in Java is more convenient. Yes my first reaction was shocking and misleading in this comparison but my reasons remained unchanged, explaining it below.\n\n1. I remember. Even java could have used an autoloading mechanism alike (see point 2.)\n2. Maybe. With a little more intelligent namespacing \"technique\" this could have been avoided, e.g. using automatized auto-loading mechanism for namespaces\n3. No (in case of), conflicting classes can throw php error, to correct them using proper namespaces instead. Only in these cases should file including / namespace including mechanism used, regarding point 2.\n\nMy only goal was to highlight, how many repetitive action you have to do using namespaces.\n\nYes, Java is not perfect as well, I don't use it much often.\n\n-cs- \nP.S.: sorry, English is not my native so fine tuning sentences is not my strongest skill :-)","canVote":false,"thread":"2015684792","forum":"sitepointproduction","depth":0,"points":0,"moderationLabels":["anonymous"],"isEdited":false},{"dislikes":0,"numReports":0,"likes":0,"message":"\u003cp>@carstep:\u003cbr>1: Are you wining about the fact that you need to type \"namespace foo;\" at the beginning of each file? If so, Java required you to have \"package foo;\", remember?\u003cbr>2: Including / requiring files has been the PHP since the beginning. Thats just how it works. It would be rather redundant to create a new way of importing code, just for the sake of namespaces. It would also be confusing.\u003cbr>3: You've forgotten the words \" if I'm using them in a different namespace then where they where defined and am to lazy to call 'use NamespaceFooBarWhatever'.\" (Note that 'use' isn't covered in this article. Thats probally why its subtitled \"The Basics\", and why they promis to handle resolving namespaces in the next article.)\u003c/p>\u003cp>And lastly, PHP != Java.\u003c/p>","id":"1146876076","isHighlighted":false,"author":{"name":"Jory Geerts","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450"},"large":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"signedUrl":"","isAnonymous":true},"media":[],"isSpam":false,"isDeletedByAuthor":false,"createdAt":"2009-07-13T15:27:22","parent":null,"isApproved":true,"isDeleted":false,"isFlagged":false,"raw_message":"@carstep:\n1: Are you wining about the fact that you need to type \"namespace foo;\" at the beginning of each file? If so, Java required you to have \"package foo;\", remember?\n2: Including / requiring files has been the PHP since the beginning. Thats just how it works. It would be rather redundant to create a new way of importing code, just for the sake of namespaces. It would also be confusing.\n3: You've forgotten the words \" if I'm using them in a different namespace then where they where defined and am to lazy to call 'use NamespaceFooBarWhatever'.\" (Note that 'use' isn't covered in this article. Thats probally why its subtitled \"The Basics\", and why they promis to handle resolving namespaces in the next article.)\n\nAnd lastly, PHP != Java.","canVote":false,"thread":"2015684792","forum":"sitepointproduction","depth":0,"points":0,"moderationLabels":["anonymous"],"isEdited":false},{"dislikes":0,"numReports":0,"likes":0,"message":"\u003cp>@carestep, while this blog post doesn't bring it up. There is the \u003ca href=\"http://disq.us/url?url=http%3A%2F%2Fus3.php.net%2Fmanual%2Fen%2Flanguage.namespaces.importing.php%3AotMoYVqLhQSCe9nqMCRjJnbcEQE&amp;cuid=2697744\" rel=\"nofollow noopener\">use construct\u003c/a> which is importing. Also with \u003ca href=\"http://disq.us/url?url=http%3A%2F%2Fus.php.net%2Fautoload%3ALxUm_diDmFIf6h3RDF8FVVrfKUE&amp;cuid=2697744\" rel=\"nofollow noopener\">autoloading\u003c/a> there is no need to include any of your classes/object.\u003c/p>","id":"1146876075","isHighlighted":false,"author":{"name":"logic_earth","url":"http://logicearth.wordpress.com/","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450"},"large":{"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"permalink":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"https://c.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"signedUrl":"http://disq.us/?url=http%3A%2F%2Flogicearth.wordpress.com%2F&key=g6khLbuuHJUhSn9Db24R4w","isAnonymous":true},"media":[],"isSpam":false,"isDeletedByAuthor":false,"createdAt":"2009-07-13T14:27:56","parent":null,"isApproved":true,"isDeleted":false,"isFlagged":false,"raw_message":"@carestep, while this blog post doesn't bring it up. There is the \u003ca href=\"http://us3.php.net/manual/en/language.namespaces.importing.php\" rel=\"nofollow\">use construct\u003c/a> which is importing. Also with \u003ca href=\"http://us.php.net/autoload\" rel=\"nofollow\">autoloading\u003c/a> there is no need to include any of your classes/object.","canVote":false,"thread":"2015684792","forum":"sitepointproduction","depth":0,"points":0,"moderationLabels":["anonymous"],"isEdited":false}],"thread":{"feed":"https://sitepointproduction.disqus.com/how_to_use_php_namespaces_part_1_the_basics/latest.rss","identifiers":["12000 http://www.sitepoint.com/blogs/?p=12000"],"dislikes":0,"likes":2,"message":"","id":"2015684792","createdAt":"2013-12-01T23:17:49","category":"2738944","author":"5935034","isSpam":false,"signedLink":"http://disq.us/?url=http%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&key=RCJxaCL7o_9ku4CsgZFL4Q","isDeleted":false,"hasStreaming":false,"raw_message":"","isClosed":true,"link":"http://www.sitepoint.com/php-53-namespaces-basics/","slug":"how_to_use_php_namespaces_part_1_the_basics","forum":"sitepointproduction","clean_title":"How to Use PHP Namespaces, Part 1: The Basics","posts":21,"moderators":[219710688,193006337,57421154,90121019,121922967,95438885,117740678,217512201,51960759,242453356,84203213,93974345,157513807,110681391,84194772,244017781,103336375,82498872,5935034,3867055,22737277],"title":"How to Use PHP Namespaces, Part 1: The Basics","highlightedPost":null}},"order":"popular"}</script>
+
+    
+
+    <div id="fixed-content"></div>
+
+
+    
+        
+<script type="text/json" id="disqus-urls">{
+    "root":"//disqus.com",
+    "next":"https://c.disquscdn.com/next/current/embed"
+}</script>
+
+        
+        <script>!function () {
+            var d = document;
+            var toH = d.head.appendChild.bind(d.head);
+
+            var v = window.location.href.match(/[#&?]version=([0-9a-f]{32})/);
+            var src = 'https://c.disquscdn.com/next/embed/lounge.load';
+            if (v)
+                src += '.' + v[1];
+            src += '.js';
+
+            var s = d.createElement('script');
+            s.crossOrigin = 'anonymous';
+            s.id = 'bootstrap-script';
+            s.setAttribute('data-app', 'lounge');
+            s.src = src;
+            toH(s);
+
+            var m = d.createElement('meta');
+            m.setAttribute('http-equiv', 'Content-Security-Policy');
+            m.setAttribute('content', "script-src https:;");
+            toH(m);
+        }();</script>
+    
+
+
+<script src="./common.bundle.94805df7d922d8c7efc1170776463a6c.js"></script><div id="layout" data-tracking-area="layout"><div id="onboard" data-tracking-area="onboard"><div></div></div><div id="highlighted-post" data-tracking-area="highlighted" class="highlighted-post" style="display: none;"></div><div id="global-alert"><div class="alert"><a class="close" data-action="dismiss" title="Dismiss">×</a>
+<span>
+Comments for this thread are now closed.
+</span>
+</div></div><header id="main-nav" data-tracking-area="main-nav"><nav class="nav nav-primary"><ul><li class="nav-tab nav-tab--primary tab-conversation active" data-role="post-count"><a class="publisher-nav-color"><span class="comment-count">21 comments</span><span class="comment-count-placeholder">Comments</span></a></li><li class="nav-tab nav-tab--primary tab-community"><a href="https://disqus.com/home/forums/sitepointproduction/" class="publisher-nav-color" data-action="community-sidebar" data-forum="sitepointproduction" id="community-tab"><span class="community-name"><strong>SitePoint</strong></span><strong class="community-name-placeholder">Community</strong></a></li><li class="nav-tab nav-tab--primary dropdown user-menu" data-role="logout"><a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="dropdown-toggle" data-toggle="dropdown">
+<span class="dropdown-toggle-wrapper">
+
+<span>
+Login
+</span>
+
+</span> <span class="caret"></span>
+</a>
+<ul class="dropdown-menu">
+
+
+<li>
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="auth:disqus">Disqus</a>
+</li>
+<li>
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="auth:facebook">Facebook</a>
+</li>
+<li>
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="auth:twitter">Twitter</a>
+</li>
+<li>
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="auth:google">Google</a>
+</li>
+
+
+
+</ul>
+</li><li class="nav-tab nav-tab--primary notification-menu unread" data-role="notification-menu"><a href="https://disqus.com/home/inbox/" class="notification-container" data-action="home" data-home-path="home/inbox/">
+<span class="notification-icon icon-comment" aria-hidden=""></span>
+<span class="notification-count" data-role="notification-count">1</span>
+</a>
+</li></ul></nav></header><section id="conversation" data-role="main" data-tracking-area="main"><div class="nav nav-secondary" data-tracking-area="secondary-nav"><ul><li id="recommend-button" class="nav-tab nav-tab--secondary recommend dropdown"><div class="thread-likes"><a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="recommend" title="Recommend this discussion" class="dropdown-toggle ">
+<span class="label label-default"><span class="recommend-icon icon-heart-empty"></span> Recommend</span>
+<span class="label label-recommended"><span class="recommend-icon icon-heart"></span> Recommended</span>
+<span class="label label-count">2</span>
+</a>
+<ul class="dropdown-menu dropdown-menu--coachmark">
+<li>
+<h2 class="coachmark__heading">Discussion Recommended!</h2>
+<p class="coachmark__description">Recommending means this is a discussion worth sharing. It gets shared to your followers' Disqus feeds, and gives the creator kudos!</p>
+<a href="https://disqus.com/home/?utm_source=disqus_embed&amp;utm_content=recommend_btn" class="btn btn-primary coachmark__button" target="_blank">
+ Find More Discussions 
+</a>
+</li>
+</ul>
+</div></li><li id="thread-share-menu" class="nav-tab nav-tab--secondary dropdown share-menu hidden-sm"><a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="dropdown-toggle" data-toggle="dropdown" title="Share">
+<span class="icon-export"></span>
+<span class="label">Share</span>
+</a>
+<ul class="share-menu dropdown-menu">
+<li>
+<div class="share-menu__label">Share this discussion on</div>
+<ul>
+<li class="twitter">
+<a data-action="share:twitter" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#">Twitter</a>
+</li>
+<li class="facebook">
+<a data-action="share:facebook" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#">Facebook</a>
+</li>
+</ul>
+</li>
+</ul>
+</li><li data-role="post-sort" class="nav-tab nav-tab--secondary dropdown sorting pull-right"><a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="dropdown-toggle" data-toggle="dropdown">Sort by Best<span class="caret"></span></a><ul class="dropdown-menu pull-right"><li class="selected"><a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="sort" data-sort="popular">Best<i aria-hidden="true" class="icon-checkmark"></i></a></li><li class=""><a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="sort" data-sort="desc">Newest<i aria-hidden="true" class="icon-checkmark"></i></a></li><li class=""><a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="sort" data-sort="asc">Oldest<i aria-hidden="true" class="icon-checkmark"></i></a></li></ul></li></ul></div><div id="posts"><div id="form" class="textarea-wrapper--top-level"></div><button class="alert alert--realtime" data-role="realtime-notification" style="display: none;"></button><div id="no-posts" style="display: none;"></div><ul id="post-list" class="post-list"><li class="post" id="post-1146876064"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="./avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header class="comment__header">
+<span class="post-byline">
+<span class="author">carstep</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://www.sitepoint.com/php-53-namespaces-basics/#comment-1146876064" data-role="relative-time" class="time-ago" title="Monday, July 13, 2009 7:10 PM">
+8 years ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>that's the worst solution for namespacing a language I've ever seen. Why the hell couldn't it be made like in java!<br>Reason I don't like this solution is, that all this means even more typing in the Editor, IDE (if used). Especially if it doesn't have any support for namespaces.</p><p>Imagine the amount of information you have to type into php files:<br>-&gt; I have to address the php file with "namespace"<br>-&gt; I have to include the file rather than just importing it (in both cases typing is needed, I know)<br>-&gt; I have to use a full qualified namespace for each class or constant or static function I want to use</p><p>-cs-</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer class="comment__footer"><menu class="comment-footer__menu">
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="vote-up  count-4" data-action="upvote" title="">
+
+<span class="updatable count" data-role="likes">4</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="comment__share">
+<a class="toggle"><span class="text">Share ›</span></a>
+<ul class="comment-share__buttons">
+<li class="twitter">
+<button class="share__button" data-action="share:twitter">Twitter</button>
+</li>
+<li class="facebook">
+<button class="share__button" data-action="share:facebook">Facebook</button>
+</li>
+<li class="link">
+<input class="share__button" value="http://disq.us/p/iytj8g" name="Link" title="Click to copy post link" data-action="copy-link" readonly="">
+</li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1146876064">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="realtime-button"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+</li><li class="post" id="post-1146876148"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="./avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header class="comment__header">
+<span class="post-byline">
+<span class="author">lordspace</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://www.sitepoint.com/php-53-namespaces-basics/#comment-1146876148" data-role="relative-time" class="time-ago" title="Wednesday, July 15, 2009 7:02 PM">
+8 years ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>xqt, Craig Buckler thank you for the info.<br>Yes I do remember that I've seen some code examples wih the double-colon (::).</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer class="comment__footer"><menu class="comment-footer__menu">
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="comment__share">
+<a class="toggle"><span class="text">Share ›</span></a>
+<ul class="comment-share__buttons">
+<li class="twitter">
+<button class="share__button" data-action="share:twitter">Twitter</button>
+</li>
+<li class="facebook">
+<button class="share__button" data-action="share:facebook">Facebook</button>
+</li>
+<li class="link">
+<input class="share__button" value="http://disq.us/p/iytjas" name="Link" title="Click to copy post link" data-action="copy-link" readonly="">
+</li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1146876148">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="realtime-button"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+</li><li class="post" id="post-1146876135"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="./avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header class="comment__header">
+<span class="post-byline">
+<span class="author">Craig Buckler</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://www.sitepoint.com/php-53-namespaces-basics/#comment-1146876135" data-role="relative-time" class="time-ago" title="Wednesday, July 15, 2009 12:33 AM">
+8 years ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>@lordspace<br>xqt is correct.</p><p>A double-colon (::) was originally proposed and implemented in betas. I'm not sure when and why it changed -- but it was probably to stop any confusion with static methods. However, you will still find many articles that refer to double colons.</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer class="comment__footer"><menu class="comment-footer__menu">
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="comment__share">
+<a class="toggle"><span class="text">Share ›</span></a>
+<ul class="comment-share__buttons">
+<li class="twitter">
+<button class="share__button" data-action="share:twitter">Twitter</button>
+</li>
+<li class="facebook">
+<button class="share__button" data-action="share:facebook">Facebook</button>
+</li>
+<li class="link">
+<input class="share__button" value="http://disq.us/p/iytjaf" name="Link" title="Click to copy post link" data-action="copy-link" readonly="">
+</li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1146876135">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="realtime-button"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+</li><li class="post" id="post-1146876131"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="./avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header class="comment__header">
+<span class="post-byline">
+<span class="author">xqt</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://www.sitepoint.com/php-53-namespaces-basics/#comment-1146876131" data-role="relative-time" class="time-ago" title="Tuesday, July 14, 2009 11:49 PM">
+8 years ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>@lordspace<br>no, the backslash "" is a non-configurable delimiter</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer class="comment__footer"><menu class="comment-footer__menu">
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="comment__share">
+<a class="toggle"><span class="text">Share ›</span></a>
+<ul class="comment-share__buttons">
+<li class="twitter">
+<button class="share__button" data-action="share:twitter">Twitter</button>
+</li>
+<li class="facebook">
+<button class="share__button" data-action="share:facebook">Facebook</button>
+</li>
+<li class="link">
+<input class="share__button" value="http://disq.us/p/iytjab" name="Link" title="Click to copy post link" data-action="copy-link" readonly="">
+</li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1146876131">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="realtime-button"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+</li><li class="post" id="post-1146876128"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="./avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header class="comment__header">
+<span class="post-byline">
+<span class="author">lordspace</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://www.sitepoint.com/php-53-namespaces-basics/#comment-1146876128" data-role="relative-time" class="time-ago" title="Tuesday, July 14, 2009 10:51 PM">
+8 years ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Can one use "/" or "." instead of "" ?</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer class="comment__footer">
+<menu class="comment-footer__menu">
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="comment__share">
+<a class="toggle"><span class="text">Share ›</span></a>
+<ul class="comment-share__buttons">
+<li class="twitter">
+<button class="share__button" data-action="share:twitter">Twitter</button>
+</li>
+<li class="facebook">
+<button class="share__button" data-action="share:facebook">Facebook</button>
+</li>
+<li class="link">
+<input class="share__button" value="http://disq.us/p/iytja8" name="Link" title="Click to copy post link" data-action="copy-link" readonly="">
+</li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1146876128">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="realtime-button"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+</li><li class="post" id="post-1146876125"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="./avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header class="comment__header">
+<span class="post-byline">
+<span class="author">Sean Nieuwoudt</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://www.sitepoint.com/php-53-namespaces-basics/#comment-1146876125" data-role="relative-time" class="time-ago" title="Tuesday, July 14, 2009 10:18 PM">
+8 years ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>I think it's time to move on to python.</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer class="comment__footer">
+<menu class="comment-footer__menu">
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="comment__share">
+<a class="toggle"><span class="text">Share ›</span></a>
+<ul class="comment-share__buttons">
+<li class="twitter">
+<button class="share__button" data-action="share:twitter">Twitter</button>
+</li>
+<li class="facebook">
+<button class="share__button" data-action="share:facebook">Facebook</button>
+</li>
+<li class="link">
+<input class="share__button" value="http://disq.us/p/iytja5" name="Link" title="Click to copy post link" data-action="copy-link" readonly="">
+</li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1146876125">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="realtime-button"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+</li><li class="post" id="post-1146876121"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="./avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header class="comment__header">
+<span class="post-byline">
+<span class="author">Craig Buckler</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://www.sitepoint.com/php-53-namespaces-basics/#comment-1146876121" data-role="relative-time" class="time-ago" title="Tuesday, July 14, 2009 5:39 PM">
+8 years ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p><a href="http://disq.us/url?url=http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F2009%2F07%2F14%2Fphp-namespaces-import-alias-resolution%3AEcM8VyNX9xAwpM702uBCye_VYEI&amp;cuid=2697744" rel="nofollow noopener">Part 2 is now available...</a></p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer class="comment__footer">
+<menu class="comment-footer__menu">
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="comment__share">
+<a class="toggle"><span class="text">Share ›</span></a>
+<ul class="comment-share__buttons">
+<li class="twitter">
+<button class="share__button" data-action="share:twitter">Twitter</button>
+</li>
+<li class="facebook">
+<button class="share__button" data-action="share:facebook">Facebook</button>
+</li>
+<li class="link">
+<input class="share__button" value="http://disq.us/p/iytja1" name="Link" title="Click to copy post link" data-action="copy-link" readonly="">
+</li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1146876121">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="realtime-button"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+</li><li class="post" id="post-1146876115"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="./avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header class="comment__header">
+<span class="post-byline">
+<span class="author">Craig Buckler</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://www.sitepoint.com/php-53-namespaces-basics/#comment-1146876115" data-role="relative-time" class="time-ago" title="Tuesday, July 14, 2009 5:38 PM">
+8 years ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>@skunkbad<br>No, namespaces are not mandatory. Your non-namespaced code exists in a 'global space' -- like it did before PHP 5.3.</p><p>If your application needs to support lower versions of PHP, then namespaces should be avoided for now. However, as we move on, I suspect many more applications will use namespaces. That can only be a good thing.</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer class="comment__footer">
+<menu class="comment-footer__menu">
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="comment__share">
+<a class="toggle"><span class="text">Share ›</span></a>
+<ul class="comment-share__buttons">
+<li class="twitter">
+<button class="share__button" data-action="share:twitter">Twitter</button>
+</li>
+<li class="facebook">
+<button class="share__button" data-action="share:facebook">Facebook</button>
+</li>
+<li class="link">
+<input class="share__button" value="http://disq.us/p/iytj9v" name="Link" title="Click to copy post link" data-action="copy-link" readonly="">
+</li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1146876115">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="realtime-button"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+</li><li class="post" id="post-1146876113"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="./avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header class="comment__header">
+<span class="post-byline">
+<span class="author">biswa</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://www.sitepoint.com/php-53-namespaces-basics/#comment-1146876113" data-role="relative-time" class="time-ago" title="Tuesday, July 14, 2009 5:00 PM">
+8 years ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Really thanks for the information.</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer class="comment__footer">
+<menu class="comment-footer__menu">
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="comment__share">
+<a class="toggle"><span class="text">Share ›</span></a>
+<ul class="comment-share__buttons">
+<li class="twitter">
+<button class="share__button" data-action="share:twitter">Twitter</button>
+</li>
+<li class="facebook">
+<button class="share__button" data-action="share:facebook">Facebook</button>
+</li>
+<li class="link">
+<input class="share__button" value="http://disq.us/p/iytj9t" name="Link" title="Click to copy post link" data-action="copy-link" readonly="">
+</li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1146876113">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="realtime-button"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+</li><li class="post" id="post-1146876109"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="./avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header class="comment__header">
+<span class="post-byline">
+<span class="author">skunkbad</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://www.sitepoint.com/php-53-namespaces-basics/#comment-1146876109" data-role="relative-time" class="time-ago" title="Tuesday, July 14, 2009 1:53 PM">
+8 years ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>will the namespace usage by mandatory?</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer class="comment__footer">
+<menu class="comment-footer__menu">
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="comment__share">
+<a class="toggle"><span class="text">Share ›</span></a>
+<ul class="comment-share__buttons">
+<li class="twitter">
+<button class="share__button" data-action="share:twitter">Twitter</button>
+</li>
+<li class="facebook">
+<button class="share__button" data-action="share:facebook">Facebook</button>
+</li>
+<li class="link">
+<input class="share__button" value="http://disq.us/p/iytj9p" name="Link" title="Click to copy post link" data-action="copy-link" readonly="">
+</li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1146876109">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="realtime-button"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+</li><li class="post" id="post-1146876103"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="./avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header class="comment__header">
+<span class="post-byline">
+<span class="author">Adrian</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://www.sitepoint.com/php-53-namespaces-basics/#comment-1146876103" data-role="relative-time" class="time-ago" title="Tuesday, July 14, 2009 8:01 AM">
+8 years ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Yet another reason it's time to fork PHP.</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer class="comment__footer">
+<menu class="comment-footer__menu">
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="comment__share">
+<a class="toggle"><span class="text">Share ›</span></a>
+<ul class="comment-share__buttons">
+<li class="twitter">
+<button class="share__button" data-action="share:twitter">Twitter</button>
+</li>
+<li class="facebook">
+<button class="share__button" data-action="share:facebook">Facebook</button>
+</li>
+<li class="link">
+<input class="share__button" value="http://disq.us/p/iytj9j" name="Link" title="Click to copy post link" data-action="copy-link" readonly="">
+</li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1146876103">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="realtime-button"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+</li><li class="post" id="post-1146876100"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="./avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header class="comment__header">
+<span class="post-byline">
+<span class="author">awasson</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://www.sitepoint.com/php-53-namespaces-basics/#comment-1146876100" data-role="relative-time" class="time-ago" title="Tuesday, July 14, 2009 6:44 AM">
+8 years ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Interesting article Craig.</p><p>I'm waiting for parts 2 &amp; 3 as well but part 1 has me thinking.</p><p>Andrew</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer class="comment__footer">
+<menu class="comment-footer__menu">
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="comment__share">
+<a class="toggle"><span class="text">Share ›</span></a>
+<ul class="comment-share__buttons">
+<li class="twitter">
+<button class="share__button" data-action="share:twitter">Twitter</button>
+</li>
+<li class="facebook">
+<button class="share__button" data-action="share:facebook">Facebook</button>
+</li>
+<li class="link">
+<input class="share__button" value="http://disq.us/p/iytj9g" name="Link" title="Click to copy post link" data-action="copy-link" readonly="">
+</li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1146876100">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="realtime-button"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+</li><li class="post" id="post-1146876097"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="./avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header class="comment__header">
+<span class="post-byline">
+<span class="author">carstep</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://www.sitepoint.com/php-53-namespaces-basics/#comment-1146876097" data-role="relative-time" class="time-ago" title="Tuesday, July 14, 2009 5:34 AM">
+8 years ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>@Craig Buckler</p><p>okok, I wait for the next 2 parts engaged</p><p>-cs-</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer class="comment__footer">
+<menu class="comment-footer__menu">
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="comment__share">
+<a class="toggle"><span class="text">Share ›</span></a>
+<ul class="comment-share__buttons">
+<li class="twitter">
+<button class="share__button" data-action="share:twitter">Twitter</button>
+</li>
+<li class="facebook">
+<button class="share__button" data-action="share:facebook">Facebook</button>
+</li>
+<li class="link">
+<input class="share__button" value="http://disq.us/p/iytj9d" name="Link" title="Click to copy post link" data-action="copy-link" readonly="">
+</li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1146876097">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="realtime-button"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+</li><li class="post" id="post-1146876094"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="./avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header class="comment__header">
+<span class="post-byline">
+<span class="author">Craig Buckler</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://www.sitepoint.com/php-53-namespaces-basics/#comment-1146876094" data-role="relative-time" class="time-ago" title="Tuesday, July 14, 2009 3:09 AM">
+8 years ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>@carestep<br>Note that this is part 1 of a 3-part article. Tomorrow, we will cover the use statement and how PHP resolves namespace names. The next day, we look at autoloading namespaced code and a few advanced options.</p><p>PHP's syntax is very similar to C#. Java uses non-hierarchical packages, but it's the much the same concept.</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer class="comment__footer">
+<menu class="comment-footer__menu">
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="comment__share">
+<a class="toggle"><span class="text">Share ›</span></a>
+<ul class="comment-share__buttons">
+<li class="twitter">
+<button class="share__button" data-action="share:twitter">Twitter</button>
+</li>
+<li class="facebook">
+<button class="share__button" data-action="share:facebook">Facebook</button>
+</li>
+<li class="link">
+<input class="share__button" value="http://disq.us/p/iytj9a" name="Link" title="Click to copy post link" data-action="copy-link" readonly="">
+</li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1146876094">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="realtime-button"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+</li><li class="post" id="post-1146876093"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="./avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header class="comment__header">
+<span class="post-byline">
+<span class="author">Greg Beaver</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://www.sitepoint.com/php-53-namespaces-basics/#comment-1146876093" data-role="relative-time" class="time-ago" title="Tuesday, July 14, 2009 2:24 AM">
+8 years ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Your post has invalid PHP syntax.  You can't combine bracketed namespaces and unbracketed namespaces in the same file.</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer class="comment__footer">
+<menu class="comment-footer__menu">
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="comment__share">
+<a class="toggle"><span class="text">Share ›</span></a>
+<ul class="comment-share__buttons">
+<li class="twitter">
+<button class="share__button" data-action="share:twitter">Twitter</button>
+</li>
+<li class="facebook">
+<button class="share__button" data-action="share:facebook">Facebook</button>
+</li>
+<li class="link">
+<input class="share__button" value="http://disq.us/p/iytj99" name="Link" title="Click to copy post link" data-action="copy-link" readonly="">
+</li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1146876093">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="realtime-button"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+</li><li class="post" id="post-1146876091"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="./avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header class="comment__header">
+<span class="post-byline">
+<span class="author">logic_earth</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://www.sitepoint.com/php-53-namespaces-basics/#comment-1146876091" data-role="relative-time" class="time-ago" title="Tuesday, July 14, 2009 1:30 AM">
+8 years ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>@Crowe, I don't follow what you mean with "use namespace" if you define a namespace you can use every function, class, constant without using the namespace prefix. Also sub-namespace only needs first level below the current namespace.</p><p>For example for "AppLib1" if you have an object that needs to access an object in "AppLib1Sub" you only need "SubObjectName" but any object in "AppLib1" can be access as "ObjectName".</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer class="comment__footer">
+<menu class="comment-footer__menu">
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="comment__share">
+<a class="toggle"><span class="text">Share ›</span></a>
+<ul class="comment-share__buttons">
+<li class="twitter">
+<button class="share__button" data-action="share:twitter">Twitter</button>
+</li>
+<li class="facebook">
+<button class="share__button" data-action="share:facebook">Facebook</button>
+</li>
+<li class="link">
+<input class="share__button" value="http://disq.us/p/iytj97" name="Link" title="Click to copy post link" data-action="copy-link" readonly="">
+</li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1146876091">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="realtime-button"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+</li><li class="post" id="post-1146876089"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="./avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header class="comment__header">
+<span class="post-byline">
+<span class="author">Crowe</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://www.sitepoint.com/php-53-namespaces-basics/#comment-1146876089" data-role="relative-time" class="time-ago" title="Tuesday, July 14, 2009 12:19 AM">
+8 years ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>When you are defining the name space in your library you get to do like:</p><p><code>namespace AppLib1; </code></p><p>It would be nice if you could also use something like this in your "myapp" example:</p><p><code>use namespace AppLib1; </code></p><p>Which would cause all the functions/objects, etc. to automatically have the namespace added.</p><p>Otherwise, namespaces provide little improvement over just using some obscure naming convention or prefixes.</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer class="comment__footer">
+<menu class="comment-footer__menu">
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="comment__share">
+<a class="toggle"><span class="text">Share ›</span></a>
+<ul class="comment-share__buttons">
+<li class="twitter">
+<button class="share__button" data-action="share:twitter">Twitter</button>
+</li>
+<li class="facebook">
+<button class="share__button" data-action="share:facebook">Facebook</button>
+</li>
+<li class="link">
+<input class="share__button" value="http://disq.us/p/iytj95" name="Link" title="Click to copy post link" data-action="copy-link" readonly="">
+</li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1146876089">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="realtime-button"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+</li><li class="post" id="post-1146876085"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="./avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header class="comment__header">
+<span class="post-byline">
+<span class="author">carstep</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://www.sitepoint.com/php-53-namespaces-basics/#comment-1146876085" data-role="relative-time" class="time-ago" title="Monday, July 13, 2009 10:29 PM">
+8 years ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>@logic_earth</p><p>I missed you reply. Just realized it. Sure your reply points out some of my opinions as well.<br>To say the through autoloading and namespacing are similar techniques and could have been merged almost perfectly.</p><p>-cs-</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer class="comment__footer">
+<menu class="comment-footer__menu">
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="comment__share">
+<a class="toggle"><span class="text">Share ›</span></a>
+<ul class="comment-share__buttons">
+<li class="twitter">
+<button class="share__button" data-action="share:twitter">Twitter</button>
+</li>
+<li class="facebook">
+<button class="share__button" data-action="share:facebook">Facebook</button>
+</li>
+<li class="link">
+<input class="share__button" value="http://disq.us/p/iytj91" name="Link" title="Click to copy post link" data-action="copy-link" readonly="">
+</li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1146876085">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="realtime-button"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+</li><li class="post" id="post-1146876082"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="./avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header class="comment__header">
+<span class="post-byline">
+<span class="author">carstep</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://www.sitepoint.com/php-53-namespaces-basics/#comment-1146876082" data-role="relative-time" class="time-ago" title="Monday, July 13, 2009 10:25 PM">
+8 years ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>@Jory Greets</p><p>I know well that PHP != Java. I apologize for comparing Java namespaces / package architecture to the PHP one, but typing as much in case of PHP is for me a bit overhauled "technique". I was using Java only with well equipped IDE's there comes my opinion that packaging in Java is more convenient. Yes my first reaction was shocking and misleading in this comparison but my reasons remained unchanged, explaining it below.</p><p>1. I remember. Even java could have used an autoloading mechanism alike (see point 2.)<br>2. Maybe. With a little more intelligent namespacing "technique" this could have been avoided, e.g. using automatized auto-loading mechanism for namespaces<br>3. No (in case of), conflicting classes can throw php error, to correct them using proper namespaces instead. Only in these cases should file including / namespace including mechanism used, regarding point 2.</p><p>My only goal was to highlight, how many repetitive action you have to do using namespaces.</p><p>Yes, Java is not perfect as well, I don't use it much often.</p><p>-cs- <br>P.S.: sorry, English is not my native so fine tuning sentences is not my strongest skill :-)</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer class="comment__footer">
+<menu class="comment-footer__menu">
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="comment__share">
+<a class="toggle"><span class="text">Share ›</span></a>
+<ul class="comment-share__buttons">
+<li class="twitter">
+<button class="share__button" data-action="share:twitter">Twitter</button>
+</li>
+<li class="facebook">
+<button class="share__button" data-action="share:facebook">Facebook</button>
+</li>
+<li class="link">
+<input class="share__button" value="http://disq.us/p/iytj8y" name="Link" title="Click to copy post link" data-action="copy-link" readonly="">
+</li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1146876082">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="realtime-button"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+</li><li class="post" id="post-1146876076"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="./avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header class="comment__header">
+<span class="post-byline">
+<span class="author">Jory Geerts</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://www.sitepoint.com/php-53-namespaces-basics/#comment-1146876076" data-role="relative-time" class="time-ago" title="Monday, July 13, 2009 8:57 PM">
+8 years ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>@carstep:<br>1: Are you wining about the fact that you need to type "namespace foo;" at the beginning of each file? If so, Java required you to have "package foo;", remember?<br>2: Including / requiring files has been the PHP since the beginning. Thats just how it works. It would be rather redundant to create a new way of importing code, just for the sake of namespaces. It would also be confusing.<br>3: You've forgotten the words " if I'm using them in a different namespace then where they where defined and am to lazy to call 'use NamespaceFooBarWhatever'." (Note that 'use' isn't covered in this article. Thats probally why its subtitled "The Basics", and why they promis to handle resolving namespaces in the next article.)</p><p>And lastly, PHP != Java.</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer class="comment__footer">
+<menu class="comment-footer__menu">
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="comment__share">
+<a class="toggle"><span class="text">Share ›</span></a>
+<ul class="comment-share__buttons">
+<li class="twitter">
+<button class="share__button" data-action="share:twitter">Twitter</button>
+</li>
+<li class="facebook">
+<button class="share__button" data-action="share:facebook">Facebook</button>
+</li>
+<li class="link">
+<input class="share__button" value="http://disq.us/p/iytj8s" name="Link" title="Click to copy post link" data-action="copy-link" readonly="">
+</li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1146876076">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="realtime-button"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+</li><li class="post" id="post-1146876075"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="./avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header class="comment__header">
+<span class="post-byline">
+<span class="author">logic_earth</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://www.sitepoint.com/php-53-namespaces-basics/#comment-1146876075" data-role="relative-time" class="time-ago" title="Monday, July 13, 2009 7:57 PM">
+8 years ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>@carestep, while this blog post doesn't bring it up. There is the <a href="http://disq.us/url?url=http%3A%2F%2Fus3.php.net%2Fmanual%2Fen%2Flanguage.namespaces.importing.php%3AotMoYVqLhQSCe9nqMCRjJnbcEQE&amp;cuid=2697744" rel="nofollow noopener">use construct</a> which is importing. Also with <a href="http://disq.us/url?url=http%3A%2F%2Fus.php.net%2Fautoload%3ALxUm_diDmFIf6h3RDF8FVVrfKUE&amp;cuid=2697744" rel="nofollow noopener">autoloading</a> there is no need to include any of your classes/object.</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer class="comment__footer">
+<menu class="comment-footer__menu">
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="comment__share">
+<a class="toggle"><span class="text">Share ›</span></a>
+<ul class="comment-share__buttons">
+<li class="twitter">
+<button class="share__button" data-action="share:twitter">Twitter</button>
+</li>
+<li class="facebook">
+<button class="share__button" data-action="share:facebook">Facebook</button>
+</li>
+<li class="link">
+<input class="share__button" value="http://disq.us/p/iytj8r" name="Link" title="Click to copy post link" data-action="copy-link" readonly="">
+</li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1146876075">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" class="realtime-button"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+</li></ul><div class="load-more" data-role="more" style="display: none;"><a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" data-action="more-posts" class="btn load-more__button">Load more comments</a></div></div></section><div id="placement-bottom" data-tracking-area="discovery-south"></div><div id="footer" data-tracking-area="footer" class="disqus-footer__wrapper"><ul class="disqus-footer"><li class="disqus-footer__logo"><a href="https://disqus.com/" rel="nofollow" title="Powered by Disqus" class="disqus-footer__link">Powered by Disqus</a></li><li id="thread-subscribe-button" class="email disqus-footer__item"><div class="default"><a href="https://disqus.com/embed/comments/?base=default&amp;f=sitepointproduction&amp;t_i=12000%20http%3A%2F%2Fwww.sitepoint.com%2Fblogs%2F%3Fp%3D12000&amp;t_u=https%3A%2F%2Fwww.sitepoint.com%2Fphp-53-namespaces-basics%2F&amp;t_e=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;t_d=%0A%20%20%20%20%20%20%20%20How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics%0A%20%20%20%20%20%20&amp;t_t=How%20to%20Use%20PHP%20Namespaces%2C%20Part%201%3A%20The%20Basics&amp;s_o=default&amp;l=#" rel="nofollow" data-action="subscribe" title="Subscribe and get email updates from this discussion" class="disqus-footer__link"><i aria-hidden="true" class="icon icon-mail"></i><span class="clip">Subscribe</span><i aria-hidden="true" class="icon icon-checkmark"></i></a></div><div class="form"><div class="input-wrapper"><input id="thread-subscribe-email" type="email" placeholder="yourname@email.com" class="disqus-footer__input input--text"></div></div></li><li class="install disqus-footer__item"><a href="https://publishers.disqus.com/engage?utm_source=sitepointproduction&amp;utm_medium=Disqus-Footer" rel="nofollow" target="_blank" class="disqus-footer__link"><i aria-hidden="true" class="icon icon-disqus"></i><span class="clip hidden-sm">Add Disqus to your site</span><span class="clip visible-sm hidden-xs">Add Disqus</span><span class="clip visible-xs">Add</span></a></li><li class="privacy disqus-footer__item"><a href="https://help.disqus.com/customer/portal/articles/1657951?utm_source=disqus&amp;utm_medium=embed-footer&amp;utm_content=privacy-btn" rel="nofollow" target="_blank" class="disqus-footer__link"><i aria-hidden="true" class="icon icon-lock"></i><span class="clip">Privacy</span></a></li></ul></div></div><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./87XNE1PC38r.html" style="border: none;"></iframe></div></div></div><iframe style="position: absolute; width: 1px; height: 1px; left: -9999px; display: none;" aria-hidden="true" id="ssIFrame_google" sandbox="allow-scripts allow-same-origin" src="./iframe.html"></iframe><img src="./tpid=c2rknn7a2svhrvp" style="display: none;"><img src="./23096" style="display: none;"><img src="./saved_resource(1)" style="display: none;"><iframe src="./sync.html" style="display: none;"></iframe><img src="./saved_resource(2)" style="display: none;"></body></html>

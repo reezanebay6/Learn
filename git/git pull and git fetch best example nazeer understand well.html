@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)https://www.atlassian.com/git/tutorials/syncing -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><iframe height="0" width="0" src="./git pull and git fetch best example nazeer understand well_files/activityi.html" style="display: none; visibility: hidden;"></iframe><script src="./git pull and git fetch best example nazeer understand well_files/2f4c1d42d2a84522ac151d8736f8fbef3576a517edc74dc28bd142489cf5ba04" type="text/javascript"></script><script src="./git pull and git fetch best example nazeer understand well_files/aquant.js" async="" type="text/javascript"></script><script async="" id="demandbase_js_lib" src="./git pull and git fetch best example nazeer understand well_files/BwkB5d1U.min.js"></script><script type="text/javascript" async="" src="./git pull and git fetch best example nazeer understand well_files/insight.min.js"></script><script type="text/javascript" async="" src="./git pull and git fetch best example nazeer understand well_files/linkid.js"></script><script type="text/javascript" async="" src="./git pull and git fetch best example nazeer understand well_files/prum.min.js"></script><script type="text/javascript" async="" src="./git pull and git fetch best example nazeer understand well_files/5489f88111e7f93eba000007.js"></script><script type="text/javascript" async="" src="./git pull and git fetch best example nazeer understand well_files/gtm.js"></script><script type="text/javascript" async="" src="./git pull and git fetch best example nazeer understand well_files/analytics.js"></script><script src="./git pull and git fetch best example nazeer understand well_files/identity.js" async=""></script><script src="./git pull and git fetch best example nazeer understand well_files/221213238088884" async=""></script><script src="./git pull and git fetch best example nazeer understand well_files/953296114683992" async=""></script><script type="text/javascript" async="" src="./git pull and git fetch best example nazeer understand well_files/fbevents.js"></script><script type="text/javascript" async="" src="./git pull and git fetch best example nazeer understand well_files/bat.js"></script><script type="text/javascript" async="" src="./git pull and git fetch best example nazeer understand well_files/conversion_async.js"></script><script type="text/javascript" async="" src="./git pull and git fetch best example nazeer understand well_files/roundtrip.js"></script><script type="text/javascript" id="analytics-js" async="" src="./git pull and git fetch best example nazeer understand well_files/analytics.min.js"></script><script type="text/javascript" async="" src="./git pull and git fetch best example nazeer understand well_files/geo2.js"></script><script type="text/javascript" async="" src="./git pull and git fetch best example nazeer understand well_files/geo2.js"></script><script type="text/javascript" async="" src="./git pull and git fetch best example nazeer understand well_files/ip.json"></script>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="git remote, git fetch, git pull, git push: manage connections with repos, publish local history by pushing branches, and pull changes to a local repo">
+<meta name="author" content="Atlassian">
+<link rel="canonical" href="https://www.atlassian.com/git/tutorials/syncing">
+<title>Syncing | Atlassian Git Tutorial</title>
+<link rel="stylesheet" href="./git pull and git fetch best example nazeer understand well_files/site.css">
+<link rel="stylesheet" href="./git pull and git fetch best example nazeer understand well_files/icons.css" class="additional-css">
+<link rel="stylesheet" href="./git pull and git fetch best example nazeer understand well_files/editmode.css" class="additional-css">
+<link href="https://plus.google.com/+atlassian" rel="publisher">
+<link rel="alternate" href="https://www.atlassian.com/git/tutorials/syncing" hreflang="en">
+<link rel="alternate" href="https://es.atlassian.com/git/tutorials/syncing" hreflang="es">
+<link rel="alternate" href="https://de.atlassian.com/git/tutorials/syncing" hreflang="de">
+<link rel="alternate" href="https://fr.atlassian.com/git/tutorials/syncing" hreflang="fr">
+<link rel="alternate" href="https://ja.atlassian.com/git/tutorials/syncing" hreflang="ja">
+<link rel="alternate" href="https://br.atlassian.com/git/tutorials/syncing" hreflang="pt-BR">
+<link rel="alternate" href="https://ru.atlassian.com/git/tutorials/syncing" hreflang="ru">
+<link rel="alternate" href="https://ko.atlassian.com/git/tutorials/syncing" hreflang="ko">
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://wac-cdn.atlassian.com/assets/img/favicons/gitguide/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://wac-cdn.atlassian.com/assets/img/favicons/gitguide/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://wac-cdn.atlassian.com/assets/img/favicons/gitguide/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://wac-cdn.atlassian.com/assets/img/favicons/gitguide/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://wac-cdn.atlassian.com/assets/img/favicons/gitguide/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://wac-cdn.atlassian.com/assets/img/favicons/gitguide/apple-touch-icon-152x152.png">
+<link rel="icon" type="image/png" href="https://wac-cdn.atlassian.com/assets/img/favicons/gitguide/favicon.png" sizes="32x32">
+<link rel="mask-icon" href="https://wac-cdn.atlassian.com/assets/img/favicons/gitguide/safari-pinned-tab.svg" color="#59afe1">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="https://wac-cdn.atlassian.com/assets/img/favicons/gitguide/mstile-144x144.png">
+<meta name="theme-color" content="#205081">
+<meta property="og:title" content="Syncing | Atlassian Git Tutorial">
+<meta property="og:description" content="git remote, git fetch, git pull, git push: manage connections with repos, publish local history by pushing branches, and pull changes to a local repo">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.atlassian.com/git/tutorials/syncing">
+<meta property="og:site_name" content="Atlassian">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@Atlassian">
+<!--[if !IE]><!-->
+<script src="./git pull and git fetch best example nazeer understand well_files/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if gt IE 8]>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<![endif]-->
+<!--[if lte IE 8]>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<![endif]-->
+<script src="./git pull and git fetch best example nazeer understand well_files/1096093.js"></script><iframe src="./git pull and git fetch best example nazeer understand well_files/a1096093.html"></iframe>
+<iframe src="./git pull and git fetch best example nazeer understand well_files/1096093.html"></iframe><script type="text/javascript" async="" src="./git pull and git fetch best example nazeer understand well_files/tagjs"></script><script async="true" type="text/javascript" src="./git pull and git fetch best example nazeer understand well_files/7Q44S6SDXNA4NE4TSAUFGF"></script><img src="./git pull and git fetch best example nazeer understand well_files/saved_resource" width="1" height="1" border="0"><img src="./git pull and git fetch best example nazeer understand well_files/saved_resource(1)" width="1" height="1" border="0"><img src="./git pull and git fetch best example nazeer understand well_files/saved_resource(2)" width="1" height="1" border="0"><img src="./git pull and git fetch best example nazeer understand well_files/saved_resource(3)" width="1" height="1" border="0"><img src="./git pull and git fetch best example nazeer understand well_files/saved_resource(4)" width="1" height="1" border="0"><img src="./git pull and git fetch best example nazeer understand well_files/seg" width="1" height="1" border="0"><div style="width: 1px; height: 1px; display: inline; position: absolute;"><img height="1" width="1" style="border-style:none;" alt="" src="./git pull and git fetch best example nazeer understand well_files/out"><img height="1" width="1" style="border-style:none;" alt="" src="./git pull and git fetch best example nazeer understand well_files/out(1)"></div><script type="text/javascript" src="./git pull and git fetch best example nazeer understand well_files/sendrolling.js"></script><div style="width: 1px; height: 1px; display: inline; position: absolute;"><img height="1" width="1" style="border-style:none;" alt="" src="./git pull and git fetch best example nazeer understand well_files/out(2)">
+<img height="1" width="1" style="border-style:none;" alt="" src="./git pull and git fetch best example nazeer understand well_files/out(3)">
+<img height="1" width="1" style="border-style:none;" alt="" src="./git pull and git fetch best example nazeer understand well_files/out(4)">
+<img height="1" width="1" style="border-style:none;" alt="" src="./git pull and git fetch best example nazeer understand well_files/out(5)">
+<img height="1" width="1" style="border-style:none;" alt="" src="./git pull and git fetch best example nazeer understand well_files/out(6)">
+<img height="1" width="1" style="border-style:none;" alt="" src="./git pull and git fetch best example nazeer understand well_files/out(7)">
+<img height="1" width="1" style="border-style:none;" alt="" src="./git pull and git fetch best example nazeer understand well_files/out(8)">
+<img height="1" width="1" style="border-style:none;" alt="" src="./git pull and git fetch best example nazeer understand well_files/out(9)">
+</div></head>
+<body id="syncing" class="wac git tutorials syncing scrolled content-loaded hoverable">
+<div id="header">
+<div class="tutorial-sidebar is-active">
+<div class="_bumper"></div>
+<div class="_wrap">
+<ol>
+<div class="_group">
+<a href="https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud" class="cms-link cms-link--text group-link">Learn Git</a>
+<div class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud" class="cms-link cms-link--text tutorial-link">Learn Git with Bitbucket Cloud</a>
+<div class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud#create-the-repository" class="cms-link cms-link--text section-link">Create a Git repository</a>
+<a href="https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud#copy-and-add-files" class="cms-link cms-link--text section-link">Copy your Git repository and add files</a>
+<a href="https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud#pull-changes" class="cms-link cms-link--text section-link">Pull changes from your Git repository on Bitbucket Cloud</a>
+<a href="https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud#git-branch-to-merge" class="cms-link cms-link--text section-link">Use a Git branch to merge a file</a>
+</div>
+</div>
+<div class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/learn-about-code-review-in-bitbucket-cloud" class="cms-link cms-link--text tutorial-link">Learn about code review in Bitbucket Cloud</a>
+<div class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/learn-about-code-review-in-bitbucket-cloud#fork-repository" class="cms-link cms-link--text section-link">Fork a teammate's repository</a>
+<a href="https://www.atlassian.com/git/tutorials/learn-about-code-review-in-bitbucket-cloud#copy-fork-make-changes" class="cms-link cms-link--text section-link">Copy your fork and make a change to the repository</a>
+<a href="https://www.atlassian.com/git/tutorials/learn-about-code-review-in-bitbucket-cloud#create-pull-request" class="cms-link cms-link--text section-link">Create a pull request</a>
+</div>
+</div>
+</div>
+<div class="_group">
+<a href="https://www.atlassian.com/git/tutorials/what-is-version-control" class="cms-link cms-link--text group-link">Beginner</a>
+<div class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/what-is-version-control" class="cms-link cms-link--text tutorial-link">What is version control</a>
+<div class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/what-is-version-control#benefits-of-version-control" class="cms-link cms-link--text section-link">Benefits of version control</a>
+</div>
+</div>
+<div class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/what-is-git" class="cms-link cms-link--text tutorial-link">What is Git</a>
+<div class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/what-is-git#performance" class="cms-link cms-link--text section-link">Performance</a>
+<a href="https://www.atlassian.com/git/tutorials/what-is-git#security" class="cms-link cms-link--text section-link">Security</a>
+<a href="https://www.atlassian.com/git/tutorials/what-is-git#flexibility" class="cms-link cms-link--text section-link">Flexibility</a>
+<a href="https://www.atlassian.com/git/tutorials/what-is-git#version-control-with-git" class="cms-link cms-link--text section-link">Version control with Git</a>
+</div>
+</div>
+<div class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/why-git" class="cms-link cms-link--text tutorial-link">Why Git for your Organization</a>
+<div class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/why-git#git-for-developers" class="cms-link cms-link--text section-link">Git for developers</a>
+<a href="https://www.atlassian.com/git/tutorials/why-git#git-for-marketing" class="cms-link cms-link--text section-link">Git for marketing</a>
+<a href="https://www.atlassian.com/git/tutorials/why-git#git-for-product-management" class="cms-link cms-link--text section-link">Git for product management</a>
+<a href="https://www.atlassian.com/git/tutorials/why-git#git-for-designers" class="cms-link cms-link--text section-link">Git for designers</a>
+<a href="https://www.atlassian.com/git/tutorials/why-git#git-for-customer-support" class="cms-link cms-link--text section-link">Git for customer support</a>
+<a href="https://www.atlassian.com/git/tutorials/why-git#git-for-human-resources" class="cms-link cms-link--text section-link">Git for human resources</a>
+<a href="https://www.atlassian.com/git/tutorials/why-git#git-for-anyone-managing-budget" class="cms-link cms-link--text section-link">Git for anyone managing a budget</a>
+</div>
+</div>
+<div class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/install-git" class="cms-link cms-link--text tutorial-link">Install Git</a>
+<div class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/install-git#mac-os-x" class="cms-link cms-link--text section-link">Install Git on Mac OS X</a>
+<a href="https://www.atlassian.com/git/tutorials/install-git#windows" class="cms-link cms-link--text section-link">Install Git on Windows</a>
+<a href="https://www.atlassian.com/git/tutorials/install-git#linux" class="cms-link cms-link--text section-link">Install Git on Linux</a>
+</div>
+</div>
+</div>
+<div class="_group">
+<a href="https://www.atlassian.com/git/tutorials/setting-up-a-repository" class="cms-link cms-link--text group-link">Getting Started</a>
+<div class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/setting-up-a-repository" class="cms-link cms-link--text tutorial-link">Setting up a repository</a>
+<div class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/setting-up-a-repository#git-init" class="cms-link cms-link--text section-link">git init</a>
+<a href="https://www.atlassian.com/git/tutorials/setting-up-a-repository#git-clone" class="cms-link cms-link--text section-link">git clone</a>
+<a href="https://www.atlassian.com/git/tutorials/setting-up-a-repository#git-config" class="cms-link cms-link--text section-link">git config</a>
+</div>
+</div>
+<div class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/saving-changes" class="cms-link cms-link--text tutorial-link">Saving changes</a>
+<div class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/saving-changes#git-add" class="cms-link cms-link--text section-link">git add</a>
+<a href="https://www.atlassian.com/git/tutorials/saving-changes#git-commit" class="cms-link cms-link--text section-link">git commit</a>
+<a href="https://www.atlassian.com/git/tutorials/git-stash" class="cms-link cms-link--text section-link">git stash</a>
+<a href="https://www.atlassian.com/git/tutorials/gitignore" class="cms-link cms-link--text section-link">.gitignore</a>
+</div>
+</div>
+<div class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/inspecting-a-repository" class="cms-link cms-link--text tutorial-link">Inspecting a repository</a>
+<div class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/inspecting-a-repository#git-status" class="cms-link cms-link--text section-link">git status</a>
+<a href="https://www.atlassian.com/git/tutorials/inspecting-a-repository#git-log" class="cms-link cms-link--text section-link">git log</a>
+</div>
+</div>
+<div class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/undoing-changes" class="cms-link cms-link--text tutorial-link">Undoing changes</a>
+<div class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/undoing-changes#git-checkout" class="cms-link cms-link--text section-link">git checkout</a>
+<a href="https://www.atlassian.com/git/tutorials/undoing-changes#git-revert" class="cms-link cms-link--text section-link">git revert</a>
+<a href="https://www.atlassian.com/git/tutorials/undoing-changes#git-reset" class="cms-link cms-link--text section-link">git reset</a>
+<a href="https://www.atlassian.com/git/tutorials/undoing-changes#git-clean" class="cms-link cms-link--text section-link">git clean</a>
+</div>
+</div>
+<div class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/rewriting-history" class="cms-link cms-link--text tutorial-link">Rewriting history</a>
+<div class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/rewriting-history#git-commit--amend" class="cms-link cms-link--text section-link">git commit --amend</a>
+<a href="https://www.atlassian.com/git/tutorials/rewriting-history#git-rebase" class="cms-link cms-link--text section-link">git rebase</a>
+<a href="https://www.atlassian.com/git/tutorials/rewriting-history#git-rebase-i" class="cms-link cms-link--text section-link">git rebase -i</a>
+<a href="https://www.atlassian.com/git/tutorials/rewriting-history#git-reflog" class="cms-link cms-link--text section-link">git reflog</a>
+</div>
+</div>
+</div>
+<div class="_group">
+<a href="https://www.atlassian.com/git/tutorials/syncing" class="cms-link cms-link--text group-link active">Collaborating</a>
+<div class="_group-wrap is-active">
+<a href="https://www.atlassian.com/git/tutorials/syncing" class="cms-link cms-link--text tutorial-link active">Syncing</a>
+<div class="_toc is-active">
+<a href="https://www.atlassian.com/git/tutorials/syncing#git-remote" class="cms-link cms-link--text section-link">git remote</a>
+<a href="https://www.atlassian.com/git/tutorials/syncing#git-fetch" class="cms-link cms-link--text section-link">git fetch</a>
+<a href="https://www.atlassian.com/git/tutorials/syncing#git-pull" class="cms-link cms-link--text section-link">git pull</a>
+<a href="https://www.atlassian.com/git/tutorials/syncing#git-push" class="cms-link cms-link--text section-link">git push</a>
+</div>
+</div>
+<div class="_group-wrap is-active">
+<a href="https://www.atlassian.com/git/tutorials/making-a-pull-request" class="cms-link cms-link--text tutorial-link">Making a Pull Request</a>
+<div class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/making-a-pull-request#how-it-works" class="cms-link cms-link--text section-link">How it works</a>
+<a href="https://www.atlassian.com/git/tutorials/making-a-pull-request#example" class="cms-link cms-link--text section-link">Example</a>
+<a href="https://www.atlassian.com/git/tutorials/making-a-pull-request#where-to-go" class="cms-link cms-link--text section-link">Where to go from here</a>
+</div>
+</div>
+<div class="_group-wrap is-active">
+<a href="https://www.atlassian.com/git/tutorials/using-branches" class="cms-link cms-link--text tutorial-link">Using branches</a>
+<div class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/using-branches#git-branch" class="cms-link cms-link--text section-link">git branch</a>
+<a href="https://www.atlassian.com/git/tutorials/using-branches#git-checkout" class="cms-link cms-link--text section-link">git checkout</a>
+<a href="https://www.atlassian.com/git/tutorials/git-merge" class="cms-link cms-link--text section-link">git merge</a>
+</div>
+</div>
+<div class="_group-wrap is-active">
+<a href="https://www.atlassian.com/git/tutorials/comparing-workflows" class="cms-link cms-link--text tutorial-link">Comparing workflows</a>
+<div class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/comparing-workflows#centralized-workflow" class="cms-link cms-link--text section-link">Centralized Workflow</a>
+<a href="https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow" class="cms-link cms-link--text section-link">Feature Branch Workflow</a>
+<a href="https://www.atlassian.com/git/tutorials/comparing-workflows#gitflow-workflow" class="cms-link cms-link--text section-link">Gitflow Workflow</a>
+<a href="https://www.atlassian.com/git/tutorials/comparing-workflows#forking-workflow" class="cms-link cms-link--text section-link">Forking Workflow</a>
+</div>
+</div>
+</div>
+<div class="_group">
+<a href="https://www.atlassian.com/git/tutorials/svn-to-git-prepping-your-team-migration" class="cms-link cms-link--text group-link">Migrating to Git</a>
+<div class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/svn-to-git-prepping-your-team-migration" class="cms-link cms-link--text tutorial-link">SVN to Git - prepping for the migration</a>
+<div class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/svn-to-git-prepping-your-team-migration#for-administrators" class="cms-link cms-link--text section-link">For administrators</a>
+<a href="https://www.atlassian.com/git/tutorials/svn-to-git-prepping-your-team-migration#basic-git-commands" class="cms-link cms-link--text section-link">Basic Git commands</a>
+<a href="https://www.atlassian.com/git/tutorials/svn-to-git-prepping-your-team-migration#git-migration-tools" class="cms-link cms-link--text section-link">Git Migration Tools</a>
+<a href="https://www.atlassian.com/git/tutorials/svn-to-git-prepping-your-team-migration#for-developers" class="cms-link cms-link--text section-link">For developers</a>
+</div>
+</div>
+<div class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/migrating-overview" class="cms-link cms-link--text tutorial-link">Migrate to Git from SVN</a>
+</div>
+<div class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/migrating-prepare" class="cms-link cms-link--text tutorial-link">Prepare</a>
+</div>
+<div class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/migrating-convert" class="cms-link cms-link--text tutorial-link">Convert</a>
+</div>
+<div class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/migrating-synchronize" class="cms-link cms-link--text tutorial-link">Synchronize</a>
+</div>
+<div class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/migrating-share" class="cms-link cms-link--text tutorial-link">Share</a>
+</div>
+<div class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/migrating-migrate" class="cms-link cms-link--text tutorial-link">Migrate</a>
+</div>
+<div class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/perforce-git" class="cms-link cms-link--text tutorial-link">Perforce to Git - why to make the move</a>
+</div>
+<div class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/perforce-git-migration" class="cms-link cms-link--text tutorial-link">Migrating from Perforce to Git</a>
+</div>
+</div>
+<div class="_group">
+<a href="https://www.atlassian.com/git/tutorials/advanced-overview" class="cms-link cms-link--text group-link">Advanced Tips</a>
+<div class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/advanced-overview" class="cms-link cms-link--text tutorial-link">Advanced Git Tutorials</a>
+</div>
+<div class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing" class="cms-link cms-link--text tutorial-link">Merging vs. Rebasing</a>
+<div class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing#conceptual-overview" class="cms-link cms-link--text section-link">Conceptual Overview</a>
+<a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing#the-golden-rule-of-rebasing" class="cms-link cms-link--text section-link">The Golden Rule of Rebasing</a>
+<a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing#workflow-walkthrough" class="cms-link cms-link--text section-link">Workflow Walkthrough</a>
+<a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing#summary" class="cms-link cms-link--text section-link">Summary</a>
+</div>
+</div>
+<div class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting" class="cms-link cms-link--text tutorial-link">Reset, Checkout, and Revert</a>
+<div class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting#commit-level-operations" class="cms-link cms-link--text section-link">Commit-level Operation</a>
+<a href="https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting#file-level-operations" class="cms-link cms-link--text section-link">File-level Operations</a>
+<a href="https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting#summary" class="cms-link cms-link--text section-link">Summary</a>
+</div>
+</div>
+<div class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/git-log" class="cms-link cms-link--text tutorial-link">Advanced Git log</a>
+<div class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/git-log#formatting-log-output" class="cms-link cms-link--text section-link">Formatting Log Output</a>
+<a href="https://www.atlassian.com/git/tutorials/git-log#filtering-the-commit-history" class="cms-link cms-link--text section-link">Filtering the Commit History</a>
+<a href="https://www.atlassian.com/git/tutorials/git-log#summary" class="cms-link cms-link--text section-link">Summary</a>
+</div>
+</div>
+<div class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/git-hooks" class="cms-link cms-link--text tutorial-link">Git Hooks</a>
+<div class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/git-hooks#conceptual-overview" class="cms-link cms-link--text section-link">Conceptual Overview</a>
+<a href="https://www.atlassian.com/git/tutorials/git-hooks#local-hooks" class="cms-link cms-link--text section-link">Local Hooks</a>
+<a href="https://www.atlassian.com/git/tutorials/git-hooks#server-side-hooks" class="cms-link cms-link--text section-link">Server-side Hooks</a>
+<a href="https://www.atlassian.com/git/tutorials/git-hooks#summary" class="cms-link cms-link--text section-link">Summary</a>
+</div>
+</div>
+<div class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/refs-and-the-reflog" class="cms-link cms-link--text tutorial-link">Refs and the Reflog</a>
+<div class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/refs-and-the-reflog#hashes" class="cms-link cms-link--text section-link">Hashes</a>
+<a href="https://www.atlassian.com/git/tutorials/refs-and-the-reflog#refs" class="cms-link cms-link--text section-link">Refs</a>
+<a href="https://www.atlassian.com/git/tutorials/refs-and-the-reflog#packed-refs" class="cms-link cms-link--text section-link">Packed Refs</a>
+<a href="https://www.atlassian.com/git/tutorials/refs-and-the-reflog#special-refs" class="cms-link cms-link--text section-link">Special Refs</a>
+<a href="https://www.atlassian.com/git/tutorials/refs-and-the-reflog#refspecs" class="cms-link cms-link--text section-link">Refspecs</a>
+<a href="https://www.atlassian.com/git/tutorials/refs-and-the-reflog#relative-refs" class="cms-link cms-link--text section-link">Relative Refs</a>
+<a href="https://www.atlassian.com/git/tutorials/refs-and-the-reflog#the-reflog" class="cms-link cms-link--text section-link">The Reflog</a>
+<a href="https://www.atlassian.com/git/tutorials/refs-and-the-reflog#summary" class="cms-link cms-link--text section-link">Summary</a>
+</div>
+</div>
+<div class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/git-lfs" class="cms-link cms-link--text tutorial-link">Git LFS</a>
+</div>
+</div>
+</ol>
+</div>
+</div>
+<div class="hamburger">
+<div class="_layer -top"></div>
+<div class="_layer -mid"></div>
+<div class="_layer -bottom"></div>
+</div>
+<div class="primary-nav">
+<div class="_wrapper">
+<ul class="_nav-list">
+<div>
+<li>
+<a href="https://www.atlassian.com/git" class="cms-link cms-link--text _nav-item -home">Home</a>
+</li>
+</div>
+<div>
+<li class="tutorials-nav" id="tutorials-nav-mobile">
+<h4 class="_nav-item -tutorials">Tutorials</h4>
+<div class="_sublist">  <ol>        <li class="_group">      <h5>Learn Git</h5>      <ol class="_group-wrap">                <li>          <a href="https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud">Learn Git with Bitbucket Cloud</a>        </li>                <li>          <a href="https://www.atlassian.com/git/tutorials/learn-about-code-review-in-bitbucket-cloud">Learn about code review in Bitbucket Cloud</a>        </li>              </ol>    </li>        <li class="_group">      <h5>Beginner</h5>      <ol class="_group-wrap">                <li>          <a href="https://www.atlassian.com/git/tutorials/what-is-version-control">What is version control</a>        </li>                <li>          <a href="https://www.atlassian.com/git/tutorials/what-is-git">What is Git</a>        </li>                <li>          <a href="https://www.atlassian.com/git/tutorials/why-git">Why Git for your Organization</a>        </li>                <li>          <a href="https://www.atlassian.com/git/tutorials/install-git">Install Git</a>        </li>              </ol>    </li>        <li class="_group">      <h5>Getting Started</h5>      <ol class="_group-wrap">                <li>          <a href="https://www.atlassian.com/git/tutorials/setting-up-a-repository">Setting up a repository</a>        </li>                <li>          <a href="https://www.atlassian.com/git/tutorials/saving-changes">Saving changes</a>        </li>                <li>          <a href="https://www.atlassian.com/git/tutorials/inspecting-a-repository">Inspecting a repository</a>        </li>                <li>          <a href="https://www.atlassian.com/git/tutorials/undoing-changes">Undoing changes</a>        </li>                <li>          <a href="https://www.atlassian.com/git/tutorials/rewriting-history">Rewriting history</a>        </li>              </ol>    </li>        <li class="_group">      <h5>Collaborating</h5>      <ol class="_group-wrap">                <li>          <a href="https://www.atlassian.com/git/tutorials/syncing">Syncing</a>        </li>                <li>          <a href="https://www.atlassian.com/git/tutorials/making-a-pull-request">Making a Pull Request</a>        </li>                <li>          <a href="https://www.atlassian.com/git/tutorials/using-branches">Using branches</a>        </li>                <li>          <a href="https://www.atlassian.com/git/tutorials/comparing-workflows">Comparing workflows</a>        </li>              </ol>    </li>        <li class="_group">      <h5>Migrating to Git</h5>      <ol class="_group-wrap">                <li>          <a href="https://www.atlassian.com/git/tutorials/svn-to-git-prepping-your-team-migration">SVN to Git - prepping for the migration</a>        </li>                <li>          <a href="https://www.atlassian.com/git/tutorials/migrating-overview">Migrate to Git from SVN</a>        </li>                <li>          <a href="https://www.atlassian.com/git/tutorials/migrating-prepare">Prepare</a>        </li>                <li>          <a href="https://www.atlassian.com/git/tutorials/migrating-convert">Convert</a>        </li>                <li>          <a href="https://www.atlassian.com/git/tutorials/migrating-synchronize">Synchronize</a>        </li>                <li>          <a href="https://www.atlassian.com/git/tutorials/migrating-share">Share</a>        </li>                <li>          <a href="https://www.atlassian.com/git/tutorials/migrating-migrate">Migrate</a>        </li>                <li>          <a href="https://www.atlassian.com/git/tutorials/perforce-git">Perforce to Git - why to make the move</a>        </li>                <li>          <a href="https://www.atlassian.com/git/tutorials/perforce-git-migration">Migrating from Perforce to Git</a>        </li>              </ol>    </li>        <li class="_group">      <h5>Advanced Tips</h5>      <ol class="_group-wrap">                <li>          <a href="https://www.atlassian.com/git/tutorials/advanced-overview">Advanced Git Tutorials</a>        </li>                <li>          <a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing">Merging vs. Rebasing</a>        </li>                <li>          <a href="https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting">Reset, Checkout, and Revert</a>        </li>                <li>          <a href="https://www.atlassian.com/git/tutorials/git-log">Advanced Git log</a>        </li>                <li>          <a href="https://www.atlassian.com/git/tutorials/git-hooks">Git Hooks</a>        </li>                <li>          <a href="https://www.atlassian.com/git/tutorials/refs-and-the-reflog">Refs and the Reflog</a>        </li>                <li>          <a href="https://www.atlassian.com/git/tutorials/git-lfs">Git LFS</a>        </li>              </ol>    </li>      </ol>  </div>
+</li>
+<li>
+<a href="https://www.atlassian.com/git/tutorials" class="cms-link cms-link--text _nav-item -tutorials">Tutorials</a>
+</li>
+</div>
+<div>
+<li>
+<a href="https://www.atlassian.com/git/articles" class="cms-link cms-link--text _nav-item -articles">Articles</a>
+</li>
+</div>
+<div>
+<li>
+<a href="https://www.atlassian.com/git/glossary" class="cms-link cms-link--text _nav-item -glossary">Glossary</a>
+</li>
+</div>
+</ul>
+</div>
+</div>
+<div class="topbar is-tutorial">
+<div class="_header -is-tutorial">
+<a href="https://www.atlassian.com/git/tutorials" class="active">Tutorials</a>
+</div>
+</div>
+<a href="https://www.atlassian.com/git/search" class="search-button search-open ">
+<span class="_link icon-search">Search</span>
+</a>
+<a href="https://www.atlassian.com/git" class="search-button search-close -in-page hidden">
+<span class="_link icon-search-close -close">Search</span>
+</a>
+</div>
+<div class="page-wrap is-active -gray-bg tutorial-detail">
+<div id="content" class="_content">
+<div class="tutorial-hero">
+<div class="g-column g-12-12 text-center">
+<img src="./git pull and git fetch best example nazeer understand well_files/hero.svg" alt="Syncing">
+<h1>Syncing</h1>
+<div class="g-column g-12-12 t-12-12 m-12-12 breadcrumbs">
+<a href="https://www.atlassian.com/git/tutorials/syncing#git-remote" class="cms-link cms-link--text">git remote</a>
+<a href="https://www.atlassian.com/git/tutorials/syncing#git-fetch" class="cms-link cms-link--text">git fetch</a>
+<a href="https://www.atlassian.com/git/tutorials/syncing#git-pull" class="cms-link cms-link--text">git pull</a>
+<a href="https://www.atlassian.com/git/tutorials/syncing#git-push" class="cms-link cms-link--text">git push</a>
+</div></div></div>
+<div class="g-row">
+<div class="g-column g-12-12 g-centered">
+<p>SVN uses a single central repository to serve as the communication hub for developers, and collaboration takes place by passing changesets between the developers’ working copies and the central repository. This is different from Git’s collaboration model, which gives every developer their own copy of the repository, complete with its own local history and branch structure. Users typically need to share a series of commits rather than a single changeset. Instead of committing a changeset from a working copy to the central repository, Git lets you share entire branches between repositories.</p>
+<p>The commands presented below let you manage connections with other repositories, publish local history by "pushing" branches to other repositories, and see what others have contributed by "pulling" branches into your local repository.</p>
+<h2 id="git-remote">git remote</h2>
+<p>The <code>git remote</code> command lets you create, view, and delete connections to other repositories. Remote connections are more like bookmarks rather than direct links into other repositories. Instead of providing real-time access to another repository, they serve as convenient names that can be used to reference a not-so-convenient URL.</p>
+<p>For example, the following diagram shows two remote connections from your repo into the central repo and another developer’s repo. Instead of referencing them by their full URLs, you can pass the origin and john shortcuts to other Git commands.</p>
+<img src="./git pull and git fetch best example nazeer understand well_files/01.svg" alt="Git Tutorial: git remote">
+<h3>Usage</h3>
+<pre><code>git remote</code></pre>
+<p>List the remote connections you have to other repositories.</p>
+<pre><code>git remote -v</code></pre>
+<p>Same as the above command, but include the URL of each connection.</p>
+<pre><code>git remote add &lt;name&gt; &lt;url&gt;</code></pre>
+<p>Create a new connection to a remote repository. After adding a remote, you’ll be able to use &lt;name&gt; as a convenient shortcut for &lt;url&gt; in other Git commands.</p>
+<pre><code>git remote rm &lt;name&gt;</code></pre>
+<p>Remove the connection to the remote repository called <code>&lt;name&gt;</code>.</p>
+<pre><code>git remote rename &lt;old-name&gt; &lt;new-name&gt;</code></pre>
+<p>Rename a remote connection from &lt;old-name&gt; to &lt;new-name&gt;.</p>
+<h3>Discussion</h3>
+<p>Git is designed to give each developer an entirely isolated development environment. This means that information is not automatically passed back and forth between repositories. Instead, developers need to manually pull upstream commits into their local repository or manually push their local commits back up to the central repository. The <code>git remote</code> command is really just an easier way to pass URLs to these "sharing" commands.</p>
+<h4>The origin Remote</h4>
+<p>When you clone a repository with <code>git clone</code>, it automatically creates a remote connection called origin pointing back to the cloned repository. This is useful for developers creating a local copy of a central repository, since it provides an easy way to pull upstream changes or publish local commits. This behavior is also why most Git-based projects call their central repository origin.</p>
+<h4>Repository URLs</h4>
+<p>Git supports many ways to reference a remote repository. Two of the easiest ways to access a remote repo are via the HTTP and the SSH protocols. HTTP is an easy way to allow anonymous, read-only access to a repository. For example:</p>
+<pre><code>http://host/path/to/repo.git</code></pre>
+<p>But, it’s generally not possible to push commits to an HTTP address (you wouldn’t want to allow anonymous pushes anyways). For read-write access, you should use SSH instead:</p>
+<pre><code>ssh://user@host/path/to/repo.git</code></pre>
+<p>You’ll need a valid SSH account on the host machine, but other than that, Git supports authenticated access via SSH out of the box.</p>
+<h3>Examples</h3>
+<p>In addition to origin, it’s often convenient to have a connection to your teammates’ repositories. For example, if your co-worker, John, maintained a publicly accessible repository on <code>dev.example.com/john.git</code>, you could add a connection as follows:</p>
+<pre><code>git remote add john http://dev.example.com/john.git</code></pre>
+<p>Having this kind of access to individual developers’ repositories makes it possible to collaborate outside of the central repository. This can be very useful for small teams working on a large project.</p>
+<h2 id="git-fetch">git fetch</h2>
+<p>The <code>git fetch</code> command imports commits from a remote repository into your local repo. The resulting commits are stored as remote branches instead of the normal local branches that we’ve been working with. This gives you a chance to review changes before integrating them into your copy of the project.</p>
+<h3>Usage</h3>
+<pre><code>git fetch &lt;remote&gt;</code></pre>
+<p>Fetch all of the branches from the repository. This also downloads all of the required commits and files from the other repository.</p>
+<pre><code>git fetch &lt;remote&gt; &lt;branch&gt;</code></pre>
+<p>Same as the above command, but only fetch the specified branch.</p>
+<h3>Discussion</h3>
+<p>Fetching is what you do when you want to see what everybody else has been working on. Since fetched content is represented as a remote branch, it has absolutely no effect on your local development work. This makes fetching a safe way to review commits before integrating them with your local repository. It’s similar to svn update in that it lets you see how the central history has progressed, but it doesn’t force you to actually merge the changes into your repository.</p>
+<h4>Remote Branches</h4>
+<p>Remote branches are just like local branches, except they represent commits from somebody else’s repository. You can check out a remote branch just like a local one, but this puts you in a detached <code>HEAD</code> state (just like checking out an old commit). You can think of them as read-only branches. To view your remote branches, simply pass the <code>-r</code> flag to the <code>git branch</code> command. Remote branches are prefixed by the remote they belong to so that you don’t mix them up with local branches. For example, the next code snippet shows the branches you might see after fetching from the origin remote:</p>
+<pre><code>git branch -r
+# origin/master
+# origin/develop
+# origin/some-feature</code></pre>
+<p>Again, you can inspect these branches with the usual <code>git checkout</code> and <code>git log</code> commands. If you approve the changes a remote branch contains, you can merge it into a local branch with a normal <code>git merge</code>. So, unlike SVN, synchronizing your local repository with a remote repository is actually a two-step process: fetch, then merge. The <a href="https://www.atlassian.com/git/tutorials/syncing/git-pull"><code>git pull</code></a> command is a convenient shortcut for this process.</p>
+<h3>Examples</h3>
+<p>This example walks through the typical workflow for synchronizing your local repository with the central repository's <code>master</code> branch.</p>
+<pre><code>git fetch origin</code></pre>
+<p>This will display the branches that were downloaded:</p>
+<pre><code>a1e8fb5..45e66a4 master -&gt; origin/master
+a1e8fb5..9e8ab1c develop -&gt; origin/develop
+* [new branch] some-feature -&gt; origin/some-feature</code></pre>
+<p>The commits from these new remote branches are shown as squares instead of circles in the diagram below. As you can see, <code>git fetch</code> gives you access to the entire branch structure of another repository.</p>
+<img src="./git pull and git fetch best example nazeer understand well_files/02.svg" alt="Git Tutorial: git fetch">
+<p>To see what commits have been added to the upstream master, you can run a <code>git log</code> using <code>origin/master</code> as a filter</p>
+<pre><code>git log --oneline master..origin/master</code></pre>
+<p>To approve the changes and merge them into your local <code>master</code> branch with the following commands:</p>
+<pre><code>git checkout master
+git log origin/master</code></pre>
+<p>Then we can use <code>git merge origin/master</code></p>
+<pre><code>git merge origin/master</code></pre>
+<p>The origin/master and master branches now point to the same commit, and you are synchronized with the upstream developments.</p>
+<h2 id="git-pull">git pull</h2>
+<p>Merging upstream changes into your local repository is a common task in Git-based collaboration workflows. We already know how to do this with <a href="https://www.atlassian.com/git/tutorials/syncing/git-fetch"><code>git fetch</code></a> followed by <a href="https://www.atlassian.com/git/tutorials/using-branches/git-merge"><code>git merge</code></a>, but <code>git pull</code> rolls this into a single command.</p>
+<h3>Usage</h3>
+<pre><code>git pull &lt;remote&gt;</code></pre>
+<p>Fetch the specified remote’s copy of the current branch and immediately merge it into the local copy. This is the same as <code>git fetch &lt;remote&gt;</code> followed by <code>git merge origin/&lt;current-branch&gt;.</code></p>
+<pre><code>git pull --rebase &lt;remote&gt;</code></pre>
+<p>Same as the above command, but instead of using <code>git merge</code> to integrate the remote branch with the local one, use <code>git rebase</code>.</p>
+<h3>Discussion</h3>
+<p>You can think of <code>git pull</code> as Git's version of <code>svn update</code>. It’s an easy way to synchronize your local repository with upstream changes. The following diagram explains each step of the pulling process.</p>
+<img src="./git pull and git fetch best example nazeer understand well_files/03.svg" alt="Git Tutorial: git pull">
+<p>You start out thinking your repository is synchronized, but then <code>git fetch</code> reveals that origin's version of <code>master</code> has progressed since you last checked it. Then <code>git merge</code> immediately integrates the <code>remote master</code> into the local one:</p>
+<h4>Pulling via Rebase</h4>
+<p>The <code>--rebase</code> option can be used to ensure a linear history by preventing unnecessary merge commits. Many developers prefer rebasing over merging, since it’s like saying, "I want to put my changes on top of what everybody else has done." In this sense, using <code>git pull</code> with the <code>--rebase</code> flag is even more like svn update than a plain <code>git pull</code>.</p>
+<p>In fact, pulling with <code>--rebase</code> is such a common workflow that there is a dedicated configuration option for it:</p>
+<pre><code>git config --global branch.autosetuprebase always</code></pre>
+<p>After running that command, all <code>git pull</code> commands will integrate via <code>git rebase</code> instead of <code>git merge</code>.</p>
+<h3>Examples</h3>
+<p>The following example demonstrates how to synchronize with the central repository's <code>master branch</code>:</p>
+<pre><code>git checkout master
+git pull --rebase origin</code></pre>
+<p>This simply moves your local changes onto the top of what everybody else has already contributed.</p>
+<h2 id="git-push">git push</h2>
+<p>Pushing is how you transfer commits from your local repository to a remote repo. It's the counterpart to <code>git fetch</code>, but whereas fetching imports commits to local branches, pushing exports commits to remote branches. This has the potential to overwrite changes, so you need to be careful how you use it. These issues are discussed below.</p>
+<h3>Usage</h3>
+<pre><code>git push &lt;remote&gt; &lt;branch&gt;</code></pre>
+<p>Push the specified branch to &lt;remote&gt;, along with all of the necessary commits and internal objects. This creates a local branch in the destination repository. To prevent you from overwriting commits, Git won’t let you push when it results in a non-fast-forward merge in the destination repository.</p>
+<pre><code>git push &lt;remote&gt; --force</code></pre>
+<p>Same as the above command, but force the push even if it results in a non-fast-forward merge. Do not use the <code>--force</code> flag unless you’re absolutely sure you know what you’re doing.</p>
+<pre><code>git push &lt;remote&gt; --all</code></pre>
+<p>Push all of your local branches to the specified remote.</p>
+<pre><code>git push &lt;remote&gt; --tags</code></pre>
+<p>Tags are not automatically pushed when you push a branch or use the <code>--all</code> option. The <code>--tags</code> flag sends all of your local tags to the remote repository.</p>
+<h3>Discussion</h3>
+<p>The most common use case for <code>git push</code> is to publish your local changes to a central repository. After you’ve accumulated several local commits and are ready to share them with the rest of the team, you (optionally) clean them up with an interactive rebase, then push them to the central repository.</p>
+<img src="./git pull and git fetch best example nazeer understand well_files/04.svg" alt="Git Tutorial: git push">
+<p>The above diagram shows what happens when your local <code>master</code> has progressed past the central repository’s <code>master</code> and you publish changes by running <code>git push origin master</code>. Notice how <code>git push</code> is essentially the same as running <code>git merge master</code> from inside the remote repository.</p>
+<h4>Force Pushing</h4>
+<p>Git prevents you from overwriting the central repository’s history by refusing push requests when they result in a non-fast-forward merge. So, if the remote history has diverged from your history, you need to pull the remote branch and merge it into your local one, then try pushing again. This is similar to how SVN makes you synchronize with the central repository via <code>svn update</code> before committing a changeset.</p>
+<p>The <code>--force</code> flag overrides this behavior and makes the remote repository’s branch match your local one, deleting any upstream changes that may have occurred since you last pulled. The only time you should ever need to force push is when you realize that the commits you just shared were not quite right and you fixed them with a <code>git commit --amend</code> or an interactive rebase. However, you must be absolutely certain that none of your teammates have pulled those commits before using the <code>--force</code> option.</p>
+<h4>Only Push to Bare Repositories</h4>
+<p>In addition, you should only push to repositories that have been created with the <code>--bare</code> flag. Since pushing messes with the remote branch structure, it’s important to never push to another developer’s repository. But because bare repos don’t have a working directory, it’s impossible to interrupt anybody’s developments.</p>
+<h3>Examples</h3>
+<p>The following example describes one of the standard methods for publishing local contributions to the central repository. First, it makes sure your local <code>master</code> is up-to-date by fetching the central repository’s copy and rebasing your changes on top of them. The interactive rebase is also a good opportunity to clean up your commits before sharing them. Then, the <code>git push</code> command sends all of the commits on your local <code>master</code> to the central repository.</p>
+<pre><code>git checkout master
+git fetch origin master
+git rebase -i origin/master
+# Squash commits, fix up commit messages etc.
+git push origin master</code></pre>
+<p>Since we already made sure the local <code>master</code> was up-to-date, this should result in a fast-forward merge, and <code>git push</code> should not complain about any of the non-fast-forward issues discussed above.</p>
+</div></div>
+<div class="_footer">
+<a href="https://www.atlassian.com/git/tutorials/making-a-pull-request" class="cms-link cms-link--text"><div class="g-column g-6-12 g-centered">
+<div class="_hero">
+<img src="./git pull and git fetch best example nazeer understand well_files/hero(1).svg" alt="Making a pull request">
+</div>
+<h5>Next up:</h5>
+<h4>Making a Pull&nbsp;Request</h4>
+<a href="https://www.atlassian.com/git/tutorials/making-a-pull-request" class="cms-link cms-link--text">Start next tutorial</a>
+</div></a></div>
+</div>
+</div>
+<div id="footer" class="footer is-tutorial ">
+<div class="g-row _atlassian-logo">
+<div class="g-column g-12-12">
+<h5>Powered By</h5>
+<a href="https://www.atlassian.com/" class="cms-link cms-link--image"><img src="./git pull and git fetch best example nazeer understand well_files/atlassian_white_charlie_white.svg" alt="Atlassian"></a>
+</div></div>
+<div class="g-row">
+<div class="g-column g-4-12 t-12-12 m-12-12 t-gutterless">
+<h6>Recommend</h6>
+<a href="https://twitter.com/home?status=Switching%20to%20%23Git?%20Use%20the%20Atlassian%20Git%20tutorials%20to%20jumpstart%20your%20training%20in%20Git%20commands%20and%20workflows.%20https://www.atlassian.com/git" class="cms-link cms-link--image social-code"><img src="./git pull and git fetch best example nazeer understand well_files/icon-twitter.svg" alt="Twitter"></a>
+<a href="https://www.facebook.com/sharer/sharer.php?u=https://www.atlassian.com/git" class="cms-link cms-link--image social-code"><img src="./git pull and git fetch best example nazeer understand well_files/icon-facebook.svg" alt="Facebook"></a>
+<a href="https://plus.google.com/share?url=https://www.atlassian.com/git" class="cms-link cms-link--image social-code"><img src="./git pull and git fetch best example nazeer understand well_files/icon-gplus.svg" alt="GooglePlus"></a>
+</div><div class="g-column g-4-12 t-12-12 m-12-12 t-gutterless">
+<h6>Want future articles?</h6>
+<form class="newsletter">
+<input class="is-empty _input" type="email" placeholder="Enter Your Email For Git News">
+<button type="submit" class="_status icon-email-submit">Submit</button>
+</form>
+</div><div class="g-column g-4-12 t-12-12 m-12-12 t-gutterless">
+<h6>Site hosted by</h6>
+<a href="https://bitbucket.org/" class="cms-link cms-link--image"><img src="./git pull and git fetch best example nazeer understand well_files/logo-bitbucket-footer.svg" alt="Bitbucket" class="_bitbucket-logo"></a>
+</div></div>
+<div class="g-row">
+<div class="g-column g-12-12 t-12-12 m-12-12">
+<p class="license"><a class="icon-global-cclicense" href="http://creativecommons.org/licenses/by/2.5/au/" rel="nofollow">creativecommons.org</a>Except where otherwise noted, all content is licensed under a <a href="http://creativecommons.org/licenses/by/2.5/au/" rel="nofollow">Creative Commons Attribution 2.5 Australia License</a>.</p>
+</div></div>
+</div>
+<script type="text/javascript">
+var HTTP_PREFIX = "";
+</script>
+<script type="text/javascript" src="./git pull and git fetch best example nazeer understand well_files/app.js"></script>
+<script type="text/javascript">
+(function(){
+var imkt = window.imkt || (window.imkt = {});
+imkt.isEditMode = false;
+imkt.isProduction = true;
+imkt.constants = imkt.constants || {};
+imkt.constants.rootPath = "/";
+imkt.constants.assetPath = "https://wac-cdn.atlassian.com" + "/assets/";
+imkt.constants.libPath = imkt.constants.assetPath + "bower_components/";
+imkt.constants.cdnVersionQuery = "?cdnVersion=ej";
+imkt.constants.isDevUser = false;
+imkt.constants.mobileBreakpoint = 640;
+})();
+</script>
+<script type="text/x-component">
+{
+"type":"imkt.pages.WACPage",
+"params": {
+}
+}
+</script>
+<script src="./git pull and git fetch best example nazeer understand well_files/atl-analytics.min.js"></script>
+<script>ace.analytics.Initializer.initWithPageAnalytics('kiv6wyh2nw');</script>
+
+<!-- LastRendered: May 2, 2017 10:57:13 PM -->
+<script type="text/javascript" id="">(function(a,b,c,d,e){a=b.createElement(c);b=b.getElementsByTagName(c)[0];a.async=1;a.id=e;a.src=d;b.parentNode.insertBefore(a,b)})(window,document,"script","https://scripts.demandbase.com/BwkB5d1U.min.js","demandbase_js_lib");</script>
+
+<script type="text/javascript" id="">var google_conversion_id=975152762,google_custom_params=window.google_tag_params,google_remarketing_only=!0;</script>
+<script type="text/javascript" id="" src="./git pull and git fetch best example nazeer understand well_files/conversion.js"></script>
+<script type="text/javascript" id="" src="./git pull and git fetch best example nazeer understand well_files/oct.js"></script><script type="text/javascript" id="">var ezt=ezt||[];(function(){var a=document.createElement("script");a.src=("https:"==document.location.protocol?"https://secure":"http://pixel")+".quantserve.com/aquant.js?a\x3dp-FusEMnpXn6KFm";a.async=!0;a.type="text/javascript";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)})();ezt.push({qacct:"p-FusEMnpXn6KFm",orderid:"",revenue:""});</script>
+<noscript>
+  &lt;img src="//pixel.quantserve.com/pixel/p-FusEMnpXn6KFm.gif?labels=_fp.event.Default" style="display: none;" border="0" height="1" width="1" alt="Quantcast"&gt;
+</noscript><script type="text/javascript" id="">(function(a){var g="https://api.autopilothq.com/anywhere/",h="2f4c1d42d2a84522ac151d8736f8fbef3576a517edc74dc28bd142489cf5ba04",m=window.AutopilotAnywhere={_runQueue:[],run:function(){this._runQueue.push(arguments)}},e=encodeURIComponent,k="SCRIPT",c=document,l=c.getElementsByTagName(k)[0],b="t\x3d"+e(c.title||"")+"\x26u\x3d"+e(c.location.href||"")+"\x26r\x3d"+e(c.referrer||""),n="text/javascript",f;window.Autopilot||(window.Autopilot=m);a.app&&(b="devmode\x3dtrue\x26"+b);f=function(a,b){var d=c.createElement(k);
+d.src=a;d.type=n;d.async=b;l.parentNode.insertBefore(d,l)};a.noaa||f(g+"aa/"+h+"?"+b,!1);a=function(){f(g+h+"?"+b,!0)};window.attachEvent?window.attachEvent("onload",a):window.addEventListener("load",a,!1)})({});</script><script type="text/javascript" id="">(function(c,b){var a,d;"function"!=typeof c.ClickTaleCreateDOMElement&&(c.ClickTaleCreateDOMElement=function(a){return b.createElementNS?b.createElementNS("http://www.w3.org/1999/xhtml",a):b.createElement(a)});c.WRInitTime=(new Date).getTime();a=ClickTaleCreateDOMElement("script");a.type="text/javascript";d="https:"==b.location.protocol?"https://cdnssl.clicktale.net/":"http://cdn.clicktale.net/";d+="www33/ptc/ef81b94c-8498-4f12-b358-eb76a000a247.js";a.src=d;b.getElementsByTagName("body")[0].appendChild(a)})(window,
+document);</script><script type="text/javascript" src="./git pull and git fetch best example nazeer understand well_files/ef81b94c-8498-4f12-b358-eb76a000a247.js"></script>
+<noscript>
+&lt;div style="display:inline;"&gt;
+&lt;img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/975152762/?value=0&amp;amp;guid=ON&amp;amp;script=0"&gt;
+&lt;/div&gt;
+</noscript><div style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.4120600147093971"><img style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.8591317914655527" width="0" height="0" alt="" src="./git pull and git fetch best example nazeer understand well_files/0"></div><script type="text/javascript">// Copyright 2006-2017 ClickTale Ltd., US Patent Pending
+// PID: 45
+// WR destination: www33
+// WR version: latest
+// Recording ratio: 0.6
+// Generated on: 4/2/2017 9:48:15 AM (UTC 4/2/2017 2:48:15 PM)
+(function (){
+	var dependencyCallback;
+        var scriptSyncTokens = ["wr"];
+        var ct2Callback, isRecorderReady;
+    var dependencies = scriptSyncTokens.slice(0);
+    var clickTaleOnReadyList = window.ClickTaleOnReadyList || (window.ClickTaleOnReadyList = []);
+    var indexOf = (function(){if(Array.prototype.indexOf){return function(array,value){return array.indexOf(value)}}return function(array,value){var length=array.length;for(var i=0;i<length;i++){if(array[i]===value){return i}}return -1}})();
+    function isValidToken(token) {
+        if (indexOf(scriptSyncTokens, token) > -1) {
+            var index = indexOf(dependencies, token);
+
+            if (index > -1) {
+                dependencies.splice(index, 1);
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    clickTaleOnReadyList.push(function () {
+        if (ct2Callback) {
+            ct2Callback();
+        }
+
+        isRecorderReady = true;
+    });
+
+    window.ClickTaleGlobal = window.ClickTaleGlobal || {};
+    ClickTaleGlobal.scripts = ClickTaleGlobal.scripts || {};
+    ClickTaleGlobal.scripts.dependencies = {
+        setDependencies: function (deps) {
+            scriptSyncTokens = deps;
+        },
+        onDependencyResolved: function (callback) {
+            dependencyCallback = callback;
+        },
+        notifyScriptLoaded: function (token) {
+            if (isValidToken(token)) {
+                if (dependencies.length === 0 && typeof dependencyCallback === "function") {
+                    dependencyCallback();
+                }
+            }
+        }
+    };
+
+    ClickTaleGlobal.scripts.integration = {
+        onReady: function (callback) {
+            if (isRecorderReady) {
+                callback();
+            }
+            else {
+                ct2Callback = callback;
+            }
+        }
+    };
+})();
+
+
+
+
+function ClickTaleCDNHTTPSRewrite(u)
+{
+	try
+	{
+		var scripts = document.getElementsByTagName('script');
+		if(scripts.length)
+		{
+			var script = scripts[ scripts.length - 1 ], s='https://clicktalecdn.sslcs.cdngc.net/';
+			if(script.src && script.src.substr(0,s.length)==s )
+				return u.replace('https://cdnssl.clicktale.net/',s);
+		}
+	}
+	catch(e)
+	{
+	}
+	return u;
+} 
+
+window.ClickTaleIsXHTMLCompliant = true;
+if (typeof (ClickTaleCreateDOMElement) != "function")
+{
+	ClickTaleCreateDOMElement = function(tagName)
+	{
+		if (document.createElementNS)
+		{
+			return document.createElementNS('http://www.w3.org/1999/xhtml', tagName);
+		}
+		return document.createElement(tagName);
+	}
+}
+
+if (typeof (ClickTaleAppendInHead) != "function")
+{
+	ClickTaleAppendInHead = function(element)
+	{
+		var parent = document.getElementsByTagName('head').item(0) || document.documentElement;
+		parent.appendChild(element);
+	}
+}
+
+if (typeof (ClickTaleXHTMLCompliantScriptTagCreate) != "function")
+{
+	ClickTaleXHTMLCompliantScriptTagCreate = function(code)
+	{
+		var script = ClickTaleCreateDOMElement('script');
+		script.setAttribute("type", "text/javascript");
+		script.text = code;
+		return script;
+	}
+}	
+
+var pccScriptElement = ClickTaleCreateDOMElement('script');
+pccScriptElement.type = "text/javascript";
+pccScriptElement.src = (document.location.protocol=='https:'?
+ClickTaleCDNHTTPSRewrite('https://cdnssl.clicktale.net/www33/pcc/ef81b94c-8498-4f12-b358-eb76a000a247.js?DeploymentConfigName=Release_20170108&Version=2'):
+'http://cdn.clicktale.net/www33/pcc/ef81b94c-8498-4f12-b358-eb76a000a247.js?DeploymentConfigName=Release_20170108&Version=2');
+ClickTaleGlobal.init.isAllowed && document.body.appendChild(pccScriptElement);
+	
+if (typeof window.ClickTaleScriptSource == 'undefined') {
+	window.ClickTaleScriptSource=(document.location.protocol=='https:'
+		?ClickTaleCDNHTTPSRewrite('https://cdnssl.clicktale.net/www/')
+		:'http://cdn.clicktale.net/www/');
+}
+
+
+// Start of user-defined pre WR code (PreLoad)
+//PTC Code Version 8
+
+window.ClickTaleSettings = window.ClickTaleSettings || {};
+window.ClickTaleSettings.PTC = window.ClickTaleSettings.PTC || {};
+//set the following property only when there are No Load errors in recordings
+//window.ClickTaleIncludedOnWindowLoad = true;
+window.ClickTaleIncludedOnDOMReady = true;
+window.ClickTaleSettings.PTC.EnableChangeMonitor = false;
+window.ClickTaleSettings.PTC.UseTransport = true;
+window.ClickTaleUIDCookieName = 'WRUIDAWS';
+
+function deleteIrrelevantUIDCookies(relevant) {
+    var cookieArray = document.cookie.replace(/\s+/g, '').split(";");
+    var hostArray = location.host.split('.');
+    var topDom = (hostArray.length <= 2 ? location.host : hostArray.slice(1).join('.'));
+    for (var i = 0; i < cookieArray.length; i++) {
+        var currentCookie = cookieArray[i];
+        var cookieKey = currentCookie.substring(0, currentCookie.indexOf('='));
+        if (cookieKey.indexOf('WRUID') > -1 && relevant.indexOf(cookieKey) == -1) {
+            document.cookie = cookieKey + "='';domain=." + topDom + ";path=/;expires=Thu, 01-Jan-1970 00:00:01 GMT;";
+            document.cookie = cookieKey + "='';path=/;expires=Thu, 01-Jan-1970 00:00:01 GMT;";
+        }
+    }
+}
+deleteIrrelevantUIDCookies([window.ClickTaleUIDCookieName]);
+
+window.ClickTaleSettings.CheckAgentSupport = function (f, v) {
+    if (v.t == v.IE && v.v <= 8) {
+        window.ClickTaleSettings.PTC.okToRunPCC = false;
+        return false;
+    }
+    else {
+        if (!(v.t == v.IE && v.v <= 10)) {
+            window.ClickTaleSettings.PTC.EnableChangeMonitor = true;
+            window.ClickTaleSettings.PTC.ConfigChangeMonitor();
+        }
+        var fv = f(v);
+        window.ClickTaleSettings.PTC.okToRunPCC = fv;
+        return fv;
+    }
+};
+window.ClickTaleSettings.Persistence = {
+    EnableStorage: true,
+    EnableStreams: true,
+    EnableDispatch: true,
+};
+
+window.ClickTaleSettings.Protocol = {
+    Method: "ImpactRecorder"
+};
+
+window.ClickTaleSettings.Proxy = {
+    WR: "ing-district.clicktale.net/ctn_v2/",
+    ImageFlag: "ing-district.clicktale.net/ctn_v2/"
+};
+
+window.ClickTaleSettings.PTC.RulesObj = [{
+    selector: "input[type=\"text\"], input[type=\"tel\"], input[type=\"email\"]",
+    changeMon: {
+        Attributes: ['value'],
+        Text: false
+    },
+    rewriteApi: {
+        Attributes: ['value'],
+        Text: false
+    }
+}, {
+    selector: ".ctHidden",
+    changeMon: {
+        Attributes: ['value'],
+        Text: true
+    },
+    rewriteApi: {
+        Attributes: ['value'],
+        Text: true
+    }
+}];
+
+window.ClickTaleSettings.PTC.RulesObjRemoveEls = [
+];
+
+;(function () {
+    if (typeof window.ClickTalePIISelector === 'string' && window.ClickTalePIISelector != '') {
+        try {
+            var domNodes = document.querySelectorAll(window.ClickTalePIISelector);
+            if (domNodes) {
+                window.ClickTaleSettings.PTC.RulesObj.push({
+                    selector: window.ClickTalePIISelector,
+                    changeMon: {
+                        Attributes: ['value'],
+                        Text: true
+                    },
+                    rewriteApi: {
+                        Attributes: ['value'],
+                        Text: true
+                    }
+                });
+            }
+        }
+        catch (err) {
+        }
+    }
+})();
+
+window.ClickTaleSettings.PTC.cloneNodeIE9 = function (node) {
+    var clone = node.nodeType === 3 ? document.createTextNode(node.nodeValue) : node.cloneNode(false);
+    var child = node.firstChild;
+    while (child) {
+        var nodeName = child.nodeName.toLowerCase();
+        if (nodeName == 'script') {
+            var script = document.createElement('script');
+            clone.appendChild(script);
+        }
+        else if (window.ClickTaleSettings.PTC.cloneNodeIE9.badEls[nodeName]) {
+            var newN = document.createElement(nodeName);
+            var attributes = child.attributes;
+            var attrLength = attributes.length;
+            for (var i = 0; i < attrLength; i++) {
+                var attr = attributes[i];
+                if (!/['"{}]/.test(attr.nodeName)) {
+                    newN.setAttribute('ctdep-' + attr.nodeName, attr.nodeValue);
+                }
+            }
+            if (child.ClickTale && child.ClickTale.CustomID) {
+                newN.setAttribute('data-ClickTaleCustomId', child.ClickTale.CustomID);
+            }
+            clone.appendChild(newN);
+        }
+        else {
+            clone.appendChild(window.ClickTaleSettings.PTC.cloneNodeIE9(child));
+        }
+        child = child.nextSibling;
+    }
+    if (node.ClickTale && node.ClickTale.CustomID) {
+        clone.setAttribute('data-ClickTaleCustomId', node.ClickTale.CustomID);
+    }
+    return clone;
+}
+
+window.ClickTaleSettings.PTC.cloneNodeIE9.badEls = {
+    'iframe': true,
+    'img': true,
+    'source' : true
+};
+
+window.ClickTaleSettings.PTC.ConfigChangeMonitor = function() {
+
+    if (window.ClickTaleSettings.PTC.EnableChangeMonitor) {
+        window.ClickTaleSettings.XHRWrapper = {
+            Enable: false
+        };
+
+        var script = document.createElement("SCRIPT");
+        script.src = (document.location.protocol === "https:" ? "https://cdnssl." : "http://cdn.") + "clicktale.net/www/ChangeMonitor-latest.js";
+        document.body.appendChild(script);
+
+        window.ClickTaleSettings.ChangeMonitor = {
+            Enable: true,
+            AddressingMode: "id",
+            OnReadyHandler: function(changeMonitor) {
+                changeMonitor.observe();
+
+                var CMRemrule = window.ClickTaleSettings.PTC.RulesObjRemoveEls;
+                if (CMRemrule) {
+                    for (var i = 0; i < CMRemrule.length; i++) {
+                        var rule = CMRemrule[i];
+                        var CMlocation = rule['location'];
+                        if ((!CMlocation || (CMlocation && document.location[CMlocation['prop']].toLowerCase().search(CMlocation.search) != -1))) {
+                            if (rule.changeMon) {
+                                changeMonitor.exclude(rule.changeMon);
+                            }
+                            if (rule.changeMonLive) {
+                                changeMonitor.exclude({
+                                    selector: rule.changeMonLive,
+                                    multiple: true
+                                });
+                            }
+                        }
+                    }
+                }
+            },
+            OnBeforeReadyHandler: function(settings) {
+                settings.Enable = window.ClickTaleGetUID ? !!ClickTaleGetUID() : false;
+                return settings;
+            },
+            Filters: {
+                MaxBufferSize: 300000,
+                MaxElementCount: 3000
+            },
+            PII: {
+                Text: [],
+                Attributes: []
+            }
+        }
+        var RulesObj = window.ClickTaleSettings.PTC.RulesObj;
+        if (RulesObj) {
+            window.ClickTaleSettings.ChangeMonitor.PII.Text = window.ClickTaleSettings.ChangeMonitor.PII.Text || [];
+            window.ClickTaleSettings.ChangeMonitor.PII.Attributes = window.ClickTaleSettings.ChangeMonitor.PII.Attributes || [];
+            for (var i = 0; i < RulesObj.length; i++) {
+                var CMrule = RulesObj[i]['changeMon'];
+                var CMlocation = RulesObj[i]['location'];
+                if (!CMrule || (CMlocation && document.location[CMlocation['prop']].toLowerCase().search(CMlocation.search) === -1)) {
+                    continue;
+                }
+                var selector = RulesObj[i]['selector'];
+                var attributesArr = CMrule.Attributes;
+                if (attributesArr instanceof Array) {
+                    window.ClickTaleSettings.ChangeMonitor.PII.Attributes.push({
+                        selector: selector,
+                        transform: (function(attributesArr) {
+                            return function(el) {
+                                var attrs = el.attributes;
+                                var attrsToReturn = {}
+                                for (var i = 0; i < attrs.length; i++) {
+                                    var name = attrs[i].nodeName;
+                                    attrsToReturn[name] = attrs[i].nodeValue;
+                                }
+                                for (var u = 0; u < attributesArr.length; u++) {
+                                    var attr = attributesArr[u];
+                                    var attrib = el.getAttribute(attr);
+                                    if (typeof attrib === 'string') {
+                                        attrsToReturn[attr] = attrib.replace(/\w/g, '-');
+                                    }
+                                }
+
+                                return attrsToReturn;
+                            }
+                        })(attributesArr)
+                    });
+                }
+                if (CMrule.Text) {
+                    window.ClickTaleSettings.ChangeMonitor.PII.Text.push({
+                        selector: selector,
+                        transform: function(el) {
+                            return el.textContent.replace(/\w/g, '-');
+                        }
+                    });
+                }
+            }
+        }
+    }
+};
+
+window.ClickTaleSettings.Compression = {
+    Method: function() {
+        return "deflate";
+    }
+};
+
+window.ClickTaleSettings.Transport = {
+    Legacy: false,
+    MaxConcurrentRequests: 5
+};
+
+window.ClickTaleSettings.RewriteRules = {
+    OnBeforeRewrite: function(rewriteApi) {
+        var bodyClone = ClickTaleSettings.PTC.cloneNodeIE9(document.documentElement);
+
+        if (window.ClickTaleSettings.PTC.RulesObj) {
+            rewriteApi.add(function(buffer) {
+
+                var RulesObj = window.ClickTaleSettings.PTC.RulesObj;
+                for (var i = 0; i < RulesObj.length; i++) {
+                    var rewriteApirule = RulesObj[i]['rewriteApi'];
+                    var rewriteApilocation = RulesObj[i]['location'];
+                    if (!rewriteApirule || (rewriteApilocation && document.location[rewriteApilocation['prop']].toLowerCase().search(rewriteApilocation.search) === -1)) {
+                        continue;
+                    }
+                    var selector = RulesObj[i]['selector'];
+                    var elements = bodyClone.querySelectorAll(selector);
+
+                    Array.prototype.forEach.call(elements, function(el, ind) {
+                        var attributesArr = rewriteApirule.Attributes;
+                        if (attributesArr instanceof Array) {
+
+                            for (var u = 0; u < attributesArr.length; u++) {
+                                var attr = attributesArr[u];
+                                var attrib = el.getAttribute(attr);
+                                if (typeof attrib === 'string') {
+                                    el.setAttribute(attr, attrib.replace(/\w/g, '-'));
+                                }
+                            }
+
+                        }
+                        if (rewriteApirule.Text) {
+                            var children = el.childNodes;
+                            Array.prototype.forEach.call(children, function(child) {
+                                if (child && child.nodeType === 3) {
+                                    child.textContent = child.textContent.replace(/\w/g, '-');
+                                }
+                            });
+                        }
+                    });
+                }
+
+                var RulesObjRemoveEls = window.ClickTaleSettings.PTC.RulesObjRemoveEls;
+                if (RulesObjRemoveEls) {
+                    for (var i = 0; i < RulesObjRemoveEls.length; i++) {
+                        if (RulesObjRemoveEls[i].rewriteApi) {
+                            var elementsToRemove = bodyClone.querySelectorAll(RulesObjRemoveEls[i].rewriteApi);
+                            Array.prototype.forEach.call(elementsToRemove, function(el, ind) {
+                                if (el.parentNode) {
+                                    el.parentNode.removeChild(el);
+                                }
+                            });
+                        }
+                        if (RulesObjRemoveEls[i].rewriteApiReplace) {
+                            var elementsToReplace = bodyClone.querySelectorAll(RulesObjRemoveEls[i].rewriteApiReplace);
+                            Array.prototype.forEach.call(elementsToReplace, function(el, ind) {
+                                if (el.parentNode) {
+                                    var comment = document.createComment(el.outerHTML);
+                                    el.parentNode.replaceChild(comment, el);
+                                }
+                            });
+                        }
+                    }
+                }
+
+                return bodyClone.innerHTML.replace(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi, '<script><\/script>').replace(/(<div id="?ClickTaleDiv"?[^>]+>)\s*<script[^>]+><\/script>\s*(<\/div>)/i, '$1$2');
+            });
+        }
+        rewriteApi.add({
+            pattern: /ctdep-/gi,
+            replace: ''
+        });
+        rewriteApi.add({
+            pattern: /(<head[^>]*>)/i,
+            replace: '$1<script type="text\/javascript" class="cm-ignore" src="http:\/\/dummytest.clicktale-samples.com\/GlobalResources\/jquery.js"><\/script>'
+        });
+    }
+};
+
+// End of user-defined pre WR code
+
+
+window.ClickTalePrevOnReady = typeof window.ClickTaleOnReady == 'function' ? window.ClickTaleOnReady : void 0;
+
+window.ClickTaleOnReady = function() {
+	var PID=45, 
+		Ratio=0.6, 
+		PartitionPrefix="www33",
+		SubsId=233232;
+	
+	if (window.navigator && window.navigator.loadPurpose === "preview") {
+       return;
+	};
+		
+	
+	// Start of user-defined header code (PreInitialize)
+	if (typeof ClickTaleSetAllSensitive === "function") {
+    ClickTaleSetAllSensitive();
+};
+
+window.ClickTaleSettings.PTC.InitFuncs = window.ClickTaleSettings.PTC.InitFuncs || [];
+window.ClickTaleSettings.PTC.InitFuncs.push(function() {
+    var pcc = document.querySelector('script[src*="clicktale"][src*="pcc"]');
+    if (pcc) {
+        var versionmatch = pcc.src.match(/DeploymentConfigName=(.+)/i);
+        if (versionmatch && typeof ClickTaleExec === 'function') {
+            ClickTaleExec("console.info('" + versionmatch[0] + "');");
+            ClickTaleEvent("Config: " + versionmatch[1].replace(/\&.+/, ''));
+        }
+    }
+});
+
+function doUpload() {
+    if (typeof ClickTaleUploadPageNow === 'function' && ClickTaleIsRecording()) {
+        ClickTaleUploadPageNow();
+               
+    };
+};
+
+function isReadyToRecord() {
+    if (typeof ClickTaleUploadPageNow === 'function' && ClickTaleIsRecording()) {
+        return true;
+    }
+    return false;
+};
+
+function doOnlyWhen(toDoHandler, toCheckHandler, interval, times, failHandler) {
+    if ((!toDoHandler) || (!toCheckHandler)) return;
+    if (typeof interval == "undefined") interval = 1000;
+    if (typeof times == "undefined") times = 20;
+    if (--times < 0) {
+        if (typeof failHandler === 'function') {
+            failHandler();
+        }
+        return;
+    }
+    if (toCheckHandler()) {
+        toDoHandler();
+        return;
+    }
+    setTimeout(function() {
+        doOnlyWhen(toDoHandler, toCheckHandler, interval, times, failHandler);
+    }, interval);
+};
+
+if (typeof ClickTaleDelayUploadPage === 'function' && window.ClickTaleSettings.PTC.UseTransport) {
+    ClickTaleDelayUploadPage();
+
+    doOnlyWhen(doUpload, isReadyToRecord, 300, 20, doUpload);
+
+    var initFuncs = window.ClickTaleSettings.PTC.InitFuncs;
+    for (var i = 0, initLen = initFuncs.length; i < initLen; i++) {
+        if (typeof initFuncs[i] === 'function') {
+            initFuncs[i]();
+        }
+    }
+}
+
+	// End of user-defined header code (PreInitialize)
+    
+	
+	window.ClickTaleIncludedOnDOMReady=true;
+	
+	ClickTaleGlobal.init.isAllowed && ClickTale(PID, Ratio, PartitionPrefix, SubsId);
+	
+	if((typeof ClickTalePrevOnReady == 'function') && (ClickTaleOnReady.toString() != ClickTalePrevOnReady.toString()))
+	{
+    	ClickTalePrevOnReady();
+	}
+	
+	
+	// Start of user-defined footer code
+	
+	// End of user-defined footer code
+	
+}; 
+(function() {
+	var div = ClickTaleCreateDOMElement("div");
+	div.id = "ClickTaleDiv";
+	div.style.display = "none";
+	document.body.appendChild(div);
+
+	
+	
+	var wrScript = ClickTaleCreateDOMElement("script"),
+		wrSrc = (document.location.protocol=='https:' ? 'https://cdnssl.clicktale.net/www/' : 'http://cdn.clicktale.net/www/') + 'tc/WR-latest.js';
+	wrScript.src = (window.ClickTaleCDNHTTPSRewrite ? ClickTaleCDNHTTPSRewrite(wrSrc) : wrSrc);
+	wrScript.type = 'text/javascript';
+		wrScript.async = true;
+		ClickTaleGlobal.init.isAllowed && document.body.appendChild(wrScript);
+})();
+
+
+
+
+
+!function(){function t(){window.addEventListener&&addEventListener("message",e,!1)}function e(t){var e,o=new RegExp("(clicktale.com|qa-core.app.clicktale.com)($|:)"),c=new RegExp("qa-core.app.clicktale.com"),i=!1,a=t.origin;try{e=JSON.parse(t.data)}catch(l){return}o.test(t.origin)!==!1&&(window.ct_ve_parent_window=t.source,c.test(t.origin)===!0&&(i=!0),"CTload_ve"===e["function"]&&"function"==typeof ClickTaleGetPID&&null!==ClickTaleGetPID()&&n(a,i))}function o(t){return document.createElementNS?document.createElementNS("http://www.w3.org/1999/xhtml",t):document.createElement(t)}function n(t,e){var n=o("script");n.setAttribute("type","text/javascript"),n.setAttribute("id","ctVisualEditorClientModule");var c;c=e?document.location.protocol+"//qa-core.app.clicktale.com/VisualEditor/Client/dist/veClientModule.js":document.location.protocol+"//"+t.match(/subs\d*/)[0]+".app.clicktale.com/VisualEditor/Client/dist/veClientModule.js",n.src=c,document.getElementById("ctVisualEditorClientModule")||document.body.appendChild(n)}try{var c=window.chrome,i=window.navigator&&window.navigator.vendor;null!==c&&void 0!==c&&"Google Inc."===i&&t()}catch(a){}}();</script><script type="text/javascript" src="./git pull and git fetch best example nazeer understand well_files/ef81b94c-8498-4f12-b358-eb76a000a247(1).js"></script><div id="ClickTaleDiv" style="display: none;"><script src="./git pull and git fetch best example nazeer understand well_files/WR102b.js"></script></div><script src="./git pull and git fetch best example nazeer understand well_files/WR-latest.js" type="text/javascript" async=""></script><iframe src="./git pull and git fetch best example nazeer understand well_files/ect.html" id="db_ect" height="0" width="0" style="display: none;"></iframe><img style="display:none" alt="Demandbase pixel" id="db_pixel_ad" src="./git pull and git fetch best example nazeer understand well_files/pixel"><img style="display:none" alt="Demandbase pixel" id="db_pixel_rt" src="./git pull and git fetch best example nazeer understand well_files/pixel(1)"><script src="./git pull and git fetch best example nazeer understand well_files/ChangeMonitor-latest.js"></script>
+<script type="text/javascript" id="">twttr.conversion.trackPid("nulad",{tw_sale_amount:0,tw_order_quantity:0});twttr.conversion.trackPid("numx2",{tw_sale_amount:0,tw_order_quantity:0});twttr.conversion.trackPid("nuoaw",{tw_sale_amount:0,tw_order_quantity:0});twttr.conversion.trackPid("nujcz",{tw_sale_amount:0,tw_order_quantity:0});</script><script src="./git pull and git fetch best example nazeer understand well_files/adsct" type="text/javascript"></script><script src="./git pull and git fetch best example nazeer understand well_files/adsct(1)" type="text/javascript"></script><script src="./git pull and git fetch best example nazeer understand well_files/adsct(2)" type="text/javascript"></script><script src="./git pull and git fetch best example nazeer understand well_files/adsct(3)" type="text/javascript"></script>
+<noscript>
+&lt;img height="1" width="1" style="display:none;" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=nulad&amp;amp;p_id=Twitter&amp;amp;tw_sale_amount=0&amp;amp;tw_order_quantity=0"&gt;
+&lt;img height="1" width="1" style="display:none;" alt="" src="//t.co/i/adsct?txn_id=nulad&amp;amp;p_id=Twitter&amp;amp;tw_sale_amount=0&amp;amp;tw_order_quantity=0"&gt;
+&lt;img height="1" width="1" style="display:none;" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=numx2&amp;amp;p_id=Twitter&amp;amp;tw_sale_amount=0&amp;amp;tw_order_quantity=0"&gt;
+&lt;img height="1" width="1" style="display:none;" alt="" src="//t.co/i/adsct?txn_id=numx2&amp;amp;p_id=Twitter&amp;amp;tw_sale_amount=0&amp;amp;tw_order_quantity=0"&gt;
+&lt;img height="1" width="1" style="display:none;" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=nuoaw&amp;amp;p_id=Twitter&amp;amp;tw_sale_amount=0&amp;amp;tw_order_quantity=0"&gt;
+&lt;img height="1" width="1" style="display:none;" alt="" src="//t.co/i/adsct?txn_id=nuoaw&amp;amp;p_id=Twitter&amp;amp;tw_sale_amount=0&amp;amp;tw_order_quantity=0"&gt;
+&lt;img height="1" width="1" style="display:none;" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=nujcz&amp;amp;p_id=Twitter&amp;amp;tw_sale_amount=0&amp;amp;tw_order_quantity=0"&gt;
+&lt;img height="1" width="1" style="display:none;" alt="" src="//t.co/i/adsct?txn_id=nujcz&amp;amp;p_id=Twitter&amp;amp;tw_sale_amount=0&amp;amp;tw_order_quantity=0"&gt;
+</noscript>
+<script src="./git pull and git fetch best example nazeer understand well_files/saved_resource(5)" type="text/javascript"></script><img src="./git pull and git fetch best example nazeer understand well_files/seg(1)" width="1" height="1" border="0" alt="" style="display: none;"></body></html>

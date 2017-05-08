@@ -1,0 +1,12 @@
+git
+
+clone
+git clone ssh://git@10.157.16.129/opt/git/horizondev.git
+
+for creating a branch in local need to do following stesps 
+	>> git init taxiapp.git
+	>> cd taxiapp.git/
+	>> git add git.txt
+	>> git commit -m "commiting file" git.txt
+	>> git remote add origin https://github.com/reezanebay6/Taxi.git
+	>> git push ( basically this push will pushb our file to default branch in our git hub, but in most situation "master" branch will be the default branch so the file git.txt will be added to mater branch)
