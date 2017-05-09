@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)https://laravel.com/docs/5.4/blade -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>Blade Templates - Laravel - The PHP Framework For Web Artisans</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="author" content="Taylor Otwell">
+	<meta name="description" content="Laravel - The PHP framework for web artisans.">
+	<meta name="keywords" content="laravel, php, framework, web, artisans, taylor otwell">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="canonical" href="https://laravel.com/docs/5.4/blade">
+		<!--[if lte IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    <link href="./Blade Templates - Laravel - The PHP Framework For Web Artisans_files/css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="./Blade Templates - Laravel - The PHP Framework For Web Artisans_files/laravel-1efe8d5055.css">
+	<link rel="stylesheet" href="./Blade Templates - Laravel - The PHP Framework For Web Artisans_files/flexboxgrid.min.css" type="text/css">
+	<link rel="apple-touch-icon" href="https://laravel.com/favicon.png">
+    <script src="./Blade Templates - Laravel - The PHP Framework For Web Artisans_files/ga.js"></script><script src="./Blade Templates - Laravel - The PHP Framework For Web Artisans_files/vue.min.js"></script>
+<script id="_carbonads_projs" type="text/javascript" src="./Blade Templates - Laravel - The PHP Framework For Web Artisans_files/C6AILKT.json"></script></head>
+<body class="docs language-php scotchified" style=""><div class="scotch-panel-wrapper" style="position: relative; overflow: hidden; width: 100%;"><div class="scotch-panel-canvas" style="position: relative; height: 100%; width: 100%; transform: translate3d(0px, 0px, 0px); backface-visibility: hidden; transition: all 300ms ease;">
+
+	<span class="overlay"></span>
+
+	<nav class="main">
+		<a href="https://laravel.com/" class="brand nav-block">
+			<svg xmlns="http://www.w3.org/2000/svg" width="84.1" height="57.6" viewBox="0 0 84.1 57.6"><path fill="#FB503B" d="M83.8 26.9c-.6-.6-8.3-10.3-9.6-11.9-1.4-1.6-2-1.3-2.9-1.2s-10.6 1.8-11.7 1.9c-1.1.2-1.8.6-1.1 1.6.6.9 7 9.9 8.4 12l-25.5 6.1L21.2 1.5c-.8-1.2-1-1.6-2.8-1.5C16.6.1 2.5 1.3 1.5 1.3c-1 .1-2.1.5-1.1 2.9S17.4 41 17.8 42c.4 1 1.6 2.6 4.3 2 2.8-.7 12.4-3.2 17.7-4.6 2.8 5 8.4 15.2 9.5 16.7 1.4 2 2.4 1.6 4.5 1 1.7-.5 26.2-9.3 27.3-9.8 1.1-.5 1.8-.8 1-1.9-.6-.8-7-9.5-10.4-14 2.3-.6 10.6-2.8 11.5-3.1 1-.3 1.2-.8.6-1.4zm-46.3 9.5c-.3.1-14.6 3.5-15.3 3.7-.8.2-.8.1-.8-.2-.2-.3-17-35.1-17.3-35.5-.2-.4-.2-.8 0-.8S17.6 2.4 18 2.4c.5 0 .4.1.6.4 0 0 18.7 32.3 19 32.8.4.5.2.7-.1.8zm40.2 7.5c.2.4.5.6-.3.8-.7.3-24.1 8.2-24.6 8.4-.5.2-.8.3-1.4-.6s-8.2-14-8.2-14L68.1 32c.6-.2.8-.3 1.2.3.4.7 8.2 11.3 8.4 11.6zm1.6-17.6c-.6.1-9.7 2.4-9.7 2.4l-7.5-10.2c-.2-.3-.4-.6.1-.7.5-.1 9-1.6 9.4-1.7.4-.1.7-.2 1.2.5.5.6 6.9 8.8 7.2 9.1.3.3-.1.5-.7.6z"></path></svg>
+			<span>Laravel</span>
+		</a>
+
+        <div class="search nav-block">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="#A1A1A1" d="M5.8 11.7c-1.6 0-3-.6-4.1-1.7S0 7.4 0 5.8s.6-3 1.7-4.1C2.8.6 4.3 0 5.8 0s3 .6 4.1 1.7c2.3 2.3 2.3 6 0 8.3-1 1.1-2.5 1.7-4.1 1.7zM5.8 1c-1.3 0-2.5.5-3.4 1.4C1.5 3.3 1 4.5 1 5.8s.5 2.5 1.4 3.4c.9.9 2.1 1.4 3.4 1.4s2.5-.5 3.4-1.4c1.9-1.9 1.9-5 0-6.9C8.4 1.5 7.1 1 5.8 1z"></path><path fill="#A1A1A1" d="M15.5 16c-.1 0-.3 0-.3-.1L9.3 10c-.2-.2-.2-.5 0-.7s.5-.2.7 0l5.9 5.9c.2.2.2.5 0 .7-.1.1-.3.1-.4.1z"></path></svg>
+            <span class="twitter-typeahead" style="position: relative; display: inline-block; direction: ltr;"><input placeholder="search" type="text" id="search-input" class="tt-input" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top;"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; right: auto;"><div class="tt-dataset-0"></div></span></span>
+        </div>
+
+		<ul class="main-nav">
+			<li class="nav-docs"><a href="https://laravel.com/docs">Documentation</a></li>
+<li class="nav-laracasts"><a href="https://laracasts.com/">Laracasts</a></li>
+<li class="nav-laravel-news"><a href="https://laravel-news.com/">News</a></li>
+<li class="nav-partners"><a href="https://laravel.com/partners">Partners</a></li>
+<li class="nav-forge"><a href="https://forge.laravel.com/">Forge</a></li>
+
+<li class="dropdown community-dropdown">
+	<a href="https://laravel.com/docs/5.4/blade#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Ecosystem <span class="caret"></span></a>
+	<ul class="dropdown-menu" role="menu">
+
+		<li><a href="https://envoyer.io/">Envoyer</a></li>
+		<li><a href="https://lumen.laravel.com/">Lumen</a></li>
+		<li><a href="https://spark.laravel.com/">Spark</a></li>
+
+		<li class="divider"></li>
+
+		<li><a href="https://laracon.eu/">Laracon EU</a></li>
+		<li><a href="http://laracon.us/">Laracon US</a></li>
+		<li><a href="https://laracon.net/">Laracon Online</a></li>
+
+		<li class="divider"></li>
+
+		<li><a href="https://laracasts.com/discuss">Forums</a></li>
+		<li><a href="https://github.com/laravel/laravel">GitHub</a></li>
+		<li><a href="https://larajobs.com/?partner=5#/">Jobs</a></li>
+		<li><a href="http://www.laravelpodcast.com/">Podcast</a></li>
+		<li><a href="http://larachat.co/">Slack</a></li>
+		<li><a href="https://twitter.com/laravelphp">Twitter</a></li>
+	</ul>
+</li>
+		</ul>
+
+        			<div class="switcher">
+	<div class="dropdown">
+		<button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+			5.4
+			<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="https://laravel.com/docs/master/blade">Master</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="https://laravel.com/docs/5.4/blade">5.4</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="https://laravel.com/docs/5.3/blade">5.3</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="https://laravel.com/docs/5.2/blade">5.2</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="https://laravel.com/docs/5.1/blade">5.1</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="https://laravel.com/docs/5.0/blade">5.0</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="https://laravel.com/docs/4.2/blade">4.2</a>
+				</li>
+					</ul>
+	</div>
+</div>
+		
+        <div class="responsive-sidebar-nav">
+			<a href="https://laravel.com/docs/5.4/blade#" class="toggle-slide menu-link btn">☰</a>
+		</div>
+	</nav>
+
+	<nav id="slide-menu" class="slide-menu scotch-panel-left" role="navigation" style="top: 0px; left: -70%; width: 70%; height: 100%; position: absolute; z-index: 888888; overflow: hidden; backface-visibility: hidden; display: block;">
+
+	<div class="brand">
+		<a href="https://laravel.com/">
+			<img src="./Blade Templates - Laravel - The PHP Framework For Web Artisans_files/laravel-logo-white.png" height="50">
+		</a>
+	</div>
+
+	<ul class="slide-main-nav">
+		<li><a href="https://laravel.com/">Home</a></li>
+		<li class="nav-docs"><a href="https://laravel.com/docs">Documentation</a></li>
+<li class="nav-laracasts"><a href="https://laracasts.com/">Laracasts</a></li>
+<li class="nav-laravel-news"><a href="https://laravel-news.com/">News</a></li>
+<li class="nav-partners"><a href="https://laravel.com/partners">Partners</a></li>
+<li class="nav-forge"><a href="https://forge.laravel.com/">Forge</a></li>
+
+<li class="dropdown community-dropdown">
+	<a href="https://laravel.com/docs/5.4/blade#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Ecosystem <span class="caret"></span></a>
+	<ul class="dropdown-menu" role="menu">
+
+		<li><a href="https://envoyer.io/">Envoyer</a></li>
+		<li><a href="https://lumen.laravel.com/">Lumen</a></li>
+		<li><a href="https://spark.laravel.com/">Spark</a></li>
+
+		<li class="divider"></li>
+
+		<li><a href="https://laracon.eu/">Laracon EU</a></li>
+		<li><a href="http://laracon.us/">Laracon US</a></li>
+		<li><a href="https://laracon.net/">Laracon Online</a></li>
+
+		<li class="divider"></li>
+
+		<li><a href="https://laracasts.com/discuss">Forums</a></li>
+		<li><a href="https://github.com/laravel/laravel">GitHub</a></li>
+		<li><a href="https://larajobs.com/?partner=5#/">Jobs</a></li>
+		<li><a href="http://www.laravelpodcast.com/">Podcast</a></li>
+		<li><a href="http://larachat.co/">Slack</a></li>
+		<li><a href="https://twitter.com/laravelphp">Twitter</a></li>
+	</ul>
+</li>
+	</ul>
+
+	<div class="slide-docs-nav">
+		<h2>Documentation</h2>
+		<ul>
+<li>
+<h2>Prologue</h2>
+<ul>
+<li><a href="https://laravel.com/docs/5.4/releases">Release Notes</a></li>
+<li><a href="https://laravel.com/docs/5.4/upgrade">Upgrade Guide</a></li>
+<li><a href="https://laravel.com/docs/5.4/contributions">Contribution Guide</a></li>
+<li><a href="https://laravel.com/api/5.4">API Documentation</a></li>
+</ul>
+</li>
+<li>
+<h2>Getting Started</h2>
+<ul>
+<li><a href="https://laravel.com/docs/5.4/installation">Installation</a></li>
+<li><a href="https://laravel.com/docs/5.4/configuration">Configuration</a></li>
+<li><a href="https://laravel.com/docs/5.4/structure">Directory Structure</a></li>
+<li><a href="https://laravel.com/docs/5.4/homestead">Homestead</a></li>
+<li><a href="https://laravel.com/docs/5.4/valet">Valet</a></li>
+</ul>
+</li>
+<li>
+<h2>Architecture Concepts</h2>
+<ul>
+<li><a href="https://laravel.com/docs/5.4/lifecycle">Request Lifecycle</a></li>
+<li><a href="https://laravel.com/docs/5.4/container">Service Container</a></li>
+<li><a href="https://laravel.com/docs/5.4/providers">Service Providers</a></li>
+<li><a href="https://laravel.com/docs/5.4/facades">Facades</a></li>
+<li><a href="https://laravel.com/docs/5.4/contracts">Contracts</a></li>
+</ul>
+</li>
+<li>
+<h2>The Basics</h2>
+<ul>
+<li><a href="https://laravel.com/docs/5.4/routing">Routing</a></li>
+<li><a href="https://laravel.com/docs/5.4/middleware">Middleware</a></li>
+<li><a href="https://laravel.com/docs/5.4/csrf">CSRF Protection</a></li>
+<li><a href="https://laravel.com/docs/5.4/controllers">Controllers</a></li>
+<li><a href="https://laravel.com/docs/5.4/requests">Requests</a></li>
+<li><a href="https://laravel.com/docs/5.4/responses">Responses</a></li>
+<li><a href="https://laravel.com/docs/5.4/views">Views</a></li>
+<li><a href="https://laravel.com/docs/5.4/session">Session</a></li>
+<li><a href="https://laravel.com/docs/5.4/validation">Validation</a></li>
+<li><a href="https://laravel.com/docs/5.4/errors">Errors &amp; Logging</a></li>
+</ul>
+</li>
+<li>
+<h2>Frontend</h2>
+<ul>
+<li><a href="https://laravel.com/docs/5.4/blade">Blade Templates</a></li>
+<li><a href="https://laravel.com/docs/5.4/localization">Localization</a></li>
+<li><a href="https://laravel.com/docs/5.4/frontend">Frontend Scaffolding</a></li>
+<li><a href="https://laravel.com/docs/5.4/mix">Compiling Assets</a></li>
+</ul>
+</li>
+<li>
+<h2>Security</h2>
+<ul>
+<li><a href="https://laravel.com/docs/5.4/authentication">Authentication</a></li>
+<li><a href="https://laravel.com/docs/5.4/passport">API Authentication</a></li>
+<li><a href="https://laravel.com/docs/5.4/authorization">Authorization</a></li>
+<li><a href="https://laravel.com/docs/5.4/encryption">Encryption</a></li>
+<li><a href="https://laravel.com/docs/5.4/hashing">Hashing</a></li>
+<li><a href="https://laravel.com/docs/5.4/passwords">Password Reset</a></li>
+</ul>
+</li>
+<li>
+<h2>Digging Deeper</h2>
+<ul>
+<li><a href="https://laravel.com/docs/5.4/artisan">Artisan Console</a></li>
+<li><a href="https://laravel.com/docs/5.4/broadcasting">Broadcasting</a></li>
+<li><a href="https://laravel.com/docs/5.4/cache">Cache</a></li>
+<li><a href="https://laravel.com/docs/5.4/collections">Collections</a></li>
+<li><a href="https://laravel.com/docs/5.4/events">Events</a></li>
+<li><a href="https://laravel.com/docs/5.4/filesystem">File Storage</a></li>
+<li><a href="https://laravel.com/docs/5.4/helpers">Helpers</a></li>
+<li><a href="https://laravel.com/docs/5.4/mail">Mail</a></li>
+<li><a href="https://laravel.com/docs/5.4/notifications">Notifications</a></li>
+<li><a href="https://laravel.com/docs/5.4/packages">Package Development</a></li>
+<li><a href="https://laravel.com/docs/5.4/queues">Queues</a></li>
+<li><a href="https://laravel.com/docs/5.4/scheduling">Task Scheduling</a></li>
+</ul>
+</li>
+<li>
+<h2>Database</h2>
+<ul>
+<li><a href="https://laravel.com/docs/5.4/database">Getting Started</a></li>
+<li><a href="https://laravel.com/docs/5.4/queries">Query Builder</a></li>
+<li><a href="https://laravel.com/docs/5.4/pagination">Pagination</a></li>
+<li><a href="https://laravel.com/docs/5.4/migrations">Migrations</a></li>
+<li><a href="https://laravel.com/docs/5.4/seeding">Seeding</a></li>
+<li><a href="https://laravel.com/docs/5.4/redis">Redis</a></li>
+</ul>
+</li>
+<li>
+<h2>Eloquent ORM</h2>
+<ul>
+<li><a href="https://laravel.com/docs/5.4/eloquent">Getting Started</a></li>
+<li><a href="https://laravel.com/docs/5.4/eloquent-relationships">Relationships</a></li>
+<li><a href="https://laravel.com/docs/5.4/eloquent-collections">Collections</a></li>
+<li><a href="https://laravel.com/docs/5.4/eloquent-mutators">Mutators</a></li>
+<li><a href="https://laravel.com/docs/5.4/eloquent-serialization">Serialization</a></li>
+</ul>
+</li>
+<li>
+<h2>Testing</h2>
+<ul>
+<li><a href="https://laravel.com/docs/5.4/testing">Getting Started</a></li>
+<li><a href="https://laravel.com/docs/5.4/http-tests">HTTP Tests</a></li>
+<li><a href="https://laravel.com/docs/5.4/dusk">Browser Tests</a></li>
+<li><a href="https://laravel.com/docs/5.4/database-testing">Database</a></li>
+<li><a href="https://laravel.com/docs/5.4/mocking">Mocking</a></li>
+</ul>
+</li>
+<li>
+<h2>Official Packages</h2>
+<ul>
+<li><a href="https://laravel.com/docs/5.4/billing">Cashier</a></li>
+<li><a href="https://laravel.com/docs/5.4/envoy">Envoy</a></li>
+<li><a href="https://laravel.com/docs/5.4/passport">Passport</a></li>
+<li><a href="https://laravel.com/docs/5.4/scout">Scout</a></li>
+<li><a href="https://github.com/laravel/socialite">Socialite</a></li>
+</ul>
+</li>
+</ul>
+	</div>
+
+</nav>
+
+<div class="docs-wrapper container">
+
+	<section class="sidebar">
+		<script async="" type="text/javascript" src="./Blade Templates - Laravel - The PHP Framework For Web Artisans_files/carbon.js" id="_carbonads_js"></script><div id="carbonads"><span><span class="carbon-wrap"><a href="https://www.graphicstock.com/join/browse?utm_campaign=AFFGS-BSACPA-affiliate-site1-joinbrowse&amp;utm_medium=affiliate&amp;utm_source=AFFGS-BSACPA-affiliate-site1-joinbrowse" class="carbon-img" target="_blank"><img src="./Blade Templates - Laravel - The PHP Framework For Web Artisans_files/28536" alt="" border="0" height="100" width="130" style="max-width: 130px;"></a><a href="https://www.graphicstock.com/join/browse?utm_campaign=AFFGS-BSACPA-affiliate-site1-joinbrowse&amp;utm_medium=affiliate&amp;utm_source=AFFGS-BSACPA-affiliate-site1-joinbrowse" class="carbon-text" target="_blank">90% Unlimited Downloads Choose from Over 300,000 Vectors, Graphics &amp; Photos.</a></span><a href="http://carbonads.net/" class="carbon-poweredby" target="_blank">ads via Carbon</a></span></div>
+
+		<ul>
+<li>
+<h2 tabindex="0">Prologue</h2>
+<ul>
+<li><a href="https://laravel.com/docs/5.4/releases">Release Notes</a></li>
+<li><a href="https://laravel.com/docs/5.4/upgrade">Upgrade Guide</a></li>
+<li><a href="https://laravel.com/docs/5.4/contributions">Contribution Guide</a></li>
+<li><a href="https://laravel.com/api/5.4">API Documentation</a></li>
+</ul>
+</li>
+<li>
+<h2 tabindex="0">Getting Started</h2>
+<ul>
+<li><a href="https://laravel.com/docs/5.4/installation">Installation</a></li>
+<li><a href="https://laravel.com/docs/5.4/configuration">Configuration</a></li>
+<li><a href="https://laravel.com/docs/5.4/structure">Directory Structure</a></li>
+<li><a href="https://laravel.com/docs/5.4/homestead">Homestead</a></li>
+<li><a href="https://laravel.com/docs/5.4/valet">Valet</a></li>
+</ul>
+</li>
+<li>
+<h2 tabindex="0">Architecture Concepts</h2>
+<ul>
+<li><a href="https://laravel.com/docs/5.4/lifecycle">Request Lifecycle</a></li>
+<li><a href="https://laravel.com/docs/5.4/container">Service Container</a></li>
+<li><a href="https://laravel.com/docs/5.4/providers">Service Providers</a></li>
+<li><a href="https://laravel.com/docs/5.4/facades">Facades</a></li>
+<li><a href="https://laravel.com/docs/5.4/contracts">Contracts</a></li>
+</ul>
+</li>
+<li>
+<h2 tabindex="0">The Basics</h2>
+<ul>
+<li><a href="https://laravel.com/docs/5.4/routing">Routing</a></li>
+<li><a href="https://laravel.com/docs/5.4/middleware">Middleware</a></li>
+<li><a href="https://laravel.com/docs/5.4/csrf">CSRF Protection</a></li>
+<li><a href="https://laravel.com/docs/5.4/controllers">Controllers</a></li>
+<li><a href="https://laravel.com/docs/5.4/requests">Requests</a></li>
+<li><a href="https://laravel.com/docs/5.4/responses">Responses</a></li>
+<li><a href="https://laravel.com/docs/5.4/views">Views</a></li>
+<li><a href="https://laravel.com/docs/5.4/session">Session</a></li>
+<li><a href="https://laravel.com/docs/5.4/validation">Validation</a></li>
+<li><a href="https://laravel.com/docs/5.4/errors">Errors &amp; Logging</a></li>
+</ul>
+</li>
+<li>
+<h2 class="is-active" tabindex="0">Frontend</h2>
+<ul>
+<li style="font-weight: bold;"><a href="https://laravel.com/docs/5.4/blade">Blade Templates</a></li>
+<li><a href="https://laravel.com/docs/5.4/localization">Localization</a></li>
+<li><a href="https://laravel.com/docs/5.4/frontend">Frontend Scaffolding</a></li>
+<li><a href="https://laravel.com/docs/5.4/mix">Compiling Assets</a></li>
+</ul>
+</li>
+<li>
+<h2 tabindex="0">Security</h2>
+<ul>
+<li><a href="https://laravel.com/docs/5.4/authentication">Authentication</a></li>
+<li><a href="https://laravel.com/docs/5.4/passport">API Authentication</a></li>
+<li><a href="https://laravel.com/docs/5.4/authorization">Authorization</a></li>
+<li><a href="https://laravel.com/docs/5.4/encryption">Encryption</a></li>
+<li><a href="https://laravel.com/docs/5.4/hashing">Hashing</a></li>
+<li><a href="https://laravel.com/docs/5.4/passwords">Password Reset</a></li>
+</ul>
+</li>
+<li>
+<h2 tabindex="0">Digging Deeper</h2>
+<ul>
+<li><a href="https://laravel.com/docs/5.4/artisan">Artisan Console</a></li>
+<li><a href="https://laravel.com/docs/5.4/broadcasting">Broadcasting</a></li>
+<li><a href="https://laravel.com/docs/5.4/cache">Cache</a></li>
+<li><a href="https://laravel.com/docs/5.4/collections">Collections</a></li>
+<li><a href="https://laravel.com/docs/5.4/events">Events</a></li>
+<li><a href="https://laravel.com/docs/5.4/filesystem">File Storage</a></li>
+<li><a href="https://laravel.com/docs/5.4/helpers">Helpers</a></li>
+<li><a href="https://laravel.com/docs/5.4/mail">Mail</a></li>
+<li><a href="https://laravel.com/docs/5.4/notifications">Notifications</a></li>
+<li><a href="https://laravel.com/docs/5.4/packages">Package Development</a></li>
+<li><a href="https://laravel.com/docs/5.4/queues">Queues</a></li>
+<li><a href="https://laravel.com/docs/5.4/scheduling">Task Scheduling</a></li>
+</ul>
+</li>
+<li>
+<h2 tabindex="0">Database</h2>
+<ul>
+<li><a href="https://laravel.com/docs/5.4/database">Getting Started</a></li>
+<li><a href="https://laravel.com/docs/5.4/queries">Query Builder</a></li>
+<li><a href="https://laravel.com/docs/5.4/pagination">Pagination</a></li>
+<li><a href="https://laravel.com/docs/5.4/migrations">Migrations</a></li>
+<li><a href="https://laravel.com/docs/5.4/seeding">Seeding</a></li>
+<li><a href="https://laravel.com/docs/5.4/redis">Redis</a></li>
+</ul>
+</li>
+<li>
+<h2 tabindex="0">Eloquent ORM</h2>
+<ul>
+<li><a href="https://laravel.com/docs/5.4/eloquent">Getting Started</a></li>
+<li><a href="https://laravel.com/docs/5.4/eloquent-relationships">Relationships</a></li>
+<li><a href="https://laravel.com/docs/5.4/eloquent-collections">Collections</a></li>
+<li><a href="https://laravel.com/docs/5.4/eloquent-mutators">Mutators</a></li>
+<li><a href="https://laravel.com/docs/5.4/eloquent-serialization">Serialization</a></li>
+</ul>
+</li>
+<li>
+<h2 tabindex="0">Testing</h2>
+<ul>
+<li><a href="https://laravel.com/docs/5.4/testing">Getting Started</a></li>
+<li><a href="https://laravel.com/docs/5.4/http-tests">HTTP Tests</a></li>
+<li><a href="https://laravel.com/docs/5.4/dusk">Browser Tests</a></li>
+<li><a href="https://laravel.com/docs/5.4/database-testing">Database</a></li>
+<li><a href="https://laravel.com/docs/5.4/mocking">Mocking</a></li>
+</ul>
+</li>
+<li>
+<h2 tabindex="0">Official Packages</h2>
+<ul>
+<li><a href="https://laravel.com/docs/5.4/billing">Cashier</a></li>
+<li><a href="https://laravel.com/docs/5.4/envoy">Envoy</a></li>
+<li><a href="https://laravel.com/docs/5.4/passport">Passport</a></li>
+<li><a href="https://laravel.com/docs/5.4/scout">Scout</a></li>
+<li><a href="https://github.com/laravel/socialite">Socialite</a></li>
+</ul>
+</li>
+</ul>
+	</section>
+
+	
+
+	<article>
+		<h1>Blade Templates</h1>
+<ul>
+<li><a href="https://laravel.com/docs/5.4/blade#introduction">Introduction</a></li>
+<li><a href="https://laravel.com/docs/5.4/blade#template-inheritance">Template Inheritance</a>
+<ul>
+<li><a href="https://laravel.com/docs/5.4/blade#defining-a-layout">Defining A Layout</a></li>
+<li><a href="https://laravel.com/docs/5.4/blade#extending-a-layout">Extending A Layout</a></li>
+</ul></li>
+<li><a href="https://laravel.com/docs/5.4/blade#components-and-slots">Components &amp; Slots</a></li>
+<li><a href="https://laravel.com/docs/5.4/blade#displaying-data">Displaying Data</a>
+<ul>
+<li><a href="https://laravel.com/docs/5.4/blade#blade-and-javascript-frameworks">Blade &amp; JavaScript Frameworks</a></li>
+</ul></li>
+<li><a href="https://laravel.com/docs/5.4/blade#control-structures">Control Structures</a>
+<ul>
+<li><a href="https://laravel.com/docs/5.4/blade#if-statements">If Statements</a></li>
+<li><a href="https://laravel.com/docs/5.4/blade#loops">Loops</a></li>
+<li><a href="https://laravel.com/docs/5.4/blade#the-loop-variable">The Loop Variable</a></li>
+<li><a href="https://laravel.com/docs/5.4/blade#comments">Comments</a></li>
+<li><a href="https://laravel.com/docs/5.4/blade#php">PHP</a></li>
+</ul></li>
+<li><a href="https://laravel.com/docs/5.4/blade#including-sub-views">Including Sub-Views</a>
+<ul>
+<li><a href="https://laravel.com/docs/5.4/blade#rendering-views-for-collections">Rendering Views For Collections</a></li>
+</ul></li>
+<li><a href="https://laravel.com/docs/5.4/blade#stacks">Stacks</a></li>
+<li><a href="https://laravel.com/docs/5.4/blade#service-injection">Service Injection</a></li>
+<li><a href="https://laravel.com/docs/5.4/blade#extending-blade">Extending Blade</a></li>
+</ul>
+<p><a name="introduction"></a></p>
+<h2><a href="https://laravel.com/docs/5.4/blade#introduction">Introduction</a></h2>
+<p>Blade is the simple, yet powerful templating engine provided with Laravel. Unlike other popular PHP templating engines, Blade does not restrict you from using plain PHP code in your views. In fact, all Blade views are compiled into plain PHP code and cached until they are modified, meaning Blade adds essentially zero overhead to your application. Blade view files use the <code class=" language-php"><span class="token punctuation">.</span>blade<span class="token punctuation">.</span>php</code> file extension and are typically stored in the <code class=" language-php">resources<span class="token operator">/</span>views</code> directory.</p>
+<p><a name="template-inheritance"></a></p>
+<h2><a href="https://laravel.com/docs/5.4/blade#template-inheritance">Template Inheritance</a></h2>
+<p><a name="defining-a-layout"></a></p>
+<h3>Defining A Layout</h3>
+<p>Two of the primary benefits of using Blade are <em>template inheritance</em> and <em>sections</em>. To get started, let's take a look at a simple example. First, we will examine a "master" page layout. Since most web applications maintain the same general layout across various pages, it's convenient to define this layout as a single Blade view:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token markup"><span class="token comment" spellcheck="true">&lt;!-- Stored in resources/views/layouts/app.blade.php --&gt;</span></span>
+
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span></span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span></span>
+        <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span></span>App Name <span class="token operator">-</span> @<span class="token keyword">yield</span><span class="token punctuation">(</span><span class="token string">'title'</span><span class="token punctuation">)</span><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span></span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span></span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span></span>
+        @<span class="token function">section<span class="token punctuation">(</span></span><span class="token string">'sidebar'</span><span class="token punctuation">)</span>
+            This is the master sidebar<span class="token punctuation">.</span>
+        @show
+
+        <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></span>
+            @<span class="token keyword">yield</span><span class="token punctuation">(</span><span class="token string">'content'</span><span class="token punctuation">)</span>
+        <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span></span>
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span></span></code></pre>
+<p>As you can see, this file contains typical HTML mark-up. However, take note of the <code class=" language-php">@section</code> and <code class=" language-php">@<span class="token keyword">yield</span></code> directives. The <code class=" language-php">@section</code> directive, as the name implies, defines a section of content, while the <code class=" language-php">@<span class="token keyword">yield</span></code> directive is used to display the contents of a given section.</p>
+<p>Now that we have defined a layout for our application, let's define a child page that inherits the layout.</p>
+<p><a name="extending-a-layout"></a></p>
+<h3>Extending A Layout</h3>
+<p>When defining a child view, use the Blade <code class=" language-php">@<span class="token keyword">extends</span></code> directive to specify which layout the child view should "inherit". Views which extend a Blade layout may inject content into the layout's sections using <code class=" language-php">@section</code> directives. Remember, as seen in the example above, the contents of these sections will be displayed in the layout using <code class=" language-php">@<span class="token keyword">yield</span></code>:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token markup"><span class="token comment" spellcheck="true">&lt;!-- Stored in resources/views/child.blade.php --&gt;</span></span>
+
+@<span class="token keyword">extends</span><span class="token punctuation">(</span><span class="token string">'layouts.app'</span><span class="token punctuation">)</span>
+
+@<span class="token function">section<span class="token punctuation">(</span></span><span class="token string">'title'</span><span class="token punctuation">,</span> <span class="token string">'Page Title'</span><span class="token punctuation">)</span>
+
+@<span class="token function">section<span class="token punctuation">(</span></span><span class="token string">'sidebar'</span><span class="token punctuation">)</span>
+    @<span class="token keyword">parent</span>
+
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span></span>This is appended to the master sidebar<span class="token punctuation">.</span><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></span>
+@endsection
+
+@<span class="token function">section<span class="token punctuation">(</span></span><span class="token string">'content'</span><span class="token punctuation">)</span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span></span>This is my body content<span class="token punctuation">.</span><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></span>
+@endsection</code></pre>
+<p>In this example, the <code class=" language-php">sidebar</code> section is utilizing the <code class=" language-php">@<span class="token keyword">parent</span></code> directive to append (rather than overwriting) content to the layout's sidebar. The <code class=" language-php">@<span class="token keyword">parent</span></code> directive will be replaced by the content of the layout when the view is rendered.</p>
+<p>Blade views may be returned from routes using the global <code class=" language-php">view</code> helper:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token scope">Route<span class="token punctuation">::</span></span><span class="token function">get<span class="token punctuation">(</span></span><span class="token string">'blade'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">view<span class="token punctuation">(</span></span><span class="token string">'child'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><a name="components-and-slots"></a></p>
+<h2><a href="https://laravel.com/docs/5.4/blade#components-and-slots">Components &amp; Slots</a></h2>
+<p>Components and slots provide similar benefits to sections and layouts; however, some may find the mental model of components and slots easier to understand. First, let's imagine a reusable "alert" component we would like to reuse throughout our application:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token markup"><span class="token comment" spellcheck="true">&lt;!-- /resources/views/alert.blade.php --&gt;</span></span>
+
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>alert alert-danger<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></span>
+    <span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token variable">$slot</span> <span class="token punctuation">}</span><span class="token punctuation">}</span>
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></span></code></pre>
+<p>The <code class=" language-php"><span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token variable">$slot</span> <span class="token punctuation">}</span><span class="token punctuation">}</span></code> variable will contain the content we wish to inject into the component. Now, to construct this component, we can use the <code class=" language-php">@component</code> Blade directive:</p>
+<pre class=" language-php"><code class=" language-php">@<span class="token function">component<span class="token punctuation">(</span></span><span class="token string">'alert'</span><span class="token punctuation">)</span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">&gt;</span></span></span>Whoops<span class="token operator">!</span><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">&gt;</span></span></span> Something went wrong<span class="token operator">!</span>
+@endcomponent</code></pre>
+<p>Sometimes it is helpful to define multiple slots for a component. Let's modify our alert component to allow for the injection of a "title". Named slots may be displayed by simply "echoing" the variable that matches their name:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token markup"><span class="token comment" spellcheck="true">&lt;!-- /resources/views/alert.blade.php --&gt;</span></span>
+
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>alert alert-danger<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>alert-title<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></span><span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token variable">$title</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></span>
+
+    <span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token variable">$slot</span> <span class="token punctuation">}</span><span class="token punctuation">}</span>
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></span></code></pre>
+<p>Now, we can inject content into the named slot using the <code class=" language-php">@slot</code> directive. Any content not within a <code class=" language-php">@slot</code> directive will be passed to the component in the <code class=" language-php"><span class="token variable">$slot</span></code> variable:</p>
+<pre class=" language-php"><code class=" language-php">@<span class="token function">component<span class="token punctuation">(</span></span><span class="token string">'alert'</span><span class="token punctuation">)</span>
+    @<span class="token function">slot<span class="token punctuation">(</span></span><span class="token string">'title'</span><span class="token punctuation">)</span>
+        Forbidden
+    @endslot
+
+    You are not allowed to access this resource<span class="token operator">!</span>
+@endcomponent</code></pre>
+<h4>Passing Additional Data To Components</h4>
+<p>Sometimes you may need to pass additional data to a component. For this reason, you can pass an array of data as the second argument to the <code class=" language-php">@component</code> directive. All of the data will be made available to the component template as variables:</p>
+<pre class=" language-php"><code class=" language-php">@<span class="token function">component<span class="token punctuation">(</span></span><span class="token string">'alert'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'foo'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'bar'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+@endcomponent</code></pre>
+<p><a name="displaying-data"></a></p>
+<h2><a href="https://laravel.com/docs/5.4/blade#displaying-data">Displaying Data</a></h2>
+<p>You may display data passed to your Blade views by wrapping the variable in curly braces. For example, given the following route:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token scope">Route<span class="token punctuation">::</span></span><span class="token function">get<span class="token punctuation">(</span></span><span class="token string">'greeting'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">view<span class="token punctuation">(</span></span><span class="token string">'welcome'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'name'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'Samantha'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>You may display the contents of the <code class=" language-php">name</code> variable like so:</p>
+<pre class=" language-php"><code class=" language-php">Hello<span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token variable">$name</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">.</span></code></pre>
+<p>Of course, you are not limited to displaying the contents of the variables passed to the view. You may also echo the results of any PHP function. In fact, you can put any PHP code you wish inside of a Blade echo statement:</p>
+<pre class=" language-php"><code class=" language-php">The current <span class="token constant">UNIX</span> timestamp is <span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token function">time<span class="token punctuation">(</span></span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">.</span></code></pre>
+<blockquote class="has-icon note">
+<p><div class="flag"><span class="svg"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" version="1.1" x="0px" y="0px" width="90px" height="90px" viewBox="0 0 90 90" enable-background="new 0 0 90 90" xml:space="preserve"><path fill="#FFFFFF" d="M45 0C20.1 0 0 20.1 0 45s20.1 45 45 45 45-20.1 45-45S69.9 0 45 0zM45 74.5c-3.6 0-6.5-2.9-6.5-6.5s2.9-6.5 6.5-6.5 6.5 2.9 6.5 6.5S48.6 74.5 45 74.5zM52.1 23.9l-2.5 29.6c0 2.5-2.1 4.6-4.6 4.6 -2.5 0-4.6-2.1-4.6-4.6l-2.5-29.6c-0.1-0.4-0.1-0.7-0.1-1.1 0-4 3.2-7.2 7.2-7.2 4 0 7.2 3.2 7.2 7.2C52.2 23.1 52.2 23.5 52.1 23.9z"></path></svg></span></div> Blade <code class=" language-php"><span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token punctuation">}</span><span class="token punctuation">}</span></code> statements are automatically sent through PHP's <code class=" language-php">htmlspecialchars</code> function to prevent XSS attacks.</p>
+</blockquote>
+<h4>Displaying Unescaped Data</h4>
+<p>By default, Blade <code class=" language-php"><span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token punctuation">}</span><span class="token punctuation">}</span></code> statements are automatically sent through PHP's <code class=" language-php">htmlspecialchars</code> function to prevent XSS attacks. If you do not want your data to be escaped, you may use the following syntax:</p>
+<pre class=" language-php"><code class=" language-php">Hello<span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token operator">!</span><span class="token operator">!</span> <span class="token variable">$name</span> <span class="token operator">!</span><span class="token operator">!</span><span class="token punctuation">}</span><span class="token punctuation">.</span></code></pre>
+<blockquote class="has-icon note">
+<p><div class="flag"><span class="svg"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" version="1.1" x="0px" y="0px" width="90px" height="90px" viewBox="0 0 90 90" enable-background="new 0 0 90 90" xml:space="preserve"><path fill="#FFFFFF" d="M45 0C20.1 0 0 20.1 0 45s20.1 45 45 45 45-20.1 45-45S69.9 0 45 0zM45 74.5c-3.6 0-6.5-2.9-6.5-6.5s2.9-6.5 6.5-6.5 6.5 2.9 6.5 6.5S48.6 74.5 45 74.5zM52.1 23.9l-2.5 29.6c0 2.5-2.1 4.6-4.6 4.6 -2.5 0-4.6-2.1-4.6-4.6l-2.5-29.6c-0.1-0.4-0.1-0.7-0.1-1.1 0-4 3.2-7.2 7.2-7.2 4 0 7.2 3.2 7.2 7.2C52.2 23.1 52.2 23.5 52.1 23.9z"></path></svg></span></div> Be very careful when echoing content that is supplied by users of your application. Always use the escaped, double curly brace syntax to prevent XSS attacks when displaying user supplied data.</p>
+</blockquote>
+<p><a name="blade-and-javascript-frameworks"></a></p>
+<h3>Blade &amp; JavaScript Frameworks</h3>
+<p>Since many JavaScript frameworks also use "curly" braces to indicate a given expression should be displayed in the browser, you may use the <code class=" language-php">@</code> symbol to inform the Blade rendering engine an expression should remain untouched. For example:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span></span>Laravel<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span></span>
+
+Hello<span class="token punctuation">,</span> @<span class="token punctuation">{</span><span class="token punctuation">{</span> name <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">.</span></code></pre>
+<p>In this example, the <code class=" language-php">@</code> symbol will be removed by Blade; however, <code class=" language-php"><span class="token punctuation">{</span><span class="token punctuation">{</span> name <span class="token punctuation">}</span><span class="token punctuation">}</span></code> expression will remain untouched by the Blade engine, allowing it to instead be rendered by your JavaScript framework.</p>
+<h4>The <code class=" language-php">@verbatim</code> Directive</h4>
+<p>If you are displaying JavaScript variables in a large portion of your template, you may wrap the HTML in the <code class=" language-php">@verbatim</code> directive so that you do not have to prefix each Blade echo statement with an <code class=" language-php">@</code> symbol:</p>
+<pre class=" language-php"><code class=" language-php">@verbatim
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></span>
+        Hello<span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> name <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">.</span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></span>
+@endverbatim</code></pre>
+<p><a name="control-structures"></a></p>
+<h2><a href="https://laravel.com/docs/5.4/blade#control-structures">Control Structures</a></h2>
+<p>In addition to template inheritance and displaying data, Blade also provides convenient shortcuts for common PHP control structures, such as conditional statements and loops. These shortcuts provide a very clean, terse way of working with PHP control structures, while also remaining familiar to their PHP counterparts.</p>
+<p><a name="if-statements"></a></p>
+<h3>If Statements</h3>
+<p>You may construct <code class=" language-php"><span class="token keyword">if</span></code> statements using the <code class=" language-php">@<span class="token keyword">if</span></code>, <code class=" language-php">@<span class="token keyword">elseif</span></code>, <code class=" language-php">@<span class="token keyword">else</span></code>, and <code class=" language-php">@<span class="token keyword">endif</span></code> directives. These directives function identically to their PHP counterparts:</p>
+<pre class=" language-php"><code class=" language-php">@<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">count<span class="token punctuation">(</span></span><span class="token variable">$records</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span>
+    I have one record<span class="token operator">!</span>
+@<span class="token keyword">elseif</span> <span class="token punctuation">(</span><span class="token function">count<span class="token punctuation">(</span></span><span class="token variable">$records</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">)</span>
+    I have multiple records<span class="token operator">!</span>
+@<span class="token keyword">else</span>
+    I don't have any records<span class="token operator">!</span>
+@<span class="token keyword">endif</span></code></pre>
+<p>For convenience, Blade also provides an <code class=" language-php">@unless</code> directive:</p>
+<pre class=" language-php"><code class=" language-php">@unless <span class="token punctuation">(</span><span class="token scope">Auth<span class="token punctuation">::</span></span><span class="token function">check<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    You are not signed in<span class="token punctuation">.</span>
+@endunless</code></pre>
+<p>In addition to the conditional directives already discussed, the <code class=" language-php">@isset</code> and <code class=" language-php">@empty</code> directives may be used as convenient shortcuts for their respective PHP functions:</p>
+<pre class=" language-php"><code class=" language-php">@<span class="token function">isset<span class="token punctuation">(</span></span><span class="token variable">$records</span><span class="token punctuation">)</span>
+   <span class="token comment" spellcheck="true"> // $records is defined and is not null...
+</span>@endisset
+
+@<span class="token function">empty<span class="token punctuation">(</span></span><span class="token variable">$records</span><span class="token punctuation">)</span>
+   <span class="token comment" spellcheck="true"> // $records is "empty"...
+</span>@endempty</code></pre>
+<p><a name="loops"></a></p>
+<h3>Loops</h3>
+<p>In addition to conditional statements, Blade provides simple directives for working with PHP's loop structures. Again, each of these directives functions identically to their PHP counterparts:</p>
+<pre class=" language-php"><code class=" language-php">@<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token variable">$i</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token variable">$i</span> <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> <span class="token variable">$i</span><span class="token operator">++</span><span class="token punctuation">)</span>
+    The current value is <span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token variable">$i</span> <span class="token punctuation">}</span><span class="token punctuation">}</span>
+@<span class="token keyword">endfor</span>
+
+@<span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token variable">$users</span> <span class="token keyword">as</span> <span class="token variable">$user</span><span class="token punctuation">)</span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span></span>This is user <span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token variable">$user</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">id</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></span>
+@<span class="token keyword">endforeach</span>
+
+@forelse <span class="token punctuation">(</span><span class="token variable">$users</span> <span class="token keyword">as</span> <span class="token variable">$user</span><span class="token punctuation">)</span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span></span><span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token variable">$user</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">name</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span></span>
+@empty
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span></span>No users<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></span>
+@endforelse
+
+@<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span></span>I'm looping forever<span class="token punctuation">.</span><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></span>
+@<span class="token keyword">endwhile</span></code></pre>
+<blockquote class="has-icon tip">
+<p><div class="flag"><span class="svg"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" version="1.1" x="0px" y="0px" width="56.6px" height="87.5px" viewBox="0 0 56.6 87.5" enable-background="new 0 0 56.6 87.5" xml:space="preserve"><path fill="#FFFFFF" d="M28.7 64.5c-1.4 0-2.5-1.1-2.5-2.5v-5.7 -5V41c0-1.4 1.1-2.5 2.5-2.5s2.5 1.1 2.5 2.5v10.1 5 5.8C31.2 63.4 30.1 64.5 28.7 64.5zM26.4 0.1C11.9 1 0.3 13.1 0 27.7c-0.1 7.9 3 15.2 8.2 20.4 0.5 0.5 0.8 1 1 1.7l3.1 13.1c0.3 1.1 1.3 1.9 2.4 1.9 0.3 0 0.7-0.1 1.1-0.2 1.1-0.5 1.6-1.8 1.4-3l-2-8.4 -0.4-1.8c-0.7-2.9-2-5.7-4-8 -1-1.2-2-2.5-2.7-3.9C5.8 35.3 4.7 30.3 5.4 25 6.7 14.5 15.2 6.3 25.6 5.1c13.9-1.5 25.8 9.4 25.8 23 0 4.1-1.1 7.9-2.9 11.2 -0.8 1.4-1.7 2.7-2.7 3.9 -2 2.3-3.3 5-4 8L41.4 53l-2 8.4c-0.3 1.2 0.3 2.5 1.4 3 0.3 0.2 0.7 0.2 1.1 0.2 1.1 0 2.2-0.8 2.4-1.9l3.1-13.1c0.2-0.6 0.5-1.2 1-1.7 5-5.1 8.2-12.1 8.2-19.8C56.4 12 42.8-1 26.4 0.1zM43.7 69.6c0 0.5-0.1 0.9-0.3 1.3 -0.4 0.8-0.7 1.6-0.9 2.5 -0.7 3-2 8.6-2 8.6 -1.3 3.2-4.4 5.5-7.9 5.5h-4.1H28h-0.5 -3.6c-3.5 0-6.7-2.4-7.9-5.7l-0.1-0.4 -1.8-7.8c-0.4-1.1-0.8-2.1-1.2-3.1 -0.1-0.3-0.2-0.5-0.2-0.9 0.1-1.3 1.3-2.1 2.6-2.1H41C42.4 67.5 43.6 68.2 43.7 69.6zM37.7 72.5H26.9c-4.2 0-7.2 3.9-6.3 7.9 0.6 1.3 1.8 2.1 3.2 2.1h4.1 0.5 0.5 3.6c1.4 0 2.7-0.8 3.2-2.1L37.7 72.5z"></path></svg></span></div> When looping, you may use the <a href="https://laravel.com/docs/5.4/blade#the-loop-variable">loop variable</a> to gain valuable information about the loop, such as whether you are in the first or last iteration through the loop.</p>
+</blockquote>
+<p>When using loops you may also end the loop or skip the current iteration:</p>
+<pre class=" language-php"><code class=" language-php">@<span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token variable">$users</span> <span class="token keyword">as</span> <span class="token variable">$user</span><span class="token punctuation">)</span>
+    @<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$user</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">type</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span>
+        @<span class="token keyword">continue</span>
+    @<span class="token keyword">endif</span>
+
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span></span><span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token variable">$user</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">name</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span></span>
+
+    @<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$user</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">number</span> <span class="token operator">==</span> <span class="token number">5</span><span class="token punctuation">)</span>
+        @<span class="token keyword">break</span>
+    @<span class="token keyword">endif</span>
+@<span class="token keyword">endforeach</span></code></pre>
+<p>You may also include the condition with the directive declaration in one line:</p>
+<pre class=" language-php"><code class=" language-php">@<span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token variable">$users</span> <span class="token keyword">as</span> <span class="token variable">$user</span><span class="token punctuation">)</span>
+    @<span class="token keyword">continue</span><span class="token punctuation">(</span><span class="token variable">$user</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">type</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span>
+
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span></span><span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token variable">$user</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">name</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span></span>
+
+    @<span class="token keyword">break</span><span class="token punctuation">(</span><span class="token variable">$user</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">number</span> <span class="token operator">==</span> <span class="token number">5</span><span class="token punctuation">)</span>
+@<span class="token keyword">endforeach</span></code></pre>
+<p><a name="the-loop-variable"></a></p>
+<h3>The Loop Variable</h3>
+<p>When looping, a <code class=" language-php"><span class="token variable">$loop</span></code> variable will be available inside of your loop. This variable provides access to some useful bits of information such as the current loop index and whether this is the first or last iteration through the loop:</p>
+<pre class=" language-php"><code class=" language-php">@<span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token variable">$users</span> <span class="token keyword">as</span> <span class="token variable">$user</span><span class="token punctuation">)</span>
+    @<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$loop</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">first</span><span class="token punctuation">)</span>
+        This is the first iteration<span class="token punctuation">.</span>
+    @<span class="token keyword">endif</span>
+
+    @<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$loop</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">last</span><span class="token punctuation">)</span>
+        This is the last iteration<span class="token punctuation">.</span>
+    @<span class="token keyword">endif</span>
+
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span></span>This is user <span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token variable">$user</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">id</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></span>
+@<span class="token keyword">endforeach</span></code></pre>
+<p>If you are in a nested loop, you may access the parent loop's <code class=" language-php"><span class="token variable">$loop</span></code> variable via the <code class=" language-php"><span class="token keyword">parent</span></code> property:</p>
+<pre class=" language-php"><code class=" language-php">@<span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token variable">$users</span> <span class="token keyword">as</span> <span class="token variable">$user</span><span class="token punctuation">)</span>
+    @<span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token variable">$user</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">posts</span> <span class="token keyword">as</span> <span class="token variable">$post</span><span class="token punctuation">)</span>
+        @<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$loop</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token keyword">parent</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">first</span><span class="token punctuation">)</span>
+            This is first iteration of the <span class="token keyword">parent</span> loop<span class="token punctuation">.</span>
+        @<span class="token keyword">endif</span>
+    @<span class="token keyword">endforeach</span>
+@<span class="token keyword">endforeach</span></code></pre>
+<p>The <code class=" language-php"><span class="token variable">$loop</span></code> variable also contains a variety of other useful properties:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class=" language-php"><span class="token variable">$loop</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">index</span></code></td>
+<td>The index of the current loop iteration (starts at 0).</td>
+</tr>
+<tr>
+<td><code class=" language-php"><span class="token variable">$loop</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">iteration</span></code></td>
+<td>The current loop iteration (starts at 1).</td>
+</tr>
+<tr>
+<td><code class=" language-php"><span class="token variable">$loop</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">remaining</span></code></td>
+<td>The iteration remaining in the loop.</td>
+</tr>
+<tr>
+<td><code class=" language-php"><span class="token variable">$loop</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">count</span></code></td>
+<td>The total number of items in the array being iterated.</td>
+</tr>
+<tr>
+<td><code class=" language-php"><span class="token variable">$loop</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">first</span></code></td>
+<td>Whether this is the first iteration through the loop.</td>
+</tr>
+<tr>
+<td><code class=" language-php"><span class="token variable">$loop</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">last</span></code></td>
+<td>Whether this is the last iteration through the loop.</td>
+</tr>
+<tr>
+<td><code class=" language-php"><span class="token variable">$loop</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">depth</span></code></td>
+<td>The nesting level of the current loop.</td>
+</tr>
+<tr>
+<td><code class=" language-php"><span class="token variable">$loop</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token keyword">parent</span></code></td>
+<td>When in a nested loop, the parent's loop variable.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="comments"></a></p>
+<h3>Comments</h3>
+<p>Blade also allows you to define comments in your views. However, unlike HTML comments, Blade comments are not included in the HTML returned by your application:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token operator">--</span> This comment will not be present in the rendered <span class="token constant">HTML</span> <span class="token operator">--</span><span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre>
+<p><a name="php"></a></p>
+<h3>PHP</h3>
+<p>In some situations, it's useful to embed PHP code into your views. You can use the Blade <code class=" language-php">@php</code> directive to execute a block of plain PHP within your template:</p>
+<pre class=" language-php"><code class=" language-php">@php
+   <span class="token comment" spellcheck="true"> //
+</span>@endphp</code></pre>
+<blockquote class="has-icon tip">
+<p><div class="flag"><span class="svg"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" version="1.1" x="0px" y="0px" width="56.6px" height="87.5px" viewBox="0 0 56.6 87.5" enable-background="new 0 0 56.6 87.5" xml:space="preserve"><path fill="#FFFFFF" d="M28.7 64.5c-1.4 0-2.5-1.1-2.5-2.5v-5.7 -5V41c0-1.4 1.1-2.5 2.5-2.5s2.5 1.1 2.5 2.5v10.1 5 5.8C31.2 63.4 30.1 64.5 28.7 64.5zM26.4 0.1C11.9 1 0.3 13.1 0 27.7c-0.1 7.9 3 15.2 8.2 20.4 0.5 0.5 0.8 1 1 1.7l3.1 13.1c0.3 1.1 1.3 1.9 2.4 1.9 0.3 0 0.7-0.1 1.1-0.2 1.1-0.5 1.6-1.8 1.4-3l-2-8.4 -0.4-1.8c-0.7-2.9-2-5.7-4-8 -1-1.2-2-2.5-2.7-3.9C5.8 35.3 4.7 30.3 5.4 25 6.7 14.5 15.2 6.3 25.6 5.1c13.9-1.5 25.8 9.4 25.8 23 0 4.1-1.1 7.9-2.9 11.2 -0.8 1.4-1.7 2.7-2.7 3.9 -2 2.3-3.3 5-4 8L41.4 53l-2 8.4c-0.3 1.2 0.3 2.5 1.4 3 0.3 0.2 0.7 0.2 1.1 0.2 1.1 0 2.2-0.8 2.4-1.9l3.1-13.1c0.2-0.6 0.5-1.2 1-1.7 5-5.1 8.2-12.1 8.2-19.8C56.4 12 42.8-1 26.4 0.1zM43.7 69.6c0 0.5-0.1 0.9-0.3 1.3 -0.4 0.8-0.7 1.6-0.9 2.5 -0.7 3-2 8.6-2 8.6 -1.3 3.2-4.4 5.5-7.9 5.5h-4.1H28h-0.5 -3.6c-3.5 0-6.7-2.4-7.9-5.7l-0.1-0.4 -1.8-7.8c-0.4-1.1-0.8-2.1-1.2-3.1 -0.1-0.3-0.2-0.5-0.2-0.9 0.1-1.3 1.3-2.1 2.6-2.1H41C42.4 67.5 43.6 68.2 43.7 69.6zM37.7 72.5H26.9c-4.2 0-7.2 3.9-6.3 7.9 0.6 1.3 1.8 2.1 3.2 2.1h4.1 0.5 0.5 3.6c1.4 0 2.7-0.8 3.2-2.1L37.7 72.5z"></path></svg></span></div> While Blade provides this feature, using it frequently may be a signal that you have too much logic embedded within your template.</p>
+</blockquote>
+<p><a name="including-sub-views"></a></p>
+<h2><a href="https://laravel.com/docs/5.4/blade#including-sub-views">Including Sub-Views</a></h2>
+<p>Blade's <code class=" language-php">@<span class="token keyword">include</span></code> directive allows you to include a Blade view from within another view. All variables that are available to the parent view will be made available to the included view:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span></span>
+    @<span class="token keyword">include</span><span class="token punctuation">(</span><span class="token string">'shared.errors'</span><span class="token punctuation">)</span>
+
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">&gt;</span></span></span>
+        <span class="token markup"><span class="token comment" spellcheck="true">&lt;!-- Form Contents --&gt;</span></span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span></span>
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></span></code></pre>
+<p>Even though the included view will inherit all data available in the parent view, you may also pass an array of extra data to the included view:</p>
+<pre class=" language-php"><code class=" language-php">@<span class="token keyword">include</span><span class="token punctuation">(</span><span class="token string">'view.name'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'some'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'data'</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<p>Of course, if you attempt to <code class=" language-php">@<span class="token keyword">include</span></code> a view which does not exist, Laravel will throw an error. If you would like to include a view that may or may not be present, you should use the <code class=" language-php">@includeIf</code> directive:</p>
+<pre class=" language-php"><code class=" language-php">@<span class="token function">includeIf<span class="token punctuation">(</span></span><span class="token string">'view.name'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'some'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'data'</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<blockquote class="has-icon note">
+<p><div class="flag"><span class="svg"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" version="1.1" x="0px" y="0px" width="90px" height="90px" viewBox="0 0 90 90" enable-background="new 0 0 90 90" xml:space="preserve"><path fill="#FFFFFF" d="M45 0C20.1 0 0 20.1 0 45s20.1 45 45 45 45-20.1 45-45S69.9 0 45 0zM45 74.5c-3.6 0-6.5-2.9-6.5-6.5s2.9-6.5 6.5-6.5 6.5 2.9 6.5 6.5S48.6 74.5 45 74.5zM52.1 23.9l-2.5 29.6c0 2.5-2.1 4.6-4.6 4.6 -2.5 0-4.6-2.1-4.6-4.6l-2.5-29.6c-0.1-0.4-0.1-0.7-0.1-1.1 0-4 3.2-7.2 7.2-7.2 4 0 7.2 3.2 7.2 7.2C52.2 23.1 52.2 23.5 52.1 23.9z"></path></svg></span></div> You should avoid using the <code class=" language-php"><span class="token constant">__DIR__</span></code> and <code class=" language-php"><span class="token constant">__FILE__</span></code> constants in your Blade views, since they will refer to the location of the cached, compiled view.</p>
+</blockquote>
+<p><a name="rendering-views-for-collections"></a></p>
+<h3>Rendering Views For Collections</h3>
+<p>You may combine loops and includes into one line with Blade's <code class=" language-php">@each</code> directive:</p>
+<pre class=" language-php"><code class=" language-php">@<span class="token function">each<span class="token punctuation">(</span></span><span class="token string">'view.name'</span><span class="token punctuation">,</span> <span class="token variable">$jobs</span><span class="token punctuation">,</span> <span class="token string">'job'</span><span class="token punctuation">)</span></code></pre>
+<p>The first argument is the view partial to render for each element in the array or collection. The second argument is the array or collection you wish to iterate over, while the third argument is the variable name that will be assigned to the current iteration within the view. So, for example, if you are iterating over an array of <code class=" language-php">jobs</code>, typically you will want to access each job as a <code class=" language-php">job</code> variable within your view partial. The key for the current iteration will be available as the <code class=" language-php">key</code> variable within your view partial.</p>
+<p>You may also pass a fourth argument to the <code class=" language-php">@each</code> directive. This argument determines the view that will be rendered if the given array is empty.</p>
+<pre class=" language-php"><code class=" language-php">@<span class="token function">each<span class="token punctuation">(</span></span><span class="token string">'view.name'</span><span class="token punctuation">,</span> <span class="token variable">$jobs</span><span class="token punctuation">,</span> <span class="token string">'job'</span><span class="token punctuation">,</span> <span class="token string">'view.empty'</span><span class="token punctuation">)</span></code></pre>
+<p><a name="stacks"></a></p>
+<h2><a href="https://laravel.com/docs/5.4/blade#stacks">Stacks</a></h2>
+<p>Blade allows you to push to named stacks which can be rendered somewhere else in another view or layout. This can be particularly useful for specifying any JavaScript libraries required by your child views:</p>
+<pre class=" language-php"><code class=" language-php">@<span class="token function">push<span class="token punctuation">(</span></span><span class="token string">'scripts'</span><span class="token punctuation">)</span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/example.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></span><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></span>
+@endpush</code></pre>
+<p>You may push to a stack as many times as needed. To render the complete stack contents, pass the name of the stack to the <code class=" language-php">@stack</code> directive:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span></span>
+    <span class="token markup"><span class="token comment" spellcheck="true">&lt;!-- Head Contents --&gt;</span></span>
+
+    @<span class="token function">stack<span class="token punctuation">(</span></span><span class="token string">'scripts'</span><span class="token punctuation">)</span>
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span></span></code></pre>
+<p><a name="service-injection"></a></p>
+<h2><a href="https://laravel.com/docs/5.4/blade#service-injection">Service Injection</a></h2>
+<p>The <code class=" language-php">@inject</code> directive may be used to retrieve a service from the Laravel <a href="https://laravel.com/docs/5.4/container">service container</a>. The first argument passed to <code class=" language-php">@inject</code> is the name of the variable the service will be placed into, while the second argument is the class or interface name of the service you wish to resolve:</p>
+<pre class=" language-php"><code class=" language-php">@<span class="token function">inject<span class="token punctuation">(</span></span><span class="token string">'metrics'</span><span class="token punctuation">,</span> <span class="token string">'App\Services\MetricsService'</span><span class="token punctuation">)</span>
+
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span></span>
+    Monthly Revenue<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token variable">$metrics</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">monthlyRevenue<span class="token punctuation">(</span></span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">.</span>
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></span></code></pre>
+<p><a name="extending-blade"></a></p>
+<h2><a href="https://laravel.com/docs/5.4/blade#extending-blade">Extending Blade</a></h2>
+<p>Blade allows you to define your own custom directives using the <code class=" language-php">directive</code> method. When the Blade compiler encounters the custom directive, it will call the provided callback with the expression that the directive contains.</p>
+<p>The following example creates a <code class=" language-php">@<span class="token function">datetime<span class="token punctuation">(</span></span><span class="token variable">$var</span><span class="token punctuation">)</span></code> directive which formats a given <code class=" language-php"><span class="token variable">$var</span></code>, which should be an instance of <code class=" language-php">DateTime</code>:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token php"><span class="token delimiter">&lt;?php</span>
+
+<span class="token keyword">namespace</span> <span class="token package">App<span class="token punctuation">\</span>Providers</span><span class="token punctuation">;</span>
+
+<span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Support<span class="token punctuation">\</span>Facades<span class="token punctuation">\</span>Blade</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Support<span class="token punctuation">\</span>ServiceProvider</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">AppServiceProvider</span> <span class="token keyword">extends</span> <span class="token class-name">ServiceProvider</span>
+<span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">/**
+     * Perform post-registration booting of services.
+     *
+     * @return void
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">boot<span class="token punctuation">(</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token scope">Blade<span class="token punctuation">::</span></span><span class="token function">directive<span class="token punctuation">(</span></span><span class="token string">'datetime'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$expression</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> "<span class="token delimiter">&lt;?php</span> <span class="token keyword">echo</span> <span class="token punctuation">(</span><span class="token variable">$expression</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">format<span class="token punctuation">(</span></span><span class="token string">'m/d/Y H:i'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token delimiter">?&gt;</span></span>"<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * Register bindings in the container.
+     *
+     * @return void
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">register<span class="token punctuation">(</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+       <span class="token comment" spellcheck="true"> //
+</span>    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>As you can see, we will chain the <code class=" language-php">format</code> method onto whatever expression is passed into the directive. So, in this example, the final PHP generated by this directive will be:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token php"><span class="token delimiter">&lt;?php</span> <span class="token keyword">echo</span> <span class="token punctuation">(</span><span class="token variable">$var</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">format<span class="token punctuation">(</span></span><span class="token string">'m/d/Y H:i'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token delimiter">?&gt;</span></span></code></pre>
+<blockquote class="has-icon note">
+<p><div class="flag"><span class="svg"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" version="1.1" x="0px" y="0px" width="90px" height="90px" viewBox="0 0 90 90" enable-background="new 0 0 90 90" xml:space="preserve"><path fill="#FFFFFF" d="M45 0C20.1 0 0 20.1 0 45s20.1 45 45 45 45-20.1 45-45S69.9 0 45 0zM45 74.5c-3.6 0-6.5-2.9-6.5-6.5s2.9-6.5 6.5-6.5 6.5 2.9 6.5 6.5S48.6 74.5 45 74.5zM52.1 23.9l-2.5 29.6c0 2.5-2.1 4.6-4.6 4.6 -2.5 0-4.6-2.1-4.6-4.6l-2.5-29.6c-0.1-0.4-0.1-0.7-0.1-1.1 0-4 3.2-7.2 7.2-7.2 4 0 7.2 3.2 7.2 7.2C52.2 23.1 52.2 23.5 52.1 23.9z"></path></svg></span></div> After updating the logic of a Blade directive, you will need to delete all of the cached Blade views. The cached Blade views may be removed using the <code class=" language-php">view<span class="token punctuation">:</span>clear</code> Artisan command.</p>
+</blockquote>
+	</article>
+</div>
+
+	<footer class="main">
+		<ul>
+			<li class="nav-docs"><a href="https://laravel.com/docs">Documentation</a></li>
+<li class="nav-laracasts"><a href="https://laracasts.com/">Laracasts</a></li>
+<li class="nav-laravel-news"><a href="https://laravel-news.com/">News</a></li>
+<li class="nav-partners"><a href="https://laravel.com/partners">Partners</a></li>
+<li class="nav-forge"><a href="https://forge.laravel.com/">Forge</a></li>
+
+<li class="dropdown community-dropdown">
+	<a href="https://laravel.com/docs/5.4/blade#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Ecosystem <span class="caret"></span></a>
+	<ul class="dropdown-menu" role="menu">
+
+		<li><a href="https://envoyer.io/">Envoyer</a></li>
+		<li><a href="https://lumen.laravel.com/">Lumen</a></li>
+		<li><a href="https://spark.laravel.com/">Spark</a></li>
+
+		<li class="divider"></li>
+
+		<li><a href="https://laracon.eu/">Laracon EU</a></li>
+		<li><a href="http://laracon.us/">Laracon US</a></li>
+		<li><a href="https://laracon.net/">Laracon Online</a></li>
+
+		<li class="divider"></li>
+
+		<li><a href="https://laracasts.com/discuss">Forums</a></li>
+		<li><a href="https://github.com/laravel/laravel">GitHub</a></li>
+		<li><a href="https://larajobs.com/?partner=5#/">Jobs</a></li>
+		<li><a href="http://www.laravelpodcast.com/">Podcast</a></li>
+		<li><a href="http://larachat.co/">Slack</a></li>
+		<li><a href="https://twitter.com/laravelphp">Twitter</a></li>
+	</ul>
+</li>
+		</ul>
+		<p>Laravel is a trademark of Taylor Otwell. Copyright © Taylor Otwell.</p>
+		<p class="less-significant">
+            <a href="http://jackmcdade.com/">
+                Designed by<br>
+                <svg xmlns="http://www.w3.org/2000/svg" width="128.2" height="28" viewBox="0 0 128.2 28"><g fill="#c3c3c3"><path d="M14.2.4v1.4l-1.4-.3.3 4.5c.1 1.5 0 3-.1 4.5 0 .4-.1.8-.1 1.2-.1.4-.1.8-.3 1.2-.1.4-.3.7-.5 1.1-.2.3-.5.6-.9.9-.4.2-.9.4-1.5.6-.6.2-1.1.3-1.6.3-.6 0-1.2-.1-1.6-.3-.5-.2-.9-.6-1.1-1-.3-.5-.5-1-.6-1.6-.1-.6-.1-1.3 0-2.1 0-.2.1-.5.2-.7-.1-.2 0-.4.1-.6l.3-.6 1.1.4c.2 0 .5.1.8.2.3.1.5.1.6.2 0 .2 0 .4-.1.5-.1.2-.1.3-.2.4-.1.1-.2.3-.2.4-.1.2-.1.3-.1.5L6 10.8c-.1.3-.2.7-.2 1.1 0 .4.1.8.2 1.2.2.4.4.7.6 1 .3.3.6.4 1 .3.6 0 1.1-.3 1.4-.6.3-.4.5-.9.7-1.7.1-.7.2-1.6.2-2.8V5.4c0-.6-.1-1.3-.1-2-.1-.6-.2-1.3-.3-2H5.7c-.7 0-1.5 0-2.2.2-.3.1-.6.2-1 .4-.3.1-.6.4-.9.6-.2.3-.4.6-.5 1-.1.3-.1.7 0 1 .1.5.3.8.4.9v-.1c0-.4.1-.8.4-1 .3-.2.6-.3.9-.3.3 0 .6.1.9.3.3.2.4.6.4 1s-.1.8-.4 1c-.3.2-.6.3-1 .3-.8 0-1.4-.2-1.8-.7-.4-.4-.7-.9-.8-1.5C0 4 0 3.4.2 2.7c.2-.6.5-1.1 1-1.5.4-.3.8-.5 1.2-.7.4-.1.9-.2 1.4-.3.5-.1.9-.1 1.4-.1h2.9c.6 0 1.1 0 1.6.1.5 0 1 .1 1.5.1s1 .1 1.5.1c.4.1.9.1 1.5 0zM25.2 14.3c0 .2.1.4.1.6 0 .2.1.4.1.7-1-.1-2-.2-3-.1-1.1.1-2.1.2-3 .4 0-.2-.1-.4-.1-.5 0-.2-.1-.4-.1-.5.2 0 .5-.1.7-.1.2 0 .4-.1.6-.1-.1-1.5-.3-3.1-.5-4.6-.5.1-.9.1-1.4.2-.5.1-.9.1-1.4.2-.2.7-.3 1.3-.5 2s-.3 1.3-.5 2h.6c.1 0 .3 0 .4.1v.9c0 .1 0 .2-.1.3H14v-1.2h1c.2-.5.3-1 .4-1.5.1-.5.3-1 .4-1.5.2-.6.3-1.2.5-1.7.2-.6.3-1.2.5-1.7.2-1.1.4-2.1.6-3.2.2-1.1.3-2.1.4-3.2h-1.4c0-.2.1-.4.1-.6 0-.2 0-.4.1-.6h5.8l.2 1.2h-1c.3 2.1.7 4.3 1 6.5.3 2.2.7 4.4 1 6.5h1.6zM17.5 9c.4-.1.7-.1 1.1-.2.4-.1.8-.1 1.2-.2-.2-1-.3-2-.5-2.9-.2-1-.4-1.9-.6-2.9-.2 1-.4 2.1-.5 3.1-.3 1-.5 2.1-.7 3.1zM36.7 10.4h-.6c0 .6 0 1.2-.2 1.9-.2.6-.5 1.2-1 1.6-.5.5-1 .9-1.6 1.1-.6.3-1.3.4-2 .5-.6.1-1.1.1-1.8 0-.6-.1-1.1-.4-1.6-.7-.2-.2-.5-.4-.8-.7-.3-.3-.5-.5-.6-.8-.3-.5-.5-1-.6-1.5-.2-.5-.3-.9-.4-1.4-.1-.5-.2-1-.2-1.5s0-1 .1-1.6c.2-1 .4-2 .8-2.9.4-.9.8-1.7 1.4-2.3.5-.7 1.2-1.2 1.9-1.6.7-.3 1.4-.5 2.2-.5.3 0 .5 0 .8.1.3.1.5.2.7.4.3.3.7.7 1 1.2.3.5.6 1.2.7 1.9h.6v.6l-2.5.4c-.3.1-.5.1-.6 0-.1 0-.2-.1-.2-.2-.1-.1-.1-.2 0-.3h.4c.2-.2.3-.3.3-.6v-.7c0-.5-.2-.9-.5-1.3l-.4-.4c-.2-.1-.4-.1-.6 0-.2 0-.4.2-.6.4-.2.2-.4.5-.5.9-.3.2-.4.6-.5.9-.1.3-.2.5-.2.7-.6 2.6-.7 5.3-.2 8 .1.3.2.7.3 1s.3.6.5.9c.2.3.5.5.8.7.3.2.6.2 1 .1.6-.1 1-.4 1.4-1 .3-.5.6-1.1.7-1.8.1-.3.1-.6.1-.9v-.5c-.2 0-.4 0-.6-.1-.1-.1-.2-.2-.2-.3 0-.1 0-.2.1-.3h3.4c0 .1 0 .2-.1.3-.1.1-.1.2-.1.3z"></path><path d="M48 14.2c.1.2.3.3.5.4.2.1.5.1.7 0 .1.1.1.2.1.4s-.1.3-.2.4c-.1.1-.2.2-.4.2h-1.4c-.3 0-.7 0-1-.1-.3-.1-.7-.2-1-.4-.3-.2-.5-.4-.7-.7-.2-.3-.3-.6-.3-1V9.9v-.4c0-.2-.1-.3-.2-.5s-.3-.3-.4-.4c-.2-.1-.4-.1-.7-.1-.1 0-.2 0-.5.1-.2.3-.3.5-.5.8-.2.3-.3.5-.5.7 0 .8 0 1.5-.1 2.2 0 .7-.1 1.5-.1 2.1h1.4v1.1c-.5 0-.9.1-1.3 0-.4 0-.8 0-1.2-.1-.4 0-.8-.1-1.2-.1H37.3c-.1 0-.2 0-.3-.1-.1 0-.1-.1-.1-.2s-.1-.3-.1-.4v-.4c0-.1.1-.2.1-.2.2.1.4.2.6.1s.4-.2.5-.4c0-.1.1-.3.1-.7 0-.4 0-.9.1-1.6 0-.6.1-1.3.1-2.1s0-1.6.1-2.4c0-.8 0-1.5.1-2.3 0-.7.1-1.3.1-1.8v-.7c0-.2-.1-.4-.2-.6-.1-.2-.3-.3-.5-.4-.2-.1-.4 0-.6.1 0-.2-.1-.5-.1-.7 0-.2 0-.4-.1-.7 1 0 2 .1 3 .1.9 0 1.9.1 3 .1v.3c0 .1 0 .3.1.4v.4c0 .1 0 .2-.1.2-.1.1-.2.1-.3.1-.1 0-.2 0-.4-.1-.1-.1-.3-.1-.4-.2-.1-.1-.3-.1-.3-.1-.1.9-.1 1.9-.1 2.9s-.1 2-.1 3.1c.7-1.2 1.4-2.5 2-3.8.2-.3.3-.6.4-.9.1-.3.3-.6.5-.9.2-.3.4-.5.7-.7.3.3.6.2.9.1.3-.1.7-.1 1 0 .3.1.6.2.9.5.2.3.4.6.4 1s.1.8 0 1.1v.5c0 .2-.1.3-.2.4-.1.2-.2.3-.4.4-.2.1-.4.1-.5.2-.1 0-.3.1-.4.1h-.4c-.2-.3-.4-.4-.4-.6-.1-.2-.1-.4 0-.5.1-.2.2-.3.3-.3.1 0 .2-.1.4-.1.2-.1.3-.2.3-.3.1-.2.1-.3.1-.5 0-.3-.1-.5-.1-.7-.1-.2-.2-.3-.3-.3-.2 0-.3 0-.5.1s-.3.2-.5.4-.3.4-.4.6c-.1.2-.3.5-.4.7-.1.3-.3.6-.4.8-.2.2-.3.5-.4.8-.4.9-.8 1.7-1.2 2.5.3 0 .6-.1 1 0h1c.3 0 .7.1 1 .2.3.1.6.3.8.6.3.3.4.6.5 1 .1.4.1.8.2 1.1l.2 2.1c0 .2.1.5.1.7 0 .4.1.7.3.9zM71.7 13.9c.2.2.4.4.7.5.3.1.5 0 .8-.1 0 .2.1.3.1.6.1.2.1.4.1.6h-1.1s-.8 0-1.3.1h-2.3v-.2c0-.1.1-.2.2-.3.1-.1.2-.2.4-.3.2-.1.3-.1.6-.1.1 0 .1-.2.1-.7v-1.6c0-.6 0-1.2-.1-1.9s0-1.1 0-1.5V6.4c0-.7.1-1.5.1-2.2-.6 1.3-1.1 2.7-1.6 4.1-.5 1.5-1 3-1.5 4.4 0 0 .1.1.1.2-.2 0-.4 0-.7.1-.3.1-.5.1-.7.1-.5-1.9-1.1-3.7-1.6-5.5-.5-1.8-1.1-3.6-1.6-5.5-.1 1-.1 2-.1 3 0 1.1-.1 2.1-.1 3.2s0 2.1-.1 3.2c0 1-.1 2-.1 3h1.4v1.1c-.5 0-.9.1-1.3 0-.4 0-.8 0-1.2-.1-.4 0-.8-.1-1.2-.1H58c-.1 0-.2 0-.3-.1-.1 0-.1-.1-.1-.2s-.1-.3-.1-.4v-.4c0-.1.1-.2.1-.2.2.1.4.2.6.1s.4-.2.5-.4c0-.1.1-.3.1-.7 0-.4 0-.9.1-1.6 0-.6.1-1.3.1-2.1V7.2c0-.8 0-1.5.1-2.3 0-.7.1-1.3.1-1.8v-.7c0-.2-.1-.4-.2-.6-.1-.2-.3-.3-.5-.4-.2-.1-.4 0-.6.1 0-.2-.1-.5-.1-.7 0-.2 0-.4-.1-.7 1 0 2 .1 3 .1.9 0 1.9.1 3 .1 0 .3-.1.5-.4.7.3 1.3.6 2.6 1 3.9l1.2 3.9c.2-.6.4-1.3.6-1.9l.6-1.8c.3-.5.5-1.1.8-1.7.2-.6.4-1.3.6-2-.1 0-.3 0-.4-.1-.1 0-.2 0-.4-.1-.1 0-.1-.1-.1-.3 0-.1.1-.2.1-.3.1-.1.2-.1.3-.1h4.5c.1 0 .3.1.4.2.1.1.2.2.2.4s0 .3-.2.3c-.1-.1-.2-.1-.3-.1-.1 0-.2.1-.3.1-.2.4-.3.8-.4 1.3-.1.5-.1.9-.1 1.4-.2 2.8-.2 5.6 0 8.4 0 .3 0 .5.1.7-.1.3 0 .5.2.7zM81.7 12h-.4c0 .4 0 .9-.2 1.3-.1.4-.4.8-.7 1.1-.3.3-.7.6-1.1.8-.4.2-.9.3-1.3.4-.4.1-.8 0-1.2 0-.4-.1-.8-.2-1.1-.5-.2-.1-.3-.3-.5-.5s-.3-.4-.4-.6c-.2-.4-.3-.7-.4-1-.1-.3-.2-.6-.3-1-.1-.3-.1-.6-.1-1 0-.3 0-.7.1-1.1.1-.7.3-1.4.5-2 .3-.6.6-1.1.9-1.6s.8-.8 1.3-1.1c.5-.3 1-.4 1.5-.4.2 0 .4 0 .6.1.2.1.3.1.5.3.2.2.4.4.6.8.2.4.4.8.5 1.3h.4v.4l-1.7.3c-.2.1-.3.1-.4 0-.1 0-.1-.1-.2-.2v-.2h.4c.1-.1.2-.2.2-.4v-.5c0-.3-.1-.6-.3-.9l-.3-.3c-.1-.1-.2-.1-.4 0-.1 0-.3.1-.4.3-.1.2-.3.4-.4.6l-.3.6c-.1.2-.1.4-.1.5-.4 1.8-.5 3.6-.1 5.5.1.2.1.4.2.7l.3.6c.1.2.3.3.6.5.2.1.4.1.7.1.4-.1.7-.3 1-.7.2-.4.4-.8.5-1.2 0-.2.1-.4.1-.6v-.3h-.4c-.1 0-.1-.1-.1-.2s0-.2.1-.2h2.4v.2c-.5-.1-.5 0-.6.1z"></path><path d="M83.5 14.2c.2-4.3.3-8.5.2-12.8h-1.8V.9.4c.7 0 1.3 0 2-.1.7 0 1.3 0 2-.1.8-.2 1.6-.2 2.4-.1.8.1 1.6.3 2.4.5.7.3 1.4.7 1.9 1.2s.9 1.1 1.1 1.8c.3 1.3.4 2.5.3 3.8 0 1.2-.2 2.4-.3 3.6 0 .4-.1.8-.2 1.2-.1.4-.3.8-.5 1.1-.3.5-.8 1-1.3 1.3-.5.3-1.1.5-1.7.6-.5.1-.9.2-1.4.1-.5 0-.9 0-1.4-.1h-4.9c-.2-.4-.1-.8.2-1.1.2-.2.3-.2.5-.3.2.3.4.3.5.4zm5.9-12.3c-.4-.3-.8-.5-1.3-.6-.5-.1-1-.1-1.5-.1-.3 4.5-.2 9.1.4 13.6.2 0 .4 0 .5-.1.2 0 .4-.1.6-.1.3-.1.6-.2.9-.4.3-.2.6-.4.8-.7.2-.3.4-.6.5-1s.2-.7.2-1.1c.4-2.1.4-4.2.2-6.3-.1-.6-.2-1.2-.4-1.9 0-.4-.4-.9-.9-1.3zM102.4 9.7c-.6-.1-1.3-.1-2 0s-1.4.4-2 .8l-.2-1.4.9-.1c0-.4-.1-.7-.1-1 0-.2-.1-.5-.1-.9-.3 0-.6.1-.9.1-.3 0-.6.1-1 .1-.2.7-.3 1.3-.4 1.8-.1.5-.2 1.1-.4 1.6l.2-.1.7.6c-.4.2-.8.6-1.2 1.1-.4.5-.7 1-.9 1.5l-.9-.5c0-.1.1-.2.2-.4s.2-.3.2-.4c.1-.2.2-.5.3-1 .1-.4.2-.9.4-1.3.1-.5.2-.9.3-1.3.1-.4.2-.7.2-.9l.3-1.2.3-1.2c.2-.7.3-1.4.4-2.1.1-.7.2-1.4.3-2.2h-.6l.1-.8 4-.1.1.8h-.2-.2c.1.7.2 1.4.3 2l.3 1.8.3 1.8c.1.6.2 1.3.4 2h.6l.3.9zm-3.6-3.6c-.1-.7-.2-1.3-.3-2-.1-.6-.3-1.3-.4-2-.1.6-.2 1.3-.4 2.1-.1.7-.3 1.5-.5 2.2l1.6-.3z"></path><path d="M124.9 20.1c0-.3.1-.6.3-.8.2-.2.4-.3.7-.4.3-.1.5 0 .8.1.3.1.5.3.6.5.3.4.6.9.7 1.4.2.5.2 1 .2 1.5s-.1 1-.3 1.5c-.2.5-.4 1-.7 1.4-.6.9-1.4 1.6-2.4 2-1 .5-2 .7-3 .7-1.5 0-2.8-.3-3.9-1s-2.1-1.4-3-2.4c-.9-1-1.8-2.1-2.5-3.2-.8-1.2-1.5-2.3-2.3-3.5-1.1 1.2-2.4 2.2-3.9 3-1.5.8-3 1.1-4.5 1-1.1 0-2.1-.1-3-.5-.9-.3-1.6-.8-2.2-1.4-.6-.6-.9-1.3-1.1-2.2-.2-.8-.1-1.7.2-2.7.3-.9.7-1.6 1.3-2.2.6-.6 1.2-1.1 2-1.5.7-.4 1.5-.6 2.4-.7.8-.1 1.7 0 2.6.2v-5-4.6h-1.8V.8.3l3.7-.1c.8-.2 1.6-.2 2.4-.1.8.1 1.6.3 2.4.5.7.3 1.4.7 1.9 1.2s.9 1.1 1.1 1.8c.3 1.2.4 2.4.3 3.6-.1 1.2-.2 2.5-.4 3.7-.1 1-.4 2-.8 3-.5 1-1 2-1.7 2.9.3.4.6.8.8 1.2.3.4.5.8.8 1.2.5.8 1.1 1.6 1.7 2.5.6.8 1.3 1.6 2 2.4.7.7 1.5 1.3 2.4 1.8s1.8.7 2.9.8c1.1 0 2.1-.2 3-.7.9-.5 1.6-1.2 2.1-2.2.2-.4.3-.8.4-1.3.1-.5 0-.9-.1-1.3-.2.1-.4.2-.6.2-.2 0-.4 0-.6-.1-.2-.1-.4-.2-.5-.4s-.4-.5-.4-.8zm-22 .9c1.5-.4 2.8-1 3.7-1.8.9-.8 1.7-1.7 2.3-2.8-.2-.2-.3-.5-.6-.7-.6-.7-1.2-1.4-1.9-1.9 0 .6.1 1.2.1 1.8 0 .6.1 1.1.2 1.6v.1h-4.3c-.1-.2-.1-.4 0-.7 0-.2.1-.3.3-.5.3-.3.7-.4 1.1-.2l.1-3.5c-.5-.2-1-.3-1.5-.3s-1.1 0-1.6.1c-.6.1-1.1.3-1.6.6s-.9.7-1.3 1.1c-.4.4-.7.9-.9 1.5-.2.5-.3 1.1-.3 1.6 0 .7.2 1.3.6 1.8.4.5.9.9 1.4 1.4.2.2.5.3.8.5.3.1.7.2 1.1.3.4.1.8.1 1.2.1.3 0 .7 0 1.1-.1zm6.4-19.1c-.4-.3-.8-.5-1.2-.6-.5-.1-.9-.1-1.4-.1-.1 1.7-.2 3.4-.3 5.3-.1 1.9-.1 3.7 0 5.6.6.4 1.2.8 1.7 1.4.5.5 1 1.1 1.5 1.6.2-.6.4-1.2.6-1.9.2-.6.3-1.2.3-1.7.2-1.1.2-2.1.3-3.1 0-1 0-2.1-.1-3.1-.1-.6-.2-1.2-.4-1.9-.2-.6-.5-1.1-1-1.5z"></path><path d="M116.5 1.2h-1.8V.4c.5 0 .9 0 1.2-.1s.7 0 1.1 0h1.1s.8 0 1.3-.1c.9 0 1.8 0 2.8-.1.9 0 1.8 0 2.8-.1v3.6h-1.3c-.1 0-.1-.1 0-.1.1-.2.1-.4.1-.6s0-.4-.1-.6l-.3-.6c-.1-.2-.2-.3-.4-.4-.2-.1-.4-.2-.6-.2h-.7c-.3 0-.5.1-.8.1-.3.1-.5.2-.6.4-.1.2-.1.3-.1.3v.3c0 .7-.1 1.3-.1 2 0 .6-.1 1.3-.1 1.9v1c.6-.2 1.2-.3 1.9-.4.6-.1 1.2-.3 1.9-.4 0 .1.1.2.1.3V7c0 .2-.1.3-.1.4-.1.1-.1.2-.1.3-.1.1-.2.1-.4.2-.1 0-.3.1-.4.1-.5.1-.9.2-1.4.3-.5.1-.9.1-1.4.2 0 1-.1 2-.2 2.9-.1 1-.1 1.9-.2 2.9.8.2 1.5.3 2 .1.6-.2 1.2-.5 1.9-1 .2-.1.2-.3.2-.5v-.7c0-.2.1-.5.2-.6.1-.2.3-.3.7-.4.4 0 .6.1.7.4.1.3.2.7.2 1.1 0 .5 0 .9-.1 1.4-.1.5-.1.9 0 1.2h-1.4c-.4 0-.8 0-1.2.1-.4 0-.8 0-1.2.1h-1.3c-.9 0-1.7 0-2.5.1-.7.1-1.6.1-2.4.1-.2-.2-.2-.4-.2-.7 0-.2.1-.5.3-.6.2-.2.3-.3.6-.3.2-.1.5 0 .7.1.1-2.1.2-4.3.1-6.5-.7-2.2-.7-4.3-.5-6.5z"></path></g></svg>
+            </a>
+        </p>
+	</footer>
+
+	<script>
+		var algolia_app_id      = '8BB87I11DE';
+		var algolia_search_key  = '8e1d446d61fce359f69cd7c8b86a50de';
+				var version             = '5.4';
+			</script>
+
+	<script id="search_suggestion_template" type="text/template">
+	<div class="autocomplete-wrapper">
+		{{#_highlightResult.h1}}
+		<div class="h1">
+			{{{ _highlightResult.h1.value }}}
+		</div>
+		{{/_highlightResult.h1}}
+
+		<div class="sub-section">
+			{{#_highlightResult.h2}}
+			<div class="h2">
+				<span class="hash">#</span> {{{ _highlightResult.h2.value }}}
+			</div>
+			{{/_highlightResult.h2}}
+
+			{{#_highlightResult.h3}}
+			<div class="h3">
+				> {{{ _highlightResult.h3.value }}}
+			</div>
+			{{/_highlightResult.h3}}
+
+			{{#_highlightResult.h4}}
+			<div class="h4">
+				> {{{ _highlightResult.h4.value }}}
+			</div>
+			{{/_highlightResult.h4}}
+		</div>
+
+		{{#_highlightResult.content}}
+		<div class="content">
+			{{{ _highlightResult.content.value }}}
+		</div>
+		{{/_highlightResult.content}}
+	</div>
+</script>
+
+<script id="search_empty_template" type="text/template">
+	<div class="autocomplete-wrapper empty">
+		<div class="h2">We didn't find any result for "{{query}}". Sorry!</div>
+	</div>
+</script>
+
+<script id="search_footer_template" type="text/template">
+	<div class="footer">
+		<a target="_blank" href="https://www.algolia.com/?utm_source=laravel&utm_medium=link&utm_campaign=laravel_documentation_search">
+			<img width="50" src="/assets/img/algolia-logo.png">
+			<div class="powered">powered by</div>
+			<div style="clear: both"></div>
+		</a>
+	</div>
+</script>
+
+	<script src="./Blade Templates - Laravel - The PHP Framework For Web Artisans_files/laravel-7b7cf225c8.js"></script>
+	<script src="./Blade Templates - Laravel - The PHP Framework For Web Artisans_files/viewport-units-buggyfill.js"></script>
+	<script>window.viewportUnitsBuggyfill.init();</script>
+	<script>
+		var _gaq=[['_setAccount','UA-23865777-1'],['_trackPageview']];
+		(function(d,t){
+			var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+			g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+			s.parentNode.insertBefore(g,s)
+		}(document,'script'));
+	</script><p style="transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); margin: 0px;"></p>
+
+
+</div></div></body></html>

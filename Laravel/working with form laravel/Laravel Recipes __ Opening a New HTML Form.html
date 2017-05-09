@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)http://laravel-recipes.com/recipes/124/opening-a-new-html-form -->
+<html><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+            Laravel Recipes
+      :: Opening a New HTML Form
+  </title>
+  <link rel="shortcut icon" href="http://laravel-recipes.com/favicon.ico">
+
+  <link media="all" type="text/css" rel="stylesheet" href="./Laravel Recipes __ Opening a New HTML Form_files/bootstrap.min.css">
+
+  <link media="all" type="text/css" rel="stylesheet" href="./Laravel Recipes __ Opening a New HTML Form_files/font-awesome.min.css">
+
+  <link media="all" type="text/css" rel="stylesheet" href="./Laravel Recipes __ Opening a New HTML Form_files/app.css">
+
+  <link media="all" type="text/css" rel="stylesheet" href="./Laravel Recipes __ Opening a New HTML Form_files/recipes.css">
+
+
+  <!--[if lt IE 9]>
+  <script src="http://laravel-recipes.com/assets/js/html5shiv.min.js"></script>
+
+  <script src="http://laravel-recipes.com/assets/js/respond.min.js"></script>
+
+  <![endif]-->
+
+<script type="text/javascript" async="" src="./Laravel Recipes __ Opening a New HTML Form_files/embed.js"></script><link rel="preload" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.1338080c7d626298e3eb715cb658042e.css"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.94805df7d922d8c7efc1170776463a6c.js"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.049dcbe15518bbbfe775b0e6e75af92a.js"><link rel="preload" as="script" href="https://disqus.com/next/config.js"></head>
+<body>
+
+  <div id="page" class="hfeed site">
+    <header id="masthead" class="site-header" role="banner">
+
+      <div class="container">
+
+    <div id="logo" class="site-logo text-center">
+    <a href="http://laravel-recipes.com/" rel="home"><img src="./Laravel Recipes __ Opening a New HTML Form_files/logo.png" alt="Laravel Recipes"></a>
+  </div>
+
+    <div id="navbar" class="navbar-wrapper text-center">
+    <nav class="navbar navbar-default site-navigation" role="navigation">
+      <ul class="nav navbar-nav navbar-menu sf-js-enabled sf-arrows">
+        <li>
+          <a href="http://laravel-recipes.com/">Home</a>
+        </li>
+        <li>
+          <a href="http://laravel-recipes.com/contents">Contents</a>
+        </li>
+        <li>
+          <a href="http://laravel-recipes.com/faq">FAQ</a>
+        </li>
+        <li>
+          <a class="sf-with-ul">Index <i class="sub-indicator fa fa-angle-down fa-fw text-muted"></i></a>
+          <ul class="dropdown-menu sub-menu" style="display: none;">
+            <li>
+              <a href="http://laravel-recipes.com/topics">Topic</a>
+            </li>
+            <li>
+              <a href="http://laravel-recipes.com/codes">Code</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="http://laravelcoding.com/">LaravelCoding</a></li>
+        <li class="">
+          <a class="sf-with-ul">Laravel.com <i class="sub-indicator fa fa-angle-down fa-fw text-muted"></i></a>
+          <ul class="dropdown-menu sub-menu" style="display: none;">
+            <li><a href="http://laravel.com/docs">Docs</a></li>
+            <li><a href="http://laravel.com/api/">API</a></li>
+            <li><a href="http://forums.laravel.io/">Forums</a></li>
+          </ul>
+        </li>
+      </ul><select class="form-control nav navbar-nav navbar-menu sf-js-enabled sf-arrows"><option value="#">Navigate to...</option><option value="http://laravel-recipes.com/">&nbsp;Home</option><option value="http://laravel-recipes.com/contents">&nbsp;Contents</option><option value="http://laravel-recipes.com/faq">&nbsp;FAQ</option><option value="">&nbsp;Index</option><option value="http://laravel-recipes.com/topics">–&nbsp;Topic</option><option value="http://laravel-recipes.com/codes">–&nbsp;Code</option><option value="http://laravelcoding.com/">&nbsp;LaravelCoding</option><option value="">&nbsp;Laravel.com</option><option value="http://laravel.com/docs">–&nbsp;Docs</option><option value="http://laravel.com/api/">–&nbsp;API</option><option value="http://forums.laravel.io/">–&nbsp;Forums</option></select>
+    </nav>
+  </div>
+
+    <div id="header-search" class="site-search clearfix">
+    <form action="http://laravel-recipes.com/search" method="get" class="search-form" role="search">
+  <div class="form-border">
+
+    <div class="form-inline">
+      <div class="form-group">
+        <input class="search-field form-control input-lg" title="Enter search term" autocomplete="off" placeholder="Search for a recipe. Type your search term here..." name="s" type="text">
+      <div class="autocomplete-suggestions" style="position: absolute; display: none; max-height: 300px; z-index: 9999;"></div></div>
+      <input class="search-submit btn btn-custom btn-lg pull-right" type="submit" value="Go">
+    </div>
+
+  </div>
+</form>
+  </div><!-- #header-search -->
+</div>
+
+    </header>
+
+        <div id="features" class="site-hero clearfix">
+      <div class="container">
+          <ol class="breadcrumb breadcrumb-custom">
+    <li class="text">You are here: </li>
+    <li><a href="http://laravel-recipes.com/">Home</a></li>
+    <li><a href="http://laravel-recipes.com/contents">Contents</a></li>
+    <li><a href="http://laravel-recipes.com/categories/21">Form</a></li>
+    <li class="active">Opening a New HTML Form</li>
+  </ol>
+      </div>
+    </div>
+  </div>
+
+  <div id="main" class="site-main clearfix">
+    <div class="container">
+
+      <div class="content-area">
+        <div class="row">
+          <div id="content" class="site-content col-md-9">
+              <article class="hentry">
+    <header class="entry-header">
+      <h1 class="entry-title">Opening a New HTML Form</h1>
+    </header>
+    <div class="entry-content clearfix">
+
+      <div class="recipe-header">
+ <span class="fa-stack fa-2x pull-left">
+  <i class="fa fa-circle fa-stack-2x"></i>
+  <i class="fa fa-question fa-stack-1x fa-inverse"></i>
+ </span>
+ <div class="recipe-text pull-left">
+ <h4 class="h3">Problem</h4>
+<p>You want to start a form.</p>
+
+ </div>
+</div>
+
+<div class="clearfix"></div>
+
+<p>You know you could use the HTML <code>&lt;form&gt;</code> tag directly, but want to use Laravel's <code>Form</code> facade.</p>
+
+      <div class="vspace-16"></div>
+
+      <div class="recipe-header">
+ <span class="fa-stack fa-2x pull-left">
+  <i class="fa fa-circle fa-stack-2x"></i>
+  <i class="fa fa-info fa-stack-1x fa-inverse"></i>
+ </span>
+ <div class="recipe-text pull-left">
+ <h4 class="h3">Solution</h4>
+<p>Use the <code>Form::open()</code> method.</p>
+
+ </div>
+</div>
+
+<div class="clearfix"></div>
+
+<p>Usually, this is done in a Blade template. There are several ways to use this method.</p>
+
+<h4>Using defaults</h4>
+
+<pre class="prettyprint lang-html prettyprinted"><span class="pln">{{ Form::open() }}</span></pre>
+
+<p>The HTML produced is.</p>
+
+<pre class="prettyprint lang-html prettyprinted"><span class="tag">&lt;form</span><span class="pln"> </span><span class="atn">method</span><span class="pun">=</span><span class="atv">"POST"</span><span class="pln"> </span><span class="atn">action</span><span class="pun">=</span><span class="atv">"http://currenturl"</span><span class="pln"> </span><span class="atn">accept-charset</span><span class="pun">=</span><span class="atv">"UTF-8"</span><span class="tag">&gt;</span><span class="pln">
+</span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"_token"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"hidden"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"somelongrandom string"</span><span class="tag">&gt;</span></pre>
+
+<p>This starts a form, using the POST method, to the current URL and will add an <code>accept-charset="UTF-8"</code> to the form. Additionally, a hidden token is added.</p>
+
+<h4>To a specific url</h4>
+
+<p>Instead of passing an <code>action</code> you should pass a <code>url</code> value. This occurs in the only argument <code>Form::open()</code> accepts ... an array.</p>
+
+<pre class="prettyprint lang-html prettyprinted"><span class="pln">{{ Form::open(array('url' =&gt; 'http://full.url/here')) }}</span></pre>
+
+<p>This produces the following HTML.</p>
+
+<pre class="prettyprint lang-html prettyprinted"><span class="tag">&lt;form</span><span class="pln"> </span><span class="atn">method</span><span class="pun">=</span><span class="atv">"POST"</span><span class="pln"> </span><span class="atn">action</span><span class="pun">=</span><span class="atv">"http://full.url/here"</span><span class="pln"> </span><span class="atn">accept-charset</span><span class="pun">=</span><span class="atv">"UTF-8"</span><span class="tag">&gt;</span><span class="pln">
+</span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"_token"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"hidden"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"somelongrandom string"</span><span class="tag">&gt;</span></pre>
+
+<h4>To a route</h4>
+
+<p>Instead of passing the <code>action</code> you should pass a <code>route</code> value to one of your named routes.</p>
+
+<pre class="prettyprint lang-html prettyprinted"><span class="pln">{{ Form::open(array('route' =&gt; 'named.route')) }}</span></pre>
+
+<p>If the route doesn't exist an error will be produced. Otherwise the form's action attribute becomes the full URL to the route.</p>
+
+<pre class="prettyprint lang-html prettyprinted"><span class="tag">&lt;form</span><span class="pln"> </span><span class="atn">method</span><span class="pun">=</span><span class="atv">"POST"</span><span class="pln"> </span><span class="atn">action</span><span class="pun">=</span><span class="atv">"http://full.url/someplace"</span><span class="pln"> </span><span class="atn">accept-charset</span><span class="pun">=</span><span class="atv">"UTF-8"</span><span class="tag">&gt;</span><span class="pln">
+</span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"_token"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"hidden"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"somelongrandom string"</span><span class="tag">&gt;</span></pre>
+
+<h4>To a controller action</h4>
+
+<p>This is where you use <code>action</code>.</p>
+
+<pre class="prettyprint lang-html prettyprinted"><span class="pln">{{ Form::open(array('action' =&gt; 'Controller@method')) }}</span></pre>
+
+<p>If the controller or method doesn't exist an error will be produced. Otherwise the form's action attribute becomes the full URL to the route that will call the specified controller and method.</p>
+
+<pre class="prettyprint lang-html prettyprinted"><span class="tag">&lt;form</span><span class="pln"> </span><span class="atn">method</span><span class="pun">=</span><span class="atv">"POST"</span><span class="pln"> </span><span class="atn">action</span><span class="pun">=</span><span class="atv">"http://full.url/someplace"</span><span class="pln"> </span><span class="atn">accept-charset</span><span class="pun">=</span><span class="atv">"UTF-8"</span><span class="tag">&gt;</span><span class="pln">
+</span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"_token"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"hidden"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"somelongrandom string"</span><span class="tag">&gt;</span></pre>
+
+<h4>Specifying different methods</h4>
+
+<p>You can use methods other than POST with your forms. Pass the 'method' you want in the array argument. Valid methods are 'get', 'put', 'patch', 'post', or 'delete'.</p>
+
+<pre class="prettyprint lang-html prettyprinted"><span class="pln">{{ Form::open(array('method' =&gt; 'get')) }}</span></pre>
+
+<p>This will produce the following HTML.</p>
+
+<pre class="prettyprint lang-html prettyprinted"><span class="tag">&lt;form</span><span class="pln"> </span><span class="atn">method</span><span class="pun">=</span><span class="atv">"GET"</span><span class="pln"> </span><span class="atn">action</span><span class="pun">=</span><span class="atv">"http://currenturl"</span><span class="pln"> </span><span class="atn">accept-charset</span><span class="pun">=</span><span class="atv">"UTF-8"</span><span class="tag">&gt;</span></pre>
+
+<p>Notice there's no token? The token is not added for GET methods.</p>
+
+<p>See the discussion at the bottom of this recipe for how Laravel <em>"fakes"</em> the methods browsers can't handle.</p>
+
+<h4>Specifying file uploads</h4>
+
+<p>If you pass a <code>'files' =&gt; true</code> as one of the array arguments, the form will become suitable for file uploads.</p>
+
+<pre class="prettyprint lang-html prettyprinted"><span class="pln">{{ Form::open(array('files' =&gt; true)) }}</span></pre>
+
+<p>The form now has the <code>enctype="multipart/form-data"</code> attribute.</p>
+
+<pre class="prettyprint lang-html prettyprinted"><span class="tag">&lt;form</span><span class="pln"> </span><span class="atn">method</span><span class="pun">=</span><span class="atv">"POST"</span><span class="pln"> </span><span class="atn">action</span><span class="pun">=</span><span class="atv">"http://currenturl"</span><span class="pln"> </span><span class="atn">accept-charset</span><span class="pun">=</span><span class="atv">"UTF-8"</span><span class="pln">
+  </span><span class="atn">enctype</span><span class="pun">=</span><span class="atv">"multipart/form-data"</span><span class="tag">&gt;</span><span class="pln">
+</span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"_token"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"hidden"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"somelongrandom string"</span><span class="tag">&gt;</span></pre>
+
+      <div class="vspace-16"></div>
+
+      <div class="recipe-header">
+ <span class="fa-stack fa-2x pull-left">
+  <i class="fa fa-circle fa-stack-2x"></i>
+  <i class="fa fa-comments fa-stack-1x fa-inverse"></i>
+ </span>
+ <div class="recipe-text pull-left">
+ <h4 class="h3">Discussion</h4>
+<p>How Laravel <em>"fakes"</em> methods browsers cannot handle.</p>
+
+ </div>
+</div>
+
+<div class="clearfix"></div>
+
+<p>The form methods PUT, PATCH, and DELETE cannot be handled by most browsers. So what Laravel does is make the <code>method="POST"</code> and adds a hidden field.</p>
+
+<pre class="prettyprint lang-html prettyprinted"><span class="pln">{{ Form::open(array('method' =&gt; 'PUT')) }}</span></pre>
+
+<p>This produces the following.</p>
+
+<pre class="prettyprint lang-html prettyprinted"><span class="tag">&lt;form</span><span class="pln"> </span><span class="atn">method</span><span class="pun">=</span><span class="atv">"POST"</span><span class="pln"> </span><span class="atn">action</span><span class="pun">=</span><span class="atv">"http://currenturl"</span><span class="pln"> </span><span class="atn">accept-charset</span><span class="pun">=</span><span class="atv">"UTF-8"</span><span class="tag">&gt;</span><span class="pln">
+</span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"_method"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"hidden"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"PUT"</span><span class="tag">&gt;</span><span class="pln">
+</span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"_token"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"hidden"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"somelongrandom string"</span><span class="tag">&gt;</span></pre>
+
+<p>The framework is smart enough to translate those hidden fields and change the request type to match what's desired.</p>
+
+
+    </div>
+  </article>
+  <div class="row">
+    <div class="col-xs-6">
+      <a href="http://laravel-recipes.com/recipes/150/emptying-a-directory-of-all-files-and-folders" class="btn btn-custom" title="Emptying a Directory of All Files and Folders">
+        <i class="fa fa-arrow-left"></i>
+        Prev
+      </a>
+    </div>
+    <div class="col-xs-6">
+      <a href="http://laravel-recipes.com/recipes/151/creating-a-new-model-based-form" class="btn btn-custom pull-right" title="Creating a New Model Based Form">
+        Next
+        <i class="fa fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+
+
+          </div>
+
+          <div id="sidebar" class="site-sidebar col-md-3">
+            <div class="widget-area">
+
+              <section id="section-banner1" class="section">
+  <div class="banner-wrapper text-center clearfix">
+    <h3 class="banner-title text-danger h4">
+      Laravel 5 Beauty
+    </h3>
+    <div class="banner-content">
+      <div id="l5beauty-img" style="margin-bottom:5px">
+        <a href="https://leanpub.com/l5-beauty">
+          <img src="./Laravel Recipes __ Opening a New HTML Form_files/l5beauty.jpg" alt="Laravel 5 Beauty" class="img-thumbnail img-rounded">
+        </a>
+      </div>
+      <div>
+        <a href="https://leanpub.com/l5-beauty" id="buy-book-link1" class="btn btn-custom btn-xs">More...</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="section-banner2" class="section">
+  <div class="banner-wrapper text-center clearfix">
+    <h3 class="banner-title text-danger h4">
+      Getting Stuff Done with Laravel 4
+    </h3>
+    <div class="banner-content">
+      <div id="gsd-laravel-img">
+        <a href="https://leanpub.com/gettingstuffdonelaravel">
+          <img src="./Laravel Recipes __ Opening a New HTML Form_files/gsd-laravel.jpg" alt="Getting Stuff Done with Laravel 4" class="img-thumbnail img-rounded">
+        </a>
+      </div>
+      <div>
+        <a href="https://leanpub.com/gettingstuffdonelaravel" id="buy-book-link2" class="btn btn-custom btn-xs">More...</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+              <section id="section-categories" class="section">
+                <h2 class="section-title h4 clearfix"><i class="line"></i>Categories</h2>
+                <ul class="nav nav-pills nav-stacked nav-categories">
+                                      <li>
+                      <a href="http://laravel-recipes.com/categories/1">
+                        <span class="badge pull-right">29</span>
+                        App
+                      </a>
+                    </li>
+                                      <li>
+                      <a href="http://laravel-recipes.com/categories/2">
+                        <span class="badge pull-right">28</span>
+                        Artisan
+                      </a>
+                    </li>
+                                      <li>
+                      <a href="http://laravel-recipes.com/categories/4">
+                        <span class="badge pull-right">36</span>
+                        Auth
+                      </a>
+                    </li>
+                                      <li>
+                      <a href="http://laravel-recipes.com/categories/8">
+                        <span class="badge pull-right">5</span>
+                        Basic Development
+                      </a>
+                    </li>
+                                      <li>
+                      <a href="http://laravel-recipes.com/categories/9">
+                        <span class="badge pull-right">23</span>
+                        Blade
+                      </a>
+                    </li>
+                                      <li>
+                      <a href="http://laravel-recipes.com/categories/10">
+                        <span class="badge pull-right">24</span>
+                        Cache
+                      </a>
+                    </li>
+                                      <li>
+                      <a href="http://laravel-recipes.com/categories/3">
+                        <span class="badge pull-right">5</span>
+                        Config
+                      </a>
+                    </li>
+                                      <li>
+                      <a href="http://laravel-recipes.com/categories/7">
+                        <span class="badge pull-right">11</span>
+                        Configuration
+                      </a>
+                    </li>
+                                      <li>
+                      <a href="http://laravel-recipes.com/categories/11">
+                        <span class="badge pull-right">3</span>
+                        Controller
+                      </a>
+                    </li>
+                                      <li>
+                      <a href="http://laravel-recipes.com/categories/12">
+                        <span class="badge pull-right">2</span>
+                        Cookie
+                      </a>
+                    </li>
+                                      <li>
+                      <a href="http://laravel-recipes.com/categories/17">
+                        <span class="badge pull-right">6</span>
+                        Core Extension
+                      </a>
+                    </li>
+                                      <li>
+                      <a href="http://laravel-recipes.com/categories/15">
+                        <span class="badge pull-right">6</span>
+                        Crypt
+                      </a>
+                    </li>
+                                      <li>
+                      <a href="http://laravel-recipes.com/categories/13">
+                        <span class="badge pull-right">2</span>
+                        Database Configuration
+                      </a>
+                    </li>
+                                      <li>
+                      <a href="http://laravel-recipes.com/categories/20">
+                        <span class="badge pull-right">26</span>
+                        File
+                      </a>
+                    </li>
+                                      <li>
+                      <a href="http://laravel-recipes.com/categories/21">
+                        <span class="badge pull-right">30</span>
+                        Form
+                      </a>
+                    </li>
+                                      <li>
+                      <a href="http://laravel-recipes.com/categories/22">
+                        <span class="badge pull-right">1</span>
+                        Hash
+                      </a>
+                    </li>
+                                      <li>
+                      <a href="http://laravel-recipes.com/categories/5">
+                        <span class="badge pull-right">2</span>
+                        Help
+                      </a>
+                    </li>
+                                      <li>
+                      <a href="http://laravel-recipes.com/categories/19">
+                        <span class="badge pull-right">17</span>
+                        HTML
+                      </a>
+                    </li>
+                                      <li>
+                      <a href="http://laravel-recipes.com/categories/6">
+                        <span class="badge pull-right">14</span>
+                        Installation
+                      </a>
+                    </li>
+                                      <li>
+                      <a href="http://laravel-recipes.com/categories/23">
+                        <span class="badge pull-right">10</span>
+                        Lang
+                      </a>
+                    </li>
+                                      <li>
+                      <a href="http://laravel-recipes.com/categories/16">
+                        <span class="badge pull-right">2</span>
+                        Middleware
+                      </a>
+                    </li>
+                                      <li>
+                      <a href="http://laravel-recipes.com/categories/18">
+                        <span class="badge pull-right">1</span>
+                        Packages by 3rd Parties
+                      </a>
+                    </li>
+                                      <li>
+                      <a href="http://laravel-recipes.com/categories/14">
+                        <span class="badge pull-right">1</span>
+                        Service Provider
+                      </a>
+                    </li>
+                                  </ul>
+              </section>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div id="disqus_thread"><iframe id="dsq-app4" name="dsq-app4" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Laravel Recipes __ Opening a New HTML Form_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 586px !important;"></iframe><iframe id="dsq-app1" name="dsq-app1" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Laravel Recipes __ Opening a New HTML Form_files/saved_resource(2).html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 2002px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe><iframe id="dsq-app6" name="dsq-app6" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Laravel Recipes __ Opening a New HTML Form_files/saved_resource(3).html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 0px !important;"></iframe></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'laravelrecipes';
+          var disqus_identifier = 'recipe-124';
+              var disqus_title = "Laravel Recipes - Opening a New HTML Form";
+    
+    (function() {
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>
+    Please enable JavaScript to view the
+    &lt;a href="http://disqus.com/?ref_noscript"&gt;comments powered by Disqus.&lt;/a&gt;
+  </noscript>
+  
+
+    </div>
+  </div>
+  <footer id="colophon" class="site-footer" role="contentinfo">
+    <div class="container">
+
+      <div class="row">
+        <div class="site-info col-md-6">
+          <p class="text-muted">
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+              <img alt="Creative Commons License" style="border-width:0" src="./Laravel Recipes __ Opening a New HTML Form_files/88x31.png">
+            </a>
+            <br>
+            <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Laravel Recipes</span>
+            by <a xmlns:cc="http://creativecommons.org/ns#" href="http://laravel-recipes.com/" property="cc:attributionName" rel="cc:attributionURL">Chuck Heintzelman</a>
+            is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons
+            Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div><!-- .site-info -->
+
+        <div class="site-social text-right col-md-6">
+          <ul class="list-inline hidden-print">
+            <li>
+              <a href="https://www.facebook.com/chuck.heintzelman" class="btn btn-social btn-facebook" title="Facebook">
+                <i class="fa fa-facebook fa-fw"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/storychuck" class="btn btn-social btn-twitter" title="Twitter">
+                <i class="fa fa-twitter fa-fw"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://plus.google.com/107523545757116187447" class="btn btn-social btn-google-plus" title="Google Plus">
+                <i class="fa fa-google-plus fa-fw"></i>
+              </a>
+            </li>
+            <li>
+              <a href="http://www.linkedin.com/in/heintzelman/" class="btn btn-social btn-linkedin" title="Linked In">
+                <i class="fa fa-linkedin fa-fw"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/ChuckHeintzelman" class="btn btn-social btn-rss" title="GitHub">
+               <i class="fa fa-github fa-fw"></i>
+             </a>
+           </li>
+          </ul>
+          <small style="align:right"><br>cached 61.65ms</small>
+        </div><!-- .site-social -->
+      </div>
+    </div>
+  </footer>
+
+        <script src="./Laravel Recipes __ Opening a New HTML Form_files/jquery.min.js"></script>
+
+    <script src="./Laravel Recipes __ Opening a New HTML Form_files/bootstrap.min.js"></script>
+
+    <script src="./Laravel Recipes __ Opening a New HTML Form_files/superfish.js"></script>
+
+    <script src="./Laravel Recipes __ Opening a New HTML Form_files/mobilemenu.js"></script>
+
+    <script src="./Laravel Recipes __ Opening a New HTML Form_files/autocomplete.js"></script>
+
+    <script src="./Laravel Recipes __ Opening a New HTML Form_files/app.js"></script>
+
+    <script src="./Laravel Recipes __ Opening a New HTML Form_files/recipes.js"></script>
+
+  
+  <script src="./Laravel Recipes __ Opening a New HTML Form_files/prettify.min.js"></script>
+
+  <script>
+  (function($) {
+    prettyPrint();
+  })(jQuery);
+  </script>
+
+
+<iframe style="display: none;" src="./Laravel Recipes __ Opening a New HTML Form_files/saved_resource(4).html"></iframe></body></html>
