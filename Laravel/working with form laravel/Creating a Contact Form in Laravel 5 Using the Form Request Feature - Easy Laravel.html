@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<!-- saved from url=(0115)http://www.easylaravelbook.com/blog/2015/02/09/creating-a-contact-form-in-laravel-5-using-the-form-request-feature/ -->
+<html class=" js video" lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Creating a Contact Form in Laravel 5 Using the Form Request Feature - Easy Laravel</title>
+  <meta name="author" content="W. Jason Gilmore">
+
+  
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="msvalidate.01" content="A6DA363195523C0D4C59B65948E30DA1">
+  
+  <link rel="canonical" href="http://easylaravelbook.com/blog/2015/02/09/creating-a-contact-form-in-laravel-5-using-the-form-request-feature">
+  <link href="http://www.easylaravelbook.com/favicon.png" type="image/png" rel="icon">
+  <link href="http://www.easylaravelbook.com/atom.xml" rel="alternate" title="Easy Laravel" type="application/atom+xml">
+
+  <link href="./Creating a Contact Form in Laravel 5 Using the Form Request Feature - Easy Laravel_files/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="./Creating a Contact Form in Laravel 5 Using the Form Request Feature - Easy Laravel_files/bootswatch.flatly.min.css" rel="stylesheet" type="text/css">
+<link href="./Creating a Contact Form in Laravel 5 Using the Form Request Feature - Easy Laravel_files/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+<link href="./Creating a Contact Form in Laravel 5 Using the Form Request Feature - Easy Laravel_files/css" rel="stylesheet" type="text/css">
+<link href="./Creating a Contact Form in Laravel 5 Using the Form Request Feature - Easy Laravel_files/css(1)" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="./Creating a Contact Form in Laravel 5 Using the Form Request Feature - Easy Laravel_files/font-awesome.min.css">
+
+
+  <script type="text/javascript" async="" src="./Creating a Contact Form in Laravel 5 Using the Form Request Feature - Easy Laravel_files/ga.js"></script><script src="./Creating a Contact Form in Laravel 5 Using the Form Request Feature - Easy Laravel_files/jquery-2.0.3.min.js"></script>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-21509545-5']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+<script type="text/javascript" async="" src="./Creating a Contact Form in Laravel 5 Using the Form Request Feature - Easy Laravel_files/widgets.js"></script><script type="text/javascript" charset="utf-8" async="" src="./Creating a Contact Form in Laravel 5 Using the Form Request Feature - Easy Laravel_files/button.90facfc7dd48c9c8c4f1fc94e137b515.js"></script></head>
+
+  <body>
+    <div id="wrap">
+      <header role="banner">
+        
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://www.easylaravelbook.com/" class="navbar-brand" style="height: 50px; line-height: 50px; border: 3px solid white; padding: 3px; margin: 3px; margin-top: 5px; vertical-align: middle; background-color: #CF4A2B">EL5</a>
+        </div>
+
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+
+                <li>
+                    <a href="http://www.easylaravelbook.com/#toc">TOC</a>
+                </li>
+
+                <li>
+                    <a href="http://www.easylaravelbook.com/videos">Videos</a>
+                </li>
+
+                <li class="purchase_link">
+                   <a href="http://www.easylaravelbook.com/purchase"><span style="color: white; background: #4A9B9D; padding: 10px; border-radius: 5px; -moz-border-radius: 5px;">Buy the Book</span></a>
+                </li>
+
+                <li>
+                    <a href="http://www.easylaravelbook.com/topics">51 Things You'll Learn</a>
+                </li>
+
+                <li>
+                    <a href="http://www.easylaravelbook.com/about-the-author">The Author</a>
+                </li>
+
+                <li>
+                    <a href="http://www.easylaravelbook.com/blog">Blog</a>
+                </li>
+
+                <li>
+                    <a href="http://www.easylaravelbook.com/changelog">Changelog</a>
+                </li>
+
+                <li>
+                  <a href="http://twitter.com/wjgilmore">Twitter</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                  <a class="subscribe-rss" href="http://www.easylaravelbook.com/atom.xml" title="subscribe via RSS">
+                      <span class="visible-xs">RSS</span>
+                      <img class="hidden-xs" src="./Creating a Contact Form in Laravel 5 Using the Form Request Feature - Easy Laravel_files/rss.png" alt="RSS">
+                  </a>
+              </li>
+            </ul>
+        </div>
+      </div>
+
+      <div class="collapse navbar-collapse" style="padding: 5px 0px 5px 0px; background-color: #2A0E1A; text-align: center; color: white; border-top: 2px solid white; border-bottom: 1px solid black;">
+
+<script type="text/javascript">
+$(document).ready(function() {
+    var quotes = new Array("Amazing! Just Amazing! What a well done book. - Naveed Tahir-Kheli", "Working my way through Easy Laravel 5. I highly recommend it. - Jack Barham", "Your Easy Laravel 5 book is absolutely fantastic, well done and thank you. - Rich Lovelock", "I'm loving the book. You have skill in making difficult things readable. - Doug N."),
+    randno = quotes[Math.floor( Math.random() * quotes.length )];
+    $('.reader-quote').text( randno );
+});
+</script>
+
+<h3 class="nav-quote">
+<i class="reader-quote">Amazing! Just Amazing! What a well done book. - Naveed Tahir-Kheli</i>
+</h3>
+
+
+       </div>
+
+
+      </nav>
+
+
+      </header>
+      <div id="main" class="container">
+        <div id="content">
+          <div class="row">
+  <div class="page-content col-md-8">
+    <article class="hentry" role="article">
+      
+  <header class="page-header">
+
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2015-02-09T11:50:06-05:00" pubdate="" data-updated="true">Feb 9<span>th</span>, 2015</time>
+        
+      </p>
+    
+    
+    <h1 class="entry-title">
+        Creating a Contact Form in Laravel 5 Using the Form Request Feature
+        
+    </h1>
+    
+  </header>
+
+
+
+
+
+
+<p>
+</p>
+
+
+
+<hr>
+
+<div class="entry-content clearfix"><p>Laravel 5 offers a new feature known as <em>Form Requests</em> which assist in the processing and validation of form data. In this post you’ll learn how to create a Laravel 5 contact form using Form Requests and Laravel’s e-mail transmission capabilities. Along the way I’ll introduce you to various other Laravel-related development techniques and features.</p>
+
+<p>The example contact form will be pretty simple but functional, consisting of three fields, including the user’s name, email address, and message.</p>
+
+<!-- more -->
+
+
+
+
+<p>
+<img src="./Creating a Contact Form in Laravel 5 Using the Form Request Feature - Easy Laravel_files/todoparrot_contact.png">
+</p>
+
+
+<p>Although we could create a <code>Contact</code> controller expressly for the purpose of displaying and processing the contact form, for reasons of convenience let’s consolidate this functionality within a controller that additionally handles other application-related administrative matters. For instance you might create an <code>About</code> controller and use the <code>create</code> and <code>store</code> actions (<code>create</code> presents the form via the <code>GET</code> method and <code>store</code> processes it via <code>POST</code>) to present and process the contact form. Because the <code>About</code> controller might only use the <code>index</code>, <code>create</code> and <code>store</code> actions, let’s create a “plain” controller using Artisan’s <code>make:controller</code> command:</p>
+
+<pre><code>$ php artisan make:controller --plain AboutController
+Controller created successfully.
+</code></pre>
+
+<p>Next, to route users to the contact form using the convenient <code>/contact</code> shortcut you’ll need to define two aliases in the <code>app/Http/routes.php</code> file:</p>
+
+<pre><code>Route::get('contact', 
+  ['as' =&gt; 'contact', 'uses' =&gt; 'AboutController@create']);
+Route::post('contact', 
+  ['as' =&gt; 'contact_store', 'uses' =&gt; 'AboutController@store']);
+</code></pre>
+
+<p>Next, you’ll need to add the <code>create</code> and <code>store</code> actions to the newly created <code>About</code> controller, because when the <code>--plain</code> option is used in conjunction with Artisan’s <code>make:controller</code> method an empty controller will be created. Modify this controller to look like this:</p>
+
+<pre><code>&lt;?php namespace todoparrot\Http\Controllers;
+
+class AboutController extends Controller {
+
+    public function create()
+    {
+        return view('about.contact');
+    }
+
+    public function store()
+    {
+    }
+
+}
+</code></pre>
+
+<p>The <code>create</code> action has been configured to serve a view named <code>contact.blade.php</code> found in the directory <code>resources/views/about</code>. However we haven’t yet created this particular view so let’s do so next.</p>
+
+<h3>Discount Code Easter Egg</h3>
+
+<p>Welcome to the most popular blog post on this site. Just to see if you’ve been paying attention, use the discount code <code>easteregg</code> to receive 20% off the book or book/video package! You’ll not only learn much more about Laravel forms and form requests, but also models, model relations, and other crucial Laravel 5 topics!</p>
+
+<h3>Creating the Contact Form</h3>
+
+<p>Earlier in this chapter I showed you the <em>rendered</em> form HTML, introducing several key Laravel- and HTML5- related form features in the process. Note my emphasis on <em>rendered</em> because you won’t actually hand-code the form! Instead, you’ll use Laravel’s fantastic form generation capabilities to manage this tedious task for you. Below I’ve pasted in the section of code found in TODOParrot’s <code>resources/views/about/contact.blade.php</code> view that’s responsible for generating the contact form:</p>
+
+<pre><code>&lt;h1&gt;Contact TODOParrot&lt;/h1&gt;
+
+&lt;ul&gt;
+    @foreach($errors-&gt;all() as $error)
+        &lt;li&gt;{{ $error }}&lt;/li&gt;
+    @endforeach
+&lt;/ul&gt;
+
+{!! Form::open(array('route' =&gt; 'contact_store', 'class' =&gt; 'form')) !!}
+
+&lt;div class="form-group"&gt;
+    {!! Form::label('Your Name') !!}
+    {!! Form::text('name', null, 
+        array('required', 
+              'class'=&gt;'form-control', 
+              'placeholder'=&gt;'Your name')) !!}
+&lt;/div&gt;
+
+&lt;div class="form-group"&gt;
+    {!! Form::label('Your E-mail Address') !!}
+    {!! Form::text('email', null, 
+        array('required', 
+              'class'=&gt;'form-control', 
+              'placeholder'=&gt;'Your e-mail address')) !!}
+&lt;/div&gt;
+
+&lt;div class="form-group"&gt;
+    {!! Form::label('Your Message') !!}
+    {!! Form::textarea('message', null, 
+        array('required', 
+              'class'=&gt;'form-control', 
+              'placeholder'=&gt;'Your message')) !!}
+&lt;/div&gt;
+
+&lt;div class="form-group"&gt;
+    {!! Form::submit('Contact Us!', 
+      array('class'=&gt;'btn btn-primary')) !!}
+&lt;/div&gt;
+{!! Form::close() !!}
+</code></pre>
+
+<p>This form uses the form builder made available through Laravel’s <a href="https://github.com/illuminate/html">HTML component</a>. I explained how to install this component in Chapter 2 (the section “Integrating Images, CSS and JavaScript”), but at that point we just configured the HTML Facade. To take advantage of the form-specific tags you’ll need to additionally add the following alias to the <code>config/app.php</code> <code>aliases</code> array:</p>
+
+<pre><code>'Form'=&gt; 'Illuminate\Html\FormFacade'
+</code></pre>
+
+<p>If this is your first encounter with the <code>Form::open</code> helper then I’d imagine this example looks rather scary. However once you build a few forms in this fashion I promise you’ll wonder how you ever got along without it. Let’s break down the key syntax used in this example:</p>
+
+<pre><code>{!! Form::open(array('route' =&gt; 'contact_store', 'class' =&gt; 'form')) !!}
+...
+{!! Form::close() !!}
+</code></pre>
+
+<p>The <code>Form::open</code> and <code>Form::close()</code> methods work together to generate the form’s opening and closing tags. The <code>Form::open</code> method accepts an array containing various settings such as the route alias which in this case points to the <code>About</code> controller’s <code>store</code> method, and a class used to stylize the form. The default method is <code>POST</code> however you can easily override the method to instead use <code>GET</code> by passing <code>'method' =&gt; 'post'</code> into the array. Additionally, the <code>Form::open</code> method will ensure the aforementioned CSRF-prevention <code>_token</code> hidden field is added to the form.</p>
+
+<p>Next up you’ll see the following <code>@foreach</code> block:</p>
+
+<pre><code>&lt;ul&gt;
+    @foreach($errors-&gt;all() as $error)
+        &lt;li&gt;{{ $error }}&lt;/li&gt;
+    @endforeach
+&lt;/ul&gt;
+</code></pre>
+
+<p>This block is used to output any validation errors should one or more of the user-supplied field values not pass the validation tests (more on this in a moment).</p>
+
+<p>Next you’ll see a series of methods used to generate the various form fields. This is a relatively simplistic form therefore only a few of the available field generation methods are used, including <code>Form::label</code> (for creating form field labels), <code>Form::text</code> (for creating form text fields), <code>Form::textarea</code> (for creating a form text area), and <code>Form::submit</code> (for creating a submit button). Note how the <code>Form::text</code> and <code>Form::textarea</code> methods all accept as their first argument a model attribute name (<code>name</code>, <code>email</code>, and <code>message</code>, respectively). All of the methods also accept an assortment of other options, such as class names and HTML5 form attributes.</p>
+
+<p>Once you add this code to your project’s <code>resources/views/about/contact.html.erb</code> file, navigate to <code>http://homestead.app/contact</code> and you should see the same form as that found in the above screenshot!</p>
+
+<p>With the form created, we’ll next need to create the logic used to process the form contents and send the feedback to the site administrator via e-mail.</p>
+
+<h3>Creating the Contact Form Request</h3>
+
+<p>Laravel 5 introduces a new feature known as a <em>form request</em>. This feature is intended to remove form authorization and validation logic from your controllers by encapsulating this logic in a separate class. TODOParrot uses form requests in conjunction with each form used throughout the site and I’m pleased to report this feature works meets its goal quite nicely.</p>
+
+<p>To create a new form request you can use Artisan’s <code>make:request</code> feature:</p>
+
+<pre><code>$ php artisan make:request ContactFormRequest
+Request created successfully.
+</code></pre>
+
+<p>This created a file named <code>ContactFormRequest.php</code> that resides in the directory <code>app/Http/Requests/ContactFormRequest.php</code>. The class skeleton looks like this (comments removed):</p>
+
+<pre><code>&lt;?php namespace todoparrot\Http\Requests;
+
+use todoparrot\Http\Requests\Request;
+
+class ContactFormRequest extends Request {
+
+  public function authorize()
+  {
+    return false;
+  }
+
+  public function rules()
+  {
+    return [
+      //
+    ];
+  }
+
+}
+</code></pre>
+
+<p>The <code>authorize</code> method determines whether the current user is authorized to interact with this form. I’ll talk more about the purpose of this method in Chapter 7. Because we want any visitor to be able to use this form you should just modify the method to return <code>true</code> instead of <code>false</code>:</p>
+
+<pre><code>public function authorize()
+{
+  return true;
+}
+</code></pre>
+
+<p>The <code>rules</code> method defines the validation rules associated with the fields found in the form. The contact form has three fields, including <code>name</code>, <code>email</code>, and <code>message</code>. All three fields are required, and the <code>email</code> field must be a syntactically valid e-mail address, so you’ll want to update the <code>rules</code> method to look like this:</p>
+
+<pre><code>public function rules()
+{
+  return [
+    'name' =&gt; 'required',
+    'email' =&gt; 'required|email',
+    'message' =&gt; 'required',
+  ];
+}
+</code></pre>
+
+<p>The <code>required</code> and <code>email</code> validators used in this example are just a few of the many available via Laravel’s validation class. See Chapter 3 for more information about these rules. In the examples to come I’ll provide additional examples demonstrating other available validators. Additionally, note how you can use multiple validators in conjunction with a form field by concatenating the validators together using a vertical bar (<code>|</code>).</p>
+
+<p>After saving the changes to <code>ContactFormRequest.php</code> open the <code>About</code> controller (<code>app/Http/Controllers/AboutController.php</code>) and modify the <code>store</code> method to look like this:</p>
+
+<pre><code>...
+
+use todoparrot\Http\Requests\ContactFormRequest;
+
+class AboutController extends Controller {
+
+  public function store(ContactFormRequest $request)
+  {
+
+    return \Redirect::route('contact')
+      -&gt;with('message', 'Thanks for contacting us!');
+
+  }
+
+}
+</code></pre>
+
+<p>While we haven’t yet added the e-mail delivery logic, believe it or not this action is otherwise complete. This is because the <code>ContactForm</code> form request will handle the validation <em>and</em> display of validation error messages should validation fail. For instance submitting the contact form without completing any of the fields will result in three validation error found presented in the below screenshot being displayed:</p>
+
+<p>
+<img src="./Creating a Contact Form in Laravel 5 Using the Form Request Feature - Easy Laravel_files/todoparrot_contact_validation_errors.png">
+</p>
+
+
+<p>These errors won’t appear out of thin air of course; they’ll be displayed via the <code>$errors</code> array included in the <code>contact.blade.php</code> view:</p>
+
+<pre><code>&lt;ul&gt;
+  @foreach($errors-&gt;all() as $error)
+    &lt;li&gt;{{ $error }}&lt;/li&gt;
+  @endforeach
+&lt;/ul&gt;
+</code></pre>
+
+<p>You’ll also want to inform the user of a successful form submission. To do so you can use a flash message, which is populated in the <code>store</code> method (“Thanks for contacting us!”). The variable passed into the <code>with</code> method is automatically added to the Laravel’s flash data which can subsequently be retrieved via the <code>Session::get</code> method. For instance you’ll find the following snippet in TODOParrot’s <code>master.blade.php</code> so flash messages can be retrieved and displayed above any view:</p>
+
+<pre><code>@if(Session::has('message'))
+    &lt;div class="alert alert-info"&gt;
+      {{Session::get('message')}}
+    &lt;/div&gt;
+@endif
+</code></pre>
+
+<p>Only one step remains before the contact form is completely operational. We’ll need to configure Laravel’s mail component and integrate e-mail delivery functionality into the <code>store</code> method. Let’s complete these steps next.</p>
+
+<h3>Configuring Laravel’s Mail Component</h3>
+
+<p>Thanks to integration with the popular <a href="http://swiftmailer.org/">SwiftMailer</a> package, it’s easy to send e-mail through your Laravel application. All you’ll need to do is make a few changes to the <code>config/mail.php</code> configuration file. In this file you’ll find a number of configuration settings:</p>
+
+<ul>
+<li><code>driver</code>: Laravel supports several mail drivers, including <code>SMTP</code>, PHP’s <code>mail</code> function, the Sendmail MTA, and the <a href="http://www.mailgun.com/">Mailgun</a> and <a href="https://mandrill.com/">Mandrill</a> e-mail delivery services. You’ll set the <code>driver</code> setting to the desired driver, choosing from <code>smtp</code>, <code>mail</code>, <code>sendmail</code>, <code>mailgun</code>, and <code>mandrill</code>. You could also optionally set <code>driver</code> to <code>log</code> in order to send e-mails to your development log rather than bother with actually sending them out during the development process.</li>
+<li><code>host</code>: The <code>host</code> setting is used to set the host address of your SMTP server should you be using the <code>smtp</code> driver.</li>
+<li><code>port</code>: The <code>port</code> setting is used to set the port used by your SMTP server should you be using the <code>smtp</code> driver.</li>
+<li><code>from</code>: If you’d like all outbound application e-mails to use the same sender e-mail and name, you can set them using the <code>from</code> and <code>address</code> settings defined in this array.</li>
+<li><code>encryption</code>: The <code>encryption</code> setting specifies the encryption protocol used when sending e-mails.</li>
+<li><code>username</code>: The <code>username</code> setting defines the SMTP account username should you be using the <code>smtp</code> driver.</li>
+<li><code>password</code>: The <code>password</code> setting defines the SMTP account password should you be using the <code>smtp</code> driver.</li>
+<li><code>sendmail</code>: The <code>sendmail</code> setting defines the server Sendmail path should you be using the <code>sendmail</code> driver.</li>
+<li><code>pretend</code>: The <code>pretend</code> setting will cause Laravel to ignore the defined driver and instead send e-mail to your application log, a useful option while your application is still under development.</li>
+</ul>
+
+
+<p>Because you likely possess a Google Gmail account, I’ll show you how to configure <code>config/mail.php</code> to send e-mail through a Gmail account. Change the following settings as directed:</p>
+
+<ul>
+<li>Change the <code>driver</code> setting to <code>smtp</code>. This is the default value.</li>
+<li>Change the <code>host</code> setting to <code>smtp.gmail.com</code>.</li>
+<li>Change the <code>port</code> setting to <code>465</code>.</li>
+<li>Change the <code>encryption</code> setting to <code>ssl</code>.</li>
+<li>Change the <code>username</code> setting to the Gmail e-mail address you’d like to use as the sender.</li>
+<li>Change the <code>password</code> setting to your Gmail e-mail password. Keep in mind in a production environment you’ll probably want to store this and other sensitive information in your project’s <code>.env</code> file or as a server environment variable.</li>
+</ul>
+
+
+<p>Save these changes, and then modify the <code>About</code> controller’s <code>store</code> method to look like this:</p>
+
+<pre><code>public function store(ContactFormRequest $request)
+{
+
+    \Mail::send('emails.contact',
+        array(
+            'name' =&gt; $request-&gt;get('name'),
+            'email' =&gt; $request-&gt;get('email'),
+            'user_message' =&gt; $request-&gt;get('message')
+        ), function($message)
+    {
+        $message-&gt;from('wj@wjgilmore.com');
+        $message-&gt;to('wj@wjgilmore.com', 'Admin')-&gt;subject('TODOParrot Feedback');
+    });
+
+  return \Redirect::route('contact')-&gt;with('message', 'Thanks for contacting us!');
+
+}
+</code></pre>
+
+<p>The <code>Mail::send</code> method is responsible for initiating delivery of the e-mail. It accepts three parameters. The first parameter defines the name of the view used for the e-mail body template. The second parameter contains an array of data which will be made available to the e-mail template. In this case, the desired data originated in the contact form and is now made available through the <code>$request</code> object. The third parameter is a closure that gives you the opportunity to define additional e-mail related options such as the sender, recipient, and subject. Be sure to check out the <a href="http://laravel.com/docs/master/mail">Laravel mail documentation</a> for a complete explanation of the <code>Mail::send</code> method’s features.</p>
+
+<p>Finally, you’ll need to create the <code>contact</code> view which contains the email content. I suggest saving this file in <code>resources/views/emails</code>. Per the above example you’ll need to name the file <code>contact.blade.php</code>. For the purposes of this example I created a very simple view that looks like this:</p>
+
+<pre><code>You received a message from TODOParrot.com:
+
+&lt;p&gt;
+Name: {{ $name }}
+&lt;/p&gt;
+
+&lt;p&gt;
+{{ $email }}
+&lt;/p&gt;
+
+&lt;p&gt;
+{{ $user_message }}
+&lt;/p&gt;
+</code></pre>
+
+<p>HTML formatting is used because Laravel (unfortunately in my opinion) sends HTML-formatted e-mail by default. You can however override this default to instead send text-based e-mail. See the <a href="http://laravel.com/docs/master/mail">Laravel mail documentation</a> for more details.</p>
+
+<p>After saving these changes, return to the contact form, submit valid data and an e-mail should soon arrive in the inbox associated with the e-mail address supplied via the <code>to</code> method!</p>
+
+<p>Incidentally , if you experience issues with Gmail, it could be because of a Gmail setting pertaining to third-party access to your account. Enable the “Less secure apps” setting at <a href="https://www.google.com/settings/security/lesssecureapps">https://www.google.com/settings/security/lesssecureapps</a> to resolve the issue. Keep in mind however that you definitely do not want to use your Gmail account for production purposes.</p>
+
+<h2>Discount Easter Egg</h2>
+
+<p>Congratulations! You’ve completed reading the most popular blog post on this site. If you’d like to learn much more about Laravel forms, form requests, models, model relations, and other crucial Laravel 5 topics, use the discount code <code>easteregg</code> to receive 20% off the book or book/video package!</p>
+
+<h2>Summary</h2>
+
+<p>Laravel 5 makes it even easier to sanely manage forms thanks to the new Form Requests feature! If you’ve anything to add regarding this feature, feel free to add you thoughts to the comments!</p>
+</div>
+
+
+      <footer>
+        <p class="meta text-muted">
+          
+  
+
+<span class="glyphicon glyphicon-user"></span> <span class="byline author vcard">Posted by <span class="fn">W. Jason Gilmore</span></span>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2015-02-09T11:50:06-05:00" pubdate="" data-updated="true">Feb 9<span>th</span>, 2015</time>
+          
+
+<span class="glyphicon glyphicon-tags"></span>&nbsp;
+<span class="categories">
+  
+    <a class="category" href="http://www.easylaravelbook.com/blog/categories/form-requests/">form requests</a>, <a class="category" href="http://www.easylaravelbook.com/blog/categories/mail/">mail</a>
+  
+</span>
+
+
+        </p>
+        
+          <div class="sharing">
+  
+  <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" title="Twitter Tweet Button" src="./Creating a Contact Form in Laravel 5 Using the Form Request Feature - Easy Laravel_files/tweet_button.5b6375bb17bd9edb2f4e7f8f12971999.en.html" style="position: static; visibility: visible; width: 60px; height: 20px;" data-url="http://easylaravelbook.com/blog/2015/02/09/creating-a-contact-form-in-laravel-5-using-the-form-request-feature/"></iframe>
+  
+  
+  
+</div>
+
+        
+        
+          <ul class="meta text-muted pager">
+            
+            <li class="previous"><a href="http://www.easylaravelbook.com/blog/2015/01/31/deploying-a-laravel-application-to-heroku/" title="Previous Post: Deploying a Laravel Application to Heroku">« Deploying a Laravel Application to Heroku</a></li>
+            
+            
+            <li class="next"><a href="http://www.easylaravelbook.com/blog/2015/02/11/formatting-timestamps-in-laravel/" title="Next Post: Formatting Timestamps in Laravel">Formatting Timestamps in Laravel »</a></li>
+            
+          </ul>
+        
+      </footer>
+    </article>
+    
+  </div>
+
+  
+  <aside class="sidebar col-md-4">
+ 
+    <div class="desktop-view book-cover">
+      <a href="http://www.easylaravelbook.com/purchase"><img src="./Creating a Contact Form in Laravel 5 Using the Form Request Feature - Easy Laravel_files/book-large-web.jpg" alt="Laravel 5 book" title="Laravel 5 book"></a>
+      <a href="http://www.easylaravelbook.com/purchase" class="btn btn-success btn-full">Buy the Book</a>
+    </div>
+
+<br>
+<div>
+<a href="http://larabrain.com/" target="_blank"><img src="./Creating a Contact Form in Laravel 5 Using the Form Request Feature - Easy Laravel_files/1-03.png"></a><br>
+<b>The Latest LaraBrain Tips</b>
+<ul>
+<li>
+<a href="http://larabrain.com/tips/automatic-pluralization-with-str-plural-helper" target="_blank">Automatic pluralization with str_plural() helper</a>
+</li>
+<li>
+<a href="http://larabrain.com/tips/formatting-timestamps-in-laravel" target="_blank">Formatting Timestamps in Laravel</a>
+</li>
+<li>
+<a href="http://larabrain.com/tips/dropping-multiple-columns-in-a-single-line-of-laravel-migration" target="_blank">Dropping Multiple Columns in a Single Line of Laravel Migration</a>
+</li>
+<li>
+<a href="http://larabrain.com/tips/setting-a-laravel-select-box-default-value" target="_blank">Setting a Laravel Select Box Default Value</a>
+</li>
+<li>
+<a href="http://larabrain.com/tips/viewing-the-response-within-a-laravel-phpunit-test" target="_blank">Viewing the Response Within a Laravel PHPUnit Test</a>
+</li>
+
+</ul>
+
+</div>
+
+                  <form class="form-inline" role="form" action="http://wjgilmore.us7.list-manage.com/subscribe/post?u=f441f1bb5368236838a069f04&amp;id=2d6c711382" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate="">
+
+      <div class="form-group newsletter">
+        <p>Subscribe to receive a 37 page sample chapter, and occasional e-mails about Laravel and the book. No spam ever.</p>
+        <input class="form-control" placeholder="Your e-mail address" type="email" value="" name="EMAIL" id="mce-EMAIL" style="width: 100%; margin-bottom: 2px;">
+        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-success">
+    </div>
+
+    <div id="mce-responses" class="clear">
+        <div class="response" id="mce-error-response" style="display:none"></div>
+        <div class="response" id="mce-success-response" style="display:none"></div>
+    </div>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;"><input type="text" name="b_f441f1bb5368236838a069f04_2d6c711382" tabindex="-1" value=""></div>
+</form>
+
+
+
+                     <br>
+
+    
+      <section class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Recent Posts</h3>
+  </div>
+  
+  <div id="recent_posts" class="list-group">
+    
+    <a class="list-group-item " href="http://www.easylaravelbook.com/blog/2016/04/19/exporting-laravel-data-to-an-excel-spreadsheet/">Exporting Laravel Data to an Excel Spreadsheet</a>
+    
+    <a class="list-group-item " href="http://www.easylaravelbook.com/blog/2016/04/11/integrating-a-bootstrap-modal-into-your-laravel-application/">Integrating a Bootstrap Modal Into Your Laravel Application</a>
+    
+    <a class="list-group-item " href="http://www.easylaravelbook.com/blog/2016/04/07/adding-a-restricted-administration-console-to-your-laravel-application/">Adding a Restricted Administration Console to Your Laravel Application</a>
+    
+    <a class="list-group-item " href="http://www.easylaravelbook.com/blog/2016/04/06/introducing-laravel-many-to-many-relations/">Introducing Laravel Many-to-Many Relations</a>
+    
+    <a class="list-group-item " href="http://www.easylaravelbook.com/blog/2016/04/05/eager-loading-with-laravel/">Laravel Eager Loading Demystified</a>
+    
+  </div>
+</section>
+
+
+
+
+
+
+    
+  </aside>
+  
+</div>
+
+        </div>
+      </div>
+    </div>
+    <footer role="contentinfo"><div class="container">
+    <p class="text-muted credits">
+  Copyright © 2016 -WJ Gilmore, LLC<br>
+  Laravel is a trademark of <a href="http://taylorotwell.com/">Taylor Otwell</a>.
+  <small>
+      <span class="credit">Powered by <a href="http://octopress.org/">Octopress</a></span>,
+      <span class="credit">customized with <a href="https://github.com/kAworu/octostrap3">octostrap3</a></span>.
+  </small>
+</p>
+
+</div>
+</footer>
+    <script src="./Creating a Contact Form in Laravel 5 Using the Form Request Feature - Easy Laravel_files/bootstrap.min.js"></script>
+<script src="./Creating a Contact Form in Laravel 5 Using the Form Request Feature - Easy Laravel_files/modernizr-2.0.js"></script>
+
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+  
+
+<iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" title="Twitter analytics iframe" src="./Creating a Contact Form in Laravel 5 Using the Form Request Feature - Easy Laravel_files/saved_resource.html"></iframe></body></html>
