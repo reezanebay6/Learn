@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://www.tecmint.com/install-lamp-in-centos-7/ -->
+<html class="js" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" src="https://cdn.api.twitter.com/1/urls/count.json?url=https%3A%2F%2Fwww.tecmint.com%2Finstall-lamp-in-centos-7%2F&amp;callback=jQuery112405413318329582177_1496817280145&amp;_=1496817280146"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="alexaVerifyID" content="qqxQUyWSeUfqZOencfEoRM9vrVk">
+<meta name="msvalidate.01" content="E8C9208AD2F47ED874ED18E35FC370CE">
+<meta name="google-translate-customization" content="c567e5d7624a883b-609bf053fa02c58b-g01de0b1961de0feb-f">
+<meta property="article:publisher" content="https://facebook.com/tecmint">
+<script data-rocketsrc="https://pagead2.googlesyndication.com/pub-config/r20160913/ca-pub-2601749019656699.js" data-rocketoptimized="true"></script><script async="" data-rocketsrc="//www.google-analytics.com/analytics.js" data-rocketoptimized="true"></script><script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok3v=1613a3a185/"},atok:"5c9625ad15e5783642707ecbf8610c8f",petok:"1eaa2bfc70108e8d13201230904f399f4549b128-1496817253-1800",zone:"tecmint.com",rocket:"a",apps:{}}];document.write('<script type="text/javascript" src="//ajax.cloudflare.com/cdn-cgi/nexp/dok3v=85b614c0f6/cloudflare.min.js"><'+'\/script>');}}catch(e){};
+//]]>
+</script><script type="text/javascript" src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/cloudflare.min.js"></script><style type="text/css">.cf-hidden { display: none; } .cf-invisible { visibility: hidden; }</style><script data-module="cloudflare/rocket" id="cfjs_block_f01aa8abd7" onload="CloudFlare.__cfjs_block_f01aa8abd7_load()" onerror="CloudFlare.__cfjs_block_f01aa8abd7_error()" onreadystatechange="CloudFlare.__cfjs_block_f01aa8abd7_readystatechange()" type="text/javascript" src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/rocket.js"></script>
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="pingback" href="https://www.tecmint.com/xmlrpc.php">
+<title>Installing LAMP (Linux, Apache, MariaDB, PHP/PhpMyAdmin) in RHEL/CentOS 7.0</title>
+<script type="text/rocketscript" data-rocketoptimized="true">document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>
+ 
+<link rel="author" href="https://plus.google.com/u/0/107665449243972690526">
+<meta name="description" content="This tutorial will concentrate on how to install and configure famous LAMP stack Linux Apache, MariaDB, PHP, PhpMyAdmin on RHEL/CentOS 7.0.">
+<meta name="keywords" content="install lamp in centos 7,install lamp in rhel 7,install mariadb in centos 7,install php in centos 7,install apache in centos 7,lamp">
+<link rel="canonical" href="https://www.tecmint.com/install-lamp-in-centos-7/">
+<script type="text/rocketscript" data-rocketoptimized="true">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-33207530-1', { 'cookieDomain': 'tecmint.com','allowLinker': true } );
+ga('require', 'linker');
+ga('linker:autoLink', ['tecmint.com'] );
+ga('send', 'pageview');
+</script>
+ 
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Tecmint: Linux Howtos, Tutorials &amp; Guides » Feed" href="https://feeds.feedburner.com/tecmint">
+<link rel="alternate" type="application/rss+xml" title="Tecmint: Linux Howtos, Tutorials &amp; Guides » Comments Feed" href="https://www.tecmint.com/comments/feed/">
+<link href="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="Tecmint: Linux Howtos, Tutorials &amp; Guides » Installing LAMP (Linux, Apache, MariaDB, PHP/PhpMyAdmin) in RHEL/CentOS 7.0 Comments Feed" href="https://www.tecmint.com/install-lamp-in-centos-7/feed/">
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<link rel="stylesheet" type="text/css" href="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/1495778675index.css" media="all">
+<script data-rocketsrc="//www.tecmint.com/wp-content/cache/wpfc-minified/3b24a4f73853641a5a93b93b14e8ce87/1495778675index.js" type="text/rocketscript" data-rocketoptimized="true"></script>
+ 
+ 
+ 
+<script type="text/rocketscript" data-rocketoptimized="true">
+/* <![CDATA[ */
+var ajaxurl = "https:\/\/www.tecmint.com\/wp-admin\/admin-ajax.php";
+var QBP_PUBLIC_GLOBALS = {"QBP_PUBLIC_NONCE":"90b88ccbef","USER_TYPE":"public","VISIBILITY_DATA":{"is_page":false,"is_post":true,"is_homepage":false,"is_archive":false,"is_custom_post_type":false,"id":7965}};
+/* ]]> */
+</script>
+<script data-rocketsrc="//www.tecmint.com/wp-content/cache/wpfc-minified/7fca3649c30191509e3bca2130dd4d14/1495778675index.js" type="text/rocketscript" data-rocketoptimized="true"></script>
+ 
+<link rel="https://api.w.org/" href="https://www.tecmint.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.tecmint.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.tecmint.com/wp-includes/wlwmanifest.xml">
+<link rel="prev" title="Install and Configure Zentyal Linux 3.5 as A BDC (Backup Domain Controller)" href="https://www.tecmint.com/configure-zentyal-as-backup-domain-controller/">
+<link rel="next" title="10 Useful Interview Questions and Answers on Linux Commands" href="https://www.tecmint.com/10-useful-interview-questions-and-answers-on-linux-commands/">
+<meta name="generator" content="WordPress 4.7.5">
+<link rel="shortlink" href="https://www.tecmint.com/?p=7965">
+<link rel="alternate" type="application/json+oembed" href="https://www.tecmint.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.tecmint.com%2Finstall-lamp-in-centos-7%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.tecmint.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.tecmint.com%2Finstall-lamp-in-centos-7%2F&amp;format=xml">
+ 
+<meta property="og:image" content="https://www.tecmint.com/wp-content/uploads/2014/07/Install-LAMP-in-CentOS-7.jpg">
+ 
+ 
+<link rel="shortcut icon" href="https://www.tecmint.com/wp-content/themes/tecmint/images/favicon.ico">
+<!--[if lt IE 9]>
+<script src="https://www.tecmint.com/wp-content/themes/tecmint/js/ie/html5.js"></script>
+<script src="https://www.tecmint.com/wp-content/themes/tecmint/js/ie/selectivizr.js"></script>
+<![endif]-->
+<link rel="amphtml" href="https://www.tecmint.com/install-lamp-in-centos-7/amp/"><link rel="icon" href="https://www.tecmint.com/wp-content/uploads/2015/01/tecmint_square_logo.png" sizes="32x32">
+<link rel="icon" href="https://www.tecmint.com/wp-content/uploads/2015/01/tecmint_square_logo.png" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="https://www.tecmint.com/wp-content/uploads/2015/01/tecmint_square_logo.png">
+<meta name="msapplication-TileImage" content="https://www.tecmint.com/wp-content/uploads/2015/01/tecmint_square_logo.png">
+<style type="text/css">body{font-family:"Roboto Condensed",Arial,sans-serif;}.boxed #wrapper,.container-inner{max-width:1280px;}.sidebar .widget{padding-left:20px;padding-right:20px;padding-top:20px;}.search-expand,#nav-topbar.nav-container{background-color:#23588c;}@media only screen and (min-width: 720px) {#nav-topbar .nav ul{background-color:#23588c;}}#header{background-color:#075b88;}@media only screen and (min-width: 720px) {#nav-header .nav ul{background-color:#075b88;}}#nav-header.nav-container{background-color:#2f6dab;}@media only screen and (min-width: 720px) {#nav-header .nav ul{background-color:#2f6dab;}}#footer-bottom{background-color:#2f6dab;}.site-title a img{max-height:90px;}img{-webkit-border-radius:2px;border-radius:2px;}</style>
+<link rel="author" href="https://plus.google.com/107665449243972690526/posts">
+<script async="" data-rocketsrc="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="text/rocketscript" data-rocketoptimized="true"></script>
+<script type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "WebSite",
+"url": "https://www.tecmint.com/",
+"potentialAction": {
+"@type": "SearchAction",
+"target": "https://www.tecmint.com/?s={search_term}",
+"query-input": "required name=search_term"
+}
+}
+</script>
+<script type="text/rocketscript" data-rocketoptimized="true">
+this.randomtip=function(){var e=jQuery("#tips li").length,t=Math.floor(Math.random()*e)+1;jQuery("#tips li:nth-child("+t+")").show()},jQuery(document).ready(function($){randomtip()});</script>
+</head>
+<body data-rsssl="1" class="post-template-default single single-post postid-7965 single-format-standard col-2cl full-width topbar-enabled chrome s1-collapse s2-collapse">
+<div id="wrapper">
+<header id="header">
+<nav class="nav-container group" id="nav-topbar">
+<div class="nav-toggle"><i class="fa fa-bars"></i></div>
+<div class="nav-text"> </div>
+<div class="nav-wrap container"><ul id="menu-home" class="nav container-inner group"><li id="menu-item-334" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-334"><a href="https://www.tecmint.com/">Home</a></li>
+<li id="menu-item-10774" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10774"><a target="_blank" href="https://www.tecmint.com/who-we-are/">About</a></li>
+<li id="menu-item-3912" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3912"><a title="Free Linux eBooks" target="_blank" href="http://tecmint.tradepub.com/category/information-technology-servers-and-linux-server-os/806/">Free eBooks</a></li>
+<li id="menu-item-17151" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17151"><a title="Discover and save on the best gear, gadgets, and software" target="_blank" href="https://deals.tecmint.com/">Deals</a></li>
+<li id="menu-item-18575" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18575"><a title="Support Us" href="https://www.tecmint.com/donate-to-tecmint/">Donate</a></li>
+<li id="menu-item-10775" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10775"><a target="_blank" href="https://www.tecmint.com/submit-articles/">Join TecMint</a></li>
+<li id="menu-item-11736" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11736"><a target="_blank" href="https://www.tecmint.com/linux-online-training-courses/">Linux Online Courses</a></li>
+<li id="menu-item-11907" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11907"><a title="Subscribe to Daily Updates" target="_blank" href="https://www.tecmint.com/subscribe-to-blog/">Subscribe</a></li>
+<li id="menu-item-13338" class="hosting menu-item menu-item-type-custom menu-item-object-custom menu-item-13338"><a title="Best Web Hosting Companies" target="_blank" href="https://www.tecmint.com/best-web-hosting-for-linux/">Linux Hosting</a></li>
+<li id="menu-item-24734" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24734"><a title="Start Your Blog in 10 Minutes Now!" target="_blank" href="https://www.tecmint.com/how-to-start-a-blog/">Start Your Blog Now!</a></li>
+</ul></div>
+<div class="container">
+<div class="container-inner">
+<div class="toggle-search"><i class="fa fa-search"></i></div>
+<div class="search-expand">
+<div class="search-expand-inner">
+<form action="https://www.tecmint.com/search/" id="cse-search-box">
+<div>
+<input type="hidden" name="cx" value="partner-pub-2601749019656699:2173448976">
+<input type="hidden" name="cof" value="FORID:10">
+<input type="hidden" name="ie" value="UTF-8">
+<input type="text" class="search" name="q" size="20" placeholder="Custom Search" style="background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px;">
+<input type="submit" name="sa" value="Search">
+</div>
+<input name="siteurl" type="hidden" value="www.tecmint.com/install-lamp-in-centos-7/"><input name="ref" type="hidden" value=""><input name="ss" type="hidden" value=""></form>
+<script type="text/rocketscript" data-rocketsrc="https://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en" data-rocketoptimized="true"></script>
+</div>
+</div>
+</div> 
+</div> 
+</nav> 
+<div class="container group">
+<div class="container-inner">
+<div class="group pad">
+<p class="site-title"><a href="https://www.tecmint.com/" rel="home"><img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/logo.png" alt="Tecmint: Linux Howtos, Tutorials &amp; Guides"></a></p>
+<div id="header-ads">
+<div id="text-17" class="widget widget_text"> <div class="textwidget"> 
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-2601749019656699" data-ad-slot="8210224606" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;width:728px;height:90px;" src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/saved_resource.html"></iframe></ins></ins></ins>
+<script type="text/rocketscript" data-rocketoptimized="true">
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div> </div> 
+</div>
+<nav class="nav-container group" id="nav-header">
+<div class="nav-toggle"><i class="fa fa-bars"></i></div>
+<div class="nav-text"> </div>
+<div class="nav-wrap container"><ul id="menu-header" class="nav container-inner group"><li id="menu-item-20410" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20410"><a target="_blank" href="https://www.fossmint.com/">Linux News</a></li>
+<li id="menu-item-10770" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10770"><a href="https://www.tecmint.com/best-linux-distributions/">Linux Distro’s</a></li>
+<li id="menu-item-10771" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10771"><a href="https://www.tecmint.com/category/interview-questions/">Interview Questions</a></li>
+<li id="menu-item-20869" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-has-children menu-item-20869"><a href="https://www.tecmint.com/#">Programming</a>
+<ul class="sub-menu" style="display: none;">
+<li id="menu-item-10772" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10772"><a title="Learn Linux Shell Scripting" href="https://www.tecmint.com/category/bash-shell/">Shell Scripting</a></li>
+<li id="menu-item-20870" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20870"><a href="https://www.tecmint.com/category/python/">Learn Python</a></li>
+<li id="menu-item-20871" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20871"><a href="https://www.tecmint.com/category/awk-command/">Learn Awk</a></li>
+</ul>
+</li>
+<li id="menu-item-10773" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10773"><a href="https://www.tecmint.com/category/linux-commands/">Linux Commands</a></li>
+<li id="menu-item-14795" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14795"><a href="https://www.tecmint.com/tag/linux-tricks/">Linux Tricks</a></li>
+<li id="menu-item-19684" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19684"><a href="https://www.tecmint.com/category/top-tools/">Best Linux Tools</a></li>
+<li id="menu-item-10443" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-has-children menu-item-10443"><a target="_blank" href="https://www.tecmint.com/#">Certifications</a>
+<ul class="sub-menu" style="display: none;">
+<li id="menu-item-14880" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14880"><a href="https://www.tecmint.com/how-to-setup-and-configure-static-network-routing-in-rhel/">RHCE Exam</a></li>
+<li id="menu-item-11906" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11906"><a target="_blank" href="https://www.tecmint.com/rhcsa-exam-reviewing-essential-commands-system-documentation/">RHCSA Exam</a></li>
+<li id="menu-item-10444" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10444"><a target="_blank" href="https://www.tecmint.com/installing-network-services-and-configuring-services-at-system-boot/">LFCE Exam</a></li>
+<li id="menu-item-14793" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14793"><a href="https://www.tecmint.com/sed-command-to-create-edit-and-manipulate-files-in-linux/">LFCS Exam</a></li>
+</ul>
+</li>
+<li id="menu-item-12399" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-has-children menu-item-12399"><a href="https://www.tecmint.com/#">Guides</a>
+<ul class="sub-menu" style="display: none;">
+<li id="menu-item-18564" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-18564"><a href="https://www.tecmint.com/install-docker-and-learn-containers-in-centos-rhel-7-6/">Docker Seires</a></li>
+<li id="menu-item-17150" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17150"><a href="https://www.tecmint.com/setup-postfix-mail-server-and-dovecot-with-mariadb-in-centos/">Postfix Mail</a></li>
+<li id="menu-item-15041" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15041"><a href="https://www.tecmint.com/citrix-xenserver-installation-and-network-configuration-in-linux/">XenServer Series</a></li>
+<li id="menu-item-14794" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14794"><a href="https://www.tecmint.com/install-redhat-virtualization-rhev/">RHEV Series</a></li>
+<li id="menu-item-14805" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14805"><a href="https://www.tecmint.com/what-is-clustering-and-advantages-disadvantages-of-clustering-in-linux/">Clustering Series</a></li>
+<li id="menu-item-12400" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12400"><a href="https://www.tecmint.com/create-lvm-storage-in-linux/">LVM Series</a></li>
+<li id="menu-item-12402" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12402"><a href="https://www.tecmint.com/understanding-raid-setup-in-linux/">RAID Series</a></li>
+<li id="menu-item-12403" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12403"><a href="https://www.tecmint.com/install-and-configure-kvm-in-linux/">KVM Series</a></li>
+<li id="menu-item-12401" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12401"><a href="https://www.tecmint.com/create-centralized-secure-storage-using-iscsi-targetin-linux/">iSCSI Series</a></li>
+<li id="menu-item-12406" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12406"><a href="https://www.tecmint.com/install-zentyal-as-primary-domain-controller-and-integrate-windows-system/">Zentyal Series</a></li>
+<li id="menu-item-16084" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16084"><a href="https://www.tecmint.com/install-and-configure-ansible-automation-tool-in-linux/">Ansible Series</a></li>
+<li id="menu-item-16395" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16395"><a href="https://www.tecmint.com/install-and-configure-django-web-framework-in-centos-debian-ubuntu/">Django Series</a></li>
+<li id="menu-item-14603" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14603"><a href="https://www.tecmint.com/create-gui-applications-in-linux/">Create GUI Apps</a></li>
+</ul>
+</li>
+<li id="menu-item-14796" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-14796"><a href="https://www.tecmint.com/command-line-tools-to-monitor-linux-performance/">Monitoring Tools</a>
+<ul class="sub-menu" style="display: none;">
+<li id="menu-item-14797" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14797"><a href="https://www.tecmint.com/install-nagios-in-linux/">Nagios</a></li>
+<li id="menu-item-14798" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14798"><a href="https://www.tecmint.com/install-and-configure-zabbix-monitoring-on-debian-centos-rhel/">Zabbix</a></li>
+<li id="menu-item-14799" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14799"><a href="https://www.tecmint.com/install-cacti-network-monitoring-on-rhel-centos-6-3-5-8-and-fedora-17-12/">Cacti</a></li>
+<li id="menu-item-14800" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14800"><a href="https://www.tecmint.com/install-observium-in-centos/">Observium</a></li>
+<li id="menu-item-14801" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14801"><a href="https://www.tecmint.com/monitorix-a-lightweight-system-and-network-monitoring-tool-for-linux/">Monitorix</a></li>
+<li id="menu-item-14802" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14802"><a href="https://www.tecmint.com/install-collectd-and-collectd-web-to-monitor-server-resources-in-linux/">Collectd</a></li>
+<li id="menu-item-14803" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14803"><a href="https://www.tecmint.com/linux-performance-monitoring-with-collectl-tool/">Collectl</a></li>
+<li id="menu-item-14804" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14804"><a href="https://www.tecmint.com/mysql-performance-monitoring/">MySQL Monitoring</a></li>
+</ul>
+</li>
+</ul></div>
+</nav> 
+</div> 
+</div> 
+</header> 
+<div class="container" id="page">
+<div class="container-inner">
+<div class="main">
+<div class="main-inner group">
+<section class="content">
+<div class="page-title pad group">
+<ul class="meta-single group">
+<li class="category"><a href="https://www.tecmint.com/category/linux-distros/centos/" rel="category tag">CentOS</a> <span>/</span> <a href="https://www.tecmint.com/category/linux-distros/redhat/" rel="category tag">RedHat</a></li>
+<li class="comments"><a href="https://www.tecmint.com/install-lamp-in-centos-7/#comments"><i class="fa fa-comments-o"></i>27</a></li>
+</ul>
+</div> 
+<div class="pad group">
+<article class="post-7965 post type-post status-publish format-standard has-post-thumbnail hentry category-centos category-redhat tag-lamp">
+<div class="post-inner group">
+<h1 class="post-title">Installing LAMP (Linux, Apache, MariaDB, PHP/PhpMyAdmin) in RHEL/CentOS 7.0</h1>
+<p class="post-byline">by <a href="https://www.tecmint.com/author/cezarmatei/" title="Posts by Matei Cezar" rel="author">Matei Cezar</a> | Published: July 18, 2014 |  
+Last Updated: January 7, 2015 </p>
+<div class="clear"></div>
+ 
+<div class="add-box">
+<ins class="adsbygoogle" style="display:inline-block;width:468px;height:15px" data-ad-client="ca-pub-2601749019656699" data-ad-slot="1986283779" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:468px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:468px;background-color:transparent"><iframe width="468" height="15" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;width:468px;height:15px;" src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/saved_resource(1).html"></iframe></ins></ins></ins>
+<script type="text/rocketscript" data-rocketoptimized="true">
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="clear"></div>
+<div id="exam_announcement">
+<i style="color:#28557a; font-size:20px;" class="fa fa-book"></i>
+<b>Download Your Free eBooks NOW</b> - <a target="_blank" style="text-decoration:underline;" href="https://www.tecmint.com/10-useful-free-linux-ebooks-for-newbies-and-administrators/">10 Free Linux eBooks for Administrators</a> | <a style="text-decoration:underline;" target="_blank" href="https://www.tecmint.com/free-linux-shell-scripting-books/">4 Free Shell Scripting eBooks</a>
+</div>
+<div class="clear"></div>
+<div class="ads-inner-mobile">
+<center>
+<!-- Post Inner Mobile Ads -->
+<ins class="adsbygoogle" style="display: inline-block; width: 300px; height: 250px;" data-ad-client="ca-pub-2601749019656699" data-ad-slot="9946480174" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;width:300px;height:250px;" src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/saved_resource(2).html"></iframe></ins></ins></ins>
+<script type="text/rocketscript" data-rocketoptimized="true">
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center>
+</div>
+<div class="clear"></div>
+<div class="entry share">	
+<div class="entry-inner">
+<p>Skipping the LAMP introduction, as I’m sure that most of you know what is all about. This tutorial will concentrate on how to install and configure famous <b>LAMP</b> stack – Linux Apache, MariaDB, PHP, PhpMyAdmin – on the last release of Red Hat Enterprise Linux 7.0 and CentOS 7.0, with the mention that both distributions have upgraded <b>httpd</b> daemon to <b>Apache HTTP 2.4</b>.</p>
+<div id="attachment_7988" style="width: 610px" class="wp-caption aligncenter"><a href="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/Install-LAMP-in-CentOS-7.jpg"><img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/Install-LAMP-in-CentOS-7.jpg" class="size-full wp-image-7988" alt="Install LAMP in CentOS 7" width="600" height="400" data-lazy-loaded="true" style="display: inline;"><noscript>&lt;img class="size-full wp-image-7988" src="https://www.tecmint.com/wp-content/uploads/2014/07/Install-LAMP-in-CentOS-7.jpg" alt="Install LAMP in CentOS 7" width="600" height="400" /&gt;</noscript></a><p class="wp-caption-text">Install LAMP in RHEL/CentOS 7.0</p></div>
+<h4>Requirements</h4>
+<p>Depending on the used distribution, RHEL or CentOS 7.0, use the following links to perform a minimal system installation, using a static IP Address for network configuration.</p>
+<h5>For RHEL 7.0</h5>
+<ol>
+<li><a href="https://www.tecmint.com/redhat-enterprise-linux-7-installation/" target="_blank">RHEL 7.0 Installation Procedure</a></li>
+<li><a href="https://www.tecmint.com/enable-redhat-subscription-reposiories-and-updates-for-rhel-7/%20target=">Register and Enable Subscriptions/Repositories on RHEL 7.0</a></li>
+</ol>
+<h5>For CentOS 7.0</h5>
+<ol>
+<li><a href="https://www.tecmint.com/centos-7-installation/" target="_blank">CentOS 7.0 Installation Procedure</a></li>
+</ol>
+<h3>Step 1: Install Apache Server with Basic Configurations</h3>
+<p><strong>1.</strong> After performing a minimal system installation and configure your server network interface with a <a href="https://www.tecmint.com/configure-network-interface-in-rhel-centos-7-0/" target="_blank">Static IP Address on RHEL/CentOS 7.0</a>, go ahead and install Apache 2.4 httpd service binary package provided form official repositories using the following command.</p>
+<pre># yum install httpd</pre>
+<div id="attachment_7967" style="width: 630px" class="wp-caption aligncenter"><a href="https://www.tecmint.com/wp-content/uploads/2014/07/Install-Apache-in-CentOS-7.png"><img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/Install-Apache-in-CentOS-7-620x372.png" class="size-medium wp-image-7967" alt="Install Apache in CentOS 7" width="620" height="372" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Install-Apache-in-CentOS-7-620x372.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Install-Apache-in-CentOS-7-1024x614.png 1024w, https://www.tecmint.com/wp-content/uploads/2014/07/Install-Apache-in-CentOS-7.png 1280w" sizes="(max-width: 620px) 100vw, 620px" data-lazy-loaded="true" style="display: inline;"><noscript>&lt;img class="size-medium wp-image-7967" src="https://www.tecmint.com/wp-content/uploads/2014/07/Install-Apache-in-CentOS-7-620x372.png" alt="Install Apache in CentOS 7" width="620" height="372" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Install-Apache-in-CentOS-7-620x372.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Install-Apache-in-CentOS-7-1024x614.png 1024w, https://www.tecmint.com/wp-content/uploads/2014/07/Install-Apache-in-CentOS-7.png 1280w" sizes="(max-width: 620px) 100vw, 620px" /&gt;</noscript></a><p class="wp-caption-text">Install Apache Web Server</p></div>
+<p><strong>2.</strong> After <b>yum</b> manager finish installation, use the following commands to manage Apache daemon, since RHEL and CentOS 7.0 both migrated their <b>init</b> scripts from <b>SysV</b> to <b>systemd</b> – you can also use SysV and Apache scripts the same time to manage the service.</p>
+<pre># systemctl status|start|stop|restart|reload httpd
+OR 
+# service httpd status|start|stop|restart|reload
+OR 
+# apachectl configtest| graceful</pre>
+<div id="attachment_7969" style="width: 630px" class="wp-caption aligncenter"><a href="https://www.tecmint.com/wp-content/uploads/2014/07/Start-Apache-in-CentOS-7.png"><img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/Start-Apache-in-CentOS-7-620x372.png" class="size-medium wp-image-7969" alt="Start Apache in CentOS 7" width="620" height="372" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Start-Apache-in-CentOS-7-620x372.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Start-Apache-in-CentOS-7-1024x614.png 1024w, https://www.tecmint.com/wp-content/uploads/2014/07/Start-Apache-in-CentOS-7.png 1280w" sizes="(max-width: 620px) 100vw, 620px" data-lazy-loaded="true" style="display: inline;"><noscript>&lt;img class="size-medium wp-image-7969" src="https://www.tecmint.com/wp-content/uploads/2014/07/Start-Apache-in-CentOS-7-620x372.png" alt="Start Apache in CentOS 7" width="620" height="372" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Start-Apache-in-CentOS-7-620x372.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Start-Apache-in-CentOS-7-1024x614.png 1024w, https://www.tecmint.com/wp-content/uploads/2014/07/Start-Apache-in-CentOS-7.png 1280w" sizes="(max-width: 620px) 100vw, 620px" /&gt;</noscript></a><p class="wp-caption-text">Start Apache Web Server</p></div>
+<center style="padding-bottom: 20px;padding-top: 10px;"><ins class="adsbygoogle" style="display: block; height: 90px;" data-ad-client="ca-pub-2601749019656699" data-ad-slot="5590002574" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_3_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:760px;background-color:transparent"><ins id="aswift_3_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:760px;background-color:transparent"><iframe width="760" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;width:760px;height:90px;" src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/saved_resource(3).html"></iframe></ins></ins></ins><script type="text/rocketscript" data-rocketoptimized="true">(adsbygoogle = window.adsbygoogle || []).push({});</script></center><p><strong>3.</strong> On the next step start Apache service using systemd init script and open RHEL/CentOS 7.0 Firewall rules using <b>firewall-cmd</b>, which is the default command to manage iptables through <b>firewalld</b> daemon.</p>
+<pre># firewall-cmd --add-service=http</pre>
+<p><strong style="color: red;">NOTE</strong>: Make notice that using this rule will lose its effect after a system reboot or firewalld service restart, because it opens on-fly rules, which are not applied permanently. To apply consistency iptables rules on firewall use <b>–permanent</b> option and restart firewalld service to take effect.</p>
+<pre># firewall-cmd --permanent --add-service=http
+# systemctl restart firewalld</pre>
+<div id="attachment_7970" style="width: 630px" class="wp-caption aligncenter"><a href="https://www.tecmint.com/wp-content/uploads/2014/07/Enable-Firewall-in-CentOS-7.png"><img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/Enable-Firewall-in-CentOS-7-620x251.png" class="size-medium wp-image-7970" alt="Enable Firewall in CentOS 7" width="620" height="251" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Enable-Firewall-in-CentOS-7-620x251.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Enable-Firewall-in-CentOS-7.png 900w" sizes="(max-width: 620px) 100vw, 620px" data-lazy-loaded="true" style="display: inline;"><noscript>&lt;img class="size-medium wp-image-7970" src="https://www.tecmint.com/wp-content/uploads/2014/07/Enable-Firewall-in-CentOS-7-620x251.png" alt="Enable Firewall in CentOS 7" width="620" height="251" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Enable-Firewall-in-CentOS-7-620x251.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Enable-Firewall-in-CentOS-7.png 900w" sizes="(max-width: 620px) 100vw, 620px" /&gt;</noscript></a><p class="wp-caption-text">Enable Firewall in CentOS 7</p></div>
+<p>Other important Firewalld options are presented below:</p>
+<pre># firewall-cmd --state
+# firewall-cmd --list-all
+# firewall-cmd --list-interfaces
+# firewall-cmd --get-service
+# firewall-cmd --query-service service_name
+# firewall-cmd --add-port=8080/tcp</pre>
+<p><strong>4.</strong> To verify Apache functionality open a remote browser and type your server IP Address using HTTP protocol on URL (<b>http://server_IP</b>), and a default page should appear like in the screenshot below.</p>
+<div id="attachment_7971" style="width: 630px" class="wp-caption aligncenter"><a href="https://www.tecmint.com/wp-content/uploads/2014/07/Apache-Default-Page.png"><img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/Apache-Default-Page-620x324.png" class="size-medium wp-image-7971" alt="Apache Default Page" width="620" height="324" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Apache-Default-Page-620x324.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Apache-Default-Page-1024x536.png 1024w, https://www.tecmint.com/wp-content/uploads/2014/07/Apache-Default-Page.png 1096w" sizes="(max-width: 620px) 100vw, 620px" data-lazy-loaded="true" style="display: inline;"><noscript>&lt;img class="size-medium wp-image-7971" src="https://www.tecmint.com/wp-content/uploads/2014/07/Apache-Default-Page-620x324.png" alt="Apache Default Page" width="620" height="324" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Apache-Default-Page-620x324.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Apache-Default-Page-1024x536.png 1024w, https://www.tecmint.com/wp-content/uploads/2014/07/Apache-Default-Page.png 1096w" sizes="(max-width: 620px) 100vw, 620px" /&gt;</noscript></a><p class="wp-caption-text">Apache Default Page</p></div>
+<p><strong>5.</strong> For now, Apache <b>DocumentRoot</b> path it’s set to <b>/var/www/html</b> system path, which by default doesn’t provide any index file. If you want to see a directory list of your DocumentRoot path open Apache <b>welcome</b> configuration file and set <b>Indexes</b> statement from <b>–</b> to <b>+</b> on <b>&lt;LocationMach&gt;</b> directive, using the below screenshot as an example.</p>
+<pre># nano /etc/httpd/conf.d/welcome.conf</pre>
+<div id="attachment_7972" style="width: 630px" class="wp-caption aligncenter"><a href="https://www.tecmint.com/wp-content/uploads/2014/07/Apache-Directory-Listing.png"><img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/Apache-Directory-Listing-620x284.png" class="size-medium wp-image-7972" alt="Apache Directory Listing" width="620" height="284" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Apache-Directory-Listing-620x284.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Apache-Directory-Listing.png 1014w" sizes="(max-width: 620px) 100vw, 620px" data-lazy-loaded="true" style="display: inline;"><noscript>&lt;img class="size-medium wp-image-7972" src="https://www.tecmint.com/wp-content/uploads/2014/07/Apache-Directory-Listing-620x284.png" alt="Apache Directory Listing" width="620" height="284" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Apache-Directory-Listing-620x284.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Apache-Directory-Listing.png 1014w" sizes="(max-width: 620px) 100vw, 620px" /&gt;</noscript></a><p class="wp-caption-text">Apache Directory Listing</p></div>
+<p><strong>6.</strong> Close the file, restart Apache service to reflect changes and reload your browser page to see the final result.</p>
+<pre># systemctl restart httpd</pre>
+<div id="attachment_7973" style="width: 526px" class="wp-caption aligncenter"><a href="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/Apache-Index-File.png"><img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/Apache-Index-File.png" class="size-full wp-image-7973" alt="Apache Index File" width="516" height="272" data-lazy-loaded="true" style="display: inline;"><noscript>&lt;img class="size-full wp-image-7973" src="https://www.tecmint.com/wp-content/uploads/2014/07/Apache-Index-File.png" alt="Apache Index File" width="516" height="272" /&gt;</noscript></a><p class="wp-caption-text">Apache Index File</p></div>
+<h3>Step 2: Install PHP5 Support for Apache</h3>
+<p><strong>7.</strong> Before installing PHP5 dynamic language support for Apache, get a full list of available PHP modules and extensions using the following command.</p>
+<pre># yum search php</pre>
+<div id="attachment_7974" style="width: 630px" class="wp-caption aligncenter"><a href="https://www.tecmint.com/wp-content/uploads/2014/07/Install-PHP-in-CentOS-7.png"><img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/Install-PHP-in-CentOS-7-620x338.png" class="size-medium wp-image-7974" alt="Install PHP in CentOS 7" width="620" height="338" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Install-PHP-in-CentOS-7-620x338.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Install-PHP-in-CentOS-7.png 999w" sizes="(max-width: 620px) 100vw, 620px" data-lazy-loaded="true" style="display: inline;"><noscript>&lt;img class="size-medium wp-image-7974" src="https://www.tecmint.com/wp-content/uploads/2014/07/Install-PHP-in-CentOS-7-620x338.png" alt="Install PHP in CentOS 7" width="620" height="338" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Install-PHP-in-CentOS-7-620x338.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Install-PHP-in-CentOS-7.png 999w" sizes="(max-width: 620px) 100vw, 620px" /&gt;</noscript></a><p class="wp-caption-text">Install PHP in CentOS 7</p></div>
+<p><strong>8.</strong> Depending on what type of applications you want to use, install the required PHP modules from the above list, but for a basic <b>MariaDB</b> support in PHP and <b>PhpMyAdmin</b> you need to install the following modules.</p>
+<pre># yum install php php-mysql php-pdo php-gd php-mbstring</pre>
+<div id="attachment_7975" style="width: 630px" class="wp-caption aligncenter"><a href="https://www.tecmint.com/wp-content/uploads/2014/07/Install-PHP-Modules-in-CentOS-7.png"><img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/Install-PHP-Modules-in-CentOS-7-620x139.png" class="size-medium wp-image-7975" alt="Install PHP Modules in CentOS 7" width="620" height="139" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Install-PHP-Modules-in-CentOS-7-620x139.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Install-PHP-Modules-in-CentOS-7.png 824w" sizes="(max-width: 620px) 100vw, 620px" data-lazy-loaded="true" style="display: inline;"><noscript>&lt;img class="size-medium wp-image-7975" src="https://www.tecmint.com/wp-content/uploads/2014/07/Install-PHP-Modules-in-CentOS-7-620x139.png" alt="Install PHP Modules in CentOS 7" width="620" height="139" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Install-PHP-Modules-in-CentOS-7-620x139.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Install-PHP-Modules-in-CentOS-7.png 824w" sizes="(max-width: 620px) 100vw, 620px" /&gt;</noscript></a><p class="wp-caption-text">Install PHP Modules</p></div>
+<div id="attachment_7976" style="width: 630px" class="wp-caption aligncenter"><a href="https://www.tecmint.com/wp-content/uploads/2014/07/Install-PHP-mbstring-in-CentOs-7.png"><img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/Install-PHP-mbstring-in-CentOs-7-620x290.png" class="size-medium wp-image-7976" alt="Install PHP mbstring Module" width="620" height="290" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Install-PHP-mbstring-in-CentOs-7-620x290.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Install-PHP-mbstring-in-CentOs-7-1024x479.png 1024w, https://www.tecmint.com/wp-content/uploads/2014/07/Install-PHP-mbstring-in-CentOs-7.png 1030w" sizes="(max-width: 620px) 100vw, 620px" data-lazy-loaded="true" style="display: inline;"><noscript>&lt;img class="size-medium wp-image-7976" src="https://www.tecmint.com/wp-content/uploads/2014/07/Install-PHP-mbstring-in-CentOs-7-620x290.png" alt="Install PHP mbstring Module" width="620" height="290" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Install-PHP-mbstring-in-CentOs-7-620x290.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Install-PHP-mbstring-in-CentOs-7-1024x479.png 1024w, https://www.tecmint.com/wp-content/uploads/2014/07/Install-PHP-mbstring-in-CentOs-7.png 1030w" sizes="(max-width: 620px) 100vw, 620px" /&gt;</noscript></a><p class="wp-caption-text">Install PHP mbstring Module</p></div>
+<p><strong>9.</strong> To get a full information list on PHP from your browser, create a <b>info.php</b> file on Apache Document Root using the following command from root account, restart httpd service and direct your browser to the <b>http://server_IP/info.php</b> address.</p>
+<pre># echo "&lt;?php phpinfo(); ?&gt;" &gt; /var/www/html/info.php
+# systemctl restart httpd</pre>
+<div id="attachment_7977" style="width: 630px" class="wp-caption aligncenter"><a href="https://www.tecmint.com/wp-content/uploads/2014/07/Check-PHP-Info-in-CentOS-7.png"><img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/Check-PHP-Info-in-CentOS-7-620x359.png" class="size-medium wp-image-7977" alt="Check PHP Info in CentOS 7" width="620" height="359" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Check-PHP-Info-in-CentOS-7-620x359.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Check-PHP-Info-in-CentOS-7-1024x593.png 1024w, https://www.tecmint.com/wp-content/uploads/2014/07/Check-PHP-Info-in-CentOS-7.png 1045w" sizes="(max-width: 620px) 100vw, 620px" data-lazy-loaded="true" style="display: inline;"><noscript>&lt;img class="size-medium wp-image-7977" src="https://www.tecmint.com/wp-content/uploads/2014/07/Check-PHP-Info-in-CentOS-7-620x359.png" alt="Check PHP Info in CentOS 7" width="620" height="359" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Check-PHP-Info-in-CentOS-7-620x359.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Check-PHP-Info-in-CentOS-7-1024x593.png 1024w, https://www.tecmint.com/wp-content/uploads/2014/07/Check-PHP-Info-in-CentOS-7.png 1045w" sizes="(max-width: 620px) 100vw, 620px" /&gt;</noscript></a><p class="wp-caption-text">Check PHP Info in CentOS 7</p></div>
+<p><strong>10.</strong> If you get an error on PHP Date and Timezone, open <b>php.ini</b> configuration file, search and uncomment <b>date.timezone</b> statement, append your physical location and restart Apache daemon.</p>
+<pre># nano /etc/php.ini</pre>
+<p>Locate and change <b>date.timezone</b> line to look like this, using <a href="https://php.net/manual/en/timezones.php" target="_blank" rel="nofollow">PHP Supported Timezones</a> list.</p>
+<pre>date.timezone = Continent/City</pre>
+<div id="attachment_7978" style="width: 630px" class="wp-caption aligncenter"><a href="https://www.tecmint.com/wp-content/uploads/2014/07/Set-Time-Zone-in-CentOS.png"><img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/Set-Time-Zone-in-CentOS-620x335.png" class="size-medium wp-image-7978" alt="Set Timezone in PHP" width="620" height="335" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Set-Time-Zone-in-CentOS-620x335.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Set-Time-Zone-in-CentOS.png 991w" sizes="(max-width: 620px) 100vw, 620px" data-lazy-loaded="true" style="display: inline;"><noscript>&lt;img class="size-medium wp-image-7978" src="https://www.tecmint.com/wp-content/uploads/2014/07/Set-Time-Zone-in-CentOS-620x335.png" alt="Set Timezone in PHP" width="620" height="335" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Set-Time-Zone-in-CentOS-620x335.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Set-Time-Zone-in-CentOS.png 991w" sizes="(max-width: 620px) 100vw, 620px" /&gt;</noscript></a><p class="wp-caption-text">Set Timezone in PHP</p></div>
+<h3>Step 3: Install and Configure MariaDB Database</h3>
+<p><strong>11.</strong> Red Hat Enterprise Linux/CentOS 7.0 switched from MySQL to MariaDB for its default database management system. To install MariaDB database use the following command.</p>
+<pre># yum install mariadb-server mariadb</pre>
+<div id="attachment_7979" style="width: 630px" class="wp-caption aligncenter"><a href="https://www.tecmint.com/wp-content/uploads/2014/07/Install-MariaDB-in-CentOs-7.png"><img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/Install-MariaDB-in-CentOs-7-620x174.png" class="size-medium wp-image-7979" alt="Install MariaDB in CentOS 7" width="620" height="174" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Install-MariaDB-in-CentOs-7-620x174.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Install-MariaDB-in-CentOs-7.png 814w" sizes="(max-width: 620px) 100vw, 620px" data-lazy-loaded="true" style="display: inline;"><noscript>&lt;img class="size-medium wp-image-7979" src="https://www.tecmint.com/wp-content/uploads/2014/07/Install-MariaDB-in-CentOs-7-620x174.png" alt="Install MariaDB in CentOS 7" width="620" height="174" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Install-MariaDB-in-CentOs-7-620x174.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Install-MariaDB-in-CentOs-7.png 814w" sizes="(max-width: 620px) 100vw, 620px" /&gt;</noscript></a><p class="wp-caption-text">Install MariaDB in CentOS 7</p></div>
+<p><strong>12.</strong> After MariaDB package is installed, start database daemon and use <b>mysql_secure_installation</b> script to secure database (set root password, disable remotely logon from root, remove test database and remove anonymous users).</p>
+<pre># systemctl start mariadb
+# mysql_secure_installation</pre>
+<div id="attachment_7980" style="width: 630px" class="wp-caption aligncenter"><a href="https://www.tecmint.com/wp-content/uploads/2014/07/Start-MariaDB-in-CentOS-7.png"><img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/Start-MariaDB-in-CentOS-7-620x243.png" class="size-medium wp-image-7980" alt="Start MariaDB Database" width="620" height="243" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Start-MariaDB-in-CentOS-7-620x243.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Start-MariaDB-in-CentOS-7.png 1017w" sizes="(max-width: 620px) 100vw, 620px" data-lazy-loaded="true" style="display: inline;"><noscript>&lt;img class="size-medium wp-image-7980" src="https://www.tecmint.com/wp-content/uploads/2014/07/Start-MariaDB-in-CentOS-7-620x243.png" alt="Start MariaDB Database" width="620" height="243" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Start-MariaDB-in-CentOS-7-620x243.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Start-MariaDB-in-CentOS-7.png 1017w" sizes="(max-width: 620px) 100vw, 620px" /&gt;</noscript></a><p class="wp-caption-text">Start MariaDB Database</p></div>
+<div id="attachment_7981" style="width: 630px" class="wp-caption aligncenter"><a href="https://www.tecmint.com/wp-content/uploads/2014/07/Secure-MySQL-Installation.png"><img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/Secure-MySQL-Installation-620x279.png" class="size-medium wp-image-7981" alt="Secure MySQL Installation" width="620" height="279" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Secure-MySQL-Installation-620x279.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Secure-MySQL-Installation.png 1012w" sizes="(max-width: 620px) 100vw, 620px" data-lazy-loaded="true" style="display: inline;"><noscript>&lt;img class="size-medium wp-image-7981" src="https://www.tecmint.com/wp-content/uploads/2014/07/Secure-MySQL-Installation-620x279.png" alt="Secure MySQL Installation" width="620" height="279" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Secure-MySQL-Installation-620x279.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Secure-MySQL-Installation.png 1012w" sizes="(max-width: 620px) 100vw, 620px" /&gt;</noscript></a><p class="wp-caption-text">Secure MySQL Installation</p></div>
+<p><strong>13.</strong> To test database functionality login to MariaDB using its root account and exit using <b>quit</b> statement.</p>
+<pre>mysql -u root -p
+MariaDB &gt; SHOW VARIABLES;
+MariaDB &gt; quit</pre>
+<div id="attachment_7982" style="width: 630px" class="wp-caption aligncenter"><a href="https://www.tecmint.com/wp-content/uploads/2014/07/Connect-MySQL-Installation.png"><img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/Connect-MySQL-Installation-620x267.png" class="size-medium wp-image-7982" alt="Connect MySQL Database in CentOS" width="620" height="267" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Connect-MySQL-Installation-620x267.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Connect-MySQL-Installation.png 995w" sizes="(max-width: 620px) 100vw, 620px" data-lazy-loaded="true" style="display: inline;"><noscript>&lt;img class="size-medium wp-image-7982" src="https://www.tecmint.com/wp-content/uploads/2014/07/Connect-MySQL-Installation-620x267.png" alt="Connect MySQL Database in CentOS" width="620" height="267" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Connect-MySQL-Installation-620x267.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Connect-MySQL-Installation.png 995w" sizes="(max-width: 620px) 100vw, 620px" /&gt;</noscript></a><p class="wp-caption-text">Connect MySQL Database</p></div>
+<h3>Step 4: Install PhpMyAdmin</h3>
+<p><strong>14.</strong> By default official RHEL 7.0 or CentOS 7.0 repositories doesn’t provide any binary package for PhpMyAdmin Web Interface. If you are uncomfortable using MySQL command line to manage your database you can install PhpMyAdmin package by enabling <b>CentOS 7.0 rpmforge</b> repositories using the following command.</p>
+<pre># yum install http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm</pre>
+<p>After enabling rpmforge repository, next install PhpMyAdmin.</p>
+<pre># yum install phpmyadmin</pre>
+<div id="attachment_7983" style="width: 630px" class="wp-caption aligncenter"><a href="https://www.tecmint.com/wp-content/uploads/2014/07/Enable-RPMForge-in-CentOS-7.png"><img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/Enable-RPMForge-in-CentOS-7-620x130.png" class="size-medium wp-image-7983" alt="Enable RPMForge in CentOS 7" width="620" height="130" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Enable-RPMForge-in-CentOS-7-620x130.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Enable-RPMForge-in-CentOS-7.png 985w" sizes="(max-width: 620px) 100vw, 620px" data-lazy-loaded="true" style="display: inline;"><noscript>&lt;img class="size-medium wp-image-7983" src="https://www.tecmint.com/wp-content/uploads/2014/07/Enable-RPMForge-in-CentOS-7-620x130.png" alt="Enable RPMForge in CentOS 7" width="620" height="130" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Enable-RPMForge-in-CentOS-7-620x130.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Enable-RPMForge-in-CentOS-7.png 985w" sizes="(max-width: 620px) 100vw, 620px" /&gt;</noscript></a><p class="wp-caption-text">Enable RPMForge Repository</p></div>
+<p><strong>15.</strong> Next configure PhpMyAdmin to allow connections from remote hosts by editing <b>phpmyadmin.conf</b> file, located on Apache <b>conf.d</b> directory, commenting the following lines.</p>
+<pre># nano /etc/httpd/conf.d/phpmyadmin.conf</pre>
+<p>Use a <b>#</b> and comment this lines.</p>
+<pre># Order Deny,Allow
+# Deny from all
+# Allow from 127.0.0.1</pre>
+<div id="attachment_7984" style="width: 630px" class="wp-caption aligncenter"><a href="https://www.tecmint.com/wp-content/uploads/2014/07/Allow-Remote-PhpMyAdmin-Access.png"><img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/Allow-Remote-PhpMyAdmin-Access-620x295.png" class="size-medium wp-image-7984" alt="Allow Remote PhpMyAdmin Access" width="620" height="295" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Allow-Remote-PhpMyAdmin-Access-620x295.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Allow-Remote-PhpMyAdmin-Access.png 923w" sizes="(max-width: 620px) 100vw, 620px" data-lazy-loaded="true" style="display: inline;"><noscript>&lt;img class="size-medium wp-image-7984" src="https://www.tecmint.com/wp-content/uploads/2014/07/Allow-Remote-PhpMyAdmin-Access-620x295.png" alt="Allow Remote PhpMyAdmin Access" width="620" height="295" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Allow-Remote-PhpMyAdmin-Access-620x295.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Allow-Remote-PhpMyAdmin-Access.png 923w" sizes="(max-width: 620px) 100vw, 620px" /&gt;</noscript></a><p class="wp-caption-text">Allow Remote PhpMyAdmin Access</p></div>
+<p><strong>16.</strong> To be able to login to PhpMyAdmin Web interface using cookie authentication method add a <b>blowfish</b> string to phpmyadmin <b>config.inc.php</b> file like in the screenshot below using the <a href="http://www.question-defense.com/tools/phpmyadmin-blowfish-secret-generator" target="_blank" rel="nofollow">generate a secret string</a>, restart Apache Web service and direct your browser to the URL address <b>http://server_IP/phpmyadmin/</b>.</p>
+<pre># nano /etc/httpd/conf.d/phpmyadmin.conf
+# systemctl restart  httpd</pre>
+<div id="attachment_7985" style="width: 630px" class="wp-caption aligncenter"><a href="https://www.tecmint.com/wp-content/uploads/2014/07/Add-Blowfish-PhpMyAdmin.png"><img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/Add-Blowfish-PhpMyAdmin-620x298.png" class="size-medium wp-image-7985" alt="Add Blowfish in PhpMyAdmin" width="620" height="298" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Add-Blowfish-PhpMyAdmin-620x298.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Add-Blowfish-PhpMyAdmin.png 946w" sizes="(max-width: 620px) 100vw, 620px" data-lazy-loaded="true" style="display: inline;"><noscript>&lt;img class="size-medium wp-image-7985" src="https://www.tecmint.com/wp-content/uploads/2014/07/Add-Blowfish-PhpMyAdmin-620x298.png" alt="Add Blowfish in PhpMyAdmin" width="620" height="298" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Add-Blowfish-PhpMyAdmin-620x298.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Add-Blowfish-PhpMyAdmin.png 946w" sizes="(max-width: 620px) 100vw, 620px" /&gt;</noscript></a><p class="wp-caption-text">Add Blowfish in PhpMyAdmin</p></div>
+<div id="attachment_7986" style="width: 630px" class="wp-caption aligncenter"><a href="https://www.tecmint.com/wp-content/uploads/2014/07/Login-to-PhpMyAdmin.png"><img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/Login-to-PhpMyAdmin-620x335.png" class="size-medium wp-image-7986" alt="PhpMyAdmin Dashboard" width="620" height="335" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Login-to-PhpMyAdmin-620x335.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Login-to-PhpMyAdmin-1024x553.png 1024w, https://www.tecmint.com/wp-content/uploads/2014/07/Login-to-PhpMyAdmin.png 1110w" sizes="(max-width: 620px) 100vw, 620px" data-lazy-loaded="true" style="display: inline;"><noscript>&lt;img class="size-medium wp-image-7986" src="https://www.tecmint.com/wp-content/uploads/2014/07/Login-to-PhpMyAdmin-620x335.png" alt="PhpMyAdmin Dashboard" width="620" height="335" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Login-to-PhpMyAdmin-620x335.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Login-to-PhpMyAdmin-1024x553.png 1024w, https://www.tecmint.com/wp-content/uploads/2014/07/Login-to-PhpMyAdmin.png 1110w" sizes="(max-width: 620px) 100vw, 620px" /&gt;</noscript></a><p class="wp-caption-text">PhpMyAdmin Dashboard</p></div>
+<h3>Step 5: Enable LAMP System-wide</h3>
+<p><strong>17.</strong> If you need MariaDB and Apache services to be automatically started after reboot issue the following commands to enable them system-wide.</p>
+<pre># systemctl enable mariadb
+# systemctl enable httpd</pre>
+<div id="attachment_7987" style="width: 630px" class="wp-caption aligncenter"><a href="https://www.tecmint.com/wp-content/uploads/2014/07/Enable-Services-System-Wide.png"><img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/Enable-Services-System-Wide-620x128.png" class="size-medium wp-image-7987" alt="Enable Services System Wide" width="620" height="128" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Enable-Services-System-Wide-620x128.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Enable-Services-System-Wide.png 904w" sizes="(max-width: 620px) 100vw, 620px" data-lazy-loaded="true" style="display: inline;"><noscript>&lt;img class="size-medium wp-image-7987" src="https://www.tecmint.com/wp-content/uploads/2014/07/Enable-Services-System-Wide-620x128.png" alt="Enable Services System Wide" width="620" height="128" srcset="https://www.tecmint.com/wp-content/uploads/2014/07/Enable-Services-System-Wide-620x128.png 620w, https://www.tecmint.com/wp-content/uploads/2014/07/Enable-Services-System-Wide.png 904w" sizes="(max-width: 620px) 100vw, 620px" /&gt;</noscript></a><p class="wp-caption-text">Enable Services System Wide</p></div>
+<p>That’s all it takes for a basic LAMP installation on Red Hat Enterprise 7.0 or CentOS 7.0. The next series of articles related to LAMP stack on CentOS/RHEL 7.0 will discuss how to create Virtual Hosts, generate SSL Certificates and Keys and add SSL transaction support for Apache HTTP Server.</p>
+</div>
+<div class="sharrre-container" style="position: relative; top: 849.47px; left: 0px;">
+<span>Share</span>
+<div id="twitter" data-url="https://www.tecmint.com/install-lamp-in-centos-7/" data-text="Installing LAMP (Linux, Apache, MariaDB, PHP/PhpMyAdmin) in RHEL/CentOS 7.0" data-title="Tweet" class="sharrre"><a class="box" href="https://www.tecmint.com/install-lamp-in-centos-7/#"><div class="count" href="#">+</div><div class="share"><i class="fa fa-twitter"></i></div></a></div>
+<div id="facebook" data-url="https://www.tecmint.com/install-lamp-in-centos-7/" data-text="Installing LAMP (Linux, Apache, MariaDB, PHP/PhpMyAdmin) in RHEL/CentOS 7.0" data-title="Like" class="sharrre"><a class="box" href="https://www.tecmint.com/install-lamp-in-centos-7/#"><div class="count" href="#">0</div><div class="share"><i class="fa fa-facebook-square"></i></div></a></div>
+<div id="googleplus" data-url="https://www.tecmint.com/install-lamp-in-centos-7/" data-text="Installing LAMP (Linux, Apache, MariaDB, PHP/PhpMyAdmin) in RHEL/CentOS 7.0" data-title="+1" class="sharrre"><a class="box" href="https://www.tecmint.com/install-lamp-in-centos-7/#"><div class="count" href="#">0</div><div class="share"><i class="fa fa-google-plus-square"></i></div></a></div>
+<div id="linkedin" data-url="https://www.tecmint.com/install-lamp-in-centos-7/" data-text="Installing LAMP (Linux, Apache, MariaDB, PHP/PhpMyAdmin) in RHEL/CentOS 7.0" data-title="Share It" class="sharrre"><a class="box" href="https://www.tecmint.com/install-lamp-in-centos-7/#" rel="nofollow"><div class="count" href="#">4</div><div class="share"><i class="fa fa-linkedin"></i></div></a></div>
+<div style="font-weight: 600; padding-top: 10px; width: 55px;"><a href="https://www.tecmint.com/install-lamp-in-centos-7/#comments"><img alt="Ask Anything" src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/help.png"></a></div>
+</div><!--/.sharrre-container-->
+<script type="text/rocketscript" data-rocketoptimized="true">
+// Sharrre
+jQuery(document).ready(function(){
+jQuery('#twitter').sharrre({
+share: {
+twitter: true
+},
+template: '<a class="box" href="#"><div class="count" href="#">{total}</div><div class="share"><i class="fa fa-twitter"></i></div></a>',
+enableHover: false,
+enableTracking: true,
+buttons: { twitter: {via: 'tecmint'}},
+click: function(api, options){
+api.simulateClick();
+api.openPopup('twitter');
+}
+});
+jQuery('#facebook').sharrre({
+share: {
+facebook: true
+},
+template: '<a class="box" href="#"><div class="count" href="#">{total}</div><div class="share"><i class="fa fa-facebook-square"></i></div></a>',
+enableHover: false,
+enableTracking: true,
+click: function(api, options){
+api.simulateClick();
+api.openPopup('facebook');
+}
+});
+jQuery('#googleplus').sharrre({
+share: {
+googlePlus: true
+},
+template: '<a class="box" href="#"><div class="count" href="#">{total}</div><div class="share"><i class="fa fa-google-plus-square"></i></div></a>',
+enableHover: false,
+enableTracking: true,
+urlCurl: 'https://www.tecmint.com/wp-content/themes/tecmint/js/sharrre.php',
+click: function(api, options){
+api.simulateClick();
+api.openPopup('googlePlus');
+}
+});
+jQuery('#linkedin').sharrre({
+share: {
+linkedin: true
+},
+template: '<a class="box" href="#" rel="nofollow"><div class="count" href="#">{total}</div><div class="share"><i class="fa fa-linkedin"></i></div></a>',
+enableHover: false,
+enableTracking: true,
+buttons: {
+linkedin: {
+description: 'Installing LAMP (Linux, Apache, MariaDB, PHP/PhpMyAdmin) in RHEL/CentOS 7.0',media: 'https://www.tecmint.com/wp-content/uploads/2014/07/Install-LAMP-in-CentOS-7.jpg'				}
+},
+click: function(api, options){
+api.simulateClick();
+api.openPopup('linkedin');
+}
+});
+// Scrollable sharrre bar, contributed by Erik Frye. Awesome!
+var shareContainer = jQuery(".sharrre-container"),
+header = jQuery('#header'),
+postEntry = jQuery('.entry'),
+$window = jQuery(window),
+distanceFromTop = 20,
+startSharePosition = shareContainer.offset(),
+contentBottom = postEntry.offset().top + postEntry.outerHeight(),
+topOfTemplate = header.offset().top;
+getTopSpacing();
+shareScroll = function(){
+if($window.width() > 719){	
+var scrollTop = $window.scrollTop() + topOfTemplate,
+stopLocation = contentBottom - (shareContainer.outerHeight() + topSpacing);
+if(scrollTop > stopLocation){
+shareContainer.offset({top: contentBottom - shareContainer.outerHeight(),left: startSharePosition.left});
+}
+else if(scrollTop >= postEntry.offset().top-topSpacing){
+shareContainer.offset({top: scrollTop + topSpacing, left: startSharePosition.left});
+}else if(scrollTop < startSharePosition.top+(topSpacing-1)){
+shareContainer.offset({top: startSharePosition.top,left:startSharePosition.left});
+}
+}
+},
+shareMove = function(){
+startSharePosition = shareContainer.offset();
+contentBottom = postEntry.offset().top + postEntry.outerHeight();
+topOfTemplate = header.offset().top;
+getTopSpacing();
+};
+/* As new images load the page content body gets longer. The bottom of the content area needs to be adjusted in case images are still loading. */
+setTimeout(function() {
+contentBottom = postEntry.offset().top + postEntry.outerHeight();
+}, 2000);
+if (window.addEventListener) {
+window.addEventListener('scroll', shareScroll, false);
+window.addEventListener('resize', shareMove, false);
+} else if (window.attachEvent) {
+window.attachEvent('onscroll', shareScroll);
+window.attachEvent('onresize', shareMove);
+}
+function getTopSpacing(){
+if($window.width() > 1024)
+topSpacing = distanceFromTop + jQuery('.nav-wrap').outerHeight();
+else
+topSpacing = distanceFromTop;
+}
+});
+</script>
+<div class="clear"></div>				
+</div><!--/.entry-->
+</div><!--/.post-inner-->
+</article><!--/.post-->				
+<div class="clear"></div>
+<div class="clear"></div>
+<div class="ads-inner-mobile">
+<center style="padding-top:30px;">
+<!-- Post-Bottom-Inner-300x250 -->
+<ins class="adsbygoogle" style="display: inline-block; width: 300px; height: 250px;" data-ad-client="ca-pub-2601749019656699" data-ad-slot="7807254572" data-adsbygoogle-status="done"><ins id="aswift_4_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_4_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_4" name="aswift_4" style="left:0;position:absolute;top:0;width:300px;height:250px;" src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/saved_resource(4).html"></iframe></ins></ins></ins>
+<script type="text/rocketscript" data-rocketoptimized="true">
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center>
+</div>
+<div class="clear"></div>
+<div class="after-post-box">
+<h2>If You Appreciate What We Do Here On TecMint, You Should Consider:</h2>
+<ol>
+<li>Stay Connected to: <strong><a target="_blank" rel="nofollow" href="https://bit.ly/1TP6lcM" title="Follow TecMint on Twitter">Twitter</a></strong> | <strong><a target="_blank" rel="nofollow" href="https://bit.ly/1rDYrdj" title="Like Us on Facebook">Facebook</a></strong> | <strong><a target="_blank" rel="nofollow" href="https://bit.ly/24J6lna" title="Join Us On Google+">Google Plus</a></strong></li>
+<li>Subscribe to our email updates: <strong><a target="_blank" rel="nofollow" href="https://bit.ly/2dhBpWQ" title="Subscribe to TecMint Email Updates">Sign Up Now</a></strong></li>
+<li>Get your own <strong><a target="_blank" rel="nofollow" title="WordPress Hosting" href="https://www.bluehost.com/track/tecmint/">self-hosted blog with a Free Domain</a></strong> at  (<strong>$3.95/month</strong>).</li>
+<li>Become a Supporter - <strong><a target="_blank" href="https://www.tecmint.com/donate-to-tecmint/">Make a contribution via PayPal</a></strong></li>
+<li>Support us by <strong><a href="https://www.tecmint.com/linux-books-in-pdf-format/" target="_blank">purchasing our premium books</a></strong> in PDF format.</li>
+<li>Support us by taking our <strong><a rel="nofollow" target="_blank" href="https://deals.tecmint.com/search?utf8=%E2%9C%93&amp;query=linux">online Linux courses</a></strong></li>
+</ol>
+<p style="text-align: center;"><strong style=" color:#fe3300;font-size:20px;">We are thankful for your never ending support.</strong></p>
+</div>
+<div class="clear"></div>
+<p class="post-tags"><span>Tags:</span> <a href="https://www.tecmint.com/tag/lamp/" rel="tag">lamp</a></p>					<div class="author-bio">
+<div class="bio-avatar"><img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/be16e54026c7429d28490cce41b1e157" alt="" srcset="https://secure.gravatar.com/avatar/be16e54026c7429d28490cce41b1e157?s=256&amp;d=blank&amp;r=g 2x" class="avatar avatar-128 photo" height="128" width="128" data-lazy-loaded="true" style="display: block;"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/be16e54026c7429d28490cce41b1e157?s=128&amp;#038;d=blank&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/be16e54026c7429d28490cce41b1e157?s=256&amp;amp;d=blank&amp;amp;r=g 2x' class='avatar avatar-128 photo' height='128' width='128' /&gt;</noscript></div>
+<p style="float:right; font-weight:600;"><a target="_blank" class="author-link" href="https://www.tecmint.com/author/cezarmatei/" rel="author">View all Posts</a></p>
+<p class="bio-name">Matei Cezar</p>
+<p class="bio-desc">I'am a computer addicted guy, a fan of open source and linux based system software, have about 4 years experience with Linux distributions desktop, servers and bash scripting.</p>
+<p><span style="font-size:20px;font-weight:400;color:#a2042e">Your name can also be listed here. Got a tip? <a style="text-decoration:underline;" target="_blank" href="https://www.tecmint.com/submit-articles/">Submit it here</a> to become an <b>TecMint</b> author.</span></p>
+<div class="clear"></div>
+</div>
+<div class="hr"></div>
+<div class="grid one-fourth">
+<a href="https://www.tecmint.com/red-hat-rhcsa-rhce-exam-certification-book/" target="_blank"><img alt="RedHat RHCE and RHCSA Certification Book" width="200" src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/RedHat-RHCSA-RHCE-Exam-Study-Ebook.png" style="margin-right:10px;"></a>
+</div>
+<div class="grid one-fourth">
+<a href="https://www.tecmint.com/linux-foundation-lfcs-lfce-certification-exam-book/" target="_blank"><img alt="Linux Foundation LFCS and LFCE Certification Preparation Guide" width="200" src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/Linux-Foundation-LFCS-LFCE-Certification-Ebook.png"></a>
+</div>
+<div class="grid one-fourth">
+<a href="https://deals.tecmint.com/sales/complete-linux-crash-course-includes-topics-on-red-hat-unix-kali-python-and-opensuse?utm_source=tecmint.com&amp;utm_medium=referral&amp;utm_campaign=complete-linux-crash-course-includes-topics-on-red-hat-unix-kali-python-and-opensu" rel="nofollow" target="_blank"><img width="200" src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/Linux-System-Administrator-Course.png" style="margin-right:10px;"></a>
+</div>
+<div class="grid one-fourth last">
+<a href="https://deals.tecmint.com/sales/become-an-ethical-hacker-bonus-bundle?utm_source=tecmint.com&amp;utm_medium=referral&amp;utm_campaign=become-an-ethical-hacker-bonus-bundle_090216" rel="nofollow" target="_blank"><img width="200" src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/Become-an-Ethical-Hacker.png"></a>
+</div>
+<div class="clear"></div>
+<div class="hr"></div>
+<ul class="post-nav group">
+<li class="next"><a href="https://www.tecmint.com/10-useful-interview-questions-and-answers-on-linux-commands/" rel="next"><i class="fa fa-chevron-right"></i><strong>Next story</strong> <span>10 Useful Interview Questions and Answers on Linux Commands</span></a></li>
+<li class="previous"><a href="https://www.tecmint.com/configure-zentyal-as-backup-domain-controller/" rel="prev"><i class="fa fa-chevron-left"></i><strong>Previous story</strong> <span>Install and Configure Zentyal Linux 3.5 as A BDC (Backup Domain Controller)</span></a></li>
+</ul>
+<h4 class="heading">
+<i class="fa fa-hand-o-right"></i>You may also like...</h4>
+<ul class="related-posts group">
+<li class="related post-hover">
+<article class="post-1691 post type-post status-publish format-standard has-post-thumbnail hentry category-centos category-fedora category-linux-commands category-monitoring-tools category-redhat">
+<div class="post-thumbnail">
+<a href="https://www.tecmint.com/block-ssh-server-attacks-brute-force-attacks-using-denyhosts/" title="Block SSH Server Attacks (Brute Force Attacks) Using DenyHosts">
+<img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/1x1.trans.gif" data-lazy-src="https://www.tecmint.com/wp-content/uploads/2012/11/Block-Brute-Force-Attacks-Using-DenyHost-520x245.jpg" width="520" height="245" class="attachment-thumb-medium size-thumb-medium wp-post-image" alt="Block SSH Attacks in Linux" srcset="https://www.tecmint.com/wp-content/uploads/2012/11/Block-Brute-Force-Attacks-Using-DenyHost-520x245.jpg 520w, https://www.tecmint.com/wp-content/uploads/2012/11/Block-Brute-Force-Attacks-Using-DenyHost-720x340.jpg 720w" sizes="(max-width: 520px) 100vw, 520px"><noscript>&lt;img width="520" height="245" src="https://www.tecmint.com/wp-content/uploads/2012/11/Block-Brute-Force-Attacks-Using-DenyHost-520x245.jpg" class="attachment-thumb-medium size-thumb-medium wp-post-image" alt="Block SSH Attacks in Linux" srcset="https://www.tecmint.com/wp-content/uploads/2012/11/Block-Brute-Force-Attacks-Using-DenyHost-520x245.jpg 520w, https://www.tecmint.com/wp-content/uploads/2012/11/Block-Brute-Force-Attacks-Using-DenyHost-720x340.jpg 720w" sizes="(max-width: 520px) 100vw, 520px" /&gt;</noscript>																								</a>
+<a class="post-comments" href="https://www.tecmint.com/block-ssh-server-attacks-brute-force-attacks-using-denyhosts/#comments"><span><i class="fa fa-comments-o"></i>16</span></a>
+</div><!--/.post-thumbnail-->
+<div class="related-inner">
+<h4 class="post-title">
+<a href="https://www.tecmint.com/block-ssh-server-attacks-brute-force-attacks-using-denyhosts/" rel="bookmark" title="Block SSH Server Attacks (Brute Force Attacks) Using DenyHosts">Block SSH Server Attacks (Brute Force Attacks) Using DenyHosts</a>
+</h4><!--/.post-title-->
+<div class="post-meta group">
+<p class="post-date">30 Nov, 2012</p>
+</div><!--/.post-meta-->
+</div><!--/.related-inner-->
+</article>
+</li><!--/.related-->
+<li class="related post-hover">
+<article class="post-12328 post type-post status-publish format-standard has-post-thumbnail hentry category-centos tag-centos-7-1">
+<div class="post-thumbnail">
+<a href="https://www.tecmint.com/centos-7-1-installation/" title="CentOS 7.1 Released: Installation Guide with Screenshots">
+<img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/1x1.trans.gif" data-lazy-src="https://www.tecmint.com/wp-content/uploads/2015/04/CentOS-7.1-Installation-520x245.jpg" width="520" height="245" class="attachment-thumb-medium size-thumb-medium wp-post-image" alt="CentOS 7.1 Installation" srcset="https://www.tecmint.com/wp-content/uploads/2015/04/CentOS-7.1-Installation-520x245.jpg 520w, https://www.tecmint.com/wp-content/uploads/2015/04/CentOS-7.1-Installation-720x340.jpg 720w" sizes="(max-width: 520px) 100vw, 520px"><noscript>&lt;img width="520" height="245" src="https://www.tecmint.com/wp-content/uploads/2015/04/CentOS-7.1-Installation-520x245.jpg" class="attachment-thumb-medium size-thumb-medium wp-post-image" alt="CentOS 7.1 Installation" srcset="https://www.tecmint.com/wp-content/uploads/2015/04/CentOS-7.1-Installation-520x245.jpg 520w, https://www.tecmint.com/wp-content/uploads/2015/04/CentOS-7.1-Installation-720x340.jpg 720w" sizes="(max-width: 520px) 100vw, 520px" /&gt;</noscript>																								</a>
+<a class="post-comments" href="https://www.tecmint.com/centos-7-1-installation/#comments"><span><i class="fa fa-comments-o"></i>9</span></a>
+</div><!--/.post-thumbnail-->
+<div class="related-inner">
+<h4 class="post-title">
+<a href="https://www.tecmint.com/centos-7-1-installation/" rel="bookmark" title="CentOS 7.1 Released: Installation Guide with Screenshots">CentOS 7.1 Released: Installation Guide with Screenshots</a>
+</h4><!--/.post-title-->
+<div class="post-meta group">
+<p class="post-date">2 Apr, 2015</p>
+</div><!--/.post-meta-->
+</div><!--/.related-inner-->
+</article>
+</li><!--/.related-->
+<li class="related post-hover">
+<article class="post-15191 post type-post status-publish format-standard has-post-thumbnail hentry category-redhat category-virtualization tag-rhev tag-virtualization">
+<div class="post-thumbnail">
+<a href="https://www.tecmint.com/deploy-linux-and-windows-virtual-machines-under-iso-domains-in-rhev/" title="How to Deploy Virtual Machines in RHEV Environment – Part 4">
+<img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/1x1.trans.gif" data-lazy-src="https://www.tecmint.com/wp-content/uploads/2015/08/Deploy-Virtual-Machines-in-RHEV-ISO-Domain-520x245.png" width="520" height="245" class="attachment-thumb-medium size-thumb-medium wp-post-image" alt="Deploy Virtual Machines in RHEV ISO Domain" srcset="https://www.tecmint.com/wp-content/uploads/2015/08/Deploy-Virtual-Machines-in-RHEV-ISO-Domain-520x245.png 520w, https://www.tecmint.com/wp-content/uploads/2015/08/Deploy-Virtual-Machines-in-RHEV-ISO-Domain-720x340.png 720w" sizes="(max-width: 520px) 100vw, 520px"><noscript>&lt;img width="520" height="245" src="https://www.tecmint.com/wp-content/uploads/2015/08/Deploy-Virtual-Machines-in-RHEV-ISO-Domain-520x245.png" class="attachment-thumb-medium size-thumb-medium wp-post-image" alt="Deploy Virtual Machines in RHEV ISO Domain" srcset="https://www.tecmint.com/wp-content/uploads/2015/08/Deploy-Virtual-Machines-in-RHEV-ISO-Domain-520x245.png 520w, https://www.tecmint.com/wp-content/uploads/2015/08/Deploy-Virtual-Machines-in-RHEV-ISO-Domain-720x340.png 720w" sizes="(max-width: 520px) 100vw, 520px" /&gt;</noscript>																								</a>
+<a class="post-comments" href="https://www.tecmint.com/deploy-linux-and-windows-virtual-machines-under-iso-domains-in-rhev/#comments"><span><i class="fa fa-comments-o"></i>3</span></a>
+</div><!--/.post-thumbnail-->
+<div class="related-inner">
+<h4 class="post-title">
+<a href="https://www.tecmint.com/deploy-linux-and-windows-virtual-machines-under-iso-domains-in-rhev/" rel="bookmark" title="How to Deploy Virtual Machines in RHEV Environment – Part 4">How to Deploy Virtual Machines in RHEV Environment – Part 4</a>
+</h4><!--/.post-title-->
+<div class="post-meta group">
+<p class="post-date">13 Aug, 2015</p>
+</div><!--/.post-meta-->
+</div><!--/.related-inner-->
+</article>
+</li><!--/.related-->
+</ul><!--/.post-related-->
+<section id="comments" class="themeform">
+<h3 class="heading">27 Responses</h3>
+<ul class="comment-tabs group">
+<li class="active"><a href="https://www.tecmint.com/install-lamp-in-centos-7/#commentlist-container"><i class="fa fa-comments-o"></i>Comments<span>10</span></a></li>
+<li><a href="https://www.tecmint.com/install-lamp-in-centos-7/#pinglist-container"><i class="fa fa-share"></i>Pingbacks<span>0</span></a></li>
+</ul>
+<div id="commentlist-container" class="comment-tab">
+<ol class="commentlist">
+<li class="comment even thread-even depth-1" id="comment-841542">
+<div id="div-comment-841542" class="comment-body">
+<div class="comment-author vcard">
+<img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/1x1.trans.gif" data-lazy-src="https://secure.gravatar.com/avatar/93d64bc497517adf3cf426c99e09ec60?s=96&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/93d64bc497517adf3cf426c99e09ec60?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" height="96" width="96"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/93d64bc497517adf3cf426c99e09ec60?s=96&amp;#038;d=blank&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/93d64bc497517adf3cf426c99e09ec60?s=192&amp;amp;d=blank&amp;amp;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>			<cite class="fn">Martin Skorvald</cite> <span class="says">says:</span>		</div>
+<div class="comment-meta commentmetadata"><a href="https://www.tecmint.com/install-lamp-in-centos-7/comment-page-2/#comment-841542">
+November 25, 2016 at 11:53 pm</a>		</div>
+<p>Hi<br>
+One more thing to note:</p>
+<p>rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm<br>
+[root@centos yum-root-bB6l9i]# pwd<br>
+/var/tmp/yum-root-bB6l9i</p>
+<p>//marsk</p>
+<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.tecmint.com/install-lamp-in-centos-7/?replytocom=841542#respond" onclick="return addComment.moveForm( &quot;div-comment-841542&quot;, &quot;841542&quot;, &quot;respond&quot;, &quot;7965&quot; )" aria-label="Reply to Martin Skorvald">Reply</a></div>
+</div>
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-811511">
+<div id="div-comment-811511" class="comment-body">
+<div class="comment-author vcard">
+<img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/1x1.trans.gif" data-lazy-src="https://secure.gravatar.com/avatar/ecdf0f5e5951e2b4836068b5ffe9b57a?s=96&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/ecdf0f5e5951e2b4836068b5ffe9b57a?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" height="96" width="96"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/ecdf0f5e5951e2b4836068b5ffe9b57a?s=96&amp;#038;d=blank&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/ecdf0f5e5951e2b4836068b5ffe9b57a?s=192&amp;amp;d=blank&amp;amp;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>			<cite class="fn">felix</cite> <span class="says">says:</span>		</div>
+<div class="comment-meta commentmetadata"><a href="https://www.tecmint.com/install-lamp-in-centos-7/comment-page-2/#comment-811511">
+August 31, 2016 at 7:24 pm</a>		</div>
+<p>Dear friend, I have installed CentOS 7.0 as I can know until version of php supports. felix</p>
+<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.tecmint.com/install-lamp-in-centos-7/?replytocom=811511#respond" onclick="return addComment.moveForm( &quot;div-comment-811511&quot;, &quot;811511&quot;, &quot;respond&quot;, &quot;7965&quot; )" aria-label="Reply to felix">Reply</a></div>
+</div>
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-798160">
+<div id="div-comment-798160" class="comment-body">
+<div class="comment-author vcard">
+<img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/1x1.trans.gif" data-lazy-src="https://secure.gravatar.com/avatar/b088ce54be312d879e51df67f8a441aa?s=96&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/b088ce54be312d879e51df67f8a441aa?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" height="96" width="96"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/b088ce54be312d879e51df67f8a441aa?s=96&amp;#038;d=blank&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/b088ce54be312d879e51df67f8a441aa?s=192&amp;amp;d=blank&amp;amp;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>			<cite class="fn">Dida Arda</cite> <span class="says">says:</span>		</div>
+<div class="comment-meta commentmetadata"><a href="https://www.tecmint.com/install-lamp-in-centos-7/comment-page-2/#comment-798160">
+July 8, 2016 at 10:49 pm</a>		</div>
+<p>Typo ‘LocationMach’ please change ‘LocationMatch’<br>
+and ‘nano /etc/httpd/conf.d/phpmyadmin.conf’ change to ‘nano /etc/httpd/conf.d/phpMyAdmin.conf’</p>
+<p>New Version</p>
+<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.tecmint.com/install-lamp-in-centos-7/?replytocom=798160#respond" onclick="return addComment.moveForm( &quot;div-comment-798160&quot;, &quot;798160&quot;, &quot;respond&quot;, &quot;7965&quot; )" aria-label="Reply to Dida Arda">Reply</a></div>
+</div>
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-731922">
+<div id="div-comment-731922" class="comment-body">
+<div class="comment-author vcard">
+<img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/1x1.trans.gif" data-lazy-src="https://secure.gravatar.com/avatar/5d6cabd6d7fd10ce9e11839e1caefb05?s=96&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/5d6cabd6d7fd10ce9e11839e1caefb05?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" height="96" width="96"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/5d6cabd6d7fd10ce9e11839e1caefb05?s=96&amp;#038;d=blank&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/5d6cabd6d7fd10ce9e11839e1caefb05?s=192&amp;amp;d=blank&amp;amp;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>			<cite class="fn">James Aker</cite> <span class="says">says:</span>		</div>
+<div class="comment-meta commentmetadata"><a href="https://www.tecmint.com/install-lamp-in-centos-7/comment-page-2/#comment-731922">
+January 2, 2016 at 12:07 am</a>		</div>
+<p>you can add phpmyadmin for Centos 7:<br>
+sudo yum install epel-release<br>
+sudo yum install phpmyadmin</p>
+<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.tecmint.com/install-lamp-in-centos-7/?replytocom=731922#respond" onclick="return addComment.moveForm( &quot;div-comment-731922&quot;, &quot;731922&quot;, &quot;respond&quot;, &quot;7965&quot; )" aria-label="Reply to James Aker">Reply</a></div>
+</div>
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-723383">
+<div id="div-comment-723383" class="comment-body">
+<div class="comment-author vcard">
+<img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/1x1.trans.gif" data-lazy-src="https://secure.gravatar.com/avatar/3a620832664d1d9b4d00dc63e0a35ea8?s=96&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/3a620832664d1d9b4d00dc63e0a35ea8?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" height="96" width="96"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/3a620832664d1d9b4d00dc63e0a35ea8?s=96&amp;#038;d=blank&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/3a620832664d1d9b4d00dc63e0a35ea8?s=192&amp;amp;d=blank&amp;amp;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>			<cite class="fn">ella</cite> <span class="says">says:</span>		</div>
+<div class="comment-meta commentmetadata"><a href="https://www.tecmint.com/install-lamp-in-centos-7/comment-page-2/#comment-723383">
+December 13, 2015 at 12:44 am</a>		</div>
+<p>Can not install phpmyadmin on OEL 7.2 x64….</p>
+<p> wget <a href="http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm" rel="nofollow">http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm</a><br>
+rpm -Uvh rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm<br>
+=&gt;package rpmforge-release-0.5.3-1.el7.rf.x86_64 is already installed<br>
+Error: Package: phpmyadmin-2.11.11.3-2.el6.rf.noarch (rpmforge)<br>
+Requires: php-mbstring &gt;= 4.1.0</p>
+<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.tecmint.com/install-lamp-in-centos-7/?replytocom=723383#respond" onclick="return addComment.moveForm( &quot;div-comment-723383&quot;, &quot;723383&quot;, &quot;respond&quot;, &quot;7965&quot; )" aria-label="Reply to ella">Reply</a></div>
+</div>
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-601910">
+<div id="div-comment-601910" class="comment-body">
+<div class="comment-author vcard">
+<img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/1x1.trans.gif" data-lazy-src="https://secure.gravatar.com/avatar/982c0cd675041d9ba86aa7a89fe7197b?s=96&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/982c0cd675041d9ba86aa7a89fe7197b?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" height="96" width="96"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/982c0cd675041d9ba86aa7a89fe7197b?s=96&amp;#038;d=blank&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/982c0cd675041d9ba86aa7a89fe7197b?s=192&amp;amp;d=blank&amp;amp;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>			<cite class="fn">ketil ervik</cite> <span class="says">says:</span>		</div>
+<div class="comment-meta commentmetadata"><a href="https://www.tecmint.com/install-lamp-in-centos-7/comment-page-2/#comment-601910">
+June 17, 2015 at 10:32 pm</a>		</div>
+<p>Dont work! bad howto</p>
+<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.tecmint.com/install-lamp-in-centos-7/?replytocom=601910#respond" onclick="return addComment.moveForm( &quot;div-comment-601910&quot;, &quot;601910&quot;, &quot;respond&quot;, &quot;7965&quot; )" aria-label="Reply to ketil ervik">Reply</a></div>
+</div>
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1 parent" id="comment-474048">
+<div id="div-comment-474048" class="comment-body">
+<div class="comment-author vcard">
+<img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/1x1.trans.gif" data-lazy-src="https://secure.gravatar.com/avatar/fbb418d840b0ee4ad572664bb3fae6c4?s=96&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/fbb418d840b0ee4ad572664bb3fae6c4?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" height="96" width="96"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/fbb418d840b0ee4ad572664bb3fae6c4?s=96&amp;#038;d=blank&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/fbb418d840b0ee4ad572664bb3fae6c4?s=192&amp;amp;d=blank&amp;amp;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>			<cite class="fn">lester</cite> <span class="says">says:</span>		</div>
+<div class="comment-meta commentmetadata"><a href="https://www.tecmint.com/install-lamp-in-centos-7/comment-page-2/#comment-474048">
+February 5, 2015 at 12:40 am</a>		</div>
+<p>Your instructions throws erros at:</p>
+<p># yum install <a href="http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm" rel="nofollow">http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm</a></p>
+<p>and your image associated with that command also shows the error.  Can’t get past this part.</p>
+<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.tecmint.com/install-lamp-in-centos-7/?replytocom=474048#respond" onclick="return addComment.moveForm( &quot;div-comment-474048&quot;, &quot;474048&quot;, &quot;respond&quot;, &quot;7965&quot; )" aria-label="Reply to lester">Reply</a></div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-admin odd alt depth-2" id="comment-474538">
+<div id="div-comment-474538" class="comment-body">
+<div class="comment-author vcard">
+<img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/1x1.trans.gif" data-lazy-src="https://secure.gravatar.com/avatar/7badddbc53297b2e8ed7011cf45df0c0?s=96&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/7badddbc53297b2e8ed7011cf45df0c0?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" height="96" width="96"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/7badddbc53297b2e8ed7011cf45df0c0?s=96&amp;#038;d=blank&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/7badddbc53297b2e8ed7011cf45df0c0?s=192&amp;amp;d=blank&amp;amp;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>			<cite class="fn">Ravi Saive</cite> <span class="says">says:</span>		</div>
+<div class="comment-meta commentmetadata"><a href="https://www.tecmint.com/install-lamp-in-centos-7/comment-page-2/#comment-474538">
+February 5, 2015 at 12:58 pm</a>		</div>
+<p>@Lester,<br>
+Do this way…</p>
+<pre># wget http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm
+# rpm -Uvh rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm
+</pre>
+<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.tecmint.com/install-lamp-in-centos-7/?replytocom=474538#respond" onclick="return addComment.moveForm( &quot;div-comment-474538&quot;, &quot;474538&quot;, &quot;respond&quot;, &quot;7965&quot; )" aria-label="Reply to Ravi Saive">Reply</a></div>
+</div>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-458244">
+<div id="div-comment-458244" class="comment-body">
+<div class="comment-author vcard">
+<img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/1x1.trans.gif" data-lazy-src="https://secure.gravatar.com/avatar/cca3ab246e1e4776d2229d21db5f16e1?s=96&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/cca3ab246e1e4776d2229d21db5f16e1?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" height="96" width="96"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/cca3ab246e1e4776d2229d21db5f16e1?s=96&amp;#038;d=blank&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/cca3ab246e1e4776d2229d21db5f16e1?s=192&amp;amp;d=blank&amp;amp;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>			<cite class="fn"><a href="https://mandaguari.net/" rel="external nofollow" class="url">Wellington Torrejais da Silva</a></cite> <span class="says">says:</span>		</div>
+<div class="comment-meta commentmetadata"><a href="https://www.tecmint.com/install-lamp-in-centos-7/comment-page-2/#comment-458244">
+January 21, 2015 at 5:06 am</a>		</div>
+<p>Thanks!!!</p>
+<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.tecmint.com/install-lamp-in-centos-7/?replytocom=458244#respond" onclick="return addComment.moveForm( &quot;div-comment-458244&quot;, &quot;458244&quot;, &quot;respond&quot;, &quot;7965&quot; )" aria-label="Reply to Wellington Torrejais da Silva">Reply</a></div>
+</div>
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-375406">
+<div id="div-comment-375406" class="comment-body">
+<div class="comment-author vcard">
+<img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/1x1.trans.gif" data-lazy-src="https://secure.gravatar.com/avatar/be16e54026c7429d28490cce41b1e157?s=96&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/be16e54026c7429d28490cce41b1e157?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" height="96" width="96"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/be16e54026c7429d28490cce41b1e157?s=96&amp;#038;d=blank&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/be16e54026c7429d28490cce41b1e157?s=192&amp;amp;d=blank&amp;amp;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>			<cite class="fn">Matei Cezar</cite> <span class="says">says:</span>		</div>
+<div class="comment-meta commentmetadata"><a href="https://www.tecmint.com/install-lamp-in-centos-7/comment-page-2/#comment-375406">
+November 18, 2014 at 1:11 pm</a>		</div>
+<p>@sahadev: Check /etc/httpd/conf.d/phpmyadmin.conf file and verify your IP/netmask<br>
+##############</p>
+<p>Order Deny,Allow<br>
+Deny from all<br>
+Allow from 10.0.0.0/24 ## Use your IP/Network CDIR<br>
+Require all granted</p>
+<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.tecmint.com/install-lamp-in-centos-7/?replytocom=375406#respond" onclick="return addComment.moveForm( &quot;div-comment-375406&quot;, &quot;375406&quot;, &quot;respond&quot;, &quot;7965&quot; )" aria-label="Reply to Matei Cezar">Reply</a></div>
+</div>
+</li><!-- #comment-## -->
+</ol><!--/.commentlist-->
+<nav class="comments-nav group">
+<div class="nav-previous"><a href="https://www.tecmint.com/install-lamp-in-centos-7/comment-page-1/#comments">« Older Comments</a></div>
+<div class="nav-next"></div>
+</nav><!--/.comments-nav-->
+</div>	
+<div id="respond" class="comment-respond">
+<h3 id="reply-title" class="comment-reply-title">Got something to say? Join the discussion. <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://www.tecmint.com/install-lamp-in-centos-7/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://www.tecmint.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required="true" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required="true" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200"></p>
+<!-- Subscribe to Comments Reloaded version 170428 --><!-- BEGIN: subscribe to comments reloaded --><p class="comment-form-subscriptions"><label for="subscribe-reloaded"><input style="width:30px" type="checkbox" name="subscribe-reloaded" id="subscribe-reloaded" value="yes"> Notify me of followup comments via e-mail. You can also <a href="https://www.tecmint.com/comment-subscriptions/?srp=7965&amp;srk=36825693b60cf9e86d1b1a5fd485bc79&amp;sra=s&amp;srsrc=f">subscribe</a> without commenting.</label></p><!-- END: subscribe to comments reloaded --><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="7965" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="b58b5ed31e"></p><p style="display: none;"></p>			<input type="hidden" id="ak_js" name="ak_js" value="1496817280357"></form>
+</div><!-- #respond -->
+</section><!--/#comments-->		
+</div><!--/.pad-->
+</section><!--/.content-->
+<div class="sidebar s1">
+<a class="sidebar-toggle" title="Expand Sidebar"><i class="fa icon-sidebar-toggle"></i></a>
+<div class="sidebar-content">
+<div class="sidebar-top group">
+<span style="color:#002873; font-weight:600; font-size:20px;">I <i class="fa fa-heart col-love-l"></i> TecMint :</span>
+<ul class="social-links"><li><a rel="nofollow" class="social-tooltip" title="twitter" href="https://twitter.com/tecmint" target="Array"><i class="fa fa-twitter" style="color: #33ccff;"></i></a></li><li><a rel="nofollow" class="social-tooltip" title="facebook" href="https://www.facebook.com/TecMint" target="Array"><i class="fa fa-facebook" style="color: #3b5998;"></i></a></li><li><a rel="nofollow" class="social-tooltip" title="Google+" href="https://plus.google.com/101049688653487009744" target="Array"><i class="fa fa-google-plus" style="color: #db4a39;"></i></a></li><li><a rel="nofollow" class="social-tooltip" title="Feedly" href="https://feedly.com/i/subscription/feed/https://www.tecmint.com/feed/" target="Array"><i class="fa fa-rss" style="color: #87c040;"></i></a></li><li><a rel="nofollow" class="social-tooltip" title="Youtube" href="https://www.youtube.com/channel/UCkiRkzdLvoGBtW_YArytJlQ" target="Array"><i class="fa fa fa-youtube-square" style="color: #c4302b;"></i></a></li></ul>			</div>
+<div id="text-23" class="widget widget_text">			<div class="textwidget">  <div style="background:#db4455;" class="message">
+<center><a href="https://www.tecmint.com/free-online-linux-learning-guide-for-beginners/" target="_blank"><span style="font-weight:bold;font-size:18px;"><i class="fa fa-linux"></i> BEGINNER'S GUIDE FOR LINUX <i class="fa fa-linux"></i></span> <span style="font-weight:bold;font-size:16px;">Start learning Linux in minutes</span> <i class="fa fa-arrow-right"></i></a>
+</center>
+</div></div>
+</div><div id="text-21" class="widget widget_text">			<div class="textwidget"><center>
+<!-- Sidebar Top Ad 300x250 -->
+<ins class="adsbygoogle" style="display: inline-block; width: 300px; height: 250px;" data-ad-client="ca-pub-2601749019656699" data-ad-slot="7270921771" data-adsbygoogle-status="done"><ins id="aswift_5_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_5_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_5" name="aswift_5" style="left:0;position:absolute;top:0;width:300px;height:250px;" src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/saved_resource(5).html"></iframe></ins></ins></ins>
+<script type="text/rocketscript" data-rocketoptimized="true">
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center></div>
+</div><div id="text-25" class="widget widget_text">			<div class="textwidget"><div class="message"><center><a href="https://www.tecmint.com/vi-editor-usage/" target="_blank"><span style="font-weight:bold;font-size:17px;"><i class="fa fa-linux"></i> Vi/Vim Editor BEGINNER'S GUIDE <i class="fa fa-linux"></i></span> <span style="font-weight:bold;font-size:16px;">Learn vi/vim as a Full Text Editor</span> <i class="fa fa-file-text"></i>
+</a></center></div></div>
+</div><div id="text-24" class="widget widget_text">			<div class="textwidget"><script type="text/rocketscript" data-rocketoptimized="true"><!--
+e9 = new Object();
+e9.size = "300x250";
+//--></script>
+<script type="text/rocketscript" data-rocketsrc="//tags.expo9.exponential.com/tags/TecMintcom/ROS/tags.js" data-rocketoptimized="true"></script><div align="center"><iframe src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/saved_resource(6).html" id="tfasyncframe_6" marginwidth="0" align="center" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no" allowtransparency="true" width="300" height="250"> </iframe></div></div>
+</div><div id="text-26" class="widget widget_text">			<div class="textwidget"><div class="message" style="background-color: #ab0619;"><center><span style="font-weight:bold;font-size:17px;"><i class="fa fa-linux"></i> Linux Foundation Certification <i class="fa fa-linux"></i></span> <span style="font-weight:bold;font-size:16px;">Exam Study Guide to <a style="text-decoration:underline;" target="_blank" href="https://www.tecmint.com/linux-foundation-lfcs-lfce-certification-exam-book/">LFCS and LFCE</a></span></center></div></div>
+</div><div id="text-3" class="widget widget_text">			<div class="textwidget"><div class="ads-sidebar-desktop">
+<center>
+<!-- SideBar2 Ads 300x600 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-2601749019656699" data-ad-slot="9098920170" data-adsbygoogle-status="done"><ins id="aswift_6_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_6_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_6" name="aswift_6" style="left:0;position:absolute;top:0;width:300px;height:600px;" src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/saved_resource(7).html"></iframe></ins></ins></ins>
+<script type="text/rocketscript" data-rocketoptimized="true">
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center>
+</div></div>
+</div><div id="alxtabs-2" class="widget widget_alx_tabs">
+<ul class="alx-tabs-nav group tab-count-2"><li class="alx-tab tab-popular active"><a href="https://www.tecmint.com/install-lamp-in-centos-7/#tab-popular" title="Popular Posts"><i class="fa fa-star"></i><span>Popular Posts</span></a></li><li class="alx-tab tab-comments"><a href="https://www.tecmint.com/install-lamp-in-centos-7/#tab-comments" title="Recent Comments"><i class="fa fa-comments-o"></i><span>Recent Comments</span></a></li></ul>
+<div class="alx-tabs-container">
+<ul id="tab-popular" class="alx-tab group " style="display: block;">
+<li>
+<div class="tab-item-inner group">
+<p class="tab-item-title"><a href="https://www.tecmint.com/how-to-add-linux-host-to-nagios-monitoring-server/" rel="bookmark" title="How to Add Linux Host to Nagios Monitoring Server Using NRPE Plugin">How to Add Linux Host to Nagios Monitoring Server Using NRPE Plugin</a></p>
+</div>
+</li>
+<li>
+<div class="tab-item-inner group">
+<p class="tab-item-title"><a href="https://www.tecmint.com/install-nagios-in-linux/" rel="bookmark" title="Nagios 4.2.0 Released – Install on RHEL/CentOS 7.x/6.x/5.x and Fedora 24-19">Nagios 4.2.0 Released – Install on RHEL/CentOS 7.x/6.x/5.x and Fedora 24-19</a></p>
+</div>
+</li>
+<li>
+<div class="tab-item-inner group">
+<p class="tab-item-title"><a href="https://www.tecmint.com/install-cacti-network-monitoring-on-rhel-centos-6-3-5-8-and-fedora-17-12/" rel="bookmark" title="Install Cacti (Network Monitoring) on RHEL/CentOS 7.x/6.x/5.x and Fedora 24-12">Install Cacti (Network Monitoring) on RHEL/CentOS 7.x/6.x/5.x and Fedora 24-12</a></p>
+</div>
+</li>
+<li>
+<div class="tab-item-inner group">
+<p class="tab-item-title"><a href="https://www.tecmint.com/install-google-chrome-on-redhat-centos-fedora-linux/" rel="bookmark" title="Google Chrome 58 Released – Install on RHEL/CentOS 7/6 and Fedora 25-20">Google Chrome 58 Released – Install on RHEL/CentOS 7/6 and Fedora 25-20</a></p>
+</div>
+</li>
+<li>
+<div class="tab-item-inner group">
+<p class="tab-item-title"><a href="https://www.tecmint.com/install-ubuntu-16-04-alongside-with-windows-10-or-8-in-dual-boot/" rel="bookmark" title="How to Install Ubuntu 16.10/16.04 Alongside With Windows 10 or 8 in Dual-Boot">How to Install Ubuntu 16.10/16.04 Alongside With Windows 10 or 8 in Dual-Boot</a></p>
+</div>
+</li>
+<li>
+<div class="tab-item-inner group">
+<p class="tab-item-title"><a href="https://www.tecmint.com/red-hat-rhcsa-rhce-exam-certification-book/" rel="bookmark" title="Tecmint’s Guide to Red Hat RHCSA / RHCE Certification Preparation Study Guide">Tecmint’s Guide to Red Hat RHCSA / RHCE Certification Preparation Study Guide</a></p>
+</div>
+</li>
+</ul><!--/.alx-tab-->
+<ul id="tab-comments" class="alx-tab group avatars-enabled" style="display: none;">
+<li>
+<div class="tab-item-avatar">
+<a href="https://www.tecmint.com/linux-network-configuration-and-troubleshooting-commands/comment-page-4/#comment-893872">
+<img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/1x1.trans.gif" data-lazy-src="https://secure.gravatar.com/avatar/c4a2b91ce0e5e8cc6b21e78aca418390?s=96&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/c4a2b91ce0e5e8cc6b21e78aca418390?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" height="96" width="96"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/c4a2b91ce0e5e8cc6b21e78aca418390?s=96&amp;#038;d=blank&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/c4a2b91ce0e5e8cc6b21e78aca418390?s=192&amp;amp;d=blank&amp;amp;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>							</a>
+</div>
+<div class="tab-item-inner group">
+<div class="tab-item-name">Pawan kumar says:</div>
+<div class="tab-item-comment"><a href="https://www.tecmint.com/linux-network-configuration-and-troubleshooting-commands/comment-page-4/#comment-893872">dns is replying fine but internet is not working in Ubuntu.</a></div>
+</div>
+</li>
+<li>
+<div class="tab-item-avatar">
+<a href="https://www.tecmint.com/install-wordpress-on-ubuntu-16-04-with-lamp/comment-page-3/#comment-893869">
+<img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/1x1.trans.gif" data-lazy-src="https://secure.gravatar.com/avatar/4e444ab611c7b8c7bcb76e58d2e82ae0?s=96&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/4e444ab611c7b8c7bcb76e58d2e82ae0?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" height="96" width="96"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/4e444ab611c7b8c7bcb76e58d2e82ae0?s=96&amp;#038;d=blank&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/4e444ab611c7b8c7bcb76e58d2e82ae0?s=192&amp;amp;d=blank&amp;amp;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>							</a>
+</div>
+<div class="tab-item-inner group">
+<div class="tab-item-name">Aaron Kili says:</div>
+<div class="tab-item-comment"><a href="https://www.tecmint.com/install-wordpress-on-ubuntu-16-04-with-lamp/comment-page-3/#comment-893869">@Prashant     Welcome, hope you enjoyed the article.</a></div>
+</div>
+</li>
+<li>
+<div class="tab-item-avatar">
+<a href="https://www.tecmint.com/t-ui-launcher-turns-android-device-into-linux-cli/comment-page-1/#comment-893868">
+<img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/1x1.trans.gif" data-lazy-src="https://secure.gravatar.com/avatar/4e444ab611c7b8c7bcb76e58d2e82ae0?s=96&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/4e444ab611c7b8c7bcb76e58d2e82ae0?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" height="96" width="96"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/4e444ab611c7b8c7bcb76e58d2e82ae0?s=96&amp;#038;d=blank&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/4e444ab611c7b8c7bcb76e58d2e82ae0?s=192&amp;amp;d=blank&amp;amp;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>							</a>
+</div>
+<div class="tab-item-inner group">
+<div class="tab-item-name">Aaron Kili says:</div>
+<div class="tab-item-comment"><a href="https://www.tecmint.com/t-ui-launcher-turns-android-device-into-linux-cli/comment-page-1/#comment-893868">@Stanlee     Thanks for the kind words of...</a></div>
+</div>
+</li>
+<li>
+<div class="tab-item-avatar">
+<a href="https://www.tecmint.com/manage-xenserver-with-xencenter-and-xen-orchestra/comment-page-1/#comment-893856">
+<img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/1x1.trans.gif" data-lazy-src="https://secure.gravatar.com/avatar/5cd9bec1acc34df60b872939fcf2da6e?s=96&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/5cd9bec1acc34df60b872939fcf2da6e?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" height="96" width="96"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/5cd9bec1acc34df60b872939fcf2da6e?s=96&amp;#038;d=blank&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/5cd9bec1acc34df60b872939fcf2da6e?s=192&amp;amp;d=blank&amp;amp;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>							</a>
+</div>
+<div class="tab-item-inner group">
+<div class="tab-item-name">Abdul HaSeeB says:</div>
+<div class="tab-item-comment"><a href="https://www.tecmint.com/manage-xenserver-with-xencenter-and-xen-orchestra/comment-page-1/#comment-893856">Hi Rob,  How should we update this to the latest...</a></div>
+</div>
+</li>
+<li>
+<div class="tab-item-avatar">
+<a href="https://www.tecmint.com/create-shared-directory-on-samba-ad-dc-and-map-to-windows-linux/comment-page-1/#comment-893853">
+<img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/1x1.trans.gif" data-lazy-src="https://secure.gravatar.com/avatar/074a904f0348a3b82d6e50ad3c6defc3?s=96&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/074a904f0348a3b82d6e50ad3c6defc3?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" height="96" width="96"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/074a904f0348a3b82d6e50ad3c6defc3?s=96&amp;#038;d=blank&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/074a904f0348a3b82d6e50ad3c6defc3?s=192&amp;amp;d=blank&amp;amp;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>							</a>
+</div>
+<div class="tab-item-inner group">
+<div class="tab-item-name">Artyom says:</div>
+<div class="tab-item-comment"><a href="https://www.tecmint.com/create-shared-directory-on-samba-ad-dc-and-map-to-windows-linux/comment-page-1/#comment-893853">Nice article! I can't load PAM module from samba winbind. Using...</a></div>
+</div>
+</li>
+<li>
+<div class="tab-item-avatar">
+<a href="https://www.tecmint.com/postfix-mail-server-setup-linux-book/comment-page-1/#comment-893848">
+<img src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/1x1.trans.gif" data-lazy-src="https://secure.gravatar.com/avatar/49292756cdf5dc44cdc345c56025910c?s=96&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/49292756cdf5dc44cdc345c56025910c?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" height="96" width="96"><noscript>&lt;img alt='' src='https://secure.gravatar.com/avatar/49292756cdf5dc44cdc345c56025910c?s=96&amp;#038;d=blank&amp;#038;r=g' srcset='https://secure.gravatar.com/avatar/49292756cdf5dc44cdc345c56025910c?s=192&amp;amp;d=blank&amp;amp;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>							</a>
+</div>
+<div class="tab-item-inner group">
+<div class="tab-item-name">Jaysen Johnson says:</div>
+<div class="tab-item-comment"><a href="https://www.tecmint.com/postfix-mail-server-setup-linux-book/comment-page-1/#comment-893848">A couple of things.  Please remove the watermarks on the...</a></div>
+</div>
+</li>
+</ul><!--/.alx-tab-->
+</div>
+</div>
+<div id="text-27" class="widget widget_text">			<div class="textwidget"><center>
+<a target="_blank" href="https://www.tecmint.com/red-hat-rhcsa-rhce-exam-certification-book/"><img alt="RedHat RHCSA and RHCE Certification Exam Study Ebook" src="./Installing LAMP (Linux, Apache, MariaDB, PHP_PhpMyAdmin) in RHEL_CentOS 7.0_files/RedHat-RHCSA-RHCE-Exam.png"></a>
+</center></div>
+</div><div id="text-28" class="widget widget_text">			<div class="textwidget"><div class="message" style="background-color: #0d7c39;"><center><p style="font-weight:bold;font-size:18px;">Linux System Administrator Bundle with 7-Courses (96% off)</p> 
+<p style="background-color: #03441d;margin:6px 35px;padding:10px;"><a rel="nofollow" target="_blank" href="https://deals.tecmint.com/sales/complete-linux-crash-course-includes-topics-on-red-hat-unix-kali-python-and-opensuse?utm_source=tecmint.com&amp;utm_medium=referral&amp;utm_campaign=complete-linux-crash-course-includes-topics-on-red-hat-unix-kali-python-and-opensu&amp;_ga=1.95416024.550662903.1451974395" style="font-size:25px;font-weight:bold;">Add to Cart - $69</a></p>
+<p style="font-size:14px;font-weight:bold;"><i aria-hidden="true" class="fa fa-clock-o"></i> Ending In: 3 days
+</p></center></div>
+<div style="background-color: #f4403b;" class="message"><center><p style="font-weight:bold;font-size:18px;">Computer Hacker Professional Certification Course (96% Off)</p> 
+<p style="background-color: #9d1815;margin:6px 35px;padding:10px;"><a style="font-size:25px;font-weight:bold;" href="https://deals.tecmint.com/sales/computer-hacker-professional-certification-package-2" target="_blank" rel="nofollow">Add to Cart - $59</a></p>
+<p style="font-size:14px;font-weight:bold;"><i class="fa fa-clock-o" aria-hidden="true"></i> Ending In: 4 days
+</p></center></div></div>
+</div><div id="text-4" class="widget widget_text"><h3>Linux eBooks</h3>			<div class="textwidget"><ol class="custom-counter">
+<li><a onclick="ga(&#39;send&#39;,&#39;event&#39;,&#39;Learn Linux in One Week&#39;,&#39;TecMint&#39;)" href="https://www.tecmint.com/learn-linux-in-one-week/" target="_blank">Introducing Learn Linux In One Week and Go from Zero to Hero</a></li>
+<li><a onclick="ga(&#39;send&#39;,&#39;event&#39;,&#39;RedHat RHCE/RHCSA Guide&#39;,&#39;TecMint&#39;)" href="https://www.tecmint.com/red-hat-rhcsa-rhce-exam-certification-book/" target="_blank">RedHat RHCE/RHCSA Certification Preparation Guide</a></li>
+<li><a onclick="ga(&#39;send&#39;,&#39;event&#39;,&#39;Linux Foundation LFCS/LFCE Guide&#39;,&#39;TecMint&#39;)" href="https://www.tecmint.com/linux-foundation-lfcs-lfce-certification-exam-book/" target="_blank">Linux Foundations LFCS/LFCE Certification Guide</a></li>
+<li><a onclick="ga(&#39;send&#39;,&#39;event&#39;,&#39;Postfix Mail Server Setup&#39;,&#39;TecMint&#39;)" href="https://www.tecmint.com/postfix-mail-server-setup-linux-book/" target="_blank">Postfix Mail Server Setup Guide for Linux</a></li>
+<li><a onclick="ga(&#39;send&#39;,&#39;event&#39;,&#39;Ansible Setup Guide&#39;,&#39;TecMint&#39;)" href="https://www.tecmint.com/ansible-book-guide-for-linux/" target="_blank">Ansible Setup Guide for Linux</a></li>
+<li><a onclick="ga(&#39;send&#39;,&#39;event&#39;,&#39;Django Setup Guide&#39;,&#39;TecMint&#39;)" href="https://www.tecmint.com/django-web-framework-book/" target="_blank">Django Setup Guide for Linux</a></li>
+<li><a onclick="ga(&#39;send&#39;,&#39;event&#39;,&#39;Awk Guide for Beginners&#39;,&#39;TecMint&#39;)" href="https://www.tecmint.com/linux-awk-command-book-for-beginners/" target="_blank">Awk Getting Started Guide for Beginners</a></li>
+<li><a onclick="ga(&#39;send&#39;,&#39;event&#39;,&#39;Citrix XenServer Setup Guide&#39;,&#39;TecMint&#39;)" href="https://www.tecmint.com/citrix-xenserver-book-for-linux/" target="_blank">Citrix XenServer Setup Guide for Linux</a></li>
+</ol></div>
+</div><div id="text-29" class="widget widget_text">			<div class="textwidget"><div style="background-color: rgb(25, 67, 87); color: rgb(255, 255, 255); border-radius: 5px; text-align: center; padding: 10px;">
+<div class="follow-subscribe-social">
+<ul>
+<li><a href="https://twitter.com/tecmint" target="_blank"><i class="fa fa-twitter"></i></a></li>
+<li><a href="https://www.facebook.com/TecMint" target="_blank"><i class="fa fa-facebook"></i></a></li>
+<li><a href="https://plus.google.com/101049688653487009744" target="_blank"><i class="fa fa-google"></i></a></li>
+<li><a href="https://www.youtube.com/channel/UCkiRkzdLvoGBtW_YArytJlQ" target="_blank"><i class="fa fa-youtube"></i></a></li>
+<li><a href="https://www.linkedin.com/company/tecmint" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+</ul>
+</div>
+<p style="font-weight: bold; font-size: 20px; margin-bottom: 10px; margin-top: 10px;">Never Miss Any Linux Tutorials, Guides, Tips and Free eBooks</p> 
+<p>Join Our Community Of <strong style="color:#fff;font-weight:bold;">150,000+ Linux Lovers</strong> and get a weekly newsletter in your inbox</p>
+<p style="background-color: rgb(0, 0, 0); border-radius: 5px; padding: 6px;"><a style="font-size:20px;font-weight:bold;color:#fff;" href="http://subscribe.tecmint.com/newsletter" target="_blank" rel="nofollow">YES! SIGN ME UP</a></p></div></div>
+</div>			
+</div><!--/.sidebar-content-->
+</div><!--/.sidebar-->
+				</div><!--/.main-inner-->
+</div><!--/.main-->			
+</div><!--/.container-inner-->
+</div><!--/.container-->
+<footer id="footer">
+<section class="container" id="footer-ads">
+<div class="container-inner">
+</div><!--/.container-inner-->
+</section><!--/.container-->
+<section class="container" id="footer-widgets">
+<div class="container-inner">
+<div class="pad group">
+<div class="footer-widget-1 grid one-third ">
+<div id="alxposts-3" class="widget widget_alx_posts">
+<h3>Linux Monitoring Tools</h3>
+<ul class="alx-posts group ">
+<li>
+<div class="post-item-inner group">
+<p class="post-item-title"><a href="https://www.tecmint.com/install-observium-in-centos/" rel="bookmark" title="Observium: A Complete Network Management and Monitoring System for RHEL/CentOS">Observium: A Complete Network Management and Monitoring System for RHEL/CentOS</a></p>
+</div>
+</li>
+<li>
+<div class="post-item-inner group">
+<p class="post-item-title"><a href="https://www.tecmint.com/install-logrotate-to-manage-log-rotation-in-linux/" rel="bookmark" title="How to Setup and Manage Log Rotation Using Logrotate in Linux">How to Setup and Manage Log Rotation Using Logrotate in Linux</a></p>
+</div>
+</li>
+<li>
+<div class="post-item-inner group">
+<p class="post-item-title"><a href="https://www.tecmint.com/monitor-linux-server-resources-with-collectd-web-and-apache-cgi/" rel="bookmark" title="Monitor Server Resources with Collectd-web and Apache CGI in Linux">Monitor Server Resources with Collectd-web and Apache CGI in Linux</a></p>
+</div>
+</li>
+<li>
+<div class="post-item-inner group">
+<p class="post-item-title"><a href="https://www.tecmint.com/nethogs-monitor-per-process-network-bandwidth-usage-in-real-time/" rel="bookmark" title="NetHogs – Monitor Per Process Network Bandwidth Usage in Real Time">NetHogs – Monitor Per Process Network Bandwidth Usage in Real Time</a></p>
+</div>
+</li>
+<li>
+<div class="post-item-inner group">
+<p class="post-item-title"><a href="https://www.tecmint.com/how-to-install-and-setup-monit-linux-process-and-services-monitoring-program/" rel="bookmark" title="How to Install and Setup Monit (Linux Process and Services Monitoring) Program">How to Install and Setup Monit (Linux Process and Services Monitoring) Program</a></p>
+</div>
+</li>
+</ul><!--/.alx-posts-->
+</div>
+</div>
+<div class="footer-widget-2 grid one-third ">
+<div id="alxposts-4" class="widget widget_alx_posts">
+<h3>Linux Interview Questions</h3>
+<ul class="alx-posts group ">
+<li>
+<div class="post-item-inner group">
+<p class="post-item-title"><a href="https://www.tecmint.com/useful-interview-questions-on-linux-services-and-daemons/" rel="bookmark" title="10 Useful Interview Questions on Linux Services and Daemons">10 Useful Interview Questions on Linux Services and Daemons</a></p>
+</div>
+</li>
+<li>
+<div class="post-item-inner group">
+<p class="post-item-title"><a href="https://www.tecmint.com/10-mysql-database-interview-questions-for-beginners-and-intermediates/" rel="bookmark" title="10 MySQL Database Interview Questions for Beginners and Intermediates">10 MySQL Database Interview Questions for Beginners and Intermediates</a></p>
+</div>
+</li>
+<li>
+<div class="post-item-inner group">
+<p class="post-item-title"><a href="https://www.tecmint.com/squid-interview-questions/" rel="bookmark" title="10 Useful “Squid Proxy Server” Interview Questions and Answers in Linux">10 Useful “Squid Proxy Server” Interview Questions and Answers in Linux</a></p>
+</div>
+</li>
+<li>
+<div class="post-item-inner group">
+<p class="post-item-title"><a href="https://www.tecmint.com/linux-firewall-iptables-interview-questions-and-answers/" rel="bookmark" title="Nishita Agarwal Shares Her Interview Experience on Linux ‘iptables’ Firewall">Nishita Agarwal Shares Her Interview Experience on Linux ‘iptables’ Firewall</a></p>
+</div>
+</li>
+<li>
+<div class="post-item-inner group">
+<p class="post-item-title"><a href="https://www.tecmint.com/ls-command-interview-questions/" rel="bookmark" title="15 Interview Questions on Linux “ls” Command – Part 1">15 Interview Questions on Linux “ls” Command – Part 1</a></p>
+</div>
+</li>
+</ul><!--/.alx-posts-->
+</div>
+</div>
+<div class="footer-widget-3 grid one-third last">
+<div id="alxposts-5" class="widget widget_alx_posts">
+<h3>Open Source Tools</h3>
+<ul class="alx-posts group ">
+<li>
+<div class="post-item-inner group">
+<p class="post-item-title"><a href="https://www.tecmint.com/best-linux-movie-subtitles-player-software/" rel="bookmark" title="4 Best Linux Apps for Downloading Movie Subtitles">4 Best Linux Apps for Downloading Movie Subtitles</a></p>
+</div>
+</li>
+<li>
+<div class="post-item-inner group">
+<p class="post-item-title"><a href="https://www.tecmint.com/linux-command-line-editors/" rel="bookmark" title="My Favorite Command Line Editors for Linux – What’s Your Editor?">My Favorite Command Line Editors for Linux – What’s Your Editor?</a></p>
+</div>
+</li>
+<li>
+<div class="post-item-inner group">
+<p class="post-item-title"><a href="https://www.tecmint.com/best-clipboard-managers-for-linux/" rel="bookmark" title="10 Best Clipboard Managers for Linux">10 Best Clipboard Managers for Linux</a></p>
+</div>
+</li>
+<li>
+<div class="post-item-inner group">
+<p class="post-item-title"><a href="https://www.tecmint.com/linux-disk-scanning-tools/" rel="bookmark" title="3 Useful GUI and Terminal Based Linux Disk Scanning Tools">3 Useful GUI and Terminal Based Linux Disk Scanning Tools</a></p>
+</div>
+</li>
+<li>
+<div class="post-item-inner group">
+<p class="post-item-title"><a href="https://www.tecmint.com/top-best-lightweight-linux-file-managers/" rel="bookmark" title="13 Best File Managers for Linux Systems">13 Best File Managers for Linux Systems</a></p>
+</div>
+</li>
+</ul><!--/.alx-posts-->
+</div>
+</div>
+</div><!--/.pad-->
+</div><!--/.container-inner-->
+</section><!--/.container-->	
+<nav class="nav-container group" id="nav-footer">
+<div class="nav-toggle"><i class="fa fa-bars"></i></div>
+<div class="nav-text"><!-- put your mobile menu text here --></div>
+<div class="nav-wrap"><ul id="menu-footer" class="nav container group"><li id="menu-item-18572" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18572"><a href="https://www.tecmint.com/donate-to-tecmint/">Donate to TecMint</a></li>
+<li id="menu-item-10437" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10437"><a href="https://www.tecmint.com/contact-us/">Contact Us</a></li>
+<li id="menu-item-10442" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10442"><a href="https://www.tecmint.com/advertise/">Advertise on TecMint</a></li>
+<li id="menu-item-10441" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10441"><a href="https://www.tecmint.com/services/">Linux Services</a></li>
+<li id="menu-item-10435" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10435"><a href="https://www.tecmint.com/copyright-policy/">Copyright Policy</a></li>
+<li id="menu-item-10436" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10436"><a href="https://www.tecmint.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-13339" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13339"><a href="https://www.tecmint.com/career/">Career</a></li>
+<li id="menu-item-24288" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24288"><a href="https://www.tecmint.com/sponsored-post-guidelines-tecmint/">Sponsored Post</a></li>
+</ul></div>
+</nav><!--/#nav-footer-->
+<section class="container" id="footer-bottom">
+<div class="container-inner">
+<a id="back-to-top" href="https://www.tecmint.com/install-lamp-in-centos-7/#"><i class="fa fa-angle-up"></i></a>
+<div class="pad group">
+<div class="grid one-half">
+<div id="copyright">
+<p>Tecmint: Linux Howtos, Tutorials &amp; Guides © 2017. All Rights Reserved.</p>
+<p>This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc/4.0/" rel="license"><b style="color:#ccc;">(cc) BY-NC</b></a></p>
+<p>The material in this site cannot be republished either online or offline, without our permission.</p>
+</div><!--/#copyright-->
+</div>
+<div class="grid one-half last">	
+<ul class="social-links"><li><a rel="nofollow" class="social-tooltip" title="twitter" href="https://twitter.com/tecmint" target="Array"><i class="fa fa-twitter" style="color: #33ccff;"></i></a></li><li><a rel="nofollow" class="social-tooltip" title="facebook" href="https://www.facebook.com/TecMint" target="Array"><i class="fa fa-facebook" style="color: #3b5998;"></i></a></li><li><a rel="nofollow" class="social-tooltip" title="Google+" href="https://plus.google.com/101049688653487009744" target="Array"><i class="fa fa-google-plus" style="color: #db4a39;"></i></a></li><li><a rel="nofollow" class="social-tooltip" title="Feedly" href="https://feedly.com/i/subscription/feed/https://www.tecmint.com/feed/" target="Array"><i class="fa fa-rss" style="color: #87c040;"></i></a></li><li><a rel="nofollow" class="social-tooltip" title="Youtube" href="https://www.youtube.com/channel/UCkiRkzdLvoGBtW_YArytJlQ" target="Array"><i class="fa fa fa-youtube-square" style="color: #c4302b;"></i></a></li></ul>					</div>
+</div><!--/.pad-->
+</div><!--/.container-inner-->
+</section><!--/.container-->
+</footer><!--/#footer-->
+</div><!--/#wrapper-->
+<script type="text/rocketscript" data-rocketsrc="https://www.tecmint.com/wp-content/plugins/akismet/_inc/form.js" data-rocketoptimized="true"></script>
+<script type="text/rocketscript" data-rocketsrc="https://www.tecmint.com/wp-content/plugins/light/js/jquery.fancybox.pack.js" data-rocketoptimized="true"></script>
+<script type="text/rocketscript" data-rocketsrc="https://www.tecmint.com/wp-content/plugins/light/js/light.js" data-rocketoptimized="true"></script>
+<script type="text/rocketscript" data-rocketsrc="https://www.tecmint.com/wp-content/themes/tecmint/js/scripts.js" data-rocketoptimized="true"></script>
+<script type="text/rocketscript" data-rocketsrc="https://www.tecmint.com/wp-content/themes/tecmint/js/jquery.sharrre.min.js" data-rocketoptimized="true"></script>
+<script type="text/rocketscript" data-rocketsrc="https://www.tecmint.com/wp-includes/js/comment-reply.min.js" data-rocketoptimized="true"></script>
+<script type="text/rocketscript" data-rocketsrc="https://www.tecmint.com/wp-content/plugins/lazy-load/js/jquery.sonar.min.js" data-rocketoptimized="true"></script>
+<script type="text/rocketscript" data-rocketsrc="https://www.tecmint.com/wp-content/plugins/lazy-load/js/lazy-load.js" data-rocketoptimized="true"></script>
+<!--[if lt IE 9]>
+<script src="https://www.tecmint.com/wp-content/themes/tecmint/js/ie/respond.js"></script>
+<![endif]-->
+<div class="fixedBar">
+<div class="boxfloat">
+<ul id="tips">
+<li><a href="https://www.tecmint.com/51-useful-lesser-known-commands-for-linux-users/">51 Useful Lesser Known Commands for Linux Users</a></li>
+<li><a href="https://www.tecmint.com/linux-server-hardening-security-tips/">25 Hardening Security Tips for Linux Servers</a></li>
+<li><a href="https://www.tecmint.com/60-commands-of-linux-a-guide-from-newbies-to-system-administrator/">60 Commands of Linux : A Guide from Newbies to System Administrator</a></li>
+<li><a href="https://www.tecmint.com/command-line-tools-to-monitor-linux-performance/">20 Command Line Tools to Monitor Linux Performance</a></li>
+<li style="display: list-item;"><a href="https://www.tecmint.com/18-tar-command-examples-in-linux/">18 Tar Command Examples in Linux</a></li>
+<li><a href="https://www.tecmint.com/20-linux-yum-yellowdog-updater-modified-commands-for-package-mangement/">20 Linux YUM (Yellowdog Updater, Modified) Commands</a></li>
+<li><a href="https://www.tecmint.com/useful-basic-commands-of-apt-get-and-apt-cache-for-package-management/">25 Useful Basic Commands of APT-GET and APT-CACHE</a></li>
+<li><a href="https://www.tecmint.com/20-funny-commands-of-linux-or-linux-is-fun-in-terminal/">20 Funny Commands of Linux or Linux is Fun in Terminal</a></li>
+<li><a href="https://www.tecmint.com/red-hat-rhcsa-rhce-exam-certification-book/">Ebook: Introducing the RHCSA and RHCE Exam Preparation Guide</a></li>
+<li><a href="https://www.tecmint.com/sed-command-to-create-edit-and-manipulate-files-in-linux/">Preparation for the LFCS (Linux Foundation Certified SysAdmin) Exam</a></li>
+<li><a href="https://www.tecmint.com/installing-network-services-and-configuring-services-at-system-boot/">Preparation for the LFCE (Linux Foundation Certified Engineer) Exam</a></li>
+<li><a href="https://www.tecmint.com/10-useful-free-linux-ebooks-for-newbies-and-administrators/">10 Useful Free Linux eBooks for Newbies and Administrators</a></li>
+<li><a href="https://www.tecmint.com/free-linux-shell-scripting-books/">4 Free Shell Scripting eBooks for Newbies and Administrators</a></li>
+</ul>
+</div>
+</div>
+
+</body></html>
