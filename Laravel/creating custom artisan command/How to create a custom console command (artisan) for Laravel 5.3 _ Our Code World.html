@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<!-- saved from url=(0104)http://ourcodeworld.com/articles/read/248/how-to-create-a-custom-console-command-artisan-for-laravel-5-3 -->
+<html class=" js " lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>How to create a custom console command (artisan) for Laravel 5.3  | Our Code World </title>
+        <meta name="theme-color" content="#03a9f4">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta property="og:site_name" content="Our Code World">
+    <meta property="og:title" content="How to create a custom console command (artisan) for Laravel 5.3">
+    <meta property="og:url" content="http://ourcodeworld.com/articles/read/248/how-to-create-a-custom-console-command-artisan-for-laravel-5-3">
+    <meta property="og:description" content="Learn how to create a custom console command for the laravel CLI artisan.">
+    <meta name="keywords" content="laravel,console,commands,custom,artisan,command">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@ourcodeworld">
+    <meta name="twitter:creator" content="@ourcodeworld">
+    <meta name="twitter:title" content="How to create a custom console command (artisan) for Laravel 5.3">
+    <meta name="twitter:description" content="Learn how to create a custom console command for the laravel CLI artisan.">
+            <meta name="twitter:image:src" content="http://ourcodeworld.com/public-media/articles/articleocw-57c5d562e9aaa.png">
+        <meta property="og:image" content="http://ourcodeworld.com/public-media/articles/articleocw-57c5d562e9aaa.png">
+            <link rel="stylesheet" href="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/admin.css">
+        <link rel="stylesheet" href="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/elements.css">
+        <link rel="stylesheet" href="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/plugins.css">
+        <link href="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/css" rel="stylesheet">
+        <link rel="stylesheet" href="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/font-awesome.min.css">
+        <link rel="shortcut icon" href="http://ourcodeworld.com/favicon.ico">
+        <link rel="search" type="application/opensearchdescription+xml" title="Our Code World" href="http://ourcodeworld.com/opensearch.xml">
+        <link rel="stylesheet" type="text/css" href="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/cookieconsent.min.css">
+                <script src="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/ca-pub-7687344986141325.js"></script><script async="" src="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/analytics.js"></script><script type="text/javascript">
+                (function (i, s, o, g, r, a, m) {
+                    i['GoogleAnalyticsObject'] = r;
+                    i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+                    a = s.createElement(o),
+                            m = s.getElementsByTagName(o)[0];
+                    a.async = 1;
+                    a.src = g;
+                    m.parentNode.insertBefore(a, m)
+                })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+                ga('create', 'UA-68362173-2', 'auto');
+                ga('send', 'pageview');
+            </script>
+            <script src="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/embed.js" data-timestamp="1497507345242"></script><script type="text/javascript" async="" src="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/bsa.js"></script><script type="text/javascript" id="_bsap_js_83085e49dfeedee6628ee5a7d7cd7359" src="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/s_83085e49dfeedee6628ee5a7d7cd7359.js" async="async"></script><script type="text/javascript" src="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/pro.js" id="_bsap_premium_pro"></script><link rel="preload" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.2d483bd1dfe5d799acc06297f5c1d0dd.css"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.e43f910dce2d060fb8131b1d2044380e.js"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.eee5a7782e8525b20b56ad3b7d8d3980.js"><link rel="preload" as="script" href="https://disqus.com/next/config.js"><script type="text/javascript" id="_bsaPRO_js" src="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/saved_resource" async="async"></script><style></style></head>
+<body><div role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc" class="cc-window cc-floating cc-type-info cc-theme-edgeless cc-bottom cc-right cc-color-override--1657739092 "><!--googleoff: all--><span id="cookieconsent:desc" class="cc-message">Our Code World uses cookies to ensure you get the best experience on our website. <a aria-label="learn more about cookies" role="button" tabindex="0" class="cc-link" href="http://ourcodeworld.com/privacy-policy" target="_blank">Learn more</a></span><div class="cc-compliance"><a aria-label="dismiss cookie message" role="button" tabindex="0" class="cc-btn cc-dismiss">Got it!</a></div><!--googleon: all--></div>
+    <div class="nav-bar-container">
+        <div class="nav-menu">
+            <div class="hamburger">
+                <span class="patty"></span>
+                <span class="patty"></span>
+                <span class="patty"></span>
+                <span class="patty"></span>
+                <span class="patty"></span>
+                <span class="patty"></span>
+            </div>
+        </div>
+        <div class="nav-search">
+            <span class="search"></span>
+        </div>
+                    <div class="nav-user text-center">
+                <div class="user">
+                    <a href="http://ourcodeworld.com/login" style="color:#03a9f4;">
+                        <span class="fa fa-sign-in fa-2x"></span>
+                    </a>
+                </div>
+            </div>
+        
+        <div class="nav-bar-border"></div>
+
+        <div class="overlay">
+            <div class="starting-point">
+                <span class="" style="transform: scaleX(0) scaleY(0); height: 2867.77px; width: 2867.77px; top: -1433.88px; left: -1433.88px;"></span>
+            </div>
+            <div class="logo">Our Code World</div>
+        </div>
+        <div class="overlay-secondary"></div>
+    </div>
+    
+    <!-- Start content -->
+    <div class="content">
+        <div class="page-header full-content">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>How to create a custom console command (artisan) for Laravel 5.3 </h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb">
+        <li><a href="http://ourcodeworld.com/"><i class="fa fa-home"></i></a>
+        </li>
+        <li><a href="http://ourcodeworld.com/articles/">Articles</a>
+        </li>
+        <li><a href="http://ourcodeworld.com/categories/laravel" class="active">Laravel</a>
+        </li>
+    </ol>
+                </div>
+            </div>
+        </div>
+        <noscript>
+            &lt;div class="alert alert-red" role="alert"&gt;&lt;strong&gt;Warning Javascript Disabled:&lt;/strong&gt; Our Code World works better with Javascript &lt;i class="fa fa-smile-o"&gt;&lt;/i&gt;&lt;/div&gt;
+        </noscript>
+
+        <div class="row">
+                <div class="row">
+            <div class="col-md-8 col-lg-8">
+                <div class="card card-meal card-meal-blue card-square card-hover-shadow">
+                    <div class="card-heading">
+                        <h2 class="text-center">How to create a custom console command (artisan) for Laravel 5.3</h2>
+                        <ul class="inline-list text-center">
+                            <li class="small"><b>Published :</b> <time datetime="2016-08-30 08:53">August 30th 2016</time></li>
+                            <li class="small"><b>Last modification :</b> <time datetime="2016-09-14 03:07">September 14th 2016</time></li>
+                            <li class="small"><strong><i class="fa fa-eye"></i> 7630 views</strong></li>
+                            <li><div class="btn-group">
+                                    <button type="button" class="btn btn-default dropdown-toggle btn-ripple" data-toggle="dropdown">
+                                        Actions <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li id="read-artyom-btn"><a href="javascript:void(0);">Listen this article</a></li>
+                                        <li id="read-artyom-btn"><a href="javascript:void(0);" data-toggle="modal" data-target="#report-dialog">Report article</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body" style="padding: 20px;">
+                                                    <img class="img img-responsive center-block" src="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/articleocw-57c5d562e9aaa.png" alt="How to create a custom console command (artisan) for Laravel 5.3">
+                            <hr>
+                                                <article id="article-content" itemscope="" itemtype="http://schema.org/BlogPosting"><p>Laravel has a command-line interface named Artisan. This interface provides the developer a lot of useful commands to speed up the development process.</p>
+<p>Furthermore, you may want to extend artisan with your own commands to create and automatizate the unique tasks of your Laravel project.&nbsp;Commands are typically stored in the <code>app/Console/Commands</code> directory however, you are free to choose your own storage location as long as your commands can be loaded by Composer.</p>
+<p>In this article, you'll learn how to create a custom command for artisan easily in Laravel 5.3.</p>
+<h2>Create and register command</h2>
+<p>Laravel help you to do everything easier, it has already integrated the <code>make:console NewClassName</code> command to speed up your development process. This command expects as first argument the name of the class and optionally, the command option to specify directly the name of the command without modify the class.</p>
+<p>To create a new console&nbsp;command named <code>quiz:start</code>&nbsp;with class name QuizStart execute the following command in your console :</p>
+<pre><code class="lang-batch">php artisan make:command QuizStart --command=quiz:start</code></pre>
+<div class="note note-info note-bottom-striped">
+<p><strong>Note:</strong> in case you don't want to use the console, copy the example class in "Structure of a command"and change the name of the file and class as you wish. Remember too that&nbsp;in previous versions of Laravel &lt; 5.2, instead of <code>make:command</code>, you'll need to use <code>make:console</code>.</p>
+</div>
+<p>This should create a QuizStart class in the&nbsp;<code>/app/console/commands</code> directory with <code>App\Console\Commands</code> namespace.</p>
+<p>Finally, our command is not registered, therefore we need to add it into our <code>/app/console/Kernel.php</code> file in the <code>$commands</code>&nbsp;array (<strong>provide the class path and name</strong>):</p>
+<pre><code class="lang-php">protected $commands = [
+    // Commands\Inspire::class,
+    'App\Console\Commands\QuizStart'
+];</code></pre>
+<p>Use <code>php artisan cache:clear</code> to clear the cache and try executing your command with the previous given name:</p>
+<pre><code class="lang-batch">php artisan quiz:start</code></pre>
+<p>As expected, this command should do nothing, now you only need to learn how to deal with the command.</p>
+<h2>Structure of a command</h2>
+<p>To customize the name of your command and description, change the name directly in the class and all the logic of the command will be stored in the handle function.</p>
+<pre><code class="lang-php">&lt;?php
+#/App/Console/Commands/QuizStart.php
+namespace App\Console\Commands;
+
+use Illuminate\Console\Command;
+
+class QuizStart extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'quiz:start';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Command description';
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return mixed
+     */
+    public function handle()
+    {
+        //
+    }
+}
+</code></pre>
+<h2>Print text</h2>
+<p>To send output to the console, you can choose between the following method : line, info, comment, question and error methods. Each of these methods will use appropriate ANSI colors for their purpose.</p>
+<pre><code class="lang-php">/**
+ * Execute the console command.
+ *
+ * @return mixed
+ */
+public function handle()
+{
+    $this-&gt;line("Some text");
+    $this-&gt;info("Hey, watch this !");
+    $this-&gt;comment("Just a comment passing by");
+    $this-&gt;question("Why did you do that?");
+    $this-&gt;error("Ops, that should not happen.");
+}</code></pre>
+<h2>Command input : arguments and options</h2>
+<h3>Expect arguments and options in the command</h3>
+<p>If you don't set which parameters or options expects your function, your command will be unable to work, even if you execute it with parameters.</p>
+<p>In Laravel, in the signature property (command name)&nbsp;is where we define our arguments and options, directly in the string (unlike older versions of Laravel) :</p>
+<pre><code class="lang-php">/**
+ * The name and signature of the console command.
+ *
+ * @var string
+ */
+protected $signature = 'quiz:start {user} {age} {--difficulty=} {--istest=}';</code></pre>
+<p>The arguments are registered in our commannd with the simple syntax of <code>{argumentName}</code> and the options as <code>{--optionName=}</code>. so now we don't need to create the get options and get arguments methods in our class.</p>
+<p>It's syntax is very simple to understand, basically these are all the ways to use arguments and options in our command (if you want more details, <a href="https://laravel.com/docs/master/artisan" target="_blank" rel="nofollow">please read the docs</a>):</p>
+<ul>
+<li><strong>Argument</strong>: <code>quiz:start&nbsp;</code><span face="monospace" style="font-family: monospace;"><code>{argument}</code>.</span></li>
+<li><strong>Optional Argument</strong> (note the question mark next to the argument name):&nbsp;<code><span>quiz:start&nbsp;</span></code><span face="monospace" style="font-family: monospace;"><code>{argument?}</code>.</span></li>
+<li><strong>Argument with default value</strong>: <code>quiz:start {argument=defaultValue}</code>.</li>
+<li><strong>Boolean Option</strong>: <code>quiz:start --myOption</code>.</li>
+<li><strong>Option with Value</strong>: <span><code>quiz:start --myOption=</code>.</span></li>
+<li><strong>Option with Value and Default</strong>: <span><code>quiz:start --myOption=12</code>.</span></li>
+</ul>
+<h3>Retrieve arguments and options values</h3>
+<p>If your command needs some values to work (parameters), you'll need to access these values&nbsp;to use them in your command. To achieve this task, you can use the argument and option methods :</p>
+<pre><code class="lang-php">/**
+ * Execute the console command.
+ *
+ * @return mixed
+ */
+public function handle()
+{
+    // Get single Parameters
+    $username = $this-&gt;argument('user');
+    $difficulty = $this-&gt;option('difficulty');
+
+    // Get all
+    $arguments = $this-&gt;arguments();
+    $options = $this-&gt;options();
+
+    // Stop execution and ask a question 
+    $answer = $this-&gt;ask('What is your name?');
+
+    // Ask for sensitive information
+    $password = $this-&gt;secret('What is the password?');
+
+    // Choices
+    $name = $this-&gt;choice('What is your name?', ['Taylor', 'Dayle'], $default);
+
+    // Confirmation
+
+    if ($this-&gt;confirm('Is '.$name.' correct, do you wish to continue? [y|N]')) {
+        //
+    }
+}<br></code></pre>
+<h2>Example</h2>
+<p>The following function will create an interactive quiz in the console and you need to answer all of them. Once the quiz has been filled out, it will show the answers that you typed.</p>
+<pre><code class="lang-php">/**
+ * Execute the console command.
+ *
+ * @return mixed
+ */
+public function handle()
+{
+    $difficulty =  $this-&gt;option('difficulty');
+
+    if(!$difficulty){
+        $difficulty = 'easy';
+    }
+
+    $this-&gt;line('Welcome '.$this-&gt;argument('user').", starting test in difficulty : ". $difficulty);
+
+    $questions = [
+        'easy' =&gt; [
+            'How old are you ?', "What is the name of your mother?",
+            'Do you have 3 parents ?','Do you like Javascript?',
+            'Do you know what is a JS promise?'
+        ],
+        'hard' =&gt; [
+            'Why the sky is blue?', "Can a kangaroo jump higher than a house?",
+            'Do you think i am a bad father?','why the dinosaurs disappeared?',
+            "why don't whales have gills?"
+        ]
+    ];
+
+    $questionsToAsk = $questions[$difficulty];
+    $answers = [];
+
+    foreach($questionsToAsk as $question){
+        $answer = $this-&gt;ask($question);
+        array_push($answers,$answer);
+    }
+
+    $this-&gt;info("Thanks for do the quiz in the console, your answers : ");
+
+    for($i = 0;$i &lt;= (count($questionsToAsk) -1 );$i++){
+        $this-&gt;line(($i + 1).') '. $answers[$i]);
+    }
+}</code></pre>
+<p><img src="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/gallery-57c5d5d5c7674.png" alt="Laravel artisan quiz" class="img img-thumbnail img-responsive center-block"></p>
+<h2>Executing a command from a controller or route</h2>
+<p>Obviously, as we used the <strong>ask</strong> method, it shouldn't work however for other methods you would be able to execute the command using :</p>
+<pre><code class="lang-php">$exitCode = Artisan::call('quiz:start', [
+    'user' =&gt; 'Carlos', '--difficulty' =&gt; 'hard'
+]);</code></pre>
+<p>If you need more information about artisan, <a href="https://laravel.com/docs/master/artisan" target="_blank" rel="nofollow">you can read the documentation here</a>. Have fun !</p></article>
+                    </div>
+                    <div class="card-footer">
+                        <hr>
+                        <div class="row text-center">
+                            <div id="ocw-share" class="social-share jssocials"><div class="jssocials-shares"><div class="jssocials-share jssocials-share-email"><a target="_self" href="mailto:?subject=Read%20How%20to%20create%20a%20custom%20console%20command%20(artisan)%20for%20Laravel%205.3%20in%20Our%20Code%20World&amp;body=http%3A%2F%2Fourcodeworld.com%2Farticles%2Fread%2F248%2Fhow-to-create-a-custom-console-command-artisan-for-laravel-5-3" class="jssocials-share-link"><i class="fa fa-at jssocials-share-logo"></i><span class="jssocials-share-label">E-mail</span></a><div class="jssocials-share-count-box jssocials-share-no-count"><span class="jssocials-share-count"></span></div></div><div class="jssocials-share jssocials-share-twitter"><a href="http://ourcodeworld.com/articles/read/248/how-to-create-a-custom-console-command-artisan-for-laravel-5-3#" class="jssocials-share-link"><i class="fa fa-twitter jssocials-share-logo"></i><span class="jssocials-share-label">Tweet</span></a><div class="jssocials-share-count-box jssocials-share-no-count"><span class="jssocials-share-count"></span></div></div><div class="jssocials-share jssocials-share-facebook"><a href="http://ourcodeworld.com/articles/read/248/how-to-create-a-custom-console-command-artisan-for-laravel-5-3#" class="jssocials-share-link"><i class="fa fa-facebook jssocials-share-logo"></i><span class="jssocials-share-label">Like</span></a><div class="jssocials-share-count-box"><span class="jssocials-share-count">3</span></div></div><div class="jssocials-share jssocials-share-googleplus"><a href="http://ourcodeworld.com/articles/read/248/how-to-create-a-custom-console-command-artisan-for-laravel-5-3#" class="jssocials-share-link"><i class="fa fa-google jssocials-share-logo"></i><span class="jssocials-share-label">+1</span></a><div class="jssocials-share-count-box jssocials-share-no-count"><span class="jssocials-share-count"></span></div></div><div class="jssocials-share jssocials-share-pinterest"><a href="http://ourcodeworld.com/articles/read/248/how-to-create-a-custom-console-command-artisan-for-laravel-5-3#" class="jssocials-share-link"><i class="fa fa-pinterest jssocials-share-logo"></i><span class="jssocials-share-label">Pin it</span></a><div class="jssocials-share-count-box jssocials-share-no-count"><span class="jssocials-share-count"></span></div></div></div></div>
+                        </div>
+                    </div>
+                </div>
+                                <div class="row">
+                    <div class="col-sm-12 col-xs-12 col-md-4 col-lg-4">
+                        <a href="https://twitter.com/ourcodeworld" target="_blank" style="text-decoration: none!important;">
+                            <div class="card tile card-dashboard-info card-light-blue">
+                                <div class="card-body">
+                                    <div class="card-icon"><i class="fa fa-twitter"></i></div> 
+                                    <p>Follow Our Code World on Twitter</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-12 col-xs-12 col-md-4 col-lg-4">
+                        <a href="https://www.facebook.com/ourcodeworld" target="_blank" style="text-decoration: none!important;">
+                            <div class="card tile card-dashboard-info card-indigo">
+                                <div class="card-body">
+                                    <div class="card-icon"><i class="fa fa-facebook"></i></div> 
+                                    <p>Like Our Code World on Facebook</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-12 col-xs-12 col-md-4 col-lg-4">
+                        <a href="https://www.youtube.com/ourcodeworld" target="_blank" style="text-decoration: none!important;color: white;">
+                            <div class="card tile card-dashboard-info card-danger" style="background-color: #e62117;">
+                                <div class="card-body">
+                                    <div class="card-icon"><i class="fa fa-youtube"></i></div> 
+                                    <p>Subscribe to our YouTube Channel</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="card card-meal card-meal-blue" id="comment-box">
+                    <div class="card-heading text-center"><h5><span class="title">Become a more social person</span></h5></div>
+                    <div class="card-body" style="padding: 20px;">
+                                                                            <script type="application/ld+json">
+                                {
+                                "@context": "http://schema.org",
+                                "@type": "NewsArticle",
+                                "mainEntityOfPage":{
+                                "@type":"WebPage",
+                                "@id":"http://ourcodeworld.com/articles/read/248/how-to-create-a-custom-console-command-artisan-for-laravel-5-3"
+                                },
+                                "headline": "How to create a custom console command (artisan) for Laravel 5.3",
+                                "image": {
+                                "@type": "ImageObject",
+                                                                    "url": "http://ourcodeworld.com/public-media/articles/articleocw-57c5d562e9aaa.png",
+                                                                "height": 800,
+                                "width": 800
+                                },
+                                "datePublished": "2016-08-30T20:53:00-05:00",
+                                "dateModified": "2016-09-14T15:07:00-05:00",
+                                "author": {
+                                "@type": "Person",
+                                "name": "Carlos Delgado"
+                                },
+                                "publisher": {
+                                "@type": "Organization",
+                                "name": "Our Code World",
+                                "logo": {
+                                "@type": "ImageObject",
+                                "url": "http://www.ourcodeworld.com/resources/img/ocw-logo-main.png",
+                                "width": 600,
+                                "height": 60
+                                }
+                                },
+                                "description": "Learn how to create a custom console command for the laravel CLI artisan.",
+                                "name" : "How to create a custom console command (artisan) for Laravel 5.3"
+                                }
+                            </script>
+
+                            <div id="disqus_thread"><iframe id="dsq-app1" name="dsq-app1" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 1084px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+                            <script>
+                                var disqus_config = function () {
+                                    this.page.url = 'http://ourcodeworld.com/articles/read/248/how-to-create-a-custom-console-command-artisan-for-laravel-5-3';  // Replace PAGE_URL with your page's canonical URL variable
+                                    this.page.identifier = '/articles/read/248/how-to-create-a-custom-console-command-artisan-for-laravel-5-3'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                                };
+                                (function () {  // DON'T EDIT BELOW THIS LINE
+                                    var d = document, s = d.createElement('script');
+
+                                    s.src = '//ourcodeworld.disqus.com/embed.js';
+
+                                    s.setAttribute('data-timestamp', +new Date());
+                                    (d.head || d.body).appendChild(s);
+                                })();
+                            </script>
+                            <noscript>Please enable JavaScript to view the &lt;a href="https://disqus.com/?ref_noscript" rel="nofollow"&gt;comments powered by Disqus.&lt;/a&gt;</noscript>
+                                            </div>
+                </div>
+            </div>
+                    
+                        <div class="col-md-4 col-lg-4" id="sidebar-panel">
+                                    <div class="card card-meal card-meal-blue">
+                        <h5 class="card-heading text-center"><span class="title">Related articles</span></h5>
+                        <div class="row">
+                            <ul class="list-material">
+                                                                                                        <li style="padding-left: 5px; padding-right: 5px;" data-toggle="tooltip" data-placement="bottom" data-original-title="How to send an email (gmail, outlook and Zoho) in Laravel">
+                                        <a href="http://ourcodeworld.com/articles/read/247/how-to-send-an-email-gmail-outlook-and-zoho-in-laravel" class="visible">
+                                            <div class="list-content">
+                                                <span class="title">How to send an email (gmail, outlook and Zoho) in Laravel</span>
+                                                <span class="caption">
+                                                                                                            Laravel
+                                                     • August 30th 2016
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                                                                                        <li style="padding-left: 5px; padding-right: 5px;" data-toggle="tooltip" data-placement="bottom" data-original-title="How to create an Excel file using PHP office in Laravel">
+                                        <a href="http://ourcodeworld.com/articles/read/234/how-to-create-an-excel-file-using-php-office-in-laravel" class="visible">
+                                            <div class="list-content">
+                                                <span class="title">How to create an Excel file using PHP office in Laravel</span>
+                                                <span class="caption">
+                                                                                                            Laravel
+                                                     • August 15th 2016
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                                                                                        <li style="padding-left: 5px; padding-right: 5px;" data-toggle="tooltip" data-placement="bottom" data-original-title="How to generate a PDF from html with TCPDF in laravel">
+                                        <a href="http://ourcodeworld.com/articles/read/233/how-to-generate-a-pdf-from-html-with-tcpdf-in-laravel" class="visible">
+                                            <div class="list-content">
+                                                <span class="title">How to generate a PDF from html with TCPDF in laravel</span>
+                                                <span class="caption">
+                                                                                                            Laravel
+                                                     • August 12th 2016
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                                                                                        <li style="padding-left: 5px; padding-right: 5px;" data-toggle="tooltip" data-placement="bottom" data-original-title="How to render a view and save its html content in a variable in laravel">
+                                        <a href="http://ourcodeworld.com/articles/read/232/how-to-render-a-view-and-save-its-html-content-in-a-variable-in-laravel" class="visible">
+                                            <div class="list-content">
+                                                <span class="title">How to render a view and save its html content in a variable in laravel</span>
+                                                <span class="caption">
+                                                                                                            Laravel
+                                                     • August 12th 2016
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                                                                                        <li style="padding-left: 5px; padding-right: 5px;" data-toggle="tooltip" data-placement="bottom" data-original-title="How to solve PHP 7.0 Polyfill : There is no suitable CSPRNG installed on your system - paragonie/random_compat">
+                                        <a href="http://ourcodeworld.com/articles/read/214/how-to-solve-php-7-0-polyfill-there-is-no-suitable-csprng-installed-on-your-system-paragonie-random-compat" class="visible">
+                                            <div class="list-content">
+                                                <span class="title">How to solve PHP 7.0 Polyfill : There is no suitable CSPRNG installed on your system - paragonie/random_compat</span>
+                                                <span class="caption">
+                                                                                                            PHP
+                                                     • July 21st 2016
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                                            </ul>
+                        </div>
+                    </div>
+                                <div class="card card-meal card-meal-blue">
+                    <h5 class="card-heading text-center"><span class="title"> <a href="http://ourcodeworld.com/advertise-with-us" target="_blank">Advertise with Our Code World</a></span></h5>
+                    <div class="row margin-bottom-20">
+                        <div class="col-md-12 col-lg-12 text-center">
+                                    
+                        <div class="center-block" style="width:300px;">
+                <div id="bsap_1306561" class="bsap bsap_1306561" data-serve="CVAIPKQN">
+<style type="text/css">
+div.bsap_1306561{width:100%;display:block;}div.bsap_1306561 a{width:300px;}div.bsap_1306561 a img{padding:0;}div.bsap_1306561 a em{font-style:normal;}div.bsap_1306561 a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0;text-align:center;text-decoration:none;overflow:hidden;float:left;}
+div.bsap_1306561 img{border:0;clear:right;}
+div.bsap_1306561 a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;}
+div.bsap_1306561 a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;}
+div.bsap_1306561 iframe{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0;text-align:center;text-decoration:none;overflow:hidden;float:left;}div.bsap_1306561 a{line-height:100%;}div.bsap_1306561 a.adhere{width:300px;height:250px;line-height:2000%;}html>body div.bsap_1306561 a.adhere{width:298px;height:248px;}div.bsap_1306561 img.s{height:0;width:0;}div.bsap_1306561{line-height:9px;}div.bsap_1306561 .bsap_adhere a{height:19px !important;width:298px !important;font-size:10px;background:#f1f1f1;border:1px solid #e1e1e1;border-top:none;border-radius: 0 0 2px 2px;line-height:16px;}.bsap_backfillframe{border:0;}
+</style>
+<a href="http://srv.buysellads.com/ads/click/x/GTND4237CABI453IFTY4YKQWF6SIP27ICESIEZ3JCEAI5K7UCTADVKQKC6BDL27MCTSDVK3EHJNCLSIZ" class="ad0 odd " title="High-performance virtual private servers on KVM virtualization with local SSD storage built on cutting-edge hardware" id="bsa_7412156" target="_blank" rel="nofollow">
+<img src="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/7411038-1493132173.png" width="300" height="250" alt=""></a>
+<script type="text/javascript" id="auto_1" class="ignoreme"> if (typeof(BSACallback) !== 'undefined') BSACallback(); </script></div>
+            </div>
+                
+        
+    
+                        </div>
+                    </div>
+                    <div class="row margin-bottom-20 margin-top-20">
+                        <div class="col-md-12 col-lg-12 text-center">
+                                    
+        
+                         <div class="center-block" style="width:300px;">
+                <div id="bsap_1306935" class="bsap bsap_1306935" data-serve="CVAILK3L">
+<style type="text/css">
+div.bsap_1306935{width:100%;display:block;}div.bsap_1306935 a{width:300px;}div.bsap_1306935 a img{padding:0;}div.bsap_1306935 a em{font-style:normal;}div.bsap_1306935 a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0 4px 10px 0;text-align:center;text-decoration:none;overflow:hidden;float:left;}
+div.bsap_1306935 img{border:0;clear:right;}
+div.bsap_1306935 a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;}
+div.bsap_1306935 a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;}
+div.bsap_1306935 iframe{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0 4px 10px 0;text-align:center;text-decoration:none;overflow:hidden;float:left;}div.bsap_1306935 a{line-height:100%;}div.bsap_1306935 a.adhere{width:300px;height:250px;line-height:2000%;}html>body div.bsap_1306935 a.adhere{width:298px;height:248px;}div.bsap_1306935 img.s{height:0;width:0;}div.bsap_1306935{line-height:9px;}div.bsap_1306935 .bsap_adhere a{height:19px !important;width:298px !important;font-size:10px;background:#f1f1f1;border:1px solid #e1e1e1;border-top:none;border-radius: 0 0 2px 2px;line-height:16px;}.bsap_backfillframe{border:0;}
+</style>
+<a href="http://srv.buysellads.com/ads/click/x/GTND4237CABI45QUF6Y4YKQWF6SIP27WCAYIPZ3JCEAI5K7UCKAI6K3KC6BDL27MCTSDVK3EHJNCLSIZ" class="ad0 odd " title="Programming assignment help from experts" id="bsa_7464907" target="_blank" rel="nofollow">
+<img src="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/237790-1410786239.png" width="300" height="250" alt=""></a>
+<script type="text/javascript" id="auto_2" class="ignoreme"> if (typeof(BSACallback) !== 'undefined') BSACallback(); </script></div>
+            </div>
+                
+    
+                                    
+        
+        
+                        <script type="text/javascript">
+                (function () {
+                    var bsa = document.createElement('script');
+                    bsa.type = 'text/javascript';
+                    bsa.async = true;
+                    bsa.src = '//s3.buysellads.com/ac/bsa.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(bsa);
+                })();
+            </script>
+            
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6">
+                        <a href="https://twitter.com/ourcodeworld" target="_blank" style="text-decoration: none!important;">
+                            <div class="card tile card-dashboard-info card-light-blue">
+                                <div class="card-body">
+                                    <div class="card-icon"><i class="fa fa-twitter"></i></div> 
+                                    <p>Follow us on Twitter</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6">
+                        <a href="https://www.facebook.com/ourcodeworld" target="_blank" style="text-decoration: none!important;">
+                            <div class="card tile card-dashboard-info card-indigo">
+                                <div class="card-body">
+                                    <div class="card-icon"><i class="fa fa-facebook"></i></div> 
+                                    <p>Like us on Facebook</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                                    <div class="card">
+                        <div class="card-body" style="text-align:center!important;">
+                                    
+            <script async="" src="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/adsbygoogle.js"></script>
+        <!-- Our Code World Banner Vertical -->
+        <ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-7687344986141325" data-ad-slot="1877355099" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;width:300px;height:600px;" src="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/saved_resource(3).html"></iframe></ins></ins></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    
+                        </div>
+                    </div>
+                
+                                    <div class="card shadow-z3 scroll-to-fixed-fixed" id="floating-advertising" style="z-index: 1000; position: fixed; top: 15px; margin-left: 0px; width: 373px; left: 897px;">
+                        <div class="card-body" style="text-align:center!important;">
+                                            
+                        <script async="" src="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/adsbygoogle.js"></script>
+            <!-- Our Code World QUAD -->
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-7687344986141325" data-ad-slot="5270731899" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><iframe width="336" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;width:336px;height:280px;" src="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/saved_resource(4).html"></iframe></ins></ins></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+                        </div>
+                    </div><div style="display: block; width: 373px; height: 328px; float: none;"></div>
+                            </div>
+        </div>
+    </div>
+    <div class="modal fade full-height from-right" id="report-dialog" tabindex="-1" role="dialog" aria-hidden="true">
+        <form name="report_articles" method="post" id="report-form">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Report article</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Thanks for take some of your time to report this article. Before continue, please provide some basic information about why this article should be reported :</p>
+                    <label class="text-blue">1) Reasons</label>
+                    <div class="checkboxer">
+                        <div id="report_articles_reasons"><input type="checkbox" id="report_articles_reasons_0" name="report_articles[reasons][]" value="images"><label for="report_articles_reasons_0">Unavailable images</label><input type="checkbox" id="report_articles_reasons_1" name="report_articles[reasons][]" value="not-working"><label for="report_articles_reasons_1">It isn't working properly or totally</label><input type="checkbox" id="report_articles_reasons_2" name="report_articles[reasons][]" value="not-understandable"><label for="report_articles_reasons_2">It isn't understandable</label></div>
+                    </div>
+                    <label for="report-form-description" class="text-blue">2) Be more specific with the problem (if you need to. max length 1000 chars)</label>
+                    <div class="inputer">
+                        <div class="input-wrapper">
+                            <textarea id="report_articles_description" name="report_articles[description]" placeholder="Not working on {language} 1.5.4 ..." class="form-control" rows="3" maxlength="1000"></textarea>
+                        </div>
+                    </div>
+                    <div id="report-result"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-blue btn-ripple" id="report-submit-btn">Report</button>
+                    <button type="button" class="btn btn-flat-primary btn-ripple" data-dismiss="modal">Cancel</button>
+                </div>
+                <input type="hidden" id="report_articles_article" name="report_articles[article]" required="required" value="248">
+                <input type="hidden" id="report_articles__token" name="report_articles[_token]" value="BWbIx4N6_AJ-7MQFPo0GNt5gl0sf05YCSe5nfpM5vng">
+            </div>
+        </div>
+        </form>
+    </div>
+
+        <div class="footer-links margin-top-40">
+            <div class="row no-gutters">
+                <div class="col-xs-12 bg-blue">
+                    <a href="http://ourcodeworld.com/about">
+                        <span class="state">Carlos Delgado</span>
+                        <span>Our Code World © 2015 - 2017</span>
+                        <span class="icon"><i class="fa fa-heart"></i></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End content -->
+    
+    <!-- Start layers -->
+    <div class="layer-container">
+        <div class="menu-layer">
+            <ul>
+                <li>
+                    <a href="http://ourcodeworld.com/">Homepage</a>
+                <span class="hover-bg"></span></li>
+                <li>
+                    <a href="http://ourcodeworld.com/articles/">Articles</a>
+                <span class="hover-bg"></span></li>
+                <li>
+                    <a href="http://ourcodeworld.com/categories/list/categories">Categories</a>
+                <span class="hover-bg"></span></li>
+                <li>
+                    <a href="http://docs.ourcodeworld.com/projects">Projects</a>
+                <span class="hover-bg"></span></li>
+                <li>
+                    <a href="http://ourcodeworld.com/privacy-policy">Privacy policy</a>
+                <span class="hover-bg"></span></li>
+                <li class="has-child">
+                    <a href="javascript:;">Android Free Apps</a>
+                    <ul class="child-menu">
+                        <li><a href="http://ourcodeworld.com/apps/our-code-editor">Our Code Editor</a>
+                        <span class="hover-bg"></span></li>
+                    </ul>
+                <span class="hover-bg"></span></li>
+                <li>
+                    <a href="http://ourcodeworld.com/advertise-with-us">Advertise with us</a>
+                <span class="hover-bg"></span></li>
+                <li>
+                    <a href="http://ourcodeworld.com/about">About</a>
+                <span class="hover-bg"></span></li>
+                <li>
+                    <a href="http://ourcodeworld.com/contact">Contact</a>
+                <span class="hover-bg"></span></li>
+            </ul>
+        </div>
+
+                    <div class="search-layer">
+                <div class="search">
+                    <form action="http://ourcodeworld.com/search">
+                                                <div class="form-group">
+                            <input type="text" id="search-input-ourcodeworld" class="form-control" name="q" placeholder="Search for {Cordova}">
+                            <button type="submit" class="btn btn-default disabled btn-ripple"><i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="results">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="result result-users" id="search-layout-zone-articles"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="result result-posts" id="search-layout-zone-news"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            </div>
+
+    <script src="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/jquery.js"></script>
+    <script src="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/modernizr.min.js"></script>
+    <script src="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/global-vendors.js"></script><iframe style="display: none;" src="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/saved_resource(5).html"></iframe>
+    <script src="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/ocw_core.js"></script>
+    <script src="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/layout.js"></script>
+        <script src="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/cookieconsent.min.js"></script>
+    <script>
+        window.addEventListener("load", function () {
+            window.cookieconsent.initialise({
+                "palette": {
+                    "popup": {
+                        "background": "#edeff5",
+                        "text": "#000000"
+                    },
+                    "button": {
+                        "background": "#03a9f4"
+                    }
+                },
+                "theme": "edgeless",
+                "position": "bottom-right",
+                "content": {
+                    "message": "Our Code World uses cookies to ensure you get the best experience on our website.",
+                    "href": "http://ourcodeworld.com/privacy-policy"
+                }
+            })
+        });
+    </script>
+    <script>
+        $(function () {
+            var _search_api = {
+                getSuggestions: function (searchTerm) {
+                    return $.ajax({
+                        url: '/ajax-endpoint/search',
+                        data: {
+                            q: searchTerm
+                        },
+                        type:"GET",
+                        dataType: 'JSON'
+                    });
+                },
+                process :  function(title,data,noCase){
+                    var html = '<h4>'+title+' <small>('+data.length+')</small></h4>';
+
+                    if(!data.length){
+                        return html += '<p>'+noCase+'</p>';
+                    }
+
+                    html += '<ul class="list-material">';
+
+                    for(var c = 0;c < data.length;c++){
+                        var row = data[c];
+
+                        html += '<li data-toggle="tooltip" data-placement="top" data-original-title="'+row.name+'">';
+                        html +=     '<a href="'+row.path+'" class="visible" style="padding: 0px;">';
+                        html +=         '<div class="list-content">';
+                        html +=             '<span class="title">'+row.name+'</span>';
+                        html +=             '<span class="caption">'+row.date+'</span>';
+                        html +=         '</div>';
+                        html +=     '</a>';
+                        html += '</li>';
+                    }
+
+                    html += '</ul>';
+
+
+                    return html;
+                }
+            };
+
+            $('#search-input-ourcodeworld').bind("keyup change", OurCodeWorld.debounce(function () {
+                var value = $(this).val();
+
+                if (!value) {
+                    return;
+                }
+
+                _search_api.getSuggestions(value).then(function (data) {
+                    var articles = data.data;
+                    var group =  {
+                        left: articles.splice(0, Math.ceil(articles.length/2)),
+                        right: articles
+                    };
+                    
+                    $('#search-layout-zone-articles').html(_search_api.process("Articles", group.left ,"No articles were found"));
+                    $('#search-layout-zone-news').html(_search_api.process("Articles", group.right ,"No articles were found"));
+                }, function (err) {
+                    console.log(err);
+                });
+            }, 300));
+
+            OurCodeWorld.init();
+            Layout.init();
+        });
+    </script>
+        <script type="text/javascript" src="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/jssocials.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/jssocials.min.css">
+    <link type="text/css" rel="stylesheet" href="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/jssocials-theme-flat.min.css">
+
+    <script src="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/clipboard.min.js"></script>
+    <style>
+        pre.code-toolbar {
+            position: relative;
+        }
+        pre.code-toolbar > .toolbar {
+            position: absolute;
+            top: .3em;
+            right: .2em;
+            background: #f5f2f0;
+            background: rgba(224,224,224,.2);
+            border-radius: .5em;
+        }
+        pre.code-toolbar > .toolbar a {
+            color: #66d9ef;
+            font-size: 1em;
+            cursor: pointer;
+            padding: 0 .5em;
+            text-decoration: none;
+        }
+        pre.code-toolbar > .toolbar a:hover, 
+        pre.code-toolbar > .toolbar a:focus,
+        pre.code-toolbar > .toolbar a.zeroclipboard-is-hover {
+            color: white!important;
+        }
+    </style>
+
+        <link href="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/prism.css" rel="stylesheet" type="text/css">
+    <script src="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/prism.js"></script>
+
+        <script src="./How to create a custom console command (artisan) for Laravel 5.3 _ Our Code World_files/scrolltofixed.min.js"></script>
+
+    <script>
+        $(function () {
+            $("#ocw-share").jsSocials({
+                shareIn: "popup",
+                showCount: true,
+                showLabel: true,
+                text: "Read How to create a custom console command (artisan) for Laravel 5.3 in Our Code World",
+                shares: ["email", "twitter", "facebook", "googleplus", "pinterest"]
+            });
+
+            $('#article-content').find('img').each(function () {
+                $(this).addClass("img img-responsive img-thumbnail center-block");
+            });
+
+            var loadFlag = true;
+
+            $('#read-artyom-btn').click(function () {
+                if (typeof (artyom) == "undefined") {
+                    if (!loadFlag) {
+                        return;
+                    }
+
+                    $.ajax({
+                        url: "/articles/load-read-artyom",
+                        method: "POST",
+                        beforeSend: function () {
+                            loadFlag = false;
+                        },
+                        success: function (html) {
+                            $("#article-content").before(html);
+                        },
+                        error: function () {
+                            OCW.error("An error ocurred while trying to load artyom from the server, please try again.");
+                        },
+                        complete: function () {
+                            loadFlag = true;
+                        }
+                    });
+                } else {
+                    OCW.error("You've already loaded Artyom.js and the controllers are visible now. If you think that an error ocurred, please reload the webpage and try again.");
+                }
+            });
+        });
+    </script>
+    <script>
+        $(function(){
+            var hash = document.location.hash;
+            
+            $('#report-form').submit(function(e){
+                e.preventDefault();
+                var btn = $('#report-submit-btn');
+                var form = $(this);
+                
+                $.ajax({
+                    url:'/articles/report-article',
+                    method:'POST',
+                    beforeSend:function(){
+                        btn.attr('disabled','disabled');
+                        $('#report-result').html('<div class="alert alert-primary">Reporting this article .. hold tight <i class="fa fa-spinner fa-spin" aria-hidden="true"></i></div>');
+                    },
+                    data: form.serialize(),
+                    complete:function(){
+                        btn.removeAttr('disabled');
+                    }
+                }).then(function(data){
+                    $('#report-result').html('<div class="alert alert-success">Thanks for report the article ! We are going to solve it ASAP.</div>');
+                },function(){
+                    $('#report-result').html('<div class="alert alert-danger">An error ocurred, please reload the page and try to report again.</div>');
+                });
+            });
+            
+            if(hash){
+                try{
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 1000);
+                }catch(e){}
+            }
+        });
+    </script>
+    <script>
+        $(function () {
+            $("#floating-advertising").scrollToFixed({
+                marginTop: 15
+            });
+        });
+    </script>
+
+
+</body></html>
