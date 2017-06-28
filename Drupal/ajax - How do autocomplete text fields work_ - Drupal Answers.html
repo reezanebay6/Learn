@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<!-- saved from url=(0085)https://drupal.stackexchange.com/questions/99819/how-do-autocomplete-text-fields-work -->
+<html itemscope="" itemtype="http://schema.org/QAPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>ajax - How do autocomplete text fields work? - Drupal Answers</title>
+    <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/drupal/img/favicon.ico?v=62d5285bc682">
+    <link rel="apple-touch-icon image_src" href="https://cdn.sstatic.net/Sites/drupal/img/apple-touch-icon.png?v=2f2d1337c2e2">
+    <link rel="search" type="application/opensearchdescription+xml" title="Drupal Answers" href="https://drupal.stackexchange.com/opensearch.xml">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@StackDrupal">
+    <meta name="twitter:domain" content="drupal.stackexchange.com">
+
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/drupal/img/apple-touch-icon@2.png?v=5d949c166061">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="How do autocomplete text fields work?">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="I am asking this question because I have an autocomplete text field with #autocomplete_path set to a valid working path but key events are not handled by the misc/autocomplete.js file. When the for...">
+    <meta property="og:url" content="https://drupal.stackexchange.com/questions/99819/how-do-autocomplete-text-fields-work">
+    <link rel="canonical" href="https://drupal.stackexchange.com/questions/99819/how-do-autocomplete-text-fields-work">
+
+    
+    
+    <script type="text/javascript" async="" src="./ajax - How do autocomplete text fields work_ - Drupal Answers_files/ados"></script><script async="" src="./ajax - How do autocomplete text fields work_ - Drupal Answers_files/quant.js"></script><script async="" src="./ajax - How do autocomplete text fields work_ - Drupal Answers_files/beacon.js"></script><script async="" src="./ajax - How do autocomplete text fields work_ - Drupal Answers_files/analytics.js"></script><script type="text/javascript" async="" src="./ajax - How do autocomplete text fields work_ - Drupal Answers_files/ados.js"></script><script src="./ajax - How do autocomplete text fields work_ - Drupal Answers_files/jquery.min.js"></script>
+    <script src="./ajax - How do autocomplete text fields work_ - Drupal Answers_files/stub.en.js"></script>
+    <link rel="stylesheet" type="text/css" href="./ajax - How do autocomplete text fields work_ - Drupal Answers_files/all.css">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;How do autocomplete text fields work?&#39;" href="https://drupal.stackexchange.com/feeds/question/99819">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://drupal.stackexchange.com/questions/99819/how-do-autocomplete-text-fields-work">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://drupal.stackexchange.com/questions/99819/how-do-autocomplete-text-fields-work">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://drupal.stackexchange.com/questions/99819/how-do-autocomplete-text-fields-work">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:2,shownCommentCount:2,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:99819});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('220', '99819');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text', false); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.ready(function () {
+                        StackExchange.realtime.init('wss://qa.sockets.stackexchange.com');
+            StackExchange.realtime.subscribeToReputationNotifications('220');
+                StackExchange.realtime.subscribeToTopBarNotifications('220');
+        });
+    </script>
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","serverTime":1498558070,"routeName":"Questions/Show","site":{"name":"Drupal Answers","description":"Q&A for Drupal developers and administrators","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdsB7sSAAAAAAzjgEF_Hd8vXv-C42sa_KyofaGR","recaptchaAudioLang":"en","enableNewTagCreationWarning":false,"insertSpaceAfterNameTabCompletion":false,"id":220,"enableInsertDocLinkDialog":false,"childUrl":"https://drupal.meta.stackexchange.com","enableSocialMediaInSharePopup":true,"protocol":"https"},"user":{"fkey":"5f8be9a80c529da1ac2a8e4452a512ed","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true,"ab":{"devstory_onboarding_exp":{"v":"opt_out_of_match_emails","g":2}}},"realtime":{"newest":true,"active":true,"tagged":true,"staleDisconnectIntervalInHours":0,"workerIframeDomain":"https://cdn.sstatic.net"},"events":{"postType":{"question":1},"postEditionSection":{"title":1,"body":2,"tags":3}},"story":{"minCompleteBodyLength":75,"likedTagsMaxLength":300,"dislikedTagsMaxLength":300}}, {"site":{"allowImageUploads":true,"enableUserHovercards":true,"styleCode":true,"enableImgurHttps":true,"forceHttpsImages":true},"comments":{},"userProfile":{},"tags":{},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true},"flags":{"allowRetractingFlags":true},"snippets":{"renderDomain":"stacksnippets.net"},"markdown":{"asteriskIntraWordEmphasis":true},"monitoring":{"clientTimingsAbsoluteTimeout":30000,"clientTimingsDebounceTimeout":1000}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"f0c72574aef0","js/moderator.en.js":"3c90ddcfdaff","js/full-anon.en.js":"8de02f49643d","js/full.en.js":"f062b09e6971","js/wmd.en.js":"28649b9071c3","js/third-party/jquery.autocomplete.min.js":"d3b8fa7fdf74","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"d7da0bad5bdf","js/help.en.js":"118cb359bcc6","js/tageditor.en.js":"da67ed238e28","js/tageditornew.en.js":"0b2c9440d190","js/inline-tag-editing.en.js":"7581a98341e4","js/revisions.en.js":"47de10a8358f","js/review.en.js":"ba224c1d3299","js/tagsuggestions.en.js":"ddb0e41afe26","js/post-validation.en.js":"71443a3c1ab2","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"d1540fe64319","js/keyboard-shortcuts.en.js":"dc9be2643100","js/external-editor.en.js":"b46c950d6c5a","js/adops.en.js":"9a6a7812a212"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+    <noscript id="noscript-css">&lt;style type="text/css"&gt;body,.so-header{margin-top:1.9em}&lt;/style&gt;</noscript>
+<script async="" src="./ajax - How do autocomplete text fields work_ - Drupal Answers_files/full-anon.en.js"></script><script async="" src="./ajax - How do autocomplete text fields work_ - Drupal Answers_files/post-validation.en.js"></script><script async="" src="./ajax - How do autocomplete text fields work_ - Drupal Answers_files/prettify-full.en.js"></script><script async="" src="./ajax - How do autocomplete text fields work_ - Drupal Answers_files/external-editor.en.js"></script><script type="text/javascript" src="./ajax - How do autocomplete text fields work_ - Drupal Answers_files/adFeedback.js"></script><link rel="stylesheet" href="./ajax - How do autocomplete text fields work_ - Drupal Answers_files/adFeedback.css"></head>
+<body class="question-page new-topbar">
+            <script>(function () { var old = $.fn.contents; $.fn.contents = function () { try { return old.apply(this, arguments); } catch (e) { return $([]); } } })()</script>
+        
+
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+
+    <div class="topbar-dialog siteSwitcher-dialog dno">
+        <div class="header">
+            <h3><a href="https://drupal.stackexchange.com/">current community</a>
+            </h3>
+        </div>
+        <div class="modal-content current-site-container">
+            <ul class="current-site">
+                    <li>
+                            <div class="related-links">
+                    <a href="https://chat.stackexchange.com/?tab=site&amp;host=drupal.stackexchange.com" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+
+    <a href="https://drupal.stackexchange.com/" class="current-site-link site-link js-gps-track" data-id="220" data-gps-track="site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-drupal" title="Drupal Answers"></div>
+        Drupal Answers
+    </a>
+
+                    </li>
+                    <li class="related-site">
+                            <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                        
+    <a href="https://drupal.meta.stackexchange.com/" class="site-link js-gps-track" data-id="222" data-gps-track="site.switch({ target_site:222, item_type:3 }),site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-drupalmeta" title="Drupal Answers Meta"></div>
+        Drupal Answers Meta
+    </a>
+
+                    </li>
+            </ul>
+        </div>
+
+        <div class="header" id="your-communities-header">
+            <h3>
+your communities            </h3>
+
+        </div>
+        <div class="modal-content" id="your-communities-section">
+
+                <div class="call-to-login">
+<a href="https://drupal.stackexchange.com/users/signup?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f99819%2fhow-do-autocomplete-text-fields-work" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://drupal.stackexchange.com/users/login?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f99819%2fhow-do-autocomplete-text-fields-work" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+                </div>
+        </div>
+
+        <div class="header">
+            <h3><a href="https://stackexchange.com/sites">more stack exchange communities</a>
+            </h3>
+            <a href="https://stackoverflow.blog/" class="fr">company blog</a>
+        </div>
+        <div class="modal-content">
+                <div class="child-content"></div>
+        </div>        
+    </div>
+        </div>
+
+        <div class="network-items">
+                <a href="https://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 169 Stack Exchange sites">
+                    <span class="hidden-text">Stack Exchange</span>
+                </a>
+
+    <a href="https://drupal.stackexchange.com/questions/99819/how-do-autocomplete-text-fields-work#" class="topbar-icon icon-inbox yes-hover js-inbox-button" title="Recent inbox messages">
+        <span class="hidden-text">Inbox</span>
+        <span class="unread-count" style="display:none"></span>
+    </a>
+    <a href="https://drupal.stackexchange.com/questions/99819/how-do-autocomplete-text-fields-work#" class="topbar-icon icon-achievements yes-hover js-achievements-button " data-unread-class="" title="Recent achievements: reputation, badges, and privileges earned">
+        <span class="hidden-text">Reputation and Badges</span>
+        <span class="unread-count" style="display:none">
+            
+        </span>
+    </a>
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                <span class="topbar-menu-links">
+                                    <a href="https://drupal.stackexchange.com/users/signup?ssrc=head&amp;returnurl=https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f99819%2fhow-do-autocomplete-text-fields-work" class="login-link" rel="nofollow">sign up</a>
+                                <a href="https://drupal.stackexchange.com/users/login?ssrc=head&amp;returnurl=https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f99819%2fhow-do-autocomplete-text-fields-work" class="login-link" rel="nofollow">log in</a>
+
+                            <a href="https://drupal.stackexchange.com/tour">tour</a>
+        <a href="https://drupal.stackexchange.com/questions/99819/how-do-autocomplete-text-fields-work#" class="icon-help js-help-button" title="Help Center and other resources">
+            help
+            <span class="triangle"></span>
+        </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="https://drupal.stackexchange.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="https://drupal.stackexchange.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="https://drupal.meta.stackexchange.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                Meta
+                                <span class="item-summary">
+                                    Discuss the workings and policies of this site
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                About Us
+                                <span class="item-summary">
+                                    Learn more about Stack Overflow the company
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.stackoverflowbusiness.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                Business
+                                <span class="item-summary">
+                                    Learn more about hiring developers or posting ads with us
+                                </span>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+                                            </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="https://drupal.stackexchange.com/search" method="get" autocomplete="off" role="search">
+                        <input name="q" type="text" placeholder="Search Q&amp;A" value="" tabindex="1" autocomplete="off" maxlength="240">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+            <div id="header">
+                <br class="cbt">
+                <div id="hlogo">
+                    <a href="https://drupal.stackexchange.com/" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:8})">
+                        Drupal Answers
+                    </a>
+                </div>
+                <div id="hmenus">
+                        <div class="nav mainnavs" role="navigation" aria-label="site navigation">
+                            <ul>
+                                    <li class="youarehere">
+        <a id="nav-questions" href="https://drupal.stackexchange.com/questions" class="js-gps-track" data-gps-track="top_nav.click({is_current:true, location:2, destination:1})">
+        Questions
+        </a>
+    </li>
+
+                                                                    <li>
+        <a id="nav-tags" href="https://drupal.stackexchange.com/tags" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:2})">
+        Tags
+        </a>
+    </li>
+
+                                    <li>
+        <a id="nav-users" href="https://drupal.stackexchange.com/users" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:3})">
+        Users
+        </a>
+    </li>
+
+                                    <li>
+        <a id="nav-badges" href="https://drupal.stackexchange.com/help/badges" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:4})">
+        Badges
+        </a>
+    </li>
+
+    <li>
+        <a id="nav-unanswered" href="https://drupal.stackexchange.com/unanswered" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:5})">
+        Unanswered
+        </a>
+    </li>
+                            </ul>
+                        </div>
+                    <div class="nav askquestion" role="navigation" aria-label="ask new question">
+                        <ul>
+                            <li>
+                                <a id="nav-askquestion" href="https://drupal.stackexchange.com/questions/ask">Ask Question</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        
+
+
+        <div id="content">
+
+
+
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="https://cdn.sstatic.net/Sites/drupal/img/apple-touch-icon.png?v=2f2d1337c2e2">
+
+
+<div id="herobox">
+    <div id="hero-content">
+            <div id="close"><a title="click to minimize">_</a></div>
+        <div id="blurb">
+            Drupal Answers is a question and answer site for Drupal developers and administrators. Join them; it only takes a minute:
+            <br>
+            <br>
+            <a href="https://drupal.stackexchange.com/users/signup?ssrc=hero&amp;returnurl=https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f99819%2fhow-do-autocomplete-text-fields-work" id="tell-me-more" class="button">Sign up</a>
+        </div>
+        <div id="desc">
+            <b>Here's how it works:</b>
+            <ol id="hiw">
+                <li id="q">
+                    Anybody can ask a question
+                </li>
+                <li id="an">
+                    Anybody can answer
+                </li>
+                <li id="b">
+                    The best answers are voted up and rise to the top
+                </li>
+            </ol>
+        </div>
+    <div style="clear: both"></div>
+    </div>
+</div><script>
+    StackExchange.ready(function () {
+
+        var location = 0;
+        if ($("body").hasClass("questions-page")) {
+            location = 1;;
+        } else if ($("body").hasClass("question-page")) {
+            location = 1;;
+        } else if ($("body").hasClass("faq-page")) {
+            location = 5;;
+        } else if ($("body").hasClass("home-page")) {
+            location = 3;;
+        }
+        
+        $('#tell-me-more').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+            });
+        });
+        
+        $('#herobox #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+            });
+            
+            $.cookie("hero", "mini", { path: "/", expires: 365 });
+            $.ajax({
+                url: "/hero-mini",
+                success: function (data) {
+                    $("#herobox").fadeOut("fast", function () {
+                        $("#herobox").replaceWith(data);
+                        $("#herobox-mini").fadeIn("fast");
+                    });
+                }
+            });
+            return false;
+        });
+    });
+
+</script>			<div id="question-header">
+                <h1 itemprop="name"><a href="https://drupal.stackexchange.com/questions/99819/how-do-autocomplete-text-fields-work" class="question-hyperlink">How do autocomplete text fields work?</a></h1>
+
+            
+		</div>
+			<div id="mainbar" role="main" aria-label="question and answers">
+
+			
+
+<div class="question" data-questionid="99819" id="question">
+
+    <script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22, 0, "adzerk1790056477", 4).enableDynamicSiteSelection().setZone(29); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1790056477"><a href="https://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjo1MDk5OTYsImNoIjoxNjUzMSwiY2siOnt9LCJjciI6MTg1MzQ4MSwiZGkiOiJhMTdiNWY1MjM0NDg0OWQxOWE1OWIxZTk4MjRhZjVjYiIsImRtIjoxLCJmYyI6MjIyMzQxNiwiZmwiOjI2MDkxNTcsImlwIjoiNTkuMTQ0LjEzNS43Iiwia3ciOiJhamF4LHgtY29tbXVuaXR5LHgtaG9zdC1kcnVwYWwuc3RhY2tleGNoYW5nZS5jb20iLCJudyI6MjIsInBjIjowLCJlYyI6MCwicHIiOjU3MjIyLCJydCI6MSwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY28uaW4vIiwic2EiOiIzIiwic2IiOiJpLTAxOGNiMGM0MjAyNGViMWFiIiwic3AiOjI3ODUsInN0Ijo1Njc1OSwidWsiOiJ1ZTEtMjg1MjlhOGY3ZWQxNDk4MTgxM2I0MWVlNDU5ZjdmZjgiLCJ6biI6MjksInRzIjoxNDk4NTU4MDgyODgxLCJiZiI6dHJ1ZSwicG4iOiJhZHplcmsxNzkwMDU2NDc3IiwidXIiOiJodHRwOi8vc3RhY2tvdmVyZmxvdy5jb20vam9icz91dG1fc291cmNlPXdlYnNpdGUmdXRtX21lZGl1bT1iYW5uZXImdXRtX2NvbnRlbnQ9bGVhZGVyYm9hcmRfNiZ1dG1fY2FtcGFpZ249aG91c2VfYWRzX2hvdXNlX2Fkc19ST1NfU1UifQ&amp;s=ZEOp9IFqIrqBZCpIpxjeuIrvRkg" rel="nofollow" target="_blank" title=""><img src="./ajax - How do autocomplete text fields work_ - Drupal Answers_files/df9081c72bcb4d2396296b56138bcdc6.png" title="" alt="" border="0" width="728" height="90"></a><div class="adzerk-vote-controls" style="display: none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="https://drupal.stackexchange.com/questions/99819/how-do-autocomplete-text-fields-work#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./ajax - How do autocomplete text fields work_ - Drupal Answers_files/i.gif"></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="99819">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">4</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="https://drupal.stackexchange.com/questions/99819/how-do-autocomplete-text-fields-work#">favorite</a>
+        <div class="favoritecount"><b>4</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>I am asking this question because I have an autocomplete text field with <code>#autocomplete_path</code> set to a valid working path but key events are not handled by the misc/autocomplete.js file. When the form is being created, it apparently assigns all the functions to the respective variables, but none of those functions are executed. For example following function in the misc/autocomplete.js isn't executed.</p>
+
+<pre class="default prettyprint prettyprinted"><code><span class="typ">Drupal</span><span class="pun">.</span><span class="pln">jsAC </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">(</span><span class="pln">$input</span><span class="pun">,</span><span class="pln"> db</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">var</span><span class="pln"> ac </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">;</span><span class="pln">
+  </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">input </span><span class="pun">=</span><span class="pln"> $input</span><span class="pun">[</span><span class="lit">0</span><span class="pun">];</span><span class="pln">
+  </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">ariaLive </span><span class="pun">=</span><span class="pln"> $</span><span class="pun">(</span><span class="str">'#'</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">input</span><span class="pun">.</span><span class="pln">id </span><span class="pun">+</span><span class="pln"> </span><span class="str">'-autocomplete-aria-live'</span><span class="pun">);</span><span class="pln">
+  </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">db </span><span class="pun">=</span><span class="pln"> db</span><span class="pun">;</span><span class="pln">
+
+  $input
+    </span><span class="pun">.</span><span class="pln">keydown</span><span class="pun">(</span><span class="kwd">function</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">event</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> ac</span><span class="pun">.</span><span class="pln">onkeydown</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">event</span><span class="pun">);</span><span class="pln"> </span><span class="pun">})</span><span class="pln">
+    </span><span class="pun">.</span><span class="pln">keyup</span><span class="pun">(</span><span class="kwd">function</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">event</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> ac</span><span class="pun">.</span><span class="pln">onkeyup</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">event</span><span class="pun">);</span><span class="pln"> </span><span class="pun">})</span><span class="pln">
+    </span><span class="pun">.</span><span class="pln">blur</span><span class="pun">(</span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> ac</span><span class="pun">.</span><span class="pln">hidePopup</span><span class="pun">();</span><span class="pln"> ac</span><span class="pun">.</span><span class="pln">db</span><span class="pun">.</span><span class="pln">cancel</span><span class="pun">();</span><span class="pln"> </span><span class="pun">});</span><span class="pln">
+
+</span><span class="pun">};</span></code></pre>
+
+<p>Hence, when a user types a letter, <em>key up</em> or <em>key down</em> handlers aren't invoked and nothing happens. So to debug, I want to know how autocomplete works. </p>
+
+<p>Could someone please explain how this works?</p>
+    </div>
+    <div class="post-taglist">
+        <a href="https://drupal.stackexchange.com/questions/tagged/ajax" class="post-tag js-gps-track" title="show questions tagged &#39;ajax&#39;" rel="tag">ajax</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="https://drupal.stackexchange.com/q/99819" title="short permalink to this question" class="short-link" id="link-post-99819">share</a><span class="lsep">|</span><a href="https://drupal.stackexchange.com/posts/99819/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="https://drupal.stackexchange.com/posts/99819/revisions" title="show all edits to this post">edited <span title="2017-05-15 13:11:22Z" class="relativetime">May 15 at 13:11</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://drupal.stackexchange.com/users/199/kiamlaluno"><div class="gravatar-wrapper-32"><img src="./ajax - How do autocomplete text fields work_ - Drupal Answers_files/5315ed8662329312d746e5de447c87c6" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://drupal.stackexchange.com/users/199/kiamlaluno">kiamlaluno</a><span class="mod-flair" title="moderator">♦</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 72,109" dir="ltr">72.1k</span><span title="9 gold badges"><span class="badge1"></span><span class="badgecount">9</span></span><span title="109 silver badges"><span class="badge2"></span><span class="badgecount">109</span></span><span title="214 bronze badges"><span class="badge3"></span><span class="badgecount">214</span></span>
+        </div>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2014-01-14 01:12:24Z" class="relativetime">Jan 14 '14 at 1:12</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://drupal.stackexchange.com/users/25194/lloydh"><div class="gravatar-wrapper-32"><img src="./ajax - How do autocomplete text fields work_ - Drupal Answers_files/52356506ddac85481c19929294de5843" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://drupal.stackexchange.com/users/25194/lloydh">lloydh</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">31</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="4 bronze badges"><span class="badge3"></span><span class="badgecount">4</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                    
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-99819" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-117329" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Which version of drupal are you using? It is different from 6 to 7. You do not need to write any javascript to get autocomplete to work, it is all done via the drupal form api</span>
+                    –&nbsp;<a href="https://drupal.stackexchange.com/users/12023/2pha" title="1,874 reputation" class="comment-user">2pha</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://drupal.stackexchange.com/questions/99819/how-do-autocomplete-text-fields-work#comment117329_99819"><span title="2014-01-14 02:27:19Z" class="relativetime-clean">Jan 14 '14 at 2:27</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-117331" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I am using drupal 7.</span>
+                    –&nbsp;<a href="https://drupal.stackexchange.com/users/25194/lloydh" title="31 reputation" class="comment-user owner">lloydh</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://drupal.stackexchange.com/questions/99819/how-do-autocomplete-text-fields-work#comment117331_99819"><span title="2014-01-14 02:41:47Z" class="relativetime-clean">Jan 14 '14 at 2:41</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-99819" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://drupal.stackexchange.com/questions/99819/how-do-autocomplete-text-fields-work#" onclick=""></a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								1 Answer
+                                <span style="display:none;" itemprop="answerCount">1</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="https://drupal.stackexchange.com/questions/99819/how-do-autocomplete-text-fields-work?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active" data-shortcut="A">
+            active</a>
+        <a href="https://drupal.stackexchange.com/questions/99819/how-do-autocomplete-text-fields-work?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest" data-shortcut="O">
+            oldest</a>
+        <a class="youarehere" href="https://drupal.stackexchange.com/questions/99819/how-do-autocomplete-text-fields-work?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes" data-shortcut="V">
+            votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="99830"></a>
+<div id="answer-99830" class="answer" data-answerid="99830" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="99830">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">6</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Working with Drupal autocomplete form is good, instead of using the jQuery autocomplete.</p>
+
+<p>Here we have a solution that how to create a custom autocomplete form and to get the user names or whatever.</p>
+
+<p>I am giving the simple example of using it.</p>
+
+<p>Take a menu item in hook_menu to get the autocomplete form. This will call the function called <code>test_autocomplete_form</code>.</p>
+
+<pre class="default prettyprint prettyprinted"><code><span class="pln">$items</span><span class="pun">[</span><span class="str">'autocomplete_form'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> array</span><span class="pun">(</span><span class="pln">
+        </span><span class="str">'title'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Test autocomplete form'</span><span class="pun">,</span><span class="pln">
+        </span><span class="str">'page callback'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'drupal_get_form'</span><span class="pun">,</span><span class="pln">
+        </span><span class="str">'page arguments'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> array</span><span class="pun">(</span><span class="str">'test_autocomplete_form'</span><span class="pun">),</span><span class="pln">
+        </span><span class="str">'access arguments'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> array</span><span class="pun">(</span><span class="str">'access test autocomplete'</span><span class="pun">),</span><span class="pln">
+        </span><span class="str">'type'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> MENU_NORMAL_ITEM
+</span><span class="pun">);</span><span class="pln">
+
+</span><span class="com">// Which will get the autocomplete form</span><span class="pln">
+</span><span class="kwd">function</span><span class="pln"> test_autocomplete_form</span><span class="pun">(){</span><span class="pln">
+    $form </span><span class="pun">=</span><span class="pln"> array</span><span class="pun">();</span><span class="pln">
+    $form</span><span class="pun">[</span><span class="str">'testauto'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> array</span><span class="pun">(</span><span class="pln">
+        </span><span class="str">'#type'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'textfield'</span><span class="pun">,</span><span class="pln">
+        </span><span class="str">'#autocomplete_path'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'test/autocomplete'</span><span class="pun">,</span><span class="pln">
+        </span><span class="str">'#description'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> t</span><span class="pun">(</span><span class="str">'Please type any letter.'</span><span class="pun">),</span><span class="pln">
+    </span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> $form</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>We have to mention our custom path in for the <code>#autocomplete_path</code> attribute. Here I have given a path like <code>test/autocomplete</code> which will have to get the autocomplete result for that need to have one more menu item with the same path which we have given for the <code>#autocomplete_path</code>:</p>
+
+<pre class="default prettyprint prettyprinted"><code><span class="com">// menu item to get the autocomplete result,Which will call the function called 'test_autocomplete'</span><span class="pln">
+$items</span><span class="pun">[</span><span class="str">'test/autocomplete'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> array</span><span class="pun">(</span><span class="pln">
+        </span><span class="str">'title'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Test autocomplete'</span><span class="pun">,</span><span class="pln">
+        </span><span class="str">'page callback'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'test_autocomplete'</span><span class="pun">,</span><span class="pln">
+        </span><span class="str">'access arguments'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> array</span><span class="pun">(</span><span class="str">'access test autocomplete'</span><span class="pun">),</span><span class="pln">
+        </span><span class="str">'type'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> MENU_CALLBACK
+</span><span class="pun">);</span><span class="pln">
+
+</span><span class="com">// function to get the autocomplete result, I am taking the user table to get the users names in the autocomplete field</span><span class="pln">
+    </span><span class="kwd">function</span><span class="pln"> test_autocomplete</span><span class="pun">(</span><span class="pln">$string </span><span class="pun">=</span><span class="pln"> </span><span class="str">''</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      $matches </span><span class="pun">=</span><span class="pln"> array</span><span class="pun">();</span><span class="pln">
+      </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">$string</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        $result </span><span class="pun">=</span><span class="pln"> db_query_range</span><span class="pun">(</span><span class="str">"SELECT name FROM {users} WHERE LOWER(name) LIKE LOWER('%s%%')"</span><span class="pun">,</span><span class="pln"> $string</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">10</span><span class="pun">);</span><span class="pln"> </span><span class="com">// only 10 results will show</span><span class="pln">
+        </span><span class="kwd">while</span><span class="pln"> </span><span class="pun">(</span><span class="pln">$user </span><span class="pun">=</span><span class="pln"> db_fetch_object</span><span class="pun">(</span><span class="pln">$result</span><span class="pun">))</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+          $matches</span><span class="pun">[</span><span class="pln">$user</span><span class="pun">-&gt;</span><span class="pln">name</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> check_plain</span><span class="pun">(</span><span class="pln">$user</span><span class="pun">-&gt;</span><span class="pln">name</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+      </span><span class="pun">}</span><span class="pln">
+      drupal_json_output</span><span class="pun">(</span><span class="pln">$matches</span><span class="pun">);</span><span class="pln"> </span><span class="com">// Returns the data in JSON format</span><span class="pln">
+    </span><span class="pun">}</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="https://drupal.stackexchange.com/a/99830" title="short permalink to this answer" class="short-link" id="link-post-99830">share</a><span class="lsep">|</span><a href="https://drupal.stackexchange.com/posts/99830/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="https://drupal.stackexchange.com/posts/99830/revisions" title="show all edits to this post">edited <span title="2016-10-26 14:45:10Z" class="relativetime">Oct 26 '16 at 14:45</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://drupal.stackexchange.com/users/10645/tyler-frankenstein"><div class="gravatar-wrapper-32"><img src="./ajax - How do autocomplete text fields work_ - Drupal Answers_files/3185e94741154a97df1b9d420b98bd62" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://drupal.stackexchange.com/users/10645/tyler-frankenstein">tyler.frankenstein</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">2,205</span><span title="9 silver badges"><span class="badge2"></span><span class="badgecount">9</span></span><span title="31 bronze badges"><span class="badge3"></span><span class="badgecount">31</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2014-01-14 06:03:48Z" class="relativetime">Jan 14 '14 at 6:03</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://drupal.stackexchange.com/users/11250/madhurjya"><div class="gravatar-wrapper-32"><img src="./ajax - How do autocomplete text fields work_ - Drupal Answers_files/sbggb.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://drupal.stackexchange.com/users/11250/madhurjya">madhurjya</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">811</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="7 silver badges"><span class="badge2"></span><span class="badgecount">7</span></span><span title="13 bronze badges"><span class="badge3"></span><span class="badgecount">13</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-99830" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-266855" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I'd just like to point out that I had a hard time using an <code>#autocomplete_path</code> of e.g. <code>admin/my-module/search</code>, and instead I used this and it immediately worked: <code>my-module-search</code>. For whatever reason(s), my <code>page callback</code> kept being delivered the word <code>list</code> as the input, until I changed the path, then the input was delivered correctly right away.</span>
+                    –&nbsp;<a href="https://drupal.stackexchange.com/users/10645/tyler-frankenstein" title="2,205 reputation" class="comment-user">tyler.frankenstein</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://drupal.stackexchange.com/questions/99819/how-do-autocomplete-text-fields-work#comment266855_99830"><span title="2016-10-26 14:30:36Z" class="relativetime-clean">Oct 26 '16 at 14:30</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-287550" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Great answer here; I'm just noting that in D7 the db_query_range() requires a different parameter order than @madhurjya's answer (<a href="https://api.drupal.org/api/drupal/includes%21database%21database.inc/function/db_query_range/7.x" rel="nofollow noreferrer">api.drupal.org/api/drupal/includes%21database%21database.in‌​c/…</a>).</span>
+                    –&nbsp;<a href="https://drupal.stackexchange.com/users/12456/joe-flash" title="443 reputation" class="comment-user">joe_flash</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://drupal.stackexchange.com/questions/99819/how-do-autocomplete-text-fields-work#comment287550_99830"><span title="2017-04-14 22:11:04Z" class="relativetime-clean">Apr 14 at 22:11</span></a></span>
+                        <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-99830" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://drupal.stackexchange.com/questions/99819/how-do-autocomplete-text-fields-work#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="https://drupal.stackexchange.com/questions/99819/answer/submit" method="post" class="post-form">
+						    <input type="hidden" id="post-id" value="99819">
+                            <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false">
+                            <input type="hidden" name="referrer" value="https://www.google.co.in/">
+							<h2 class="space">Your Answer</h2>
+
+
+        
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+                // Have to fire editor after snippets, if snippets enabled
+                if (StackExchange.settings.snippets.snippetsEnabled) {
+                    StackExchange.using("snippets", function() {
+                        createEditor();
+                    });
+                }
+                else {
+                    createEditor();
+                }
+            });
+
+            function createEditor() {
+                StackExchange.prepareEditor({
+                    heartbeatType: 'answer',
+                convertImagesToLinks: false,
+                reputationToPostImages: null,
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                    ,immediatelyShowMarkdownHelp:true
+                    });
+                
+
+        }
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor js-post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="5f8be9a80c529da1ac2a8e4452a512ed">
+        <input id="author" name="author" type="text">
+    </div>
+
+
+
+</div>
+							<div style="position: relative;">
+								
+								            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="https://drupal.stackexchange.com/users/login?ssrc=question_page&amp;returnurl=https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f99819%2fhow-do-autocomplete-text-fields-work%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Email and Password</span></p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="manual-openid" class="manual-openid">
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false">
+                    <input type="hidden" name="use-google" class="use-google" value="false">
+                    <input type="button" class="submit-openid" value="Submit" style="display:none">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', 'https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f99819%2fhow-do-autocomplete-text-fields-work%23new-answer', 'question_page');
+                    }
+                );
+            </script>
+            <noscript>
+                        &lt;h3&gt;Post as a guest&lt;/h3&gt;
+    &lt;div class="form-item"&gt;
+        &lt;table&gt;
+        &lt;tr&gt;
+                    &lt;td class="vm"&gt;
+                &lt;div&gt;
+                    &lt;label for="display-name"&gt;Name&lt;/label&gt;
+                    &lt;input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105"&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label for="m-address"&gt;Email&lt;/label&gt;
+                    &lt;input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown" /&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+            </noscript>
+
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+									<a href="https://drupal.stackexchange.com/questions/99819/how-do-autocomplete-text-fields-work#" class="btn-clear discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="https://stackexchange.com/legal/privacy-policy" name="privacy" target="_blank">privacy policy</a> and <a href="https://stackexchange.com/legal/terms-of-service" name="tos" target="_blank">terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="https://drupal.stackexchange.com/questions/tagged/ajax" class="post-tag" title="show questions tagged &#39;ajax&#39;" rel="tag">ajax</a>  or <a href="https://drupal.stackexchange.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes" role="complementary" aria-label="sidebar">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2014-01-14 01:12:24Z"><b>3 years, 5 months ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+                                    <b>5,247 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="https://drupal.stackexchange.com/questions/99819/how-do-autocomplete-text-fields-work?lastactivity" class="lastactivity-link" title="2017-05-15 13:11:22Z">1 month ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22, 0, "adzerk2102159724", [5,17]).enableDynamicSiteSelection().setZone(56016); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk2102159724"><a href="https://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NSwiYnQiOjAsImNtIjozNzM4NjIsImNoIjoxNjUzMSwiY2siOnt9LCJjciI6MTMxNjU5MSwiZGkiOiIzNjVjMDAwNTI2YTU0NjE5YmQyYzY0MzQxMjJhZjJjYyIsImRtIjoxLCJmYyI6MTUyOTk5NywiZmwiOjExNDYxOTMsImlwIjoiNTkuMTQ0LjEzNS43Iiwia3ciOiJhamF4LHgtY29tbXVuaXR5LHgtaG9zdC1kcnVwYWwuc3RhY2tleGNoYW5nZS5jb20iLCJudyI6MjIsInBjIjowLCJlYyI6MCwicHIiOjU1Njk1LCJydCI6MSwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY28uaW4vIiwic2EiOiIzIiwic2IiOiJpLTAxOGNiMGM0MjAyNGViMWFiIiwic3AiOjI3ODUsInN0Ijo1Njc1OSwidWsiOiJ1ZTEtMjg1MjlhOGY3ZWQxNDk4MTgxM2I0MWVlNDU5ZjdmZjgiLCJ6biI6NTYwMTYsInRzIjoxNDk4NTU4MDgyODg0LCJiZiI6dHJ1ZSwicG4iOiJhZHplcmsyMTAyMTU5NzI0IiwidXIiOiJodHRwOi8vd3d3LmZhY2Vib29rLmNvbS9zdGFja2V4Y2hhbmdlIn0&amp;s=ARORywvQicibguAnKP6butZGPTw" rel="nofollow" target="_blank" title=""><img src="./ajax - How do autocomplete text fields work_ - Drupal Answers_files/9260be1edee24250924f2588fc3d8606.png" title="" alt="" border="0" width="300" height="250"></a><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="https://drupal.stackexchange.com/questions/99819/how-do-autocomplete-text-fields-work#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./ajax - How do autocomplete text fields work_ - Drupal Answers_files/i(1).gif"></div>
+            <div id="hireme"></div>
+        <script>
+        </script>
+			
+
+            
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/19984?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">2</div></a><a href="https://drupal.stackexchange.com/questions/19984/autocomplete-on-unlimited-text-field?rq=1" class="question-hyperlink">Autocomplete on “Unlimited” text field?</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/29227?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">1</div></a><a href="https://drupal.stackexchange.com/questions/29227/adding-autocomplete-to-a-cck-text-field?rq=1" class="question-hyperlink">Adding autocomplete to a CCK text field</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/88776?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">2</div></a><a href="https://drupal.stackexchange.com/questions/88776/autocomplete-field-consisting-of-multiple-fields?rq=1" class="question-hyperlink">Autocomplete field consisting of multiple fields</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/107271?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">1</div></a><a href="https://drupal.stackexchange.com/questions/107271/styling-the-autocomplete-dropdown-to-work-with-the-up-down-arrow-keys?rq=1" class="question-hyperlink">Styling the autocomplete dropdown to work with the up/down arrow keys</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/158330?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">1</div></a><a href="https://drupal.stackexchange.com/questions/158330/how-to-show-filtered-content-as-suggestion-of-reference-autocomplete-field-bas?rq=1" class="question-hyperlink">How to show filtered content as suggestion of “reference autocomplete field” based on a field value of reference content</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/160625?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">2</div></a><a href="https://drupal.stackexchange.com/questions/160625/how-to-alter-entity-reference-autocomplete-field-drupal-7?rq=1" class="question-hyperlink">How to alter entity reference autocomplete field drupal 7</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/173173?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">1</div></a><a href="https://drupal.stackexchange.com/questions/173173/autocomplete-field-not-working?rq=1" class="question-hyperlink">Autocomplete field not working</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/181811?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="https://drupal.stackexchange.com/questions/181811/how-do-i-enable-autocomplete-on-fields-inside-tableselect?rq=1" class="question-hyperlink">How do I enable autocomplete on fields inside tableselect</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/200038?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">6</div></a><a href="https://drupal.stackexchange.com/questions/200038/adding-autocomplete-for-text-field?rq=1" class="question-hyperlink">Adding autocomplete for text-field</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/202252?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">1</div></a><a href="https://drupal.stackexchange.com/questions/202252/how-to-use-autocomplete-text-field-in-fieldset?rq=1" class="question-hyperlink">How to use autocomplete text field in fieldset?</a></div>
+                    </div>
+				</div>
+            
+
+<div id="hot-network-questions" class="module tex2jax_ignore">
+    <h4>
+        <a href="https://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-softwareengineering" title="Software Engineering Stack Exchange"></div><a href="https://softwareengineering.stackexchange.com/questions/351607/what-can-i-do-for-developers-who-cant-learn-git" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:131 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What can I do for developers who can't learn Git?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-cseducators" title="Computer Science Educators Stack Exchange"></div><a href="https://cseducators.stackexchange.com/questions/1092/should-test-cases-be-made-available-to-students-for-assessed-assignments" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:678 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Should test cases be made available to students for assessed assignments?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-islam" title="Islam Stack Exchange"></div><a href="https://islam.stackexchange.com/questions/41037/why-did-we-do-takbir-three-times-during-eid-ul-fitr-prayer" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:455 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why did we do takbir three times during Eid ul-Fitr prayer?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="https://academia.stackexchange.com/questions/91364/is-100-hours-per-year-of-teaching-a-heavy-load-for-a-lecturer" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is 100 hours per year of teaching a heavy load for a lecturer?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="https://physics.stackexchange.com/questions/341647/yang-mills-vs-einstein-hilbert-action" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Yang-Mills vs Einstein-Hilbert Action
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="https://stackoverflow.com/questions/44773631/why-cant-i-allocate-an-array-of-a-class-with-deleted-or-private-destructor" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why can't I allocate an array of a class with deleted or private destructor?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-history" title="History Stack Exchange"></div><a href="https://history.stackexchange.com/questions/38738/why-did-stalin-and-the-soviet-leadership-have-leon-trotsky-assassinated" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:324 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why did Stalin and the Soviet leadership have Leon Trotsky assassinated?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="https://codegolf.stackexchange.com/questions/128391/ascii-art-for-torrent-ui" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    ASCII art for torrent UI
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="https://tex.stackexchange.com/questions/376841/is-it-okay-to-have-numbers-and-decimals-in-variable-names-in-context" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it okay to have numbers and decimals in variable names in ConTeXt?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-askubuntu" title="Ask Ubuntu"></div><a href="https://askubuntu.com/questions/929252/find-ids-in-one-file-that-are-not-in-another" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:89 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Find IDs in one file that are not in another
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="https://workplace.stackexchange.com/questions/93554/am-i-obligated-to-enforce-detrimental-company-policy" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Am I Obligated to Enforce Detrimental Company Policy?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="https://workplace.stackexchange.com/questions/93579/how-to-find-jobs-that-are-as-corporate-as-possible" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to find jobs that are as corporate as possible?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-parenting" title="Parenting Stack Exchange"></div><a href="https://parenting.stackexchange.com/questions/30625/teenagers-ogling-my-daughter-what-to-do" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:228 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Teenagers Ogling my Daughter. What to do?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="https://worldbuilding.stackexchange.com/questions/84592/a-non-iron-elvish-steel" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    A Non-Iron Elvish Steel
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-movies" title="Movies &amp; TV Stack Exchange"></div><a href="https://movies.stackexchange.com/questions/75324/where-and-when-does-the-idea-light-bulb-appear-for-the-first-time" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:367 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Where and when does the "idea" light bulb appear for the first time?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-salesforce" title="Salesforce Stack Exchange"></div><a href="https://salesforce.stackexchange.com/questions/180648/set-performance-is-using-addall-and-removeall-more-performant-than-for-loops" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:459 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Set performance - is using addAll and removeAll more performant than for loops?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-electronics" title="Electrical Engineering Stack Exchange"></div><a href="https://electronics.stackexchange.com/questions/313201/how-to-step-down-from-4-5v-to-3-3v" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:135 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to step down from 4.5V to 3.3V?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="https://academia.stackexchange.com/questions/91357/can-my-doctoral-adviser-take-my-dissertation-and-publish-it-without-me" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can my doctoral adviser take my dissertation and publish it without me?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="https://codereview.stackexchange.com/questions/166645/baconian-cipher-python-implementation" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Baconian Cipher Python Implementation
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-cseducators" title="Computer Science Educators Stack Exchange"></div><a href="https://cseducators.stackexchange.com/questions/1126/how-to-prepare-students-for-bias-in-industry" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:678 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to prepare students for bias in industry
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-gis" title="Geographic Information Systems Stack Exchange"></div><a href="https://gis.stackexchange.com/questions/245469/using-simple-python-parser-expression" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:79 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Using Simple Python Parser expression?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="https://scifi.stackexchange.com/questions/162339/is-ant-man-referring-to-any-specific-incident" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is Ant-Man referring to any specific incident?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="https://unix.stackexchange.com/questions/373625/different-behaviour-of-cd-with-multiple-arguments-in-bash-releases" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Different behaviour of cd with multiple arguments in bash releases
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="https://rpg.stackexchange.com/questions/102274/does-a-10th-level-wizards-fireball-do-5d6-or-10d6-damage" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does a 10th-level wizard's fireball do 5d6 or 10d6 damage?
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="https://drupal.stackexchange.com/feeds/question/99819" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/99819/ivc/de81');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/99819/ivc/de81" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">default</div></div>
+
+
+        </div>
+    </div>
+
+        <footer id="footer" class="s-footer categories" role="contentinfo">
+            <div class="-container g-column">
+                <ul class="-menu g-row">
+
+                    <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">about us</a></li>
+                        <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 2 })" href="https://drupal.stackexchange.com/tour">tour</a></li>
+                    <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 3 })" href="https://drupal.stackexchange.com/help">help</a></li>
+                    <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 4 })" href="https://stackoverflow.blog/?blb=1">blog</a></li>
+                        <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 5 })" href="https://chat.stackexchange.com/?tab=site&amp;host=drupal.stackexchange.com">chat</a></li>
+                    <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 6 })" href="https://data.stackexchange.com/">data</a></li>
+                    <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 7 })" href="https://stackexchange.com/legal">legal</a></li>
+                    <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 8 })" href="https://stackexchange.com/legal/privacy-policy">privacy policy</a></li>
+                    <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 9 })" href="https://stackoverflow.com/company/work-here">work here</a></li>
+                    <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 10 })" href="https://www.stackoverflowbusiness.com/advertise">advertising info</a></li>
+
+                    <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 12 })" onclick="StackExchange.switchMobile(&quot;on&quot;)">mobile</a></li>
+                    <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 13 })" href="https://drupal.stackexchange.com/contact"><strong>contact us</strong></a></li>
+                        <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 14 })" href="https://drupal.meta.stackexchange.com/"><strong>feedback</strong></a></li>
+                    <li class="-item g-col">
+                        
+                    </li>
+                </ul>
+                <div class="-toc g-row" id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                <strong>Technology</strong>
+            </th>
+            <th>
+                <strong>Life / Arts</strong>
+            </th>
+            <th>
+                <strong>Culture / Recreation</strong>
+            </th>
+            <th>
+                <strong>Science</strong>
+            </th>
+            <th>
+                <strong>Other</strong>
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="https://stackoverflow.com/" class="-link js-gps-track" title="professional and enthusiast programmers" data-gps-track="footer.click({ location: 2, link: 25 })">Stack Overflow</a></li>
+                        <li><a href="https://serverfault.com/" class="-link js-gps-track" title="system and network administrators" data-gps-track="footer.click({ location: 2, link: 25 })">Server Fault</a></li>
+                        <li><a href="https://superuser.com/" class="-link js-gps-track" title="computer enthusiasts and power users" data-gps-track="footer.click({ location: 2, link: 25 })">Super User</a></li>
+                        <li><a href="https://webapps.stackexchange.com/" class="-link js-gps-track" title="power users of web applications" data-gps-track="footer.click({ location: 2, link: 25 })">Web Applications</a></li>
+                        <li><a href="https://askubuntu.com/" class="-link js-gps-track" title="Ubuntu users and developers" data-gps-track="footer.click({ location: 2, link: 25 })">Ask Ubuntu</a></li>
+                        <li><a href="https://webmasters.stackexchange.com/" class="-link js-gps-track" title="pro webmasters" data-gps-track="footer.click({ location: 2, link: 25 })">Webmasters</a></li>
+                        <li><a href="https://gamedev.stackexchange.com/" class="-link js-gps-track" title="professional and independent game developers" data-gps-track="footer.click({ location: 2, link: 25 })">Game Development</a></li>
+                        <li><a href="https://tex.stackexchange.com/" class="-link js-gps-track" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems" data-gps-track="footer.click({ location: 2, link: 25 })">TeX - LaTeX</a></li>
+                        <li><a href="https://softwareengineering.stackexchange.com/" class="-link js-gps-track" title="professionals, academics, and students working within the systems development life cycle" data-gps-track="footer.click({ location: 2, link: 25 })">Software Engineering</a></li>
+                        <li><a href="https://unix.stackexchange.com/" class="-link js-gps-track" title="users of Linux, FreeBSD and other Un*x-like operating systems" data-gps-track="footer.click({ location: 2, link: 25 })">Unix &amp; Linux</a></li>
+                        <li><a href="https://apple.stackexchange.com/" class="-link js-gps-track" title="power users of Apple hardware and software" data-gps-track="footer.click({ location: 2, link: 25 })">Ask Different (Apple)</a></li>
+                        <li><a href="https://wordpress.stackexchange.com/" class="-link js-gps-track" title="WordPress developers and administrators" data-gps-track="footer.click({ location: 2, link: 25 })">WordPress Development</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="https://gis.stackexchange.com/" class="-link js-gps-track" title="cartographers, geographers and GIS professionals" data-gps-track="footer.click({ location: 2, link: 25 })">Geographic Information Systems</a></li>
+                        <li><a href="https://electronics.stackexchange.com/" class="-link js-gps-track" title="electronics and electrical engineering professionals, students, and enthusiasts" data-gps-track="footer.click({ location: 2, link: 25 })">Electrical Engineering</a></li>
+                        <li><a href="https://android.stackexchange.com/" class="-link js-gps-track" title="enthusiasts and power users of the Android operating system" data-gps-track="footer.click({ location: 2, link: 25 })">Android Enthusiasts</a></li>
+                        <li><a href="https://security.stackexchange.com/" class="-link js-gps-track" title="information security professionals" data-gps-track="footer.click({ location: 2, link: 25 })">Information Security</a></li>
+                        <li><a href="https://dba.stackexchange.com/" class="-link js-gps-track" title="database professionals who wish to improve their database skills and learn from others in the community" data-gps-track="footer.click({ location: 2, link: 25 })">Database Administrators</a></li>
+                        <li><a href="https://drupal.stackexchange.com/" class="-link js-gps-track" title="Drupal developers and administrators" data-gps-track="footer.click({ location: 2, link: 25 })">Drupal Answers</a></li>
+                        <li><a href="https://sharepoint.stackexchange.com/" class="-link js-gps-track" title="SharePoint enthusiasts" data-gps-track="footer.click({ location: 2, link: 25 })">SharePoint</a></li>
+                        <li><a href="https://ux.stackexchange.com/" class="-link js-gps-track" title="user experience researchers and experts" data-gps-track="footer.click({ location: 2, link: 25 })">User Experience</a></li>
+                        <li><a href="https://mathematica.stackexchange.com/" class="-link js-gps-track" title="users of Wolfram Mathematica" data-gps-track="footer.click({ location: 2, link: 25 })">Mathematica</a></li>
+                        <li><a href="https://salesforce.stackexchange.com/" class="-link js-gps-track" title="Salesforce administrators, implementation experts, developers and anybody in-between" data-gps-track="footer.click({ location: 2, link: 25 })">Salesforce</a></li>
+                        <li><a href="https://expressionengine.stackexchange.com/" class="-link js-gps-track" title="administrators, end users, developers and designers for ExpressionEngine® CMS" data-gps-track="footer.click({ location: 2, link: 25 })">ExpressionEngine® Answers</a></li>
+                        <li><a href="https://crypto.stackexchange.com/" class="-link js-gps-track" title="software developers, mathematicians and others interested in cryptography" data-gps-track="footer.click({ location: 2, link: 25 })">Cryptography</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="https://codereview.stackexchange.com/" class="-link js-gps-track" title="peer programmer code reviews" data-gps-track="footer.click({ location: 2, link: 25 })">Code Review</a></li>
+                        <li><a href="https://magento.stackexchange.com/" class="-link js-gps-track" title="users of the Magento e-Commerce platform" data-gps-track="footer.click({ location: 2, link: 25 })">Magento</a></li>
+                        <li><a href="https://dsp.stackexchange.com/" class="-link js-gps-track" title="practitioners of the art and science of signal, image and video processing" data-gps-track="footer.click({ location: 2, link: 25 })">Signal Processing</a></li>
+                        <li><a href="https://raspberrypi.stackexchange.com/" class="-link js-gps-track" title="users and developers of hardware and software for Raspberry Pi" data-gps-track="footer.click({ location: 2, link: 25 })">Raspberry Pi</a></li>
+                        <li><a href="https://codegolf.stackexchange.com/" class="-link js-gps-track" title="programming puzzle enthusiasts and code golfers" data-gps-track="footer.click({ location: 2, link: 25 })">Programming Puzzles &amp; Code Golf</a></li>
+                                            <li>
+                            <a href="https://stackexchange.com/sites#technology" class="more js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="https://photo.stackexchange.com/" class="-link js-gps-track" title="professional, enthusiast and amateur photographers" data-gps-track="footer.click({ location: 2, link: 25 })">Photography</a></li>
+                        <li><a href="https://scifi.stackexchange.com/" class="-link js-gps-track" title="science fiction and fantasy enthusiasts" data-gps-track="footer.click({ location: 2, link: 25 })">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="https://graphicdesign.stackexchange.com/" class="-link js-gps-track" title="Graphic Design professionals, students, and enthusiasts" data-gps-track="footer.click({ location: 2, link: 25 })">Graphic Design</a></li>
+                        <li><a href="https://movies.stackexchange.com/" class="-link js-gps-track" title="movie and tv enthusiasts" data-gps-track="footer.click({ location: 2, link: 25 })">Movies &amp; TV</a></li>
+                        <li><a href="https://music.stackexchange.com/" class="-link js-gps-track" title="musicians, students, and enthusiasts" data-gps-track="footer.click({ location: 2, link: 25 })">Music: Practice &amp; Theory</a></li>
+                        <li><a href="https://cooking.stackexchange.com/" class="-link js-gps-track" title="professional and amateur chefs" data-gps-track="footer.click({ location: 2, link: 25 })">Seasoned Advice (cooking)</a></li>
+                        <li><a href="https://diy.stackexchange.com/" class="-link js-gps-track" title="contractors and serious DIYers" data-gps-track="footer.click({ location: 2, link: 25 })">Home Improvement</a></li>
+                        <li><a href="https://money.stackexchange.com/" class="-link js-gps-track" title="people who want to be financially literate" data-gps-track="footer.click({ location: 2, link: 25 })">Personal Finance &amp; Money</a></li>
+                        <li><a href="https://academia.stackexchange.com/" class="-link js-gps-track" title="academics and those enrolled in higher education" data-gps-track="footer.click({ location: 2, link: 25 })">Academia</a></li>
+                                            <li>
+                            <a href="https://stackexchange.com/sites#lifearts" class="more js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                                more (8)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="https://english.stackexchange.com/" class="-link js-gps-track" title="linguists, etymologists, and serious English language enthusiasts" data-gps-track="footer.click({ location: 2, link: 25 })">English Language &amp; Usage</a></li>
+                        <li><a href="https://skeptics.stackexchange.com/" class="-link js-gps-track" title="scientific skepticism" data-gps-track="footer.click({ location: 2, link: 25 })">Skeptics</a></li>
+                        <li><a href="https://judaism.stackexchange.com/" class="-link js-gps-track" title="those who base their lives on Jewish law and tradition and anyone interested in learning more" data-gps-track="footer.click({ location: 2, link: 25 })">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="https://travel.stackexchange.com/" class="-link js-gps-track" title="road warriors and seasoned travelers" data-gps-track="footer.click({ location: 2, link: 25 })">Travel</a></li>
+                        <li><a href="https://christianity.stackexchange.com/" class="-link js-gps-track" title="committed Christians, experts in Christianity and those interested in learning more" data-gps-track="footer.click({ location: 2, link: 25 })">Christianity</a></li>
+                        <li><a href="https://ell.stackexchange.com/" class="-link js-gps-track" title="speakers of other languages learning English" data-gps-track="footer.click({ location: 2, link: 25 })">English Language Learners</a></li>
+                        <li><a href="https://japanese.stackexchange.com/" class="-link js-gps-track" title="students, teachers, and linguists wanting to discuss the finer points of the Japanese language" data-gps-track="footer.click({ location: 2, link: 25 })">Japanese Language</a></li>
+                        <li><a href="https://gaming.stackexchange.com/" class="-link js-gps-track" title="passionate videogamers on all platforms" data-gps-track="footer.click({ location: 2, link: 25 })">Arqade (gaming)</a></li>
+                        <li><a href="https://bicycles.stackexchange.com/" class="-link js-gps-track" title="people who build and repair bicycles, people who train cycling, or commute on bicycles" data-gps-track="footer.click({ location: 2, link: 25 })">Bicycles</a></li>
+                        <li><a href="https://rpg.stackexchange.com/" class="-link js-gps-track" title="gamemasters and players of tabletop, paper-and-pencil role-playing games" data-gps-track="footer.click({ location: 2, link: 25 })">Role-playing Games</a></li>
+                        <li><a href="https://anime.stackexchange.com/" class="-link js-gps-track" title="anime and manga fans" data-gps-track="footer.click({ location: 2, link: 25 })">Anime &amp; Manga</a></li>
+                        <li><a href="https://mechanics.stackexchange.com/" class="-link js-gps-track" title="mechanics and DIY enthusiast owners of cars, trucks, and motorcycles" data-gps-track="footer.click({ location: 2, link: 25 })">Motor Vehicle Maintenance &amp; Repair</a></li>
+                                            <li>
+                            <a href="https://stackexchange.com/sites#culturerecreation" class="more js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                                more (17)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="https://mathoverflow.net/" class="-link js-gps-track" title="professional mathematicians" data-gps-track="footer.click({ location: 2, link: 25 })">MathOverflow</a></li>
+                        <li><a href="https://math.stackexchange.com/" class="-link js-gps-track" title="people studying math at any level and professionals in related fields" data-gps-track="footer.click({ location: 2, link: 25 })">Mathematics</a></li>
+                        <li><a href="https://stats.stackexchange.com/" class="-link js-gps-track" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization" data-gps-track="footer.click({ location: 2, link: 25 })">Cross Validated (stats)</a></li>
+                        <li><a href="https://cstheory.stackexchange.com/" class="-link js-gps-track" title="theoretical computer scientists and researchers in related fields" data-gps-track="footer.click({ location: 2, link: 25 })">Theoretical Computer Science</a></li>
+                        <li><a href="https://physics.stackexchange.com/" class="-link js-gps-track" title="active researchers, academics and students of physics" data-gps-track="footer.click({ location: 2, link: 25 })">Physics</a></li>
+                        <li><a href="https://chemistry.stackexchange.com/" class="-link js-gps-track" title="scientists, academics, teachers and students" data-gps-track="footer.click({ location: 2, link: 25 })">Chemistry</a></li>
+                        <li><a href="https://biology.stackexchange.com/" class="-link js-gps-track" title="biology researchers, academics, and students" data-gps-track="footer.click({ location: 2, link: 25 })">Biology</a></li>
+                        <li><a href="https://cs.stackexchange.com/" class="-link js-gps-track" title="students, researchers and practitioners of computer science" data-gps-track="footer.click({ location: 2, link: 25 })">Computer Science</a></li>
+                        <li><a href="https://philosophy.stackexchange.com/" class="-link js-gps-track" title="those interested in the study of the fundamental nature of knowledge, reality, and existence" data-gps-track="footer.click({ location: 2, link: 25 })">Philosophy</a></li>
+                                            <li>
+                            <a href="https://stackexchange.com/sites#science" class="more js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                                more (3)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="https://meta.stackexchange.com/" class="-link js-gps-track" title="meta-discussion of the Stack Exchange family of Q&amp;A websites" data-gps-track="footer.click({ location: 2, link: 25 })">Meta Stack Exchange</a></li>
+                        <li><a href="https://stackapps.com/" class="-link js-gps-track" title="apps, scripts, and development with the Stack Exchange API" data-gps-track="footer.click({ location: 2, link: 25 })">Stack Apps</a></li>
+                        <li><a href="https://area51.stackexchange.com/" class="-link js-gps-track" title="proposing new sites in the Stack Exchange network" data-gps-track="footer.click({ location: 2, link: 25 })">Area 51</a></li>
+                        <li><a href="https://www.stackoverflowbusiness.com/talent" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })">Stack Overflow Talent</a></li>
+                                    </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+                <div class="g-col -copyright" id="copyright">
+                    site design / logo © 2017 Stack Exchange Inc; user contributions licensed under <a class="-link" href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a>
+                    with <a class="-link" href="https://stackoverflow.blog/2009/06/25/attribution-required/" rel="license">attribution required</a>
+                </div>
+                <div class="g-col -copyright _muted" id="svnrev">
+                    rev 2017.6.27.26337
+                </div>
+
+            </div>
+        </footer>
+
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Drupal Answers works best with JavaScript enabled
+            &lt;img src="https://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;
+        &lt;/div&gt;
+    </noscript>
+<script>var z=document.createElement("script");z.type="text/javascript",z.async=!0,z.src="https://static.adzerk.net/ados.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(z,s);</script>
+<script>
+var ados = ados || {};
+ados.run = ados.run || [];
+
+
+ados.run.push(function () {
+    setTimeout(function () { $("#adzerk-user-match").remove(); }, window.AUMIframeDone ? 0 : 2000);
+    ados_setKeywords('ajax,x-community,x-host-drupal.stackexchange.com');; ados_load();
+});   
+
+</script>
+
+    <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+                ga('create', 'UA-5620270-24', {'cookieDomain': 'stackexchange.com'});
+                ga('set', 'dimension2', '|ajax|');
+                ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+                qc.async = true;
+                qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                s.parentNode.insertBefore(qc, s);
+                _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+                            var sc=document.createElement('script');
+                sc.async=true;
+                sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+                s.parentNode.insertBefore(sc, s);
+                _comscore.push({ c1: "2", c2: "17440561" });
+        })();
+
+    </script>
+        
+    
+            <script type="text/javascript">
+                
+                (function(appendChild) {
+                    Node.prototype.appendChild = function() {
+                        var parent = this;
+                        var newNode = arguments[0];
+                        if (parent.nodeName === 'HEAD'
+                            && newNode
+                            && newNode.nodeName === 'SCRIPT'
+                            && newNode.src) {
+                            
+                            window.setTimeout(function() {
+                                var result = newNode.src.match(/^https:\/\/maps\.googleapis\.com\/maps\/api\/place\/js\/(\w+)Service\./i) || [];
+                                var service = result[1];
+                                if (service) {
+                                    if (service === 'Autocompletion') service =  2;
+                                    else if (service === 'Place') service = 1;
+                                    else service = 0;
+                                    StackExchange.using('gps', function() {
+                                        StackExchange.gps.track('google_maps_places_api.call', { service: service });
+                                    });
+                                }
+                            }, 0);
+                        }
+                        return appendChild.apply(this, arguments);
+                    };
+                })(Node.prototype.appendChild);
+            </script>
+    
+
+</body></html>

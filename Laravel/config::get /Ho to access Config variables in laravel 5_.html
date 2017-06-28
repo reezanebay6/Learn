@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<!-- saved from url=(0100)https://laracasts.com/discuss/channels/general-discussion/ho-to-access-config-variables-in-laravel-5 -->
+<html class="" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="vjs-styles-defaults">
+      .video-js {
+        width: 300px;
+        height: 150px;
+      }
+
+      .vjs-fluid {
+        padding-top: 56.25%
+      }
+    </style>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="initial-scale=1.1">
+<meta name="description" content="Hi,  i am just wondering how to access Config Variables.  in Laravel 4 it was   Config::get(&#39;filename.varname&#39;);   but this does not work in laravel 5...">
+<meta property="og:site_name" content="Laracasts">
+<meta property="fb:app_id" content="511211375738022">
+<title> Ho to access Config variables in laravel 5?
+</title>
+<link rel="apple-touch-icon" sizes="180x180" href="https://laracasts.com/favicons/apple-touch-icon.png?v=XBrbNbbRQ4">
+<link rel="icon" type="image/png" href="https://laracasts.com/favicons/favicon-32x32.png?v=XBrbNbbRQ4" sizes="32x32">
+<link rel="icon" type="image/png" href="https://laracasts.com/favicons/favicon-16x16.png?v=XBrbNbbRQ4" sizes="16x16">
+<link rel="manifest" href="https://laracasts.com/favicons/manifest.json?v=XBrbNbbRQ4">
+<link rel="mask-icon" href="https://laracasts.com/favicons/safari-pinned-tab.svg?v=XBrbNbbRQ4" color="#4fb6b5">
+<link rel="shortcut icon" href="https://laracasts.com/favicons/favicon.ico?v=XBrbNbbRQ4">
+<meta name="msapplication-config" content="/favicons/browserconfig.xml?v=XBrbNbbRQ4">
+<meta name="theme-color" content="#4fb6b5">
+<link rel="alternate" type="application/atom+xml" title="Laracasts" href="https://laracasts.com/feed">
+<link rel="stylesheet" href="./Ho to access Config variables in laravel 5__files/fonts.css">
+<link href="./Ho to access Config variables in laravel 5__files/css" rel="stylesheet">
+<script src="./Ho to access Config variables in laravel 5__files/analytics.js"></script><script src="./Ho to access Config variables in laravel 5__files/wow.min.js"></script>
+<script>new WOW({ mobile: false }).init();</script>
+<link href="./Ho to access Config variables in laravel 5__files/min.css" rel="stylesheet">
+<script>
+            window.LARACASTS = {"signedIn":false,"csrfToken":"rPxYnZX5kF7rSgv9njZMUtqwIftBVi9S7kuqNpOF","stripeKey":"pk_live_42cAcd2OvCDs4hpErd5ZscBT","user":null};
+        </script>
+<link rel="stylesheet" href="./Ho to access Config variables in laravel 5__files/rainbow.css">
+</head>
+<body class="forum-discussion guest ">
+<script id="flash-template" type="text/template">
+    <div class="notification is-primary for-user">
+        <a href="#" class="notification-body inherits-color" target="_blank" rel="noreferrer noopener"></a>
+    </div>
+</script>
+<div id="root" class="page "><div><nav class="nav is-normal"><div class="container"><div class="nav-left dont-flex mr-2"><a href="https://laracasts.com/" class="nav-item is-brand"><svg id="white-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 792.51 102.4"><path d="M103.08,445.39v65.52h35.74v13.42H87V445.39Z" transform="translate(-86.99 -435.26)" class="svg-logo-white"></path><path d="M191.63,445.39h14.7l34.18,78.93H223l-7.07-17.09H182.05L175,524.33H157.45Zm7.4,20.87-11.52,27.5h22.88Z" transform="translate(-86.99 -435.26)" class="svg-logo-white"></path><path d="M285.3,491.87h-7.85v32.45H261.37V445.39h36a23.65,23.65,0,0,1,17.26,6.9,23.17,23.17,0,0,1,7,17.31q0,9.85-6.9,15.64a30.93,30.93,0,0,1-12.36,5.84l22.15,33.23H305Zm-7.85-33.06v21.76h16.42a10.65,10.65,0,0,0,10.8-11,10.24,10.24,0,0,0-3.15-7.79,10.72,10.72,0,0,0-7.65-3Z" transform="translate(-86.99 -435.26)" class="svg-logo-white"></path><path d="M374.58,445.39h14.7l34.18,78.93H405.91l-7.07-17.09H365l-7.07,17.09H340.4Zm7.4,20.87-11.52,27.5h22.88Z" transform="translate(-86.99 -435.26)" class="svg-logo-white"></path><path d="M500.09,471.17a24.2,24.2,0,0,0-3.67-4.84q-7.07-7.24-18.09-7.24t-18.09,7.24q-7,7.18-7,18.65t7,18.68q7,7.21,18,7.21t18.09-7.24a23.49,23.49,0,0,0,3.67-4.9L515,505.46a38.79,38.79,0,0,1-6.79,8.74q-11.8,11.52-29.78,11.52t-29.92-11.55q-11.94-11.55-11.94-29.2t11.94-29.28q11.94-11.63,29.92-11.63T508,455.86a38.8,38.8,0,0,1,6.79,8.57Z" transform="translate(-86.99 -435.26)" class="svg-logo-white"></path><path d="M677.73,444a44.48,44.48,0,0,1,29.11,10.35l-9.46,11.41a28.39,28.39,0,0,0-9.24-5.59,30.16,30.16,0,0,0-10.24-1.75q-6.12,0-9.63,2.67a6.49,6.49,0,0,0-2.56,5.29,6.56,6.56,0,0,0,3.28,5.68q2.56,1.73,12.41,4.51,11.63,3,17.31,6.57,10,6.63,10,18.43,0,10.8-9.35,17.92-8.46,6.24-21.49,6.23a46.6,46.6,0,0,1-33-13l9-11.47a36.24,36.24,0,0,0,10.3,7.07,29.9,29.9,0,0,0,13.64,3.28q6.68,0,10.58-2.84a8.35,8.35,0,0,0,3.51-6.62,7.28,7.28,0,0,0-3.56-6.29q-2.62-1.78-12.13-4.45-12.19-3.51-17.14-6.4-10.3-6.07-10.3-17.59A20.53,20.53,0,0,1,657,450.46Q665.21,444,677.73,444Z" transform="translate(-86.99 -435.26)" class="svg-logo-white"></path><path d="M730.16,445.39h64.13v13.3h-24v65.63H754.09V458.7H730.16Z" transform="translate(-86.99 -435.26)" class="svg-logo-white"></path><path d="M848.49,444a44.47,44.47,0,0,1,29.11,10.35l-9.46,11.41a28.36,28.36,0,0,0-9.24-5.59,30.16,30.16,0,0,0-10.24-1.75q-6.12,0-9.63,2.67a6.49,6.49,0,0,0-2.56,5.29,6.56,6.56,0,0,0,3.29,5.68q2.56,1.73,12.41,4.51,11.63,3,17.31,6.57,10,6.63,10,18.43,0,10.8-9.35,17.92-8.46,6.24-21.49,6.23a46.6,46.6,0,0,1-33-13l9-11.47a36.23,36.23,0,0,0,10.3,7.07,29.91,29.91,0,0,0,13.64,3.28q6.68,0,10.58-2.84a8.35,8.35,0,0,0,3.51-6.62,7.28,7.28,0,0,0-3.56-6.29Q856.56,494,847,491.37q-12.19-3.51-17.14-6.4-10.3-6.07-10.3-17.59a20.53,20.53,0,0,1,8.18-16.92Q836,444,848.49,444Z" transform="translate(-86.99 -435.26)" class="svg-logo-white"></path> <path id="arrow" fill="#00b1b2" d="M549.44,537.66V504.75h12v13.78L621,489.74a29.75,29.75,0,0,0,4.21-2.31,15.41,15.41,0,0,0-1.36-.88l-62.42-31.73v19.93h-12V435.26L629.58,476c2.95,1.62,9.73,6.09,9,12.45-.68,6.09-8.18,10.27-12.67,12.24l-76.49,37Z" transform="translate(-86.99 -435.26)"></path><path d="M579.77,499H535a4.08,4.08,0,1,1,0-8.16h44.75a4.08,4.08,0,1,1,0,8.16Z" transform="translate(-86.99 -435.26)" class="svg-logo-white"></path><path d="M525.91,499h-8.23a4.08,4.08,0,1,1,0-8.16h8.23a4.08,4.08,0,1,1,0,8.16Z" transform="translate(-86.99 -435.26)" class="svg-logo-white"></path><path d="M544.14,488.13h-8.23a4.08,4.08,0,0,1,0-8.16h8.23a4.08,4.08,0,1,1,0,8.16Z" transform="translate(-86.99 -435.26)" class="svg-logo-white"></path><path d="M596.19,488.14H553.44a4.08,4.08,0,1,1,0-8.16h42.75a4.08,4.08,0,0,1,0,8.16Z" transform="translate(-86.99 -435.26)" class="svg-logo-white"></path></svg></a></div> <div class="nav-center flex mr-2"><form method="GET" action="https://laracasts.com/discuss" class="nav-search-form is-flex"><svg viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="is-hidden-mobile" style="width: 30px;"><title>search</title> <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="search-icon" fill="#cacaca"><path d="M11.1921711,12.6063847 C10.0235906,13.4815965 8.5723351,14 7,14 C3.13400675,14 0,10.8659932 0,7 C0,3.13400675 3.13400675,0 7,0 C10.8659932,0 14,3.13400675 14,7 C14,8.5723351 13.4815965,10.0235906 12.6063847,11.1921711 L14.0162265,12.6020129 C14.6819842,12.4223519 15.4217116,12.5932845 15.9484049,13.1199778 L18.7795171,15.95109 C19.5598243,16.7313971 19.5646685,17.9916807 18.7781746,18.7781746 C17.997126,19.5592232 16.736965,19.5653921 15.95109,18.7795171 L13.1199778,15.9484049 C12.5960188,15.4244459 12.4217025,14.6840739 12.6018353,14.0160489 L11.1921711,12.6063847 Z M7,12 C9.76142375,12 12,9.76142375 12,7 C12,4.23857625 9.76142375,2 7,2 C4.23857625,2 2,4.23857625 2,7 C2,9.76142375 4.23857625,12 7,12 Z"></path></g></g></svg> <span class="algolia-autocomplete" style="position: relative; display: inline-block; direction: ltr;"><input type="search" class="input aa-hint" readonly="" aria-hidden="true" autocomplete="off" spellcheck="false" tabindex="-1" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; opacity: 1; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);"><span class="algolia-autocomplete" style="position: relative; display: inline-block; direction: ltr;"><input type="search" class="input aa-input aa-hint" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="both" aria-expanded="false" aria-labelledby="search" aria-owns="algolia-autocomplete-listbox-0" dir="auto" style="vertical-align: top; position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; opacity: 1; background: none 0px 0px / auto repeat scroll padding-box border-box transparent;" readonly="" aria-hidden="true" tabindex="-1"><input type="search" id="search" name="q" placeholder="SEARCH THE FORUM" required="required" class="input aa-input" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="both" aria-expanded="false" aria-labelledby="search" aria-owns="algolia-autocomplete-listbox-2" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: &quot;Gotham SSm A&quot;, &quot;Gotham SSm B&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; word-spacing: 0px; letter-spacing: 1px; text-indent: 10px; text-rendering: auto; text-transform: none;"></pre><span class="aa-dropdown-menu" role="listbox" id="algolia-autocomplete-listbox-2" style="position: absolute; top: 100%; z-index: 100; display: none; left: 0px; right: auto;"><div class="aa-dataset-3"></div></span></span><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: &quot;Gotham SSm A&quot;, &quot;Gotham SSm B&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; word-spacing: 0px; letter-spacing: 1px; text-indent: 10px; text-rendering: auto; text-transform: none;"></pre><span class="aa-dropdown-menu" role="listbox" id="algolia-autocomplete-listbox-0" style="position: absolute; top: 100%; z-index: 100; display: none; left: 0px; right: auto;"><div class="aa-dataset-1"></div></span></span> <button type="submit" class="button is-primary in-caps is-hidden-mobile">
+        Search
+    </button></form></div> <span class="nav-toggle"><span></span> <span></span> <span></span></span> <div class="nav-right nav-menu"><a href="https://laracasts.com/join" class="nav-item is-bold in-caps">
+            Sign Up
+        </a> <a href="https://laracasts.com/login" class="nav-item is-bold color-primary in-caps">
+            Sign In
+        </a></div></div></nav> <nav class="nav-bottom "><div class="container"><ul class="is-flex-tablet nav-menu"><li class="is-hidden-tablet"><form method="GET" action="https://laracasts.com/discuss" class="nav-search-form is-flex"><svg viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="is-hidden-mobile" style="width: 30px;"><title>search</title> <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="search-icon" fill="#cacaca"><path d="M11.1921711,12.6063847 C10.0235906,13.4815965 8.5723351,14 7,14 C3.13400675,14 0,10.8659932 0,7 C0,3.13400675 3.13400675,0 7,0 C10.8659932,0 14,3.13400675 14,7 C14,8.5723351 13.4815965,10.0235906 12.6063847,11.1921711 L14.0162265,12.6020129 C14.6819842,12.4223519 15.4217116,12.5932845 15.9484049,13.1199778 L18.7795171,15.95109 C19.5598243,16.7313971 19.5646685,17.9916807 18.7781746,18.7781746 C17.997126,19.5592232 16.736965,19.5653921 15.95109,18.7795171 L13.1199778,15.9484049 C12.5960188,15.4244459 12.4217025,14.6840739 12.6018353,14.0160489 L11.1921711,12.6063847 Z M7,12 C9.76142375,12 12,9.76142375 12,7 C12,4.23857625 9.76142375,2 7,2 C4.23857625,2 2,4.23857625 2,7 C2,9.76142375 4.23857625,12 7,12 Z"></path></g></g></svg> <input type="search" id="search" name="q" placeholder="SEARCH THE FORUM" required="required" class="input"> <button type="submit" class="button is-primary in-caps is-hidden-mobile">
+        Search
+    </button></form></li> <li class="is-hidden-tablet"><a href="https://laracasts.com/login" class="nav-bottom-link"><span class="nav-bottom-title">Sign In</span></a></li> <li class="is-hidden-tablet"><a href="https://laracasts.com/join" class="nav-bottom-link"><span class="nav-bottom-title">Sign Up</span></a></li> <li><a href="https://laracasts.com/lessons" class="nav-bottom-link "><span class="icon icon-catalog"></span> <span class="nav-bottom-title">Catalog</span></a></li> <li><a href="https://laracasts.com/series?curated" class="nav-bottom-link "><span class="icon icon-series"></span> <span class="nav-bottom-title">Series</span></a></li> <li><div class="dropdown w-100"><div class="is-vertically-centered"> <button class="button has-dropdown w-100"><span href="#" class="has-arrow nav-bottom-link "><span class="icon icon-skills"></span> <span class="nav-bottom-title">Skills</span></span></button></div> <div class="dropdown-menu" style="min-width: 250px;"><ul><li class="dropdown-item"><a href="https://laracasts.com/skills/php" class=" is-flex"><span class="flex">PHP</span> <span class="is-circle icon" style="color: rgb(136, 147, 189);"></span></a></li> <li class="dropdown-item"><a href="https://laracasts.com/skills/laravel" class=" is-flex"><span class="flex">Laravel</span> <span class="is-circle icon" style="color: rgb(237, 108, 99);"></span></a></li> <li class="dropdown-item"><a href="https://laracasts.com/skills/testing" class=" is-flex"><span class="flex">Testing</span> <span class="is-circle icon" style="color: rgb(144, 206, 148);"></span></a></li> <li class="dropdown-item"><a href="https://laracasts.com/skills/javascript" class=" is-flex"><span class="flex">Front-End</span> <span class="is-circle icon" style="color: rgb(171, 170, 67);"></span></a></li> <li class="dropdown-item"><a href="https://laracasts.com/skills/tooling" class=" is-flex"><span class="flex">Tooling</span> <span class="is-circle icon" style="color: rgb(239, 103, 51);"></span></a></li></ul></div></div></li> <li><a href="https://laracasts.com/shop" class="nav-bottom-link "><span class="icon icon-apparel"></span> <span class="nav-bottom-title">Apparel</span></a></li> <li class="active is-active"><a href="https://laracasts.com/discuss" class="nav-bottom-link active is-active"><span class="icon icon-discuss"></span> <span class="nav-bottom-title">Discussions</span></a></li></ul></div></nav> <div class="wrapper"><div class="section"><div class="container filterable"><div class="columns"><aside class="forum-sidebar menu column is-3"><a href="https://laracasts.com/signup?billing=none&amp;title=You%27ll%20be%20posting%20on%20the%20forum%20in%20no%20time!" class="button is-default is-primary w-100 mb-1">
+                                    Create Account
+                                </a> <p class="menu-label">
+                                Choose a Filter
+                            </p> <ul class="menu-list"><li><a href="https://laracasts.com/discuss" class=" has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16" class="icon is-success"><path d="M7 1C3.14 1 0 4.14 0 8s3.14 7 7 7c.48 0 .94-.05 1.38-.14-.17-.08-.2-.73-.02-1.09.19-.41.81-1.45.2-1.8-.61-.35-.44-.5-.81-.91-.37-.41-.22-.47-.25-.58-.08-.34.36-.89.39-.94.02-.06.02-.27 0-.33 0-.08-.27-.22-.34-.23-.06 0-.11.11-.2.13-.09.02-.5-.25-.59-.33-.09-.08-.14-.23-.27-.34-.13-.13-.14-.03-.33-.11s-.8-.31-1.28-.48c-.48-.19-.52-.47-.52-.66-.02-.2-.3-.47-.42-.67-.14-.2-.16-.47-.2-.41-.04.06.25.78.2.81-.05.02-.16-.2-.3-.38-.14-.19.14-.09-.3-.95s.14-1.3.17-1.75c.03-.45.38.17.19-.13-.19-.3 0-.89-.14-1.11-.13-.22-.88.25-.88.25.02-.22.69-.58 1.16-.92.47-.34.78-.06 1.16.05.39.13.41.09.28-.05-.13-.13.06-.17.36-.13.28.05.38.41.83.36.47-.03.05.09.11.22s-.06.11-.38.3c-.3.2.02.22.55.61s.38-.25.31-.55c-.07-.3.39-.06.39-.06.33.22.27.02.5.08.23.06.91.64.91.64-.83.44-.31.48-.17.59.14.11-.28.3-.28.3-.17-.17-.19.02-.3.08-.11.06-.02.22-.02.22-.56.09-.44.69-.42.83 0 .14-.38.36-.47.58-.09.2.25.64.06.66-.19.03-.34-.66-1.31-.41-.3.08-.94.41-.59 1.08.36.69.92-.19 1.11-.09.19.1-.06.53-.02.55.04.02.53.02.56.61.03.59.77.53.92.55.17 0 .7-.44.77-.45.06-.03.38-.28 1.03.09.66.36.98.31 1.2.47.22.16.08.47.28.58.2.11 1.06-.03 1.28.31.22.34-.88 2.09-1.22 2.28-.34.19-.48.64-.84.92s-.81.64-1.27.91c-.41.23-.47.66-.66.8 3.14-.7 5.48-3.5 5.48-6.84 0-3.86-3.14-7-7-7L7 1zm1.64 6.56c-.09.03-.28.22-.78-.08-.48-.3-.81-.23-.86-.28 0 0-.05-.11.17-.14.44-.05.98.41 1.11.41.13 0 .19-.13.41-.05.22.08.05.13-.05.14zM6.34 1.7c-.05-.03.03-.08.09-.14.03-.03.02-.11.05-.14.11-.11.61-.25.52.03-.11.27-.58.3-.66.25zm1.23.89c-.19-.02-.58-.05-.52-.14.3-.28-.09-.38-.34-.38-.25-.02-.34-.16-.22-.19.12-.03.61.02.7.08.08.06.52.25.55.38.02.13 0 .25-.17.25zm1.47-.05c-.14.09-.83-.41-.95-.52-.56-.48-.89-.31-1-.41-.11-.1-.08-.19.11-.34.19-.15.69.06 1 .09.3.03.66.27.66.55.02.25.33.5.19.63h-.01z"></path></svg>
+
+            All Threads
+        </a></li> <li><a href="https://laracasts.com/discuss?trending=1" class=" has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16" class="icon is-success"><path d="M5.05.31c.81 2.17.41 3.38-.52 4.31C3.55 5.67 1.98 6.45.9 7.98c-1.45 2.05-1.7 6.53 3.53 7.7-2.2-1.16-2.67-4.52-.3-6.61-.61 2.03.53 3.33 1.94 2.86 1.39-.47 2.3.53 2.27 1.67-.02.78-.31 1.44-1.13 1.81 3.42-.59 4.78-3.42 4.78-5.56 0-2.84-2.53-3.22-1.25-5.61-1.52.13-2.03 1.13-1.89 2.75.09 1.08-1.02 1.8-1.86 1.33-.67-.41-.66-1.19-.06-1.78C8.18 5.31 8.68 2.45 5.05.32L5.03.3l.02.01z"></path></svg>
+
+            Popular This Week
+        </a></li> <li><a href="https://laracasts.com/discuss?popular=1" class=" has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16" class="icon is-success"><path d="M5.05.31c.81 2.17.41 3.38-.52 4.31C3.55 5.67 1.98 6.45.9 7.98c-1.45 2.05-1.7 6.53 3.53 7.7-2.2-1.16-2.67-4.52-.3-6.61-.61 2.03.53 3.33 1.94 2.86 1.39-.47 2.3.53 2.27 1.67-.02.78-.31 1.44-1.13 1.81 3.42-.59 4.78-3.42 4.78-5.56 0-2.84-2.53-3.22-1.25-5.61-1.52.13-2.03 1.13-1.89 2.75.09 1.08-1.02 1.8-1.86 1.33-.67-.41-.66-1.19-.06-1.78C8.18 5.31 8.68 2.45 5.05.32L5.03.3l.02.01z"></path></svg>
+
+            Popular All Time
+        </a></li> <li><a href="https://laracasts.com/discuss?answered=1" class=" has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" class="icon is-success"><path d="M14 14c-.05.69-1.27 1-2 1H5.67L4 14V8c1.36 0 2.11-.75 3.13-1.88 1.23-1.36 1.14-2.56.88-4.13-.08-.5.5-1 1-1 .83 0 2 2.73 2 4l-.02 1.03c0 .69.33.97 1.02.97h2c.63 0 .98.36 1 1l-1 6L14 14zm0-8h-2.02l.02-.98C12 3.72 10.83 0 9 0c-.58 0-1.17.3-1.56.77-.36.41-.5.91-.42 1.41.25 1.48.28 2.28-.63 3.28-1 1.09-1.48 1.55-2.39 1.55H2C.94 7 0 7.94 0 9v4c0 1.06.94 2 2 2h1.72l1.44.86c.16.09.33.14.52.14h6.33c1.13 0 2.84-.5 3-1.88l.98-5.95c.02-.08.02-.14.02-.2-.03-1.17-.84-1.97-2-1.97H14z"></path></svg>
+
+            Solved
+        </a></li> <li><a href="https://laracasts.com/discuss?answered=0" class=" has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16" class="icon is-success"><path d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg>
+
+            Unsolved
+        </a></li> <li><a href="https://laracasts.com/discuss?fresh=1" class=" has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16" class="icon is-success"><path d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg>
+
+            No Replies Yet
+        </a></li> <li><a href="https://laracasts.com/discuss/leaderboard" class=" has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16" class="icon is-success"><path d="M12 13c0 .59 0 1-.59 1H4.59C4 14 4 13.59 4 13c0-.59 0-1 .59-1h6.81c.59 0 .59.41.59 1H12zM4.59 4h6.81c.59 0 .59-.41.59-1 0-.59 0-1-.59-1H4.59C4 2 4 2.41 4 3c0 .59 0 1 .59 1zm6.81 3H4.59C4 7 4 7.41 4 8c0 .59 0 1 .59 1h6.81c.59 0 .59-.41.59-1 0-.59 0-1-.59-1zM2 1h-.72c-.3.19-.58.25-1.03.34V2H1v2.14H.16V5H3v-.86H2V1zm.25 8.13c-.17 0-.45.03-.66.06.53-.56 1.14-1.25 1.14-1.89C2.71 6.52 2.17 6 1.37 6c-.59 0-.97.2-1.38.64l.58.58c.19-.19.38-.38.64-.38.28 0 .48.16.48.52 0 .53-.77 1.2-1.7 2.06V10h3l-.09-.88h-.66l.01.01zm-.08 3.78v-.03c.44-.19.64-.47.64-.86 0-.7-.56-1.11-1.44-1.11-.48 0-.89.19-1.28.52l.55.64c.25-.2.44-.31.69-.31.27 0 .42.13.42.36 0 .27-.2.44-.86.44v.75c.83 0 .98.17.98.47 0 .25-.23.38-.58.38-.28 0-.56-.14-.81-.38l-.48.66c.3.36.77.56 1.41.56.83 0 1.53-.41 1.53-1.16 0-.5-.31-.81-.77-.94v.01z"></path></svg>
+
+            Leaderboard
+        </a></li></ul> <p class="menu-label mt-4">
+                                Or Pick a Channel
+                            </p> <ul class="menu-list"><li class=" "><a href="https://laracasts.com/discuss"><span class="is-circle icon" style="color: black;"></span>
+            All
+        </a></li> <li><a href="https://laracasts.com/discuss/channels/code-review" class=" has-icon"><span class="is-circle icon" style="color: rgb(140, 211, 98);"></span>
+                Code Review
+            </a></li> <li><a href="https://laracasts.com/discuss/channels/elixir" class=" has-icon"><span class="is-circle icon" style="color: rgb(247, 201, 83);"></span>
+                Elixir
+            </a></li> <li><a href="https://laracasts.com/discuss/channels/eloquent" class=" has-icon"><span class="is-circle icon" style="color: rgb(9, 215, 193);"></span>
+                Eloquent
+            </a></li> <li><a href="https://laracasts.com/discuss/channels/envoyer" class=" has-icon"><span class="is-circle icon" style="color: rgb(245, 104, 87);"></span>
+                Envoyer
+            </a></li> <li><a href="https://laracasts.com/discuss/channels/forge" class=" has-icon"><span class="is-circle icon" style="color: rgb(93, 179, 183);"></span>
+                Forge
+            </a></li> <li><a href="https://laracasts.com/discuss/channels/general-discussion" class=" has-icon"><span class="is-circle icon" style="color: rgb(78, 137, 218);"></span>
+                General
+            </a></li> <li><a href="https://laracasts.com/discuss/channels/guides" class=" has-icon"><span class="is-circle icon" style="color: rgb(213, 30, 34);"></span>
+                Guides
+            </a></li> <li><a href="https://laracasts.com/discuss/channels/javascript" class=" has-icon"><span class="is-circle icon" style="color: rgb(154, 212, 224);"></span>
+                JavaScript
+            </a></li> <li><a href="https://laracasts.com/discuss/channels/laravel" class=" has-icon"><span class="is-circle icon" style="color: rgb(245, 104, 87);"></span>
+                Laravel
+            </a></li> <li><a href="https://laracasts.com/discuss/channels/lumen" class=" has-icon"><span class="is-circle icon" style="color: rgb(249, 169, 122);"></span>
+                Lumen
+            </a></li> <li><a href="https://laracasts.com/discuss/channels/requests" class=" has-icon"><span class="is-circle icon" style="color: rgb(187, 130, 78);"></span>
+                Requests
+            </a></li> <li><a href="https://laracasts.com/discuss/channels/servers" class=" has-icon"><span class="is-circle icon" style="color: rgb(249, 169, 122);"></span>
+                Servers
+            </a></li> <li><a href="https://laracasts.com/discuss/channels/site-improvements" class=" has-icon"><span class="is-circle icon" style="color: rgb(136, 173, 72);"></span>
+                Site Feedback
+            </a></li> <li><a href="https://laracasts.com/discuss/channels/spark" class=" has-icon"><span class="is-circle icon" style="color: rgb(102, 173, 211);"></span>
+                Spark
+            </a></li> <li><a href="https://laracasts.com/discuss/channels/testing" class=" has-icon"><span class="is-circle icon" style="color: rgb(218, 87, 87);"></span>
+                Testing
+            </a></li> <li><a href="https://laracasts.com/discuss/channels/tips" class=" has-icon"><span class="is-circle icon" style="color: rgb(131, 126, 182);"></span>
+                Tips
+            </a></li> <li><a href="https://laracasts.com/discuss/channels/vue" class=" has-icon"><span class="is-circle icon" style="color: rgb(58, 185, 129);"></span>
+                Vue
+            </a></li></ul></aside> <div class="column is-9 primary"><div class="pr-100-desktop"><h1 class="title is-normal is-3 mbb-1">Ho to access Config variables in laravel 5?</h1> <p class="fs-smaller mb-1-mobile"><strong class="color-text-lightest in-caps"><span class="is-hidden-mobile">Published 2 years ago</span>
+                    by <a href="https://laracasts.com/@ludwigmair">ludwigmair</a></strong></p> <div class="columns"><div class="column"><div class="forum-question mt-1"><div class="content user-content"><p>Hi,</p> <p>i am just wondering how to access Config Variables.</p> <p>in Laravel 4 it was</p> <pre><code class="hljs php"> Config::get(<span class="hljs-string">'filename.varname'</span>);
+</code></pre> <p>but this does not work in laravel 5</p> <p>is there any way to do this in laravel 5?</p> <p>any idea?</p> <p>thanks Ludwig</p></div> <div data-wow-delay=".3s" class="mt-2 is-answer wow fadeIn" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;"><div class="best-answer-panel"><h5 class="title is-5 is-vertically-centered mb-0"><span class="flex">Best Answer</span> <small class="is-hidden-mobile">
+                                            (As Selected By ludwigmair)
+                                        </small></h5> <div class="best-answer-reply-wrap box is-rounded"><div data-reply="" class="reply "><div class="media"><figure class="reply-avatar media-left pr-1"><span class="image is-75x75 mb-1"><a href="https://laracasts.com/@ludwigmair"><img src="./Ho to access Config variables in laravel 5__files/62693f9be16de4b1b46762a1e3c036b6" alt="ludwigmair" width="75" class="is-circle is-outlined bg-white"></a></span></figure> <div class="media-content" style="min-width: 0px;"><div class="is-flex mb-1"><h5 class="pbr-1 is-bold"><a href="https://laracasts.com/@ludwigmair">ludwigmair</a></h5> <a href="https://laracasts.com/discuss/channels/general-discussion/ho-to-access-config-variables-in-laravel-5/replies/25075" class="color-text-lightest is-hidden-mobile mbr-1">
+                           2 years ago
+                        </a></div> <div data-reply-body="" class="content user-content"><div><p>Hi,</p> <p>so i found out how it works</p> <p>you have to add the config file placed in config/ to the ConfigServiceProvider</p> <pre><code class="hljs php">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">register</span><span class="hljs-params">()</span>
+    </span>{
+        config([
+            <span class="hljs-string">'config/myfile.php'</span>,
+        ]);
+    }
+}
+</code></pre> <p>hope this helps</p> <p>Ludwig</p></div></div> <div class="reply-markdown-body" style="display: none;"><form method="POST" action="https://laracasts.com/discuss/channels/general-discussion//replies/25075"><input type="hidden" name="_method" value="PATCH"> <input type="hidden" name="_token" value="rPxYnZX5kF7rSgv9njZMUtqwIftBVi9S7kuqNpOF"> <div class="control"><textarea name="body_in_markdown" placeholder="Ask Away" class="textarea" required="required">Hi,
+
+so i found out how it works
+
+you have to add the config file placed in config/ to the ConfigServiceProvider
+```
+	public function register()
+	{
+		config([
+			'config/myfile.php',
+		]);
+	}
+}
+```
+
+hope this helps
+
+Ludwig
+</textarea></div> <div><button type="button" class="button is-muted mbr-1 is-outlined mb-1-mobile">
+            Cancel
+        </button> <button type="submit" class="button is-primary is-outlined">
+            Update Your Reply
+        </button></div></form></div> <footer class="is-vertically-centered reply-edit-links"></footer></div></div></div></div></div></div></div> <div data-wow-delay=".5s" class="wow fadeIn" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeIn;"><div data-reply="" class="reply "><div class="media"><figure class="reply-avatar media-left pr-1"><span class="image is-75x75 mb-1"><a href="https://laracasts.com/@xingfucoder"><img src="./Ho to access Config variables in laravel 5__files/5c261f141f982924eb3bbc30022f7a13" alt="xingfucoder" width="75" class="is-circle is-outlined bg-white"></a></span></figure> <div class="media-content" style="min-width: 0px;"><div class="is-flex mb-1"><h5 class="pbr-1 is-bold"><a href="https://laracasts.com/@xingfucoder">xingfucoder</a></h5> <a href="https://laracasts.com/discuss/channels/general-discussion/ho-to-access-config-variables-in-laravel-5/replies/25049" class="color-text-lightest is-hidden-mobile mbr-1">
+                           2 years ago
+                        </a> <span title="The higher the experience, the more trustworthy the user." class="color-success flex is-hidden-mobile">
+                            (66,385 XP)
+                        </span></div> <div data-reply-body="" class="content user-content"><div><p>Hi <a href="https://laracasts.com/@ludwigmair">@ludwigmair</a>, you can find an .env.example file in the root of your L5 Project.</p> <p>Rename to .env and you can put there your config values.</p> <p>Later you may use as follow:</p> <pre><code class="hljs php"><span class="hljs-string">'mysql'</span> =&gt; [
+            <span class="hljs-string">'driver'</span>    =&gt; <span class="hljs-string">'mysql'</span>,
+            <span class="hljs-string">'host'</span>      =&gt; env(<span class="hljs-string">'DB_HOST'</span>, <span class="hljs-string">'localhost'</span>),
+            <span class="hljs-string">'database'</span>  =&gt; env(<span class="hljs-string">'DB_DATABASE'</span>, <span class="hljs-string">'forge'</span>),
+            <span class="hljs-string">'username'</span>  =&gt; env(<span class="hljs-string">'DB_USERNAME'</span>, <span class="hljs-string">'forge'</span>),
+            <span class="hljs-string">'password'</span>  =&gt; env(<span class="hljs-string">'DB_PASSWORD'</span>, <span class="hljs-string">''</span>),
+            <span class="hljs-string">'charset'</span>   =&gt; <span class="hljs-string">'utf8'</span>,
+            <span class="hljs-string">'collation'</span> =&gt; <span class="hljs-string">'utf8_unicode_ci'</span>,
+            <span class="hljs-string">'prefix'</span>    =&gt; <span class="hljs-string">''</span>,
+            <span class="hljs-string">'strict'</span>    =&gt; <span class="hljs-keyword">false</span>,
+        ],
+</code></pre> <p>There you use the .env database config params for configure your database with the env() helper function that needs two arguments the first the environment config param to use, and the second is a default value.</p> <p>Hope it helps you.</p></div></div> <div class="reply-markdown-body" style="display: none;"><form method="POST" action="https://laracasts.com/discuss/channels/general-discussion/ho-to-access-config-variables-in-laravel-5/replies/25049"><input type="hidden" name="_method" value="PATCH"> <input type="hidden" name="_token" value="rPxYnZX5kF7rSgv9njZMUtqwIftBVi9S7kuqNpOF"> <div class="control"><textarea name="body_in_markdown" placeholder="Ask Away" class="textarea" required="required">Hi @ludwigmair, you can find an .env.example file in the root of your L5 Project.
+
+Rename to .env and you can put there your config values.
+
+Later you may use as follow:
+
+```
+'mysql' =&gt; [
+			'driver'    =&gt; 'mysql',
+			'host'      =&gt; env('DB_HOST', 'localhost'),
+			'database'  =&gt; env('DB_DATABASE', 'forge'),
+			'username'  =&gt; env('DB_USERNAME', 'forge'),
+			'password'  =&gt; env('DB_PASSWORD', ''),
+			'charset'   =&gt; 'utf8',
+			'collation' =&gt; 'utf8_unicode_ci',
+			'prefix'    =&gt; '',
+			'strict'    =&gt; false,
+		],
+```
+
+There you use the .env database config params for configure your database with the env() helper function that needs two arguments the first the environment config param to use, and the second is a default value.
+
+Hope it helps you.
+</textarea></div> <div><button type="button" class="button is-muted mbr-1 is-outlined mb-1-mobile">
+            Cancel
+        </button> <button type="submit" class="button is-primary is-outlined">
+            Update Your Reply
+        </button></div></form></div> <footer class="is-vertically-centered reply-edit-links"></footer></div></div></div> <div data-reply="" class="reply "><div class="media"><figure class="reply-avatar media-left pr-1"><span class="image is-75x75 mb-1"><a href="https://laracasts.com/@ludo237"><img src="./Ho to access Config variables in laravel 5__files/2dca89fe809118d3a93d5a51e2cd28bd" alt="ludo237" width="75" class="is-circle is-outlined bg-white"></a></span></figure> <div class="media-content" style="min-width: 0px;"><div class="is-flex mb-1"><h5 class="pbr-1 is-bold"><i title="Mendrisio" class="flag flag-ch is-hidden-mobile"></i> <a href="https://laracasts.com/@ludo237">ludo237</a></h5> <a href="https://laracasts.com/discuss/channels/general-discussion/ho-to-access-config-variables-in-laravel-5/replies/25055" class="color-text-lightest is-hidden-mobile mbr-1">
+                           2 years ago
+                        </a> <span title="The higher the experience, the more trustworthy the user." class="color-success flex is-hidden-mobile">
+                            (80,525 XP)
+                        </span></div> <div data-reply-body="" class="content user-content"><div><p><a href="https://laracasts.com/@codeatbusiness">@codeatbusiness</a> this is off topic, what <a href="https://laracasts.com/@ludwigmair">@ludwigmair</a> means is how to access to the configuration variables inside the application. With Laravel 4.x you can use <code>Config::get('')</code>  in Laravel 5 there's a contract for that in <code>Illuminate\Contracts\Config\Repository</code> but I don't know if it has got a Facade or something, I still ignoring Laravel 5 until the stable release.</p></div></div> <div class="reply-markdown-body" style="display: none;"><form method="POST" action="https://laracasts.com/discuss/channels/general-discussion/ho-to-access-config-variables-in-laravel-5/replies/25055"><input type="hidden" name="_method" value="PATCH"> <input type="hidden" name="_token" value="rPxYnZX5kF7rSgv9njZMUtqwIftBVi9S7kuqNpOF"> <div class="control"><textarea name="body_in_markdown" placeholder="Ask Away" class="textarea" required="required">@codeatbusiness this is off topic, what @ludwigmair means is how to access to the configuration variables inside the application. With Laravel 4.x you can use `Config::get('')`  in Laravel 5 there's a contract for that in `Illuminate\Contracts\Config\Repository` but I don't know if it has got a Facade or something, I still ignoring Laravel 5 until the stable release.</textarea></div> <div><button type="button" class="button is-muted mbr-1 is-outlined mb-1-mobile">
+            Cancel
+        </button> <button type="submit" class="button is-primary is-outlined">
+            Update Your Reply
+        </button></div></form></div> <footer class="is-vertically-centered reply-edit-links"></footer></div></div></div> <div data-reply="" class="reply "><div class="media"><figure class="reply-avatar media-left pr-1"><span class="image is-75x75 mb-1"><a href="https://laracasts.com/@xingfucoder"><img src="./Ho to access Config variables in laravel 5__files/5c261f141f982924eb3bbc30022f7a13" alt="xingfucoder" width="75" class="is-circle is-outlined bg-white"></a></span></figure> <div class="media-content" style="min-width: 0px;"><div class="is-flex mb-1"><h5 class="pbr-1 is-bold"><a href="https://laracasts.com/@xingfucoder">xingfucoder</a></h5> <a href="https://laracasts.com/discuss/channels/general-discussion/ho-to-access-config-variables-in-laravel-5/replies/25061" class="color-text-lightest is-hidden-mobile mbr-1">
+                           2 years ago
+                        </a> <span title="The higher the experience, the more trustworthy the user." class="color-success flex is-hidden-mobile">
+                            (66,385 XP)
+                        </span></div> <div data-reply-body="" class="content user-content"><div><p>Ok sorry, I didn't understand well it.</p></div></div> <div class="reply-markdown-body" style="display: none;"><form method="POST" action="https://laracasts.com/discuss/channels/general-discussion/ho-to-access-config-variables-in-laravel-5/replies/25061"><input type="hidden" name="_method" value="PATCH"> <input type="hidden" name="_token" value="rPxYnZX5kF7rSgv9njZMUtqwIftBVi9S7kuqNpOF"> <div class="control"><textarea name="body_in_markdown" placeholder="Ask Away" class="textarea" required="required">Ok sorry, I didn't understand well it.</textarea></div> <div><button type="button" class="button is-muted mbr-1 is-outlined mb-1-mobile">
+            Cancel
+        </button> <button type="submit" class="button is-primary is-outlined">
+            Update Your Reply
+        </button></div></form></div> <footer class="is-vertically-centered reply-edit-links"></footer></div></div></div> <div data-reply="" class="reply "><div class="media"><figure class="reply-avatar media-left pr-1"><span class="image is-75x75 mb-1"><a href="https://laracasts.com/@ludwigmair"><img src="./Ho to access Config variables in laravel 5__files/62693f9be16de4b1b46762a1e3c036b6" alt="ludwigmair" width="75" class="is-circle is-outlined bg-white"></a></span></figure> <div class="media-content" style="min-width: 0px;"><div class="is-flex mb-1"><h5 class="pbr-1 is-bold"><a href="https://laracasts.com/@ludwigmair">ludwigmair</a></h5> <a href="https://laracasts.com/discuss/channels/general-discussion/ho-to-access-config-variables-in-laravel-5/replies/25070" class="color-text-lightest is-hidden-mobile mbr-1">
+                           2 years ago
+                        </a> <span title="The higher the experience, the more trustworthy the user." class="color-success flex is-hidden-mobile">
+                            (6,695 XP)
+                        </span></div> <div data-reply-body="" class="content user-content"><div><p>Hi,</p> <p>Hi guys,
+thanks for the brief response</p> <p>you are right ludo237:)</p> <p>what i found out, if i place the vars in config/app.php, i can call them with</p> <pre><code class="hljs php">config(<span class="hljs-string">'app.myVarname'</span>);
+<span class="hljs-comment">// or </span>
+Config::get(<span class="hljs-string">'app.myVarname'</span>);
+</code></pre> <p>but if i create a additional config file in the config folder, i am not able to access this file values.</p> <p>does anyone know how to do this?</p> <p>thanks Ludwig</p></div></div> <div class="reply-markdown-body" style="display: none;"><form method="POST" action="https://laracasts.com/discuss/channels/general-discussion/ho-to-access-config-variables-in-laravel-5/replies/25070"><input type="hidden" name="_method" value="PATCH"> <input type="hidden" name="_token" value="rPxYnZX5kF7rSgv9njZMUtqwIftBVi9S7kuqNpOF"> <div class="control"><textarea name="body_in_markdown" placeholder="Ask Away" class="textarea" required="required">Hi,
+
+Hi guys,
+thanks for the brief response
+
+you are right ludo237:)
+
+what i found out, if i place the vars in config/app.php, i can call them with
+```
+config('app.myVarname');
+// or 
+Config::get('app.myVarname');
+```
+but if i create a additional config file in the config folder, i am not able to access this file values.
+
+does anyone know how to do this?
+
+thanks Ludwig</textarea></div> <div><button type="button" class="button is-muted mbr-1 is-outlined mb-1-mobile">
+            Cancel
+        </button> <button type="submit" class="button is-primary is-outlined">
+            Update Your Reply
+        </button></div></form></div> <footer class="is-vertically-centered reply-edit-links"></footer></div></div></div> <div data-reply="" class="reply "><div class="media"><figure class="reply-avatar media-left pr-1"><span class="image is-75x75 mb-1"><a href="https://laracasts.com/@ludwigmair"><img src="./Ho to access Config variables in laravel 5__files/62693f9be16de4b1b46762a1e3c036b6" alt="ludwigmair" width="75" class="is-circle is-outlined bg-white"></a></span></figure> <div class="media-content" style="min-width: 0px;"><div class="is-flex mb-1"><h5 class="pbr-1 is-bold"><a href="https://laracasts.com/@ludwigmair">ludwigmair</a></h5> <a href="https://laracasts.com/discuss/channels/general-discussion/ho-to-access-config-variables-in-laravel-5/replies/25075" class="color-text-lightest is-hidden-mobile mbr-1">
+                           2 years ago
+                        </a> <span title="The higher the experience, the more trustworthy the user." class="color-success flex is-hidden-mobile">
+                            (6,695 XP)
+                        </span></div> <div data-reply-body="" class="content user-content"><div><p>Hi,</p> <p>so i found out how it works</p> <p>you have to add the config file placed in config/ to the ConfigServiceProvider</p> <pre><code class="hljs php">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">register</span><span class="hljs-params">()</span>
+    </span>{
+        config([
+            <span class="hljs-string">'config/myfile.php'</span>,
+        ]);
+    }
+}
+</code></pre> <p>hope this helps</p> <p>Ludwig</p></div></div> <div class="reply-markdown-body" style="display: none;"><form method="POST" action="https://laracasts.com/discuss/channels/general-discussion/ho-to-access-config-variables-in-laravel-5/replies/25075"><input type="hidden" name="_method" value="PATCH"> <input type="hidden" name="_token" value="rPxYnZX5kF7rSgv9njZMUtqwIftBVi9S7kuqNpOF"> <div class="control"><textarea name="body_in_markdown" placeholder="Ask Away" class="textarea" required="required">Hi,
+
+so i found out how it works
+
+you have to add the config file placed in config/ to the ConfigServiceProvider
+```
+	public function register()
+	{
+		config([
+			'config/myfile.php',
+		]);
+	}
+}
+```
+
+hope this helps
+
+Ludwig
+</textarea></div> <div><button type="button" class="button is-muted mbr-1 is-outlined mb-1-mobile">
+            Cancel
+        </button> <button type="submit" class="button is-primary is-outlined">
+            Update Your Reply
+        </button></div></form></div> <footer class="is-vertically-centered reply-edit-links"></footer></div></div></div> <div data-reply="" class="reply "><div class="media"><figure class="reply-avatar media-left pr-1"><span class="image is-75x75 mb-1"><a href="https://laracasts.com/@sdebacker"><img src="./Ho to access Config variables in laravel 5__files/9c0168e30a360315e29e97321fa41966" alt="sdebacker" width="75" class="is-circle is-outlined bg-white"></a></span></figure> <div class="media-content" style="min-width: 0px;"><div class="is-flex mb-1"><h5 class="pbr-1 is-bold"><i title="Brussels" class="flag flag-be is-hidden-mobile"></i> <a href="https://laracasts.com/@sdebacker">sdebacker</a></h5> <a href="https://laracasts.com/discuss/channels/general-discussion/ho-to-access-config-variables-in-laravel-5/replies/30188" class="color-text-lightest is-hidden-mobile mbr-1">
+                           2 years ago
+                        </a> <span title="The higher the experience, the more trustworthy the user." class="color-success flex is-hidden-mobile">
+                            (3,395 XP)
+                        </span></div> <div data-reply-body="" class="content user-content"><div><p><a href="https://laracasts.com/@ludwigmair">@ludwigmair</a>’s solution doesn’t work for me…</p></div></div> <div class="reply-markdown-body" style="display: none;"><form method="POST" action="https://laracasts.com/discuss/channels/general-discussion/ho-to-access-config-variables-in-laravel-5/replies/30188"><input type="hidden" name="_method" value="PATCH"> <input type="hidden" name="_token" value="rPxYnZX5kF7rSgv9njZMUtqwIftBVi9S7kuqNpOF"> <div class="control"><textarea name="body_in_markdown" placeholder="Ask Away" class="textarea" required="required">@ludwigmair’s solution doesn’t work for me…</textarea></div> <div><button type="button" class="button is-muted mbr-1 is-outlined mb-1-mobile">
+            Cancel
+        </button> <button type="submit" class="button is-primary is-outlined">
+            Update Your Reply
+        </button></div></form></div> <footer class="is-vertically-centered reply-edit-links"></footer></div></div></div> <div data-reply="" class="reply "><div class="media"><figure class="reply-avatar media-left pr-1"><span class="image is-75x75 mb-1"><a href="https://laracasts.com/@sdebacker"><img src="./Ho to access Config variables in laravel 5__files/9c0168e30a360315e29e97321fa41966" alt="sdebacker" width="75" class="is-circle is-outlined bg-white"></a></span></figure> <div class="media-content" style="min-width: 0px;"><div class="is-flex mb-1"><h5 class="pbr-1 is-bold"><i title="Brussels" class="flag flag-be is-hidden-mobile"></i> <a href="https://laracasts.com/@sdebacker">sdebacker</a></h5> <a href="https://laracasts.com/discuss/channels/general-discussion/ho-to-access-config-variables-in-laravel-5/replies/30190" class="color-text-lightest is-hidden-mobile mbr-1">
+                           2 years ago
+                        </a> <span title="The higher the experience, the more trustworthy the user." class="color-success flex is-hidden-mobile">
+                            (3,395 XP)
+                        </span></div> <div data-reply-body="" class="content user-content"><div><p>Sorry I wasn’t clear.<br>
+I try to access a key from a config file in a subfolder: <strong>/config/foo/bar.php</strong><br>
+This file contains a <strong>baz</strong> key.</p> <p>I tried these code with no luck:</p> <pre><code class="language-php hljs">config(<span class="hljs-string">'foo.bar.baz'</span>);
+config(<span class="hljs-string">'foo/bar.baz'</span>);
+</code></pre></div></div> <div class="reply-markdown-body" style="display: none;"><form method="POST" action="https://laracasts.com/discuss/channels/general-discussion/ho-to-access-config-variables-in-laravel-5/replies/30190"><input type="hidden" name="_method" value="PATCH"> <input type="hidden" name="_token" value="rPxYnZX5kF7rSgv9njZMUtqwIftBVi9S7kuqNpOF"> <div class="control"><textarea name="body_in_markdown" placeholder="Ask Away" class="textarea" required="required">Sorry I wasn’t clear.  
+I try to access a key from a config file in a subfolder: **/config/foo/bar.php**  
+This file contains a **baz** key.  
+
+I tried these code with no luck:
+
+```php
+config('foo.bar.baz');
+config('foo/bar.baz');
+```</textarea></div> <div><button type="button" class="button is-muted mbr-1 is-outlined mb-1-mobile">
+            Cancel
+        </button> <button type="submit" class="button is-primary is-outlined">
+            Update Your Reply
+        </button></div></form></div> <footer class="is-vertically-centered reply-edit-links"></footer></div></div></div> <div data-reply="" class="reply "><div class="media"><figure class="reply-avatar media-left pr-1"><span class="image is-75x75 mb-1"><a href="https://laracasts.com/@toniperic"><img src="./Ho to access Config variables in laravel 5__files/3917969a7afee17768b3adcf7cc4eb5e" alt="toniperic" width="75" class="is-circle is-outlined bg-white"></a></span></figure> <div class="media-content" style="min-width: 0px;"><div class="is-flex mb-1"><h5 class="pbr-1 is-bold"><i title="Zagreb, Croatia" class="flag flag-hr is-hidden-mobile"></i> <a href="https://laracasts.com/@toniperic">toniperic</a></h5> <a href="https://laracasts.com/discuss/channels/general-discussion/ho-to-access-config-variables-in-laravel-5/replies/30192" class="color-text-lightest is-hidden-mobile mbr-1">
+                           2 years ago
+                        </a> <span title="The higher the experience, the more trustworthy the user." class="color-success flex is-hidden-mobile">
+                            (213,345 XP)
+                        </span></div> <div data-reply-body="" class="content user-content"><div><p><a href="https://laracasts.com/@sdebacker">@sdebacker</a> <a href="https://laracasts.com/@ludwigmair">@ludwigmair</a> you could just do <code>config('bar.baz')</code>, even though the config file is in <code>config/foo/bar.php</code>.</p></div></div> <div class="reply-markdown-body" style="display: none;"><form method="POST" action="https://laracasts.com/discuss/channels/general-discussion/ho-to-access-config-variables-in-laravel-5/replies/30192"><input type="hidden" name="_method" value="PATCH"> <input type="hidden" name="_token" value="rPxYnZX5kF7rSgv9njZMUtqwIftBVi9S7kuqNpOF"> <div class="control"><textarea name="body_in_markdown" placeholder="Ask Away" class="textarea" required="required">@sdebacker @ludwigmair you could just do `config('bar.baz')`, even though the config file is in `config/foo/bar.php`.</textarea></div> <div><button type="button" class="button is-muted mbr-1 is-outlined mb-1-mobile">
+            Cancel
+        </button> <button type="submit" class="button is-primary is-outlined">
+            Update Your Reply
+        </button></div></form></div> <footer class="is-vertically-centered reply-edit-links"></footer></div></div></div> <div data-reply="" class="reply "><div class="media"><figure class="reply-avatar media-left pr-1"><span class="image is-75x75 mb-1"><a href="https://laracasts.com/@sdebacker"><img src="./Ho to access Config variables in laravel 5__files/9c0168e30a360315e29e97321fa41966" alt="sdebacker" width="75" class="is-circle is-outlined bg-white"></a></span></figure> <div class="media-content" style="min-width: 0px;"><div class="is-flex mb-1"><h5 class="pbr-1 is-bold"><i title="Brussels" class="flag flag-be is-hidden-mobile"></i> <a href="https://laracasts.com/@sdebacker">sdebacker</a></h5> <a href="https://laracasts.com/discuss/channels/general-discussion/ho-to-access-config-variables-in-laravel-5/replies/30197" class="color-text-lightest is-hidden-mobile mbr-1">
+                           2 years ago
+                        </a> <span title="The higher the experience, the more trustworthy the user." class="color-success flex is-hidden-mobile">
+                            (3,395 XP)
+                        </span></div> <div data-reply-body="" class="content user-content"><div><p><a href="https://laracasts.com/@toniperic">@toniperic</a> Thanks, it works.<br>
+But, what if two packages publish a config file with same name, like :<br> <strong>/config/package1/bar.php</strong><br> <strong>/config/package2/bar.php</strong> ?</p></div></div> <div class="reply-markdown-body" style="display: none;"><form method="POST" action="https://laracasts.com/discuss/channels/general-discussion/ho-to-access-config-variables-in-laravel-5/replies/30197"><input type="hidden" name="_method" value="PATCH"> <input type="hidden" name="_token" value="rPxYnZX5kF7rSgv9njZMUtqwIftBVi9S7kuqNpOF"> <div class="control"><textarea name="body_in_markdown" placeholder="Ask Away" class="textarea" required="required">@toniperic Thanks, it works.  
+But, what if two packages publish a config file with same name, like :  
+**/config/package1/bar.php**  
+**/config/package2/bar.php** ?</textarea></div> <div><button type="button" class="button is-muted mbr-1 is-outlined mb-1-mobile">
+            Cancel
+        </button> <button type="submit" class="button is-primary is-outlined">
+            Update Your Reply
+        </button></div></form></div> <footer class="is-vertically-centered reply-edit-links"></footer></div></div></div> <div data-reply="" class="reply "><div class="media"><figure class="reply-avatar media-left pr-1"><span class="image is-75x75 mb-1"><a href="https://laracasts.com/@james2doyle"><img src="./Ho to access Config variables in laravel 5__files/b7375c88e1864c4ddf0d7bdab58e4cca" alt="james2doyle" width="75" class="is-circle is-outlined bg-white"></a></span></figure> <div class="media-content" style="min-width: 0px;"><div class="is-flex mb-1"><h5 class="pbr-1 is-bold"><a href="https://laracasts.com/@james2doyle">james2doyle</a></h5> <a href="https://laracasts.com/discuss/channels/general-discussion/ho-to-access-config-variables-in-laravel-5/replies/54849" class="color-text-lightest is-hidden-mobile mbr-1">
+                           2 years ago
+                        </a> <span title="The higher the experience, the more trustworthy the user." class="color-success flex is-hidden-mobile">
+                            (35,700 XP)
+                        </span></div> <div data-reply-body="" class="content user-content"><div><p>In <code>/config/app.php</code> you can add a line like so:</p> <pre><code class="hljs php"><span class="hljs-string">'theme_path'</span> =&gt; <span class="hljs-keyword">__DIR__</span>.<span class="hljs-string">'/../resources/views/theme'</span>,
+</code></pre> <p>Then in any model/controller/etc. you can access that value via <code>config('app.theme_path')</code> or <code>Config::get('app.theme_path')</code>.</p> <p>If you want to use <code>Config::get('app.theme_path')</code>, make sure you include the <a href="http://laravel.com/docs/5.0/facades#facade-class-reference">Config facade</a>.</p></div></div> <div class="reply-markdown-body" style="display: none;"><form method="POST" action="https://laracasts.com/discuss/channels/general-discussion/ho-to-access-config-variables-in-laravel-5/replies/54849"><input type="hidden" name="_method" value="PATCH"> <input type="hidden" name="_token" value="rPxYnZX5kF7rSgv9njZMUtqwIftBVi9S7kuqNpOF"> <div class="control"><textarea name="body_in_markdown" placeholder="Ask Away" class="textarea" required="required">In `/config/app.php` you can add a line like so:
+
+```
+'theme_path' =&gt; __DIR__.'/../resources/views/theme',
+```
+
+Then in any model/controller/etc. you can access that value via `config('app.theme_path')` or `Config::get('app.theme_path')`.
+
+If you want to use `Config::get('app.theme_path')`, make sure you include the [Config facade](http://laravel.com/docs/5.0/facades#facade-class-reference).</textarea></div> <div><button type="button" class="button is-muted mbr-1 is-outlined mb-1-mobile">
+            Cancel
+        </button> <button type="submit" class="button is-primary is-outlined">
+            Update Your Reply
+        </button></div></form></div> <footer class="is-vertically-centered reply-edit-links"></footer></div></div></div> <div data-reply="" class="reply "><div class="media"><figure class="reply-avatar media-left pr-1"><span class="image is-75x75 mb-1"><a href="https://laracasts.com/@cbj4074"><img src="./Ho to access Config variables in laravel 5__files/79b9e05b03252fbca412505e42ce23c8" alt="cbj4074" width="75" class="is-circle is-outlined bg-white"></a></span></figure> <div class="media-content" style="min-width: 0px;"><div class="is-flex mb-1"><h5 class="pbr-1 is-bold"><a href="https://laracasts.com/@cbj4074">cbj4074</a></h5> <a href="https://laracasts.com/discuss/channels/general-discussion/ho-to-access-config-variables-in-laravel-5/replies/56246" class="color-text-lightest is-hidden-mobile mbr-1">
+                           2 years ago
+                        </a> <span title="The higher the experience, the more trustworthy the user." class="color-success flex is-hidden-mobile">
+                            (3,895 XP)
+                        </span></div> <div data-reply-body="" class="content user-content"><div><p>1.) There's no need to <code>use</code> the <code>Config</code> facade to get configuration values; there is now an equivalent helper-method, <code>config()</code>.</p> <p>2.) In Laravel 5, configurations are no longer "namespaced", which is critical to understand when creating a configuration file (and particularly when merging configuration files).</p> <p>In Laravel 4, the configuration options for a specific package were nested under a namespaced array, like so:</p> <pre><code class="language-php hljs"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'myextension'</span> =&gt; [
+        <span class="hljs-string">'host'</span> =&gt; <span class="hljs-string">'localhost'</span>,
+        <span class="hljs-string">'port'</span> =&gt; <span class="hljs-number">443</span>,
+    ],
+];
+</code></pre> <p>In Laravel 5, the equivalent is:</p> <pre><code class="language-php hljs"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'host'</span> =&gt; <span class="hljs-string">'localhost'</span>,
+    <span class="hljs-string">'port'</span> =&gt; <span class="hljs-number">443</span>,
+];
+</code></pre> <p>3.) Rather than store your custom configuration values in <code>/config/app.php</code>, a cleaner approach is to store them in your own configuration file, e.g., <code>/config/myname-mypackage.php</code>. You would then retrieve all values with something like:</p> <pre><code class="language-php hljs">$config = config(<span class="hljs-string">'myname-mypackage'</span>);
+</code></pre> <p>To retrieve only an individual value, simply use dot-notation:</p> <pre><code class="language-php hljs">$config = config(<span class="hljs-string">'myname-mypackage.host'</span>);
+</code></pre> <p>It is possible to nest configuration files within subdirectories (within <code>/config/</code>), too, which can be necessary in order to prevent conflicts ( <a href="https://laracasts.com/@sdebacker">@sdebacker</a> asked about this -- great question ).</p> <p>If you create your configuration file at, for example, <code>/config/myname/mypackage.php</code>, you would access the values using dots in place of the directory separators:</p> <pre><code class="language-php hljs">$config = config(<span class="hljs-string">'myname.mypackage'</span>);
+</code></pre> <p>4.) It's simple to merge configuration files using a service provider's <code>register()</code> method:</p> <pre><code class="language-php hljs"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">register</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">$this</span>-&gt;mergeConfigFrom(
+        <span class="hljs-keyword">__DIR__</span>.<span class="hljs-string">'/../config/config.php'</span>, <span class="hljs-string">'myname-mypackage'</span>
+    );
+}
+</code></pre> <p>(note that we omit the <code>.php</code> extension in the second argument)</p> <p>5.) If you're building your own packages, you can specify any number of configuration files to be published when the new <code>vendor:publish</code> artisan command is executed:</p> <pre><code class="language-php hljs"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">boot</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">$this</span>-&gt;publishes([
+        <span class="hljs-keyword">__DIR__</span>.<span class="hljs-string">'/../config/config.php'</span> =&gt; config_path(<span class="hljs-string">'myname-mypackage.php'</span>),
+    ]);
+}
+</code></pre> <p>For more information, refer to the relevant doc at <a href="http://laravel.com/docs/master/packages#configuration" target="_blank">http://laravel.com/docs/master/packages#configuration</a> .</p></div></div> <div class="reply-markdown-body" style="display: none;"><form method="POST" action="https://laracasts.com/discuss/channels/general-discussion/ho-to-access-config-variables-in-laravel-5/replies/56246"><input type="hidden" name="_method" value="PATCH"> <input type="hidden" name="_token" value="rPxYnZX5kF7rSgv9njZMUtqwIftBVi9S7kuqNpOF"> <div class="control"><textarea name="body_in_markdown" placeholder="Ask Away" class="textarea" required="required">1.) There's no need to `use` the `Config` facade to get configuration values; there is now an equivalent helper-method, `config()`.
+
+2.) In Laravel 5, configurations are no longer "namespaced", which is critical to understand when creating a configuration file (and particularly when merging configuration files).
+
+In Laravel 4, the configuration options for a specific package were nested under a namespaced array, like so:
+
+```php
+return [
+	'myextension' =&gt; [
+		'host' =&gt; 'localhost',
+		'port' =&gt; 443,
+	],
+];
+```
+
+In Laravel 5, the equivalent is:
+
+```php
+return [
+	'host' =&gt; 'localhost',
+	'port' =&gt; 443,
+];
+```
+
+3.) Rather than store your custom configuration values in `/config/app.php`, a cleaner approach is to store them in your own configuration file, e.g., `/config/myname-mypackage.php`. You would then retrieve all values with something like:
+
+```php
+$config = config('myname-mypackage');
+```
+
+To retrieve only an individual value, simply use dot-notation:
+
+```php
+$config = config('myname-mypackage.host');
+```
+
+It is possible to nest configuration files within subdirectories (within `/config/`), too, which can be necessary in order to prevent conflicts ( @sdebacker asked about this -- great question ).
+
+If you create your configuration file at, for example, `/config/myname/mypackage.php`, you would access the values using dots in place of the directory separators:
+
+```php
+$config = config('myname.mypackage');
+```
+
+4.) It's simple to merge configuration files using a service provider's `register()` method:
+
+```php
+public function register()
+{
+	$this-&gt;mergeConfigFrom(
+		__DIR__.'/../config/config.php', 'myname-mypackage'
+	);
+}
+```
+
+(note that we omit the `.php` extension in the second argument)
+
+5.) If you're building your own packages, you can specify any number of configuration files to be published when the new `vendor:publish` artisan command is executed:
+
+```php
+public function boot()
+{
+	$this-&gt;publishes([
+		__DIR__.'/../config/config.php' =&gt; config_path('myname-mypackage.php'),
+	]);
+}
+```
+
+For more information, refer to the relevant doc at http://laravel.com/docs/master/packages#configuration .</textarea></div> <div><button type="button" class="button is-muted mbr-1 is-outlined mb-1-mobile">
+            Cancel
+        </button> <button type="submit" class="button is-primary is-outlined">
+            Update Your Reply
+        </button></div></form></div> <footer class="is-vertically-centered reply-edit-links"></footer></div></div></div> <div data-reply="" class="reply "><div class="media"><figure class="reply-avatar media-left pr-1"><span class="image is-75x75 mb-1"><a href="https://laracasts.com/@bendubuisson"><img src="./Ho to access Config variables in laravel 5__files/81bb50acb5f8f2e2c978d63ad4ef328a" alt="bendubuisson" width="75" class="is-circle is-outlined bg-white"></a></span></figure> <div class="media-content" style="min-width: 0px;"><div class="is-flex mb-1"><h5 class="pbr-1 is-bold"><a href="https://laracasts.com/@bendubuisson">bendubuisson</a></h5> <a href="https://laracasts.com/discuss/channels/general-discussion/ho-to-access-config-variables-in-laravel-5/replies/70283" class="color-text-lightest is-hidden-mobile mbr-1">
+                           2 years ago
+                        </a> <span title="The higher the experience, the more trustworthy the user." class="color-success flex is-hidden-mobile">
+                            (435 XP)
+                        </span></div> <div data-reply-body="" class="content user-content"><div><p>if you chuck them in your .env file then you can retrieve like so <code>env('WHATEVER')</code>
+That's if you have the following value in your .env <code>WHATEVER=somevalue</code></p></div></div> <div class="reply-markdown-body" style="display: none;"><form method="POST" action="https://laracasts.com/discuss/channels/general-discussion/ho-to-access-config-variables-in-laravel-5/replies/70283"><input type="hidden" name="_method" value="PATCH"> <input type="hidden" name="_token" value="rPxYnZX5kF7rSgv9njZMUtqwIftBVi9S7kuqNpOF"> <div class="control"><textarea name="body_in_markdown" placeholder="Ask Away" class="textarea" required="required">if you chuck them in your .env file then you can retrieve like so `env('WHATEVER')`
+That's if you have the following value in your .env `WHATEVER=somevalue`</textarea></div> <div><button type="button" class="button is-muted mbr-1 is-outlined mb-1-mobile">
+            Cancel
+        </button> <button type="submit" class="button is-primary is-outlined">
+            Update Your Reply
+        </button></div></form></div> <footer class="is-vertically-centered reply-edit-links"></footer></div></div></div> <div data-reply="" class="reply "><div class="media"><figure class="reply-avatar media-left pr-1"><span class="image is-75x75 mb-1"><a href="https://laracasts.com/@gildniy"><img src="./Ho to access Config variables in laravel 5__files/3452fc261f0c8435580358d576fdc23e" alt="gildniy" width="75" class="is-circle is-outlined bg-white"></a></span></figure> <div class="media-content" style="min-width: 0px;"><div class="is-flex mb-1"><h5 class="pbr-1 is-bold"><i title="Rwanda" class="flag flag-rw is-hidden-mobile"></i> <a href="https://laracasts.com/@gildniy">gildniy</a></h5> <a href="https://laracasts.com/discuss/channels/general-discussion/ho-to-access-config-variables-in-laravel-5/replies/78943" class="color-text-lightest is-hidden-mobile mbr-1">
+                           1 year ago
+                        </a> <span title="The higher the experience, the more trustworthy the user." class="color-success flex is-hidden-mobile">
+                            (107,255 XP)
+                        </span></div> <div data-reply-body="" class="content user-content"><div><p>Config::get('configfile.variable'); This works like charm in the controller of L5.1</p></div></div> <div class="reply-markdown-body" style="display: none;"><form method="POST" action="https://laracasts.com/discuss/channels/general-discussion/ho-to-access-config-variables-in-laravel-5/replies/78943"><input type="hidden" name="_method" value="PATCH"> <input type="hidden" name="_token" value="rPxYnZX5kF7rSgv9njZMUtqwIftBVi9S7kuqNpOF"> <div class="control"><textarea name="body_in_markdown" placeholder="Ask Away" class="textarea" required="required">Config::get('configfile.variable'); This works like charm in the controller of L5.1</textarea></div> <div><button type="button" class="button is-muted mbr-1 is-outlined mb-1-mobile">
+            Cancel
+        </button> <button type="submit" class="button is-primary is-outlined">
+            Update Your Reply
+        </button></div></form></div> <footer class="is-vertically-centered reply-edit-links"></footer></div></div></div> <div data-reply="" class="reply "><div class="media"><figure class="reply-avatar media-left pr-1"><span class="image is-75x75 mb-1"><a href="https://laracasts.com/@manshu"><img src="./Ho to access Config variables in laravel 5__files/bd19d254f393c165efd2cae8801ac4a9" alt="manshu" width="75" class="is-circle is-outlined bg-white"></a></span></figure> <div class="media-content" style="min-width: 0px;"><div class="is-flex mb-1"><h5 class="pbr-1 is-bold"><i title="Vienna, VA" class="flag flag-us is-hidden-mobile"></i> <a href="https://laracasts.com/@manshu">manshu</a></h5> <a href="https://laracasts.com/discuss/channels/general-discussion/ho-to-access-config-variables-in-laravel-5/replies/118157" class="color-text-lightest is-hidden-mobile mbr-1">
+                           1 year ago
+                        </a> <span title="The higher the experience, the more trustworthy the user." class="color-success flex is-hidden-mobile">
+                            (72,075 XP)
+                        </span></div> <div data-reply-body="" class="content user-content"><div><p>Im still trying to figure this one out for laravel 5.1 any takers ? Old Tutorials are no help.</p></div></div> <div class="reply-markdown-body" style="display: none;"><form method="POST" action="https://laracasts.com/discuss/channels/general-discussion/ho-to-access-config-variables-in-laravel-5/replies/118157"><input type="hidden" name="_method" value="PATCH"> <input type="hidden" name="_token" value="rPxYnZX5kF7rSgv9njZMUtqwIftBVi9S7kuqNpOF"> <div class="control"><textarea name="body_in_markdown" placeholder="Ask Away" class="textarea" required="required">Im still trying to figure this one out for laravel 5.1 any takers ? Old Tutorials are no help.</textarea></div> <div><button type="button" class="button is-muted mbr-1 is-outlined mb-1-mobile">
+            Cancel
+        </button> <button type="submit" class="button is-primary is-outlined">
+            Update Your Reply
+        </button></div></form></div> <footer class="is-vertically-centered reply-edit-links"></footer></div></div></div> <div data-reply="" class="reply "><div class="media"><figure class="reply-avatar media-left pr-1"><span class="image is-75x75 mb-1"><a href="https://laracasts.com/@ABDELRHMAN"><img src="./Ho to access Config variables in laravel 5__files/8585d96fbc33b9a1f74ae6eab4bc690f" alt="ABDELRHMAN" width="75" class="is-circle is-outlined bg-white"></a></span></figure> <div class="media-content" style="min-width: 0px;"><div class="is-flex mb-1"><h5 class="pbr-1 is-bold"><a href="https://laracasts.com/@ABDELRHMAN">ABDELRHMAN</a></h5> <a href="https://laracasts.com/discuss/channels/general-discussion/ho-to-access-config-variables-in-laravel-5/replies/118177" class="color-text-lightest is-hidden-mobile mbr-1">
+                           1 year ago
+                        </a> <span title="The higher the experience, the more trustworthy the user." class="color-success flex is-hidden-mobile">
+                            (19,705 XP)
+                        </span></div> <div data-reply-body="" class="content user-content"><div><p><a href="https://laracasts.com/@manshu">@manshu</a></p> <p>Try This</p> <pre><code class="hljs php"><span class="hljs-comment">//ConfigFile.php </span>
+
+    <span class="hljs-meta">&lt;?php</span>
+        <span class="hljs-keyword">return</span> [
+            <span class="hljs-string">'foo'</span>=&gt;[
+                <span class="hljs-string">'key'</span>=&gt;<span class="hljs-string">'value'</span>,
+            ]
+        ];
+    <span class="hljs-meta">&lt;?</span>      
+    
+    <span class="hljs-comment">//Usage</span>
+
+    $app = <span class="hljs-keyword">$this</span>-&gt;app;
+    
+    $config = $app[<span class="hljs-string">'config'</span>][<span class="hljs-string">'configfile.foo'</span>];
+    
+    $value = $config[<span class="hljs-string">'key'</span>]; 
+    
+    <span class="hljs-keyword">return</span> $value; <span class="hljs-comment">//value</span>
+</code></pre></div></div> <div class="reply-markdown-body" style="display: none;"><form method="POST" action="https://laracasts.com/discuss/channels/general-discussion/ho-to-access-config-variables-in-laravel-5/replies/118177"><input type="hidden" name="_method" value="PATCH"> <input type="hidden" name="_token" value="rPxYnZX5kF7rSgv9njZMUtqwIftBVi9S7kuqNpOF"> <div class="control"><textarea name="body_in_markdown" placeholder="Ask Away" class="textarea" required="required">@manshu
+
+Try This 
+~~~
+//ConfigFile.php 
+
+	&lt;?php
+		return [
+			'foo'=&gt;[
+				'key'=&gt;'value',
+			]
+		];
+	&lt;?		
+	
+	//Usage
+
+	$app = $this-&gt;app;
+	
+	$config = $app['config']['configfile.foo'];
+	
+	$value = $config['key']; 
+	
+	return $value; //value
+~~~</textarea></div> <div><button type="button" class="button is-muted mbr-1 is-outlined mb-1-mobile">
+            Cancel
+        </button> <button type="submit" class="button is-primary is-outlined">
+            Update Your Reply
+        </button></div></form></div> <footer class="is-vertically-centered reply-edit-links"></footer></div></div></div></div> <p class="has-text-centered mt-3"><a href="https://laracasts.com/login">
+            Sign In
+        </a> or
+        <a href="https://laracasts.com/signup?billing=none&amp;plan=none&amp;title=Okay,%20we%27ll%20have%20you%20posting%20on%20the%20forum%20in%20no%20time!">
+            create a forum account to participate in this discussion.</a></p></div></div></div></div></div></div></div> <aside class="section is-grey is-medium"><div class="container"><div class="columns"><div class="column px-5-tablet"><div class="centered-heading"><h3 class="heading">
+                                Trending <strong class="color-success">General</strong> Discussions
+                            </h3> <p class="subtitle">
+                                Below, you'll find the most popular Laracasts discussion threads
+                                in your currently chosen channel.
+                            </p></div> <div class="conversation-list is-condensed 
+                                  columns is-multiline"><div class="conversation-list-item column is-6"><div class="conversation-list-avatar is-hidden-mobile"><div><a href="https://laracasts.com/@stephy"><img src="./Ho to access Config variables in laravel 5__files/9af8bfac82073e6c3482572165533277" alt="stephy" width="75" class="is-circle is-outlined bg-white"></a></div></div> <div class="conversation-list-title"><h4 class="title is-5"><a href="https://laracasts.com/discuss/channels/general-discussion/some-issues-with-laracast-and-the-popular-course-here-on-laravel">
+                            Some issues with Laracast and the popular course here on Laravel
+                        </a></h4> <div class="meta in-caps mb-1"><span><a href="https://laracasts.com/discuss/channels/general-discussion" class="is-link" style="color: rgb(78, 137, 218);">General</a> •
+
+                            <a href="https://laracasts.com/discuss/channels/general-discussion/some-issues-with-laracast-and-the-popular-course-here-on-laravel?page=2#reply-347504" class="inherits-color is-link">4 days ago</a></span>
+
+                                                    by <a href="https://laracasts.com/@stephy">stephy</a></div> <div class="content">
+                        Hi, So.. let's cut to the basics.
+This Page feels very "beta". For once, I would not have a "Discussions" for Users Ques<span class="is-muted">...</span></div></div> <div class="conversation-list-reply-count is-hidden-mobile">
+                    16
+                </div></div> <div class="conversation-list-item column is-6"><div class="conversation-list-avatar is-hidden-mobile"><div><a href="https://laracasts.com/@tyler.brandt"><img src="./Ho to access Config variables in laravel 5__files/6e9d75fddcb4cd9989b27605efaecb94" alt="tyler.brandt" width="75" class="is-circle is-outlined bg-white"></a></div></div> <div class="conversation-list-title"><h4 class="title is-5"><a href="https://laracasts.com/discuss/channels/general-discussion/unable-to-set-session-variables-after-upgrading-to-54">
+                            Unable to set session variables after upgrading to 5.4
+                        </a></h4> <div class="meta in-caps mb-1"><span><a href="https://laracasts.com/discuss/channels/general-discussion" class="is-link" style="color: rgb(78, 137, 218);">General</a> •
+
+                            <a href="https://laracasts.com/discuss/channels/general-discussion/unable-to-set-session-variables-after-upgrading-to-54?page=1#reply-347131" class="inherits-color is-link">6 days ago</a></span>
+
+                                                    by <a href="https://laracasts.com/@tyler.brandt">tyler.brandt</a></div> <div class="content">
+                        Hi, so we recently upgraded Laravel from 5.1 to 5.4, I wasn't involved in the update but I'm going through now trying to fix anything that may not<span class="is-muted">...</span></div></div> <div class="conversation-list-reply-count is-hidden-mobile">
+                    12
+                </div></div> <div class="conversation-list-item column is-6"><div class="conversation-list-avatar is-hidden-mobile"><div><a href="https://laracasts.com/@shanely"><img src="./Ho to access Config variables in laravel 5__files/0d240909b8c90d59c55ab5d9a961abef" alt="shanely" width="75" class="is-circle is-outlined bg-white"></a></div></div> <div class="conversation-list-title"><h4 class="title is-5"><a href="https://laracasts.com/discuss/channels/general-discussion/are-you-all-using-vagrant">
+                            Are you all using vagrant ?
+                        </a></h4> <div class="meta in-caps mb-1"><span><a href="https://laracasts.com/discuss/channels/general-discussion" class="is-link" style="color: rgb(78, 137, 218);">General</a> •
+
+                            <a href="https://laracasts.com/discuss/channels/general-discussion/are-you-all-using-vagrant?page=1#reply-348001" class="inherits-color is-link">2 days ago</a></span>
+
+                                                    by <a href="https://laracasts.com/@danielrubango">danielrubango</a></div> <div class="content">
+                        Hi can I ask some of your opinions ? do you always use vagrant in developing web app like laravel ? . just noticed in  my phpstorm when  I use vagr<span class="is-muted">...</span></div></div> <div class="conversation-list-reply-count is-hidden-mobile">
+                    09
+                </div></div> <div class="conversation-list-item column is-6"><div class="conversation-list-avatar is-hidden-mobile"><div><span class="icon is-answered"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 16" class="icon is-32x32"><path d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z" fill="white"></path></svg> <a href="https://laracasts.com/@pixelmartyr"><img src="./Ho to access Config variables in laravel 5__files/5d65e5b8fb0861d29577e43dd20d09c6" alt="pixelmartyr" width="75" class="is-circle is-outlined bg-white"></a></span></div></div> <div class="conversation-list-title"><h4 class="title is-5"><a href="https://laracasts.com/discuss/channels/general-discussion/uninstalling-composer">
+                            Uninstalling Composer
+                        </a></h4> <div class="meta in-caps mb-1"><span><a href="https://laracasts.com/discuss/channels/general-discussion" class="is-link" style="color: rgb(78, 137, 218);">General</a> •
+
+                            <a href="https://laracasts.com/discuss/channels/general-discussion/uninstalling-composer?page=1#reply-348070" class="inherits-color is-link">2 days ago</a></span>
+
+                                                    by <a href="https://laracasts.com/@pixelmartyr">pixelmartyr</a></div> <div class="content">
+                        How do you uninstall composer on a mac? I want to start over. I'm not sure I'm doing this correctly.<span class="is-muted">...</span></div></div> <div class="conversation-list-reply-count is-hidden-mobile">
+                    08
+                </div></div> <div class="conversation-list-item column is-6"><div class="conversation-list-avatar is-hidden-mobile"><div><a href="https://laracasts.com/@codemode"><img src="./Ho to access Config variables in laravel 5__files/cb07c7d702270e0b06218950dddb5e65" alt="codemode" width="75" class="is-circle is-outlined bg-white"></a></div></div> <div class="conversation-list-title"><h4 class="title is-5"><a href="https://laracasts.com/discuss/channels/general-discussion/using-a-url-slug-and-id-on-the-route">
+                            Using a url slug and id on the route
+                        </a></h4> <div class="meta in-caps mb-1"><span><a href="https://laracasts.com/discuss/channels/general-discussion" class="is-link" style="color: rgb(78, 137, 218);">General</a> •
+
+                            <a href="https://laracasts.com/discuss/channels/general-discussion/using-a-url-slug-and-id-on-the-route?page=1#reply-347387" class="inherits-color is-link">5 days ago</a></span>
+
+                                                    by <a href="https://laracasts.com/@Snapey">Snapey</a></div> <div class="content">
+                        Hello,
+I'm trying to put the slug and id on the URL.
+So, i have a Post model, with basic things like id, title, description. (example<span class="is-muted">...</span></div></div> <div class="conversation-list-reply-count is-hidden-mobile">
+                    08
+                </div></div> <div class="conversation-list-item column is-6"><div class="conversation-list-avatar is-hidden-mobile"><div><a href="https://laracasts.com/@kdm"><img src="./Ho to access Config variables in laravel 5__files/56d0bc398f8fdafc1b024ca7dd2445f9" alt="kdm" width="75" class="is-circle is-outlined bg-white"></a></div></div> <div class="conversation-list-title"><h4 class="title is-5"><a href="https://laracasts.com/discuss/channels/general-discussion/model-get-method-uses-json-decode-twice">
+                            Model get method uses json_decode twice
+                        </a></h4> <div class="meta in-caps mb-1"><span><a href="https://laracasts.com/discuss/channels/general-discussion" class="is-link" style="color: rgb(78, 137, 218);">General</a> •
+
+                            <a href="https://laracasts.com/discuss/channels/general-discussion/model-get-method-uses-json-decode-twice?page=1#reply-347897" class="inherits-color is-link">3 days ago</a></span>
+
+                                                    by <a href="https://laracasts.com/@quickliketurtle">quickliketurtle</a></div> <div class="content">
+                        Hi there below is what I'm storing in my db but when I use my get method in my model I have to use json_decode twice when formating my data why is<span class="is-muted">...</span></div></div> <div class="conversation-list-reply-count is-hidden-mobile">
+                    07
+                </div></div> <div class="conversation-list-item column is-6"><div class="conversation-list-avatar is-hidden-mobile"><div><a href="https://laracasts.com/@czaker"><img src="./Ho to access Config variables in laravel 5__files/d3c74d558d92d364100c5aa39a3f757e" alt="czaker" width="75" class="is-circle is-outlined bg-white"></a></div></div> <div class="conversation-list-title"><h4 class="title is-5"><a href="https://laracasts.com/discuss/channels/general-discussion/phpwhois-installation-problem">
+                            phpWhois installation problem
+                        </a></h4> <div class="meta in-caps mb-1"><span><a href="https://laracasts.com/discuss/channels/general-discussion" class="is-link" style="color: rgb(78, 137, 218);">General</a> •
+
+                            <a href="https://laracasts.com/discuss/channels/general-discussion/phpwhois-installation-problem?page=1#reply-348205" class="inherits-color is-link">1 day ago</a></span>
+
+                                                    by <a href="https://laracasts.com/@czaker">czaker</a></div> <div class="content">
+                        Hi guys,
+I am pretty new with Laravel so please be patient with me :)
+I want to use<span class="is-muted">...</span></div></div> <div class="conversation-list-reply-count is-hidden-mobile">
+                    06
+                </div></div> <div class="conversation-list-item column is-6"><div class="conversation-list-avatar is-hidden-mobile"><div><a href="https://laracasts.com/@Alderwiereld"><img src="./Ho to access Config variables in laravel 5__files/9babf913c6e0cb5dfb8e5cc6bfe0c97e" alt="Alderwiereld" width="75" class="is-circle is-outlined bg-white"></a></div></div> <div class="conversation-list-title"><h4 class="title is-5"><a href="https://laracasts.com/discuss/channels/general-discussion/rendering-pdf-in-views">
+                            Rendering pdf files in views
+                        </a></h4> <div class="meta in-caps mb-1"><span><a href="https://laracasts.com/discuss/channels/general-discussion" class="is-link" style="color: rgb(78, 137, 218);">General</a> •
+
+                            <a href="https://laracasts.com/discuss/channels/general-discussion/rendering-pdf-in-views?page=1#reply-348276" class="inherits-color is-link">1 day ago</a></span>
+
+                                                    by <a href="https://laracasts.com/@eadly">eadly</a></div> <div class="content">
+                        How can i display a pdf file properly on my views. Please help. Cant find a way to integrate PDF.js to laravel.<span class="is-muted">...</span></div></div> <div class="conversation-list-reply-count is-hidden-mobile">
+                    04
+                </div></div> <div class="conversation-list-item column is-6"><div class="conversation-list-avatar is-hidden-mobile"><div><a href="https://laracasts.com/@cleopatra"><img src="./Ho to access Config variables in laravel 5__files/12155de240fe4fa5028919418d68d041" alt="cleopatra" width="75" class="is-circle is-outlined bg-white"></a></div></div> <div class="conversation-list-title"><h4 class="title is-5"><a href="https://laracasts.com/discuss/channels/general-discussion/laravel-instagram-1">
+                            Laravel + Instagram
+                        </a></h4> <div class="meta in-caps mb-1"><span><a href="https://laracasts.com/discuss/channels/general-discussion" class="is-link" style="color: rgb(78, 137, 218);">General</a> •
+
+                            <a href="https://laracasts.com/discuss/channels/general-discussion/laravel-instagram-1?page=1#reply-348199" class="inherits-color is-link">1 day ago</a></span>
+
+                                                    by <a href="https://laracasts.com/@quickliketurtle">quickliketurtle</a></div> <div class="content">
+                        I want to add instagram gallery to my magazine website developing in Laravel 5.4.and tried to add vinkla/instagram package.
+I tried to run this on<span class="is-muted">...</span></div></div> <div class="conversation-list-reply-count is-hidden-mobile">
+                    04
+                </div></div> <div class="conversation-list-item column is-6"><div class="conversation-list-avatar is-hidden-mobile"><div><a href="https://laracasts.com/@Flex"><img src="./Ho to access Config variables in laravel 5__files/5f060ef8312b551444081f2b9d00666f" alt="Flex" width="75" class="is-circle is-outlined bg-white"></a></div></div> <div class="conversation-list-title"><h4 class="title is-5"><a href="https://laracasts.com/discuss/channels/general-discussion/how-to-use-bootstrap-datepicker-in-laravel-52">
+                            how to use bootstrap datepicker in laravel 5.2
+                        </a></h4> <div class="meta in-caps mb-1"><span><a href="https://laracasts.com/discuss/channels/general-discussion" class="is-link" style="color: rgb(78, 137, 218);">General</a> •
+
+                            <a href="https://laracasts.com/discuss/channels/general-discussion/how-to-use-bootstrap-datepicker-in-laravel-52?page=1#reply-347118" class="inherits-color is-link">6 days ago</a></span>
+
+                                                    by <a href="https://laracasts.com/@alex-greaves">alex-greaves</a></div> <div class="content">
+                        I need use bootstrap datepicker start date and end date with dates counting in My Laravel app. (need save this data to database). please give me si<span class="is-muted">...</span></div></div> <div class="conversation-list-reply-count is-hidden-mobile">
+                    04
+                </div></div></div></div></div></div></aside></div> <section class="signup-banner is-vertically-centered has-text-centered-mobile"><div class="container"><div class="columns"><div class="column is-4 is-offset-8"><h3 class="heading color-white wow fadeIn" style="visibility: hidden; animation-name: none;">
+                    The most concise screencasts for the
+                    working developer, updated daily.
+                </h3> <a href="https://laracasts.com/join" data-wow-delay=".5s" class="button is-default wow fadeIn" style="visibility: hidden; animation-delay: 0.5s; animation-name: none;">
+                    Get Started
+                </a></div></div></div></section> <section class="footer-section top"><div class="container"><div class="columns"><div data-wow-delay=".5s" class="column is-5 wow fadeIn" style="visibility: hidden; animation-delay: 0.5s; animation-name: none;"><h2 class="newsletter-heading pr-1-tablet has-text-centered-mobile">
+                    Want us to email you occasionally with Laracasts news?
+                </h2></div> <div class="column is-6 is-offset-1"><form id="newsletter-form" method="POST" action="https://laracasts.com/newsletters/subscribe"><div class="newsletter-signup control has-addons wow lightSpeedIn" style="visibility: hidden; animation-name: none;"><input type="email" name="email" placeholder="Enter Your Email" autocomplete="off" required="required" class="input"> <button type="submit" class="button is-outlined is-primary">
+            Subscribe
+        </button></div></form></div></div></div></section> <section class="footer-section bottom"><footer class="container"><div class="columns mb-3"><div class="column is-5"><h2 class="mb-3"><img src="./Ho to access Config variables in laravel 5__files/logo-footer.png" alt="Laracasts" width="350" height="44.92"></h2> <p class="footer-description is-heavy mb-3">
+                    Lots of your peers think Laracasts is one of the best things ever.
+                    So buy Jeffrey lunch once a month, see for yourself, and massively
+                    level up your skills in the process.
+                </p> <ul class="is-inline-flex w-100 is-justified-to-center-mobile"><li><a href="http://facebook.com/laracasts" target="_blank"><span class="icon is-outlined o-4"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 167.657 167.657" xml:space="preserve"><g><path d="M83.829,0.349C37.532,0.349,0,37.881,0,84.178c0,41.523,30.222,75.911,69.848,82.57v-65.081H49.626   v-23.42h20.222V60.978c0-20.037,12.238-30.956,30.115-30.956c8.562,0,15.92,0.638,18.056,0.919v20.944l-12.399,0.006   c-9.72,0-11.594,4.618-11.594,11.397v14.947h23.193l-3.025,23.42H94.026v65.653c41.476-5.048,73.631-40.312,73.631-83.154   C167.657,37.881,130.125,0.349,83.829,0.349z"></path></g></svg></span></a></li> <li><a href="http://twitter.com/laracasts" target="_blank"><span class="icon is-outlined is-vertically-centered is-justified-to-center bg-black o-4"><svg viewBox="0 0 2000 1625.36" width="22" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="m 1999.9999,192.4 c -73.58,32.64 -152.67,54.69 -235.66,64.61 84.7,-50.78 149.77,-131.19 180.41,-227.01 -79.29,47.03 -167.1,81.17 -260.57,99.57 C 1609.3399,49.82 1502.6999,0 1384.6799,0 c -226.6,0 -410.328,183.71 -410.328,410.31 0,32.16 3.628,63.48 10.625,93.51 -341.016,-17.11 -643.368,-180.47 -845.739,-428.72 -35.324,60.6 -55.5583,131.09 -55.5583,206.29 0,142.36 72.4373,267.95 182.5433,341.53 -67.262,-2.13 -130.535,-20.59 -185.8519,-51.32 -0.039,1.71 -0.039,3.42 -0.039,5.16 0,198.803 141.441,364.635 329.145,402.342 -34.426,9.375 -70.676,14.395 -108.098,14.395 -26.441,0 -52.145,-2.578 -77.203,-7.364 52.215,163.008 203.75,281.649 383.304,284.946 -140.429,110.062 -317.351,175.66 -509.5972,175.66 -33.1211,0 -65.7851,-1.949 -97.8828,-5.738 181.586,116.4176 397.27,184.359 628.988,184.359 754.732,0 1167.462,-625.238 1167.462,-1167.47 0,-17.79 -0.41,-35.48 -1.2,-53.08 80.1799,-57.86 149.7399,-130.12 204.7499,-212.41" style="fill: white;"></path></svg></span></a></li> <li><a href="http://github.com/laracasts" target="_blank"><span class="icon is-outlined o-4"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg></span></a></li></ul></div> <div class="column is-2 is-offset-1 is-hidden-mobile"><h5 class="heading is-5 in-caps">Learn</h5> <ul class="footer-links-list"><li><a href="https://laracasts.com/lessons">Library</a></li> <li><a href="https://laracasts.com/index">Lesson Index</a></li> <li><a href="https://laracasts.com/shop">Shop</a></li> <li><a href="https://laracasts.com/recommended-reading">Books</a></li> <li><a href="https://laracasts.com/join">Sign Up</a></li> <li><a href="https://laracasts.com/login">
+                Sign In
+            </a></li></ul></div> <div class="column is-2 is-hidden-mobile"><h5 class="heading is-5 in-caps">Discuss</h5> <ul class="footer-links-list"><li><a href="https://laracasts.com/discuss">Forum</a></li> <li><a href="https://laracasts.com/podcast">Laracasts Snippet</a></li> <li><a href="http://laravelpodcast.com/">Laravel Podcast</a></li> <li><a href="https://laracasts.com/contact">Support</a></li></ul></div> <div class="column is-2 is-hidden-mobile"><h5 class="heading is-5 in-caps">Extras</h5> <ul class="footer-links-list"><li><a href="https://laracasts.com/stats">Statistics</a></li> <li><a href="https://laracasts.com/testimonials">Testimonials</a></li> <li><a href="https://laracasts.com/faq">FAQ</a></li> <li><a href="https://laracasts.com/community?orderBy=updated_at">Community Tutorials</a></li> <li><a href="https://laracasts.com/feed">RSS</a></li> <li><a href="https://larajobs.com/?partner=36#">Get a Job</a></li></ul> <ul class="zeroed footer-links-list"><li><a href="https://laracasts.com/privacy">Privacy</a></li> <li><a href="https://laracasts.com/terms">Terms</a></li></ul></div></div> <div class="columns hosting"><div class="column is-5 is-bold has-text-centered-mobile">
+                © Laracasts 2017. All rights reserved. Yes, all of them. That means you, Todd.
+            </div> <div class="column is-5 is-offset-2 has-text-right is-bold is-hidden-mobile">
+                Proudly hosted with <a href="https://forge.laravel.com/">Laravel Forge</a>
+                and <a href="https://www.digitalocean.com/?refcode=d2070a2d5f35">DigitalOcean</a>.
+            </div></div></footer></section></div> <div id="user-notifications" class="panel" style="display: none;"><h2 class="panel-heading has-icon"><svg id="icon-alarm" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" class="icon"><path d="M0 0h24v24H0V0z" fill="none"></path> <path d="M10.01 21.01c0 1.1.89 1.99 1.99 1.99s1.99-.89 1.99-1.99h-3.98zm8.87-4.19V11c0-3.25-2.25-5.97-5.29-6.69v-.72C13.59 2.71 12.88 2 12 2s-1.59.71-1.59 1.59v.72C7.37 5.03 5.12 7.75 5.12 11v5.82L3 18.94V20h18v-1.06l-2.12-2.12zM16 13.01h-3v3h-2v-3H8V11h3V8h2v3h3v2.01z"></path></svg>
+
+
+        Notifications
+    </h2>  <div class="panel-block p-2"><form method="POST" action="https://laracasts.com/discuss/notifications/mentions" class="has-text-centered"><input type="hidden" name="_method" value="DELETE"> <input type="hidden" name="_token" value="rPxYnZX5kF7rSgv9njZMUtqwIftBVi9S7kuqNpOF"> <button type="submit" class="button is-outlined is-primary">
+                Clear All Notifications
+            </button></form></div></div> <div class="modal is-medium"><div class="modal-background"></div> <div class="modal-card"><header class="modal-card-head is-primary"><h4 class="modal-card-title">
+        Welcome Back!
+    </h4> <button class="delete"></button></header> <div class="modal-card-body"><div><form role="form" method="post" action="https://laracasts.com/sessions"><input type="hidden" name="_token" value="rPxYnZX5kF7rSgv9njZMUtqwIftBVi9S7kuqNpOF"> <div class="control"><input type="email" id="email" name="email" placeholder="Email" required="required" class="input"></div> <div class="control"><input type="password" id="password" name="password" placeholder="Password" required="required" class="input"></div> <button type="submit" class="button is-primary is-submit">
+                Log In
+            </button> <div class="control" style="display: none;"><span class="help is-danger">
+                    
+                </span></div></form></div></div> <footer class="modal-card-foot"><a href="https://laracasts.com/join" class="is-muted in-caps mr-a fs-smaller">
+            Sign Up!
+        </a> <a href="https://laracasts.com/password_resets/create" class="is-muted in-caps fs-smaller">
+            Forgot Your Password?
+        </a></footer></div> <button class="modal-close">Close</button></div></div> <!-- close #root div -->
+
+
+<script src="./Ho to access Config variables in laravel 5__files/algoliasearch.min.js"></script>
+<script src="./Ho to access Config variables in laravel 5__files/autocomplete.min.js"></script>
+
+
+<!-- Google Analytics -->
+<script>
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+
+    ga('create','UA-44120322-1');
+</script>
+
+<script src="./Ho to access Config variables in laravel 5__files/jquery.min.js"></script>
+<script src="./Ho to access Config variables in laravel 5__files/manifest.js"></script>
+<script src="./Ho to access Config variables in laravel 5__files/vendor.js"></script>
+<script src="./Ho to access Config variables in laravel 5__files/all.min.js"></script>
+
+<script>
+    ga('send', 'pageview');
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': LARACASTS.csrfToken
+        }
+    });
+</script>
+
+<script>
+    
+    
+    </script>
+    
+
+    <script src="./Ho to access Config variables in laravel 5__files/highlight.pack.js"></script>
+
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+
+
+
+</body></html>

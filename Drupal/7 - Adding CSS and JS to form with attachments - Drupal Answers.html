@@ -1,0 +1,1812 @@
+<!DOCTYPE html>
+<html itemscope="" itemtype="http://schema.org/QAPage"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<title>7 - Adding CSS and JS to form with attachments - Drupal Answers</title>
+    <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/drupal/img/favicon.ico?v=62d5285bc682">
+    <link rel="apple-touch-icon image_src" href="https://cdn.sstatic.net/Sites/drupal/img/apple-touch-icon.png?v=2f2d1337c2e2">
+    <link rel="search" type="application/opensearchdescription+xml" title="Drupal Answers" href="https://drupal.stackexchange.com/opensearch.xml">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@StackDrupal">
+    <meta name="twitter:domain" content="drupal.stackexchange.com">
+
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/drupal/img/apple-touch-icon@2.png?v=5d949c166061">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="Adding CSS and JS to form with attachments">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="I need to add some external and local CSS and JavaScript files to a form, but I can't seem to find the right way to do this.  Do I simply add the paths and URLs for the JS and CSS files?
+
+I assume ...">
+    <meta property="og:url" content="https://drupal.stackexchange.com/questions/70015/adding-css-and-js-to-form-with-attachments">
+    <link rel="canonical" href="https://drupal.stackexchange.com/questions/70015/adding-css-and-js-to-form-with-attachments">
+
+    
+    
+    <script type="text/javascript" async="" src="7%20-%20Adding%20CSS%20and%20JS%20to%20form%20with%20attachments%20-%20Drupal%20Answers_files/ados.js"></script><script async="" src="7%20-%20Adding%20CSS%20and%20JS%20to%20form%20with%20attachments%20-%20Drupal%20Answers_files/quant.js"></script><script async="" src="7%20-%20Adding%20CSS%20and%20JS%20to%20form%20with%20attachments%20-%20Drupal%20Answers_files/beacon.js"></script><script async="" src="7%20-%20Adding%20CSS%20and%20JS%20to%20form%20with%20attachments%20-%20Drupal%20Answers_files/analytics.js"></script><script type="text/javascript" async="" src="7%20-%20Adding%20CSS%20and%20JS%20to%20form%20with%20attachments%20-%20Drupal%20Answers_files/ados_002.js"></script><script src="7%20-%20Adding%20CSS%20and%20JS%20to%20form%20with%20attachments%20-%20Drupal%20Answers_files/jquery.js"></script>
+    <script src="7%20-%20Adding%20CSS%20and%20JS%20to%20form%20with%20attachments%20-%20Drupal%20Answers_files/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="7%20-%20Adding%20CSS%20and%20JS%20to%20form%20with%20attachments%20-%20Drupal%20Answers_files/all.css">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question 'Adding CSS and JS to form with attachments'" href="https://drupal.stackexchange.com/feeds/question/70015">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://drupal.stackexchange.com/questions/70015/adding-css-and-js-to-form-with-attachments">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://drupal.stackexchange.com/questions/70015/adding-css-and-js-to-form-with-attachments">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://drupal.stackexchange.com/questions/70015/adding-css-and-js-to-form-with-attachments">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:70015});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('220', '70015');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text', false); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.ready(function () {
+                        StackExchange.realtime.init('wss://qa.sockets.stackexchange.com');
+            StackExchange.realtime.subscribeToReputationNotifications('220');
+                StackExchange.realtime.subscribeToTopBarNotifications('220');
+        });
+    </script>
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","serverTime":1498637600,"routeName":"Questions/Show","site":{"name":"Drupal Answers","description":"Q&A for Drupal developers and administrators","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdsB7sSAAAAAAzjgEF_Hd8vXv-C42sa_KyofaGR","recaptchaAudioLang":"en","enableNewTagCreationWarning":false,"insertSpaceAfterNameTabCompletion":false,"id":220,"enableInsertDocLinkDialog":false,"childUrl":"https://drupal.meta.stackexchange.com","enableSocialMediaInSharePopup":true,"protocol":"https"},"user":{"fkey":"5f8be9a80c529da1ac2a8e4452a512ed","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true,"ab":{"devstory_onboarding_exp":{"v":"opt_out_of_match_emails","g":2}}},"realtime":{"newest":true,"active":true,"tagged":true,"staleDisconnectIntervalInHours":0,"workerIframeDomain":"https://cdn.sstatic.net"},"events":{"postType":{"question":1},"postEditionSection":{"title":1,"body":2,"tags":3}},"story":{"minCompleteBodyLength":75,"likedTagsMaxLength":300,"dislikedTagsMaxLength":300}}, {"site":{"allowImageUploads":true,"enableUserHovercards":true,"styleCode":true,"enableImgurHttps":true,"forceHttpsImages":true},"comments":{},"userProfile":{},"tags":{},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true},"flags":{"allowRetractingFlags":true},"snippets":{"renderDomain":"stacksnippets.net"},"markdown":{"asteriskIntraWordEmphasis":true},"monitoring":{"clientTimingsAbsoluteTimeout":30000,"clientTimingsDebounceTimeout":1000}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"c4eca30d8cd3","js/moderator.en.js":"06103b82c8c9","js/full-anon.en.js":"822f3e2d71f5","js/full.en.js":"4927e96fa177","js/wmd.en.js":"58ebb306af7a","js/third-party/jquery.autocomplete.min.js":"d3b8fa7fdf74","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"49088610c33d","js/help.en.js":"dbd4f489eff2","js/tageditor.en.js":"248fce004255","js/tageditornew.en.js":"a503e5c27e99","js/inline-tag-editing.en.js":"7581a98341e4","js/revisions.en.js":"47de10a8358f","js/review.en.js":"b64899711a5a","js/tagsuggestions.en.js":"91ec144ebee0","js/post-validation.en.js":"164e6d28a39c","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"d1540fe64319","js/keyboard-shortcuts.en.js":"26b28ceeaede","js/external-editor.en.js":"463e9ede63aa","js/adops.en.js":"9a6a7812a212"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+    <noscript id="noscript-css"><style type="text/css">body,.so-header{margin-top:1.9em}</style></noscript>
+<script async="" src="7%20-%20Adding%20CSS%20and%20JS%20to%20form%20with%20attachments%20-%20Drupal%20Answers_files/full-anon.js"></script><script async="" src="7%20-%20Adding%20CSS%20and%20JS%20to%20form%20with%20attachments%20-%20Drupal%20Answers_files/post-validation.js"></script><script async="" src="7%20-%20Adding%20CSS%20and%20JS%20to%20form%20with%20attachments%20-%20Drupal%20Answers_files/prettify-full.js"></script><script async="" src="7%20-%20Adding%20CSS%20and%20JS%20to%20form%20with%20attachments%20-%20Drupal%20Answers_files/external-editor.js"></script><script type="text/javascript" src="7%20-%20Adding%20CSS%20and%20JS%20to%20form%20with%20attachments%20-%20Drupal%20Answers_files/adFeedback.js"></script><link rel="stylesheet" href="7%20-%20Adding%20CSS%20and%20JS%20to%20form%20with%20attachments%20-%20Drupal%20Answers_files/adFeedback.css"></head>
+<body class="question-page new-topbar">
+            <script>(function () { var old = $.fn.contents; $.fn.contents = function () { try { return old.apply(this, arguments); } catch (e) { return $([]); } } })()</script>
+        
+
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+
+    <div class="topbar-dialog siteSwitcher-dialog dno">
+        <div class="header">
+            <h3><a href="https://drupal.stackexchange.com/">current community</a>
+            </h3>
+        </div>
+        <div class="modal-content current-site-container">
+            <ul class="current-site">
+                    <li>
+                            <div class="related-links">
+                    <a href="https://chat.stackexchange.com/?tab=site&amp;host=drupal.stackexchange.com" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+
+    <a href="https://drupal.stackexchange.com/" class="current-site-link site-link js-gps-track" data-id="220" data-gps-track="site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-drupal" title="Drupal Answers"></div>
+        Drupal Answers
+    </a>
+
+                    </li>
+                    <li class="related-site">
+                            <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                        
+    <a href="https://drupal.meta.stackexchange.com/" class="site-link js-gps-track" data-id="222" data-gps-track="site.switch({ target_site:222, item_type:3 }),site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-drupalmeta" title="Drupal Answers Meta"></div>
+        Drupal Answers Meta
+    </a>
+
+                    </li>
+            </ul>
+        </div>
+
+        <div class="header" id="your-communities-header">
+            <h3>
+your communities            </h3>
+
+        </div>
+        <div class="modal-content" id="your-communities-section">
+
+                <div class="call-to-login">
+<a href="https://drupal.stackexchange.com/users/signup?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f70015%2fadding-css-and-js-to-form-with-attachments" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://drupal.stackexchange.com/users/login?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f70015%2fadding-css-and-js-to-form-with-attachments" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+                </div>
+        </div>
+
+        <div class="header">
+            <h3><a href="https://stackexchange.com/sites">more stack exchange communities</a>
+            </h3>
+            <a href="https://stackoverflow.blog/" class="fr">company blog</a>
+        </div>
+        <div class="modal-content">
+                <div class="child-content"></div>
+        </div>        
+    </div>
+        </div>
+
+        <div class="network-items">
+                <a href="https://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 169 Stack Exchange sites">
+                    <span class="hidden-text">Stack Exchange</span>
+                </a>
+
+    <a href="#" class="topbar-icon icon-inbox yes-hover js-inbox-button" title="Recent inbox messages">
+        <span class="hidden-text">Inbox</span>
+        <span class="unread-count" style="display:none"></span>
+    </a>
+    <a href="#" class="topbar-icon icon-achievements yes-hover js-achievements-button" data-unread-class="" title="Recent achievements: reputation, badges, and privileges earned">
+        <span class="hidden-text">Reputation and Badges</span>
+        <span class="unread-count" style="display:none">
+            
+        </span>
+    </a>
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                <span class="topbar-menu-links">
+                                    <a href="https://drupal.stackexchange.com/users/signup?ssrc=head&amp;returnurl=https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f70015%2fadding-css-and-js-to-form-with-attachments" class="login-link" rel="nofollow">sign up</a>
+                                <a href="https://drupal.stackexchange.com/users/login?ssrc=head&amp;returnurl=https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f70015%2fadding-css-and-js-to-form-with-attachments" class="login-link" rel="nofollow">log in</a>
+
+                            <a href="https://drupal.stackexchange.com/tour">tour</a>
+        <a href="#" class="icon-help js-help-button" title="Help Center and other resources">
+            help
+            <span class="triangle"></span>
+        </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="https://drupal.stackexchange.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="https://drupal.stackexchange.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="https://drupal.meta.stackexchange.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                Meta
+                                <span class="item-summary">
+                                    Discuss the workings and policies of this site
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                About Us
+                                <span class="item-summary">
+                                    Learn more about Stack Overflow the company
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.stackoverflowbusiness.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                Business
+                                <span class="item-summary">
+                                    Learn more about hiring developers or posting ads with us
+                                </span>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+                                            </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="/search" method="get" autocomplete="off" role="search">
+                        <input name="q" placeholder="Search Q&amp;A" tabindex="1" autocomplete="off" maxlength="240" type="text">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+            <div id="header">
+                <br class="cbt">
+                <div id="hlogo">
+                    <a href="https://drupal.stackexchange.com/" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:8})">
+                        Drupal Answers
+                    </a>
+                </div>
+                <div id="hmenus">
+                        <div class="nav mainnavs" role="navigation" aria-label="site navigation">
+                            <ul>
+                                    <li class="youarehere">
+        <a id="nav-questions" href="https://drupal.stackexchange.com/questions" class="js-gps-track" data-gps-track="top_nav.click({is_current:true, location:2, destination:1})">
+        Questions
+        </a>
+    </li>
+
+                                                                    <li>
+        <a id="nav-tags" href="https://drupal.stackexchange.com/tags" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:2})">
+        Tags
+        </a>
+    </li>
+
+                                    <li>
+        <a id="nav-users" href="https://drupal.stackexchange.com/users" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:3})">
+        Users
+        </a>
+    </li>
+
+                                    <li>
+        <a id="nav-badges" href="https://drupal.stackexchange.com/help/badges" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:4})">
+        Badges
+        </a>
+    </li>
+
+    <li>
+        <a id="nav-unanswered" href="https://drupal.stackexchange.com/unanswered" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:5})">
+        Unanswered
+        </a>
+    </li>
+                            </ul>
+                        </div>
+                    <div class="nav askquestion" role="navigation" aria-label="ask new question">
+                        <ul>
+                            <li>
+                                <a id="nav-askquestion" href="https://drupal.stackexchange.com/questions/ask">Ask Question</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        
+
+
+        <div id="content">
+
+
+
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="https://cdn.sstatic.net/Sites/drupal/img/apple-touch-icon.png?v=2f2d1337c2e2">
+
+
+<div id="herobox">
+    <div id="hero-content">
+            <div id="close"><a title="click to minimize">_</a></div>
+        <div id="blurb">
+            Drupal Answers is a question and answer site for Drupal 
+developers and administrators. Join them; it only takes a minute:
+            <br>
+            <br>
+            <a href="https://drupal.stackexchange.com/users/signup?ssrc=hero&amp;returnurl=https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f70015%2fadding-css-and-js-to-form-with-attachments" id="tell-me-more" class="button">Sign up</a>
+        </div>
+        <div id="desc">
+            <b>Here's how it works:</b>
+            <ol id="hiw">
+                <li id="q">
+                    Anybody can ask a question
+                </li>
+                <li id="an">
+                    Anybody can answer
+                </li>
+                <li id="b">
+                    The best answers are voted up and rise to the top
+                </li>
+            </ol>
+        </div>
+    <div style="clear: both"></div>
+    </div>
+</div><script>
+    StackExchange.ready(function () {
+
+        var location = 0;
+        if ($("body").hasClass("questions-page")) {
+            location = 1;
+        } else if ($("body").hasClass("question-page")) {
+            location = 1;
+        } else if ($("body").hasClass("faq-page")) {
+            location = 5;
+        } else if ($("body").hasClass("home-page")) {
+            location = 3;
+        }
+        
+        $('#tell-me-more').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+            });
+        });
+        
+        $('#herobox #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+            });
+            
+            $.cookie("hero", "mini", { path: "/", expires: 365 });
+            $.ajax({
+                url: "/hero-mini",
+                success: function (data) {
+                    $("#herobox").fadeOut("fast", function () {
+                        $("#herobox").replaceWith(data);
+                        $("#herobox-mini").fadeIn("fast");
+                    });
+                }
+            });
+            return false;
+        });
+    });
+
+</script>			<div id="question-header">
+                <h1 itemprop="name"><a href="https://drupal.stackexchange.com/questions/70015/adding-css-and-js-to-form-with-attachments" class="question-hyperlink">Adding CSS and JS to form with attachments</a></h1>
+
+            
+		</div>
+			<div id="mainbar" role="main" aria-label="question and answers">
+
+			
+
+<div class="question" data-questionid="70015" id="question">
+
+    <script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22, 0, "adzerk1615734827", 4).enableDynamicSiteSelection().setZone(29); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1615734827"><a href="https://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjo1MDk5OTYsImNoIjoxNjUzMSwiY2siOnt9LCJjciI6MTc5ODc5NiwiZGkiOiJhNWYxMjEwYmQ4MmM0MTFmYjRiY2YxNDlhOWFiNTJiMyIsImRtIjoxLCJmYyI6MjEzODkwNCwiZmwiOjI2MDkxNTcsImlwIjoiNTkuMTQ0LjEzNS43Iiwia3ciOiI3LGZvcm1zLHgtY29tbXVuaXR5LHgtaG9zdC1kcnVwYWwuc3RhY2tleGNoYW5nZS5jb20iLCJudyI6MjIsInBjIjowLCJlYyI6MCwicHIiOjU3MjIyLCJydCI6MSwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY28uaW4vIiwic2EiOiIzIiwic2IiOiJpLTA3YzFlOGNjOGY0NTMxYTZjIiwic3AiOjE1MzExLCJzdCI6NTY3NTksInVrIjoidWUxLTVhZjdmN2YxNGNjOTQ1Mzg5MWZmMWRkNDQ1ZTNlZGI3Iiwiem4iOjI5LCJ0cyI6MTQ5ODYzNzYwODY3MCwiYmYiOnRydWUsInBuIjoiYWR6ZXJrMTYxNTczNDgyNyIsInVyIjoiaHR0cDovL3N0YWNrb3ZlcmZsb3cuY29tL2pvYnM_dXRtX3NvdXJjZT13ZWJzaXRlJnV0bV9tZWRpdW09YmFubmVyJnV0bV9jb250ZW50PWxlYWRlcmJvYXJkXzcmdXRtX2NhbXBhaWduPWhvdXNlX2Fkc19ob3VzZV9hZHNfUk9TX1NVIn0&amp;s=LVbeWSnxn6Mh8C0fQqQfrcTTIHQ" rel="nofollow" target="_blank" title=""><img src="7%20-%20Adding%20CSS%20and%20JS%20to%20form%20with%20attachments%20-%20Drupal%20Answers_files/25c63890b1de4c969be7d4090ece7ca6.png" title="" alt="" border="0" height="90" width="728"></a><div class="adzerk-vote-controls" style="display: none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input value="12" name="downvoteReason" type="radio">Uninteresting</label></li><li><label><input value="13" name="downvoteReason" type="radio">Misleading</label></li><li><label><input value="14" name="downvoteReason" type="radio">Offensive</label></li><li><label><input value="15" name="downvoteReason" type="radio">Repetitive</label></li><li><label><input value="16" name="downvoteReason" type="radio">Other</label></li></ul><a href="#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img style="position:absolute;" src="7%20-%20Adding%20CSS%20and%20JS%20to%20form%20with%20attachments%20-%20Drupal%20Answers_files/i.gif" border="0" height="0px" width="0px"></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="70015" type="hidden">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">32</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="#">favorite</a>
+        <div class="favoritecount"><b>10</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>I need to add some external and local CSS and JavaScript files to a 
+form, but I can't seem to find the right way to do this.  Do I simply 
+add the paths and URLs for the JS and CSS files?</p>
+
+<p>I assume <code>$form['#attached']['css'][]</code> and <code>$form['#attached']['js'][]</code> are the correct places to do this, so they get reloaded on form rebuilds.  I seem to be missing something.</p>
+    </div>
+    <div class="post-taglist">
+        <a href="https://drupal.stackexchange.com/questions/tagged/7" class="post-tag js-gps-track" title="show questions tagged '7'" rel="tag">7</a> <a href="https://drupal.stackexchange.com/questions/tagged/forms" class="post-tag js-gps-track" title="show questions tagged 'forms'" rel="tag">forms</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="https://drupal.stackexchange.com/q/70015" title="short permalink to this question" class="short-link" id="link-post-70015">share</a><span class="lsep">|</span><a href="https://drupal.stackexchange.com/posts/70015/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="https://drupal.stackexchange.com/posts/70015/revisions" title="show all edits to this post">edited <span title="2015-12-31 10:35:54Z" class="relativetime">Dec 31 '15 at 10:35</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://drupal.stackexchange.com/users/2407/ahmad"><div class="gravatar-wrapper-32"><img src="7%20-%20Adding%20CSS%20and%20JS%20to%20form%20with%20attachments%20-%20Drupal%20Answers_files/0af4148ed5156b93cb5104424f78d687.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://drupal.stackexchange.com/users/2407/ahmad">Ahmad</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1,351</span><span title="2 gold badges"><span class="badge1"></span><span class="badgecount">2</span></span><span title="19 silver badges"><span class="badge2"></span><span class="badgecount">19</span></span><span title="48 bronze badges"><span class="badge3"></span><span class="badgecount">48</span></span>
+        </div>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2013-04-15 03:52:17Z" class="relativetime">Apr 15 '13 at 3:52</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://drupal.stackexchange.com/users/6420/vintorg"><div class="gravatar-wrapper-32"><img src="7%20-%20Adding%20CSS%20and%20JS%20to%20form%20with%20attachments%20-%20Drupal%20Answers_files/716d5b6aa624e28a64acd30b8fbb7826.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://drupal.stackexchange.com/users/6420/vintorg">vintorg</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">722</span><span title="4 gold badges"><span class="badge1"></span><span class="badgecount">4</span></span><span title="22 silver badges"><span class="badge2"></span><span class="badgecount">22</span></span><span title="50 bronze badges"><span class="badge3"></span><span class="badgecount">50</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                    
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-70015" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-70015" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								3 Answers
+                                <span style="display:none;" itemprop="answerCount">3</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="https://drupal.stackexchange.com/questions/70015/adding-css-and-js-to-form-with-attachments?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active" data-shortcut="A">
+            active</a>
+        <a href="https://drupal.stackexchange.com/questions/70015/adding-css-and-js-to-form-with-attachments?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest" data-shortcut="O">
+            oldest</a>
+        <a class="youarehere" href="https://drupal.stackexchange.com/questions/70015/adding-css-and-js-to-form-with-attachments?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes" data-shortcut="V">
+            votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="70036"></a>
+<div id="answer-70036" class="answer accepted-answer" data-answerid="70036" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="70036" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">55</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Have you looked at the documentation?</p>
+
+<p><strong>Attach CSS and JS to form</strong></p>
+
+<p><a href="http://api.drupal.org/api/drupal/developer%21topics%21forms_api_reference.html/7#attached">http://api.drupal.org/api/drupal/developer!topics!forms_api_reference.html/7#attached</a></p>
+
+<pre class="default prettyprint prettyprinted" style=""><code><span class="pln">$form</span><span class="pun">[</span><span class="str">'#attached'</span><span class="pun">][</span><span class="str">'css'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> array</span><span class="pun">(</span><span class="pln">
+  drupal_get_path</span><span class="pun">(</span><span class="str">'module'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'ajax_example'</span><span class="pun">)</span><span class="pln"> </span><span class="pun">.</span><span class="pln"> </span><span class="str">'/ajax_example.css'</span><span class="pun">,</span><span class="pln">
+</span><span class="pun">);</span><span class="pln">
+
+$form</span><span class="pun">[</span><span class="str">'#attached'</span><span class="pun">][</span><span class="str">'js'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> array</span><span class="pun">(</span><span class="pln">
+  drupal_get_path</span><span class="pun">(</span><span class="str">'module'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'ajax_example'</span><span class="pun">)</span><span class="pln"> </span><span class="pun">.</span><span class="pln"> </span><span class="str">'/ajax_example.js'</span><span class="pun">,</span><span class="pln">
+</span><span class="pun">);</span></code></pre>
+
+<p><strong>External files</strong></p>
+
+<p><a href="http://api.drupal.org/api/drupal/includes%21common.inc/function/drupal_process_attached/7">http://api.drupal.org/api/drupal/includes%21common.inc/function/drupal_process_attached/7</a></p>
+
+<p>External 'js' and 'css' files can also be loaded. For example:</p>
+
+<pre class="default prettyprint prettyprinted" style=""><code><span class="pln">$build</span><span class="pun">[</span><span class="str">'#attached'</span><span class="pun">][</span><span class="str">'js'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> array</span><span class="pun">(</span><span class="pln">
+  </span><span class="str">'http://code.jquery.com/jquery-1.4.2.min.js'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> array</span><span class="pun">(</span><span class="pln">
+    </span><span class="str">'type'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'external'</span><span class="pun">,</span><span class="pln">
+  </span><span class="pun">),</span><span class="pln">
+</span><span class="pun">);</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="https://drupal.stackexchange.com/a/70036" title="short permalink to this answer" class="short-link" id="link-post-70036">share</a><span class="lsep">|</span><a href="https://drupal.stackexchange.com/posts/70036/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="https://drupal.stackexchange.com/posts/70036/revisions" title="show all edits to this post">edited <span title="2015-03-19 15:17:05Z" class="relativetime">Mar 19 '15 at 15:17</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://drupal.stackexchange.com/users/5284/beebee"><div class="gravatar-wrapper-32"><img src="7%20-%20Adding%20CSS%20and%20JS%20to%20form%20with%20attachments%20-%20Drupal%20Answers_files/sQ8bQ.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://drupal.stackexchange.com/users/5284/beebee">Beebee</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">5,561</span><span title="21 silver badges"><span class="badge2"></span><span class="badgecount">21</span></span><span title="48 bronze badges"><span class="badge3"></span><span class="badgecount">48</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2013-04-15 08:30:14Z" class="relativetime">Apr 15 '13 at 8:30</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://drupal.stackexchange.com/users/9227/alex-gill"><div class="gravatar-wrapper-32"><img src="7%20-%20Adding%20CSS%20and%20JS%20to%20form%20with%20attachments%20-%20Drupal%20Answers_files/NX3mr.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://drupal.stackexchange.com/users/9227/alex-gill">Alex Gill</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">3,062</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="10 silver badges"><span class="badge2"></span><span class="badgecount">10</span></span><span title="17 bronze badges"><span class="badge3"></span><span class="badgecount">17</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-70036" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="2" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-76652" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I have.  Can you tell me where it references how to handle external CSS files?</span>
+                    –&nbsp;<a href="https://drupal.stackexchange.com/users/6420/vintorg" title="722 reputation" class="comment-user owner">vintorg</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment76652_70036"><span title="2013-04-15 20:31:16Z" class="relativetime-clean">Apr 15 '13 at 20:31</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-76744" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Go to <a href="http://api.drupal.org/api/drupal/includes%21common.inc/function/drupal_process_attached/7" rel="nofollow noreferrer">api.drupal.org/api/drupal/includes%21common.inc/function/…</a> and search for 'External'.</span>
+                    –&nbsp;<a href="https://drupal.stackexchange.com/users/9227/alex-gill" title="3,062 reputation" class="comment-user">Alex Gill</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment76744_70036"><span title="2013-04-16 10:54:48Z" class="relativetime-clean">Apr 16 '13 at 10:54</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-186212" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Just a note - you can add JavaScript as described above to specific form by adding function named <code>&lt;module name&gt;_form_&lt;form id&gt;_alter</code> to your module. Finding form id is described here: <a href="http://drupal.stackexchange.com/questions/5802/how-can-i-find-the-form-id-of-a-form" title="how can i find the form id of a form">drupal.stackexchange.com/questions/5802/…</a></span>
+                    –&nbsp;<a href="https://drupal.stackexchange.com/users/21404/nux" title="116 reputation" class="comment-user">Nux</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment186212_70036"><span title="2015-04-22 16:28:22Z" class="relativetime-clean">Apr 22 '15 at 16:28</span></a></span>
+                        <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-236021" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">This example is kinda bad because you're assuming this will be the ONLY attachment on the form!</span>
+                    –&nbsp;<a href="https://drupal.stackexchange.com/users/1117/doublejosh" title="1,169 reputation" class="comment-user">doublejosh</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment236021_70036"><span title="2016-03-19 00:44:00Z" class="relativetime-clean">Mar 19 '16 at 0:44</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-251822" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="warm">5</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Comment by doublejosh means: usually one should append to the array rather than replacing it. So the example should be <code>$form['#attached']['css'][] = drupal_get_path('module', 'ajax_example') . '/ajax_example.css';</code> etc..</span>
+                    –&nbsp;<a href="https://drupal.stackexchange.com/users/16305/tanius" title="576 reputation" class="comment-user">tanius</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment251822_70036"><span title="2016-07-12 14:48:04Z" class="relativetime-clean">Jul 12 '16 at 14:48</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-70036" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link  dno" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."></a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link " title="expand to show all comments on this post" href="#" onclick="">show <b>2</b> more comments</a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22, 0, "adzerk95583898", 4).enableDynamicSiteSelection().setZone(30); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk95583898"><div style="background-image: url( data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== ); width: 1px; height: 1px; display:none;"></div><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input value="12" name="downvoteReason" type="radio">Uninteresting</label></li><li><label><input value="13" name="downvoteReason" type="radio">Misleading</label></li><li><label><input value="14" name="downvoteReason" type="radio">Offensive</label></li><li><label><input value="15" name="downvoteReason" type="radio">Repetitive</label></li><li><label><input value="16" name="downvoteReason" type="radio">Other</label></li></ul><a href="#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img style="position:absolute;" src="7%20-%20Adding%20CSS%20and%20JS%20to%20form%20with%20attachments%20-%20Drupal%20Answers_files/i_003.gif" border="0" height="0px" width="0px"></div>
+  
+<a name="70017"></a>
+<div id="answer-70017" class="answer" data-answerid="70017" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="70017" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">6</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Here is one way to do this that is via. calling a function using <code>#after_build</code> property. Just pass in your form id in switch case.</p>
+
+<pre class="default prettyprint prettyprinted" style=""><code><span class="kwd">function</span><span class="pln"> mymodule_form_alter</span><span class="pun">(&amp;</span><span class="pln">$form</span><span class="pun">,</span><span class="pln"> </span><span class="pun">&amp;</span><span class="pln">$form_state</span><span class="pun">,</span><span class="pln"> $form_id</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">switch</span><span class="pln"> </span><span class="pun">(</span><span class="pln">$form_id</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">case</span><span class="pln"> </span><span class="str">'my_form'</span><span class="pun">:</span><span class="pln">
+      $form</span><span class="pun">[</span><span class="str">'#after_build'</span><span class="pun">][]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">'mymodule_after_build'</span><span class="pun">;</span><span class="pln">
+      </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="kwd">function</span><span class="pln"> mymodule_after_build</span><span class="pun">(</span><span class="pln">$form</span><span class="pun">,</span><span class="pln"> </span><span class="pun">&amp;</span><span class="pln">$form_state</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  $path </span><span class="pun">=</span><span class="pln"> drupal_get_path</span><span class="pun">(</span><span class="str">'module'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'mymodule'</span><span class="pun">);</span><span class="pln">
+  drupal_add_js </span><span class="pun">(</span><span class="str">"$path/mymodule.js"</span><span class="pun">);</span><span class="pln">
+  </span><span class="kwd">return</span><span class="pln"> $form</span><span class="pun">;</span><span class="pln"> 
+</span><span class="pun">}</span></code></pre>
+
+<p>Also you can follow this good tutorial <a href="http://www.jaypan.com/tutorial/adding-css-and-js-cached-block-drupal-7" rel="nofollow">Adding css and js to drupal forms</a></p>
+
+<p>Hope this helps. :)</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="https://drupal.stackexchange.com/a/70017" title="short permalink to this answer" class="short-link" id="link-post-70017">share</a><span class="lsep">|</span><a href="https://drupal.stackexchange.com/posts/70017/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="https://drupal.stackexchange.com/posts/70017/revisions" title="show all edits to this post">edited <span title="2013-04-16 11:02:04Z" class="relativetime">Apr 16 '13 at 11:02</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://drupal.stackexchange.com/users/6461/ajits"><div class="gravatar-wrapper-32"><img src="7%20-%20Adding%20CSS%20and%20JS%20to%20form%20with%20attachments%20-%20Drupal%20Answers_files/e26a9036dfb2e8e00deded40c7684e50.jpeg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://drupal.stackexchange.com/users/6461/ajits">AjitS</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">9,432</span><span title="7 gold badges"><span class="badge1"></span><span class="badgecount">7</span></span><span title="27 silver badges"><span class="badge2"></span><span class="badgecount">27</span></span><span title="63 bronze badges"><span class="badge3"></span><span class="badgecount">63</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2013-04-15 04:55:33Z" class="relativetime">Apr 15 '13 at 4:55</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://drupal.stackexchange.com/users/10509/prerit-mohan"><div class="gravatar-wrapper-32"><img src="7%20-%20Adding%20CSS%20and%20JS%20to%20form%20with%20attachments%20-%20Drupal%20Answers_files/7e3b8866758d125f1cef8f006b2fa2bd.jpeg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://drupal.stackexchange.com/users/10509/prerit-mohan">Prerit Mohan</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">481</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="5 silver badges"><span class="badge2"></span><span class="badgecount">5</span></span><span title="21 bronze badges"><span class="badge3"></span><span class="badgecount">21</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-70017" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-251642" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">While this still works in Drupal 7, <a href="https://www.drupal.org/node/1253520#comment-4881500" rel="nofollow noreferrer">it seems to be a D6 hack</a>, needed because <a href="https://api.drupal.org/api/drupal/developer%21topics%21forms_api_reference.html/6.x" rel="nofollow noreferrer"><code>#attached</code> did not exist in D6</a>.</span>
+                    –&nbsp;<a href="https://drupal.stackexchange.com/users/16305/tanius" title="576 reputation" class="comment-user">tanius</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment251642_70017"><span title="2016-07-11 18:47:27Z" class="relativetime-clean">Jul 11 '16 at 18:47</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-263209" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">You should not use <code>drupal_add_js</code> on a form.  You'll end up with validation state trouble.</span>
+                    –&nbsp;<a href="https://drupal.stackexchange.com/users/1117/doublejosh" title="1,169 reputation" class="comment-user">doublejosh</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment263209_70017"><span title="2016-09-20 21:59:13Z" class="relativetime-clean">Sep 20 '16 at 21:59</span></a></span>
+                        <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-263290" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@doublejosh This is a three year old answer :)</span>
+                    –&nbsp;<a href="https://drupal.stackexchange.com/users/10509/prerit-mohan" title="481 reputation" class="comment-user">Prerit Mohan</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment263290_70017"><span title="2016-09-21 14:31:21Z" class="relativetime-clean">Sep 21 '16 at 14:31</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-70017" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="195267"></a>
+<div id="answer-195267" class="answer" data-answerid="195267" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="195267" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">3</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Here's the method for adding inline CSS to forms...</p>
+
+<pre class="default prettyprint prettyprinted" style=""><code><span class="pln">$form</span><span class="pun">[</span><span class="str">'#attached'</span><span class="pun">][</span><span class="str">'css'</span><span class="pun">][]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> array</span><span class="pun">(</span><span class="pln">
+  </span><span class="str">'data'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'.my-example-element { display: none; }'</span><span class="pun">,</span><span class="pln">
+  </span><span class="str">'type'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'inline'</span><span class="pun">,</span><span class="pln">
+</span><span class="pun">);</span></code></pre>
+
+<p>Note that it's better to add to the css array than replace it. Meaning you should use: <code>['css'][] =</code> rather than <code>['css'] =</code> to avoid squashing other additions.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="https://drupal.stackexchange.com/a/195267" title="short permalink to this answer" class="short-link" id="link-post-195267">share</a><span class="lsep">|</span><a href="https://drupal.stackexchange.com/posts/195267/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2016-03-19 00:42:59Z" class="relativetime">Mar 19 '16 at 0:42</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://drupal.stackexchange.com/users/1117/doublejosh"><div class="gravatar-wrapper-32"><img src="7%20-%20Adding%20CSS%20and%20JS%20to%20form%20with%20attachments%20-%20Drupal%20Answers_files/10d6642a3de5e1eade3e7b8f28f95b4f.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://drupal.stackexchange.com/users/1117/doublejosh">doublejosh</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1,169</span><span title="8 silver badges"><span class="badge2"></span><span class="badgecount">8</span></span><span title="17 bronze badges"><span class="badge3"></span><span class="badgecount">17</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-195267" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-195267" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="/questions/70015/answer/submit" method="post" class="post-form">
+						    <input id="post-id" value="70015" type="hidden">
+                            <input id="qualityBanWarningShown" name="qualityBanWarningShown" value="false" type="hidden">
+                            <input name="referrer" value="https://www.google.co.in/" type="hidden">
+							<h2 class="space">Your Answer</h2>
+
+
+        
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+                // Have to fire editor after snippets, if snippets enabled
+                if (StackExchange.settings.snippets.snippetsEnabled) {
+                    StackExchange.using("snippets", function() {
+                        createEditor();
+                    });
+                }
+                else {
+                    createEditor();
+                }
+            });
+
+            function createEditor() {
+                StackExchange.prepareEditor({
+                    heartbeatType: 'answer',
+                convertImagesToLinks: false,
+                reputationToPostImages: null,
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                    ,immediatelyShowMarkdownHelp:true
+                    });
+                
+
+        }
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor js-post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" value="5f8be9a80c529da1ac2a8e4452a512ed" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+
+
+
+</div>
+							<div style="position: relative;">
+								
+								            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="https://drupal.stackexchange.com/users/login?ssrc=question_page&amp;returnurl=https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f70015%2fadding-css-and-js-to-form-with-attachments%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Email and Password</span></p>
+                        </div>
+                    </div>
+                    <input name="manual-openid" class="manual-openid" type="hidden">
+                    <input name="use-facebook" class="use-facebook" value="false" type="hidden">
+                    <input name="use-google" class="use-google" value="false" type="hidden">
+                    <input class="submit-openid" value="Submit" style="display:none" type="button">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" size="30" maxlength="30" tabindex="105" type="text">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" size="30" maxlength="100" tabindex="106" placeholder="required, but never shown" type="email">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        
+StackExchange.openid.initPostLogin('.new-post-login', 
+'https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f70015%2fadding-css-and-js-to-form-with-attachments%23new-answer',
+ 'question_page');
+                    }
+                );
+            </script>
+            <noscript>
+                        <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" 
+type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="email" 
+size="30" maxlength="100" value="" tabindex="106" placeholder="required,
+ but never shown" />
+                </div>
+            </td>
+        </tr>
+        </table>
+    </div>
+
+            </noscript>
+
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" value="Post Your Answer" tabindex="110" type="submit">
+									<a href="#" class="btn-clear discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="https://stackexchange.com/legal/privacy-policy" name="privacy" target="_blank">privacy policy</a> and <a href="https://stackexchange.com/legal/terms-of-service" name="tos" target="_blank">terms of service</a>.</p>
+<input name="legalLinksShown" value="1" type="hidden">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="https://drupal.stackexchange.com/questions/tagged/7" class="post-tag" title="show questions tagged '7'" rel="tag">7</a> <a href="https://drupal.stackexchange.com/questions/tagged/forms" class="post-tag" title="show questions tagged 'forms'" rel="tag">forms</a>  or <a href="https://drupal.stackexchange.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes" role="complementary" aria-label="sidebar">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2013-04-15 03:52:17Z"><b>4 years, 2 months ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+                                    <b>40,926 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="https://drupal.stackexchange.com/questions/70015/adding-css-and-js-to-form-with-attachments?lastactivity" class="lastactivity-link" title="2016-03-19 00:42:59Z">1 year, 3 months ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+			<div class="module community-bulletin" data-tracker="cb=1">
+    <div class="related">
+                <div class="bulletin-title">
+                    Blog
+                </div>
+                <hr>
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <a href="https://stackoverflow.blog/2017/06/27/new-stack-overflow-footer-pages-launch-today/?cb=1" class="question-hyperlink">
+<div class="favicon favicon-stackexchangemeta" title="Meta Stack Exchange"></div>                </a>
+            </div>
+                <div class="bulletin-item-content">
+                    <a href="https://stackoverflow.blog/2017/06/27/new-stack-overflow-footer-pages-launch-today/?cb=1" class="question-hyperlink">New Stack Overflow Footer &amp; About Pages Launch Today</a>
+                </div>
+                <br class="cbt">
+            </div>
+    </div>
+</div>			
+			<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22, 0, 
+"adzerk1775002432", [5,17]).enableDynamicSiteSelection().setZone(56016);
+ });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1775002432"><div id="so_community_div" style="height: 250px; width: 220px;"><style type="text/css">
+    .ads {
+        margin-left: 60px;
+    }
+
+    .ad-container {
+        width: 300px;
+        height: 250px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+
+        .ad-container .ad {
+            height: 250px;
+        }
+
+        .ad-container .footer-container {
+            overflow: hidden;
+            height: 30px;
+            position: relative;
+            top: -30px;
+        }
+
+            .ad-container .footer-container .footer {
+                font-family: Arial,Helvetic,Sans-Serif;
+                font-size: 12px;
+                text-align: center;
+                padding-top: 9px;
+                background-color: #000;
+                color: #EFF;
+                opacity: 0.9;
+                filter: alpha(opacity=90);
+                top: 30px;
+                height: 30px;
+                position: relative;
+            }
+
+        .ad-container a:hover {
+            text-decoration: underline;
+        }
+
+    #adzerk2 {
+        height: 250px;
+    }
+</style>
+<script>
+    StackExchange.ready(function () {
+        $(".ad-container").hover(
+            function () {
+                $(".ad-container .footer-container .footer").stop(true, 
+true).animate({ top: "0px" }, "fast");
+            },
+            function () {
+                $(".ad-container .footer-container .footer").animate({ 
+top: "30px" }, "fast");
+            });
+    });
+    if (window._passthroughAdUrl) {
+        $('.ad-container a').each(function () { $(this).attr('href', 
+window._passthroughAdUrl + (window._passthroughAdUrl.indexOf('?') == -1 ?
+ '?' : '&') + 'url=' + encodeURIComponent($(this).attr('href'))); });
+    }
+</script>
+        <div class="ad-container">
+            <div class="ad">
+                <a href="http://drupal.meta.stackexchange.com/ads/ct/3616?url=http%3a%2f%2fd8rules.org%2f&amp;s=4ce723e6f17e2a9fcdc90471f8aa6b264577a5c56211806b0105d85bcc6a5bee" rel="nofollow" target="_blank"><img src="7%20-%20Adding%20CSS%20and%20JS%20to%20form%20with%20attachments%20-%20Drupal%20Answers_files/5rxay.png" alt="If you want Rules for D8, then checkout and/or support #d8rules" title="If you want Rules for D8, then checkout and/or support #d8rules" height="250" width="300"></a>
+            </div>
+            <div class="footer-container">
+                <div class="footer">
+                    7 votes · <a href="http://drupal.meta.stackexchange.com/questions/3606#3616" title="click to comment on this ad" target="_blank">comment</a> · <a href="http://drupal.meta.stackexchange.com/ads/display/3606" target="_blank">stats</a>
+                </div>
+            </div>
+        </div></div><script type="text/javascript">window._a51AdUrl = 
+"https://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NSwiYnQiOjAsImNtIjozNzM4NjIsImNoIjoxNjUzMSwiY2siOnt9LCJjciI6MTM3NTAxMSwiZGkiOiIzYTAwYjQ4ZTI1MTI0M2E0YTBjM2QzNDExOTJlYTQwYiIsImRtIjoxLCJmYyI6MTUzOTIwMSwiZmwiOjExNzI3NzUsImlwIjoiNTkuMTQ0LjEzNS43Iiwia3ciOiI3LGZvcm1zLHgtY29tbXVuaXR5LHgtaG9zdC1kcnVwYWwuc3RhY2tleGNoYW5nZS5jb20iLCJudyI6MjIsInBjIjowLCJlYyI6MCwicHIiOjU1Njk1LCJydCI6MSwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY28uaW4vIiwic2EiOiIzIiwic2IiOiJpLTA3YzFlOGNjOGY0NTMxYTZjIiwic3AiOjE1MzExLCJzdCI6NTY3NTksInVrIjoidWUxLTVhZjdmN2YxNGNjOTQ1Mzg5MWZmMWRkNDQ1ZTNlZGI3Iiwiem4iOjU2MDE2LCJ0cyI6MTQ5ODYzNzYwODY3NCwiYmYiOnRydWUsInBuIjoiYWR6ZXJrMTc3NTAwMjQzMiIsInVyIjpudWxsfQ&s=3fmFD804JFIz7WeQQ9ZXfy1nBfI";</script><script type="text/javascript" src="7%20-%20Adding%20CSS%20and%20JS%20to%20form%20with%20attachments%20-%20Drupal%20Answers_files/community"></script><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input value="12" name="downvoteReason" type="radio">Uninteresting</label></li><li><label><input value="13" name="downvoteReason" type="radio">Misleading</label></li><li><label><input value="14" name="downvoteReason" type="radio">Offensive</label></li><li><label><input value="15" name="downvoteReason" type="radio">Repetitive</label></li><li><label><input value="16" name="downvoteReason" type="radio">Other</label></li></ul><a href="#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img style="position:absolute;" src="7%20-%20Adding%20CSS%20and%20JS%20to%20form%20with%20attachments%20-%20Drupal%20Answers_files/i_002.gif" border="0" height="0px" width="0px"></div>
+            <div id="hireme"></div>
+        <script>
+        </script>
+			
+
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+
+<div class="spacer">
+	<a href="https://drupal.stackexchange.com/q/5802?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">18</div>
+	</a>
+	<a href="https://drupal.stackexchange.com/questions/5802/how-can-i-find-the-form-id-of-a-form?noredirect=1&amp;lq=1" class="question-hyperlink">How can I find the form ID of a form?</a>
+</div>
+<div class="spacer">
+	<a href="https://drupal.stackexchange.com/q/116612?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">1</div>
+	</a>
+	<a href="https://drupal.stackexchange.com/questions/116612/drupal-add-js-not-work-in-form-validation-failed?noredirect=1&amp;lq=1" class="question-hyperlink">drupal_add_js not work in form validation failed</a>
+</div>
+<div class="spacer">
+	<a href="https://drupal.stackexchange.com/q/77929?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">1</div>
+	</a>
+	<a href="https://drupal.stackexchange.com/questions/77929/is-it-possible-to-add-java-script-to-webform?noredirect=1&amp;lq=1" class="question-hyperlink">Is it possible to add java script to webform?</a>
+</div>
+<div class="spacer">
+	<a href="https://drupal.stackexchange.com/q/166509?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">2</div>
+	</a>
+	<a href="https://drupal.stackexchange.com/questions/166509/how-to-include-css-for-a-custom-admin-theme?noredirect=1&amp;lq=1" class="question-hyperlink">How to include CSS for a custom admin theme?</a>
+</div>
+<div class="spacer">
+	<a href="https://drupal.stackexchange.com/q/95464?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="https://drupal.stackexchange.com/questions/95464/speech-api-javascript-and-drupal-forms?noredirect=1&amp;lq=1" class="question-hyperlink">Speech API Javascript and Drupal Forms</a>
+</div>
+<div class="spacer">
+	<a href="https://drupal.stackexchange.com/q/167493?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">3</div>
+	</a>
+	<a href="https://drupal.stackexchange.com/questions/167493/how-to-add-javascript-after-form-was-validated-with-ajax-callback?noredirect=1&amp;lq=1" class="question-hyperlink">How to add javascript after form was validated with ajax callback?</a>
+</div>
+<div class="spacer">
+	<a href="https://drupal.stackexchange.com/q/222163?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="https://drupal.stackexchange.com/questions/222163/extending-forms-or-views-or-something-else?noredirect=1&amp;lq=1" class="question-hyperlink">Extending forms (or views, or something else?!)</a>
+</div>
+<div class="spacer">
+	<a href="https://drupal.stackexchange.com/q/145789?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="https://drupal.stackexchange.com/questions/145789/changing-color-of-form-html-with-javascript?noredirect=1&amp;lq=1" class="question-hyperlink">Changing color of form html with Javascript</a>
+</div>			</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/4329?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">4</div></a><a href="https://drupal.stackexchange.com/questions/4329/attaching-the-comment-form-programmatically?rq=1" class="question-hyperlink">Attaching the comment form programmatically</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/62727?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">2</div></a><a href="https://drupal.stackexchange.com/questions/62727/attach-a-submit-handler-on-an-ajax-y-form-hook-media-format-form-prepare-alter?rq=1" class="question-hyperlink">Attach a submit handler on an ajax-y form (hook_media_format_form_prepare_alter)</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/77398?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">2</div></a><a href="https://drupal.stackexchange.com/questions/77398/how-to-attach-css-classes-to-the-h1-title-attributes-if-node-is-page-dynamic?rq=1" class="question-hyperlink">How to attach css classes to the &lt;h1&gt; title attributes if node_is_page() dynamically?</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/88083?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="https://drupal.stackexchange.com/questions/88083/how-to-use-form-api-attached-and-modules-own-scripts-with-jquery-multi-module?rq=1" class="question-hyperlink">How to use Form API #attached and module's own scripts with jQuery Multi module?</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/91054?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">4</div></a><a href="https://drupal.stackexchange.com/questions/91054/how-do-i-attach-some-entity-fields-or-widgets-to-a-form?rq=1" class="question-hyperlink">How do I attach some entity fields (or widgets?) to a form?</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/102914?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">4</div></a><a href="https://drupal.stackexchange.com/questions/102914/attaching-a-system-js-library-using-attached-property-d7?rq=1" class="question-hyperlink">Attaching a system js library using #attached property (D7)</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/139426?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">1</div></a><a href="https://drupal.stackexchange.com/questions/139426/attach-an-ajax-callback-to-a-field-when-the-form-is-reloading-from-previous-aja?rq=1" class="question-hyperlink">Attach an #ajax callback to a field when the form is reloading from previous ajax request</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/144587?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">1</div></a><a href="https://drupal.stackexchange.com/questions/144587/css-file-is-not-attached?rq=1" class="question-hyperlink">CSS file is not attached</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/154814?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">1</div></a><a href="https://drupal.stackexchange.com/questions/154814/form-attached-js-attributes?rq=1" class="question-hyperlink">form attached JS attributes</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/228074?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">1</div></a><a href="https://drupal.stackexchange.com/questions/228074/how-to-change-form-submit-button-value-after-form-submission?rq=1" class="question-hyperlink">How to change form submit button value after form submission?</a></div>
+                    </div>
+				</div>
+            
+
+<div id="hot-network-questions" class="module tex2jax_ignore">
+    <h4>
+        <a href="https://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="https://english.stackexchange.com/questions/395382/which-word-begins-with-y-and-looks-like-an-axe-in-this-picture" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Which word begins with "y" and looks like an axe in this picture?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-cseducators" title="Computer Science Educators Stack Exchange"></div><a href="https://cseducators.stackexchange.com/questions/1126/how-to-prepare-students-for-bias-in-industry" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:678 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to prepare students for bias in industry
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="https://puzzling.stackexchange.com/questions/52916/the-sound-of-me-fits-in-quite-a-lot" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    The sound of me fits in quite a lot
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="https://scifi.stackexchange.com/questions/162321/what-makes-the-free-cities-free" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What makes the Free Cities "free"?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="https://physics.stackexchange.com/questions/341704/why-does-wind-direction-significantly-affect-sound-propagation" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why does wind direction significantly affect sound propagation?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="https://english.stackexchange.com/questions/395937/one-takes-an-exam-but-what-about-a-job-interview" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    One takes an exam, but what about a job interview?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-graphicdesign" title="Graphic Design Stack Exchange"></div><a href="https://graphicdesign.stackexchange.com/questions/93922/is-it-impossible-or-very-difficult-to-draw-a-radially-symmetric-5-pointed-star" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:174 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it impossible (or very difficult) to draw a radially symmetric 5-pointed star?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="https://worldbuilding.stackexchange.com/questions/84637/keeping-a-world-with-necromancy-from-overpopulation" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Keeping a world with necromancy from overpopulation
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-mathoverflow" title="MathOverflow"></div><a href="https://mathoverflow.net/questions/272941/research-only-permanent-positions-worldwide" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:504 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Research-only permanent positions worldwide
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="https://scifi.stackexchange.com/questions/162405/why-dont-the-students-of-hogwarts-write-with-ballpoint-pens" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why don't the students of Hogwarts write with ballpoint pens?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="https://math.stackexchange.com/questions/2338858/proving-that-norm-function-is-continuously-differentiable" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Proving that norm function is continuously differentiable
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="https://workplace.stackexchange.com/questions/93702/under-performing-employee-will-be-fired-if-i-ask-for-him-off-my-team" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Under performing employee will be fired if I ask for him off my team
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-cooking" title="Seasoned Advice"></div><a href="https://cooking.stackexchange.com/questions/82664/recipe-calls-for-a-heaping-teaspoon-of-a-liquid-ingredient" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:49 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Recipe calls for a heaping teaspoon of a liquid ingredient
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="https://rpg.stackexchange.com/questions/102359/does-green-lords-gift-effectively-make-all-heal-spells-roll-max-on-the-warlock" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does Green Lord's Gift effectively make all heal spells roll max on the Warlock?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-gamedev" title="Game Development Stack Exchange"></div><a href="https://gamedev.stackexchange.com/questions/142984/how-can-i-clean-up-excessive-player-created-rubble" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:53 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can I clean up excessive player-created rubble?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="https://codegolf.stackexchange.com/questions/128496/hello-world-every-other-character" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Hello, World! (Every other character)
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="https://english.stackexchange.com/questions/395972/term-for-group-of-guys-attempting-to-show-who-is-alpha" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Term for group of guys attempting to show who is alpha?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="https://travel.stackexchange.com/questions/96019/can-i-re-enter-the-usa-after-a-1-day-overstay-3-years-ago" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can I re-enter the USA after a 1-day overstay 3 years ago?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-parenting" title="Parenting Stack Exchange"></div><a href="https://parenting.stackexchange.com/questions/30625/teenagers-ogling-my-daughter-what-to-do" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:228 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Teenagers Ogling my Daughter. What to do?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-history" title="History Stack Exchange"></div><a href="https://history.stackexchange.com/questions/38636/when-did-the-allies-find-out-about-the-killing-of-jews-during-ww2" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:324 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    When did the allies find out about the killing of Jews during WW2
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="https://worldbuilding.stackexchange.com/questions/84648/possible-long-term-effects-of-frequent-teleportation" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Possible Long Term Effects of Frequent Teleportation
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="https://scifi.stackexchange.com/questions/162334/why-didnt-sauron-attack-the-beacons-of-gondor" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why didn't Sauron attack the Beacons of Gondor?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="https://scifi.stackexchange.com/questions/162379/who-was-the-dead-voyager-crew-member-discovered-by-the-two-voth-archaeologists" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Who was the dead Voyager crew member discovered by the two Voth archaeologists?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="https://codegolf.stackexchange.com/questions/128611/build-me-a-city" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Build me a city
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="https://drupal.stackexchange.com/feeds/question/70015" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/70015/ivc/7e72');});
+</script>
+<noscript>
+    <div><img src="/posts/70015/ivc/7e72" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display:none" id="prettify-lang">default</div></div>
+
+
+        </div>
+    </div>
+
+        <footer id="footer" class="s-footer categories" role="contentinfo">
+            <div class="-container g-column">
+                <ul class="-menu g-row">
+
+                    <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">about us</a></li>
+                        <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 2 })" href="https://drupal.stackexchange.com/tour">tour</a></li>
+                    <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 3 })" href="https://drupal.stackexchange.com/help">help</a></li>
+                    <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 4 })" href="https://stackoverflow.blog/?blb=1">blog</a></li>
+                        <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 5 })" href="https://chat.stackexchange.com/?tab=site&amp;host=drupal.stackexchange.com">chat</a></li>
+                    <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 6 })" href="https://data.stackexchange.com/">data</a></li>
+                    <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 7 })" href="https://stackexchange.com/legal">legal</a></li>
+                    <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 8 })" href="https://stackexchange.com/legal/privacy-policy">privacy policy</a></li>
+                    <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 9 })" href="https://stackoverflow.com/company/work-here">work here</a></li>
+                    <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 10 })" href="https://www.stackoverflowbusiness.com/advertise">advertising info</a></li>
+
+                    <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 12 })" onclick='StackExchange.switchMobile("on")'>mobile</a></li>
+                    <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 13 })" href="https://drupal.stackexchange.com/contact"><strong>contact us</strong></a></li>
+                        <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 14 })" href="https://drupal.meta.stackexchange.com/"><strong>feedback</strong></a></li>
+                    <li class="-item g-col">
+                        
+                    </li>
+                </ul>
+                <div class="-toc g-row" id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                <strong>Technology</strong>
+            </th>
+            <th>
+                <strong>Life / Arts</strong>
+            </th>
+            <th>
+                <strong>Culture / Recreation</strong>
+            </th>
+            <th>
+                <strong>Science</strong>
+            </th>
+            <th>
+                <strong>Other</strong>
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="https://stackoverflow.com/" class="-link js-gps-track" title="professional and enthusiast programmers" data-gps-track="footer.click({ location: 2, link: 25 })">Stack Overflow</a></li>
+                        <li><a href="https://serverfault.com/" class="-link js-gps-track" title="system and network administrators" data-gps-track="footer.click({ location: 2, link: 25 })">Server Fault</a></li>
+                        <li><a href="https://superuser.com/" class="-link js-gps-track" title="computer enthusiasts and power users" data-gps-track="footer.click({ location: 2, link: 25 })">Super User</a></li>
+                        <li><a href="https://webapps.stackexchange.com/" class="-link js-gps-track" title="power users of web applications" data-gps-track="footer.click({ location: 2, link: 25 })">Web Applications</a></li>
+                        <li><a href="https://askubuntu.com/" class="-link js-gps-track" title="Ubuntu users and developers" data-gps-track="footer.click({ location: 2, link: 25 })">Ask Ubuntu</a></li>
+                        <li><a href="https://webmasters.stackexchange.com/" class="-link js-gps-track" title="pro webmasters" data-gps-track="footer.click({ location: 2, link: 25 })">Webmasters</a></li>
+                        <li><a href="https://gamedev.stackexchange.com/" class="-link js-gps-track" title="professional and independent game developers" data-gps-track="footer.click({ location: 2, link: 25 })">Game Development</a></li>
+                        <li><a href="https://tex.stackexchange.com/" class="-link js-gps-track" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems" data-gps-track="footer.click({ location: 2, link: 25 })">TeX - LaTeX</a></li>
+                        <li><a href="https://softwareengineering.stackexchange.com/" class="-link js-gps-track" title="professionals, academics, and students working within the systems development life cycle" data-gps-track="footer.click({ location: 2, link: 25 })">Software Engineering</a></li>
+                        <li><a href="https://unix.stackexchange.com/" class="-link js-gps-track" title="users of Linux, FreeBSD and other Un*x-like operating systems" data-gps-track="footer.click({ location: 2, link: 25 })">Unix &amp; Linux</a></li>
+                        <li><a href="https://apple.stackexchange.com/" class="-link js-gps-track" title="power users of Apple hardware and software" data-gps-track="footer.click({ location: 2, link: 25 })">Ask Different (Apple)</a></li>
+                        <li><a href="https://wordpress.stackexchange.com/" class="-link js-gps-track" title="WordPress developers and administrators" data-gps-track="footer.click({ location: 2, link: 25 })">WordPress Development</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="https://gis.stackexchange.com/" class="-link js-gps-track" title="cartographers, geographers and GIS professionals" data-gps-track="footer.click({ location: 2, link: 25 })">Geographic Information Systems</a></li>
+                        <li><a href="https://electronics.stackexchange.com/" class="-link js-gps-track" title="electronics and electrical engineering professionals, students, and enthusiasts" data-gps-track="footer.click({ location: 2, link: 25 })">Electrical Engineering</a></li>
+                        <li><a href="https://android.stackexchange.com/" class="-link js-gps-track" title="enthusiasts and power users of the Android operating system" data-gps-track="footer.click({ location: 2, link: 25 })">Android Enthusiasts</a></li>
+                        <li><a href="https://security.stackexchange.com/" class="-link js-gps-track" title="information security professionals" data-gps-track="footer.click({ location: 2, link: 25 })">Information Security</a></li>
+                        <li><a href="https://dba.stackexchange.com/" class="-link js-gps-track" title="database professionals who wish to improve their database skills and learn from others in the community" data-gps-track="footer.click({ location: 2, link: 25 })">Database Administrators</a></li>
+                        <li><a href="https://drupal.stackexchange.com/" class="-link js-gps-track" title="Drupal developers and administrators" data-gps-track="footer.click({ location: 2, link: 25 })">Drupal Answers</a></li>
+                        <li><a href="https://sharepoint.stackexchange.com/" class="-link js-gps-track" title="SharePoint enthusiasts" data-gps-track="footer.click({ location: 2, link: 25 })">SharePoint</a></li>
+                        <li><a href="https://ux.stackexchange.com/" class="-link js-gps-track" title="user experience researchers and experts" data-gps-track="footer.click({ location: 2, link: 25 })">User Experience</a></li>
+                        <li><a href="https://mathematica.stackexchange.com/" class="-link js-gps-track" title="users of Wolfram Mathematica" data-gps-track="footer.click({ location: 2, link: 25 })">Mathematica</a></li>
+                        <li><a href="https://salesforce.stackexchange.com/" class="-link js-gps-track" title="Salesforce administrators, implementation experts, developers and anybody in-between" data-gps-track="footer.click({ location: 2, link: 25 })">Salesforce</a></li>
+                        <li><a href="https://expressionengine.stackexchange.com/" class="-link js-gps-track" title="administrators, end users, developers and designers for ExpressionEngine® CMS" data-gps-track="footer.click({ location: 2, link: 25 })">ExpressionEngine® Answers</a></li>
+                        <li><a href="https://crypto.stackexchange.com/" class="-link js-gps-track" title="software developers, mathematicians and others interested in cryptography" data-gps-track="footer.click({ location: 2, link: 25 })">Cryptography</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="https://codereview.stackexchange.com/" class="-link js-gps-track" title="peer programmer code reviews" data-gps-track="footer.click({ location: 2, link: 25 })">Code Review</a></li>
+                        <li><a href="https://magento.stackexchange.com/" class="-link js-gps-track" title="users of the Magento e-Commerce platform" data-gps-track="footer.click({ location: 2, link: 25 })">Magento</a></li>
+                        <li><a href="https://dsp.stackexchange.com/" class="-link js-gps-track" title="practitioners of the art and science of signal, image and video processing" data-gps-track="footer.click({ location: 2, link: 25 })">Signal Processing</a></li>
+                        <li><a href="https://raspberrypi.stackexchange.com/" class="-link js-gps-track" title="users and developers of hardware and software for Raspberry Pi" data-gps-track="footer.click({ location: 2, link: 25 })">Raspberry Pi</a></li>
+                        <li><a href="https://codegolf.stackexchange.com/" class="-link js-gps-track" title="programming puzzle enthusiasts and code golfers" data-gps-track="footer.click({ location: 2, link: 25 })">Programming Puzzles &amp; Code Golf</a></li>
+                                            <li>
+                            <a href="https://stackexchange.com/sites#technology" class="more js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="https://photo.stackexchange.com/" class="-link js-gps-track" title="professional, enthusiast and amateur photographers" data-gps-track="footer.click({ location: 2, link: 25 })">Photography</a></li>
+                        <li><a href="https://scifi.stackexchange.com/" class="-link js-gps-track" title="science fiction and fantasy enthusiasts" data-gps-track="footer.click({ location: 2, link: 25 })">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="https://graphicdesign.stackexchange.com/" class="-link js-gps-track" title="Graphic Design professionals, students, and enthusiasts" data-gps-track="footer.click({ location: 2, link: 25 })">Graphic Design</a></li>
+                        <li><a href="https://movies.stackexchange.com/" class="-link js-gps-track" title="movie and tv enthusiasts" data-gps-track="footer.click({ location: 2, link: 25 })">Movies &amp; TV</a></li>
+                        <li><a href="https://music.stackexchange.com/" class="-link js-gps-track" title="musicians, students, and enthusiasts" data-gps-track="footer.click({ location: 2, link: 25 })">Music: Practice &amp; Theory</a></li>
+                        <li><a href="https://cooking.stackexchange.com/" class="-link js-gps-track" title="professional and amateur chefs" data-gps-track="footer.click({ location: 2, link: 25 })">Seasoned Advice (cooking)</a></li>
+                        <li><a href="https://diy.stackexchange.com/" class="-link js-gps-track" title="contractors and serious DIYers" data-gps-track="footer.click({ location: 2, link: 25 })">Home Improvement</a></li>
+                        <li><a href="https://money.stackexchange.com/" class="-link js-gps-track" title="people who want to be financially literate" data-gps-track="footer.click({ location: 2, link: 25 })">Personal Finance &amp; Money</a></li>
+                        <li><a href="https://academia.stackexchange.com/" class="-link js-gps-track" title="academics and those enrolled in higher education" data-gps-track="footer.click({ location: 2, link: 25 })">Academia</a></li>
+                                            <li>
+                            <a href="https://stackexchange.com/sites#lifearts" class="more js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                                more (8)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="https://english.stackexchange.com/" class="-link js-gps-track" title="linguists, etymologists, and serious English language enthusiasts" data-gps-track="footer.click({ location: 2, link: 25 })">English Language &amp; Usage</a></li>
+                        <li><a href="https://skeptics.stackexchange.com/" class="-link js-gps-track" title="scientific skepticism" data-gps-track="footer.click({ location: 2, link: 25 })">Skeptics</a></li>
+                        <li><a href="https://judaism.stackexchange.com/" class="-link js-gps-track" title="those who base their lives on Jewish law and tradition and anyone interested in learning more" data-gps-track="footer.click({ location: 2, link: 25 })">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="https://travel.stackexchange.com/" class="-link js-gps-track" title="road warriors and seasoned travelers" data-gps-track="footer.click({ location: 2, link: 25 })">Travel</a></li>
+                        <li><a href="https://christianity.stackexchange.com/" class="-link js-gps-track" title="committed Christians, experts in Christianity and those interested in learning more" data-gps-track="footer.click({ location: 2, link: 25 })">Christianity</a></li>
+                        <li><a href="https://ell.stackexchange.com/" class="-link js-gps-track" title="speakers of other languages learning English" data-gps-track="footer.click({ location: 2, link: 25 })">English Language Learners</a></li>
+                        <li><a href="https://japanese.stackexchange.com/" class="-link js-gps-track" title="students, teachers, and linguists wanting to discuss the finer points of the Japanese language" data-gps-track="footer.click({ location: 2, link: 25 })">Japanese Language</a></li>
+                        <li><a href="https://gaming.stackexchange.com/" class="-link js-gps-track" title="passionate videogamers on all platforms" data-gps-track="footer.click({ location: 2, link: 25 })">Arqade (gaming)</a></li>
+                        <li><a href="https://bicycles.stackexchange.com/" class="-link js-gps-track" title="people who build and repair bicycles, people who train cycling, or commute on bicycles" data-gps-track="footer.click({ location: 2, link: 25 })">Bicycles</a></li>
+                        <li><a href="https://rpg.stackexchange.com/" class="-link js-gps-track" title="gamemasters and players of tabletop, paper-and-pencil role-playing games" data-gps-track="footer.click({ location: 2, link: 25 })">Role-playing Games</a></li>
+                        <li><a href="https://anime.stackexchange.com/" class="-link js-gps-track" title="anime and manga fans" data-gps-track="footer.click({ location: 2, link: 25 })">Anime &amp; Manga</a></li>
+                        <li><a href="https://mechanics.stackexchange.com/" class="-link js-gps-track" title="mechanics and DIY enthusiast owners of cars, trucks, and motorcycles" data-gps-track="footer.click({ location: 2, link: 25 })">Motor Vehicle Maintenance &amp; Repair</a></li>
+                                            <li>
+                            <a href="https://stackexchange.com/sites#culturerecreation" class="more js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                                more (17)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="https://mathoverflow.net/" class="-link js-gps-track" title="professional mathematicians" data-gps-track="footer.click({ location: 2, link: 25 })">MathOverflow</a></li>
+                        <li><a href="https://math.stackexchange.com/" class="-link js-gps-track" title="people studying math at any level and professionals in related fields" data-gps-track="footer.click({ location: 2, link: 25 })">Mathematics</a></li>
+                        <li><a href="https://stats.stackexchange.com/" class="-link js-gps-track" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization" data-gps-track="footer.click({ location: 2, link: 25 })">Cross Validated (stats)</a></li>
+                        <li><a href="https://cstheory.stackexchange.com/" class="-link js-gps-track" title="theoretical computer scientists and researchers in related fields" data-gps-track="footer.click({ location: 2, link: 25 })">Theoretical Computer Science</a></li>
+                        <li><a href="https://physics.stackexchange.com/" class="-link js-gps-track" title="active researchers, academics and students of physics" data-gps-track="footer.click({ location: 2, link: 25 })">Physics</a></li>
+                        <li><a href="https://chemistry.stackexchange.com/" class="-link js-gps-track" title="scientists, academics, teachers and students" data-gps-track="footer.click({ location: 2, link: 25 })">Chemistry</a></li>
+                        <li><a href="https://biology.stackexchange.com/" class="-link js-gps-track" title="biology researchers, academics, and students" data-gps-track="footer.click({ location: 2, link: 25 })">Biology</a></li>
+                        <li><a href="https://cs.stackexchange.com/" class="-link js-gps-track" title="students, researchers and practitioners of computer science" data-gps-track="footer.click({ location: 2, link: 25 })">Computer Science</a></li>
+                        <li><a href="https://philosophy.stackexchange.com/" class="-link js-gps-track" title="those interested in the study of the fundamental nature of knowledge, reality, and existence" data-gps-track="footer.click({ location: 2, link: 25 })">Philosophy</a></li>
+                                            <li>
+                            <a href="https://stackexchange.com/sites#science" class="more js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                                more (3)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="https://meta.stackexchange.com/" class="-link js-gps-track" title="meta-discussion of the Stack Exchange family of Q&amp;A websites" data-gps-track="footer.click({ location: 2, link: 25 })">Meta Stack Exchange</a></li>
+                        <li><a href="https://stackapps.com/" class="-link js-gps-track" title="apps, scripts, and development with the Stack Exchange API" data-gps-track="footer.click({ location: 2, link: 25 })">Stack Apps</a></li>
+                        <li><a href="https://area51.stackexchange.com/" class="-link js-gps-track" title="proposing new sites in the Stack Exchange network" data-gps-track="footer.click({ location: 2, link: 25 })">Area 51</a></li>
+                        <li><a href="https://www.stackoverflowbusiness.com/talent" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })">Stack Overflow Talent</a></li>
+                                    </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+                <div class="g-col -copyright" id="copyright">
+                    site design / logo © 2017 Stack Exchange Inc; user contributions licensed under <a class="-link" href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a>
+                    with <a class="-link" href="https://stackoverflow.blog/2009/06/25/attribution-required/" rel="license">attribution required</a>
+                </div>
+                <div class="g-col -copyright _muted" id="svnrev">
+                    rev 2017.6.27.26357
+                </div>
+
+            </div>
+        </footer>
+
+    <noscript>
+        <div id="noscript-warning">Drupal Answers works best with JavaScript enabled
+            <img src="https://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno">
+        </div>
+    </noscript>
+<script>var 
+z=document.createElement("script");z.type="text/javascript",z.async=!0,z.src="https://static.adzerk.net/ados.js";var
+ 
+s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(z,s);</script>
+<script>
+var ados = ados || {};
+ados.run = ados.run || [];
+
+
+ados.run.push(function () {
+    setTimeout(function () { $("#adzerk-user-match").remove(); }, window.AUMIframeDone ? 0 : 2000);
+    ados_setKeywords('7,forms,x-community,x-host-drupal.stackexchange.com');; ados_load();
+});   
+
+</script>
+
+    <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || 
+function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new
+ Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = 
+g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 
+'https://www.google-analytics.com/analytics.js', 'ga');
+                ga('create', 'UA-5620270-24', {'cookieDomain': 
+'stackexchange.com'});
+                ga('set', 'dimension2', '|7|forms|');
+                ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+                qc.async = true;
+                qc.src = (ssl ? 'https://secure' : 'http://edge') + 
+'.quantserve.com/quant.js';
+                s.parentNode.insertBefore(qc, s);
+                _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+                            var sc=document.createElement('script');
+                sc.async=true;
+                sc.src=(ssl?'https://sb':'http://b') + 
+'.scorecardresearch.com/beacon.js';
+                s.parentNode.insertBefore(sc, s);
+                _comscore.push({ c1: "2", c2: "17440561" });
+        })();
+
+    </script>
+        
+    
+            <script type="text/javascript">
+                
+                (function(appendChild) {
+                    Node.prototype.appendChild = function() {
+                        var parent = this;
+                        var newNode = arguments[0];
+                        if (parent.nodeName === 'HEAD'
+                            && newNode
+                            && newNode.nodeName === 'SCRIPT'
+                            && newNode.src) {
+                            
+                            window.setTimeout(function() {
+                                var result = 
+newNode.src.match(/^https:\/\/maps\.googleapis\.com\/maps\/api\/place\/js\/(\w+)Service\./i)
+ || [];
+                                var service = result[1];
+                                if (service) {
+                                    if (service === 'Autocompletion') 
+service =  2;
+                                    else if (service === 'Place') 
+service = 1;
+                                    else service = 0;
+                                    StackExchange.using('gps', 
+function() {
+                                        
+StackExchange.gps.track('google_maps_places_api.call', { service: 
+service });
+                                    });
+                                }
+                            }, 0);
+                        }
+                        return appendChild.apply(this, arguments);
+                    };
+                })(Node.prototype.appendChild);
+            </script>
+    
+
+</body></html>
