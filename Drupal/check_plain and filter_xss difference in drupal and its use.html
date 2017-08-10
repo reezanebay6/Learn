@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)https://drupal.stackexchange.com/questions/10280/is-check-plain-enough -->
+<html itemscope="" itemtype="http://schema.org/QAPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>security - Is check_plain() enough? - Drupal Answers</title>
+    <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/drupal/img/favicon.ico?v=62d5285bc682">
+    <link rel="apple-touch-icon image_src" href="https://cdn.sstatic.net/Sites/drupal/img/apple-touch-icon.png?v=2f2d1337c2e2">
+    <link rel="search" type="application/opensearchdescription+xml" title="Drupal Answers" href="https://drupal.stackexchange.com/opensearch.xml">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@StackDrupal">
+    <meta name="twitter:domain" content="drupal.stackexchange.com">
+
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/drupal/img/apple-touch-icon@2.png?v=5d949c166061">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="Is check_plain() enough?">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="Is check_plain() enough for re-displaying the text entered by users in the browser, or should I still filter with filter_xss()?">
+    <meta property="og:url" content="https://drupal.stackexchange.com/questions/10280/is-check-plain-enough">
+    <link rel="canonical" href="https://drupal.stackexchange.com/questions/10280/is-check-plain-enough">
+
+    
+    
+    <script type="text/javascript" async="" src="./check_plain and filter_xss difference in drupal and its use_files/ados"></script><script async="" src="./check_plain and filter_xss difference in drupal and its use_files/quant.js"></script><script async="" src="./check_plain and filter_xss difference in drupal and its use_files/beacon.js"></script><script async="" src="./check_plain and filter_xss difference in drupal and its use_files/analytics.js"></script><script type="text/javascript" async="" src="./check_plain and filter_xss difference in drupal and its use_files/ados.js"></script><script src="./check_plain and filter_xss difference in drupal and its use_files/jquery.min.js"></script>
+    <script src="./check_plain and filter_xss difference in drupal and its use_files/stub.en.js"></script>
+    <link rel="stylesheet" type="text/css" href="./check_plain and filter_xss difference in drupal and its use_files/all.css">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;Is check_plain() enough?&#39;" href="https://drupal.stackexchange.com/feeds/question/10280">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://drupal.stackexchange.com/questions/10280/is-check-plain-enough">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://drupal.stackexchange.com/questions/10280/is-check-plain-enough">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://drupal.stackexchange.com/questions/10280/is-check-plain-enough">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:10280});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('220', '10280');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text', false); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.ready(function () {
+                        StackExchange.realtime.init('wss://qa.sockets.stackexchange.com');
+            StackExchange.realtime.subscribeToReputationNotifications('220');
+                StackExchange.realtime.subscribeToTopBarNotifications('220');
+        });
+    </script>
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","serverTime":1499070189,"routeName":"Questions/Show","site":{"name":"Drupal Answers","description":"Q&A for Drupal developers and administrators","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdsB7sSAAAAAAzjgEF_Hd8vXv-C42sa_KyofaGR","recaptchaAudioLang":"en","enableNewTagCreationWarning":false,"insertSpaceAfterNameTabCompletion":false,"id":220,"enableInsertDocLinkDialog":false,"childUrl":"https://drupal.meta.stackexchange.com","enableSocialMediaInSharePopup":true,"protocol":"https"},"user":{"fkey":"5f8be9a80c529da1ac2a8e4452a512ed","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true,"ab":{"devstory_onboarding_exp":{"v":"opt_out_of_match_emails","g":2}}},"realtime":{"newest":true,"active":true,"tagged":true,"staleDisconnectIntervalInHours":0,"workerIframeDomain":"https://cdn.sstatic.net"},"events":{"postType":{"question":1},"postEditionSection":{"title":1,"body":2,"tags":3}},"story":{"minCompleteBodyLength":75,"likedTagsMaxLength":300,"dislikedTagsMaxLength":300}}, {"site":{"allowImageUploads":true,"enableUserHovercards":true,"styleCode":true,"enableImgurHttps":true,"forceHttpsImages":true},"comments":{},"userProfile":{},"tags":{},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true},"flags":{"allowRetractingFlags":true},"snippets":{"renderDomain":"stacksnippets.net"},"markdown":{"asteriskIntraWordEmphasis":true},"monitoring":{"clientTimingsAbsoluteTimeout":30000,"clientTimingsDebounceTimeout":1000}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"62a4935c1efb","js/moderator.en.js":"9c29f761ceb3","js/full-anon.en.js":"ddef0cc93e46","js/full.en.js":"6b0ad364d283","js/wmd.en.js":"29e833b6ad10","js/third-party/jquery.autocomplete.min.js":"d3b8fa7fdf74","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"9678f60e1dea","js/help.en.js":"a56fdf9b9ff2","js/tageditor.en.js":"7968c1573954","js/tageditornew.en.js":"44fc20e983dd","js/inline-tag-editing.en.js":"7581a98341e4","js/revisions.en.js":"cf90cfea0ccf","js/review.en.js":"d766ca33bc02","js/tagsuggestions.en.js":"b278f9a0b23b","js/post-validation.en.js":"1bbef2e7b0ae","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"f88e0f90e65d","js/keyboard-shortcuts.en.js":"36998f772e32","js/external-editor.en.js":"3e5baf662544","js/adops.en.js":"9a6a7812a212"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+    <noscript id="noscript-css">&lt;style type="text/css"&gt;body,.so-header{margin-top:1.9em}&lt;/style&gt;</noscript>
+<script async="" src="./check_plain and filter_xss difference in drupal and its use_files/full-anon.en.js"></script><script async="" src="./check_plain and filter_xss difference in drupal and its use_files/post-validation.en.js"></script><script async="" src="./check_plain and filter_xss difference in drupal and its use_files/external-editor.en.js"></script><script type="text/javascript" src="./check_plain and filter_xss difference in drupal and its use_files/adFeedback.js"></script><link rel="stylesheet" href="./check_plain and filter_xss difference in drupal and its use_files/adFeedback.css"></head>
+<body class="question-page new-topbar">
+            <script>(function () { var old = $.fn.contents; $.fn.contents = function () { try { return old.apply(this, arguments); } catch (e) { return $([]); } } })()</script>
+        
+
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+
+    <div class="topbar-dialog siteSwitcher-dialog dno">
+        <div class="header">
+            <h3><a href="https://drupal.stackexchange.com/">current community</a>
+            </h3>
+        </div>
+        <div class="modal-content current-site-container">
+            <ul class="current-site">
+                    <li>
+                            <div class="related-links">
+                    <a href="https://chat.stackexchange.com/?tab=site&amp;host=drupal.stackexchange.com" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+
+    <a href="https://drupal.stackexchange.com/" class="current-site-link site-link js-gps-track" data-id="220" data-gps-track="site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-drupal" title="Drupal Answers"></div>
+        Drupal Answers
+    </a>
+
+                    </li>
+                    <li class="related-site">
+                            <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                        
+    <a href="https://drupal.meta.stackexchange.com/" class="site-link js-gps-track" data-id="222" data-gps-track="site.switch({ target_site:222, item_type:3 }),site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-drupalmeta" title="Drupal Answers Meta"></div>
+        Drupal Answers Meta
+    </a>
+
+                    </li>
+            </ul>
+        </div>
+
+        <div class="header" id="your-communities-header">
+            <h3>
+your communities            </h3>
+
+        </div>
+        <div class="modal-content" id="your-communities-section">
+
+                <div class="call-to-login">
+<a href="https://drupal.stackexchange.com/users/signup?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f10280%2fis-check-plain-enough" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://drupal.stackexchange.com/users/login?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f10280%2fis-check-plain-enough" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+                </div>
+        </div>
+
+        <div class="header">
+            <h3><a href="https://stackexchange.com/sites">more stack exchange communities</a>
+            </h3>
+            <a href="https://stackoverflow.blog/" class="fr">company blog</a>
+        </div>
+        <div class="modal-content">
+                <div class="child-content"></div>
+        </div>        
+    </div>
+        </div>
+
+        <div class="network-items">
+                <a href="https://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 169 Stack Exchange sites">
+                    <span class="hidden-text">Stack Exchange</span>
+                </a>
+
+    <a href="https://drupal.stackexchange.com/questions/10280/is-check-plain-enough#" class="topbar-icon icon-inbox yes-hover js-inbox-button" title="Recent inbox messages">
+        <span class="hidden-text">Inbox</span>
+        <span class="unread-count" style="display:none"></span>
+    </a>
+    <a href="https://drupal.stackexchange.com/questions/10280/is-check-plain-enough#" class="topbar-icon icon-achievements yes-hover js-achievements-button" data-unread-class="" title="Recent achievements: reputation, badges, and privileges earned">
+        <span class="hidden-text">Reputation and Badges</span>
+        <span class="unread-count" style="display:none">
+            
+        </span>
+    </a>
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                <span class="topbar-menu-links">
+                                    <a href="https://drupal.stackexchange.com/users/signup?ssrc=head&amp;returnurl=https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f10280%2fis-check-plain-enough" class="login-link" rel="nofollow">sign up</a>
+                                <a href="https://drupal.stackexchange.com/users/login?ssrc=head&amp;returnurl=https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f10280%2fis-check-plain-enough" class="login-link" rel="nofollow">log in</a>
+
+                            <a href="https://drupal.stackexchange.com/tour">tour</a>
+        <a href="https://drupal.stackexchange.com/questions/10280/is-check-plain-enough#" class="icon-help js-help-button" title="Help Center and other resources">
+            help
+            <span class="triangle"></span>
+        </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="https://drupal.stackexchange.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="https://drupal.stackexchange.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="https://drupal.meta.stackexchange.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                Meta
+                                <span class="item-summary">
+                                    Discuss the workings and policies of this site
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                About Us
+                                <span class="item-summary">
+                                    Learn more about Stack Overflow the company
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.stackoverflowbusiness.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                Business
+                                <span class="item-summary">
+                                    Learn more about hiring developers or posting ads with us
+                                </span>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+                                            </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="https://drupal.stackexchange.com/search" method="get" autocomplete="off" role="search">
+                        <input name="q" type="text" placeholder="Search Q&amp;A" value="" tabindex="1" autocomplete="off" maxlength="240">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+            <div id="header">
+                <br class="cbt">
+                <div id="hlogo">
+                    <a href="https://drupal.stackexchange.com/" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:8})">
+                        Drupal Answers
+                    </a>
+                </div>
+                <div id="hmenus">
+                        <div class="nav mainnavs" role="navigation" aria-label="site navigation">
+                            <ul>
+                                    <li class="youarehere">
+        <a id="nav-questions" href="https://drupal.stackexchange.com/questions" class="js-gps-track" data-gps-track="top_nav.click({is_current:true, location:2, destination:1})">
+        Questions
+        </a>
+    </li>
+
+                                                                    <li>
+        <a id="nav-tags" href="https://drupal.stackexchange.com/tags" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:2})">
+        Tags
+        </a>
+    </li>
+
+                                    <li>
+        <a id="nav-users" href="https://drupal.stackexchange.com/users" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:3})">
+        Users
+        </a>
+    </li>
+
+                                    <li>
+        <a id="nav-badges" href="https://drupal.stackexchange.com/help/badges" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:4})">
+        Badges
+        </a>
+    </li>
+
+    <li>
+        <a id="nav-unanswered" href="https://drupal.stackexchange.com/unanswered" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:5})">
+        Unanswered
+        </a>
+    </li>
+                            </ul>
+                        </div>
+                    <div class="nav askquestion" role="navigation" aria-label="ask new question">
+                        <ul>
+                            <li>
+                                <a id="nav-askquestion" href="https://drupal.stackexchange.com/questions/ask">Ask Question</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        
+
+
+        <div id="content">
+
+
+
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="https://cdn.sstatic.net/Sites/drupal/img/apple-touch-icon.png?v=2f2d1337c2e2">
+
+
+<div id="herobox">
+    <div id="hero-content">
+            <div id="close"><a title="click to minimize">_</a></div>
+        <div id="blurb">
+            Drupal Answers is a question and answer site for Drupal developers and administrators. Join them; it only takes a minute:
+            <br>
+            <br>
+            <a href="https://drupal.stackexchange.com/users/signup?ssrc=hero&amp;returnurl=https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f10280%2fis-check-plain-enough" id="tell-me-more" class="button">Sign up</a>
+        </div>
+        <div id="desc">
+            <b>Here's how it works:</b>
+            <ol id="hiw">
+                <li id="q">
+                    Anybody can ask a question
+                </li>
+                <li id="an">
+                    Anybody can answer
+                </li>
+                <li id="b">
+                    The best answers are voted up and rise to the top
+                </li>
+            </ol>
+        </div>
+    <div style="clear: both"></div>
+    </div>
+</div><script>
+    StackExchange.ready(function () {
+
+        var location = 0;
+        if ($("body").hasClass("questions-page")) {
+            location = 1;
+        } else if ($("body").hasClass("question-page")) {
+            location = 1;
+        } else if ($("body").hasClass("faq-page")) {
+            location = 5;
+        } else if ($("body").hasClass("home-page")) {
+            location = 3;
+        }
+        
+        $('#tell-me-more').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+            });
+        });
+        
+        $('#herobox #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+            });
+            
+            $.cookie("hero", "mini", { path: "/", expires: 365 });
+            $.ajax({
+                url: "/hero-mini",
+                success: function (data) {
+                    $("#herobox").fadeOut("fast", function () {
+                        $("#herobox").replaceWith(data);
+                        $("#herobox-mini").fadeIn("fast");
+                    });
+                }
+            });
+            return false;
+        });
+    });
+
+</script>			<div id="question-header">
+                <h1 itemprop="name"><a href="https://drupal.stackexchange.com/questions/10280/is-check-plain-enough" class="question-hyperlink">Is check_plain() enough?</a></h1>
+
+            
+		</div>
+			<div id="mainbar" role="main" aria-label="question and answers">
+
+			
+
+<div class="question" data-questionid="10280" id="question">
+
+    <script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22, 0, "adzerk1209408112", 4).enableDynamicSiteSelection().setZone(29); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1209408112"><div style="background-image: url( data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== ); width: 1px; height: 1px; display:none;"></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./check_plain and filter_xss difference in drupal and its use_files/i.gif"><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="https://drupal.stackexchange.com/questions/10280/is-check-plain-enough#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="10280">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">14</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="https://drupal.stackexchange.com/questions/10280/is-check-plain-enough#">favorite</a>
+        <div class="favoritecount"><b>4</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>Is <a href="http://api.drupal.org/api/drupal/includes--bootstrap.inc/function/check_plain/7">check_plain()</a> enough for re-displaying the text entered by users in the browser, or should I still filter with <a href="http://api.drupal.org/api/drupal/includes--common.inc/function/filter_xss/7">filter_xss()</a>?</p>
+    </div>
+    <div class="post-taglist">
+        <a href="https://drupal.stackexchange.com/questions/tagged/security" class="post-tag js-gps-track" title="show questions tagged &#39;security&#39;" rel="tag">security</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="https://drupal.stackexchange.com/q/10280" title="short permalink to this question" class="short-link" id="link-post-10280">share</a><span class="lsep">|</span><a href="https://drupal.stackexchange.com/posts/10280/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="https://drupal.stackexchange.com/posts/10280/revisions" title="show all edits to this post">edited <span title="2011-08-31 12:40:23Z" class="relativetime">Aug 31 '11 at 12:40</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://drupal.stackexchange.com/users/199/kiamlaluno"><div class="gravatar-wrapper-32"><img src="./check_plain and filter_xss difference in drupal and its use_files/5315ed8662329312d746e5de447c87c6" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://drupal.stackexchange.com/users/199/kiamlaluno">kiamlaluno</a><span class="mod-flair" title="moderator">♦</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 72,202" dir="ltr">72.2k</span><span title="9 gold badges"><span class="badge1"></span><span class="badgecount">9</span></span><span title="109 silver badges"><span class="badge2"></span><span class="badgecount">109</span></span><span title="217 bronze badges"><span class="badge3"></span><span class="badgecount">217</span></span>
+        </div>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2011-08-31 06:32:52Z" class="relativetime">Aug 31 '11 at 6:32</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://drupal.stackexchange.com/users/1747/citricguy"><div class="gravatar-wrapper-32"><img src="./check_plain and filter_xss difference in drupal and its use_files/e288721362d1a339d461dddcefc538bf" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://drupal.stackexchange.com/users/1747/citricguy">Citricguy</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">5,655</span><span title="4 gold badges"><span class="badge1"></span><span class="badgecount">4</span></span><span title="40 silver badges"><span class="badge2"></span><span class="badgecount">40</span></span><span title="92 bronze badges"><span class="badge3"></span><span class="badgecount">92</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                    
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-10280" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-10280" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://drupal.stackexchange.com/questions/10280/is-check-plain-enough#" onclick=""></a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								1 Answer
+                                <span style="display:none;" itemprop="answerCount">1</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="https://drupal.stackexchange.com/questions/10280/is-check-plain-enough?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active" data-shortcut="A">
+            active</a>
+        <a href="https://drupal.stackexchange.com/questions/10280/is-check-plain-enough?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest" data-shortcut="O">
+            oldest</a>
+        <a class="youarehere" href="https://drupal.stackexchange.com/questions/10280/is-check-plain-enough?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes" data-shortcut="V">
+            votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="10312"></a>
+<div id="answer-10312" class="answer accepted-answer" data-answerid="10312" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="10312">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">22</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>I imagine the question is about using <code>check_plain(filter_xss($string))</code>, or <code>filter_xss(check_plain($string))</code>.</p>
+
+<p><code>check_plain()</code> and <code>filter_xss()</code> have two different, and in contrast, purposes:</p>
+
+<ul>
+<li><code>check_plain()</code> encodes special characters in a plain-text string that is then displayed as HTML.</li>
+<li><p><code>filter_xss()</code> filters an HTML string to prevent cross-site-scripting (XSS) vulnerabilities. In particular its purpose is:</p>
+
+<ul>
+<li>Removing characters and constructs that can trick browsers</li>
+<li>Making sure all HTML entities are well-formed</li>
+<li>Making sure all HTML tags and attributes are well-formed</li>
+<li>Making sure no HTML tags contain URLs with a disallowed protocol (e.g. javascript:)</li>
+</ul></li>
+</ul>
+
+<p>If you use <code>check_plain()</code>, the string passed to the function is supposed to be used as plain text; in such case, <code>filter_xss()</code> is not necessary.
+If you use <code>filter_xss()</code>, then the string passed to the function is supposed to be HTML, and <code>check_plain()</code> is not necessary.</p>
+
+<p>If the question is about using <code>check_plain()</code> and <code>filter_xss()</code> on different parts of the same string then, as greggles pointed out in his comment, you can use (for example) <code>check_plain()</code> on the content of tag attributes, and <code>filter_xss()</code> on the entire HTML tag.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="https://drupal.stackexchange.com/a/10312" title="short permalink to this answer" class="short-link" id="link-post-10312">share</a><span class="lsep">|</span><a href="https://drupal.stackexchange.com/posts/10312/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="https://drupal.stackexchange.com/posts/10312/revisions" title="show all edits to this post">edited <span title="2017-01-05 10:59:19Z" class="relativetime">Jan 5 at 10:59</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2011-08-31 12:46:09Z" class="relativetime">Aug 31 '11 at 12:46</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://drupal.stackexchange.com/users/199/kiamlaluno"><div class="gravatar-wrapper-32"><img src="./check_plain and filter_xss difference in drupal and its use_files/5315ed8662329312d746e5de447c87c6" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://drupal.stackexchange.com/users/199/kiamlaluno">kiamlaluno</a><span class="mod-flair" title="moderator">♦</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 72,202" dir="ltr">72.2k</span><span title="9 gold badges"><span class="badge1"></span><span class="badgecount">9</span></span><span title="109 silver badges"><span class="badge2"></span><span class="badgecount">109</span></span><span title="217 bronze badges"><span class="badge3"></span><span class="badgecount">217</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-10312" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-10235" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="warm">5</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">filter_xss is meant to be used on entire pieces of html. If you use filter_xss on an html attribute it will not properly filter it. check_plain can be used to safely filter html attributes. See also <a href="http://drupalscout.com/knowledge-base/drupal-text-filtering-cheat-sheet-drupal-6" rel="nofollow noreferrer">drupalscout.com/knowledge-base/…</a> and <a href="http://drupalscout.com/knowledge-base/using-filter-functions-intended-filterxss-and-classes" rel="nofollow noreferrer">drupalscout.com/knowledge-base/…</a> for more info on using these functions.</span>
+                    –&nbsp;<a href="https://drupal.stackexchange.com/users/694/greggles" title="4,125 reputation" class="comment-user">greggles</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://drupal.stackexchange.com/questions/10280/is-check-plain-enough#comment10235_10312"><span title="2011-08-31 14:00:01Z" class="relativetime-clean">Aug 31 '11 at 14:00</span></a></span>
+                        <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-10312" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://drupal.stackexchange.com/questions/10280/is-check-plain-enough#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="https://drupal.stackexchange.com/questions/10280/answer/submit" method="post" class="post-form">
+						    <input type="hidden" id="post-id" value="10280">
+                            <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false">
+                            <input type="hidden" name="referrer" value="https://www.google.co.in/">
+							<h2 class="space">Your Answer</h2>
+
+
+        
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+                // Have to fire editor after snippets, if snippets enabled
+                if (StackExchange.settings.snippets.snippetsEnabled) {
+                    StackExchange.using("snippets", function() {
+                        createEditor();
+                    });
+                }
+                else {
+                    createEditor();
+                }
+            });
+
+            function createEditor() {
+                StackExchange.prepareEditor({
+                    heartbeatType: 'answer',
+                convertImagesToLinks: false,
+                reputationToPostImages: null,
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                    ,immediatelyShowMarkdownHelp:true
+                    });
+                
+
+        }
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor js-post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="5f8be9a80c529da1ac2a8e4452a512ed">
+        <input id="author" name="author" type="text">
+    </div>
+
+
+
+</div>
+							<div style="position: relative;">
+								
+								            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="https://drupal.stackexchange.com/users/login?ssrc=question_page&amp;returnurl=https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f10280%2fis-check-plain-enough%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Email and Password</span></p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="manual-openid" class="manual-openid">
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false">
+                    <input type="hidden" name="use-google" class="use-google" value="false">
+                    <input type="button" class="submit-openid" value="Submit" style="display:none">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', 'https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f10280%2fis-check-plain-enough%23new-answer', 'question_page');
+                    }
+                );
+            </script>
+            <noscript>
+                        &lt;h3&gt;Post as a guest&lt;/h3&gt;
+    &lt;div class="form-item"&gt;
+        &lt;table&gt;
+        &lt;tr&gt;
+                    &lt;td class="vm"&gt;
+                &lt;div&gt;
+                    &lt;label for="display-name"&gt;Name&lt;/label&gt;
+                    &lt;input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105"&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label for="m-address"&gt;Email&lt;/label&gt;
+                    &lt;input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown" /&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+            </noscript>
+
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+									<a href="https://drupal.stackexchange.com/questions/10280/is-check-plain-enough#" class="btn-clear discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="https://stackexchange.com/legal/privacy-policy" name="privacy" target="_blank">privacy policy</a> and <a href="https://stackexchange.com/legal/terms-of-service" name="tos" target="_blank">terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="https://drupal.stackexchange.com/questions/tagged/security" class="post-tag" title="show questions tagged &#39;security&#39;" rel="tag">security</a>  or <a href="https://drupal.stackexchange.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes" role="complementary" aria-label="sidebar">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2011-08-31 06:32:52Z"><b>5 years, 10 months ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+                                    <b>5,892 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="https://drupal.stackexchange.com/questions/10280/is-check-plain-enough?lastactivity" class="lastactivity-link" title="2017-01-05 10:59:19Z">5 months ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+			<div class="module community-bulletin" data-tracker="cb=1">
+    <div class="related">
+                <div class="bulletin-title">
+                    Blog
+                </div>
+                <hr>
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <a href="https://stackoverflow.blog/2017/06/30/raise-voice-proclaim-need-net-neutrality/?cb=1" class="question-hyperlink">
+<div class="favicon favicon-stackexchangemeta" title="Meta Stack Exchange"></div>                </a>
+            </div>
+                <div class="bulletin-item-content">
+                    <a href="https://stackoverflow.blog/2017/06/30/raise-voice-proclaim-need-net-neutrality/?cb=1" class="question-hyperlink">Raise Your Voice: Proclaim the Need for Net Neutrality</a>
+                </div>
+                <br class="cbt">
+            </div>
+    </div>
+</div>			
+			<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22, 0, "adzerk2031663135", [5,17]).enableDynamicSiteSelection().setZone(56016); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk2031663135"><div id="SE20-ad-container" style="height: 250px; width: 220px;">
+<style>
+#launched-ad { width: 300px; height: 250px; overflow: hidden; background: url(https://cdn.sstatic.net/stackexchange/Img/launched-ads/math.png?v=1977f8ba5680) no-repeat bottom center; display: table-cell; vertical-align: middle; }
+#launched-ad-link { display: block; width: 300px; height: 250px; line-height: 1.2; color: #003b52 !important; font-family: Georgia,"Times New Roman",serif; font-size: 20px; line-height: 26px; text-decoration: none; cursor: pointer; }
+#launched-ad-inner { padding: 0px 25px 40px 25px; text-align: center; }
+</style>
+<a id="launched-ad-link" href="https://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NSwiYnQiOjAsImNtIjozNzM4NjIsImNoIjoxNjUzMSwiY2siOnt9LCJjciI6MTM2OTk0OSwiZGkiOiIxOWIyNTFjNzY5Yzc0N2RjYTFiYTVkODgzMGFlMTAzNyIsImRtIjoxLCJmYyI6MTUyOTk3NiwiZmwiOjExNDYxOTMsImlwIjoiNTkuMTQ0LjEzNS43Iiwia3ciOiJzZWN1cml0eSx4LWNvbW11bml0eSx4LWhvc3QtZHJ1cGFsLnN0YWNrZXhjaGFuZ2UuY29tIiwibnciOjIyLCJwYyI6MCwiZWMiOjAsInByIjo1NTY5NSwicnQiOjEsInJmIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvLmluLyIsInNhIjoiMyIsInNiIjoiaS0wMGM5ZDk0MWQ4NDU5MGFjYyIsInNwIjoyODcwOCwic3QiOjU2NzU5LCJ1ayI6InVlMS0yODUyOWE4ZjdlZDE0OTgxODEzYjQxZWU0NTlmN2ZmOCIsInpuIjo1NjAxNiwidHMiOjE0OTkwNzAxOTQxNDgsImJmIjp0cnVlLCJwbiI6ImFkemVyazIwMzE2NjMxMzUiLCJ1ciI6bnVsbH0&amp;s=l9s2suEmuEWvnNvYpLIRrZUSOFY&amp;url=http%3A%2F%2Fmath.stackexchange.com%2Fquestions%2F2344607%2Fwhy-do-partial-fractions-sometimes-switch-the-sign%3Futm_medium%3Dad%26utm_source%3Dhttps-drupal-stackexchange-com-questions-10280-is-check-plain-enough%26utm_campaign%3Dmath.stackexchange.com-promo%26utm_content%3D2344607">
+    <div id="launched-ad">
+        <div id="launched-ad-inner">Why do partial fractions sometimes switch the sign?</div>
+    </div>
+</a>
+<script>
+    if (window._launchedAdUrl) {
+        $('#launched-ad-link').attr('href', window._launchedAdUrl + (window._launchedAdUrl.indexOf('?') == -1 ? '?' : '&') + 'url=' + encodeURIComponent($('#launched-ad-link').attr('href')));
+    }
+</script></div><script type="text/javascript">window._launchedAdUrl= "https://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NSwiYnQiOjAsImNtIjozNzM4NjIsImNoIjoxNjUzMSwiY2siOnt9LCJjciI6MTM2OTk0OSwiZGkiOiIxOWIyNTFjNzY5Yzc0N2RjYTFiYTVkODgzMGFlMTAzNyIsImRtIjoxLCJmYyI6MTUyOTk3NiwiZmwiOjExNDYxOTMsImlwIjoiNTkuMTQ0LjEzNS43Iiwia3ciOiJzZWN1cml0eSx4LWNvbW11bml0eSx4LWhvc3QtZHJ1cGFsLnN0YWNrZXhjaGFuZ2UuY29tIiwibnciOjIyLCJwYyI6MCwiZWMiOjAsInByIjo1NTY5NSwicnQiOjEsInJmIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvLmluLyIsInNhIjoiMyIsInNiIjoiaS0wMGM5ZDk0MWQ4NDU5MGFjYyIsInNwIjoyODcwOCwic3QiOjU2NzU5LCJ1ayI6InVlMS0yODUyOWE4ZjdlZDE0OTgxODEzYjQxZWU0NTlmN2ZmOCIsInpuIjo1NjAxNiwidHMiOjE0OTkwNzAxOTQxNDgsImJmIjp0cnVlLCJwbiI6ImFkemVyazIwMzE2NjMxMzUiLCJ1ciI6bnVsbH0&s=l9s2suEmuEWvnNvYpLIRrZUSOFY";</script><script type="text/javascript" src="./check_plain and filter_xss difference in drupal and its use_files/js"></script><img height="0px" width="0px" border="0" style="position:absolute;" src="./check_plain and filter_xss difference in drupal and its use_files/i(1).gif"><div class="adzerk-vote-controls" style="display: none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="https://drupal.stackexchange.com/questions/10280/is-check-plain-enough#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div></div>
+            <div id="hireme"></div>
+        <script>
+        </script>
+			
+
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+
+<div class="spacer">
+	<a href="https://drupal.stackexchange.com/q/36434?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="https://drupal.stackexchange.com/questions/36434/safe-string-checkup-against-user-supplied-suffix-prefix-strings?noredirect=1&amp;lq=1" class="question-hyperlink">Safe string checkup against user-supplied suffix/prefix strings</a>
+</div>			</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/2509?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">91</div></a><a href="https://drupal.stackexchange.com/questions/2509/what-are-the-downsides-of-using-php-filter-code-in-blocks-nodes-views-args-et?rq=1" class="question-hyperlink">What are the downsides of using PHP Filter code in blocks, nodes, views-args, etc?</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/60689?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="https://drupal.stackexchange.com/questions/60689/security-review-untrusted-users-are-allowed-to-input-dangerous-html-tags?rq=1" class="question-hyperlink">Security Review - Untrusted users are allowed to input dangerous HTML tags</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/66372?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">2</div></a><a href="https://drupal.stackexchange.com/questions/66372/prompt-in-ie8-for-secure-pages-produces-altered-layout?rq=1" class="question-hyperlink">prompt in IE8 for secure pages produces altered layout</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/82811?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="https://drupal.stackexchange.com/questions/82811/does-drupal-have-any-security-like-dexterity-in-plone?rq=1" class="question-hyperlink">Does Drupal have any security like Dexterity in Plone?</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/114944?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">8</div></a><a href="https://drupal.stackexchange.com/questions/114944/how-and-when-to-use-filter-xss-and-check-plain?rq=1" class="question-hyperlink">How and when to use filter_xss() and check_plain()?</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/135749?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">1</div></a><a href="https://drupal.stackexchange.com/questions/135749/auditing-my-d7-site-after-upgrade-to-7-32-w-zen?rq=1" class="question-hyperlink">Auditing my D7 Site after upgrade to 7.32 w/ Zen</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/141213?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">1</div></a><a href="https://drupal.stackexchange.com/questions/141213/how-encrypt-module-actually-works?rq=1" class="question-hyperlink">How Encrypt module actually works?</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/158510?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">1</div></a><a href="https://drupal.stackexchange.com/questions/158510/are-http-headers-and-cookies-validated-against-malicious-input?rq=1" class="question-hyperlink">Are HTTP headers and cookies validated against malicious input?</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/180730?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="https://drupal.stackexchange.com/questions/180730/code-automatically-changing-on-me-iframe-not-working-consistently-ie11-cross?rq=1" class="question-hyperlink">code automatically changing on me - iframe not working consistently - IE11 cross-site scripting error</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/202833?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">1</div></a><a href="https://drupal.stackexchange.com/questions/202833/how-to-apply-xss-filter-on-a-csv-file?rq=1" class="question-hyperlink">How to apply xss filter on a csv file</a></div>
+                    </div>
+				</div>
+            
+
+<div id="hot-network-questions" class="module tex2jax_ignore">
+    <h4>
+        <a href="https://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="https://academia.stackexchange.com/questions/91413/is-it-okay-for-a-reviewer-to-share-an-under-review-manuscript-with-their-colleag" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it okay for a reviewer to share an under review manuscript with their colleagues?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="https://academia.stackexchange.com/questions/91526/should-i-hide-the-fact-that-i-did-a-group-assignment-completely-by-myself" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Should I hide the fact that I did a group assignment completely by myself?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="https://puzzling.stackexchange.com/questions/53090/can-two-colors-ever-be-orthagonally-adjacent-in-a-flexi-puzzle" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can two colors ever be orthagonally adjacent in a flexi puzzle?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="https://codegolf.stackexchange.com/questions/129523/it-was-just-a-bug" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    It was just a bug
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="https://codegolf.stackexchange.com/questions/129404/hello-world-every-other-character-part-2" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    "Hello, World!" (Every other character, Part 2)
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="https://travel.stackexchange.com/questions/96324/did-tgvs-used-to-have-good-food" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Did TGVs used to have good food?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="https://tex.stackexchange.com/questions/377757/why-are-figures-unnumbered-with-beamer" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why are figures unnumbered with beamer?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="https://rpg.stackexchange.com/questions/102688/how-soon-does-a-magic-item-ring-amulet-scarf-etc-work-on-a-character" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How soon does a magic item (Ring, Amulet, scarf, etc) work on a character?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="https://stackoverflow.com/questions/44880216/the-sum-of-the-elements-of-an-array" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    The sum of the elements of an array
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="https://stackoverflow.com/questions/44877663/error-float-object-has-no-attribute-notnull" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Error: float object has no attribute notnull
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="https://security.stackexchange.com/questions/163235/is-reflected-xss-still-relevant-today" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is reflected XSS still relevant today?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-ell" title="English Language Learners Stack Exchange"></div><a href="https://ell.stackexchange.com/questions/134301/correct-answer-from-options-true-false-and-not-given" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Correct answer from options: True, false and not given
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-chemistry" title="Chemistry Stack Exchange"></div><a href="https://chemistry.stackexchange.com/questions/77174/is-cyclohexene-an-alicyclic-or-aromatic-compound" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:431 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is cyclohexene an alicyclic or aromatic compound?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-electronics" title="Electrical Engineering Stack Exchange"></div><a href="https://electronics.stackexchange.com/questions/314084/is-this-solderable" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:135 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is this solderable?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="https://worldbuilding.stackexchange.com/questions/85026/can-crime-still-exist-if-mages-can-see-the-past" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can crime still exist if mages can see the past?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="https://scifi.stackexchange.com/questions/162767/looking-for-a-book-about-a-generation-ship-run-by-children" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Looking for a book about a generation ship run by children
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-ux" title="User Experience Stack Exchange"></div><a href="https://ux.stackexchange.com/questions/109321/how-do-we-ensure-our-staff-read-instructions-aloud" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:102 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do we ensure our staff read instructions aloud?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="https://workplace.stackexchange.com/questions/93803/is-it-unethical-to-quit-a-job-soon-after-receiving-my-annual-bonus" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it unethical to quit a job soon after receiving my annual bonus?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-aviation" title="Aviation Stack Exchange"></div><a href="https://aviation.stackexchange.com/questions/39559/why-cant-helicopters-or-zeppelins-drop-fire-fighting-material-on-burning-buildi" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:528 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why can't helicopters or Zeppelins drop fire-fighting material on burning buildings?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="https://scifi.stackexchange.com/questions/162750/who-is-that-at-the-end-of-the-doctor-falls" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Who is that at the end of "The Doctor Falls"?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-movies" title="Movies &amp; TV Stack Exchange"></div><a href="https://movies.stackexchange.com/questions/75700/what-if-bullet-hit-the-wonder-woman" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:367 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What if bullet hit the Wonder Woman?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="https://codegolf.stackexchange.com/questions/129340/staircase-numbers" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Staircase numbers
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="https://rpg.stackexchange.com/questions/102700/can-i-teleport-to-a-location-thats-been-destroyed" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can I teleport to a location that's been destroyed?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="https://math.stackexchange.com/questions/2343565/36th-derivative-of-function" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    36th derivative of function
+                </a>
+
+            </li>
+    </ul>
+
+        <a href="https://drupal.stackexchange.com/questions/10280/is-check-plain-enough#" class="show-more js-show-more js-gps-track" data-gps-track="posts_hot_network.click({ item_type:3, location:11 })">
+            more hot questions
+        </a>
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="https://drupal.stackexchange.com/feeds/question/10280" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/10280/ivc/2eb1');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/10280/ivc/2eb1" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">default</div></div>
+
+
+        </div>
+    </div>
+
+        <footer id="footer" class="s-footer categories" role="contentinfo">
+            <div class="-container g-column">
+                <ul class="-menu g-row">
+
+                    <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">about us</a></li>
+                        <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 2 })" href="https://drupal.stackexchange.com/tour">tour</a></li>
+                    <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 3 })" href="https://drupal.stackexchange.com/help">help</a></li>
+                    <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 4 })" href="https://stackoverflow.blog/?blb=1">blog</a></li>
+                        <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 5 })" href="https://chat.stackexchange.com/?tab=site&amp;host=drupal.stackexchange.com">chat</a></li>
+                    <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 6 })" href="https://data.stackexchange.com/">data</a></li>
+                    <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 7 })" href="https://stackexchange.com/legal">legal</a></li>
+                    <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 8 })" href="https://stackexchange.com/legal/privacy-policy">privacy policy</a></li>
+                    <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 9 })" href="https://stackoverflow.com/company/work-here">work here</a></li>
+                    <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 10 })" href="https://www.stackoverflowbusiness.com/advertise">advertising info</a></li>
+
+                    <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 12 })" onclick="StackExchange.switchMobile(&quot;on&quot;)">mobile</a></li>
+                    <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 13 })" href="https://drupal.stackexchange.com/contact"><strong>contact us</strong></a></li>
+                        <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 14 })" href="https://drupal.meta.stackexchange.com/"><strong>feedback</strong></a></li>
+                    <li class="-item g-col">
+                        
+                    </li>
+                </ul>
+                <div class="-toc g-row" id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                <strong>Technology</strong>
+            </th>
+            <th>
+                <strong>Life / Arts</strong>
+            </th>
+            <th colspan="2">
+                <strong>Culture / Recreation</strong>
+            </th>
+            <th>
+                <strong>Science</strong>
+            </th>
+            <th>
+                <strong>Other</strong>
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="https://stackoverflow.com/" class="-link js-gps-track" title="professional and enthusiast programmers" data-gps-track="footer.click({ location: 5, link: 25 })">Stack Overflow</a></li>
+                        <li><a href="https://serverfault.com/" class="-link js-gps-track" title="system and network administrators" data-gps-track="footer.click({ location: 5, link: 25 })">Server Fault</a></li>
+                        <li><a href="https://superuser.com/" class="-link js-gps-track" title="computer enthusiasts and power users" data-gps-track="footer.click({ location: 5, link: 25 })">Super User</a></li>
+                        <li><a href="https://webapps.stackexchange.com/" class="-link js-gps-track" title="power users of web applications" data-gps-track="footer.click({ location: 5, link: 25 })">Web Applications</a></li>
+                        <li><a href="https://askubuntu.com/" class="-link js-gps-track" title="Ubuntu users and developers" data-gps-track="footer.click({ location: 5, link: 25 })">Ask Ubuntu</a></li>
+                        <li><a href="https://webmasters.stackexchange.com/" class="-link js-gps-track" title="pro webmasters" data-gps-track="footer.click({ location: 5, link: 25 })">Webmasters</a></li>
+                        <li><a href="https://gamedev.stackexchange.com/" class="-link js-gps-track" title="professional and independent game developers" data-gps-track="footer.click({ location: 5, link: 25 })">Game Development</a></li>
+                        <li><a href="https://tex.stackexchange.com/" class="-link js-gps-track" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems" data-gps-track="footer.click({ location: 5, link: 25 })">TeX - LaTeX</a></li>
+                        <li><a href="https://softwareengineering.stackexchange.com/" class="-link js-gps-track" title="professionals, academics, and students working within the systems development life cycle" data-gps-track="footer.click({ location: 5, link: 25 })">Software Engineering</a></li>
+                        <li><a href="https://unix.stackexchange.com/" class="-link js-gps-track" title="users of Linux, FreeBSD and other Un*x-like operating systems" data-gps-track="footer.click({ location: 5, link: 25 })">Unix &amp; Linux</a></li>
+                        <li><a href="https://apple.stackexchange.com/" class="-link js-gps-track" title="power users of Apple hardware and software" data-gps-track="footer.click({ location: 5, link: 25 })">Ask Different (Apple)</a></li>
+                        <li><a href="https://wordpress.stackexchange.com/" class="-link js-gps-track" title="WordPress developers and administrators" data-gps-track="footer.click({ location: 5, link: 25 })">WordPress Development</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="https://gis.stackexchange.com/" class="-link js-gps-track" title="cartographers, geographers and GIS professionals" data-gps-track="footer.click({ location: 5, link: 25 })">Geographic Information Systems</a></li>
+                        <li><a href="https://electronics.stackexchange.com/" class="-link js-gps-track" title="electronics and electrical engineering professionals, students, and enthusiasts" data-gps-track="footer.click({ location: 5, link: 25 })">Electrical Engineering</a></li>
+                        <li><a href="https://android.stackexchange.com/" class="-link js-gps-track" title="enthusiasts and power users of the Android operating system" data-gps-track="footer.click({ location: 5, link: 25 })">Android Enthusiasts</a></li>
+                        <li><a href="https://security.stackexchange.com/" class="-link js-gps-track" title="information security professionals" data-gps-track="footer.click({ location: 5, link: 25 })">Information Security</a></li>
+                        <li><a href="https://dba.stackexchange.com/" class="-link js-gps-track" title="database professionals who wish to improve their database skills and learn from others in the community" data-gps-track="footer.click({ location: 5, link: 25 })">Database Administrators</a></li>
+                        <li><a href="https://drupal.stackexchange.com/" class="-link js-gps-track" title="Drupal developers and administrators" data-gps-track="footer.click({ location: 5, link: 25 })">Drupal Answers</a></li>
+                        <li><a href="https://sharepoint.stackexchange.com/" class="-link js-gps-track" title="SharePoint enthusiasts" data-gps-track="footer.click({ location: 5, link: 25 })">SharePoint</a></li>
+                        <li><a href="https://ux.stackexchange.com/" class="-link js-gps-track" title="user experience researchers and experts" data-gps-track="footer.click({ location: 5, link: 25 })">User Experience</a></li>
+                        <li><a href="https://mathematica.stackexchange.com/" class="-link js-gps-track" title="users of Wolfram Mathematica" data-gps-track="footer.click({ location: 5, link: 25 })">Mathematica</a></li>
+                        <li><a href="https://salesforce.stackexchange.com/" class="-link js-gps-track" title="Salesforce administrators, implementation experts, developers and anybody in-between" data-gps-track="footer.click({ location: 5, link: 25 })">Salesforce</a></li>
+                        <li><a href="https://expressionengine.stackexchange.com/" class="-link js-gps-track" title="administrators, end users, developers and designers for ExpressionEngine® CMS" data-gps-track="footer.click({ location: 5, link: 25 })">ExpressionEngine® Answers</a></li>
+                        <li><a href="https://blender.stackexchange.com/" class="-link js-gps-track" title="people who use Blender to create 3D graphics, animations, or games" data-gps-track="footer.click({ location: 5, link: 25 })">Blender</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="https://networkengineering.stackexchange.com/" class="-link js-gps-track" title="network engineers" data-gps-track="footer.click({ location: 5, link: 25 })">Network Engineering</a></li>
+                        <li><a href="https://crypto.stackexchange.com/" class="-link js-gps-track" title="software developers, mathematicians and others interested in cryptography" data-gps-track="footer.click({ location: 5, link: 25 })">Cryptography</a></li>
+                        <li><a href="https://codereview.stackexchange.com/" class="-link js-gps-track" title="peer programmer code reviews" data-gps-track="footer.click({ location: 5, link: 25 })">Code Review</a></li>
+                        <li><a href="https://magento.stackexchange.com/" class="-link js-gps-track" title="users of the Magento e-Commerce platform" data-gps-track="footer.click({ location: 5, link: 25 })">Magento</a></li>
+                        <li><a href="https://softwarerecs.stackexchange.com/" class="-link js-gps-track" title="people seeking specific software recommendations" data-gps-track="footer.click({ location: 5, link: 25 })">Software Recommendations</a></li>
+                        <li><a href="https://dsp.stackexchange.com/" class="-link js-gps-track" title="practitioners of the art and science of signal, image and video processing" data-gps-track="footer.click({ location: 5, link: 25 })">Signal Processing</a></li>
+                        <li><a href="https://emacs.stackexchange.com/" class="-link js-gps-track" title="those using, extending or developing Emacs" data-gps-track="footer.click({ location: 5, link: 25 })">Emacs</a></li>
+                        <li><a href="https://raspberrypi.stackexchange.com/" class="-link js-gps-track" title="users and developers of hardware and software for Raspberry Pi" data-gps-track="footer.click({ location: 5, link: 25 })">Raspberry Pi</a></li>
+                        <li><a href="https://codegolf.stackexchange.com/" class="-link js-gps-track" title="programming puzzle enthusiasts and code golfers" data-gps-track="footer.click({ location: 5, link: 25 })">Programming Puzzles &amp; Code Golf</a></li>
+                        <li><a href="https://ethereum.stackexchange.com/" class="-link js-gps-track" title="users of Ethereum, the decentralized application platform and smart contract enabled blockchain" data-gps-track="footer.click({ location: 5, link: 25 })">Ethereum</a></li>
+                                            <li>
+                            <a href="https://stackexchange.com/sites#technology" class="more js-gps-track" data-gps-track="footer.click({ location: 5, link: 26 })">
+                                more (28)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="https://photo.stackexchange.com/" class="-link js-gps-track" title="professional, enthusiast and amateur photographers" data-gps-track="footer.click({ location: 5, link: 25 })">Photography</a></li>
+                        <li><a href="https://scifi.stackexchange.com/" class="-link js-gps-track" title="science fiction and fantasy enthusiasts" data-gps-track="footer.click({ location: 5, link: 25 })">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="https://graphicdesign.stackexchange.com/" class="-link js-gps-track" title="Graphic Design professionals, students, and enthusiasts" data-gps-track="footer.click({ location: 5, link: 25 })">Graphic Design</a></li>
+                        <li><a href="https://movies.stackexchange.com/" class="-link js-gps-track" title="movie and tv enthusiasts" data-gps-track="footer.click({ location: 5, link: 25 })">Movies &amp; TV</a></li>
+                        <li><a href="https://music.stackexchange.com/" class="-link js-gps-track" title="musicians, students, and enthusiasts" data-gps-track="footer.click({ location: 5, link: 25 })">Music: Practice &amp; Theory</a></li>
+                        <li><a href="https://worldbuilding.stackexchange.com/" class="-link js-gps-track" title="writers/artists using science, geography and culture to construct imaginary worlds and settings" data-gps-track="footer.click({ location: 5, link: 25 })">Worldbuilding</a></li>
+                        <li><a href="https://cooking.stackexchange.com/" class="-link js-gps-track" title="professional and amateur chefs" data-gps-track="footer.click({ location: 5, link: 25 })">Seasoned Advice (cooking)</a></li>
+                        <li><a href="https://diy.stackexchange.com/" class="-link js-gps-track" title="contractors and serious DIYers" data-gps-track="footer.click({ location: 5, link: 25 })">Home Improvement</a></li>
+                        <li><a href="https://money.stackexchange.com/" class="-link js-gps-track" title="people who want to be financially literate" data-gps-track="footer.click({ location: 5, link: 25 })">Personal Finance &amp; Money</a></li>
+                        <li><a href="https://academia.stackexchange.com/" class="-link js-gps-track" title="academics and those enrolled in higher education" data-gps-track="footer.click({ location: 5, link: 25 })">Academia</a></li>
+                        <li><a href="https://law.stackexchange.com/" class="-link js-gps-track" title="legal professionals, students, and others with experience or interest in law" data-gps-track="footer.click({ location: 5, link: 25 })">Law</a></li>
+                                            <li>
+                            <a href="https://stackexchange.com/sites#lifearts" class="more js-gps-track" data-gps-track="footer.click({ location: 5, link: 26 })">
+                                more (16)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="https://english.stackexchange.com/" class="-link js-gps-track" title="linguists, etymologists, and serious English language enthusiasts" data-gps-track="footer.click({ location: 5, link: 25 })">English Language &amp; Usage</a></li>
+                        <li><a href="https://skeptics.stackexchange.com/" class="-link js-gps-track" title="scientific skepticism" data-gps-track="footer.click({ location: 5, link: 25 })">Skeptics</a></li>
+                        <li><a href="https://judaism.stackexchange.com/" class="-link js-gps-track" title="those who base their lives on Jewish law and tradition and anyone interested in learning more" data-gps-track="footer.click({ location: 5, link: 25 })">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="https://travel.stackexchange.com/" class="-link js-gps-track" title="road warriors and seasoned travelers" data-gps-track="footer.click({ location: 5, link: 25 })">Travel</a></li>
+                        <li><a href="https://christianity.stackexchange.com/" class="-link js-gps-track" title="committed Christians, experts in Christianity and those interested in learning more" data-gps-track="footer.click({ location: 5, link: 25 })">Christianity</a></li>
+                        <li><a href="https://ell.stackexchange.com/" class="-link js-gps-track" title="speakers of other languages learning English" data-gps-track="footer.click({ location: 5, link: 25 })">English Language Learners</a></li>
+                        <li><a href="https://japanese.stackexchange.com/" class="-link js-gps-track" title="students, teachers, and linguists wanting to discuss the finer points of the Japanese language" data-gps-track="footer.click({ location: 5, link: 25 })">Japanese Language</a></li>
+                        <li><a href="https://gaming.stackexchange.com/" class="-link js-gps-track" title="passionate videogamers on all platforms" data-gps-track="footer.click({ location: 5, link: 25 })">Arqade (gaming)</a></li>
+                        <li><a href="https://bicycles.stackexchange.com/" class="-link js-gps-track" title="people who build and repair bicycles, people who train cycling, or commute on bicycles" data-gps-track="footer.click({ location: 5, link: 25 })">Bicycles</a></li>
+                        <li><a href="https://rpg.stackexchange.com/" class="-link js-gps-track" title="gamemasters and players of tabletop, paper-and-pencil role-playing games" data-gps-track="footer.click({ location: 5, link: 25 })">Role-playing Games</a></li>
+                        <li><a href="https://anime.stackexchange.com/" class="-link js-gps-track" title="anime and manga fans" data-gps-track="footer.click({ location: 5, link: 25 })">Anime &amp; Manga</a></li>
+                        <li><a href="https://puzzling.stackexchange.com/" class="-link js-gps-track" title="those who create, solve, and study puzzles" data-gps-track="footer.click({ location: 5, link: 25 })">Puzzling</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="https://mechanics.stackexchange.com/" class="-link js-gps-track" title="mechanics and DIY enthusiast owners of cars, trucks, and motorcycles" data-gps-track="footer.click({ location: 5, link: 25 })">Motor Vehicle Maintenance &amp; Repair</a></li>
+                                            <li>
+                            <a href="https://stackexchange.com/sites#culturerecreation" class="more js-gps-track" data-gps-track="footer.click({ location: 5, link: 26 })">
+                                more (32)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="https://mathoverflow.net/" class="-link js-gps-track" title="professional mathematicians" data-gps-track="footer.click({ location: 5, link: 25 })">MathOverflow</a></li>
+                        <li><a href="https://math.stackexchange.com/" class="-link js-gps-track" title="people studying math at any level and professionals in related fields" data-gps-track="footer.click({ location: 5, link: 25 })">Mathematics</a></li>
+                        <li><a href="https://stats.stackexchange.com/" class="-link js-gps-track" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization" data-gps-track="footer.click({ location: 5, link: 25 })">Cross Validated (stats)</a></li>
+                        <li><a href="https://cstheory.stackexchange.com/" class="-link js-gps-track" title="theoretical computer scientists and researchers in related fields" data-gps-track="footer.click({ location: 5, link: 25 })">Theoretical Computer Science</a></li>
+                        <li><a href="https://physics.stackexchange.com/" class="-link js-gps-track" title="active researchers, academics and students of physics" data-gps-track="footer.click({ location: 5, link: 25 })">Physics</a></li>
+                        <li><a href="https://chemistry.stackexchange.com/" class="-link js-gps-track" title="scientists, academics, teachers and students" data-gps-track="footer.click({ location: 5, link: 25 })">Chemistry</a></li>
+                        <li><a href="https://biology.stackexchange.com/" class="-link js-gps-track" title="biology researchers, academics, and students" data-gps-track="footer.click({ location: 5, link: 25 })">Biology</a></li>
+                        <li><a href="https://cs.stackexchange.com/" class="-link js-gps-track" title="students, researchers and practitioners of computer science" data-gps-track="footer.click({ location: 5, link: 25 })">Computer Science</a></li>
+                        <li><a href="https://philosophy.stackexchange.com/" class="-link js-gps-track" title="those interested in the study of the fundamental nature of knowledge, reality, and existence" data-gps-track="footer.click({ location: 5, link: 25 })">Philosophy</a></li>
+                                            <li>
+                            <a href="https://stackexchange.com/sites#science" class="more js-gps-track" data-gps-track="footer.click({ location: 5, link: 26 })">
+                                more (10)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="https://meta.stackexchange.com/" class="-link js-gps-track" title="meta-discussion of the Stack Exchange family of Q&amp;A websites" data-gps-track="footer.click({ location: 5, link: 25 })">Meta Stack Exchange</a></li>
+                        <li><a href="https://stackapps.com/" class="-link js-gps-track" title="apps, scripts, and development with the Stack Exchange API" data-gps-track="footer.click({ location: 5, link: 25 })">Stack Apps</a></li>
+                        <li><a href="https://area51.stackexchange.com/" class="-link js-gps-track" title="proposing new sites in the Stack Exchange network" data-gps-track="footer.click({ location: 5, link: 25 })">Area 51</a></li>
+                        <li><a href="https://www.stackoverflowbusiness.com/talent" class="-link js-gps-track" data-gps-track="footer.click({ location: 5, link: 25 })">Stack Overflow Talent</a></li>
+                                    </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+                <div class="g-col -copyright" id="copyright">
+                    site design / logo © 2017 Stack Exchange Inc; user contributions licensed under <a class="-link" href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a>
+                    with <a class="-link" href="https://stackoverflow.blog/2009/06/25/attribution-required/" rel="license">attribution required</a>
+                </div>
+                <div class="g-col -copyright _muted" id="svnrev">
+                    rev 2017.6.30.26407
+                </div>
+
+            </div>
+        </footer>
+
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Drupal Answers works best with JavaScript enabled
+            &lt;img src="https://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;
+        &lt;/div&gt;
+    </noscript>
+<script>var z=document.createElement("script");z.type="text/javascript",z.async=!0,z.src="https://static.adzerk.net/ados.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(z,s);</script>
+<script>
+var ados = ados || {};
+ados.run = ados.run || [];
+
+
+ados.run.push(function () {
+    setTimeout(function () { $("#adzerk-user-match").remove(); }, window.AUMIframeDone ? 0 : 2000);
+    ados_setKeywords('security,x-community,x-host-drupal.stackexchange.com');; ados_load();
+});   
+
+</script>
+
+    <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+                ga('create', 'UA-5620270-24', {'cookieDomain': 'stackexchange.com'});
+                ga('set', 'dimension2', '|security|');
+                ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+                qc.async = true;
+                qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                s.parentNode.insertBefore(qc, s);
+                _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+                            var sc=document.createElement('script');
+                sc.async=true;
+                sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+                s.parentNode.insertBefore(sc, s);
+                _comscore.push({ c1: "2", c2: "17440561" });
+        })();
+
+    </script>
+        
+    
+            <script type="text/javascript">
+                
+                (function(appendChild) {
+                    Node.prototype.appendChild = function() {
+                        var parent = this;
+                        var newNode = arguments[0];
+                        if (parent.nodeName === 'HEAD'
+                            && newNode
+                            && newNode.nodeName === 'SCRIPT'
+                            && newNode.src) {
+                            
+                            window.setTimeout(function() {
+                                var result = newNode.src.match(/^https:\/\/maps\.googleapis\.com\/maps\/api\/place\/js\/(\w+)Service\./i) || [];
+                                var service = result[1];
+                                if (service) {
+                                    if (service === 'Autocompletion') service =  2;
+                                    else if (service === 'Place') service = 1;
+                                    else service = 0;
+                                    StackExchange.using('gps', function() {
+                                        StackExchange.gps.track('google_maps_places_api.call', { service: service });
+                                    });
+                                }
+                            }, 0);
+                        }
+                        return appendChild.apply(this, arguments);
+                    };
+                })(Node.prototype.appendChild);
+            </script>
+    
+
+</body></html>
