@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<!-- saved from url=(0094)https://drupal.stackexchange.com/questions/6069/removing-divs-added-by-render-and-node-tpl-php -->
+<html itemscope="" itemtype="http://schema.org/QAPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>7 - Removing divs added by render and node.tpl.php - Drupal Answers</title>
+    <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/drupal/img/favicon.ico?v=62d5285bc682">
+    <link rel="apple-touch-icon image_src" href="https://cdn.sstatic.net/Sites/drupal/img/apple-touch-icon.png?v=2f2d1337c2e2">
+    <link rel="search" type="application/opensearchdescription+xml" title="Drupal Answers" href="https://drupal.stackexchange.com/opensearch.xml">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@StackDrupal">
+    <meta name="twitter:domain" content="drupal.stackexchange.com">
+
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/drupal/img/apple-touch-icon@2.png?v=5d949c166061">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="Removing divs added by render and node.tpl.php">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="I&#39;m trying to build an HTML5 template for Drupal 7, and I&#39;m quite particular about clean code. I want full control over the HTML and CSS which for the most part I get using my own custom theme. In ...">
+    <meta property="og:url" content="https://drupal.stackexchange.com/questions/6069/removing-divs-added-by-render-and-node-tpl-php">
+    <link rel="canonical" href="https://drupal.stackexchange.com/questions/6069/removing-divs-added-by-render-and-node-tpl-php">
+
+    
+    
+    <script src="./7 - Removing divs added by render and node.tpl.php - Drupal Answers_files/rules-p-c1rF4kxgLUzNc.js"></script><script type="text/javascript" async="" src="./7 - Removing divs added by render and node.tpl.php - Drupal Answers_files/ados"></script><script async="" src="./7 - Removing divs added by render and node.tpl.php - Drupal Answers_files/quant.js"></script><script async="" src="./7 - Removing divs added by render and node.tpl.php - Drupal Answers_files/beacon.js"></script><script async="" src="./7 - Removing divs added by render and node.tpl.php - Drupal Answers_files/analytics.js"></script><script type="text/javascript" async="" src="./7 - Removing divs added by render and node.tpl.php - Drupal Answers_files/ados.js"></script><script src="./7 - Removing divs added by render and node.tpl.php - Drupal Answers_files/jquery.min.js"></script>
+    <script src="./7 - Removing divs added by render and node.tpl.php - Drupal Answers_files/stub.en.js"></script>
+    <link rel="stylesheet" type="text/css" href="./7 - Removing divs added by render and node.tpl.php - Drupal Answers_files/all.css">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;Removing divs added by render and node.tpl.php&#39;" href="https://drupal.stackexchange.com/feeds/question/6069">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://drupal.stackexchange.com/questions/6069/removing-divs-added-by-render-and-node-tpl-php">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://drupal.stackexchange.com/questions/6069/removing-divs-added-by-render-and-node-tpl-php">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://drupal.stackexchange.com/questions/6069/removing-divs-added-by-render-and-node-tpl-php">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:1,shownCommentCount:1,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:6069});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('220', '6069');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text', false); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.ready(function () {
+                        StackExchange.realtime.init('wss://qa.sockets.stackexchange.com');
+            StackExchange.realtime.subscribeToReputationNotifications('220');
+                StackExchange.realtime.subscribeToTopBarNotifications('220');
+        });
+    </script>
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","serverTime":1503924071,"routeName":"Questions/Show","site":{"name":"Drupal Answers","description":"Q&A for Drupal developers and administrators","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdsB7sSAAAAAAzjgEF_Hd8vXv-C42sa_KyofaGR","recaptchaAudioLang":"en","enableNewTagCreationWarning":false,"insertSpaceAfterNameTabCompletion":false,"id":220,"enableInsertDocLinkDialog":false,"childUrl":"https://drupal.meta.stackexchange.com","enableSocialMediaInSharePopup":true,"protocol":"https"},"user":{"fkey":"5f8be9a80c529da1ac2a8e4452a512ed","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true,"ab":{"review_queue_danger_status":{"v":"a","g":2}}},"realtime":{"newest":true,"active":true,"tagged":true,"staleDisconnectIntervalInHours":0,"workerIframeDomain":"https://cdn.sstatic.net"},"events":{"postType":{"question":1},"postEditionSection":{"title":1,"body":2,"tags":3}},"story":{"minCompleteBodyLength":75,"likedTagsMaxLength":300,"dislikedTagsMaxLength":300}}, {"site":{"allowImageUploads":true,"enableUserHovercards":true,"styleCode":true,"enableImgurHttps":true,"forceHttpsImages":true},"comments":{},"userProfile":{},"tags":{},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true},"flags":{"allowRetractingFlags":true},"snippets":{"renderDomain":"stacksnippets.net"},"markdown":{"asteriskIntraWordEmphasis":true},"monitoring":{"clientTimingsAbsoluteTimeout":30000,"clientTimingsDebounceTimeout":1000}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"44307e94ed3b","js/moderator.en.js":"9b009c97b3e7","js/full-anon.en.js":"c6c21b12011e","js/full.en.js":"e5bba928a08e","js/wmd.en.js":"ceadfc0418b5","js/third-party/jquery.autocomplete.min.js":"d3b8fa7fdf74","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"cedef12af31e","js/help.en.js":"118cb359bcc6","js/tageditor.en.js":"7968c1573954","js/tageditornew.en.js":"2b3deb366edc","js/inline-tag-editing.en.js":"ff9d6e1cd996","js/revisions.en.js":"47de10a8358f","js/review.en.js":"08fe2709222d","js/tagsuggestions.en.js":"d1ff9b84abe5","js/post-validation.en.js":"0ee94ff09c70","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"8f60ef5f0993","js/keyboard-shortcuts.en.js":"49484e1b2df2","js/external-editor.en.js":"b46c950d6c5a","js/adops.en.js":"9a6a7812a212"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+    <noscript id="noscript-css">&lt;style type="text/css"&gt;body,.so-header{margin-top:1.9em}&lt;/style&gt;</noscript>
+<script async="" src="./7 - Removing divs added by render and node.tpl.php - Drupal Answers_files/full-anon.en.js"></script><script async="" src="./7 - Removing divs added by render and node.tpl.php - Drupal Answers_files/post-validation.en.js"></script><script async="" src="./7 - Removing divs added by render and node.tpl.php - Drupal Answers_files/prettify-full.en.js"></script><script async="" src="./7 - Removing divs added by render and node.tpl.php - Drupal Answers_files/external-editor.en.js"></script><script type="text/javascript" src="./7 - Removing divs added by render and node.tpl.php - Drupal Answers_files/adFeedback.js"></script><link rel="stylesheet" href="./7 - Removing divs added by render and node.tpl.php - Drupal Answers_files/adFeedback.css"></head>
+<body class="question-page new-topbar">
+            <script>(function () { var old = $.fn.contents; $.fn.contents = function () { try { return old.apply(this, arguments); } catch (e) { return $([]); } } })()</script>
+        
+
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+
+    <div class="topbar-dialog siteSwitcher-dialog dno">
+        <div class="header">
+            <h3><a href="https://drupal.stackexchange.com/">current community</a>
+            </h3>
+        </div>
+        <div class="modal-content current-site-container">
+            <ul class="current-site">
+                    <li>
+                            <div class="related-links">
+                    <a href="https://chat.stackexchange.com/?tab=site&amp;host=drupal.stackexchange.com" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+
+    <a href="https://drupal.stackexchange.com/" class="current-site-link site-link js-gps-track" data-id="220" data-gps-track="site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-drupal" title="Drupal Answers"></div>
+        Drupal Answers
+    </a>
+
+                    </li>
+                    <li class="related-site">
+                            <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                        
+    <a href="https://drupal.meta.stackexchange.com/" class="site-link js-gps-track" data-id="222" data-gps-track="site.switch({ target_site:222, item_type:3 }),site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-drupalmeta" title="Drupal Answers Meta"></div>
+        Drupal Answers Meta
+    </a>
+
+                    </li>
+            </ul>
+        </div>
+
+        <div class="header" id="your-communities-header">
+            <h3>
+your communities            </h3>
+
+        </div>
+        <div class="modal-content" id="your-communities-section">
+
+                <div class="call-to-login">
+<a href="https://drupal.stackexchange.com/users/signup?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f6069%2fremoving-divs-added-by-render-and-node-tpl-php" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://drupal.stackexchange.com/users/login?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f6069%2fremoving-divs-added-by-render-and-node-tpl-php" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+                </div>
+        </div>
+
+        <div class="header">
+            <h3><a href="https://stackexchange.com/sites">more stack exchange communities</a>
+            </h3>
+            <a href="https://stackoverflow.blog/" class="fr">company blog</a>
+        </div>
+        <div class="modal-content">
+                <div class="child-content"></div>
+        </div>        
+    </div>
+        </div>
+
+        <div class="network-items">
+                <a href="https://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 171 Stack Exchange sites">
+                    <span class="hidden-text">Stack Exchange</span>
+                </a>
+
+    <a href="https://drupal.stackexchange.com/questions/6069/removing-divs-added-by-render-and-node-tpl-php#" class="topbar-icon icon-inbox yes-hover js-inbox-button" title="Recent inbox messages">
+        <span class="hidden-text">Inbox</span>
+        <span class="unread-count" style="display:none"></span>
+    </a>
+    <a href="https://drupal.stackexchange.com/questions/6069/removing-divs-added-by-render-and-node-tpl-php#" class="topbar-icon icon-achievements yes-hover js-achievements-button " data-unread-class="" title="Recent achievements: reputation, badges, and privileges earned">
+        <span class="hidden-text">Reputation and Badges</span>
+        <span class="unread-count" style="display:none">
+            
+        </span>
+    </a>
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                <span class="topbar-menu-links">
+                                    <a href="https://drupal.stackexchange.com/users/signup?ssrc=head&amp;returnurl=https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f6069%2fremoving-divs-added-by-render-and-node-tpl-php" class="login-link" rel="nofollow">sign up</a>
+                                <a href="https://drupal.stackexchange.com/users/login?ssrc=head&amp;returnurl=https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f6069%2fremoving-divs-added-by-render-and-node-tpl-php" class="login-link" rel="nofollow">log in</a>
+
+                            <a href="https://drupal.stackexchange.com/tour">tour</a>
+        <a href="https://drupal.stackexchange.com/questions/6069/removing-divs-added-by-render-and-node-tpl-php#" class="icon-help js-help-button" title="Help Center and other resources">
+            help
+            <span class="triangle"></span>
+        </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="https://drupal.stackexchange.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="https://drupal.stackexchange.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="https://drupal.meta.stackexchange.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                Meta
+                                <span class="item-summary">
+                                    Discuss the workings and policies of this site
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                About Us
+                                <span class="item-summary">
+                                    Learn more about Stack Overflow the company
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.stackoverflowbusiness.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                Business
+                                <span class="item-summary">
+                                    Learn more about hiring developers or posting ads with us
+                                </span>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+                                            </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="https://drupal.stackexchange.com/search" method="get" autocomplete="off" role="search">
+                        <input name="q" type="text" placeholder="Search Q&amp;A" value="" tabindex="1" autocomplete="off" maxlength="240">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container  ">
+            <div id="header">
+                <br class="cbt">
+                <div id="hlogo">
+                    <a href="https://drupal.stackexchange.com/" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:8})">
+                        Drupal Answers
+                    </a>
+                </div>
+                <div id="hmenus">
+                        <div class="nav mainnavs" role="navigation" aria-label="site navigation">
+                            <ul>
+                                    <li class="youarehere">
+        <a id="nav-questions" href="https://drupal.stackexchange.com/questions" class="js-gps-track" data-gps-track="top_nav.click({is_current:true, location:2, destination:1})">
+        Questions
+        </a>
+    </li>
+
+                                                                    <li>
+        <a id="nav-tags" href="https://drupal.stackexchange.com/tags" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:2})">
+        Tags
+        </a>
+    </li>
+
+                                    <li>
+        <a id="nav-users" href="https://drupal.stackexchange.com/users" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:3})">
+        Users
+        </a>
+    </li>
+
+                                    <li>
+        <a id="nav-badges" href="https://drupal.stackexchange.com/help/badges" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:4})">
+        Badges
+        </a>
+    </li>
+
+    <li>
+        <a id="nav-unanswered" href="https://drupal.stackexchange.com/unanswered" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:5})">
+        Unanswered
+        </a>
+    </li>
+                            </ul>
+                        </div>
+                    <div class="nav askquestion" role="navigation" aria-label="ask new question">
+                        <ul>
+                            <li>
+                                <a id="nav-askquestion" href="https://drupal.stackexchange.com/questions/ask">Ask Question</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        
+
+
+        <div id="content">
+
+
+
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="https://cdn.sstatic.net/Sites/drupal/img/apple-touch-icon.png?v=2f2d1337c2e2">
+
+
+<div id="herobox" class="hero-container">
+    <div id="hero-content">
+            <div id="close"><a title="click to minimize">_</a></div>
+        <div id="blurb">
+            Drupal Answers is a question and answer site for Drupal developers and administrators. Join them; it only takes a minute:
+            <br>
+            <br>
+            <a href="https://drupal.stackexchange.com/users/signup?ssrc=hero&amp;returnurl=https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f6069%2fremoving-divs-added-by-render-and-node-tpl-php" id="tell-me-more" class="button">Sign up</a>
+        </div>
+        <div id="desc">
+            <b>Here's how it works:</b>
+            <ol id="hiw">
+                <li id="q">
+                    Anybody can ask a question
+                </li>
+                <li id="an">
+                    Anybody can answer
+                </li>
+                <li id="b">
+                    The best answers are voted up and rise to the top
+                </li>
+            </ol>
+        </div>
+    <div style="clear: both"></div>
+    </div>
+</div><script>
+    StackExchange.ready(function () {
+
+        var location = 0;
+        if ($("body").hasClass("questions-page")) {
+            location = 1;
+        } else if ($("body").hasClass("question-page")) {
+            location = 1;
+        } else if ($("body").hasClass("faq-page")) {
+            location = 5;
+        } else if ($("body").hasClass("home-page")) {
+            location = 3;
+        }
+        
+        $('#tell-me-more').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+            });
+        });
+        
+        $('.hero-container #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+            });
+            
+            $.cookie("hero", "mini", { path: "/", expires: 365 });
+            $.ajax({
+                url: "/hero-mini",
+                success: function (data) {
+                    $(".hero-container").fadeOut("fast", function () {
+                        $(".hero-container").replaceWith(data);
+                        $("#herobox-mini").fadeIn("fast");
+                    });
+                }
+            });
+            return false;
+        });
+    });
+
+</script>    <div class="inner-content">
+        <div id="question-header">
+                <h1 itemprop="name"><a href="https://drupal.stackexchange.com/questions/6069/removing-divs-added-by-render-and-node-tpl-php" class="question-hyperlink">Removing divs added by render and node.tpl.php</a></h1>
+
+            
+        </div>
+            <div id="mainbar" role="main" aria-label="question and answers">
+
+            
+
+<div class="question" data-questionid="6069" id="question">
+
+    <script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22, 0, "adzerk949034245", 4).enableDynamicSiteSelection().setZone(29); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk949034245"><a href="https://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjo1MDk5OTYsImNoIjoxNjUzMSwiY2siOnt9LCJjciI6MTc5ODgwMCwiZGkiOiIzNjgxMjRiODA2YjY0ODc5YTc1N2ZiOGJmNjU5YzE2NCIsImRtIjoxLCJmYyI6MjEzODkwOCwiZmwiOjI2MDkxNTcsImlwIjoiNTkuMTQ0LjEzNS43Iiwia3ciOiI3LHRoZW1pbmcseC1jb21tdW5pdHkseC1ob3N0LWRydXBhbC5zdGFja2V4Y2hhbmdlLmNvbSIsIm53IjoyMiwicGMiOjAsImVjIjowLCJwciI6NTcyMjIsInJ0IjoxLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jby5pbi8iLCJzYSI6IjMiLCJzYiI6ImktMGQ5ZDViNWIxOTgwODA4YmIiLCJzcCI6MTE4NjQsInN0Ijo1Njc1OSwidWsiOiJ1ZTEtMjg1MjlhOGY3ZWQxNDk4MTgxM2I0MWVlNDU5ZjdmZjgiLCJ6biI6MjksInRzIjoxNTAzOTI0MDczMDIxLCJiZiI6dHJ1ZSwicG4iOiJhZHplcms5NDkwMzQyNDUiLCJ1ciI6Imh0dHA6Ly9zdGFja292ZXJmbG93LmNvbS9qb2JzP3V0bV9zb3VyY2U9d2Vic2l0ZSZ1dG1fbWVkaXVtPWJhbm5lciZ1dG1fY29udGVudD1sZWFkZXJib2FyZF85JnV0bV9jYW1wYWlnbj1ob3VzZV9hZHNfaG91c2VfYWRzX1JPU19TVSJ9&amp;s=PG3aW_1vSVu7I522jYuB6TMugEM" rel="nofollow" target="_blank" title=""><img src="./7 - Removing divs added by render and node.tpl.php - Drupal Answers_files/9eecb9fdd80a4fdb856e2716fbf62bda.png" title="" alt="" border="0" width="728" height="90"></a><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="https://drupal.stackexchange.com/questions/6069/removing-divs-added-by-render-and-node-tpl-php#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./7 - Removing divs added by render and node.tpl.php - Drupal Answers_files/i.gif"></div>
+            <div id="dfp-tlb" class="dfpad"></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="6069">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">14</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="https://drupal.stackexchange.com/questions/6069/removing-divs-added-by-render-and-node-tpl-php#">favorite</a>
+        <div class="favoritecount"><b>10</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>I'm trying to build an HTML5 template for Drupal 7, and I'm quite particular about clean code. I want full control over the HTML and CSS which for the most part I get using my own custom theme. In other words I have an HTML5 and CSS set I want to use exactly as is in Drupal. I'm not too clued up on how the whole pre-process function thing works.</p>
+
+<p>When I use 'print render($page['content'])' in my page.tpl.php file it adds</p>
+
+<pre class="default prettyprint prettyprinted"><code><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"region region-content"</span><span class="tag">&gt;</span><span class="pln"> 
+    </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"block-system-main"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"block block-system"</span><span class="tag">&gt;</span><span class="pln"> 
+        </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"content"</span><span class="tag">&gt;</span></code></pre>
+
+<p>And then when I add 'print render($content)' in the node--custom.tpl.php it adds</p>
+
+<pre class="default prettyprint prettyprinted"><code><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"field field-name-body field-type-text-with-summary field-label-hidden"</span><span class="tag">&gt;</span><span class="pln">
+    </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"field-items"</span><span class="tag">&gt;</span><span class="pln">
+        </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"field-item even"</span><span class="pln"> </span><span class="atn">property</span><span class="pun">=</span><span class="atv">"content:encoded"</span><span class="tag">&gt;</span></code></pre>
+
+<p>I don't want any of these divs. How do I get rid of them?   </p>
+    </div>
+    <div class="post-taglist">
+        <a href="https://drupal.stackexchange.com/questions/tagged/7" class="post-tag js-gps-track" title="show questions tagged &#39;7&#39;" rel="tag">7</a> <a href="https://drupal.stackexchange.com/questions/tagged/theming" class="post-tag js-gps-track" title="show questions tagged &#39;theming&#39;" rel="tag">theming</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="https://drupal.stackexchange.com/q/6069" title="short permalink to this question" class="short-link" id="link-post-6069">share</a><span class="lsep">|</span><a href="https://drupal.stackexchange.com/posts/6069/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="https://drupal.stackexchange.com/posts/6069/revisions" title="show all edits to this post">edited <span title="2015-05-11 05:00:22Z" class="relativetime">May 11 '15 at 5:00</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://drupal.stackexchange.com/users/199/kiamlaluno"><div class="gravatar-wrapper-32"><img src="./7 - Removing divs added by render and node.tpl.php - Drupal Answers_files/5315ed8662329312d746e5de447c87c6" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://drupal.stackexchange.com/users/199/kiamlaluno">kiamlaluno</a><span class="mod-flair" title="moderator">♦</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 73,385" dir="ltr">73.4k</span><span title="9 gold badges"><span class="badge1"></span><span class="badgecount">9</span></span><span title="109 silver badges"><span class="badge2"></span><span class="badgecount">109</span></span><span title="220 bronze badges"><span class="badge3"></span><span class="badgecount">220</span></span>
+        </div>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2011-06-29 03:37:50Z" class="relativetime">Jun 29 '11 at 3:37</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://drupal.stackexchange.com/users/1718/jack-mckenzie"><div class="gravatar-wrapper-32"><img src="./7 - Removing divs added by render and node.tpl.php - Drupal Answers_files/5078cfbe54b2d3ce10a437350c065b49" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://drupal.stackexchange.com/users/1718/jack-mckenzie">Jack McKenzie</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">185</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="8 bronze badges"><span class="badge3"></span><span class="badgecount">8</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                    
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-6069" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-6392" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I can use $node-&gt;body[$node-&gt;language][0]['value']; to display what I want inside page.tpl.php, but then I lose the advantage of being able to use custom node.tpl.php pages for each content type. This means I could use conditional statements inside page.tpl.php to add different classes for each content type to get what I want, but that seems a messy solution.</span>
+                    –&nbsp;<a href="https://drupal.stackexchange.com/users/1718/jack-mckenzie" title="185 reputation" class="comment-user owner">Jack McKenzie</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://drupal.stackexchange.com/questions/6069/removing-divs-added-by-render-and-node-tpl-php#comment6392_6069"><span title="2011-06-29 05:22:17Z" class="relativetime-clean">Jun 29 '11 at 5:22</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-6069" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://drupal.stackexchange.com/questions/6069/removing-divs-added-by-render-and-node-tpl-php#" onclick=""></a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+            <div id="answers">
+
+                <a name="tab-top"></a>
+                <div id="answers-header">
+                    <div class="subheader answers-subheader">
+                        <h2>
+                                2 Answers
+                                <span style="display:none;" itemprop="answerCount">2</span>
+                        </h2>
+                        <div>
+                            <div id="tabs">
+        <a href="https://drupal.stackexchange.com/questions/6069/removing-divs-added-by-render-and-node-tpl-php?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active" data-shortcut="A">
+            active</a>
+        <a href="https://drupal.stackexchange.com/questions/6069/removing-divs-added-by-render-and-node-tpl-php?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest" data-shortcut="O">
+            oldest</a>
+        <a class="youarehere" href="https://drupal.stackexchange.com/questions/6069/removing-divs-added-by-render-and-node-tpl-php?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes" data-shortcut="V">
+            votes</a>
+</div>
+                        </div>
+                    </div>    
+                </div>    
+
+
+
+
+  
+<a name="6072"></a>
+<div id="answer-6072" class="answer accepted-answer" data-answerid="6072" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="6072">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">15</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>The div ids and classes you see inside $page['content'] comes from region.tpl.php &gt; block.tpl.php &gt; node.tpl.php
+Drupal content passes through these template files, each step adds some divs.</p>
+
+<ul>
+<li><strong>Step One</strong></li>
+</ul>
+
+<p>region.tpl.php file contains  the code as follows </p>
+
+<pre class="default prettyprint prettyprinted"><code><span class="pln">       </span><span class="pun">&lt;?</span><span class="pln">php </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">$content</span><span class="pun">):</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">
+  &lt;div class="</span><span class="pun">&lt;?</span><span class="pln">php </span><span class="kwd">print</span><span class="pln"> $classes</span><span class="pun">;</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">"&gt;
+    </span><span class="pun">&lt;?</span><span class="pln">php </span><span class="kwd">print</span><span class="pln"> $content</span><span class="pun">;</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">
+  </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+</span><span class="pun">&lt;?</span><span class="pln">php endif</span><span class="pun">;</span><span class="pln"> </span><span class="pun">?&gt;</span></code></pre>
+
+<p>now if you make changes in this file it will effect all the regions of your page. If you want to control only the content area, create a new file name it region--content.tpl.php in that file paste only </p>
+
+<pre class="default prettyprint prettyprinted"><code><span class="pun">&lt;?</span><span class="pln">php </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">$content</span><span class="pun">):</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">
+
+    </span><span class="pun">&lt;?</span><span class="pln">php </span><span class="kwd">print</span><span class="pln"> $content</span><span class="pun">;</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">
+
+</span><span class="pun">&lt;?</span><span class="pln">php endif</span><span class="pun">;</span><span class="pln"> </span><span class="pun">?&gt;</span></code></pre>
+
+<p>This will get rid of div created for only content region.</p>
+
+<ul>
+<li><strong>Step Two</strong></li>
+</ul>
+
+<p>Make a copy (if we make changes in block.tpl.php all the blocks will be effected) of block.tpl.php and name it block--content.tpl.php and remove or change the divs. Without the divs the file will contain the following code to output content.</p>
+
+<pre class="default prettyprint prettyprinted"><code><span class="pun">&lt;?</span><span class="pln">php </span><span class="kwd">print</span><span class="pln"> render</span><span class="pun">(</span><span class="pln">$title_prefix</span><span class="pun">);</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">
+    </span><span class="pun">&lt;?</span><span class="pln">php </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">$block</span><span class="pun">-&gt;</span><span class="pln">subject</span><span class="pun">):</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">
+      &lt;h2 class="block-title"</span><span class="pun">&lt;?</span><span class="pln">php </span><span class="kwd">print</span><span class="pln"> $title_attributes</span><span class="pun">;</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">&gt;</span><span class="pun">&lt;?</span><span class="pln">php </span><span class="kwd">print</span><span class="pln"> $block</span><span class="pun">-&gt;</span><span class="pln">subject </span><span class="pun">?&gt;</span><span class="tag">&lt;/h2&gt;</span><span class="pln">
+    </span><span class="pun">&lt;?</span><span class="pln">php endif</span><span class="pun">;?&gt;</span><span class="pln">
+      </span><span class="pun">&lt;?</span><span class="pln">php </span><span class="kwd">print</span><span class="pln"> render</span><span class="pun">(</span><span class="pln">$title_suffix</span><span class="pun">);</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">
+      </span><span class="pun">&lt;?</span><span class="pln">php </span><span class="kwd">print</span><span class="pln"> $content</span><span class="pun">;</span><span class="pln"> </span><span class="pun">?&gt;</span></code></pre>
+
+<p>This will get rid of div created by bock.tpl.php </p>
+
+<ul>
+<li><strong>Step Three</strong></li>
+</ul>
+
+<p>Now edit the node.tpl.php file to remove or change the divs. Without the divs the file will contain the following code to output content.
+        
+          &gt;"&gt;
+        </p>
+
+<pre class="default prettyprint prettyprinted"><code><span class="pln">    </span><span class="pun">&lt;?</span><span class="pln">php </span><span class="kwd">print</span><span class="pln"> $user_picture</span><span class="pun">;</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">
+
+    </span><span class="pun">&lt;?</span><span class="pln">php </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">$display_submitted</span><span class="pun">):</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">
+      </span><span class="tag">&lt;span</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"submitted"</span><span class="tag">&gt;</span><span class="pun">&lt;?</span><span class="pln">php </span><span class="kwd">print</span><span class="pln"> $date</span><span class="pun">;</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln"> — </span><span class="pun">&lt;?</span><span class="pln">php </span><span class="kwd">print</span><span class="pln"> $name</span><span class="pun">;</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="tag">&lt;/span&gt;</span><span class="pln">
+    </span><span class="pun">&lt;?</span><span class="pln">php endif</span><span class="pun">;</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">
+
+
+        </span><span class="pun">&lt;?</span><span class="pln">php
+          </span><span class="com">// We hide the comments and links now so that we can render them later.</span><span class="pln">
+        hide</span><span class="pun">(</span><span class="pln">$content</span><span class="pun">[</span><span class="str">'comments'</span><span class="pun">]);</span><span class="pln">
+        hide</span><span class="pun">(</span><span class="pln">$content</span><span class="pun">[</span><span class="str">'links'</span><span class="pun">]);</span><span class="pln">
+        </span><span class="kwd">print</span><span class="pln"> render</span><span class="pun">(</span><span class="pln">$content</span><span class="pun">);</span><span class="pln">
+       </span><span class="pun">?&gt;</span><span class="pln">
+
+
+    </span><span class="pun">&lt;?</span><span class="pln">php </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="pln">empty</span><span class="pun">(</span><span class="pln">$content</span><span class="pun">[</span><span class="str">'links'</span><span class="pun">][</span><span class="str">'terms'</span><span class="pun">])):</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">
+      </span><span class="pun">&lt;?</span><span class="pln">php </span><span class="kwd">print</span><span class="pln"> render</span><span class="pun">(</span><span class="pln">$content</span><span class="pun">[</span><span class="str">'links'</span><span class="pun">][</span><span class="str">'terms'</span><span class="pun">]);</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">
+    </span><span class="pun">&lt;?</span><span class="pln">php endif</span><span class="pun">;?&gt;</span><span class="pln">
+
+    </span><span class="pun">&lt;?</span><span class="pln">php </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="pln">empty</span><span class="pun">(</span><span class="pln">$content</span><span class="pun">[</span><span class="str">'links'</span><span class="pun">])):</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">
+        </span><span class="pun">&lt;?</span><span class="pln">php </span><span class="kwd">print</span><span class="pln"> render</span><span class="pun">(</span><span class="pln">$content</span><span class="pun">[</span><span class="str">'links'</span><span class="pun">]);</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">
+      </span><span class="pun">&lt;?</span><span class="pln">php endif</span><span class="pun">;</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">
+
+
+
+
+</span><span class="pun">&lt;?</span><span class="pln">php </span><span class="kwd">print</span><span class="pln"> render</span><span class="pun">(</span><span class="pln">$content</span><span class="pun">[</span><span class="str">'comments'</span><span class="pun">]);</span><span class="pln"> </span><span class="pun">?&gt;</span></code></pre>
+
+<p>This will get rid of all div and classes. Now you can wrap the content with your own divs.  Please let me know if it works for you. </p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="https://drupal.stackexchange.com/a/6072" title="short permalink to this answer" class="short-link" id="link-post-6072">share</a><span class="lsep">|</span><a href="https://drupal.stackexchange.com/posts/6072/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="https://drupal.stackexchange.com/posts/6072/revisions" title="show all edits to this post">edited <span title="2011-09-24 03:49:45Z" class="relativetime">Sep 24 '11 at 3:49</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://drupal.stackexchange.com/users/487/capi-etheriel"><div class="gravatar-wrapper-32"><img src="./7 - Removing divs added by render and node.tpl.php - Drupal Answers_files/fa41d8fbd0879cee11da11ade94580b2" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://drupal.stackexchange.com/users/487/capi-etheriel">Capi Etheriel</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">2,997</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="11 silver badges"><span class="badge2"></span><span class="badgecount">11</span></span><span title="38 bronze badges"><span class="badge3"></span><span class="badgecount">38</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2011-06-29 07:18:10Z" class="relativetime">Jun 29 '11 at 7:18</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://drupal.stackexchange.com/users/8165/15dk51"><div class="gravatar-wrapper-32"><img src="./7 - Removing divs added by render and node.tpl.php - Drupal Answers_files/ab7b7ee0558f543842bc0cb873040104" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://drupal.stackexchange.com/users/8165/15dk51">15dk51</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">895</span><span title="7 silver badges"><span class="badge2"></span><span class="badgecount">7</span></span><span title="14 bronze badges"><span class="badge3"></span><span class="badgecount">14</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-6072" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-6472" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Hi dkiscool, Thanks for your well explained answer. So far I have got half way there. Using the block.tpl.php and region.tpl.php changes enabled me to get rid of the first three divs (i.e. the top set in my question). However my node.tpl.php file now only contains one line: <code>print render($content);</code> but the second three divs remain. I know its picking up the right node file as when I add some text into the file it comes through fine.</span>
+                    –&nbsp;<a href="https://drupal.stackexchange.com/users/1718/jack-mckenzie" title="185 reputation" class="comment-user owner">Jack McKenzie</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://drupal.stackexchange.com/questions/6069/removing-divs-added-by-render-and-node-tpl-php#comment6472_6072"><span title="2011-06-29 22:19:16Z" class="relativetime-clean">Jun 29 '11 at 22:19</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-6473" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">4</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I think I've solved it, following on from you pointing me in the right direction. I added a field.tpl.php file which contained just the one line <code>foreach ($items as $delta =&gt; $item) { print render($item);  }</code>. Anyone else might want to start out with a full field.tpl.php however because I took out a few lines that might be important depending on what you are trying to do. The final three divs were being added by this file - although I am a bit confused in that the documentation says that this file is not used and is only provided for a customization starting point.</span>
+                    –&nbsp;<a href="https://drupal.stackexchange.com/users/1718/jack-mckenzie" title="185 reputation" class="comment-user owner">Jack McKenzie</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://drupal.stackexchange.com/questions/6069/removing-divs-added-by-render-and-node-tpl-php#comment6473_6072"><span title="2011-06-29 22:35:40Z" class="relativetime-clean">Jun 29 '11 at 22:35</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-6072" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://drupal.stackexchange.com/questions/6069/removing-divs-added-by-render-and-node-tpl-php#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22, 0, "adzerk1893833666", 4).enableDynamicSiteSelection().setZone(30); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1893833666"><div style="background-image: url( data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== ); width: 1px; height: 1px; display:none;"></div><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="https://drupal.stackexchange.com/questions/6069/removing-divs-added-by-render-and-node-tpl-php#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./7 - Removing divs added by render and node.tpl.php - Drupal Answers_files/i(1).gif"></div>
+            <div id="dfp-mlb" class="dfpad"></div>
+  
+<a name="137024"></a>
+<div id="answer-137024" class="answer" data-answerid="137024" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="137024">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">-2</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>What works perfectly for me is: <code>strip_tags(render($var));</code></p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="https://drupal.stackexchange.com/a/137024" title="short permalink to this answer" class="short-link" id="link-post-137024">share</a><span class="lsep">|</span><a href="https://drupal.stackexchange.com/posts/137024/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2014-11-16 10:10:10Z" class="relativetime">Nov 16 '14 at 10:10</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://drupal.stackexchange.com/users/39241/pimmy"><div class="gravatar-wrapper-32"><img src="./7 - Removing divs added by render and node.tpl.php - Drupal Answers_files/581be62b0266dc44465da7f3207101c3" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://drupal.stackexchange.com/users/39241/pimmy">Pimmy</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1</span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-137024" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-193549" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">This is not the way to go. Use theme function or preprocess function.</span>
+                    –&nbsp;<a href="https://drupal.stackexchange.com/users/1761/gagarine" title="327 reputation" class="comment-user">gagarine</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://drupal.stackexchange.com/questions/6069/removing-divs-added-by-render-and-node-tpl-php#comment193549_137024"><span title="2015-06-02 10:04:30Z" class="relativetime-clean">Jun 2 '15 at 10:04</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-137024" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://drupal.stackexchange.com/questions/6069/removing-divs-added-by-render-and-node-tpl-php#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+                                    <a name="new-answer"></a>
+                        <form id="post-form" action="https://drupal.stackexchange.com/questions/6069/answer/submit" method="post" class="post-form">
+                            <input type="hidden" id="post-id" value="6069">
+                            <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false">
+                            <input type="hidden" name="referrer" value="https://www.google.co.in/">
+                            <h2 class="space">Your Answer</h2>
+
+
+        
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+                // Have to fire editor after snippets, if snippets enabled
+                if (StackExchange.settings.snippets.snippetsEnabled) {
+                    StackExchange.using("snippets", function() {
+                        createEditor();
+                    });
+                }
+                else {
+                    createEditor();
+                }
+            });
+
+            function createEditor() {
+                StackExchange.prepareEditor({
+                    heartbeatType: 'answer',
+                convertImagesToLinks: false,
+                reputationToPostImages: null,
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                    ,immediatelyShowMarkdownHelp:true
+                    });
+                
+
+        }
+    });
+</script>
+
+
+<div id="post-editor" class="post-editor js-post-editor">
+
+    <div style="position: relative;"> 
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="5f8be9a80c529da1ac2a8e4452a512ed">
+        <input id="author" name="author" type="text">
+    </div>
+
+
+
+</div>
+
+                            <div style="position: relative;">
+                                
+                                            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="https://drupal.stackexchange.com/users/login?ssrc=question_page&amp;returnurl=https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f6069%2fremoving-divs-added-by-render-and-node-tpl-php%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Email and Password</span></p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="manual-openid" class="manual-openid">
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false">
+                    <input type="hidden" name="use-google" class="use-google" value="false">
+                    <input type="button" class="submit-openid" value="Submit" style="display:none">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', 'https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f6069%2fremoving-divs-added-by-render-and-node-tpl-php%23new-answer', 'question_page');
+                    }
+                );
+            </script>
+            <noscript>
+                        &lt;h3&gt;Post as a guest&lt;/h3&gt;
+    &lt;div class="form-item"&gt;
+        &lt;table&gt;
+        &lt;tr&gt;
+                    &lt;td class="vm"&gt;
+                &lt;div&gt;
+                    &lt;label for="display-name"&gt;Name&lt;/label&gt;
+                    &lt;input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105"&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label for="m-address"&gt;Email&lt;/label&gt;
+                    &lt;input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown" /&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+            </noscript>
+
+                            </div>
+           
+                                                            <div class="form-submit cbt">
+                                    <input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+                                    <a href="https://drupal.stackexchange.com/questions/6069/removing-divs-added-by-render-and-node-tpl-php#" class="btn-clear discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="https://stackexchange.com/legal/privacy-policy" name="privacy" target="_blank">privacy policy</a> and <a href="https://stackexchange.com/legal/terms-of-service" name="tos" target="_blank">terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1">                                </div>
+                        </form>
+
+
+
+                        <h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?                            Browse other questions tagged <a href="https://drupal.stackexchange.com/questions/tagged/7" class="post-tag" title="show questions tagged &#39;7&#39;" rel="tag">7</a> <a href="https://drupal.stackexchange.com/questions/tagged/theming" class="post-tag" title="show questions tagged &#39;theming&#39;" rel="tag">theming</a>  or <a href="https://drupal.stackexchange.com/questions/ask">ask your own question</a>.                        </h2>
+            </div>
+        </div>
+                <div id="sidebar" class="show-votes" role="complementary" aria-label="sidebar">
+                            <div class="module question-stats">
+                    <table id="qinfo">
+                        <tbody><tr>
+                            <td>
+                                <p class="label-key">asked</p>
+                            </td>
+                            <td style="padding-left: 10px">
+                                <p class="label-key" title="2011-06-29 03:37:50Z"><b>6 years, 2 months ago</b></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="label-key">viewed</p>
+                            </td>
+
+                            <td style="padding-left: 10px">
+                                <p class="label-key">
+                                    <b>20,316 times</b>
+                                </p>
+                            </td>
+                        </tr>
+                            <tr>
+                                <td>
+                                    <p class="label-key">active</p>
+                                </td>
+                                <td style="padding-left: 10px">
+                                    <p class="label-key"><b><a href="https://drupal.stackexchange.com/questions/6069/removing-divs-added-by-render-and-node-tpl-php?lastactivity" class="lastactivity-link" title="2015-05-11 05:00:22Z">2 years, 3 months ago</a></b></p>
+                                </td>
+                            </tr>
+                    </tbody></table>
+                </div>
+                        
+            <script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22, 0, "adzerk1492240305", [5,17]).enableDynamicSiteSelection().setZone(56016); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1492240305"><div id="SE20-ad-container" style="height: 250px; width: 220px;">
+<style>
+#launched-ad { width: 300px; height: 250px; overflow: hidden; background: url(https://cdn.sstatic.net/stackexchange/Img/launched-ads/worldbuilding.png?v=d4af2bd2460a) no-repeat bottom center; display: table-cell; vertical-align: middle; }
+#launched-ad-link { display: block; width: 300px; height: 250px; line-height: 1.2; color: #fff !important; font-weight: bold; font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 18px; line-height:22px; text-decoration: none; cursor: pointer; }
+#launched-ad-inner { padding: 0px 25px 45px 25px; text-align: center; }
+</style>
+<a id="launched-ad-link" href="https://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NSwiYnQiOjAsImNtIjozNzM4NjIsImNoIjoxNjUzMSwiY2siOnt9LCJjciI6MTM2OTk0OSwiZGkiOiJiNGRiZjY5NmQxNTY0NDA2OGZhMWNmNTU2YTdiOTJmZCIsImRtIjoxLCJmYyI6MTUyOTk3NiwiZmwiOjExNDYxOTMsImlwIjoiNTkuMTQ0LjEzNS43Iiwia3ciOiI3LHRoZW1pbmcseC1jb21tdW5pdHkseC1ob3N0LWRydXBhbC5zdGFja2V4Y2hhbmdlLmNvbSIsIm53IjoyMiwicGMiOjAsImVjIjowLCJwciI6NTcyMjIsInJ0IjoxLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jby5pbi8iLCJzYSI6IjMiLCJzYiI6ImktMGQ5ZDViNWIxOTgwODA4YmIiLCJzcCI6MTE4NjQsInN0Ijo1Njc1OSwidWsiOiJ1ZTEtMjg1MjlhOGY3ZWQxNDk4MTgxM2I0MWVlNDU5ZjdmZjgiLCJ6biI6NTYwMTYsInRzIjoxNTAzOTI0MDczMDI3LCJiZiI6dHJ1ZSwicG4iOiJhZHplcmsxNDkyMjQwMzA1IiwidXIiOm51bGx9&amp;s=36p4MxYYU4VPhWSHu3T1lUa4Q9k&amp;url=http%3A%2F%2Fworldbuilding.stackexchange.com%2Fquestions%2F90245%2Fcan-a-casino-system-prove-my-divine-luck-as-cheating%3Futm_medium%3Dad%26utm_source%3Dhttps-drupal-stackexchange-com-questions-6069-removing-divs-added-by-render-an%26utm_campaign%3Dworldbuilding.stackexchange.com-promo%26utm_content%3D90245">
+    <div id="launched-ad">
+        <div id="launched-ad-inner">Can a casino system prove my (divine) luck as cheating?</div>
+    </div>
+</a>
+<script>
+    if (window._launchedAdUrl) {
+        $('#launched-ad-link').attr('href', window._launchedAdUrl + (window._launchedAdUrl.indexOf('?') == -1 ? '?' : '&') + 'url=' + encodeURIComponent($('#launched-ad-link').attr('href')));
+    }
+</script></div><script type="text/javascript">window._launchedAdUrl= "https://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NSwiYnQiOjAsImNtIjozNzM4NjIsImNoIjoxNjUzMSwiY2siOnt9LCJjciI6MTM2OTk0OSwiZGkiOiJiNGRiZjY5NmQxNTY0NDA2OGZhMWNmNTU2YTdiOTJmZCIsImRtIjoxLCJmYyI6MTUyOTk3NiwiZmwiOjExNDYxOTMsImlwIjoiNTkuMTQ0LjEzNS43Iiwia3ciOiI3LHRoZW1pbmcseC1jb21tdW5pdHkseC1ob3N0LWRydXBhbC5zdGFja2V4Y2hhbmdlLmNvbSIsIm53IjoyMiwicGMiOjAsImVjIjowLCJwciI6NTcyMjIsInJ0IjoxLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jby5pbi8iLCJzYSI6IjMiLCJzYiI6ImktMGQ5ZDViNWIxOTgwODA4YmIiLCJzcCI6MTE4NjQsInN0Ijo1Njc1OSwidWsiOiJ1ZTEtMjg1MjlhOGY3ZWQxNDk4MTgxM2I0MWVlNDU5ZjdmZjgiLCJ6biI6NTYwMTYsInRzIjoxNTAzOTI0MDczMDI3LCJiZiI6dHJ1ZSwicG4iOiJhZHplcmsxNDkyMjQwMzA1IiwidXIiOm51bGx9&s=36p4MxYYU4VPhWSHu3T1lUa4Q9k";</script><script type="text/javascript" src="./7 - Removing divs added by render and node.tpl.php - Drupal Answers_files/js"></script><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="https://drupal.stackexchange.com/questions/6069/removing-divs-added-by-render-and-node-tpl-php#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./7 - Removing divs added by render and node.tpl.php - Drupal Answers_files/i(2).gif"></div>
+        <div id="hireme"></div>
+        <script>try {
+;window.clc=window.clc||{},window.clc.init=window.clc.init||function(t){var n=window,c=n.document;try{if("function"!=typeof[].indexOf||!window.addEventListener||!t.allowed)return;if(!RegExp(t.allowed).test(location.hostname))return;if(n.clc.options)for(var o in n.clc.options)t[o]=n.clc.options[o];n.clc.cmd=void 0===n.clc.cmd?[]:n.clc.cmd,n.clc.autoload=n.clc.autoload||function(){"function"==typeof n.clc.load?n.clc.load():n.clc.cmd.push(function(t){return t.load()})};var e=t.wv;if(c.hidden&&e)return void c.addEventListener("visibilitychange",function n(){c.hidden||(window.clc.init(t),c.removeEventListener("visibilitychange",n))});t.al&&n.clc.autoload(),n.clc.options=t;var i=c.createElement("script");i.async=!0,i.src=t.lib,c.body.appendChild(i)}catch(t){}},false&&(window.clc.loadDfp=window.clc.loadDfp||function(t){var n=window,c="248424177",o=/^\/tags\//.test(location.pathname)||/^\/questions\/tagged\//.test(location.pathname)?"tag-pages":"question-pages",e=location.hostname,i={lb:{id:"dfp-tlb",sz:[[728,90]]},mlb:{id:"dfp-mlb",sz:[[728,90]]},sb:{id:"dfp-tsb",sz:[[300,250],[300,600]]},"tag-sponsorship":{id:"dfp-tag",sz:[[730,135]]}},a=Object.keys(i).filter(function(t){return!!document.getElementById(i[t].id)});void 0===n.googletag&&(n.googletag={cmd:[function(){var d=n.googletag,l=d.pubads();a.forEach(function(t){var n="/"+c+"/"+e+"/"+t+"/"+o;d.defineSlot(n,i[t].sz,i[t].id).addService(l)}),l.enableSingleRequest(),t&&Object.keys(t).forEach(function(n){l.setTargeting(n,t[n])}),d.enableServices()}]});for(var d=n.googletag,l=0,s=a;l<s.length;l++)!function(t){d.cmd.push(function(){var n=i[t].id;d.display(n)})}(s[l]);var r=document.createElement("script");r.async=!0,r.src="https://www.googletagservices.com/tag/js/gpt.js",document.body.appendChild(r)}),window.clc.init.call(null, {"lib":"https://cdn.sstatic.net/clc/clc.min.js?v=f306cca1ad0d","u":"https://clc.stackoverflow.com/markup.js","azw":true,"kt":2000,"tto":true,"h":"clc.stackoverflow.com","allowed":"^(((talent\\.)?stackoverflow)|(blog\\.codinghorror)|(serverfault|askubuntu)|([^\\.]+\\.stackexchange))\\.com$","wv":true,"al":false});                        }catch(e){typeof console.error==='function'&&console.error(e);}
+        </script>
+            <div id="dfp-tsb" class="dfpad"></div>
+                <style>.dfpad{position:absolute;height:1px;width:1px;opacity:0;top:0;left:0;pointer-events:none;}</style>
+                <script>!function(){try{var targeting={Registered:['false'],'ron-tag':['7','theming'],Community:['true']}; (typeof clc.loadDfp==='function')&&clc.loadDfp(targeting);}catch(e){typeof console.error==='function'&&console.error(e);}}();</script>
+            
+
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+
+<div class="spacer">
+	<a href="https://drupal.stackexchange.com/q/140936?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="https://drupal.stackexchange.com/questions/140936/how-to-clean-up-the-markup-of-output?noredirect=1&amp;lq=1" class="question-hyperlink">how to clean up the markup of output</a>
+</div>			</div>
+</div>
+
+                <div class="module sidebar-related">
+                    <h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/29452?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="https://drupal.stackexchange.com/questions/29452/use-a-class-on-a-div-on-specific-content-with-omega?rq=1" class="question-hyperlink">Use a class on a DIV on specific content with Omega</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/35815?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="https://drupal.stackexchange.com/questions/35815/how-remove-div-elements-in-rendered-search-form-in-theme-designing?rq=1" class="question-hyperlink">How remove DIV elements in rendered search form in theme designing</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/42139?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="https://drupal.stackexchange.com/questions/42139/how-to-add-the-value-of-a-drupal-field-to-the-class-of-a-wrapper-div?rq=1" class="question-hyperlink">How to add the value of a drupal field to the class of a wrapper div</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/45996?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="https://drupal.stackexchange.com/questions/45996/make-a-div-clickable-using-a-render-array?rq=1" class="question-hyperlink">Make a div clickable using a render array</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/101354?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">5</div></a><a href="https://drupal.stackexchange.com/questions/101354/how-to-render-a-field-collection-without-default-divs?rq=1" class="question-hyperlink">How to render a field collection without default divs?</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/107427?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">1</div></a><a href="https://drupal.stackexchange.com/questions/107427/how-do-i-remove-a-div-from-the-rendered-result-of-a-bef-exposed-form?rq=1" class="question-hyperlink">How do I remove a DIV from the rendered result of a BEF exposed form?</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/127818?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="https://drupal.stackexchange.com/questions/127818/pager-in-render-array?rq=1" class="question-hyperlink">Pager in Render Array</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/198675?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="https://drupal.stackexchange.com/questions/198675/how-to-remove-the-default-div-tags-generated-by-modifying-manage-display?rq=1" class="question-hyperlink">How to remove the default &lt;div&gt; tags generated by modifying manage display?</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/205259?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">1</div></a><a href="https://drupal.stackexchange.com/questions/205259/how-to-print-entity-referenced-fields-node-title-in-node-tpl-php?rq=1" class="question-hyperlink">How to print entity referenced fields (node) title in node.tpl.php?</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/208273?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">1</div></a><a href="https://drupal.stackexchange.com/questions/208273/remove-link-to-terms-page-when-printing-taxonomy-term-on-node-content-type-tpl?rq=1" class="question-hyperlink">Remove link to terms page when printing taxonomy term on node--content_type.tpl.php?</a></div>
+                    </div>
+                </div>
+
+<div id="hot-network-questions" class="module tex2jax_ignore">
+    <h4>
+        <a href="https://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="https://codegolf.stackexchange.com/questions/140680/binary-to-hexadecimal" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Binary to Hexadecimal
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="https://workplace.stackexchange.com/questions/97725/am-i-being-asked-to-lie-in-my-job" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Am I being asked to lie in my job?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-earthscience" title="Earth Science Stack Exchange"></div><a href="https://earthscience.stackexchange.com/questions/12159/how-can-a-storm-drop-40-inches-of-rain" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:553 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can a storm drop 40 inches of rain?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="https://puzzling.stackexchange.com/questions/54571/alternative-answer-to-what-has-one-eye-but-cannot-see" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Alternative answer to: "What has one eye but cannot see?"
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="https://codereview.stackexchange.com/questions/174129/guess-the-computers-number-using-functions" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Guess the computer's number using functions
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="https://math.stackexchange.com/questions/2408108/what-are-some-mathematically-interesting-computations-involving-matrices" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What are some mathematically interesting computations involving matrices?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-interpersonal" title="Interpersonal Skills Stack Exchange"></div><a href="https://interpersonal.stackexchange.com/questions/2720/how-to-align-personal-interests-with-family" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:680 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to align personal interests with family?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-money" title="Personal Finance &amp; Money Stack Exchange"></div><a href="https://money.stackexchange.com/questions/84251/is-this-person-wanting-to-pay-my-credit-card-trying-to-defraud-me" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is this person wanting to pay my credit card trying to defraud me?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="https://workplace.stackexchange.com/questions/97716/how-do-i-avoid-giving-up-my-password-to-coworkers" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do I avoid giving up my password to coworkers?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-buddhism" title="Buddhism Stack Exchange"></div><a href="https://buddhism.stackexchange.com/questions/22323/concept-of-karma-in-bhagwad-gita-and-buddhism" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:565 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Concept of Karma in Bhagwad Gita and Buddhism
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-cseducators" title="Computer Science Educators Stack Exchange"></div><a href="https://cseducators.stackexchange.com/questions/3372/how-to-answer-functional-programming-is-useless" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:678 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to answer "functional programming is useless"?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="https://tex.stackexchange.com/questions/388595/how-is-the-tex-engine-informed-of-the-oss-end-of-line-marker-and-file-encoding" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How is the TeX engine informed of the OS's end-of-line marker and file encoding?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-crypto" title="Cryptography Stack Exchange"></div><a href="https://crypto.stackexchange.com/questions/51146/rubiks-cube-as-encryption" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:281 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Rubik's Cube as Encryption
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="https://puzzling.stackexchange.com/questions/54575/can-anything-be-deduced-from-the-statement-if-i-am-a-truth-teller-the-other-tw" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can anything be deduced from the statement "If I am a truth teller, the other two are liars"?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-interpersonal" title="Interpersonal Skills Stack Exchange"></div><a href="https://interpersonal.stackexchange.com/questions/2699/how-to-avoid-being-seen-as-cash-cow-in-my-family" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:680 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to avoid being seen as cash cow in my family?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="https://academia.stackexchange.com/questions/95163/is-it-okay-to-use-same-figures-in-different-papers" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it okay to use same figures in different papers?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-dba" title="Database Administrators Stack Exchange"></div><a href="https://dba.stackexchange.com/questions/184469/sql-query-to-display-names-of-customers-who-have-purchased-all-the-dvd" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:182 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    SQL query to display names of customers who have purchased all the DVD
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-skeptics" title="Skeptics Stack Exchange"></div><a href="https://skeptics.stackexchange.com/questions/39300/did-joe-arpaios-swat-team-set-a-house-with-a-family-inside-on-fire-and-laugh-as" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:212 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Did Joe Arpaio's SWAT team set a house with a family inside on fire and laugh as a dog burned in it?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-parenting" title="Parenting Stack Exchange"></div><a href="https://parenting.stackexchange.com/questions/31448/son-was-sent-home-from-sleepover-for-behavior" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:228 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Son was sent home from sleepover for behavior
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-softwareengineering" title="Software Engineering Stack Exchange"></div><a href="https://softwareengineering.stackexchange.com/questions/356347/term-or-pattern-for-do-something-if-its-not-already-done" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:131 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Term (or "pattern"?) for "Do something if it's not already done"
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-aviation" title="Aviation Stack Exchange"></div><a href="https://aviation.stackexchange.com/questions/43264/are-there-any-helicopters-with-ejection-seats" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:528 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Are there any helicopters with ejection seats?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="https://scifi.stackexchange.com/questions/168159/did-barty-crouch-sr-know-the-secret-of-alastor-moody" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Did Barty Crouch Sr. know the secret of 'Alastor Moody'?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="https://math.stackexchange.com/questions/2407745/what-is-the-theory-of-matrices" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is the theory of Matrices?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="https://math.stackexchange.com/questions/2407659/why-newton-raphson-method-does-not-converge-for-some-function" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why Newton-Raphson method does not converge for some function?
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+        </div>
+    
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="https://drupal.stackexchange.com/feeds/question/6069" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>    </div>
+<script>
+StackExchange.ready(function(){$.get('/posts/6069/ivc/40c1');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/6069/ivc/40c1" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">default</div></div>
+
+
+        </div>
+    </div>
+
+    <footer id="footer" class="s-footer js-footer" role="contentinfo">
+        <div class="-container">
+            <div class="g-row js-sp-between">
+                
+                    <nav class="-nav js-category _visible" data-name="default">
+                        <h5 class="-title"><a href="https://drupal.stackexchange.com/">Drupal Answers</a></h5>
+                        <ul class="-list">
+                                    <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 2 })" href="https://drupal.stackexchange.com/tour">Tour</a></li>
+                                <li class="-item"><a href="https://drupal.stackexchange.com/help" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 3 })">Help</a></li>
+                                    <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 5 })" href="https://chat.stackexchange.com/?tab=site&amp;host=drupal.stackexchange.com">Chat</a></li>
+                            <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 13 })" href="https://drupal.stackexchange.com/contact">Contact</a></li>
+                                <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 14 })" href="https://drupal.meta.stackexchange.com/">Feedback</a></li>
+                                                            <li class="-item"><a onclick="StackExchange.switchMobile(&quot;on&quot;)" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 12 })">Mobile</a></li>
+                        </ul>
+                    </nav>
+                <nav class="-nav js-category _visible" data-name="default">
+                    <h5 class="-title"><a class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">Company</a></h5>
+                    <ul class="-list">
+                                                    <li class="-item"><a href="https://stackoverflow.com/" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 15})">Stack Overflow</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/?utm_source=so-footer&amp;utm_medium=referral&amp;utm_campaign=brand-activation" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 19 })">Stack Overflow Business</a></li>
+                            <li class="-item"><a href="https://stackoverflow.com/jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 17})">Developer Jobs</a></li>
+                                <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">About</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 27 })" href="https://stackoverflow.com/company/press">Press</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 7 })" href="https://stackexchange.com/legal">Legal</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 8 })" href="https://stackexchange.com/legal/privacy-policy">Privacy Policy</a></li>
+                    </ul>
+                </nav>
+                <div class="-network g-row">
+                    <a href="https://drupal.stackexchange.com/questions/6069/removing-divs-added-by-render-and-node-tpl-php#" class="-back-trigger js-back"><svg role="icon" class="svg-icon iconArrowLeftAlt" width="18" height="18" viewBox="0 0 18 18"><path d="M10.58 16L12 14.59 6.4 9 12 3.41 10.57 2l-7 7z"></path></svg></a>
+                    <div>
+                        <h5 class="-title"><a href="https://stackexchange.com/">Stack Exchange<br> Network</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="https://drupal.stackexchange.com/questions/6069/removing-divs-added-by-render-and-node-tpl-php#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Technology">Technology</a></li>
+                            <li class="-item"><a href="https://drupal.stackexchange.com/questions/6069/removing-divs-added-by-render-and-node-tpl-php#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Life / Arts">Life / Arts</a></li>
+                            <li class="-item"><a href="https://drupal.stackexchange.com/questions/6069/removing-divs-added-by-render-and-node-tpl-php#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Culture / Recreation">Culture / Recreation</a></li>
+                            <li class="-item"><a href="https://drupal.stackexchange.com/questions/6069/removing-divs-added-by-render-and-node-tpl-php#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Science">Science</a></li>
+                            <li class="-item"><a href="https://drupal.stackexchange.com/questions/6069/removing-divs-added-by-render-and-node-tpl-php#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Other">Other</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <nav class="-nav js-category" data-name="Technology">
+        <ul class="-list">
+                <li class="-item"><a href="https://stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                <li class="-item"><a href="https://serverfault.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="system and network administrators">Server Fault</a></li>
+                <li class="-item"><a href="https://superuser.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="computer enthusiasts and power users">Super User</a></li>
+                <li class="-item"><a href="https://webapps.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="power users of web applications">Web Applications</a></li>
+                <li class="-item"><a href="https://askubuntu.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                <li class="-item"><a href="https://webmasters.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="pro webmasters">Webmasters</a></li>
+                <li class="-item"><a href="https://gamedev.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="professional and independent game developers">Game Development</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://tex.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                <li class="-item"><a href="https://softwareengineering.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="professionals, academics, and students working within the systems development life cycle">Software Engineering</a></li>
+                <li class="-item"><a href="https://unix.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                <li class="-item"><a href="https://apple.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                <li class="-item"><a href="https://wordpress.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="WordPress developers and administrators">WordPress Development</a></li>
+                <li class="-item"><a href="https://gis.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                <li class="-item"><a href="https://electronics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://android.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                <li class="-item"><a href="https://security.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="information security professionals">Information Security</a></li>
+                <li class="-item"><a href="https://dba.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                <li class="-item"><a href="https://drupal.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="Drupal developers and administrators">Drupal Answers</a></li>
+                <li class="-item"><a href="https://sharepoint.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="SharePoint enthusiasts">SharePoint</a></li>
+                <li class="-item"><a href="https://ux.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="user experience researchers and experts">User Experience</a></li>
+                <li class="-item"><a href="https://mathematica.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="users of Wolfram Mathematica">Mathematica</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://salesforce.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                <li class="-item"><a href="https://expressionengine.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                <li class="-item"><a href="https://blender.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="people who use Blender to create 3D graphics, animations, or games">Blender</a></li>
+                <li class="-item"><a href="https://networkengineering.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="network engineers">Network Engineering</a></li>
+                <li class="-item"><a href="https://crypto.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="software developers, mathematicians and others interested in cryptography">Cryptography</a></li>
+                <li class="-item"><a href="https://codereview.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="peer programmer code reviews">Code Review</a></li>
+                <li class="-item"><a href="https://magento.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="users of the Magento e-Commerce platform">Magento</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://softwarerecs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="people seeking specific software recommendations">Software Recommendations</a></li>
+                <li class="-item"><a href="https://dsp.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="practitioners of the art and science of signal, image and video processing">Signal Processing</a></li>
+                <li class="-item"><a href="https://emacs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="those using, extending or developing Emacs">Emacs</a></li>
+                <li class="-item"><a href="https://raspberrypi.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="users and developers of hardware and software for Raspberry Pi">Raspberry Pi</a></li>
+                <li class="-item"><a href="https://codegolf.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="programming puzzle enthusiasts and code golfers">Programming Puzzles &amp; Code Golf</a></li>
+                <li class="-item"><a href="https://ethereum.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="users of Ethereum, the decentralized application platform and smart contract enabled blockchain">Ethereum</a></li>
+                <li class="-item"><a href="https://datascience.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="Data science professionals, Machine Learning specialists, and those interested in learning more about the field">Data Science</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://arduino.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="developers of open-source hardware and software that is compatible with Arduino">Arduino</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#technology" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 26 })">
+                        <strong>
+                            more (27)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Life / Arts">
+        <ul class="-list">
+                <li class="-item"><a href="https://photo.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                <li class="-item"><a href="https://scifi.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                <li class="-item"><a href="https://graphicdesign.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                <li class="-item"><a href="https://movies.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                <li class="-item"><a href="https://music.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="musicians, students, and enthusiasts">Music: Practice &amp; Theory</a></li>
+                <li class="-item"><a href="https://worldbuilding.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="writers/artists using science, geography and culture to construct imaginary worlds and settings">Worldbuilding</a></li>
+                <li class="-item"><a href="https://cooking.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Life / Arts"><ul class="-list">
+                <li class="-item"><a href="https://diy.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="contractors and serious DIYers">Home Improvement</a></li>
+                <li class="-item"><a href="https://money.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                <li class="-item"><a href="https://academia.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="academics and those enrolled in higher education">Academia</a></li>
+                <li class="-item"><a href="https://law.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="legal professionals, students, and others with experience or interest in law">Law</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#lifearts" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 26 })">
+                        <strong>
+                            more (17)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Culture / Recreation">
+        <ul class="-list">
+                <li class="-item"><a href="https://english.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                <li class="-item"><a href="https://skeptics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="scientific skepticism">Skeptics</a></li>
+                <li class="-item"><a href="https://judaism.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                <li class="-item"><a href="https://travel.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="road warriors and seasoned travelers">Travel</a></li>
+                <li class="-item"><a href="https://christianity.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                <li class="-item"><a href="https://ell.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="speakers of other languages learning English">English Language Learners</a></li>
+                <li class="-item"><a href="https://japanese.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="students, teachers, and linguists wanting to discuss the finer points of the Japanese language">Japanese Language</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Culture / Recreation"><ul class="-list">
+                <li class="-item"><a href="https://gaming.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                <li class="-item"><a href="https://bicycles.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                <li class="-item"><a href="https://rpg.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                <li class="-item"><a href="https://anime.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="anime and manga fans">Anime &amp; Manga</a></li>
+                <li class="-item"><a href="https://puzzling.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="those who create, solve, and study puzzles">Puzzling</a></li>
+                <li class="-item"><a href="https://mechanics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="mechanics and DIY enthusiast owners of cars, trucks, and motorcycles">Motor Vehicle Maintenance &amp; Repair</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#culturerecreation" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 26 })">
+                        <strong>
+                            more (32)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Science">
+        <ul class="-list">
+                <li class="-item"><a href="https://mathoverflow.net/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="professional mathematicians">MathOverflow</a></li>
+                <li class="-item"><a href="https://math.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                <li class="-item"><a href="https://stats.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                <li class="-item"><a href="https://cstheory.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                <li class="-item"><a href="https://physics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="active researchers, academics and students of physics">Physics</a></li>
+                <li class="-item"><a href="https://chemistry.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="scientists, academics, teachers and students">Chemistry</a></li>
+                <li class="-item"><a href="https://biology.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="biology researchers, academics, and students">Biology</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Science"><ul class="-list">
+                <li class="-item"><a href="https://cs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="students, researchers and practitioners of computer science">Computer Science</a></li>
+                <li class="-item"><a href="https://philosophy.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="those interested in the study of the fundamental nature of knowledge, reality, and existence">Philosophy</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#science" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 26 })">
+                        <strong>
+                            more (10)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Other">
+        <ul class="-list">
+                <li class="-item"><a href="https://meta.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                <li class="-item"><a href="https://stackapps.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                <li class="-item"><a href="https://api.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="programmatic interaction with Stack Exchange sites">API</a></li>
+                <li class="-item"><a href="https://data.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="querying Stack Exchange data using SQL">Data</a></li>
+                <li class="-item"><a href="https://area51.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 1, link: 25 })" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                    </ul>
+    </nav>
+                <div class="-copyright text-right">
+                    <div class="g-column jc-sp-between">
+                        <ul class="-list">
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link:4 })" href="https://stackoverflow.blog/?blb=1">Blog</a></li>
+                            <li class="-item"><a href="https://www.facebook.com/officialstackoverflow/" class="-link">Facebook</a></li>
+                            <li class="-item"><a href="https://twitter.com/stackoverflow" class="-link">Twitter</a></li>
+                            <li class="-item"><a href="https://linkedin.com/company/stack-overflow" class="-link">LinkedIn</a></li>
+                        </ul>
+
+                        <div>
+                            <p>
+                                site design / logo © 2017 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license" class="-link">cc by-sa 3.0</a>
+                                with <a href="https://stackoverflow.blog/2009/06/25/attribution-required/" rel="license" class="-link">attribution required</a>.
+                                <span id="svnrev">rev 2017.8.25.26865</span>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                    </div>
+    </footer>
+
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Drupal Answers works best with JavaScript enabled
+            &lt;img src="https://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;
+        &lt;/div&gt;
+    </noscript>
+<script>var z=document.createElement("script");z.type="text/javascript",z.async=!0,z.src="https://static.adzerk.net/ados.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(z,s);</script>
+<script>
+var ados = ados || {};
+ados.run = ados.run || [];
+
+
+ados.run.push(function () {
+    setTimeout(function () { $("#adzerk-user-match").remove(); }, window.AUMIframeDone ? 0 : 2000);
+    ados_setKeywords('7,theming,x-community,x-host-drupal.stackexchange.com');; ados_load();
+});   
+
+</script>
+
+    <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+                ga('create', 'UA-5620270-24', {'cookieDomain': 'stackexchange.com'});
+                ga('set', 'dimension2', '|7|theming|');
+                ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+                qc.async = true;
+                qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                s.parentNode.insertBefore(qc, s);
+                _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+                            var sc=document.createElement('script');
+                sc.async=true;
+                sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+                s.parentNode.insertBefore(sc, s);
+                _comscore.push({ c1: "2", c2: "17440561" });
+        })();
+
+    </script>
+        
+    
+            <script type="text/javascript">
+                
+                (function(appendChild) {
+                    Node.prototype.appendChild = function() {
+                        var parent = this;
+                        var newNode = arguments[0];
+                        if (parent.nodeName === 'HEAD'
+                            && newNode
+                            && newNode.nodeName === 'SCRIPT'
+                            && newNode.src) {
+                            
+                            window.setTimeout(function() {
+                                var result = newNode.src.match(/^https:\/\/maps\.googleapis\.com\/maps\/api\/place\/js\/(\w+)Service\./i) || [];
+                                var service = result[1];
+                                if (service) {
+                                    if (service === 'Autocompletion') service =  2;
+                                    else if (service === 'Place') service = 1;
+                                    else service = 0;
+                                    StackExchange.using('gps', function() {
+                                        StackExchange.gps.track('google_maps_places_api.call', { service: service });
+                                    });
+                                }
+                            }, 0);
+                        }
+                        return appendChild.apply(this, arguments);
+                    };
+                })(Node.prototype.appendChild);
+            </script>
+    
+
+<script async="" src="./7 - Removing divs added by render and node.tpl.php - Drupal Answers_files/clc.min.js"></script></body></html>
