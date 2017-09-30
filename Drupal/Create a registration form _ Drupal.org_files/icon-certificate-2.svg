@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="-5.95250940322876 68.0286865234375 507.6532287597656 422.61737060546875" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="pattern-0" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse" viewBox="0 0 100 100">
+      <path d="M 0 0 L 50 0 L 50 100 L 0 100 Z" style="fill: black;"/>
+    </pattern>
+  </defs>
+  <g>
+    <path d="M 396.449 291.128 C 396.449 325.662 364.937 353.658 326.064 353.658 C 287.19 353.658 255.296 322.277 261.256 288.282 C 267.39 253.283 320.286 177.859 328.294 178.19 C 334.172 178.432 396.449 256.593 396.449 291.128 Z" style="fill: rgba(0, 80, 126, 0); stroke: rgb(0, 80, 126); stroke-linecap: round; stroke-linejoin: round; stroke-width: 11;"/>
+    <path d="M 331.383 456.069 L 362.144 479.269 L 331.383 456.069 Z M 297.561 479.092 L 330.632 456.101 L 297.561 479.092 Z M 361.862 479.269 L 350.464 351.142 L 361.862 479.269 Z M 305.364 351.104 L 297.147 479.203 L 305.364 351.104 Z" style="stroke: rgb(0, 80, 126); stroke-linecap: round; stroke-linejoin: round; fill: rgb(0, 79, 126); stroke-width: 11;"/>
+  </g>
+  <g transform="matrix(0.907273, 0, 0, 0.900491, 20.92609, 46.160355)">
+    <g>
+      <line style="stroke: rgb(0, 79, 126); stroke-linejoin: round; stroke-linecap: round; stroke-width: 7.74437;" x1="377.814" y1="392.716" x2="450.152" y2="392.716"/>
+      <line x1="47.863" y1="396.364" x2="308.526" y2="391.448" style="stroke: rgb(0, 79, 126); stroke-linecap: round; stroke-linejoin: round; stroke-width: 7.74438;" transform="matrix(0.999927, 0.012158, -0.011977, 0.999927, 4.73077, -2.137815)"/>
+      <path style="fill: rgba(0, 0, 0, 0); stroke: rgb(0, 79, 126); stroke-width: 7.74437;" d="M 449.993 392.291 C 449.993 392.291 443.959 372.566 457.355 358.346 C 470.751 344.126 490.817 349.336 490.817 349.336"/>
+      <path d="M 8.648 105.753 L 8.648 350.876 M 47.809 392.939 L 47.809 392.939 M 491.64 349.426 L 491.64 105.753 M 451.027 62.24 L 46.355 62.24" style="stroke: rgb(0, 79, 126); stroke-linecap: round; fill: rgba(0, 0, 0, 0); stroke-width: 7.74437;"/>
+      <path style="fill: rgba(0, 0, 0, 0); stroke: rgb(0, 79, 126); stroke-width: 7.74437;" d="M 450.784 63.164 C 450.784 63.164 444.75 82.889 458.146 97.109 C 471.542 111.329 491.608 106.119 491.608 106.119"/>
+      <path style="fill: rgba(0, 0, 0, 0); stroke: rgb(0, 79, 126); stroke-width: 7.74437;" d="M 6.936 106.555 C 6.936 106.555 0.902 86.83 14.298 72.61 C 27.694 58.39 47.76 63.6 47.76 63.6" transform="matrix(-1, 0, 0, -1, 53.34074, 169.223261)"/>
+      <path style="fill: rgba(0, 0, 0, 0); stroke: rgb(0, 79, 126); stroke-width: 7.74437;" d="M 8.515 349.879 C 8.515 349.879 2.481 369.605 15.877 383.825 C 29.273 398.045 49.339 392.834 49.339 392.834" transform="matrix(-1, 0, 0, -1, 56.498751, 743.645099)"/>
+    </g>
+  </g>
+  <line x1="299.803466796875" y1="426.4483642578125" x2="7.28015661239624" y2="428.1490783691406" style="stroke: rgb(0, 79, 126); stroke-linecap: round; stroke-linejoin: round; stroke-width: 8;"/>
+  <line x1="7.28015661239624" y1="428.1490783691406" x2="7.28015661239624" y2="81.20279693603516" style="stroke: rgb(0, 79, 126); stroke-linecap: round; stroke-linejoin: round; stroke-width: 8;"/>
+  <line x1="7.28015661239624" y1="81.20279693603516" x2="488.58306884765625" y2="79.50208282470703" style="stroke: rgb(0, 79, 126); stroke-linecap: round; stroke-linejoin: round; stroke-width: 8;"/>
+  <line x1="488.58306884765625" y1="79.50208282470703" x2="489.43341064453125" y2="424.74761962890625" style="stroke: rgb(0, 79, 126); stroke-linecap: round; stroke-linejoin: round; stroke-width: 8;"/>
+  <line x1="489.43341064453125" y1="424.74761962890625" x2="357.62786865234375" y2="424.74761962890625" style="stroke: rgb(0, 79, 126); stroke-linecap: round; stroke-linejoin: round; stroke-width: 8;"/>
+  <line x1="357.62786865234375" y1="424.74761962890625" x2="357.62786865234375" y2="424.74761962890625" style="stroke: rgb(0, 79, 126); stroke-linecap: round; stroke-linejoin: round; stroke-width: 8;"/>
+</svg>

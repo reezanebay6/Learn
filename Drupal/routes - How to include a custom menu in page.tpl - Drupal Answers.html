@@ -1,0 +1,1805 @@
+<!DOCTYPE html>
+<!-- saved from url=(0089)https://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl -->
+<html itemscope="" itemtype="http://schema.org/QAPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>routes - How to include a custom menu in page.tpl - Drupal Answers</title>
+    <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/drupal/img/favicon.ico?v=62d5285bc682">
+    <link rel="apple-touch-icon image_src" href="https://cdn.sstatic.net/Sites/drupal/img/apple-touch-icon.png?v=2f2d1337c2e2">
+    <link rel="search" type="application/opensearchdescription+xml" title="Drupal Answers" href="https://drupal.stackexchange.com/opensearch.xml">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@StackDrupal">
+    <meta name="twitter:domain" content="drupal.stackexchange.com">
+
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/drupal/img/apple-touch-icon@2.png?v=5d949c166061">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="How to include a custom menu in page.tpl">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="I want to code a custom menu straight into page.tpl.php. The default theme uses
+
+&amp;lt;?php if ($main_menu): ?&amp;gt;
+  &amp;lt;div id=&quot;main-menu&quot; class=&quot;navigation&quot;&amp;gt;
+    &amp;lt;?php print theme(&#39;">
+    <meta property="og:url" content="https://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl">
+    <link rel="canonical" href="https://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl">
+
+    
+    
+    <script src="./routes - How to include a custom menu in page.tpl - Drupal Answers_files/ads"></script><script type="text/javascript" async="" src="./routes - How to include a custom menu in page.tpl - Drupal Answers_files/ados"></script><script async="" src="./routes - How to include a custom menu in page.tpl - Drupal Answers_files/quant.js"></script><script async="" src="./routes - How to include a custom menu in page.tpl - Drupal Answers_files/beacon.js"></script><script async="" src="./routes - How to include a custom menu in page.tpl - Drupal Answers_files/analytics.js"></script><script type="text/javascript" async="" src="./routes - How to include a custom menu in page.tpl - Drupal Answers_files/ados.js"></script><script src="./routes - How to include a custom menu in page.tpl - Drupal Answers_files/jquery.min.js"></script>
+    <script src="./routes - How to include a custom menu in page.tpl - Drupal Answers_files/stub.en.js"></script>
+    <link rel="stylesheet" type="text/css" href="./routes - How to include a custom menu in page.tpl - Drupal Answers_files/all.css">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;How to include a custom menu in page.tpl&#39;" href="https://drupal.stackexchange.com/feeds/question/65616">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:3,shownCommentCount:3,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:65616});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('220', '65616');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text', false); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.ready(function () {
+                        StackExchange.realtime.init('wss://qa.sockets.stackexchange.com');
+            StackExchange.realtime.subscribeToReputationNotifications('220');
+                StackExchange.realtime.subscribeToTopBarNotifications('220');
+        });
+    </script>
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","serverTime":1502619931,"routeName":"Questions/Show","site":{"name":"Drupal Answers","description":"Q&A for Drupal developers and administrators","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdsB7sSAAAAAAzjgEF_Hd8vXv-C42sa_KyofaGR","recaptchaAudioLang":"en","enableNewTagCreationWarning":false,"insertSpaceAfterNameTabCompletion":false,"id":220,"enableInsertDocLinkDialog":false,"childUrl":"https://drupal.meta.stackexchange.com","enableSocialMediaInSharePopup":true,"protocol":"https"},"user":{"fkey":"1f146dd68a42e7b80f2d201d869bcbea","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true},"realtime":{"newest":true,"active":true,"tagged":true,"staleDisconnectIntervalInHours":0,"workerIframeDomain":"https://cdn.sstatic.net"},"events":{"postType":{"question":1},"postEditionSection":{"title":1,"body":2,"tags":3}},"story":{"minCompleteBodyLength":75,"likedTagsMaxLength":300,"dislikedTagsMaxLength":300}}, {"site":{"allowImageUploads":true,"enableUserHovercards":true,"styleCode":true,"enableImgurHttps":true,"forceHttpsImages":true},"comments":{},"userProfile":{},"tags":{},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true},"flags":{"allowRetractingFlags":true},"snippets":{"renderDomain":"stacksnippets.net"},"markdown":{"asteriskIntraWordEmphasis":true},"monitoring":{"clientTimingsAbsoluteTimeout":30000,"clientTimingsDebounceTimeout":1000}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"a0b6c7a4c7d5","js/moderator.en.js":"fa5aac63c4be","js/full-anon.en.js":"e99c637f5eca","js/full.en.js":"f09ddb20a124","js/wmd.en.js":"99338d9e5597","js/third-party/jquery.autocomplete.min.js":"d3b8fa7fdf74","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"cbcc2882179e","js/help.en.js":"dbd4f489eff2","js/tageditor.en.js":"ca9342b132e5","js/tageditornew.en.js":"3a8b55a9f4c8","js/inline-tag-editing.en.js":"51e3b8dc46d2","js/revisions.en.js":"8f22ba768cac","js/review.en.js":"22fbe36d64a1","js/tagsuggestions.en.js":"b278f9a0b23b","js/post-validation.en.js":"d02f0ff16999","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"2696e2f79fac","js/keyboard-shortcuts.en.js":"e88acb73e90c","js/external-editor.en.js":"3e5baf662544","js/adops.en.js":"9a6a7812a212"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+    <noscript id="noscript-css">&lt;style type="text/css"&gt;body,.so-header{margin-top:1.9em}&lt;/style&gt;</noscript>
+<script src="./routes - How to include a custom menu in page.tpl - Drupal Answers_files/pubads_impl_142.js" async=""></script><script async="" src="./routes - How to include a custom menu in page.tpl - Drupal Answers_files/full-anon.en.js"></script><script async="" src="./routes - How to include a custom menu in page.tpl - Drupal Answers_files/post-validation.en.js"></script><script async="" src="./routes - How to include a custom menu in page.tpl - Drupal Answers_files/prettify-full.en.js"></script><script async="" src="./routes - How to include a custom menu in page.tpl - Drupal Answers_files/external-editor.en.js"></script><script type="text/javascript" src="./routes - How to include a custom menu in page.tpl - Drupal Answers_files/adFeedback.js"></script><link rel="stylesheet" href="./routes - How to include a custom menu in page.tpl - Drupal Answers_files/adFeedback.css"></head>
+<body class="question-page new-topbar">
+            <script>(function () { var old = $.fn.contents; $.fn.contents = function () { try { return old.apply(this, arguments); } catch (e) { return $([]); } } })()</script>
+        
+
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+
+    <div class="topbar-dialog siteSwitcher-dialog dno">
+        <div class="header">
+            <h3><a href="https://drupal.stackexchange.com/">current community</a>
+            </h3>
+        </div>
+        <div class="modal-content current-site-container">
+            <ul class="current-site">
+                    <li>
+                            <div class="related-links">
+                    <a href="https://chat.stackexchange.com/?tab=site&amp;host=drupal.stackexchange.com" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+
+    <a href="https://drupal.stackexchange.com/" class="current-site-link site-link js-gps-track" data-id="220" data-gps-track="site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-drupal" title="Drupal Answers"></div>
+        Drupal Answers
+    </a>
+
+                    </li>
+                    <li class="related-site">
+                            <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                        
+    <a href="https://drupal.meta.stackexchange.com/" class="site-link js-gps-track" data-id="222" data-gps-track="site.switch({ target_site:222, item_type:3 }),site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-drupalmeta" title="Drupal Answers Meta"></div>
+        Drupal Answers Meta
+    </a>
+
+                    </li>
+            </ul>
+        </div>
+
+        <div class="header" id="your-communities-header">
+            <h3>
+your communities            </h3>
+
+        </div>
+        <div class="modal-content" id="your-communities-section">
+
+                <div class="call-to-login">
+<a href="https://drupal.stackexchange.com/users/signup?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f65616%2fhow-to-include-a-custom-menu-in-page-tpl" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://drupal.stackexchange.com/users/login?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f65616%2fhow-to-include-a-custom-menu-in-page-tpl" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+                </div>
+        </div>
+
+        <div class="header">
+            <h3><a href="https://stackexchange.com/sites">more stack exchange communities</a>
+            </h3>
+            <a href="https://stackoverflow.blog/" class="fr">company blog</a>
+        </div>
+        <div class="modal-content">
+                <div class="child-content"></div>
+        </div>        
+    </div>
+        </div>
+
+        <div class="network-items">
+                <a href="https://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 170 Stack Exchange sites">
+                    <span class="hidden-text">Stack Exchange</span>
+                </a>
+
+    <a href="https://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl#" class="topbar-icon icon-inbox yes-hover js-inbox-button" title="Recent inbox messages">
+        <span class="hidden-text">Inbox</span>
+        <span class="unread-count" style="display:none"></span>
+    </a>
+    <a href="https://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl#" class="topbar-icon icon-achievements yes-hover js-achievements-button" data-unread-class="" title="Recent achievements: reputation, badges, and privileges earned">
+        <span class="hidden-text">Reputation and Badges</span>
+        <span class="unread-count" style="display:none">
+            
+        </span>
+    </a>
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                <span class="topbar-menu-links">
+                                    <a href="https://drupal.stackexchange.com/users/signup?ssrc=head&amp;returnurl=https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f65616%2fhow-to-include-a-custom-menu-in-page-tpl" class="login-link" rel="nofollow">sign up</a>
+                                <a href="https://drupal.stackexchange.com/users/login?ssrc=head&amp;returnurl=https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f65616%2fhow-to-include-a-custom-menu-in-page-tpl" class="login-link" rel="nofollow">log in</a>
+
+                            <a href="https://drupal.stackexchange.com/tour">tour</a>
+        <a href="https://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl#" class="icon-help js-help-button" title="Help Center and other resources">
+            help
+            <span class="triangle"></span>
+        </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="https://drupal.stackexchange.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="https://drupal.stackexchange.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="https://drupal.meta.stackexchange.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                Meta
+                                <span class="item-summary">
+                                    Discuss the workings and policies of this site
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                About Us
+                                <span class="item-summary">
+                                    Learn more about Stack Overflow the company
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.stackoverflowbusiness.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                Business
+                                <span class="item-summary">
+                                    Learn more about hiring developers or posting ads with us
+                                </span>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+                                            </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="https://drupal.stackexchange.com/search" method="get" autocomplete="off" role="search">
+                        <input name="q" type="text" placeholder="Search Q&amp;A" value="" tabindex="1" autocomplete="off" maxlength="240">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container  ">
+            <div id="header">
+                <br class="cbt">
+                <div id="hlogo">
+                    <a href="https://drupal.stackexchange.com/" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:8})">
+                        Drupal Answers
+                    </a>
+                </div>
+                <div id="hmenus">
+                        <div class="nav mainnavs" role="navigation" aria-label="site navigation">
+                            <ul>
+                                    <li class="youarehere">
+        <a id="nav-questions" href="https://drupal.stackexchange.com/questions" class="js-gps-track" data-gps-track="top_nav.click({is_current:true, location:2, destination:1})">
+        Questions
+        </a>
+    </li>
+
+                                                                    <li>
+        <a id="nav-tags" href="https://drupal.stackexchange.com/tags" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:2})">
+        Tags
+        </a>
+    </li>
+
+                                    <li>
+        <a id="nav-users" href="https://drupal.stackexchange.com/users" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:3})">
+        Users
+        </a>
+    </li>
+
+                                    <li>
+        <a id="nav-badges" href="https://drupal.stackexchange.com/help/badges" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:4})">
+        Badges
+        </a>
+    </li>
+
+    <li>
+        <a id="nav-unanswered" href="https://drupal.stackexchange.com/unanswered" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:5})">
+        Unanswered
+        </a>
+    </li>
+                            </ul>
+                        </div>
+                    <div class="nav askquestion" role="navigation" aria-label="ask new question">
+                        <ul>
+                            <li>
+                                <a id="nav-askquestion" href="https://drupal.stackexchange.com/questions/ask">Ask Question</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        
+
+
+        <div id="content">
+
+
+
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="https://cdn.sstatic.net/Sites/drupal/img/apple-touch-icon.png?v=2f2d1337c2e2">
+
+
+<div id="herobox" class="hero-container">
+    <div id="hero-content">
+            <div id="close"><a title="click to minimize">_</a></div>
+        <div id="blurb">
+            Drupal Answers is a question and answer site for Drupal developers and administrators. Join them; it only takes a minute:
+            <br>
+            <br>
+            <a href="https://drupal.stackexchange.com/users/signup?ssrc=hero&amp;returnurl=https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f65616%2fhow-to-include-a-custom-menu-in-page-tpl" id="tell-me-more" class="button">Sign up</a>
+        </div>
+        <div id="desc">
+            <b>Here's how it works:</b>
+            <ol id="hiw">
+                <li id="q">
+                    Anybody can ask a question
+                </li>
+                <li id="an">
+                    Anybody can answer
+                </li>
+                <li id="b">
+                    The best answers are voted up and rise to the top
+                </li>
+            </ol>
+        </div>
+    <div style="clear: both"></div>
+    </div>
+</div><script>
+    StackExchange.ready(function () {
+
+        var location = 0;
+        if ($("body").hasClass("questions-page")) {
+            location = 1;
+        } else if ($("body").hasClass("question-page")) {
+            location = 1;
+        } else if ($("body").hasClass("faq-page")) {
+            location = 5;
+        } else if ($("body").hasClass("home-page")) {
+            location = 3;
+        }
+        
+        $('#tell-me-more').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+            });
+        });
+        
+        $('.hero-container #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+            });
+            
+            $.cookie("hero", "mini", { path: "/", expires: 365 });
+            $.ajax({
+                url: "/hero-mini",
+                success: function (data) {
+                    $(".hero-container").fadeOut("fast", function () {
+                        $(".hero-container").replaceWith(data);
+                        $("#herobox-mini").fadeIn("fast");
+                    });
+                }
+            });
+            return false;
+        });
+    });
+
+</script>    <div class="inner-content">
+        <div id="question-header">
+                <h1 itemprop="name"><a href="https://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl" class="question-hyperlink">How to include a custom menu in page.tpl</a></h1>
+
+            
+        </div>
+            <div id="mainbar" role="main" aria-label="question and answers">
+
+            
+
+<div class="question" data-questionid="65616" id="question">
+
+    <script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22, 0, "adzerk1029597262", 4).enableDynamicSiteSelection().setZone(29); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1029597262"><div style="background-image: url( data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== ); width: 1px; height: 1px; display:none;"></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./routes - How to include a custom menu in page.tpl - Drupal Answers_files/i.gif"><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="https://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div></div>
+            <div id="dfp-tlb" class="dfpad" data-google-query-id="COTOrbr_09UCFYSHaAodpLIKyw"><div id="google_ads_iframe_/248424177/drupal.stackexchange.com/lb/question-pages_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/248424177/drupal.stackexchange.com/lb/question-pages_0" title="3rd party ad content" name="google_ads_iframe_/248424177/drupal.stackexchange.com/lb/question-pages_0" width="728" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; vertical-align: bottom;" src="./routes - How to include a custom menu in page.tpl - Drupal Answers_files/saved_resource.html"></iframe></div></div>
+            <script>
+                var dfpcmds = dfpcmds || [];
+                dfpcmds.push(function() { googletag.display("dfp-tlb"); });
+            </script>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="65616">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">5</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="https://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl#">favorite</a>
+        <div class="favoritecount"><b>4</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>I want to code a custom menu straight into page.tpl.php. The default theme uses</p>
+
+<pre class="default prettyprint prettyprinted"><code><span class="pun">&lt;?</span><span class="pln">php </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">$main_menu</span><span class="pun">):</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">
+  </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"main-menu"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"navigation"</span><span class="tag">&gt;</span><span class="pln">
+    </span><span class="pun">&lt;?</span><span class="pln">php </span><span class="kwd">print</span><span class="pln"> theme</span><span class="pun">(</span><span class="str">'links__system_main_menu'</span><span class="pun">,</span><span class="pln"> array</span><span class="pun">(</span><span class="pln">
+      </span><span class="str">'links'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> $main_menu</span><span class="pun">,</span><span class="pln">
+      </span><span class="str">'attributes'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> array</span><span class="pun">(</span><span class="pln">
+        </span><span class="str">'id'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'main-menu-links'</span><span class="pun">,</span><span class="pln">
+        </span><span class="str">'class'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> array</span><span class="pun">(</span><span class="str">'links'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'clearfix'</span><span class="pun">),</span><span class="pln">
+      </span><span class="pun">),</span><span class="pln">
+      </span><span class="str">'heading'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> array</span><span class="pun">(</span><span class="pln">
+        </span><span class="str">'text'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> t</span><span class="pun">(</span><span class="str">'Main menu'</span><span class="pun">),</span><span class="pln">
+        </span><span class="str">'level'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'h2'</span><span class="pun">,</span><span class="pln">
+        </span><span class="str">'class'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> array</span><span class="pun">(</span><span class="str">'element-invisible'</span><span class="pun">),</span><span class="pln">
+      </span><span class="pun">),</span><span class="pln">
+    </span><span class="pun">));</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">
+  </span><span class="tag">&lt;/div&gt;</span><span class="pln"> </span><span class="com">&lt;!-- /#main-menu --&gt;</span><span class="pln">
+</span><span class="pun">&lt;?</span><span class="pln">php endif</span><span class="pun">;</span><span class="pln"> </span><span class="pun">?&gt;</span></code></pre>
+
+<p>In Drupal 7 I've created a new menu called 'Footer menu'. How do I code that into my theme in the same way as the $main_menu is coded  in the default theme?</p>
+    </div>
+    <div class="post-taglist">
+        <a href="https://drupal.stackexchange.com/questions/tagged/routes" class="post-tag js-gps-track" title="show questions tagged &#39;routes&#39;" rel="tag">routes</a> <a href="https://drupal.stackexchange.com/questions/tagged/theming" class="post-tag js-gps-track" title="show questions tagged &#39;theming&#39;" rel="tag">theming</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="https://drupal.stackexchange.com/q/65616" title="short permalink to this question" class="short-link" id="link-post-65616">share</a><span class="lsep">|</span><a href="https://drupal.stackexchange.com/posts/65616/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2013-03-15 11:13:27Z" class="relativetime">Mar 15 '13 at 11:13</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://drupal.stackexchange.com/users/14225/tommyf"><div class="gravatar-wrapper-32"><img src="./routes - How to include a custom menu in page.tpl - Drupal Answers_files/idYCP.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://drupal.stackexchange.com/users/14225/tommyf">tommyf</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">154</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="9 bronze badges"><span class="badge3"></span><span class="badgecount">9</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                    
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-65616" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-71500" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Your custom menu will be available as a block, you can simply place that into footer region. This will save you some time and effort.</span>
+                    –&nbsp;<a href="https://drupal.stackexchange.com/users/1168/fahad" title="792 reputation" class="comment-user">Fahad</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl#comment71500_65616"><span title="2013-03-15 11:22:12Z" class="relativetime-clean">Mar 15 '13 at 11:22</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-71502" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I understand that, however I want to have more control over the output like I would have in the example above</span>
+                    –&nbsp;<a href="https://drupal.stackexchange.com/users/14225/tommyf" title="154 reputation" class="comment-user owner">tommyf</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl#comment71502_65616"><span title="2013-03-15 11:27:34Z" class="relativetime-clean">Mar 15 '13 at 11:27</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-233168" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Using the first code in the question, how can i set a class for a submenu?</span>
+                    –&nbsp;<a href="https://drupal.stackexchange.com/users/58471/cesardanielhg" title="1 reputation" class="comment-user">cesardanielhg</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl#comment233168_65616"><span title="2016-03-01 07:20:38Z" class="relativetime-clean">Mar 1 '16 at 7:20</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-65616" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl#" onclick=""></a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+            <div id="answers">
+
+                <a name="tab-top"></a>
+                <div id="answers-header">
+                    <div class="subheader answers-subheader">
+                        <h2>
+                                5 Answers
+                                <span style="display:none;" itemprop="answerCount">5</span>
+                        </h2>
+                        <div>
+                            <div id="tabs">
+        <a href="https://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active" data-shortcut="A">
+            active</a>
+        <a href="https://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest" data-shortcut="O">
+            oldest</a>
+        <a class="youarehere" href="https://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes" data-shortcut="V">
+            votes</a>
+</div>
+                        </div>
+                    </div>    
+                </div>    
+
+
+
+
+  
+<a name="65618"></a>
+<div id="answer-65618" class="answer accepted-answer" data-answerid="65618" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="65618">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">5</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="The question owner accepted this as the best answer Mar 18 &#39;13 at 11:46.">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Try this   </p>
+
+<pre class="default prettyprint prettyprinted"><code><span class="pun">&lt;?</span><span class="pln">php
+ $menu </span><span class="pun">=</span><span class="pln"> menu_navigation_links</span><span class="pun">(</span><span class="str">'menu-your-custom-menu-name'</span><span class="pun">);</span><span class="pln">
+ </span><span class="kwd">print</span><span class="pln"> theme</span><span class="pun">(</span><span class="str">'links__menu_your_custom_menu_name'</span><span class="pun">,</span><span class="pln"> array</span><span class="pun">(</span><span class="str">'links'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> $menu</span><span class="pun">));</span><span class="pln">
+</span><span class="pun">?&gt;</span></code></pre>
+
+<p>You can also add to template.php</p>
+
+<pre class="default prettyprint prettyprinted"><code><span class="kwd">function</span><span class="pln"> THEME_preprocess_page</span><span class="pun">(&amp;</span><span class="pln">$vars</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+$menu </span><span class="pun">=</span><span class="pln"> menu_navigation_links</span><span class="pun">(</span><span class="str">'menu-your-custom-menu-name'</span><span class="pun">);</span><span class="pln">
+
+$vars</span><span class="pun">[</span><span class="str">'custom_menu'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> theme</span><span class="pun">(</span><span class="str">'links__menu_your_custom_menu_name'</span><span class="pun">,</span><span class="pln"> array</span><span class="pun">(</span><span class="str">'links'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> $menu</span><span class="pun">));</span><span class="pln">
+
+</span><span class="pun">}</span></code></pre>
+
+<p>the variable $custom_menu is available in the page tpl</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="https://drupal.stackexchange.com/a/65618" title="short permalink to this answer" class="short-link" id="link-post-65618">share</a><span class="lsep">|</span><a href="https://drupal.stackexchange.com/posts/65618/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="https://drupal.stackexchange.com/posts/65618/revisions" title="show all edits to this post">edited <span title="2013-03-15 11:38:31Z" class="relativetime">Mar 15 '13 at 11:38</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2013-03-15 11:21:13Z" class="relativetime">Mar 15 '13 at 11:21</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://drupal.stackexchange.com/users/6508/sibiraj-pr"><div class="gravatar-wrapper-32"><img src="./routes - How to include a custom menu in page.tpl - Drupal Answers_files/6tTqY.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://drupal.stackexchange.com/users/6508/sibiraj-pr">Sibiraj PR</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">811</span><span title="5 silver badges"><span class="badge2"></span><span class="badgecount">5</span></span><span title="22 bronze badges"><span class="badge3"></span><span class="badgecount">22</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-65618" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-71503" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I understand that this goes into template.php, but how do I reference the menu in the page template?</span>
+                    –&nbsp;<a href="https://drupal.stackexchange.com/users/14225/tommyf" title="154 reputation" class="comment-user owner">tommyf</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl#comment71503_65618"><span title="2013-03-15 11:32:40Z" class="relativetime-clean">Mar 15 '13 at 11:32</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-71504" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">you can use this code directly in tpl.</span>
+                    –&nbsp;<a href="https://drupal.stackexchange.com/users/6508/sibiraj-pr" title="811 reputation" class="comment-user">Sibiraj PR</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl#comment71504_65618"><span title="2013-03-15 11:33:18Z" class="relativetime-clean">Mar 15 '13 at 11:33</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-65618" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22, 0, "adzerk1313741447", 4).enableDynamicSiteSelection().setZone(30); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1313741447"><a href="https://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjo1MDk5OTYsImNoIjoxNjUzMSwiY2siOnt9LCJjciI6MTc5ODc4MCwiZGkiOiJhZjlhNDA2ZGYwM2E0ZWRiOWY3OTdmNjVjZDUzMGI0NiIsImRtIjoxLCJmYyI6MjEzODg4OCwiZmwiOjI2MDkxNTcsImlwIjoiNDkuMjA2LjExMy4xMzEiLCJrdyI6InJvdXRlcyx0aGVtaW5nLHgtY29tbXVuaXR5LHgtaG9zdC1kcnVwYWwuc3RhY2tleGNoYW5nZS5jb20iLCJudyI6MjIsInBjIjowLCJlYyI6MCwicHIiOjU3MjIyLCJydCI6MSwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY28uaW4vIiwic2EiOiIzIiwic2IiOiJpLTBhOGVjODdiN2MyYTM0MTBjIiwic3AiOjI4OTAsInN0Ijo1Njc1OSwidWsiOiJ1ZTEtYWVhMmYxMmE1YzVkNDBkZDg3ZWEwZGUwMThiMGJhZTgiLCJ6biI6MzAsInRzIjoxNTAyNjE5OTMyMzI1LCJiZiI6dHJ1ZSwicG4iOiJhZHplcmsxMzEzNzQxNDQ3IiwidXIiOiJodHRwOi8vc3RhY2tvdmVyZmxvdy5jb20vam9icz91dG1fc291cmNlPXdlYnNpdGUmdXRtX21lZGl1bT1iYW5uZXImdXRtX2NvbnRlbnQ9bGVhZGVyYm9hcmRfMSZ1dG1fY2FtcGFpZ249aG91c2VfYWRzX2hvdXNlX2Fkc19ST1NfU1UifQ&amp;s=ojnZ0Urvmm4jkvPYaxcwQN9itEQ" rel="nofollow" target="_blank" title=""><img src="./routes - How to include a custom menu in page.tpl - Drupal Answers_files/35b68952b0d94bb48aa30e57e3e30873.png" title="" alt="" border="0" width="728" height="90"></a><img height="0px" width="0px" border="0" style="position:absolute;" src="./routes - How to include a custom menu in page.tpl - Drupal Answers_files/i(1).gif"><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="https://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div></div>
+            <div id="dfp-mlb" class="dfpad" data-google-query-id="COXOrbr_09UCFYSHaAodpLIKyw"><div id="google_ads_iframe_/248424177/drupal.stackexchange.com/mlb/question-pages_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/248424177/drupal.stackexchange.com/mlb/question-pages_0" title="3rd party ad content" name="google_ads_iframe_/248424177/drupal.stackexchange.com/mlb/question-pages_0" width="728" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; vertical-align: bottom;" src="./routes - How to include a custom menu in page.tpl - Drupal Answers_files/saved_resource(1).html"></iframe></div></div>
+            <script>
+                var dfpcmds = dfpcmds || [];
+                dfpcmds.push(function() { googletag.display("dfp-mlb"); });
+            </script>
+  
+<a name="65623"></a>
+<div id="answer-65623" class="answer" data-answerid="65623" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="65623">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>you can override your menu with <code>hook_theme_tree()</code> in <code>template.php</code>: </p>
+
+<pre class="default prettyprint prettyprinted"><code><span class="kwd">function</span><span class="pln"> THEME_menu_tree__MENUNAME</span><span class="pun">(</span><span class="pln">$variables</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  $menuTree </span><span class="pun">=</span><span class="pln"> menu_build_tree</span><span class="pun">(</span><span class="str">'MENUNAME'</span><span class="pun">);</span><span class="pln">
+
+  </span><span class="kwd">foreach</span><span class="pln"> </span><span class="pun">(</span><span class="pln">$menuTree </span><span class="kwd">as</span><span class="pln"> $item</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>and then create MENU BLOCK Or just print your menu directly in your <code>page.tpl</code></p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="https://drupal.stackexchange.com/a/65623" title="short permalink to this answer" class="short-link" id="link-post-65623">share</a><span class="lsep">|</span><a href="https://drupal.stackexchange.com/posts/65623/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="https://drupal.stackexchange.com/posts/65623/revisions" title="show all edits to this post">edited <span title="2013-03-15 12:15:39Z" class="relativetime">Mar 15 '13 at 12:15</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://drupal.stackexchange.com/users/6461/ajits"><div class="gravatar-wrapper-32"><img src="./routes - How to include a custom menu in page.tpl - Drupal Answers_files/XRvqH.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://drupal.stackexchange.com/users/6461/ajits">AjitS</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">9,577</span><span title="7 gold badges"><span class="badge1"></span><span class="badgecount">7</span></span><span title="27 silver badges"><span class="badge2"></span><span class="badgecount">27</span></span><span title="63 bronze badges"><span class="badge3"></span><span class="badgecount">63</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2013-03-15 12:09:21Z" class="relativetime">Mar 15 '13 at 12:09</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://drupal.stackexchange.com/users/11494/zakaria-elhariri"><div class="gravatar-wrapper-32"><img src="./routes - How to include a custom menu in page.tpl - Drupal Answers_files/47d504b8cd470cb3a55227548bdd211f" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://drupal.stackexchange.com/users/11494/zakaria-elhariri">Zakaria Elhariri</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">347</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="5 bronze badges"><span class="badge3"></span><span class="badgecount">5</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-65623" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-65623" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="150667"></a>
+<div id="answer-150667" class="answer" data-answerid="150667" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="150667">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Well, Nothing from above worked for me with Drupal 7 but below code,</p>
+
+<pre class="default prettyprint prettyprinted"><code><span class="pln">    $search_menu_name </span><span class="pun">=</span><span class="pln"> </span><span class="str">"menu-search-box-menu"</span><span class="pun">;</span><span class="pln">
+
+   </span><span class="kwd">print</span><span class="pln"> theme</span><span class="pun">(</span><span class="str">'links'</span><span class="pun">,</span><span class="pln"> array</span><span class="pun">(</span><span class="str">'links'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> menu_navigation_links</span><span class="pun">(</span><span class="pln">$search_menu_name</span><span class="pun">),</span><span class="pln"> </span><span class="str">'attributes'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> array</span><span class="pun">(</span><span class="str">'id'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> $search_menu_name</span><span class="pun">,</span><span class="pln"> </span><span class="str">'class'</span><span class="pun">=&gt;</span><span class="pln"> array</span><span class="pun">(</span><span class="str">'links'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'inline'</span><span class="pun">))));</span></code></pre>
+
+<p>The above code is like this, "menu-search-box-menu" is my custom menu name/ID. You can find it in that particular menu edit link.</p>
+
+<p>Enjoy. :)</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="https://drupal.stackexchange.com/a/150667" title="short permalink to this answer" class="short-link" id="link-post-150667">share</a><span class="lsep">|</span><a href="https://drupal.stackexchange.com/posts/150667/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2015-03-06 05:38:39Z" class="relativetime">Mar 6 '15 at 5:38</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://drupal.stackexchange.com/users/44630/umesh-patil"><div class="gravatar-wrapper-32"><img src="./routes - How to include a custom menu in page.tpl - Drupal Answers_files/smKie.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://drupal.stackexchange.com/users/44630/umesh-patil">Umesh Patil</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">121</span><span title="4 bronze badges"><span class="badge3"></span><span class="badgecount">4</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-150667" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-150667" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="206416"></a>
+<div id="answer-206416" class="answer" data-answerid="206416" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="206416">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>I am using bellow code,It's working for me.</p>
+
+<p>$main_menu = menu_navigation_links('menu-main-page');
+print($main_menu); </p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="https://drupal.stackexchange.com/a/206416" title="short permalink to this answer" class="short-link" id="link-post-206416">share</a><span class="lsep">|</span><a href="https://drupal.stackexchange.com/posts/206416/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2016-07-08 07:20:56Z" class="relativetime">Jul 8 '16 at 7:20</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://drupal.stackexchange.com/users/61743/muthuraja"><div class="gravatar-wrapper-32"><img src="./routes - How to include a custom menu in page.tpl - Drupal Answers_files/846efedb8ec5cc5a88bc94a029acff2c" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://drupal.stackexchange.com/users/61743/muthuraja">muthuraja</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">21</span><span title="5 bronze badges"><span class="badge3"></span><span class="badgecount">5</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-206416" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-206416" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="231403"></a>
+<div id="answer-231403" class="answer" data-answerid="231403" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="231403">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>This has been driving me mad. </p>
+
+<p>The easiest way by far is this...</p>
+
+<p>In page.tpl.php where your custom menu name is "Custom Menu"</p>
+
+<pre class="default prettyprint prettyprinted"><code><span class="pun">&lt;?</span><span class="pln">php
+
+</span><span class="kwd">print</span><span class="pln"> drupal_render</span><span class="pun">(</span><span class="pln">menu_tree</span><span class="pun">(</span><span class="str">'menu-custom-menu'</span><span class="pun">));</span><span class="pln">
+
+</span><span class="pun">?&gt;</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="https://drupal.stackexchange.com/a/231403" title="short permalink to this answer" class="short-link" id="link-post-231403">share</a><span class="lsep">|</span><a href="https://drupal.stackexchange.com/posts/231403/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2017-03-15 14:34:15Z" class="relativetime">Mar 15 at 14:34</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://drupal.stackexchange.com/users/18142/collins"><div class="gravatar-wrapper-32"><img src="./routes - How to include a custom menu in page.tpl - Drupal Answers_files/d88b6a89ddfe161d4499618806746d72" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://drupal.stackexchange.com/users/18142/collins">Collins</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1,922</span><span title="6 silver badges"><span class="badge2"></span><span class="badgecount">6</span></span><span title="24 bronze badges"><span class="badge3"></span><span class="badgecount">24</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-231403" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-231403" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+                                    <a name="new-answer"></a>
+                        <form id="post-form" action="https://drupal.stackexchange.com/questions/65616/answer/submit" method="post" class="post-form">
+                            <input type="hidden" id="post-id" value="65616">
+                            <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false">
+                            <input type="hidden" name="referrer" value="https://www.google.co.in/">
+                            <h2 class="space">Your Answer</h2>
+
+
+        
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+                // Have to fire editor after snippets, if snippets enabled
+                if (StackExchange.settings.snippets.snippetsEnabled) {
+                    StackExchange.using("snippets", function() {
+                        createEditor();
+                    });
+                }
+                else {
+                    createEditor();
+                }
+            });
+
+            function createEditor() {
+                StackExchange.prepareEditor({
+                    heartbeatType: 'answer',
+                convertImagesToLinks: false,
+                reputationToPostImages: null,
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                    ,immediatelyShowMarkdownHelp:true
+                    });
+                
+
+        }
+    });
+</script>
+
+
+<div id="post-editor" class="post-editor js-post-editor">
+
+    <div style="position: relative;"> 
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="1f146dd68a42e7b80f2d201d869bcbea">
+        <input id="author" name="author" type="text">
+    </div>
+
+
+
+</div>
+
+                            <div style="position: relative;">
+                                
+                                            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="https://drupal.stackexchange.com/users/login?ssrc=question_page&amp;returnurl=https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f65616%2fhow-to-include-a-custom-menu-in-page-tpl%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Email and Password</span></p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="manual-openid" class="manual-openid">
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false">
+                    <input type="hidden" name="use-google" class="use-google" value="false">
+                    <input type="button" class="submit-openid" value="Submit" style="display:none">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', 'https%3a%2f%2fdrupal.stackexchange.com%2fquestions%2f65616%2fhow-to-include-a-custom-menu-in-page-tpl%23new-answer', 'question_page');
+                    }
+                );
+            </script>
+            <noscript>
+                        &lt;h3&gt;Post as a guest&lt;/h3&gt;
+    &lt;div class="form-item"&gt;
+        &lt;table&gt;
+        &lt;tr&gt;
+                    &lt;td class="vm"&gt;
+                &lt;div&gt;
+                    &lt;label for="display-name"&gt;Name&lt;/label&gt;
+                    &lt;input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105"&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label for="m-address"&gt;Email&lt;/label&gt;
+                    &lt;input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown" /&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+            </noscript>
+
+                            </div>
+           
+                                                            <div class="form-submit cbt">
+                                    <input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+                                    <a href="https://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl#" class="btn-clear discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="https://stackexchange.com/legal/privacy-policy" name="privacy" target="_blank">privacy policy</a> and <a href="https://stackexchange.com/legal/terms-of-service" name="tos" target="_blank">terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1">                                </div>
+                        </form>
+
+
+
+                        <h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?                            Browse other questions tagged <a href="https://drupal.stackexchange.com/questions/tagged/routes" class="post-tag" title="show questions tagged &#39;routes&#39;" rel="tag">routes</a> <a href="https://drupal.stackexchange.com/questions/tagged/theming" class="post-tag" title="show questions tagged &#39;theming&#39;" rel="tag">theming</a>  or <a href="https://drupal.stackexchange.com/questions/ask">ask your own question</a>.                        </h2>
+            </div>
+        </div>
+                <div id="sidebar" class="show-votes" role="complementary" aria-label="sidebar">
+                            <div class="module question-stats">
+                    <table id="qinfo">
+                        <tbody><tr>
+                            <td>
+                                <p class="label-key">asked</p>
+                            </td>
+                            <td style="padding-left: 10px">
+                                <p class="label-key" title="2013-03-15 11:13:27Z"><b>4 years, 5 months ago</b></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="label-key">viewed</p>
+                            </td>
+
+                            <td style="padding-left: 10px">
+                                <p class="label-key">
+                                    <b>11,404 times</b>
+                                </p>
+                            </td>
+                        </tr>
+                            <tr>
+                                <td>
+                                    <p class="label-key">active</p>
+                                </td>
+                                <td style="padding-left: 10px">
+                                    <p class="label-key"><b><a href="https://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl?lastactivity" class="lastactivity-link" title="2017-03-15 14:34:15Z">5 months ago</a></b></p>
+                                </td>
+                            </tr>
+                    </tbody></table>
+                </div>
+                        
+            <script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22, 0, "adzerk1154480192", [5,17]).enableDynamicSiteSelection().setZone(56016); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1154480192"><iframe id="ados_frame_adzerk1154480192_2494283" frameborder="0" scrolling="no" height="250" width="300" src="./routes - How to include a custom menu in page.tpl - Drupal Answers_files/saved_resource(2).html"></iframe><img height="0px" width="0px" border="0" style="position:absolute;" src="./routes - How to include a custom menu in page.tpl - Drupal Answers_files/i(2).gif"><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="https://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div></div>
+        <div id="hireme"></div>
+        <script>
+</script>
+            <div id="dfp-tsb" class="dfpad" data-google-query-id="CObOrbr_09UCFYSHaAodpLIKyw"><div id="google_ads_iframe_/248424177/drupal.stackexchange.com/sb/question-pages_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/248424177/drupal.stackexchange.com/sb/question-pages_0" title="3rd party ad content" name="google_ads_iframe_/248424177/drupal.stackexchange.com/sb/question-pages_0" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; vertical-align: bottom;" src="./routes - How to include a custom menu in page.tpl - Drupal Answers_files/saved_resource(3).html"></iframe></div></div>
+            <script>
+                var dfpcmds = dfpcmds || [];
+                dfpcmds.push(function() { googletag.display("dfp-tsb"); });
+            </script>
+
+<style>.dfpad { position: absolute; height: 1px; width: 1px; opacity: 0; top: 0; left: 0; pointer-events: none; }</style>
+<script async="async" src="./routes - How to include a custom menu in page.tpl - Drupal Answers_files/gpt.js"></script>
+<script>
+(function() {
+    if (typeof googletag === 'undefined') {
+        googletag = {
+            cmd: [function() {
+                var gt = googletag;
+                var pubads = gt.pubads();
+                gt.defineSlot('/248424177/drupal.stackexchange.com/lb/question-pages', [[728,90]], 'dfp-tlb').addService(pubads);
+                gt.defineSlot('/248424177/drupal.stackexchange.com/mlb/question-pages', [[728,90]], 'dfp-mlb').addService(pubads);
+                gt.defineSlot('/248424177/drupal.stackexchange.com/sb/question-pages', [[300,250],[300,600]], 'dfp-tsb').addService(pubads);
+                pubads.enableSingleRequest();
+                pubads.setTargeting('Registered', ['false']).setTargeting('ron-tag', ['routes','theming']).setTargeting('Community', ['true']);
+                gt.enableServices();
+            }]
+        };
+    }
+    if (typeof dfpcmds !== 'undefined') {
+        dfpcmds.forEach(function(cmd) { googletag.cmd.push(cmd); });
+    }
+})();
+</script>
+            
+
+            
+
+                <div class="module sidebar-related">
+                    <h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/4839?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">3</div></a><a href="https://drupal.stackexchange.com/questions/4839/how-do-i-tear-out-the-existing-menu-in-a-theme-and-replace-it-with-super-fish-v?rq=1" class="question-hyperlink">How do I tear out the existing menu in a theme and replace it with super-fish (v7.x)</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/25643?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">1</div></a><a href="https://drupal.stackexchange.com/questions/25643/custom-menu-sub-menu-output?rq=1" class="question-hyperlink">custom menu/sub-menu output</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/30429?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">6</div></a><a href="https://drupal.stackexchange.com/questions/30429/converting-hard-coded-menus-to-using-the-menu-module?rq=1" class="question-hyperlink">Converting hard-coded menus to using the Menu module</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/36109?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="https://drupal.stackexchange.com/questions/36109/how-to-force-a-theme-to-use-a-sitewide-custom-menu?rq=1" class="question-hyperlink">How to force a theme to use a sitewide custom menu</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/50499?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">2</div></a><a href="https://drupal.stackexchange.com/questions/50499/customizing-menu-html?rq=1" class="question-hyperlink">Customizing menu html</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/69111?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">1</div></a><a href="https://drupal.stackexchange.com/questions/69111/how-to-alter-main-menu-to-add-custom-class?rq=1" class="question-hyperlink">how to alter main menu to add custom class</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/79002?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="https://drupal.stackexchange.com/questions/79002/drupal-7-how-to-insert-sites-main-menu-and-also-use-my-custom-style-on-it?rq=1" class="question-hyperlink">Drupal 7: How to insert site's Main Menu and also use my custom style on it?</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/103621?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">1</div></a><a href="https://drupal.stackexchange.com/questions/103621/outputting-main-menu-in-full-in-page-tpl-php?rq=1" class="question-hyperlink">Outputting main menu in full in page.tpl.php</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/145383?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="https://drupal.stackexchange.com/questions/145383/how-do-i-render-sub-menus?rq=1" class="question-hyperlink">How do I render sub-menus?</a></div><div class="spacer js-gps-track"><a href="https://drupal.stackexchange.com/q/153987?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="https://drupal.stackexchange.com/questions/153987/how-to-theme-main-menu-in-three-columns?rq=1" class="question-hyperlink">How to theme main menu in three columns</a></div>
+                    </div>
+                </div>
+
+<div id="hot-network-questions" class="module tex2jax_ignore">
+    <h4>
+        <a href="https://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-stats" title="Cross Validated"></div><a href="https://stats.stackexchange.com/questions/297380/why-not-just-dump-the-neural-networks-and-deep-learning" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:65 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why not just dump the neural networks and deep learning?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="https://english.stackexchange.com/questions/405054/is-there-an-english-equivalent-for-the-persian-proverb-to-play-with-tail-of-lio" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there an English equivalent for the Persian proverb "to play with tail of lion"
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-superuser" title="Super User"></div><a href="https://superuser.com/questions/1240432/how-to-create-a-fresh-profile-in-aboutprofiles" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to create a fresh profile in about:profiles?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="https://academia.stackexchange.com/questions/94461/how-should-the-session-chair-introduce-presentation-titles-which-are-ungrammatic" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How should the session chair introduce presentation titles which are ungrammatical?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="https://security.stackexchange.com/questions/167106/my-bank-support-just-asked-me-for-my-online-banking-credentials" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    My bank support just asked me for my online banking credentials
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-japanese" title="Japanese Language Stack Exchange"></div><a href="https://japanese.stackexchange.com/questions/52249/how-to-pronounce-%e4%b8%8a-with-the-meaning-of-when" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:257 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to pronounce 上 with the meaning of "when"?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="https://travel.stackexchange.com/questions/99713/in-germany-what-are-you-supposed-to-do-if-your-train-station-doesnt-have-any-w" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    In Germany, what are you supposed to do if your train station doesn't have any working ticket machines?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-electronics" title="Electrical Engineering Stack Exchange"></div><a href="https://electronics.stackexchange.com/questions/323456/would-a-triangle-wave-have-finite-or-infinite-sinusoidal-components" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:135 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Would a triangle wave have finite or infinite sinusoidal components?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="https://travel.stackexchange.com/questions/100047/travel-agent-is-claiming-i-have-made-an-online-booking-but-i-havent" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Travel agent is claiming I have made an online booking but I haven't
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-cseducators" title="Computer Science Educators Stack Exchange"></div><a href="https://cseducators.stackexchange.com/questions/3175/learning-fundamental-differences-between-functional-programming-and-object-orien" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:678 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Learning fundamental differences between functional programming and Object Oriented Programming
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="https://scifi.stackexchange.com/questions/166969/should-wizards-be-capable-of-having-squib-children-in-hpmor" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Should Wizards be capable of having Squib children in HPMOR?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-photo" title="Photography Stack Exchange"></div><a href="https://photo.stackexchange.com/questions/91713/why-is-there-single-in-the-term-dslr-digital-single-lens-reflex" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:61 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is there "single" in the term DSLR (Digital Single Lens Reflex)?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="https://travel.stackexchange.com/questions/100053/is-there-a-charge-for-mountain-rescue-in-spain-canary-islands" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there a charge for mountain rescue in Spain (Canary Islands)?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-money" title="Personal Finance &amp; Money Stack Exchange"></div><a href="https://money.stackexchange.com/questions/83755/do-people-tend-to-spend-less-when-using-cash-than-credit-cards" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Do people tend to spend less when using cash than credit cards?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="https://tex.stackexchange.com/questions/386048/how-to-draw-a-request-response-message-in-tikz" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to draw a request response message in tikz?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="https://codereview.stackexchange.com/questions/172832/complex-tokenizer-in-c" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Complex tokenizer in C#
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="https://codegolf.stackexchange.com/questions/138635/predict-a-collision-will-the-robber-get-away" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Predict a Collision: Will the robber get away?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="https://physics.stackexchange.com/questions/350805/seeing-something-from-only-one-angle-means-you-have-only-seen-what-of-its-su" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Seeing something from only one angle means you have only seen (what?)% of its surface area at most?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-money" title="Personal Finance &amp; Money Stack Exchange"></div><a href="https://money.stackexchange.com/questions/83759/are-my-parents-ripping-me-off-with-this-deal-that-doesnt-allow-me-to-build-my-e" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Are my parents ripping me off with this deal that doesn't allow me to build my equity in my home?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-politics" title="Politics Stack Exchange"></div><a href="https://politics.stackexchange.com/questions/23538/why-doesnt-prc-help-install-a-new-leadership-or-stage-a-coup-to-preserve-dprk" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:475 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why doesn't PRC help install a new leadership or stage a coup to preserve DPRK -- or even take it over altogether before the US does?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-writers" title="Writers Stack Exchange"></div><a href="https://writers.stackexchange.com/questions/29683/should-all-books-have-page-numbers" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:166 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Should all books have page numbers?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-softwareengineering" title="Software Engineering Stack Exchange"></div><a href="https://softwareengineering.stackexchange.com/questions/355445/are-there-exceptional-cases-where-we-can-accept-duplicate-code" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:131 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Are there exceptional cases where we can accept duplicate code?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-biology" title="Biology Stack Exchange"></div><a href="https://biology.stackexchange.com/questions/64764/are-these-birds-in-video-real-what-are-they-called" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:375 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Are these birds in video real? What are they called?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="https://math.stackexchange.com/questions/2390471/number-of-ways-to-arrange-5-monkeys-in-a-row" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Number of ways to arrange 5 monkeys in a row?
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+        </div>
+    
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="https://drupal.stackexchange.com/feeds/question/65616" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>    </div>
+<script>
+StackExchange.ready(function(){$.get('/posts/65616/ivc/8ff1');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/65616/ivc/8ff1" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">default</div></div>
+
+
+        </div>
+    </div>
+
+    <footer id="footer" class="s-footer js-footer" role="contentinfo">
+        <div class="-container">
+            <div class="g-row js-sp-between">
+                
+                    <nav class="-nav js-category _visible" data-name="default">
+                        <h5 class="-title"><a href="https://drupal.stackexchange.com/">Drupal Answers</a></h5>
+                        <ul class="-list">
+                                    <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 2 })" href="https://drupal.stackexchange.com/tour">Tour</a></li>
+                                <li class="-item"><a href="https://drupal.stackexchange.com/help" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 3 })">Help</a></li>
+                                    <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 5 })" href="https://chat.stackexchange.com/?tab=site&amp;host=drupal.stackexchange.com">Chat</a></li>
+                            <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 13 })" href="https://drupal.stackexchange.com/contact">Contact</a></li>
+                                <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 14 })" href="https://drupal.meta.stackexchange.com/">Feedback</a></li>
+                                                            <li class="-item"><a onclick="StackExchange.switchMobile(&quot;on&quot;)" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 12 })">Mobile</a></li>
+                        </ul>
+                    </nav>
+                <nav class="-nav js-category _visible" data-name="default">
+                    <h5 class="-title"><a class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">Company</a></h5>
+                    <ul class="-list">
+                                                    <li class="-item"><a href="https://stackoverflow.com/" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 15})">Stack Overflow</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/?utm_source=so-footer&amp;utm_medium=referral&amp;utm_campaign=brand-activation" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 19 })">Stack Overflow Business</a></li>
+                            <li class="-item"><a href="https://stackoverflow.com/jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 17})">Developer Jobs</a></li>
+                                <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">About</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 27 })" href="https://stackoverflow.com/company/press">Press</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 7 })" href="https://stackexchange.com/legal">Legal</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 8 })" href="https://stackexchange.com/legal/privacy-policy">Privacy Policy</a></li>
+                    </ul>
+                </nav>
+                <div class="-network g-row">
+                    <a href="https://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl#" class="-back-trigger js-back"><svg role="icon" class="svg-icon iconArrowLeftAlt" width="18" height="18" viewBox="0 0 18 18"><path d="M10.58 16L12 14.59 6.4 9 12 3.41 10.57 2l-7 7z"></path></svg></a>
+                    <div>
+                        <h5 class="-title"><a href="https://stackexchange.com/">Stack Exchange<br> Network</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="https://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Technology">Technology</a></li>
+                            <li class="-item"><a href="https://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Life / Arts">Life / Arts</a></li>
+                            <li class="-item"><a href="https://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Culture / Recreation">Culture / Recreation</a></li>
+                            <li class="-item"><a href="https://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Science">Science</a></li>
+                            <li class="-item"><a href="https://drupal.stackexchange.com/questions/65616/how-to-include-a-custom-menu-in-page-tpl#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Other">Other</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <nav class="-nav js-category" data-name="Technology">
+        <ul class="-list">
+                <li class="-item"><a href="https://stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                <li class="-item"><a href="https://serverfault.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="system and network administrators">Server Fault</a></li>
+                <li class="-item"><a href="https://superuser.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="computer enthusiasts and power users">Super User</a></li>
+                <li class="-item"><a href="https://webapps.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="power users of web applications">Web Applications</a></li>
+                <li class="-item"><a href="https://askubuntu.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                <li class="-item"><a href="https://webmasters.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="pro webmasters">Webmasters</a></li>
+                <li class="-item"><a href="https://gamedev.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and independent game developers">Game Development</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://tex.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                <li class="-item"><a href="https://softwareengineering.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professionals, academics, and students working within the systems development life cycle">Software Engineering</a></li>
+                <li class="-item"><a href="https://unix.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                <li class="-item"><a href="https://apple.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                <li class="-item"><a href="https://wordpress.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="WordPress developers and administrators">WordPress Development</a></li>
+                <li class="-item"><a href="https://gis.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                <li class="-item"><a href="https://electronics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://android.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                <li class="-item"><a href="https://security.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="information security professionals">Information Security</a></li>
+                <li class="-item"><a href="https://dba.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                <li class="-item"><a href="https://drupal.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Drupal developers and administrators">Drupal Answers</a></li>
+                <li class="-item"><a href="https://sharepoint.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="SharePoint enthusiasts">SharePoint</a></li>
+                <li class="-item"><a href="https://ux.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="user experience researchers and experts">User Experience</a></li>
+                <li class="-item"><a href="https://mathematica.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Wolfram Mathematica">Mathematica</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://salesforce.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                <li class="-item"><a href="https://expressionengine.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                <li class="-item"><a href="https://blender.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who use Blender to create 3D graphics, animations, or games">Blender</a></li>
+                <li class="-item"><a href="https://networkengineering.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="network engineers">Network Engineering</a></li>
+                <li class="-item"><a href="https://crypto.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="software developers, mathematicians and others interested in cryptography">Cryptography</a></li>
+                <li class="-item"><a href="https://codereview.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="peer programmer code reviews">Code Review</a></li>
+                <li class="-item"><a href="https://magento.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of the Magento e-Commerce platform">Magento</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://softwarerecs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people seeking specific software recommendations">Software Recommendations</a></li>
+                <li class="-item"><a href="https://dsp.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="practitioners of the art and science of signal, image and video processing">Signal Processing</a></li>
+                <li class="-item"><a href="https://emacs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those using, extending or developing Emacs">Emacs</a></li>
+                <li class="-item"><a href="https://raspberrypi.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users and developers of hardware and software for Raspberry Pi">Raspberry Pi</a></li>
+                <li class="-item"><a href="https://codegolf.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programming puzzle enthusiasts and code golfers">Programming Puzzles &amp; Code Golf</a></li>
+                <li class="-item"><a href="https://ethereum.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Ethereum, the decentralized application platform and smart contract enabled blockchain">Ethereum</a></li>
+                <li class="-item"><a href="https://datascience.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Data science professionals, Machine Learning specialists, and those interested in learning more about the field">Data Science</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://arduino.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="developers of open-source hardware and software that is compatible with Arduino">Arduino</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#technology" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (26)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Life / Arts">
+        <ul class="-list">
+                <li class="-item"><a href="https://photo.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                <li class="-item"><a href="https://scifi.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                <li class="-item"><a href="https://graphicdesign.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                <li class="-item"><a href="https://movies.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                <li class="-item"><a href="https://music.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="musicians, students, and enthusiasts">Music: Practice &amp; Theory</a></li>
+                <li class="-item"><a href="https://worldbuilding.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="writers/artists using science, geography and culture to construct imaginary worlds and settings">Worldbuilding</a></li>
+                <li class="-item"><a href="https://cooking.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Life / Arts"><ul class="-list">
+                <li class="-item"><a href="https://diy.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="contractors and serious DIYers">Home Improvement</a></li>
+                <li class="-item"><a href="https://money.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                <li class="-item"><a href="https://academia.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="academics and those enrolled in higher education">Academia</a></li>
+                <li class="-item"><a href="https://law.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="legal professionals, students, and others with experience or interest in law">Law</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#lifearts" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (17)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Culture / Recreation">
+        <ul class="-list">
+                <li class="-item"><a href="https://english.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                <li class="-item"><a href="https://skeptics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="scientific skepticism">Skeptics</a></li>
+                <li class="-item"><a href="https://judaism.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                <li class="-item"><a href="https://travel.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="road warriors and seasoned travelers">Travel</a></li>
+                <li class="-item"><a href="https://christianity.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                <li class="-item"><a href="https://ell.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="speakers of other languages learning English">English Language Learners</a></li>
+                <li class="-item"><a href="https://japanese.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, teachers, and linguists wanting to discuss the finer points of the Japanese language">Japanese Language</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Culture / Recreation"><ul class="-list">
+                <li class="-item"><a href="https://gaming.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                <li class="-item"><a href="https://bicycles.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                <li class="-item"><a href="https://rpg.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                <li class="-item"><a href="https://anime.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="anime and manga fans">Anime &amp; Manga</a></li>
+                <li class="-item"><a href="https://puzzling.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those who create, solve, and study puzzles">Puzzling</a></li>
+                <li class="-item"><a href="https://mechanics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="mechanics and DIY enthusiast owners of cars, trucks, and motorcycles">Motor Vehicle Maintenance &amp; Repair</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#culturerecreation" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (32)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Science">
+        <ul class="-list">
+                <li class="-item"><a href="https://mathoverflow.net/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional mathematicians">MathOverflow</a></li>
+                <li class="-item"><a href="https://math.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                <li class="-item"><a href="https://stats.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                <li class="-item"><a href="https://cstheory.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                <li class="-item"><a href="https://physics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="active researchers, academics and students of physics">Physics</a></li>
+                <li class="-item"><a href="https://chemistry.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="scientists, academics, teachers and students">Chemistry</a></li>
+                <li class="-item"><a href="https://biology.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="biology researchers, academics, and students">Biology</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Science"><ul class="-list">
+                <li class="-item"><a href="https://cs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, researchers and practitioners of computer science">Computer Science</a></li>
+                <li class="-item"><a href="https://philosophy.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those interested in the study of the fundamental nature of knowledge, reality, and existence">Philosophy</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#science" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (10)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Other">
+        <ul class="-list">
+                <li class="-item"><a href="https://meta.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                <li class="-item"><a href="https://stackapps.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                <li class="-item"><a href="https://api.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programmatic interaction with Stack Exchange sites">API</a></li>
+                <li class="-item"><a href="https://data.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="querying Stack Exchange data using SQL">Data</a></li>
+                <li class="-item"><a href="https://area51.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                    </ul>
+    </nav>
+                <div class="-copyright text-right">
+                    <div class="g-column jc-sp-between">
+                        <ul class="-list">
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link:4 })" href="https://stackoverflow.blog/?blb=1">Blog</a></li>
+                            <li class="-item"><a href="https://www.facebook.com/officialstackoverflow/" class="-link">Facebook</a></li>
+                            <li class="-item"><a href="https://twitter.com/stackoverflow" class="-link">Twitter</a></li>
+                            <li class="-item"><a href="https://linkedin.com/company/stack-overflow" class="-link">LinkedIn</a></li>
+                        </ul>
+
+                        <div>
+                            <p>
+                                site design / logo © 2017 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license" class="-link">cc by-sa 3.0</a>
+                                with <a href="https://stackoverflow.blog/2009/06/25/attribution-required/" rel="license" class="-link">attribution required</a>.
+                                <span id="svnrev">rev 2017.8.11.26777</span>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                    </div>
+    </footer>
+
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Drupal Answers works best with JavaScript enabled
+            &lt;img src="https://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;
+        &lt;/div&gt;
+    </noscript>
+<script>var z=document.createElement("script");z.type="text/javascript",z.async=!0,z.src="https://static.adzerk.net/ados.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(z,s);</script>
+<script>
+var ados = ados || {};
+ados.run = ados.run || [];
+
+
+ados.run.push(function () {
+    setTimeout(function () { $("#adzerk-user-match").remove(); }, window.AUMIframeDone ? 0 : 2000);
+    ados_setKeywords('routes,theming,x-community,x-host-drupal.stackexchange.com');; ados_load();
+});   
+
+</script>
+
+    <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+                ga('create', 'UA-5620270-24', {'cookieDomain': 'stackexchange.com'});
+                ga('set', 'dimension2', '|routes|theming|');
+                ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+                qc.async = true;
+                qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                s.parentNode.insertBefore(qc, s);
+                _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+                            var sc=document.createElement('script');
+                sc.async=true;
+                sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+                s.parentNode.insertBefore(sc, s);
+                _comscore.push({ c1: "2", c2: "17440561" });
+        })();
+
+    </script>
+        
+    
+            <script type="text/javascript">
+                
+                (function(appendChild) {
+                    Node.prototype.appendChild = function() {
+                        var parent = this;
+                        var newNode = arguments[0];
+                        if (parent.nodeName === 'HEAD'
+                            && newNode
+                            && newNode.nodeName === 'SCRIPT'
+                            && newNode.src) {
+                            
+                            window.setTimeout(function() {
+                                var result = newNode.src.match(/^https:\/\/maps\.googleapis\.com\/maps\/api\/place\/js\/(\w+)Service\./i) || [];
+                                var service = result[1];
+                                if (service) {
+                                    if (service === 'Autocompletion') service =  2;
+                                    else if (service === 'Place') service = 1;
+                                    else service = 0;
+                                    StackExchange.using('gps', function() {
+                                        StackExchange.gps.track('google_maps_places_api.call', { service: service });
+                                    });
+                                }
+                            }, 0);
+                        }
+                        return appendChild.apply(this, arguments);
+                    };
+                })(Node.prototype.appendChild);
+            </script>
+    
+
+</body></html>
