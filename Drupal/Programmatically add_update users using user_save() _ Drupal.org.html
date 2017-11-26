@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)https://www.drupal.org/node/1969192 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr" xmlns:fb="http://ogp.me/ns/fb#" xmlns:og="http://ogp.me/ns#" xmlns:article="http://ogp.me/ns/article#" xmlns:book="http://ogp.me/ns/book#" xmlns:profile="http://ogp.me/ns/profile#" xmlns:video="http://ogp.me/ns/video#" xmlns:product="http://ogp.me/ns/product#" class="js"><head profile="http://www.w3.org/1999/xhtml/vocab"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width">
+  <meta name="MobileOptimized" content="width">
+  <!--[if IE]><![endif]-->
+
+<link rel="dns-prefetch" href="https://www.google-analytics.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link rel="preconnect" href="https://www.google-analytics.com/">
+<link rel="preconnect" href="https://stats.g.doubleclick.net/">
+<link rel="dns-prefetch" href="https://stats.g.doubleclick.net/">
+<meta name="description" content="I was looking to update the user programmatically and could not find anything in Drupal.org. But stumbled upon the article which had it solved. I thought of adding the reference here for others.. Here&#39;s a quick code snippet I use to programmatically create new users: $newUser = array( &#39;name&#39; =&gt; &#39;username&#39;, &#39;pass&#39; =&gt; &#39;password&#39;, // note: do not md5 the password &#39;mail&#39; =&gt; &#39;email address&#39;, &#39;status&#39; =&gt; 1, &#39;init&#39; =&gt; &#39;email address&#39; );    user_save(null, $newUser); And, here&#39;s how you can update an existing user: // load user object $existingUser = user_load(&#39;USERID&#39;); // update some user property $existingUser-&gt;some_property = &#39;blah&#39;; // save existing user user_save((object) array(&#39;uid&#39; =&gt; $existingUser-&gt;uid), (array) $existingUser); If you wanted to update an existing user&#39;s profile data: // load user object $existingUser = user_load(&#39;USERID&#39;); // create an array of properties to update $edit = array( &#39;profile_first_name&#39; =&gt; &#39;Eric&#39; ); // save existing user user_save( (object) array(&#39;uid&#39; =&gt; $existingUser-&gt;uid), $edit, &#39;Personal Information&#39; // category );">
+<meta name="generator" content="Drupal 7 (http://drupal.org)">
+<link rel="canonical" href="https://www.drupal.org/node/1969192">
+<link rel="shortlink" href="https://www.drupal.org/node/1969192">
+<meta property="og:site_name" content="Drupal.org">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.drupal.org/node/1969192">
+<meta property="og:title" content="**SOLVED** Programmatically add/update users using user_save()">
+<meta property="og:description" content="I was looking to update the user programmatically and could not find anything in Drupal.org. But stumbled upon the article which had it solved. I thought of adding the reference here for others.. Here&#39;s a quick code snippet I use to programmatically create new users: $newUser = array( &#39;name&#39; =&gt; &#39;username&#39;, &#39;pass&#39; =&gt; &#39;password&#39;, // note: do not md5 the password &#39;mail&#39; =&gt; &#39;email address&#39;, &#39;status&#39; =&gt; 1, &#39;init&#39; =&gt; &#39;email address&#39; );    user_save(null, $newUser); And, here&#39;s how you can update an existing user: // load user object $existingUser = user_load(&#39;USERID&#39;); // update some user property $existingUser-&gt;some_property = &#39;blah&#39;; // save existing user user_save((object) array(&#39;uid&#39; =&gt; $existingUser-&gt;uid), (array) $existingUser); If you wanted to update an existing user&#39;s profile data: // load user object $existingUser = user_load(&#39;USERID&#39;); // create an array of properties to update $edit = array( &#39;profile_first_name&#39; =&gt; &#39;Eric&#39; ); // save existing user user_save( (object) array(&#39;uid&#39; =&gt; $existingUser-&gt;uid), $edit, &#39;Personal Information&#39; // category );">
+<meta property="og:updated_time" content="2013-04-12T21:38:50+00:00">
+<meta property="article:published_time" content="2013-04-12T21:38:50+00:00">
+<meta property="article:modified_time" content="2013-04-12T21:38:50+00:00">
+  <title>**SOLVED** Programmatically add/update users using user_save() | Drupal.org</title>
+  <link type="text/css" rel="stylesheet" href="./Programmatically add_update users using user_save() _ Drupal.org_files/css__F7qWzHu9exaCJEYsQHu4vlsmrwSsr-qGjQnU92OTBGg__HE-ON2wi0ZHmA1wJMd9l5pXEt1FafFXA2XQdUHDdRdE__zGbh0Vkd6-Upw_meABdy9qwehpIxfCh8fKwHkW793IE.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Programmatically add_update users using user_save() _ Drupal.org_files/css__QPp1snPjYt_xYr0c_V0IORcEElkIUBBBrvOB4ZE0Gnw__hXy1oF8aT5TT8LFgVrxMScM6H_b4HWBbm_9KU9xJz2o__zGbh0Vkd6-Upw_meABdy9qwehpIxfCh8fKwHkW793IE.css" media="all">
+  <script type="text/javascript" async="" src="./Programmatically add_update users using user_save() _ Drupal.org_files/54419274f6c96ed073000003.js"></script><script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var preconnect_support = false; try {if (document.createElement("link").relList.supports("preconnect")) {preconnect_support = true;}} catch (e) {} if (!preconnect_support) { var prefetch = document.createElement("link"); prefetch.href = "https://stats.g.doubleclick.net/robots.txt"; prefetch.rel="prefetch"; document.getElementsByTagName("head")[0].appendChild(prefetch);}
+//--><!]]>
+</script>
+<script type="text/javascript" async="" src="./Programmatically add_update users using user_save() _ Drupal.org_files/tagjs"></script><img src="./Programmatically add_update users using user_save() _ Drupal.org_files/saved_resource" width="1" height="1" border="0"><img src="./Programmatically add_update users using user_save() _ Drupal.org_files/seg" width="1" height="1" border="0"><img src="./Programmatically add_update users using user_save() _ Drupal.org_files/seg(1)" width="1" height="1" border="0"></head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-1969192 node-type-forum drupalorg-site-main no-panels-layout project-issue-focused-input-processed">
+  <div id="skip-link">
+    <a class="element-invisible element-focusable" href="https://www.drupal.org/node/1969192#content">Skip to main content</a>
+    <a class="element-invisible element-focusable skip-link-search" href="https://www.drupal.org/node/1969192#search-block-form">Skip to search</a>
+  </div>
+        <div id="nav-header">
+    <div class="menu-nav">
+      <a class="nav-btn" id="nav-open-btn" href="https://www.drupal.org/node/1969192#block-system-main-menu"><img src="./Programmatically add_update users using user_save() _ Drupal.org_files/icon-w-menu.svg" alt="Main menu"></a>
+    </div>
+    <nav id="navigation-inner" class="container-12" role="navigation">
+        <div class="region region-navigation">
+    <div id="block-system-main-menu" class="block block-system block-menu">
+<div class="block-inner">
+    
+  <div class="content">
+    <div class="menu-block"><ul class="menu"><li class="first leaf"><a href="https://www.drupal.org/home" title="Drupal.org home page">Drupal.org home</a></li>
+<li class="leaf"><a href="https://www.drupal.org/download" title="Download and Extend Drupal">Download &amp; Extend</a></li>
+<li class="leaf"><a href="https://www.drupal.org/community" title="Drupal Community">Community</a></li>
+<li class="leaf"><a href="https://www.drupal.org/documentation" title="Drupal Documentation">Documentation</a></li>
+<li class="leaf"><a href="https://www.drupal.org/support" title="Support for using Drupal">Support</a></li>
+<li class="leaf"><a href="https://jobs.drupal.org/" title="Drupal Jobs">Jobs</a></li>
+<li class="leaf"><a href="https://www.drupal.org/drupal-services" title="Buy Drupal Products and Services">Marketplace</a></li>
+<li class="last leaf"><a href="https://www.drupal.org/about" title="">About</a></li>
+</ul></div><a class="close-btn" id="nav-close-btn" href="https://www.drupal.org/node/1969192#top">Return to Content</a>  </div>
+  </div>
+</div>
+<div id="block-search-form" class="block block-search">
+<div class="block-inner">
+    
+  <div class="content">
+    <form action="https://www.drupal.org/node/1969192" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+      <h2 class="element-invisible">Search form</h2>
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input placeholder="Search…" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input alt="Search" type="image" id="edit-submit" name="submit" value="Search" src="./Programmatically add_update users using user_save() _ Drupal.org_files/icon-w-search.svg" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-JdmWf-NA_kQc_NrAEGZo8CjVIOdTUj3kwEbuN-qm7-Y">
+<input type="hidden" name="form_id" value="search_block_form">
+</div>
+</div></form>  </div>
+  </div>
+</div>
+<div id="block-system-user-menu" class="block block-system block-menu">
+<div class="block-inner">
+    
+  <div class="content">
+    <div class="menu-block"><ul class="menu"><li class="button default"><a href="https://www.drupal.org/node/1969192#block-system-user-menu"><img src="./Programmatically add_update users using user_save() _ Drupal.org_files/icon-w-user.svg" alt="Log in, view profile, and more"></a><ul><li class="first leaf"><a href="https://www.drupal.org/user/login?destination=node/1969192" title="">Log in</a></li>
+<li class="last leaf"><a href="https://www.drupal.org/user/register?destination=node/1969192" title="">Create account</a></li>
+</ul></li></ul></div>  </div>
+  </div>
+</div>
+  </div>
+    </nav>
+  </div> <!-- /#nav-header -->
+
+    <div id="header" class="clearfix">
+    <div id="header-screen" class="clearfix">
+      <div id="header-inner" class="container-12 clearfix">
+        <div id="header-content">
+          <div id="header-left">
+            <div id="header-left-inner">
+              <div id="site-name"><a href="https://www.drupal.org/" title="Drupal"><img src="./Programmatically add_update users using user_save() _ Drupal.org_files/drupal-wordmark.svg" alt="Drupal"></a></div>
+                          </div> <!-- /#header-left-inner -->
+          </div> <!-- /#header-left -->
+
+          <div id="header-right">
+            <div id="header-right-inner" role="search">
+                          </div> <!-- /#header-right-inner -->
+          </div> <!-- /#header-right -->
+        </div> <!-- /#header-content -->
+      </div> <!-- /#header-inner -->
+    </div>
+  </div> <!-- /#header -->
+  
+  
+  <div id="page" class="clearfix">
+    <div id="page-heading">
+                    <div id="page-title-tools" class="container-12 clearfix" role="navigation">
+
+          <div class="page-title-wrapper">
+                                          <div id="page-title" class="h2">Community</div>
+                                    </div>
+
+                  </div> <!-- /#page-title-tools -->
+
+                  <div id="nav-content" class="container-12">
+            <ul class="links"><li class="home first"><a href="https://www.drupal.org/community">Community Home</a></li>
+<li class="getting-involved"><a href="https://www.drupal.org/getting-involved">Getting Involved</a></li>
+<li class="chat"><a href="https://www.drupal.org/irc">Chat</a></li>
+<li class="forum active last"><a href="https://www.drupal.org/forum" class="active">Forum</a></li>
+</ul>          </div> <!-- /#nav-content -->
+        
+        <div class="breadbox"><nav class="breadcrumb container-12"><span><a href="https://www.drupal.org/forum/18">Support</a></span><span><a href="https://www.drupal.org/forum/4">Module Development and Code Questions</a></span></nav></div>
+
+                  <h1 id="page-subtitle" class="container-12">**SOLVED** Programmatically add/update users using user_save() </h1>
+        
+      
+    </div> <!-- /#page-heading -->
+
+    
+    <div class="container-12 page-inner">      
+      <div id="main" role="main">
+        
+        <div id="content" class="clearfix">
+                                        <div id="content-inner" class="clearfix">  <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+<div class="block-inner">
+    
+  <div class="content">
+    <div id="node-1969192" class="node node-forum node-content-1969192 clearfix">
+
+  
+      
+      <div class="submitted">
+      Posted by <a href="https://www.drupal.org/u/shariharan" title="View user profile." data-uid="208387" class="username">shariharan</a> on <time pubdate="" datetime="1365802730">12 Apr 2013 at 21:38 UTC</time>    </div>
+  
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>I was looking to update the user programmatically and could not find anything in Drupal.org. But stumbled upon the article which had it solved. I thought of adding the reference here for others..</p>
+<p>Here's a quick code snippet I use to programmatically create new users:</p>
+<pre class="codeblock language-php"><code class=" language-php"><span class="token variable">$newUser</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+  <span class="token string">'name'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'username'</span><span class="token punctuation">,</span>
+  <span class="token string">'pass'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'password'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// note: do not md5 the password</span>
+  <span class="token string">'mail'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'email address'</span><span class="token punctuation">,</span>
+  <span class="token string">'status'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token string">'init'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'email address'</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>            
+<span class="token function">user_save</span><span class="token punctuation">(</span><span class="token keyword keyword-null">null</span><span class="token punctuation">,</span> <span class="token variable">$newUser</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><p>
+And, here's how you can update an existing user:</p>
+<pre class="codeblock language-php"><code class=" language-php"><span class="token comment" spellcheck="true">// load user object</span>
+<span class="token variable">$existingUser</span> <span class="token operator">=</span> <span class="token function">user_load</span><span class="token punctuation">(</span><span class="token string">'USERID'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// update some user property</span>
+<span class="token variable">$existingUser</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">some_property</span> <span class="token operator">=</span> <span class="token string">'blah'</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// save existing user</span>
+<span class="token function">user_save</span><span class="token punctuation">(</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token string">'uid'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$existingUser</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">uid</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword keyword-array">array</span><span class="token punctuation">)</span> <span class="token variable">$existingUser</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>
+If you wanted to update an existing user's profile data:</p>
+<pre class="codeblock language-php"><code class=" language-php"><span class="token comment" spellcheck="true">// load user object</span>
+<span class="token variable">$existingUser</span> <span class="token operator">=</span> <span class="token function">user_load</span><span class="token punctuation">(</span><span class="token string">'USERID'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// create an array of properties to update</span>
+<span class="token variable">$edit</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+  <span class="token string">'profile_first_name'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'Eric'</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// save existing user</span>
+<span class="token function">user_save</span><span class="token punctuation">(</span>
+  <span class="token punctuation">(</span>object<span class="token punctuation">)</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token string">'uid'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$existingUser</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">uid</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token variable">$edit</span><span class="token punctuation">,</span>
+  <span class="token string">'Personal Information'</span> <span class="token comment" spellcheck="true">// category</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><p>
+Thanks to Eric.London <a href="http://ericlondon.com/posts/192-programmatically-add-update-users-using-user_save" title="Programmatically add/update users using user_save()" rel="nofollow">Programmatically add/update users using user_save()</a></p></div></div></div>  </div>
+
+  <div class="node-footer"><ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/1969192%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/1969192%23comment-form">register</a> to post comments</span></li>
+</ul><span class="separator">⋅</span> <span class="terms">Categories: <a href="https://www.drupal.org/taxonomy/term/120">Drupal 7.x</a></span></div>
+
+</div>
+
+<section class="comments comment-wrapper timeago-processed">
+          <h2 class="title">Comments</h2>
+      
+  <a id="comment-8354235"></a>
+<div class="comment comment-content-8354235 clearfix">
+  <a href="https://www.drupal.org/u/begun" title="View user profile." class="picture"><img src="./Programmatically add_update users using user_save() _ Drupal.org_files/default-avatar.png" width="80" height="80" alt="Begun’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/node/1969192#comment-8354235" class="permalink active" rel="bookmark">How to edit an existing users password?</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/begun" title="View user profile." data-uid="669656" class="username">Begun</a> commented <time pubdate="" datetime="2014-01-08T08:46:08+00:00" data-created-date="8 January 2014 at 08:46" title="8 January 2014 at 08:46 (click to toggle)">4 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>If you are updating an existing user's password programmatically do you need to hash the password?  There is a drupal function for hashing passwords ( user_hash_password() ), but is it required when doing user_save on an existing user?</p></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/1969192%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/1969192%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+
+<div class="indented"><a id="comment-8369089"></a>
+<div class="comment comment-content-8369089 clearfix">
+  <a href="https://www.drupal.org/u/batigolix" title="View user profile." class="picture"><img src="./Programmatically add_update users using user_save() _ Drupal.org_files/picture-22175-1475740763.jpg" width="80" height="80" alt="batigolix’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/node/1969192#comment-8369089" class="permalink active" rel="bookmark">To change the password of an</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/batigolix" title="View user profile." data-uid="22175" class="username">batigolix</a> commented <time pubdate="" datetime="2014-01-13T12:09:49+00:00" data-created-date="13 January 2014 at 12:09" title="13 January 2014 at 12:09 (click to toggle)">4 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>To change the password of an existing user:</p>
+<pre class="codeblock language-php"><code class=" language-php"><span class="token variable">$edit</span><span class="token punctuation">[</span><span class="token string">'pass'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'letmein'</span><span class="token punctuation">;</span>
+<span class="token function">user_save</span><span class="token punctuation">(</span><span class="token variable">$user</span><span class="token punctuation">,</span> <span class="token variable">$edit</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>
+<a href="http://drupal.stackexchange.com/questions/49073/set-users-password-in-code" rel="nofollow">http://drupal.stackexchange.com/questions/49073/set-users-password-in-code</a></p></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/1969192%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/1969192%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+</div><a id="comment-9300027"></a>
+<div class="comment comment-content-9300027 clearfix">
+  <a href="https://www.drupal.org/u/gperez" title="View user profile." class="picture"><img src="./Programmatically add_update users using user_save() _ Drupal.org_files/picture-3078375-1414441612.png" width="80" height="80" alt="gperez’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/node/1969192#comment-9300027" class="permalink active" rel="bookmark">Can't update users profile data</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/gperez" title="View user profile." data-uid="3078375" class="username">gperez</a> commented <time pubdate="" datetime="2014-10-31T17:57:18+00:00" data-created-date="31 October 2014 at 17:57" title="31 October 2014 at 17:57 (click to toggle)">3 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Hi. If I do this, somehow the user-role if being deleted. Why?!</p>
+<pre class="codeblock language-php"><code class=" language-php">
+<span class="token variable">$existingUser</span> <span class="token operator">=</span> <span class="token function">user_load</span><span class="token punctuation">(</span><span class="token variable">$user_uid</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// this corresponds to POST data</span>
+<span class="token variable">$form_fields</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+			<span class="token string">'field_title'</span> 			 <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token string">'name'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'Title'</span><span class="token punctuation">,</span><span class="token string">'value'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$field_title</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+			<span class="token string">'field_first_name'</span> 			 <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token string">'name'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'First Name'</span><span class="token punctuation">,</span><span class="token string">'value'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$field_first_name</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+			<span class="token string">'field_last_name'</span> 			 <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token string">'name'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'Last Name'</span><span class="token punctuation">,</span><span class="token string">'value'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$field_last_name</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+			<span class="token string">'field_phone'</span>		 <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token string">'name'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'Phone'</span><span class="token punctuation">,</span><span class="token string">'value'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$field_phone</span><span class="token punctuation">)</span><span class="token punctuation">,</span>			
+			<span class="token string">'field_company'</span>		 <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token string">'name'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'Company'</span><span class="token punctuation">,</span><span class="token string">'value'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$field_company</span><span class="token punctuation">)</span>
+		<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// new data</span>
+<span class="token keyword keyword-foreach">foreach</span> <span class="token punctuation">(</span><span class="token variable">$form_fields</span> <span class="token keyword keyword-as">as</span> <span class="token variable">$key</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$field</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+     
+         <span class="token variable">$newData</span><span class="token punctuation">[</span><span class="token variable">$key</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token variable">$field</span><span class="token punctuation">[</span><span class="token string">'value'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// save</span>
+<span class="token function">user_save</span><span class="token punctuation">(</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token string">'uid'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$existingUser</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">uid</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword keyword-array">array</span><span class="token punctuation">)</span> <span class="token variable">$newData</span><span class="token punctuation">,</span> <span class="token string">'Personal Information'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/1969192%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/1969192%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+
+<div class="indented"><a id="comment-9311013"></a>
+<div class="comment comment-content-9311013 clearfix">
+  <a href="https://www.drupal.org/u/gperez" title="View user profile." class="picture"><img src="./Programmatically add_update users using user_save() _ Drupal.org_files/picture-3078375-1414441612.png" width="80" height="80" alt="gperez’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/node/1969192#comment-9311013" class="permalink active" rel="bookmark">Nevermind. I had add the lang</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/gperez" title="View user profile." data-uid="3078375" class="username">gperez</a> commented <time pubdate="" datetime="2014-11-04T20:15:07+00:00" data-created-date="4 November 2014 at 20:15" title="4 November 2014 at 20:15 (click to toggle)">3 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Nevermind. I had add the lang array folds and now works fine:</p>
+<pre class="codeblock language-php"><code class=" language-php"> <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span><span class="token variable">$key</span> <span class="token operator">!=</span> <span class="token string">'mail'</span><span class="token punctuation">)</span>
+   <span class="token variable">$existingUser</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token variable">$key</span><span class="token punctuation">}</span><span class="token punctuation">[</span><span class="token string">'und'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'value'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token variable">$field</span><span class="token punctuation">[</span><span class="token string">'value'</span><span class="token punctuation">]</span><span class="token punctuation">;</span> 
+<span class="token keyword keyword-else">else</span>
+   <span class="token variable">$existingUser</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token variable">$key</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token variable">$field</span><span class="token punctuation">[</span><span class="token string">'value'</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// core field</span>
+</code></pre></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/1969192%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/1969192%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+</div><a id="comment-9331563"></a>
+<div class="comment comment-content-9331563 clearfix">
+  <a href="https://www.drupal.org/u/thebarnacle" title="View user profile." class="picture"><img src="./Programmatically add_update users using user_save() _ Drupal.org_files/picture-625006-1418204849.jpg" width="80" height="80" alt="TheBarnacle’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/node/1969192#comment-9331563" class="permalink active" rel="bookmark">can't update existing user - duplicate ID</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/thebarnacle" title="View user profile." data-uid="625006" class="username">TheBarnacle</a> commented <time pubdate="" datetime="2014-11-11T17:11:01+00:00" data-created-date="11 November 2014 at 17:11" title="11 November 2014 at 17:11 (click to toggle)">3 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Hi,</p>
+<p>I'm trying to use your method above, for updating an existing user in the hook_user_insert hook.</p>
+<pre class="codeblock language-php"><code class=" language-php"><span class="token keyword keyword-function">function</span> <span class="token function">mymodule_user_insert</span><span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token variable">$edit</span><span class="token punctuation">,</span> <span class="token variable">$account</span><span class="token punctuation">,</span> <span class="token variable">$category</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+<span class="token function">user_save</span><span class="token punctuation">(</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token string">'uid'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$account</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">uid</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword keyword-array">array</span><span class="token punctuation">)</span> <span class="token variable">$account</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre><p>
+But it fails with an integrity constraint:</p>
+<p><code class=" language-php">PDOException<span class="token punctuation">:</span> <span class="token constant">SQLSTATE</span><span class="token punctuation">[</span><span class="token number">23000</span><span class="token punctuation">]</span><span class="token punctuation">:</span> Integrity constraint violation<span class="token punctuation">:</span> <span class="token number">1062</span> Duplicate entry <span class="token string">'38'</span> <span class="token keyword keyword-for">for</span> key <span class="token string">'PRIMARY'</span><span class="token punctuation">:</span> <span class="token constant">INSERT</span> <span class="token constant">INTO</span> <span class="token punctuation">{</span>users<span class="token punctuation">}</span> <span class="token punctuation">(</span>uid<span class="token punctuation">,</span> name<span class="token punctuation">,</span> pass<span class="token punctuation">,</span> mail<span class="token punctuation">,</span> theme<span class="token punctuation">,</span> signature<span class="token punctuation">,</span> signature_format<span class="token punctuation">,</span> created<span class="token punctuation">,</span> access<span class="token punctuation">,</span> login<span class="token punctuation">,</span> status<span class="token punctuation">,</span> timezone<span class="token punctuation">,</span> language<span class="token punctuation">,</span> picture<span class="token punctuation">,</span> init<span class="token punctuation">,</span> data<span class="token punctuation">)</span> <span class="token constant">VALUES</span> <span class="token punctuation">(</span><span class="token punctuation">:</span>db_insert_placeholder_0<span class="token punctuation">,</span> <span class="token punctuation">:</span>db_insert_placeholder_1<span class="token punctuation">,</span> <span class="token punctuation">:</span>db_insert_placeholder_2<span class="token punctuation">,</span> <span class="token punctuation">:</span>db_insert_placeholder_3<span class="token punctuation">,</span> <span class="token punctuation">:</span>db_insert_placeholder_4<span class="token punctuation">,</span> <span class="token punctuation">:</span>db_insert_placeholder_5<span class="token punctuation">,</span> <span class="token punctuation">:</span>db_insert_placeholder_6<span class="token punctuation">,</span> <span class="token punctuation">:</span>db_insert_placeholder_7<span class="token punctuation">,</span> <span class="token punctuation">:</span>db_insert_placeholder_8<span class="token punctuation">,</span> <span class="token punctuation">:</span>db_insert_placeholder_9<span class="token punctuation">,</span> <span class="token punctuation">:</span>db_insert_placeholder_10<span class="token punctuation">,</span> <span class="token punctuation">:</span>db_insert_placeholder_11<span class="token punctuation">,</span> <span class="token punctuation">:</span>db_insert_placeholder_12<span class="token punctuation">,</span> <span class="token punctuation">:</span>db_insert_placeholder_13<span class="token punctuation">,</span> <span class="token punctuation">:</span>db_insert_placeholder_14<span class="token punctuation">,</span> <span class="token punctuation">:</span>db_insert_placeholder_15<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword keyword-Array">Array</span> <span class="token punctuation">(</span> <span class="token punctuation">[</span><span class="token punctuation">:</span>db_insert_placeholder_0<span class="token punctuation">]</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">38</span> <span class="token punctuation">[</span><span class="token punctuation">:</span>db_insert_placeholder_1<span class="token punctuation">]</span> <span class="token operator">=</span><span class="token operator">&gt;</span> wftest02 <span class="token punctuation">[</span><span class="token punctuation">:</span>db_insert_placeholder_2<span class="token punctuation">]</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$S</span><span class="token variable">$DD2J4Le0C82VZpGUCUY8jsleOzUapwCLCSlfb4ThNlfnbCQOONWY</span> <span class="token punctuation">[</span><span class="token punctuation">:</span>db_insert_placeholder_3<span class="token punctuation">]</span> <span class="token operator">=</span><span class="token operator">&gt;</span> wftest02@wf<span class="token punctuation">.</span>com <span class="token punctuation">[</span><span class="token punctuation">:</span>db_insert_placeholder_4<span class="token punctuation">]</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token punctuation">:</span>db_insert_placeholder_5<span class="token punctuation">]</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token punctuation">:</span>db_insert_placeholder_6<span class="token punctuation">]</span> <span class="token operator">=</span><span class="token operator">&gt;</span> full_html <span class="token punctuation">[</span><span class="token punctuation">:</span>db_insert_placeholder_7<span class="token punctuation">]</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">1415725599</span> <span class="token punctuation">[</span><span class="token punctuation">:</span>db_insert_placeholder_8<span class="token punctuation">]</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token punctuation">[</span><span class="token punctuation">:</span>db_insert_placeholder_9<span class="token punctuation">]</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token punctuation">[</span><span class="token punctuation">:</span>db_insert_placeholder_10<span class="token punctuation">]</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">1</span> <span class="token punctuation">[</span><span class="token punctuation">:</span>db_insert_placeholder_11<span class="token punctuation">]</span> <span class="token operator">=</span><span class="token operator">&gt;</span> Europe<span class="token operator">/</span>London <span class="token punctuation">[</span><span class="token punctuation">:</span>db_insert_placeholder_12<span class="token punctuation">]</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token punctuation">:</span>db_insert_placeholder_13<span class="token punctuation">]</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token punctuation">[</span><span class="token punctuation">:</span>db_insert_placeholder_14<span class="token punctuation">]</span> <span class="token operator">=</span><span class="token operator">&gt;</span> wftest02@wf<span class="token punctuation">.</span>com <span class="token punctuation">[</span><span class="token punctuation">:</span>db_insert_placeholder_15<span class="token punctuation">]</span> <span class="token operator">=</span><span class="token operator">&gt;</span> a<span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">:</span><span class="token punctuation">{</span>s<span class="token punctuation">:</span><span class="token number">16</span><span class="token punctuation">:</span><span class="token string">"ckeditor_default"</span><span class="token punctuation">;</span>s<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token string">"t"</span><span class="token punctuation">;</span>s<span class="token punctuation">:</span><span class="token number">20</span><span class="token punctuation">:</span><span class="token string">"ckeditor_show_toggle"</span><span class="token punctuation">;</span>s<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token string">"t"</span><span class="token punctuation">;</span>s<span class="token punctuation">:</span><span class="token number">14</span><span class="token punctuation">:</span><span class="token string">"ckeditor_width"</span><span class="token punctuation">;</span>s<span class="token punctuation">:</span><span class="token number">4</span><span class="token punctuation">:</span><span class="token string">"100%"</span><span class="token punctuation">;</span>s<span class="token punctuation">:</span><span class="token number">13</span><span class="token punctuation">:</span><span class="token string">"ckeditor_lang"</span><span class="token punctuation">;</span>s<span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">:</span><span class="token string">"en"</span><span class="token punctuation">;</span>s<span class="token punctuation">:</span><span class="token number">18</span><span class="token punctuation">:</span><span class="token string">"ckeditor_auto_lang"</span><span class="token punctuation">;</span>s<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token string">"t"</span><span class="token punctuation">;</span><span class="token punctuation">}</span> <span class="token punctuation">)</span> in <span class="token function">drupal_write_record</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>line <span class="token number">7202</span> of <span class="token operator">/</span>home<span class="token operator">/</span>whitefusedev<span class="token operator">/</span>domains<span class="token operator">/</span>rstmh<span class="token punctuation">.</span>whitefusedev<span class="token punctuation">.</span>co<span class="token punctuation">.</span>uk<span class="token operator">/</span>public_html<span class="token operator">/</span>includes<span class="token operator">/</span>common<span class="token punctuation">.</span>inc<span class="token punctuation">)</span><span class="token punctuation">.</span></code></p>
+<p>I don't see how what I'm doing is different from what you suggested. Do you have any idea why it might not be working for me?</p></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/1969192%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/1969192%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+
+<div class="indented"><a id="comment-9333535"></a>
+<div class="comment comment-content-9333535 clearfix">
+  <a href="https://www.drupal.org/u/thebarnacle" title="View user profile." class="picture"><img src="./Programmatically add_update users using user_save() _ Drupal.org_files/picture-625006-1418204849.jpg" width="80" height="80" alt="TheBarnacle’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/node/1969192#comment-9333535" class="permalink active" rel="bookmark">Fixed</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/thebarnacle" title="View user profile." data-uid="625006" class="username">TheBarnacle</a> commented <time pubdate="" datetime="2014-11-12T10:09:57+00:00" data-created-date="12 November 2014 at 10:09" title="12 November 2014 at 10:09 (click to toggle)">3 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>For the record, I fixed this in the end by changing $account-&gt;is_new to 0. </p></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/1969192%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/1969192%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+</div><a id="comment-9857655"></a>
+<div class="comment comment-content-9857655 clearfix">
+  <a href="https://www.drupal.org/u/suvzz" title="View user profile." class="picture"><img src="./Programmatically add_update users using user_save() _ Drupal.org_files/picture-3147009-1433833580.jpg" width="80" height="80" alt="suvzz’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/node/1969192#comment-9857655" class="permalink active" rel="bookmark">Thank You </a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/suvzz" title="View user profile." data-uid="3147009" class="username">suvzz</a> commented <time pubdate="" datetime="2015-04-23T08:07:55+00:00" data-created-date="23 April 2015 at 08:07" title="23 April 2015 at 08:07 (click to toggle)">2 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>@shariharan appreciate for the time taken out by you to post it here :)</p></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/1969192%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/1969192%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+<a id="comment-9970563"></a>
+<div class="comment comment-content-9970563 clearfix">
+  <a href="https://www.drupal.org/u/prsnjtbarman" title="View user profile." class="picture"><img src="./Programmatically add_update users using user_save() _ Drupal.org_files/picture-1890668-1418116682.jpg" width="80" height="80" alt="prsnjtbarman’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/node/1969192#comment-9970563" class="permalink active" rel="bookmark">Thanks .... It works fine for existing user</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/prsnjtbarman" title="View user profile." data-uid="1890668" class="username">prsnjtbarman</a> commented <time pubdate="" datetime="2015-05-28T21:40:20+00:00" data-created-date="28 May 2015 at 21:40" title="28 May 2015 at 21:40 (click to toggle)">2 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>second example works fine for existing user</p></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/1969192%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/1969192%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+<a id="comment-11989539"></a>
+<div class="comment comment-content-11989539 clearfix">
+  <a href="https://www.drupal.org/u/jatbhatti" title="View user profile." class="picture"><img src="./Programmatically add_update users using user_save() _ Drupal.org_files/picture-603830-1425293542.png" width="80" height="80" alt="jatbhatti’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/node/1969192#comment-11989539" class="permalink active" rel="bookmark">try this to update user's profile data </a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/jatbhatti" title="View user profile." data-uid="603830" class="username">jatbhatti</a> commented <time pubdate="" datetime="2017-03-16T11:27:18+00:00" data-created-date="16 March 2017 at 11:27" title="16 March 2017 at 11:27 (click to toggle)">7 months ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><pre class="codeblock language-php"><code class=" language-php"><span class="token variable">$existingUser</span> <span class="token operator">=</span> <span class="token function">user_load</span><span class="token punctuation">(</span><span class="token variable">$uid</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$existingUser</span> <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">field_Your_field_name</span><span class="token punctuation">[</span><span class="token string">'und'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'value'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"somevalue"</span><span class="token punctuation">;</span>
+<span class="token function">user_save</span><span class="token punctuation">(</span><span class="token variable">$existingUser</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/1969192%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/1969192%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+
+  </section>
+  </div>
+  </div>
+</div>
+  </div>
+</div>
+                  </div> <!-- /#content -->
+
+      </div> <!-- /#column-left -->
+
+      
+          </div>  </div> <!-- /#page -->
+
+  <div id="footer" role="contentinfo">
+            <div class="region region-footer">
+    <div id="block-drupalorg-crosssite-drupalorg-footer" class="block block-drupalorg-crosssite">
+<div class="block-inner">
+    
+  <div class="content">
+    <h4 class="element-invisible">News items</h4><ul class="drupal-news"><li class="0 first"><a href="https://www.drupal.org/news">News</a></li>
+<li class="1"><a href="https://www.drupal.org/planet" title="News from Drupal community members">Planet Drupal</a></li>
+<li class="2"><a href="https://www.drupal.org/social-media" title="Drupal on social media">Social media directory</a></li>
+<li class="3"><a href="https://www.drupal.org/security" title="Advisories from the security team">Security announcements</a></li>
+<li class="4 last"><a href="https://jobs.drupal.org/" title="Drupal Jobs">Jobs</a></li>
+</ul><h4 class="element-invisible">Our community</h4><ul class="community"><li class="0 first"><a href="https://drupal.org/community">Community</a></li>
+<li class="1"><a href="https://drupal.org/getting-involved" title="Learn how to contribute to the Drupal project">Getting involved</a></li>
+<li class="2"><span><a href="https://drupal.org/drupal-services" title="People and organizations offering Drupal services">Services</a>, <a href="https://drupal.org/training" title="People and organizations offering Drupal training">Training</a> &amp; <a href="https://drupal.org/hosting" title="Organizations offering Drupal hosting">Hosting</a></span></li>
+<li class="3"><a href="https://groups.drupal.org/groups" title="groups.drupal.org">Groups &amp; Meetups</a></li>
+<li class="4"><a href="https://events.drupal.org/" title="Upcoming and past DrupalCons">DrupalCon</a></li>
+<li class="5 last"><a href="https://drupal.org/dcoc" title="Drupal code of conduct">Code of conduct</a></li>
+</ul><h4 class="element-invisible">Documentation</h4><ul class="get-started"><li class="0 first"><a href="https://drupal.org/documentation" title="Documentation for working with Drupal">Documentation</a></li>
+<li class="1"><a href="https://www.drupal.org/docs/8">Drupal 8 docs</a></li>
+<li class="2"><a href="https://www.drupal.org/docs/7">Drupal 7 docs</a></li>
+<li class="3"><a href="https://www.drupal.org/documentation/develop">Developer docs</a></li>
+<li class="4 last"><a href="https://api.drupal.org/" title="Drupal API reference">api.drupal.org</a></li>
+</ul><h4 class="element-invisible">Drupal code base</h4><ul class="download-extend"><li class="0 first"><a href="https://drupal.org/download">Download &amp; Extend</a></li>
+<li class="1"><a href="https://drupal.org/project/drupal" title="Download the latest version of the Drupal software">Drupal core</a></li>
+<li class="2"><a href="https://drupal.org/project/project_module" title="Download add-on features and functionality">Modules</a></li>
+<li class="3"><a href="https://drupal.org/project/project_theme" title="Download pre-designed styles for Drupal">Themes</a></li>
+<li class="4 last"><a href="https://drupal.org/project/project_distribution" title="Download a pre-packaged Drupal site">Distributions</a></li>
+</ul><h4 class="element-invisible">Governance of community</h4><ul class="about"><li class="0 first"><a href="https://drupal.org/about">About</a></li>
+<li class="1"><a href="https://drupal.org/about/accessibility" title="Our committment to accessibility">Web accessibility</a></li>
+<li class="2"><a href="https://drupal.org/association" title="About the Drupal Association">The Drupal Association</a></li>
+<li class="3"><a href="https://drupal.org/drupalorg" title="About Drupal.org">About Drupal.org</a></li>
+<li class="4"><a href="https://drupal.org/terms" title="Drupal.org terms of service">Terms of service</a></li>
+<li class="5 last"><a href="https://drupal.org/privacy" title="Drupal.org privacy policy">Privacy policy</a></li>
+</ul>  </div>
+  </div>
+</div>
+<div id="block-block-77" class="block block-block">
+<div class="block-inner">
+    
+  <div class="content">
+    <p>Drupal is a <a href="http://drupal.com/trademark" rel="nofollow">registered trademark</a> of <a href="https://dri.es/" rel="nofollow">Dries Buytaert</a>.</p>  </div>
+  </div>
+</div>
+  </div>
+      </div>
+  
+<!--[if lte IE 9]>
+<script type="text/javascript" src="https://www.drupal.org/files/advagg_js/js__79M6UrZjAw3oNGnUjsWip12JsvnUZmJGA3h9LI0kuzE__LqE6uSZqCOZhJYW910TDw_HTQzBKUPTZxunfaWkalq8__zGbh0Vkd6-Upw_meABdy9qwehpIxfCh8fKwHkW793IE.js#ie9-" onload="if(jQuery.isFunction(jQuery.holdReady)){jQuery.holdReady(true);}"></script>
+<![endif]-->
+
+<!--[if gt IE 9]>
+<script type="text/javascript" src="https://www.drupal.org/files/advagg_js/js__79M6UrZjAw3oNGnUjsWip12JsvnUZmJGA3h9LI0kuzE__LqE6uSZqCOZhJYW910TDw_HTQzBKUPTZxunfaWkalq8__zGbh0Vkd6-Upw_meABdy9qwehpIxfCh8fKwHkW793IE.js#ie10+" defer="defer" onload="if(jQuery.isFunction(jQuery.holdReady)){jQuery.holdReady(true);}"></script>
+<![endif]-->
+
+<!--[if !IE]><!-->
+<script type="text/javascript" src="./Programmatically add_update users using user_save() _ Drupal.org_files/js__79M6UrZjAw3oNGnUjsWip12JsvnUZmJGA3h9LI0kuzE__LqE6uSZqCOZhJYW910TDw_HTQzBKUPTZxunfaWkalq8__zGbh0Vkd6-Upw_meABdy9qwehpIxfCh8fKwHkW793IE.js" defer="defer" onload="if(jQuery.isFunction(jQuery.holdReady)){jQuery.holdReady(true);}"></script>
+<!--<![endif]-->
+<script type="text/javascript" src="./Programmatically add_update users using user_save() _ Drupal.org_files/js__H5AFmq1RrXKsrazzPq_xPQPy4K0wUKqecPjczzRiTgQ__ZHqvWr-79k4Y5DRTd0KcuNHgFp9UJZlb3B0Bi5eGu3M__zGbh0Vkd6-Upw_meABdy9qwehpIxfCh8fKwHkW793IE.js" defer="defer" onload="
+function advagg_mod_1() {
+  // Count how many times this function is called.
+  advagg_mod_1.count = ++advagg_mod_1.count || 1;
+  try {
+    if (advagg_mod_1.count &lt;= 40) {
+      init_drupal_core_settings();
+
+      // Set this to 100 so that this function only runs once.
+      advagg_mod_1.count = 100;
+    }
+  }
+  catch(e) {
+    if (advagg_mod_1.count &gt;= 40) {
+      // Throw the exception if this still fails after running 40 times.
+      throw e;
+    }
+    else {
+      // Try again in 1 ms.
+      window.setTimeout(advagg_mod_1, 1);
+    }
+  }
+}
+function advagg_mod_1_check() {
+  if (window.init_drupal_core_settings &amp;&amp; window.jQuery &amp;&amp; window.Drupal) {
+    advagg_mod_1();
+  }
+  else {
+    window.setTimeout(advagg_mod_1_check, 1);
+  }
+}
+advagg_mod_1_check();"></script>
+<script type="text/javascript" src="./Programmatically add_update users using user_save() _ Drupal.org_files/js__y-0WF9wbsKup6UtG11ZtdWgidCFrAqzehETdOPtD3QM__LyuAxUNiVV0aTeQ6yCz3raaZRgDHi84llpu8a4LvXWc__zGbh0Vkd6-Upw_meABdy9qwehpIxfCh8fKwHkW793IE.js" defer="defer"></script>
+<script type="text/javascript" defer="defer" async="async" src="./Programmatically add_update users using user_save() _ Drupal.org_files/analytics.js"></script>
+<script type="text/javascript" src="./Programmatically add_update users using user_save() _ Drupal.org_files/js__hHUWFbMAa11eJtx5V0ym9o0YBsB1udk34qUT5wr1ihI__w1AuxI-Is3CtQ1nu9fAoIO4cMrl8j5oxHT1ffMU00Zo__zGbh0Vkd6-Upw_meABdy9qwehpIxfCh8fKwHkW793IE.js" defer="defer"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-2360451-1", {"cookieDomain":"auto"});ga("set", "dimension3", "anonymous user");ga("set", "dimension4", "Forum topic");ga("set", "dimension1", "Module Development and Code Questions");ga("set", "dimension2", "community");ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+function init_drupal_core_settings() {jQuery.extend(Drupal.settings,{"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"bluecheese","theme_token":"u1kBvxrAU01T82TBJkieawywLq30MUvGwE0VCbjxx80"},"jcarousel":{"ajaxPath":"\/jcarousel\/ajax\/views"},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"urlIsAjaxTrusted":{"\/node\/1969192":true}});
+if(jQuery.isFunction(jQuery.holdReady)){jQuery.holdReady(false);}} if(window.jQuery && window.Drupal){init_drupal_core_settings();}
+//--><!]]>
+</script>
+<script type="text/javascript" src="./Programmatically add_update users using user_save() _ Drupal.org_files/js__to4E6ed7qbWQIIrZ8SjAf2iDoY3ZkHhlZySO3qQI4ws__30g4_YLNJDK0tUDy1vJDyqtAnbRAen2hxqieAjRIb3Q__zGbh0Vkd6-Upw_meABdy9qwehpIxfCh8fKwHkW793IE.js" defer="defer"></script>
+
+
+</body></html>

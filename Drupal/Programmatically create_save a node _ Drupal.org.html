@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<!-- saved from url=(0100)https://www.drupal.org/forum/support/post-installation/2011-03-31/programmatically-createsave-a-node -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr" xmlns:fb="http://ogp.me/ns/fb#" xmlns:og="http://ogp.me/ns#" xmlns:article="http://ogp.me/ns/article#" xmlns:book="http://ogp.me/ns/book#" xmlns:profile="http://ogp.me/ns/profile#" xmlns:video="http://ogp.me/ns/video#" xmlns:product="http://ogp.me/ns/product#" class="js"><head profile="http://www.w3.org/1999/xhtml/vocab"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width">
+  <meta name="MobileOptimized" content="width">
+  <!--[if IE]><![endif]-->
+
+<link rel="dns-prefetch" href="https://www.google-analytics.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link rel="preconnect" href="https://www.google-analytics.com/">
+<link rel="preconnect" href="https://stats.g.doubleclick.net/">
+<link rel="dns-prefetch" href="https://stats.g.doubleclick.net/">
+<meta name="description" content="Hi all, What is the procedure to create a node programmatically? The node is having 4-5 CCK fields.. Another doubt: In a custom module, I have this: It works correctly. But 1) The value is reset-ing whenever I am editing the node. 2) The value is getting updated in the database, but in the Drupal site, its not showing the correct value until and unless I am clearing the Drupal cache :( please help!">
+<meta name="generator" content="Drupal 7 (http://drupal.org)">
+<link rel="canonical" href="https://www.drupal.org/forum/support/post-installation/2011-03-31/programmatically-createsave-a-node">
+<link rel="shortlink" href="https://www.drupal.org/node/1111514">
+<meta property="og:site_name" content="Drupal.org">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.drupal.org/forum/support/post-installation/2011-03-31/programmatically-createsave-a-node">
+<meta property="og:title" content="Programmatically create/save a node">
+<meta property="og:description" content="Hi all, What is the procedure to create a node programmatically? The node is having 4-5 CCK fields.. Another doubt: In a custom module, I have this: It works correctly. But 1) The value is reset-ing whenever I am editing the node. 2) The value is getting updated in the database, but in the Drupal site, its not showing the correct value until and unless I am clearing the Drupal cache :( please help!">
+<meta property="og:updated_time" content="2011-03-31T04:09:15+00:00">
+<meta property="article:published_time" content="2011-03-31T04:09:15+00:00">
+<meta property="article:modified_time" content="2011-03-31T04:09:15+00:00">
+  <title>Programmatically create/save a node | Drupal.org</title>
+  <link type="text/css" rel="stylesheet" href="./Programmatically create_save a node _ Drupal.org_files/css__F7qWzHu9exaCJEYsQHu4vlsmrwSsr-qGjQnU92OTBGg__HE-ON2wi0ZHmA1wJMd9l5pXEt1FafFXA2XQdUHDdRdE__wiNRAQmb1cVwSHFag72el-HHTuC0y1ZUWoU2SpeUCzo.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Programmatically create_save a node _ Drupal.org_files/css__QPp1snPjYt_xYr0c_V0IORcEElkIUBBBrvOB4ZE0Gnw__e-y2_3zkg7UsAyCoYrYvTm1y3QFMd9BdLkpYb0bDAOQ__wiNRAQmb1cVwSHFag72el-HHTuC0y1ZUWoU2SpeUCzo.css" media="all">
+  <script type="text/javascript" async="" src="./Programmatically create_save a node _ Drupal.org_files/54419274f6c96ed073000003.js"></script><script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var preconnect_support = false; try {if (document.createElement("link").relList.supports("preconnect")) {preconnect_support = true;}} catch (e) {} if (!preconnect_support) { var prefetch = document.createElement("link"); prefetch.href = "https://stats.g.doubleclick.net/robots.txt"; prefetch.rel="prefetch"; document.getElementsByTagName("head")[0].appendChild(prefetch);}
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-2360451-1", {"cookieDomain":"auto"});ga("set", "dimension3", "anonymous user");ga("set", "dimension4", "Forum topic");ga("set", "dimension1", "Post installation");ga("set", "dimension2", "community");ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" async="" src="./Programmatically create_save a node _ Drupal.org_files/tagjs"></script><img src="./Programmatically create_save a node _ Drupal.org_files/saved_resource" width="1" height="1" border="0"><img src="./Programmatically create_save a node _ Drupal.org_files/saved_resource(1)" width="1" height="1" border="0"><img src="./Programmatically create_save a node _ Drupal.org_files/saved_resource(2)" width="1" height="1" border="0"><img src="./Programmatically create_save a node _ Drupal.org_files/saved_resource(3)" width="1" height="1" border="0"><img src="./Programmatically create_save a node _ Drupal.org_files/seg" width="1" height="1" border="0"></head>
+<body class="html not-front not-logged-in one-sidebar sidebar-second page-node page-node- page-node-1111514 node-type-forum drupalorg-site-main no-panels-layout project-issue-focused-input-processed">
+  <div id="skip-link">
+    <a class="element-invisible element-focusable" href="https://www.drupal.org/forum/support/post-installation/2011-03-31/programmatically-createsave-a-node#content">Skip to main content</a>
+    <a class="element-invisible element-focusable skip-link-search" href="https://www.drupal.org/forum/support/post-installation/2011-03-31/programmatically-createsave-a-node#search-block-form">Skip to search</a>
+  </div>
+        <div id="nav-header">
+    <div class="menu-nav">
+      <a class="nav-btn" id="nav-open-btn" href="https://www.drupal.org/forum/support/post-installation/2011-03-31/programmatically-createsave-a-node#block-system-main-menu"><img src="./Programmatically create_save a node _ Drupal.org_files/icon-w-menu.svg" alt="Main menu"></a>
+    </div>
+    <nav id="navigation-inner" class="container-12" role="navigation">
+        <div class="region region-navigation">
+    <div id="block-system-main-menu" class="block block-system block-menu">
+<div class="block-inner">
+    
+  <div class="content">
+    <div class="menu-block"><ul class="menu"><li class="first leaf"><a href="https://www.drupal.org/home" title="Drupal.org home page">Drupal.org home</a></li>
+<li class="leaf"><a href="https://www.drupal.org/download" title="Download and Extend Drupal">Download &amp; Extend</a></li>
+<li class="leaf"><a href="https://www.drupal.org/getting-involved-guide/community" title="Drupal Community">Community</a></li>
+<li class="leaf"><a href="https://www.drupal.org/documentation" title="Drupal Documentation">Documentation</a></li>
+<li class="leaf"><a href="https://www.drupal.org/support" title="Support for using Drupal">Support</a></li>
+<li class="leaf"><a href="https://jobs.drupal.org/" title="Drupal Jobs">Jobs</a></li>
+<li class="leaf"><a href="https://www.drupal.org/drupal-services" title="Buy Drupal Products and Services">Marketplace</a></li>
+<li class="last leaf"><a href="https://www.drupal.org/about" title="">About</a></li>
+</ul></div><a class="close-btn" id="nav-close-btn" href="https://www.drupal.org/forum/support/post-installation/2011-03-31/programmatically-createsave-a-node#top">Return to Content</a>  </div>
+  </div>
+</div>
+<div id="block-search-form" class="block block-search">
+<div class="block-inner">
+    
+  <div class="content">
+    <form action="https://www.drupal.org/forum/support/post-installation/2011-03-31/programmatically-createsave-a-node" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+      <h2 class="element-invisible">Search form</h2>
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input placeholder="Search…" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input alt="Search" type="image" id="edit-submit" name="submit" value="Search" src="./Programmatically create_save a node _ Drupal.org_files/icon-w-search.svg" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-olle-1NZ3sYbwlGApIuUS-yyw39SzsUNn4xImr1r1Ps">
+<input type="hidden" name="form_id" value="search_block_form">
+</div>
+</div></form>  </div>
+  </div>
+</div>
+<div id="block-system-user-menu" class="block block-system block-menu">
+<div class="block-inner">
+    
+  <div class="content">
+    <div class="menu-block"><ul class="menu"><li class="button default"><a href="https://www.drupal.org/forum/support/post-installation/2011-03-31/programmatically-createsave-a-node#block-system-user-menu"><img src="./Programmatically create_save a node _ Drupal.org_files/icon-w-user.svg" alt="Log in, view profile, and more"></a><ul><li class="first leaf"><a href="https://www.drupal.org/user/login?destination=node/1111514" title="">Log in</a></li>
+<li class="last leaf"><a href="https://www.drupal.org/user/register?destination=node/1111514" title="">Create account</a></li>
+</ul></li></ul></div>  </div>
+  </div>
+</div>
+  </div>
+    </nav>
+  </div> <!-- /#nav-header -->
+
+    <div id="header" class="clearfix">
+    <div id="header-screen" class="clearfix">
+      <div id="header-inner" class="container-12 clearfix">
+        <div id="header-content">
+          <div id="header-left">
+            <div id="header-left-inner">
+              <div id="site-name"><a href="https://www.drupal.org/" title="Drupal"><img src="./Programmatically create_save a node _ Drupal.org_files/drupal-wordmark.svg" alt="Drupal"></a></div>
+                          </div> <!-- /#header-left-inner -->
+          </div> <!-- /#header-left -->
+
+          <div id="header-right">
+            <div id="header-right-inner" role="search">
+                          </div> <!-- /#header-right-inner -->
+          </div> <!-- /#header-right -->
+        </div> <!-- /#header-content -->
+      </div> <!-- /#header-inner -->
+    </div>
+  </div> <!-- /#header -->
+  
+  
+  <div id="page" class="clearfix">
+    <div id="page-heading">
+                    <div id="page-title-tools" class="container-12 clearfix" role="navigation">
+
+          <div class="page-title-wrapper">
+                                          <div id="page-title" class="h2">Community</div>
+                                    </div>
+
+                  </div> <!-- /#page-title-tools -->
+
+                  <div id="nav-content" class="container-12">
+            <ul class="links"><li class="home first"><a href="https://www.drupal.org/community">Community Home</a></li>
+<li class="getting-involved"><a href="https://www.drupal.org/getting-involved">Getting Involved</a></li>
+<li class="chat"><a href="https://www.drupal.org/irc">Chat</a></li>
+<li class="forum active last"><a href="https://www.drupal.org/forum" class="active">Forum</a></li>
+</ul>          </div> <!-- /#nav-content -->
+        
+        <div class="breadbox"><nav class="breadcrumb container-12"><span><a href="https://www.drupal.org/forum/support">Support</a></span><span><a href="https://www.drupal.org/forum/support/post-installation">Post installation</a></span></nav></div>
+
+                  <h1 id="page-subtitle" class="container-12">Programmatically create/save a node</h1>
+        
+      
+    </div> <!-- /#page-heading -->
+
+    
+    <div class="container-12 page-inner">      
+      <div id="main" role="main">
+        
+        <div id="content" class="clearfix">
+                                        <div id="content-inner" class="clearfix">  <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+<div class="block-inner">
+    
+  <div class="content">
+    <div id="node-1111514" class="node node-forum node-content-1111514 clearfix">
+
+  
+      
+      <div class="submitted">
+      Posted by <a href="https://www.drupal.org/u/amrit_b" title="View user profile." data-uid="643594" class="username">amrit_b</a> on <time pubdate="" datetime="1301544555">31 Mar 2011 at 04:09 UTC</time>    </div>
+  
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Hi all,</p>
+<p>What is the procedure to create a node programmatically? The node is having 4-5 CCK fields..</p>
+<p>Another doubt:<br>
+In a custom module, I have this:</p>
+<pre class="codeblock language-php"><code class=" language-php"><span class="token function">db_query</span><span class="token punctuation">(</span><span class="token string">"UPDATE {content_type_application} SET field_no_of_hits_value = %d WHERE nid = %d"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token variable">$my_obj</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">field_no_of_hits_value</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token variable">$my_obj</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">nid</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>It works correctly. But<br>
+1) The value is reset-ing whenever I am editing the node.<br>
+2) The value is getting updated in the database, but in the Drupal site, its not showing the correct value until and unless I am clearing the Drupal cache :(</p>
+<p>please help!</p></div></div></div>  </div>
+
+  <div class="node-footer"><ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/1111514%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/1111514%23comment-form">register</a> to post comments</span></li>
+</ul><span class="separator">⋅</span> <span class="terms">Categories: <a href="https://www.drupal.org/taxonomy/term/102">Drupal 6.x</a></span></div>
+
+</div>
+
+<section class="comments comment-wrapper timeago-processed">
+          <h2 class="title">Comments</h2>
+      
+  <a id="comment-4285246"></a>
+<div class="comment comment-content-4285246 clearfix">
+  <a href="https://www.drupal.org/u/kuldip-gohil" title="View user profile." class="picture"><img src="./Programmatically create_save a node _ Drupal.org_files/picture-147161-1442829404.jpg" width="80" height="80" alt="Kuldip Gohil’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/forum/support/post-installation/2011-03-31/programmatically-createsave-a-node#comment-4285246" class="permalink active" rel="bookmark">node_save()</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/kuldip-gohil" title="View user profile." data-uid="147161" class="username">Kuldip Gohil</a> commented <time pubdate="" datetime="2011-03-31T04:50:07+00:00" data-created-date="31 March 2011 at 04:50" title="31 March 2011 at 04:50 (click to toggle)">7 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>For insert - </p>
+<pre class="codeblock language-php"><code class=" language-php"><span class="token php"><span class="token delimiter">&lt;?php</span>
+<span class="token comment" spellcheck="true">// add node properties</span>
+<span class="token variable">$newNode</span> <span class="token operator">=</span> <span class="token punctuation">(</span>object<span class="token punctuation">)</span> <span class="token keyword keyword-NULL">NULL</span><span class="token punctuation">;</span>
+<span class="token variable">$newNode</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">type</span> <span class="token operator">=</span> <span class="token string">'{NODE_TYPE}'</span><span class="token punctuation">;</span>
+<span class="token variable">$newNode</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">title</span> <span class="token operator">=</span> <span class="token string">'{NODE_TITLE}'</span>
+<span class="token variable">$newNode</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">uid</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token constant">USER_ID</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token variable">$newNode</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">created</span> <span class="token operator">=</span> <span class="token function">strtotime</span><span class="token punctuation">(</span><span class="token string">"now"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$newNode</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">changed</span> <span class="token operator">=</span> <span class="token function">strtotime</span><span class="token punctuation">(</span><span class="token string">"now"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$newNode</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">status</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token variable">$newNode</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">comment</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token variable">$newNode</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">promote</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token variable">$newNode</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">moderate</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token variable">$newNode</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">sticky</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// add CCK field data</span>
+<span class="token variable">$newNode</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">field_</span><span class="token punctuation">{</span><span class="token constant">YOUR_CUSTOM_FIELD_1</span><span class="token punctuation">}</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'value'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'{DATA_1}'</span><span class="token punctuation">;</span>
+<span class="token variable">$newNode</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">field_</span><span class="token punctuation">{</span><span class="token constant">YOUR_CUSTOM_FIELD_2</span><span class="token punctuation">}</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'value'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'{DATA_2}'</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// save node</span>
+<span class="token function">node_save</span><span class="token punctuation">(</span><span class="token variable">$newNode</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token delimiter">?&gt;</span></span>
+</code></pre><p>
+For Update You have to load node then  update field value.</p>
+<pre class="codeblock language-php"><code class=" language-php"><span class="token php"><span class="token delimiter">&lt;?php</span>
+<span class="token variable">$update_node</span> <span class="token operator">=</span> <span class="token function">node_load</span><span class="token punctuation">(</span><span class="token variable">$nid</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$update_node</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">title</span> <span class="token operator">=</span> <span class="token string">'update title'</span><span class="token punctuation">;</span>
+<span class="token function">node_save</span><span class="token punctuation">(</span><span class="token variable">$update_node</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token delimiter">?&gt;</span></span>
+</code></pre><p>
+Thank you,<br>
+Kuldip Gohil</p></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/1111514%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/1111514%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+
+<div class="indented"><a id="comment-4344092"></a>
+<div class="comment comment-content-4344092 clearfix">
+  <a href="https://www.drupal.org/u/mry4n" title="View user profile." class="picture"><img src="./Programmatically create_save a node _ Drupal.org_files/default-avatar.png" width="80" height="80" alt="mry4n’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/forum/support/post-installation/2011-03-31/programmatically-createsave-a-node#comment-4344092" class="permalink active" rel="bookmark">Importing From Database</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/mry4n" title="View user profile." data-uid="284359" class="username">mry4n</a> commented <time pubdate="" datetime="2011-04-13T20:47:09+00:00" data-created-date="13 April 2011 at 20:47" title="13 April 2011 at 20:47 (click to toggle)">7 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>How do I use this code create 1,000 nodes from a database?</p>
+<p>Let's say I get 1,000 records from a CSV file someone sends me. I guess I would then import all of those records into a table created in my MySQL Drupal database. And then I would have to include code that loops through all the records in that table and create the nodes using your code.</p>
+<p>But how does all of that get executed? If I put it in a module, do I need to call a hook, or will it just automatically execute?</p>
+<p>-Mike</p></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/1111514%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/1111514%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+
+<div class="indented"><a id="comment-4344160"></a>
+<div class="comment comment-content-4344160 clearfix">
+  <a href="https://www.drupal.org/u/mry4n" title="View user profile." class="picture"><img src="./Programmatically create_save a node _ Drupal.org_files/default-avatar.png" width="80" height="80" alt="mry4n’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/forum/support/post-installation/2011-03-31/programmatically-createsave-a-node#comment-4344160" class="permalink active" rel="bookmark">Node Export</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/mry4n" title="View user profile." data-uid="284359" class="username">mry4n</a> commented <time pubdate="" datetime="2011-04-13T20:59:52+00:00" data-created-date="13 April 2011 at 20:59" title="13 April 2011 at 20:59 (click to toggle)">7 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>It looks like the Node Export module is probably the way I should go:</p>
+<p><a href="http://drupal.org/project/node_export" rel="nofollow">http://drupal.org/project/node_export</a></p>
+<blockquote><p>This module allows users to export nodes and then import it into another Drupal installation, or on the same site. The idea is similar to the way you export/import Views or Content Types.</p></blockquote>
+<p>Only problem is I'm not importing from another Drupal site. But I can probably figure out what format I need to use in order to import the non-Drupal records into Drupal nodes.</p></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/1111514%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/1111514%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+
+<div class="indented"><a id="comment-4344484"></a>
+<div class="comment comment-content-4344484 clearfix">
+  <a href="https://www.drupal.org/user/308512" title="View user profile." class="picture"><img src="./Programmatically create_save a node _ Drupal.org_files/default-avatar.png" width="80" height="80" alt="gforce301’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/forum/support/post-installation/2011-03-31/programmatically-createsave-a-node#comment-4344484" class="permalink active" rel="bookmark">Node export won't do you any</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/user/308512" title="View user profile." data-uid="308512" class="username">gforce301</a> commented <time pubdate="" datetime="2011-04-13T22:03:18+00:00" data-created-date="13 April 2011 at 22:03" title="13 April 2011 at 22:03 (click to toggle)">7 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Node export won't do you any good as you are importing brand spanking new never existed before, nodes.</p>
+<p>Kuldip gave you the answer.  Take the code he posted and write yourself a parser for your csv file of 1000 nodes.  Since I don't feel like actually writing the code for you, I'll put in pseudo code.</p>
+<p>Foreach line in csv file do this<br>
+  &nbsp;&nbsp;&nbsp;read line into variable<br>
+  &nbsp;&nbsp;&nbsp;take information in variable and use code from kuldip to save node<br>
+Repeat until no more lines in csv file</p>
+<p>It's not all that difficult.</p></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/1111514%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/1111514%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+</div></div><a id="comment-6013640"></a>
+<div class="comment comment-content-6013640 clearfix">
+  <a href="https://www.drupal.org/user/1959464" title="View user profile." class="picture"><img src="./Programmatically create_save a node _ Drupal.org_files/default-avatar.png" width="80" height="80" alt="matiaslezin’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/forum/support/post-installation/2011-03-31/programmatically-createsave-a-node#comment-6013640" class="permalink active" rel="bookmark">CCK Select List field</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/user/1959464" title="View user profile." data-uid="1959464" class="username">matiaslezin</a> commented <time pubdate="" datetime="2012-05-18T19:56:07+00:00" data-created-date="18 May 2012 at 19:56" title="18 May 2012 at 19:56 (click to toggle)">5 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>What if the $newNode-&gt;field_{YOUR_CUSTOM_FIELD_1}[0]['value'] = '{DATA_1}'; is a Select List text field? I tried using the code but when I view the node, instead of getting the label value I see the key value. </p>
+<p>Help?</p></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/1111514%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/1111514%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+<a id="comment-6153700"></a>
+<div class="comment comment-content-6153700 clearfix">
+  <a href="https://www.drupal.org/u/bfodeke" title="View user profile." class="picture"><img src="./Programmatically create_save a node _ Drupal.org_files/picture-913084-1413423558.jpg" width="80" height="80" alt="bfodeke’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/forum/support/post-installation/2011-03-31/programmatically-createsave-a-node#comment-6153700" class="permalink active" rel="bookmark">Your code works awesome! 
+But</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/bfodeke" title="View user profile." data-uid="913084" class="username">bfodeke</a> commented <time pubdate="" datetime="2012-06-23T15:05:26+00:00" data-created-date="23 June 2012 at 15:05" title="23 June 2012 at 15:05 (click to toggle)">5 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Your code works awesome! </p>
+<p>But I'm having one small issue.  I'm scraping another website and using that data to create nodes.  I'm trying to use the published date of the scraped data as the created date of the node.  For example, the published date is Jun 15, 2012, so I'm doing this:</p>
+<pre class="codeblock language-php"><code class=" language-php"><span class="token php"><span class="token delimiter">&lt;?php</span>
+<span class="token variable">$published</span> <span class="token operator">=</span> <span class="token string">"Jun 15, 2012"</span><span class="token punctuation">;</span>
+<span class="token variable">$date</span> <span class="token operator">=</span> <span class="token function">strtotime</span><span class="token punctuation">(</span><span class="token variable">$published</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//which gives me the right timestamp</span>
+
+<span class="token comment" spellcheck="true">//Then I use this date to set the created &amp; changed fields in the new node</span>
+<span class="token comment" spellcheck="true">//.......Rest of code</span>
+<span class="token variable">$newNode</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">created</span> <span class="token operator">=</span> <span class="token variable">$date</span><span class="token punctuation">;</span>
+<span class="token variable">$newNode</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">changed</span> <span class="token operator">=</span> <span class="token variable">$date</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//.......Rest of code</span>
+<span class="token delimiter">?&gt;</span></span>
+</code></pre><p>
+But when I create a view and show the publish date, it's all today's date, not the value of $date from above.  Any suggestions?</p></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/1111514%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/1111514%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+
+<div class="indented"><a id="comment-6210254"></a>
+<div class="comment comment-content-6210254 clearfix">
+  <a href="https://www.drupal.org/user/372452" title="View user profile." class="picture"><img src="./Programmatically create_save a node _ Drupal.org_files/default-avatar.png" width="80" height="80" alt="mohsentaleb’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/forum/support/post-installation/2011-03-31/programmatically-createsave-a-node#comment-6210254" class="permalink active" rel="bookmark">Problem with node date while using node_submit($node)</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/user/372452" title="View user profile." data-uid="372452" class="username">mohsentaleb</a> commented <time pubdate="" datetime="2012-07-08T21:00:35+00:00" data-created-date="8 July 2012 at 21:00" title="8 July 2012 at 21:00 (click to toggle)">5 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>if you see the <em><a href="http://api.drupal.org/api/drupal/modules%21node%21node.module/function/node_submit/6" rel="nofollow">node_submit</a>()</em> source code, it checks for $node-&gt;date and if it's not set, <em>time()</em> is used. So, to work around this problem you could do:</p>
+<pre class="codeblock language-php"><code class=" language-php"><span class="token php"><span class="token delimiter">&lt;?php</span>
+<span class="token variable">$node</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">created</span> <span class="token operator">=</span> <span class="token function">strtotime</span><span class="token punctuation">(</span><span class="token variable">$date</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$node</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">date</span> <span class="token operator">=</span> <span class="token function">format_date</span><span class="token punctuation">(</span><span class="token variable">$node</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">created</span><span class="token punctuation">,</span> <span class="token string">'custom'</span><span class="token punctuation">,</span> <span class="token string">'Y-m-d H:i:s O'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token delimiter">?&gt;</span></span>
+</code></pre><p>See <a href="http://drupal.org/node/286069" rel="nofollow">http://drupal.org/node/286069</a> for more info.</p></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/1111514%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/1111514%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+</div></div><a id="comment-4285372"></a>
+<div class="comment comment-by-node-author comment-content-4285372 clearfix">
+  <a href="https://www.drupal.org/u/amrit_b" title="View user profile." class="picture"><img src="./Programmatically create_save a node _ Drupal.org_files/default-avatar.png" width="80" height="80" alt="amrit_b’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/forum/support/post-installation/2011-03-31/programmatically-createsave-a-node#comment-4285372" class="permalink active" rel="bookmark">Thanks a lot Kuldip :)
+Hope</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/amrit_b" title="View user profile." data-uid="643594" class="username">amrit_b</a> commented <time pubdate="" datetime="2011-03-31T05:29:37+00:00" data-created-date="31 March 2011 at 05:29" title="31 March 2011 at 05:29 (click to toggle)">7 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Thanks a lot Kuldip :)</p>
+<p>Hope it works..</p></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/1111514%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/1111514%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+<a id="comment-7097804"></a>
+<div class="comment comment-content-7097804 clearfix">
+  <a href="https://www.drupal.org/u/hansrossel" title="View user profile." class="picture"><img src="./Programmatically create_save a node _ Drupal.org_files/picture-39422-1510234508.jpg" width="80" height="80" alt="hansrossel’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/forum/support/post-installation/2011-03-31/programmatically-createsave-a-node#comment-7097804" class="permalink active" rel="bookmark">If you would for some reason</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/hansrossel" title="View user profile." data-uid="39422" class="username">hansrossel</a> commented <time pubdate="" datetime="2013-02-22T16:04:10+00:00" data-created-date="22 February 2013 at 16:04" title="22 February 2013 at 16:04 (click to toggle)">5 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>If you would for some reason use db_query to change fields directly in the database like in the original question, you can clear the cache for that node as follows:</p>
+<pre class="codeblock language-php"><code class=" language-php"><span class="token function">db_query</span><span class="token punctuation">(</span><span class="token string">"DELETE FROM {cache_content} WHERE cid LIKE '%content:%d%'"</span><span class="token punctuation">,</span> <span class="token variable">$nid</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div></div></div>        <div class="user-signature clearfix">
+      <p><a href="http://www.koba.be/" rel="nofollow">KOBA - Drupal Webdesign &amp; Webdevelopment</a></p>    </div>
+      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/1111514%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/1111514%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+
+  </section>
+  </div>
+  </div>
+</div>
+  </div>
+</div>
+                  </div> <!-- /#content -->
+
+      </div> <!-- /#column-left -->
+
+              <div id="aside" role="complementary">
+          <div id="aside-region">
+              <div class="region region-sidebar-second">
+    <div id="block-views-forum-topics-block" class="block block-views">
+<div class="block-inner">
+    <h2>New forum topics</h2>
+  
+  <div class="content">
+    <div class="view view-forum-topics view-id-forum_topics view-display-id-block view-dom-id-798bafe7a7d36bcca015a1fa61cc76cf">
+        
+  
+  
+      <div class="view-content">
+      <div class="item-list">    <ul>          <li class="">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.drupal.org/forum/support/module-development-and-code-questions/2017-11-14/drupal-8-mixed-content-error-loaded">Drupal 8 Mixed Content Error, Loaded site on https but resource (css js) over http (not secure)</a></span>  </div></li>
+          <li class="">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.drupal.org/forum/support/upgrading-drupal/2017-11-14/how-to-call-upgradephprun-via-curl-for-installatron">How to call upgrade.php/run via CURL (for Installatron)</a></span>  </div></li>
+          <li class="">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.drupal.org/forum/support/post-installation/2017-11-13/table-format-views-output-problem">Table format views - output problem</a></span>  </div></li>
+          <li class="">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.drupal.org/forum/support/upgrading-drupal/2017-11-13/making-legacy-inline-images-drupal-8-managed-files">Making legacy inline images Drupal 8 managed files</a></span>  </div></li>
+          <li class="">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.drupal.org/forum/support/post-installation/2017-11-13/add-last-updated-info-to-content-drupal-8">Add 'Last Updated' info to content - Drupal 8</a></span>  </div></li>
+          <li class="">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.drupal.org/forum/support/post-installation/2017-11-13/themes-like-nexus-doesnt-work-in-drupal-842">Themes like Nexus doesn't work in drupal-8.4.2</a></span>  </div></li>
+          <li class="">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.drupal.org/forum/support/post-installation/2017-11-13/how-to-view-list-of-when-webpages-were-last-updated">How to view list of when webpages were last updated through admin interface?</a></span>  </div></li>
+          <li class="">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.drupal.org/forum/support/theme-development/2017-11-13/adding-some-theme-components-of-a-project-theme">Adding some theme components of a project theme</a></span>  </div></li>
+          <li class="">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.drupal.org/forum/support/post-installation/2017-11-13/language-multiple-options">Language - multiple options</a></span>  </div></li>
+          <li class="">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.drupal.org/forum/support/module-development-and-code-questions/2017-11-13/routing-file-for-to-call-modulemodule">Routing file for to call module.module file function in drupal 8?</a></span>  </div></li>
+      </ul></div>    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+  </div>
+</div>
+  </div>
+          </div> <!-- /#column-right-region -->
+        </div> <!-- /#column-right -->
+      
+          </div>  </div> <!-- /#page -->
+
+  <div id="footer" role="contentinfo">
+            <div class="region region-footer">
+    <div id="block-drupalorg-crosssite-drupalorg-footer" class="block block-drupalorg-crosssite">
+<div class="block-inner">
+    
+  <div class="content">
+    <h4 class="element-invisible">News items</h4><ul class="drupal-news"><li class="0 first"><a href="https://www.drupal.org/news">News</a></li>
+<li class="1"><a href="https://www.drupal.org/planet" title="News from Drupal community members">Planet Drupal</a></li>
+<li class="2"><a href="https://www.drupal.org/social-media" title="Drupal on social media">Social media directory</a></li>
+<li class="3"><a href="https://www.drupal.org/security" title="Advisories from the security team">Security announcements</a></li>
+<li class="4 last"><a href="https://jobs.drupal.org/" title="Drupal Jobs">Jobs</a></li>
+</ul><h4 class="element-invisible">Our community</h4><ul class="community"><li class="0 first"><a href="https://drupal.org/community">Community</a></li>
+<li class="1"><a href="https://drupal.org/getting-involved" title="Learn how to contribute to the Drupal project">Getting involved</a></li>
+<li class="2"><span><a href="https://drupal.org/drupal-services" title="People and organizations offering Drupal services">Services</a>, <a href="https://drupal.org/training" title="People and organizations offering Drupal training">Training</a> &amp; <a href="https://drupal.org/hosting" title="Organizations offering Drupal hosting">Hosting</a></span></li>
+<li class="3"><a href="https://groups.drupal.org/groups" title="groups.drupal.org">Groups &amp; Meetups</a></li>
+<li class="4"><a href="https://events.drupal.org/" title="Upcoming and past DrupalCons">DrupalCon</a></li>
+<li class="5 last"><a href="https://drupal.org/dcoc" title="Drupal code of conduct">Code of conduct</a></li>
+</ul><h4 class="element-invisible">Documentation</h4><ul class="get-started"><li class="0 first"><a href="https://drupal.org/documentation" title="Documentation for working with Drupal">Documentation</a></li>
+<li class="1"><a href="https://www.drupal.org/docs/8">Drupal 8 docs</a></li>
+<li class="2"><a href="https://www.drupal.org/docs/7">Drupal 7 docs</a></li>
+<li class="3"><a href="https://www.drupal.org/documentation/develop">Developer docs</a></li>
+<li class="4 last"><a href="https://api.drupal.org/" title="Drupal API reference">api.drupal.org</a></li>
+</ul><h4 class="element-invisible">Drupal code base</h4><ul class="download-extend"><li class="0 first"><a href="https://drupal.org/download">Download &amp; Extend</a></li>
+<li class="1"><a href="https://drupal.org/project/drupal" title="Download the latest version of the Drupal software">Drupal core</a></li>
+<li class="2"><a href="https://drupal.org/project/project_module" title="Download add-on features and functionality">Modules</a></li>
+<li class="3"><a href="https://drupal.org/project/project_theme" title="Download pre-designed styles for Drupal">Themes</a></li>
+<li class="4 last"><a href="https://drupal.org/project/project_distribution" title="Download a pre-packaged Drupal site">Distributions</a></li>
+</ul><h4 class="element-invisible">Governance of community</h4><ul class="about"><li class="0 first"><a href="https://drupal.org/about">About</a></li>
+<li class="1"><a href="https://drupal.org/about/accessibility" title="Our committment to accessibility">Web accessibility</a></li>
+<li class="2"><a href="https://drupal.org/association" title="About the Drupal Association">The Drupal Association</a></li>
+<li class="3"><a href="https://drupal.org/drupalorg" title="About Drupal.org">About Drupal.org</a></li>
+<li class="4"><a href="https://drupal.org/terms" title="Drupal.org terms of service">Terms of service</a></li>
+<li class="5 last"><a href="https://drupal.org/privacy" title="Drupal.org privacy policy">Privacy policy</a></li>
+</ul>  </div>
+  </div>
+</div>
+<div id="block-block-77" class="block block-block">
+<div class="block-inner">
+    
+  <div class="content">
+    <p>Drupal is a <a href="http://drupal.com/trademark" rel="nofollow">registered trademark</a> of <a href="https://dri.es/" rel="nofollow">Dries Buytaert</a>.</p>  </div>
+  </div>
+</div>
+  </div>
+      </div>
+  
+<!--[if lte IE 9]>
+<script type="text/javascript" src="https://www.drupal.org/files/advagg_js/js__79M6UrZjAw3oNGnUjsWip12JsvnUZmJGA3h9LI0kuzE__LqE6uSZqCOZhJYW910TDw_HTQzBKUPTZxunfaWkalq8__wiNRAQmb1cVwSHFag72el-HHTuC0y1ZUWoU2SpeUCzo.js#ie9-" onload="if(jQuery.isFunction(jQuery.holdReady)){jQuery.holdReady(true);}"></script>
+<![endif]-->
+
+<!--[if gt IE 9]>
+<script type="text/javascript" src="https://www.drupal.org/files/advagg_js/js__79M6UrZjAw3oNGnUjsWip12JsvnUZmJGA3h9LI0kuzE__LqE6uSZqCOZhJYW910TDw_HTQzBKUPTZxunfaWkalq8__wiNRAQmb1cVwSHFag72el-HHTuC0y1ZUWoU2SpeUCzo.js#ie10+" defer="defer" onload="if(jQuery.isFunction(jQuery.holdReady)){jQuery.holdReady(true);}"></script>
+<![endif]-->
+
+<!--[if !IE]><!-->
+<script type="text/javascript" src="./Programmatically create_save a node _ Drupal.org_files/js__79M6UrZjAw3oNGnUjsWip12JsvnUZmJGA3h9LI0kuzE__LqE6uSZqCOZhJYW910TDw_HTQzBKUPTZxunfaWkalq8__wiNRAQmb1cVwSHFag72el-HHTuC0y1ZUWoU2SpeUCzo.js" defer="defer" onload="if(jQuery.isFunction(jQuery.holdReady)){jQuery.holdReady(true);}"></script>
+<!--<![endif]-->
+<script type="text/javascript" src="./Programmatically create_save a node _ Drupal.org_files/js__H5AFmq1RrXKsrazzPq_xPQPy4K0wUKqecPjczzRiTgQ__ZHqvWr-79k4Y5DRTd0KcuNHgFp9UJZlb3B0Bi5eGu3M__wiNRAQmb1cVwSHFag72el-HHTuC0y1ZUWoU2SpeUCzo.js" defer="defer" onload="
+function advagg_mod_1() {
+  // Count how many times this function is called.
+  advagg_mod_1.count = ++advagg_mod_1.count || 1;
+  try {
+    if (advagg_mod_1.count &lt;= 40) {
+      init_drupal_core_settings();
+
+      // Set this to 100 so that this function only runs once.
+      advagg_mod_1.count = 100;
+    }
+  }
+  catch(e) {
+    if (advagg_mod_1.count &gt;= 40) {
+      // Throw the exception if this still fails after running 40 times.
+      throw e;
+    }
+    else {
+      // Try again in 1 ms.
+      window.setTimeout(advagg_mod_1, 1);
+    }
+  }
+}
+function advagg_mod_1_check() {
+  if (window.init_drupal_core_settings &amp;&amp; window.jQuery &amp;&amp; window.Drupal) {
+    advagg_mod_1();
+  }
+  else {
+    window.setTimeout(advagg_mod_1_check, 1);
+  }
+}
+advagg_mod_1_check();"></script>
+<script type="text/javascript" src="./Programmatically create_save a node _ Drupal.org_files/js__y-0WF9wbsKup6UtG11ZtdWgidCFrAqzehETdOPtD3QM__RyqY9XJd9ufuluFN4mmhv-aKW7TydZryLoo9T-QS5sQ__wiNRAQmb1cVwSHFag72el-HHTuC0y1ZUWoU2SpeUCzo.js" defer="defer"></script>
+<script type="text/javascript" defer="defer" async="async" src="./Programmatically create_save a node _ Drupal.org_files/analytics.js"></script>
+<script type="text/javascript" src="./Programmatically create_save a node _ Drupal.org_files/js__hHUWFbMAa11eJtx5V0ym9o0YBsB1udk34qUT5wr1ihI__w1AuxI-Is3CtQ1nu9fAoIO4cMrl8j5oxHT1ffMU00Zo__wiNRAQmb1cVwSHFag72el-HHTuC0y1ZUWoU2SpeUCzo.js" defer="defer"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+function init_drupal_core_settings() {jQuery.extend(Drupal.settings,{"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"bluecheese","theme_token":"TeBRfQFdsqYfXyN-AyvA8UWykkxSpGwJ2TwxO7nwQfE"},"jcarousel":{"ajaxPath":"\/jcarousel\/ajax\/views"},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"urlIsAjaxTrusted":{"\/forum\/support\/post-installation\/2011-03-31\/programmatically-createsave-a-node":true}});
+if(jQuery.isFunction(jQuery.holdReady)){jQuery.holdReady(false);}} if(window.jQuery && window.Drupal){init_drupal_core_settings();}
+//--><!]]>
+</script>
+<script type="text/javascript" src="./Programmatically create_save a node _ Drupal.org_files/js__to4E6ed7qbWQIIrZ8SjAf2iDoY3ZkHhlZySO3qQI4ws__30g4_YLNJDK0tUDy1vJDyqtAnbRAen2hxqieAjRIb3Q__wiNRAQmb1cVwSHFag72el-HHTuC0y1ZUWoU2SpeUCzo.js" defer="defer"></script>
+
+
+</body></html>
