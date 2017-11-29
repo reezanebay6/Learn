@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)https://www.drupal.org/node/2411645 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr" xmlns:fb="http://ogp.me/ns/fb#" xmlns:og="http://ogp.me/ns#" xmlns:article="http://ogp.me/ns/article#" xmlns:book="http://ogp.me/ns/book#" xmlns:profile="http://ogp.me/ns/profile#" xmlns:video="http://ogp.me/ns/video#" xmlns:product="http://ogp.me/ns/product#" class="js"><head profile="http://www.w3.org/1999/xhtml/vocab"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width">
+  <meta name="MobileOptimized" content="width">
+  <!--[if IE]><![endif]-->
+
+<link rel="dns-prefetch" href="https://www.google-analytics.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link rel="preconnect" href="https://www.google-analytics.com/">
+<link rel="preconnect" href="https://stats.g.doubleclick.net/">
+<link rel="dns-prefetch" href="https://stats.g.doubleclick.net/">
+<meta name="description" content="I&#39;ve already customized the default user_register form with hook_form_register_form_alter(). That form is using complex multistep form and connects with a web service for validating etc. Right now I have a new task and have to create a new registration form that will use the default Drupal form, but when I try to get the register form on a custom page, unfortunately it displays the customized form. Yes, that makes sense, but is it possible to create a new register form that will act as a normal default Drupal form and won&#39;t have any common with the customized form?">
+<meta name="generator" content="Drupal 7 (http://drupal.org)">
+<link rel="canonical" href="https://www.drupal.org/node/2411645">
+<link rel="shortlink" href="https://www.drupal.org/node/2411645">
+<meta property="og:site_name" content="Drupal.org">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.drupal.org/node/2411645">
+<meta property="og:title" content="Create a registration form">
+<meta property="og:description" content="I&#39;ve already customized the default user_register form with hook_form_register_form_alter(). That form is using complex multistep form and connects with a web service for validating etc. Right now I have a new task and have to create a new registration form that will use the default Drupal form, but when I try to get the register form on a custom page, unfortunately it displays the customized form. Yes, that makes sense, but is it possible to create a new register form that will act as a normal default Drupal form and won&#39;t have any common with the customized form?">
+<meta property="og:updated_time" content="2015-01-21T17:33:06+00:00">
+<meta property="article:published_time" content="2015-01-21T17:33:06+00:00">
+<meta property="article:modified_time" content="2015-01-21T17:33:06+00:00">
+  <title>Create a registration form | Drupal.org</title>
+  <link type="text/css" rel="stylesheet" href="./Create a registration form _ Drupal.org_files/css__F7qWzHu9exaCJEYsQHu4vlsmrwSsr-qGjQnU92OTBGg__HE-ON2wi0ZHmA1wJMd9l5pXEt1FafFXA2XQdUHDdRdE__zGbh0Vkd6-Upw_meABdy9qwehpIxfCh8fKwHkW793IE.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Create a registration form _ Drupal.org_files/css__QPp1snPjYt_xYr0c_V0IORcEElkIUBBBrvOB4ZE0Gnw__hXy1oF8aT5TT8LFgVrxMScM6H_b4HWBbm_9KU9xJz2o__zGbh0Vkd6-Upw_meABdy9qwehpIxfCh8fKwHkW793IE.css" media="all">
+  <script type="text/javascript" async="" src="./Create a registration form _ Drupal.org_files/54419274f6c96ed073000003.js"></script><script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var preconnect_support = false; try {if (document.createElement("link").relList.supports("preconnect")) {preconnect_support = true;}} catch (e) {} if (!preconnect_support) { var prefetch = document.createElement("link"); prefetch.href = "https://stats.g.doubleclick.net/robots.txt"; prefetch.rel="prefetch"; document.getElementsByTagName("head")[0].appendChild(prefetch);}
+//--><!]]>
+</script>
+<script type="text/javascript" async="" src="./Create a registration form _ Drupal.org_files/tagjs"></script><img src="./Create a registration form _ Drupal.org_files/saved_resource" width="1" height="1" border="0"><img src="./Create a registration form _ Drupal.org_files/seg" width="1" height="1" border="0"><img src="./Create a registration form _ Drupal.org_files/seg(1)" width="1" height="1" border="0"></head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-2411645 node-type-forum drupalorg-site-main no-panels-layout project-issue-focused-input-processed">
+  <div id="skip-link">
+    <a class="element-invisible element-focusable" href="https://www.drupal.org/node/2411645#content">Skip to main content</a>
+    <a class="element-invisible element-focusable skip-link-search" href="https://www.drupal.org/node/2411645#search-block-form">Skip to search</a>
+  </div>
+        <div id="nav-header">
+    <div class="menu-nav">
+      <a class="nav-btn" id="nav-open-btn" href="https://www.drupal.org/node/2411645#block-system-main-menu"><img src="./Create a registration form _ Drupal.org_files/icon-w-menu.svg" alt="Main menu"></a>
+    </div>
+    <nav id="navigation-inner" class="container-12" role="navigation">
+        <div class="region region-navigation">
+    <div id="block-system-main-menu" class="block block-system block-menu">
+<div class="block-inner">
+    
+  <div class="content">
+    <div class="menu-block"><ul class="menu"><li class="first leaf"><a href="https://www.drupal.org/home" title="Drupal.org home page">Drupal.org home</a></li>
+<li class="leaf"><a href="https://www.drupal.org/download" title="Download and Extend Drupal">Download &amp; Extend</a></li>
+<li class="leaf"><a href="https://www.drupal.org/community" title="Drupal Community">Community</a></li>
+<li class="leaf"><a href="https://www.drupal.org/documentation" title="Drupal Documentation">Documentation</a></li>
+<li class="leaf"><a href="https://www.drupal.org/support" title="Support for using Drupal">Support</a></li>
+<li class="leaf"><a href="https://jobs.drupal.org/" title="Drupal Jobs">Jobs</a></li>
+<li class="leaf"><a href="https://www.drupal.org/drupal-services" title="Buy Drupal Products and Services">Marketplace</a></li>
+<li class="last leaf"><a href="https://www.drupal.org/about" title="">About</a></li>
+</ul></div><a class="close-btn" id="nav-close-btn" href="https://www.drupal.org/node/2411645#top">Return to Content</a>  </div>
+  </div>
+</div>
+<div id="block-search-form" class="block block-search">
+<div class="block-inner">
+    
+  <div class="content">
+    <form action="https://www.drupal.org/node/2411645" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+      <h2 class="element-invisible">Search form</h2>
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input placeholder="Search…" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input alt="Search" type="image" id="edit-submit" name="submit" value="Search" src="./Create a registration form _ Drupal.org_files/icon-w-search.svg" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-oOhQgESsHR26GaZQ6bnBQ7m91ttRX3ed-A2KPHer75c">
+<input type="hidden" name="form_id" value="search_block_form">
+</div>
+</div></form>  </div>
+  </div>
+</div>
+<div id="block-system-user-menu" class="block block-system block-menu">
+<div class="block-inner">
+    
+  <div class="content">
+    <div class="menu-block"><ul class="menu"><li class="button default"><a href="https://www.drupal.org/node/2411645#block-system-user-menu"><img src="./Create a registration form _ Drupal.org_files/icon-w-user.svg" alt="Log in, view profile, and more"></a><ul><li class="first leaf"><a href="https://www.drupal.org/user/login?destination=node/2411645" title="">Log in</a></li>
+<li class="last leaf"><a href="https://www.drupal.org/user/register?destination=node/2411645" title="">Create account</a></li>
+</ul></li></ul></div>  </div>
+  </div>
+</div>
+  </div>
+    </nav>
+  </div> <!-- /#nav-header -->
+
+    <div id="header" class="clearfix">
+    <div id="header-screen" class="clearfix">
+      <div id="header-inner" class="container-12 clearfix">
+        <div id="header-content">
+          <div id="header-left">
+            <div id="header-left-inner">
+              <div id="site-name"><a href="https://www.drupal.org/" title="Drupal"><img src="./Create a registration form _ Drupal.org_files/drupal-wordmark.svg" alt="Drupal"></a></div>
+                          </div> <!-- /#header-left-inner -->
+          </div> <!-- /#header-left -->
+
+          <div id="header-right">
+            <div id="header-right-inner" role="search">
+                          </div> <!-- /#header-right-inner -->
+          </div> <!-- /#header-right -->
+        </div> <!-- /#header-content -->
+      </div> <!-- /#header-inner -->
+    </div>
+  </div> <!-- /#header -->
+  
+      <div id="banner" style="display: block;"><a class="close">Close</a>
+        <div class="region region-banner">
+    <div id="block-drupalorg-announcements" class="block block-drupalorg">
+<div class="block-inner">
+    
+  <div class="content">
+    <p class="announcement"><img class="icon" src="./Create a registration form _ Drupal.org_files/icon-certificate-2.svg" alt="Announcement icon" title="Announcement icon">Support Drupal as a member, we'll say thanks with a certificate.</p>
+<div class="cta"><a href="https://www.drupal.org/association/campaign/certificate-2017?utm_source=drupalorg&amp;utm_medium=banner&amp;utm_campaign=membership-campaign-2017-09-20" class="membership2017sept">I'm joining today</a></div>  </div>
+  </div>
+</div>
+  </div>
+    </div>
+  
+  <div id="page" class="clearfix">
+    <div id="page-heading">
+                    <div id="page-title-tools" class="container-12 clearfix" role="navigation">
+
+          <div class="page-title-wrapper">
+                                          <div id="page-title" class="h2">Community</div>
+                                    </div>
+
+                  </div> <!-- /#page-title-tools -->
+
+                  <div id="nav-content" class="container-12">
+            <ul class="links"><li class="home first"><a href="https://www.drupal.org/community">Community Home</a></li>
+<li class="getting-involved"><a href="https://www.drupal.org/getting-involved">Getting Involved</a></li>
+<li class="chat"><a href="https://www.drupal.org/irc">Chat</a></li>
+<li class="forum active last"><a href="https://www.drupal.org/forum" class="active">Forum</a></li>
+</ul>          </div> <!-- /#nav-content -->
+        
+        <div class="breadbox"><nav class="breadcrumb container-12"><span><a href="https://www.drupal.org/forum/18">Support</a></span><span><a href="https://www.drupal.org/forum/4">Module Development and Code Questions</a></span></nav></div>
+
+                  <h1 id="page-subtitle" class="container-12">Create a registration form</h1>
+        
+      
+    </div> <!-- /#page-heading -->
+
+    
+    <div class="container-12 page-inner">      
+      <div id="main" role="main">
+        
+        <div id="content" class="clearfix">
+                                        <div id="content-inner" class="clearfix">  <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+<div class="block-inner">
+    
+  <div class="content">
+    <div id="node-2411645" class="node node-forum node-content-2411645 clearfix">
+
+  
+      
+      <div class="submitted">
+      Posted by <a href="https://www.drupal.org/u/satvision83" title="View user profile." data-uid="1832998" class="username">satvision83</a> on <time pubdate="" datetime="1421861586">21 Jan 2015 at 17:33 UTC</time>    </div>
+  
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>I've already customized the default user_register form with hook_form_register_form_alter().<br>
+That form is using complex multistep form and connects with a web service for validating etc.</p>
+<p>Right now I have a new task and have to create a new registration form that will use the default Drupal form, but when I try to get the register form on a custom page, unfortunately it displays the customized form. Yes, that makes sense, but is it possible to create a new register form that will act as a normal default Drupal form and won't have any common with the customized form?</p>
+<p>Let's say this is my code:</p>
+<pre class="codeblock language-php"><code class=" language-php">
+<span class="token comment" spellcheck="true">/*
+ * * Implements hook_menu().
+ */</span>
+
+<span class="token keyword keyword-function">function</span> <span class="token function">mymodule_menu</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token variable">$items</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token variable">$items</span><span class="token punctuation">[</span><span class="token string">'registration'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+		<span class="token string">'title'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'Registration'</span><span class="token punctuation">,</span>
+		<span class="token string">'page callback'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'drupal_get_form'</span><span class="token punctuation">,</span>
+		<span class="token string">'page arguments'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token string">'mymodule_registration_page'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token string">'access arguments'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token string">'access content'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+	<span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token keyword keyword-return">return</span> <span class="token variable">$items</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword keyword-function">function</span> <span class="token function">mymodule_registration_page</span><span class="token punctuation">(</span><span class="token variable">$form</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span><span class="token variable">$form_state</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token variable">$form</span><span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+        <span class="token string">'#title'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'username'</span><span class="token punctuation">,</span>
+        <span class="token string">'#description'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'choose a username'</span><span class="token punctuation">,</span>
+        <span class="token string">'#type'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'textfield'</span><span class="token punctuation">,</span>
+        <span class="token string">'#required'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token constant">TRUE</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token variable">$form</span><span class="token punctuation">[</span><span class="token string">'mail'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+        <span class="token string">'#title'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'email'</span><span class="token punctuation">,</span>
+        <span class="token string">'#description'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'enter a valid email address'</span><span class="token punctuation">,</span>
+        <span class="token string">'#type'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'textfield'</span><span class="token punctuation">,</span>
+        <span class="token string">'#required'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token constant">TRUE</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token variable">$form</span><span class="token punctuation">[</span><span class="token string">'submit'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+        <span class="token string">'#type'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'submit'</span><span class="token punctuation">,</span>
+        <span class="token string">'#value'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'Save'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-return">return</span> <span class="token variable">$form</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre><p>
+What functions do I need to register a user in the database?</p></div></div></div>  </div>
+
+  <div class="node-footer"><ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/2411645%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/2411645%23comment-form">register</a> to post comments</span></li>
+</ul><span class="separator">⋅</span> <span class="terms">Categories: <a href="https://www.drupal.org/taxonomy/term/120">Drupal 7.x</a></span></div>
+
+</div>
+
+<section class="comments comment-wrapper timeago-processed">
+          <h2 class="title">Comments</h2>
+      
+  <a id="comment-9539373"></a>
+<div class="comment comment-content-9539373 clearfix">
+  <a href="https://www.drupal.org/u/worldfallz" title="View user profile." class="picture"><img src="./Create a registration form _ Drupal.org_files/picture-155304-1458438965.png" width="80" height="80" alt="WorldFallz’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/node/2411645#comment-9539373" class="permalink active" rel="bookmark">_</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/worldfallz" title="View user profile." data-uid="155304" class="username">WorldFallz</a> commented <time pubdate="" datetime="2015-01-21T19:02:00+00:00" data-created-date="21 January 2015 at 19:02" title="21 January 2015 at 19:02 (click to toggle)">3 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Why not just adjust the hook_form_register_form_alter to modify the form based on whatever conditions determine which registration form should be shown?</p></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/2411645%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/2411645%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+
+<div class="indented"><a id="comment-9539589"></a>
+<div class="comment comment-by-node-author comment-content-9539589 clearfix">
+  <a href="https://www.drupal.org/u/satvision83" title="View user profile." class="picture"><img src="./Create a registration form _ Drupal.org_files/default-avatar.png" width="80" height="80" alt="satvision83’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/node/2411645#comment-9539589" class="permalink active" rel="bookmark">Yes, that's a good idea.</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/satvision83" title="View user profile." data-uid="1832998" class="username">satvision83</a> commented <time pubdate="" datetime="2015-01-21T20:07:32+00:00" data-created-date="21 January 2015 at 20:07" title="21 January 2015 at 20:07 (click to toggle)">3 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Yes, that's a good idea. Thank you.<br>
+Meanwhile I've found another way how to register user on separate form and I'm posting the code here:</p>
+<pre class="codeblock language-php"><code class=" language-php"><span class="token keyword keyword-function">function</span> <span class="token function">mymodule_menu</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token variable">$items</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token variable">$items</span><span class="token punctuation">[</span><span class="token string">'registration'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+		<span class="token string">'title'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'Registration'</span><span class="token punctuation">,</span>
+		<span class="token string">'page callback'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'drupal_get_form'</span><span class="token punctuation">,</span>
+		<span class="token string">'page arguments'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token string">'mymodule_registration_page'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token string">'access arguments'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token string">'access content'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+	<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token keyword keyword-return">return</span> <span class="token variable">$items</span><span class="token punctuation">;</span>	
+<span class="token punctuation">}</span>
+
+<span class="token keyword keyword-function">function</span> <span class="token function">mymodule_registration_page</span><span class="token punctuation">(</span><span class="token variable">$form</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span><span class="token variable">$form_state</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token variable">$form</span><span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+		<span class="token string">'#type'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'textfield'</span><span class="token punctuation">,</span>
+		<span class="token string">'#title'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'Username'</span><span class="token punctuation">,</span>
+		<span class="token string">'#attributes'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token string">'class'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token string">'hidevaluetext'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+	<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token variable">$form</span><span class="token punctuation">[</span><span class="token string">'pass'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+		<span class="token string">'#type'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'password'</span><span class="token punctuation">,</span>
+		<span class="token string">'#title'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'Password'</span><span class="token punctuation">,</span>
+		<span class="token string">'#attributes'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token string">'class'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token string">'hidevaluetext'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+	<span class="token punctuation">)</span><span class="token punctuation">;</span>	
+	<span class="token variable">$form</span><span class="token punctuation">[</span><span class="token string">'mail'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+		<span class="token string">'#type'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'textfield'</span><span class="token punctuation">,</span>
+		<span class="token string">'#title'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'E-mail'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+	<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token variable">$form</span><span class="token punctuation">[</span><span class="token string">'submit'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+		<span class="token string">'#type'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'submit'</span><span class="token punctuation">,</span>
+		<span class="token string">'#value'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'Create new account'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+	<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token keyword keyword-return">return</span> <span class="token variable">$form</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span>
+<span class="token keyword keyword-function">function</span> <span class="token function">mymodule_registration_page_submit</span><span class="token punctuation">(</span><span class="token variable">$form</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span><span class="token variable">$form_state</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token variable">$pass</span> <span class="token operator">=</span> <span class="token function">user_password</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token variable">$newuser</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+	  <span class="token string">'name'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$form_state</span><span class="token punctuation">[</span><span class="token string">'values'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+	  <span class="token string">'pass'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$pass</span><span class="token punctuation">,</span>
+	  <span class="token string">'mail'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$form_state</span><span class="token punctuation">[</span><span class="token string">'values'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'mail'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+	  <span class="token string">'init'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$form_state</span><span class="token punctuation">[</span><span class="token string">'values'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'mail'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+	  <span class="token string">'status'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">,</span>
+	<span class="token punctuation">)</span><span class="token punctuation">;</span>         
+	<span class="token variable">$user</span> <span class="token operator">=</span> <span class="token function">user_save</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">,</span> <span class="token variable">$newuser</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token variable">$user</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">password</span> <span class="token operator">=</span> <span class="token variable">$pass</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Add plain text password into user account to generate mail tokens.</span>
+	<span class="token function">_user_mail_notify</span><span class="token punctuation">(</span><span class="token string">'register_no_approval_required'</span><span class="token punctuation">,</span> <span class="token variable">$user</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token function">drupal_set_message</span><span class="token punctuation">(</span><span class="token string">'DONE!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span> 
+</code></pre></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/2411645%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/2411645%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+<a id="comment-9551841"></a>
+<div class="comment comment-by-node-author comment-content-9551841 clearfix">
+  <a href="https://www.drupal.org/u/satvision83" title="View user profile." class="picture"><img src="./Create a registration form _ Drupal.org_files/default-avatar.png" width="80" height="80" alt="satvision83’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/node/2411645#comment-9551841" class="permalink active" rel="bookmark">I've got some new situation</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/satvision83" title="View user profile." data-uid="1832998" class="username">satvision83</a> commented <time pubdate="" datetime="2015-01-25T20:57:37+00:00" data-created-date="25 January 2015 at 20:57" title="25 January 2015 at 20:57 (click to toggle)">3 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>I've got some new situation here.<br>
+I have Services+REST installed and on the custom page "/registration" I cannot register a user with JSON. I've already tested with Poster Firefox add-on.<br>
+If I turn off the custom module that has multistep form and connects with the webservice, the JSON registering works perfectly.</p>
+<p>So, I guess the idea with the custom /registration page has failed in this situation.</p>
+<p>WorldFallz, please can you help me with the conditions which registration should be shown? </p>
+<p>My module starts like this:</p>
+<pre class="codeblock language-php"><code class=" language-php"><span class="token keyword keyword-require_once">require_once</span> <span class="token punctuation">(</span><span class="token string">'sites/all/SOAP/lib/nusoap.php'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/**
+ * Implements hook_form_FORM_ID_alter().
+ */</span>
+<span class="token keyword keyword-function">function</span> <span class="token function">mymodule_form_user_register_form_alter</span><span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token variable">$form</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span><span class="token variable">$form_state</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//the code here with the multistep form.</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//and the code continues with the form, validating and submitting....</span>
+</code></pre><p>
+How do I make a condition when to use the custom form and when to use the default?</p></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/2411645%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/2411645%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+
+<div class="indented"><a id="comment-9552055"></a>
+<div class="comment comment-content-9552055 clearfix">
+  <a href="https://www.drupal.org/u/jaypan" title="View user profile." class="picture"><img src="./Create a registration form _ Drupal.org_files/picture-324696-1401239339.png" width="80" height="80" alt="Jaypan’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/node/2411645#comment-9552055" class="permalink active" rel="bookmark">Why are you trying to use the</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/jaypan" title="View user profile." data-uid="324696" class="username">Jaypan</a> commented <time pubdate="" datetime="2015-01-25T22:57:07+00:00" data-created-date="25 January 2015 at 22:57" title="25 January 2015 at 22:57 (click to toggle)">3 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Why are you trying to use the same path for registering using services, and registering through a browser?</p></div></div></div>        <div class="user-signature clearfix">
+      <hr>
+Checkout my <a href="http://www.sensei-and-the-geek.com/" rel="nofollow">Japan podcasts</a>.    </div>
+      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/2411645%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/2411645%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+
+<div class="indented"><a id="comment-9552611"></a>
+<div class="comment comment-by-node-author comment-content-9552611 clearfix">
+  <a href="https://www.drupal.org/u/satvision83" title="View user profile." class="picture"><img src="./Create a registration form _ Drupal.org_files/default-avatar.png" width="80" height="80" alt="satvision83’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/node/2411645#comment-9552611" class="permalink active" rel="bookmark">Hi, Jaypan.</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/satvision83" title="View user profile." data-uid="1832998" class="username">satvision83</a> commented <time pubdate="" datetime="2015-01-26T08:08:43+00:00" data-created-date="26 January 2015 at 08:08" title="26 January 2015 at 08:08 (click to toggle)">3 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Hi, Jaypan.</p>
+<p>I think I'm not trying to use the same path.</p>
+<p>With my custom module first I'm altering the register form on this default path "user/register". The users has to use the multistep form that connects with the external web service and validating.</p>
+<p>On my other part of the code I've created a new menu with path "/registration". On that page callback I'm using <code class=" language-php"><span class="token variable">$form</span> <span class="token operator">=</span> <span class="token function">drupal_get_form</span><span class="token punctuation">(</span><span class="token string">'user_register_form'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code> to get the form and altering the elements like using <code class=" language-php"><span class="token function">unset</span><span class="token punctuation">(</span><span class="token variable">$form</span><span class="token punctuation">[</span><span class="token string">'actions'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'name_of_the_element_from_the_custom_form'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code> and setting <code class=" language-php"><span class="token shell-comment comment">#access = TRUE</span></code> to the elements that I've previously hidden on the altered form.</p>
+<p>On the services module settings I've set the user alias to "registration", but when I test with the Poster add-on on that page url/endpoint_path/registration, the results show the fields from the custom form that uses different elements, not the form from the "registration" path.</p>
+<p>Jaypan, do you have some idea?</p></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/2411645%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/2411645%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+
+<div class="indented"><a id="comment-9552731"></a>
+<div class="comment comment-content-9552731 clearfix">
+  <a href="https://www.drupal.org/u/jaypan" title="View user profile." class="picture"><img src="./Create a registration form _ Drupal.org_files/picture-324696-1401239339.png" width="80" height="80" alt="Jaypan’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/node/2411645#comment-9552731" class="permalink active" rel="bookmark">Yes, I understand your</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/jaypan" title="View user profile." data-uid="324696" class="username">Jaypan</a> commented <time pubdate="" datetime="2015-01-26T09:13:36+00:00" data-created-date="26 January 2015 at 09:13" title="26 January 2015 at 09:13 (click to toggle)">3 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Yes, I understand your problem.</p>
+<p>You can take care of this using hook_forms(). This hook allows you to create aliases for forms, so that the same form can be used multiple times. You want an alias of the registration form. So you can do something like this:</p>
+<pre class="codeblock language-php"><code class=" language-php"><span class="token keyword keyword-function">function</span> <span class="token function">MODULENAME_forms</span><span class="token punctuation">(</span><span class="token variable">$form_id</span><span class="token punctuation">,</span> <span class="token variable">$args</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+  <span class="token variable">$forms</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment" spellcheck="true">// Alias the user_register_form() form</span>
+  <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span><span class="token variable">$form_id</span> <span class="token operator">==</span> <span class="token string">'MODULENAME_user_register_form'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">{</span>
+    <span class="token variable">$forms</span><span class="token punctuation">[</span><span class="token string">'MODULENAME_user_register_form'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span>
+    <span class="token punctuation">(</span>
+      <span class="token string">'callback'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'user_register_form'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword keyword-return">return</span> <span class="token variable">$forms</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>Note: Replace MODULENAME with the machine name of your module.</p>
+<p>Then, instead of:</p>
+<pre class="codeblock language-php"><code class=" language-php"><span class="token variable">$form</span> <span class="token operator">=</span> <span class="token function">drupal_get_form</span><span class="token punctuation">(</span><span class="token string">'user_register_form'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>You use:</p>
+<pre class="codeblock language-php"><code class=" language-php"><span class="token variable">$form</span> <span class="token operator">=</span> <span class="token function">drupal_get_form</span><span class="token punctuation">(</span><span class="token string">'MODULENAME_user_register_form'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>
+By doing this, the forms will have different a $form_id in hook_form_alter(), so you can alter each form accordingly.</p></div></div></div>        <div class="user-signature clearfix">
+      <hr>
+Checkout my <a href="http://www.sensei-and-the-geek.com/" rel="nofollow">Japan podcasts</a>.    </div>
+      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/2411645%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/2411645%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+
+<div class="indented"><a id="comment-9552861"></a>
+<div class="comment comment-by-node-author comment-content-9552861 clearfix">
+  <a href="https://www.drupal.org/u/satvision83" title="View user profile." class="picture"><img src="./Create a registration form _ Drupal.org_files/default-avatar.png" width="80" height="80" alt="satvision83’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/node/2411645#comment-9552861" class="permalink active" rel="bookmark">I've tried with your your</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/satvision83" title="View user profile." data-uid="1832998" class="username">satvision83</a> commented <time pubdate="" datetime="2015-01-28T15:57:29+00:00" data-created-date="28 January 2015 at 15:57" title="28 January 2015 at 15:57 (click to toggle)">3 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>.....</p></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/2411645%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/2411645%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+
+<div class="indented"><a id="comment-9553931"></a>
+<div class="comment comment-content-9553931 clearfix">
+  <a href="https://www.drupal.org/u/jaypan" title="View user profile." class="picture"><img src="./Create a registration form _ Drupal.org_files/picture-324696-1401239339.png" width="80" height="80" alt="Jaypan’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/node/2411645#comment-9553931" class="permalink active" rel="bookmark">You are calling drupal_get</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/jaypan" title="View user profile." data-uid="324696" class="username">Jaypan</a> commented <time pubdate="" datetime="2015-01-26T15:53:18+00:00" data-created-date="26 January 2015 at 15:53" title="26 January 2015 at 15:53 (click to toggle)">3 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>You are calling drupal_get_form() twice, once in your hook_menu() definition, then again in the function definition that is called for your path. You need to change the callback for the menu definition, then make your alterations in hook_form_later():</p>
+<pre class="codeblock language-php"><code class=" language-php"><span class="token keyword keyword-function">function</span> <span class="token function">custom_register_menu</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token variable">$items</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//The second form for register users with Services+REST+JSON</span>
+    <span class="token variable">$items</span><span class="token punctuation">[</span><span class="token string">'registration'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+        <span class="token string">'title'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'Registration'</span><span class="token punctuation">,</span>
+        <span class="token string">'page callback'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'drupal_get_form'</span><span class="token punctuation">,</span>
+        <span class="token string">'page arguments'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token string">'custom_register_user_register_form'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token string">'access arguments'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token string">'access content'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword keyword-return">return</span> <span class="token variable">$items</span><span class="token punctuation">;</span>    
+<span class="token punctuation">}</span>
+
+<span class="token keyword keyword-function">function</span> <span class="token function">custom_register_form_alter</span><span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token variable">$form</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span><span class="token variable">$form_state</span><span class="token punctuation">,</span> <span class="token variable">$form_id</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+  <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span><span class="token variable">$form_id</span> <span class="token operator">==</span> <span class="token string">'custom_register_user_register_form'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">{</span>
+    <span class="token variable">$form</span><span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'#attributes'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'class'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'hidevaluetext'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div></div>        <div class="user-signature clearfix">
+      <hr>
+Checkout my <a href="http://www.sensei-and-the-geek.com/" rel="nofollow">Japan podcasts</a>.    </div>
+      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/2411645%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/2411645%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+
+<div class="indented"><a id="comment-9561759"></a>
+<div class="comment comment-by-node-author comment-content-9561759 clearfix">
+  <a href="https://www.drupal.org/u/satvision83" title="View user profile." class="picture"><img src="./Create a registration form _ Drupal.org_files/default-avatar.png" width="80" height="80" alt="satvision83’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/node/2411645#comment-9561759" class="permalink active" rel="bookmark">Sorry about the delay.</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/satvision83" title="View user profile." data-uid="1832998" class="username">satvision83</a> commented <time pubdate="" datetime="2015-01-28T16:05:14+00:00" data-created-date="28 January 2015 at 16:05" title="28 January 2015 at 16:05 (click to toggle)">3 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Sorry about the delay.<br>
+I must say I'm pretty confused.</p>
+<p>Here's the things I've tried till now:</p>
+<p>The module name is "custom_register".<br>
+First I've altered the default register form with this:<br><code class=" language-php"><span class="token keyword keyword-function">function</span> <span class="token function">custom_register_form_user_register_form_alter</span><span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token variable">$form</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span><span class="token variable">$form_state</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></code><br>
+Inside that function I've created the complex multistep form, connects with an external web service, getting the results etc. It's working perfectly.</p>
+<p>Now I've implemented hook_menu() and here's the code:</p>
+<pre class="codeblock language-php"><code class=" language-php"><span class="token keyword keyword-function">function</span> <span class="token function">custom_register_menu</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token variable">$items</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token variable">$items</span><span class="token punctuation">[</span><span class="token string">'registration'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+		<span class="token string">'title'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'Registration'</span><span class="token punctuation">,</span>
+		<span class="token string">'page callback'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'drupal_get_form'</span><span class="token punctuation">,</span>
+		<span class="token string">'page arguments'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token string">'custom_register_user_register_form'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token string">'access arguments'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token string">'access content'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+	<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword keyword-return">return</span> <span class="token variable">$items</span><span class="token punctuation">;</span>	
+<span class="token punctuation">}</span>
+</code></pre><p>So the path "/registration" will be the url of the page and "custom_register_user_register_form" will be the second form.</p>
+<p>I've implemented hook_forms():</p>
+<pre class="codeblock language-php"><code class=" language-php"><span class="token keyword keyword-function">function</span> <span class="token function">custom_register_forms</span><span class="token punctuation">(</span><span class="token variable">$form_id</span><span class="token punctuation">,</span> <span class="token variable">$args</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token variable">$forms</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment" spellcheck="true">// Alias the user_register_form() form</span>
+  <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span><span class="token variable">$form_id</span> <span class="token operator">==</span> <span class="token string">'custom_register_user_register_form'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token variable">$forms</span><span class="token punctuation">[</span><span class="token string">'custom_register_user_register_form'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span> <span class="token punctuation">(</span>
+      <span class="token string">'callback'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'user_register_form'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword keyword-return">return</span> <span class="token variable">$forms</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>
+Now what should I put inside the<br><code class=" language-php"><span class="token keyword keyword-function">function</span> <span class="token function">custom_register_user_register_form</span><span class="token punctuation">(</span><span class="token variable">$form</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span><span class="token variable">$form_state</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></code> ?</p>
+<p>I've tried to call with <code class=" language-php"><span class="token function">drupal_get_form</span><span class="token punctuation">(</span><span class="token string">'user_register_form'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>,<br>
+its displaying nothing. I've put new fields here, but when I've test with the Poster on the /registration page with the webservice, it's delaying and after 15 seconds it shows the errors from the custom form, I mean It shows the validating details about the values that relates with the altered form, not the default. </p>
+<p>I'll mention this again. When I disable the custom module, the Poster registers a new users with JSON without any problems.</p></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/2411645%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/2411645%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+
+<div class="indented"><a id="comment-9561961"></a>
+<div class="comment comment-content-9561961 clearfix">
+  <a href="https://www.drupal.org/u/jaypan" title="View user profile." class="picture"><img src="./Create a registration form _ Drupal.org_files/picture-324696-1401239339.png" width="80" height="80" alt="Jaypan’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/node/2411645#comment-9561961" class="permalink active" rel="bookmark">function custom_register_user</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/jaypan" title="View user profile." data-uid="324696" class="username">Jaypan</a> commented <time pubdate="" datetime="2015-01-28T16:35:44+00:00" data-created-date="28 January 2015 at 16:35" title="28 January 2015 at 16:35 (click to toggle)">3 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><blockquote><p>Now what should I put inside the function <code class=" language-php"><span class="token function">custom_register_user_register_form</span><span class="token punctuation">(</span><span class="token variable">$form</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span><span class="token variable">$form_state</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></code> ?</p></blockquote>
+<p>Nothing. You shouldn't even create this function. I'm assuming you have created this function, which is likely where your problem lies.</p>
+<p>When you call <code class=" language-php"><span class="token function">drupal_get_form</span><span class="token punctuation">(</span><span class="token constant">FORM_NAME</span><span class="token punctuation">)</span></code>, the system does the following:<br>
+1) Looks for the function FORM_NAME(). If it does not find this function it goes to #2:<br>
+2) Invokes hook_forms(), to see if any aliases exist with that name. If an alias if found, the system uses the function returned as 'callback' in hook_forms(). In your case, this means that when you <code class=" language-php"><span class="token function">drupal_get_form</span><span class="token punctuation">(</span><span class="token string">'custom_register_user_register_form'</span><span class="token punctuation">)</span></code>, the system returns the form defined in <code class=" language-php"><span class="token function">user_register_form</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>.</p>
+<p>Therefore, by creating the function <code class=" language-php"><span class="token function">custom_register_user_registration_form</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>, the system is not moving on to #2, and is trying to use the function you have defined, instead of returning the form defined in <code class=" language-php"><span class="token function">user_register_form</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>.</p>
+<p>Look at this code:</p>
+<pre class="codeblock language-php"><code class=" language-php"><span class="token keyword keyword-function">function</span> <span class="token function">custom_register_forms</span><span class="token punctuation">(</span><span class="token variable">$form_id</span><span class="token punctuation">,</span> <span class="token variable">$args</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token variable">$forms</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment" spellcheck="true">// Alias the user_register_form() form</span>
+  <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span><span class="token variable">$form_id</span> <span class="token operator">==</span> <span class="token string">'custom_register_user_register_form'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token variable">$forms</span><span class="token punctuation">[</span><span class="token string">'custom_register_user_register_form'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span> <span class="token punctuation">(</span>
+      <span class="token string">'callback'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'user_register_form'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword keyword-return">return</span> <span class="token variable">$forms</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>This function has created an alias of user_register_form(), called <code class=" language-php"><span class="token function">custom_register_user_register_form</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>. What this means is that any time you call <code class=" language-php"><span class="token function">drupal_get_form</span><span class="token punctuation">(</span><span class="token string">'custom_user_user_register_form'</span><span class="token punctuation">)</span></code>, as you are doing in your hook_menu() definition, the system will return the form defined in the function <code class=" language-php"><span class="token function">user_register_form</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>. This is the default registration form.</p>
+<p>By creating the alias, none of the multistep alterations you have created in <code class=" language-php"><span class="token function">custom_register_form_user_register_form_alter</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> will be implemented, as this function will not be called, because the form key is 'custom_register_user_register_form' and not 'user_register_form'. Therefore you will get the unaltered user registration form. If you want to alter this form for the path /registration, you will implement the function <code class=" language-php"><span class="token function">custom_register_form_custom_register_user_register_form_alter</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>.</p>
+<p>I know this is all a little convoluted, hopefully my explanation helps you understand it all.</p></div></div></div>        <div class="user-signature clearfix">
+      <hr>
+Checkout my <a href="http://www.sensei-and-the-geek.com/" rel="nofollow">Japan podcasts</a>.    </div>
+      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/2411645%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/2411645%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+
+<div class="indented"><a id="comment-9562231"></a>
+<div class="comment comment-by-node-author comment-content-9562231 clearfix">
+  <a href="https://www.drupal.org/u/satvision83" title="View user profile." class="picture"><img src="./Create a registration form _ Drupal.org_files/default-avatar.png" width="80" height="80" alt="satvision83’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/node/2411645#comment-9562231" class="permalink active" rel="bookmark">OK, now it's clear to me why</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/satvision83" title="View user profile." data-uid="1832998" class="username">satvision83</a> commented <time pubdate="" datetime="2015-01-28T19:20:51+00:00" data-created-date="28 January 2015 at 19:20" title="28 January 2015 at 19:20 (click to toggle)">3 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>OK, now it's clear to me why the second wasn't showing on this page "/registration" with this page arguments ''custom_register_user_register_form".</p>
+<p>I've already made alias that's called "custom_register_user_register_form" with hook_forms.<br>
+The code is same like you already show to me.</p>
+<p>Right now with hook_menu() I want to create the "/registration" path with page argument "custom_register_second_form", so <code class=" language-php"><span class="token keyword keyword-function">function</span> <span class="token function">custom_register_second_form</span><span class="token punctuation">(</span><span class="token variable">$form</span><span class="token punctuation">,</span> <span class="token variable">$form_state</span><span class="token punctuation">)</span></code> will be the name of the new form.</p>
+<p>How do I call the default form here? I've tried with drupal_get_form('custom_register_user_register_form'), but nothing shows.</p>
+<p>With dpm() I can see the fields from the first altered form, but they're not displayed.</p>
+<p>NEW EDIT: Here's my code:</p>
+<pre class="codeblock language-php"><code class=" language-php"><span class="token comment" spellcheck="true">/*
+ * Implements hook_menu().
+*/</span>
+
+<span class="token keyword keyword-function">function</span> <span class="token function">custom_register_menu</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token variable">$items</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token variable">$items</span><span class="token punctuation">[</span><span class="token string">'registration'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+		<span class="token string">'title'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'Registration'</span><span class="token punctuation">,</span>
+		<span class="token string">'page callback'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'drupal_get_form'</span><span class="token punctuation">,</span>
+		<span class="token string">'page arguments'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token string">'user_register_form_second'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token string">'access arguments'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token string">'access content'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+	<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword keyword-return">return</span> <span class="token variable">$items</span><span class="token punctuation">;</span>	
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">/*
+ * Implements hook_forms().
+ */</span>
+<span class="token keyword keyword-function">function</span> <span class="token function">custom_register_forms</span><span class="token punctuation">(</span><span class="token variable">$form_id</span><span class="token punctuation">,</span> <span class="token variable">$args</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token variable">$forms</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment" spellcheck="true">// Alias the user_register_form() form</span>
+  <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span><span class="token variable">$form_id</span> <span class="token operator">==</span> <span class="token string">'user_register_form_second'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token variable">$forms</span><span class="token punctuation">[</span><span class="token string">'user_register_form_second'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span> <span class="token punctuation">(</span>
+      <span class="token string">'callback'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'user_register_form'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword keyword-return">return</span> <span class="token variable">$forms</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">/**
+ * Implements hook_form_FORM_ID_alter().
+ */</span>
+<span class="token keyword keyword-function">function</span> <span class="token function">custom_register_form_user_register_form_second_alter</span><span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token variable">$form</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span><span class="token variable">$form_state</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+	<span class="token keyword keyword-return">return</span> <span class="token variable">$form</span><span class="token punctuation">;</span>
+	
+<span class="token punctuation">}</span>
+</code></pre><p>
+It still shows the altered form here. Even I unset the validations from the custom fields the Poster still see them so it doesn't work.</p>
+<p>I've changed the title of the new form, 'cause it was confusing.</p>
+<p>Yes, its convoluted indeed.</p></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/2411645%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/2411645%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+
+<div class="indented"><a id="comment-9563311"></a>
+<div class="comment comment-content-9563311 clearfix">
+  <a href="https://www.drupal.org/u/jaypan" title="View user profile." class="picture"><img src="./Create a registration form _ Drupal.org_files/picture-324696-1401239339.png" width="80" height="80" alt="Jaypan’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/node/2411645#comment-9563311" class="permalink active" rel="bookmark">Ok, I just did a bit of</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/jaypan" title="View user profile." data-uid="324696" class="username">Jaypan</a> commented <time pubdate="" datetime="2015-01-28T22:52:03+00:00" data-created-date="28 January 2015 at 22:52" title="28 January 2015 at 22:52 (click to toggle)">3 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Ok, I just did a bit of testing, and I found the problem.</p>
+<p>I don't actually use hook_form_FORMID_alter() myself, I always use hook_form_alter(), and pass the form_id. Example:</p>
+<pre class="codeblock language-php"><code class=" language-php"><span class="token keyword keyword-function">function</span> <span class="token function">custom_register_form_alter</span><span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token variable">$form</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span><span class="token variable">$form_state</span><span class="token punctuation">,</span> <span class="token variable">$form_id</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+  <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span><span class="token variable">$form_id</span> <span class="token operator">==</span> <span class="token string">'user_register_form'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// Alter user register form here</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><p>With the above method, any alterations to user_register_form() will not be applied to 'user_register_form_second'. As such, I assumed that <code class=" language-php"><span class="token function">custom_register_form_user_register_form_alter</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> would not be called, as the form ID is different. My assumption was incorrect, both <code class=" language-php"><span class="token function">custom_register_form_user_register_form_alter</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> and <code class=" language-php"><span class="token function">custom_register_form_user_register_form_second_alter</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> are called.</p>
+<p>To fix this, you need to use <code class=" language-php"><span class="token function">hook_form_alter</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> instead of <code class=" language-php"><span class="token function">hook_form_FORMID_alter</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>. So you will move all your code in <code class=" language-php"><span class="token function">custom_register_user_register_form_alter</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> into the <code class=" language-php"><span class="token function">hook_form_alter</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> implementation I showed above (where it says 'Alter user register form here'). If you need to make any alterations to <code class=" language-php"><span class="token function">user_register_form_second</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>, you will also make these in <code class=" language-php"><span class="token function">hook_form_alter</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>.</p></div></div></div>        <div class="user-signature clearfix">
+      <hr>
+Checkout my <a href="http://www.sensei-and-the-geek.com/" rel="nofollow">Japan podcasts</a>.    </div>
+      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/2411645%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/2411645%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+
+<div class="indented"><a id="comment-9564225"></a>
+<div class="comment comment-by-node-author comment-content-9564225 clearfix">
+  <a href="https://www.drupal.org/u/satvision83" title="View user profile." class="picture"><img src="./Create a registration form _ Drupal.org_files/default-avatar.png" width="80" height="80" alt="satvision83’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/node/2411645#comment-9564225" class="permalink active" rel="bookmark">I've changed the hook_form</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/satvision83" title="View user profile." data-uid="1832998" class="username">satvision83</a> commented <time pubdate="" datetime="2015-01-29T08:26:42+00:00" data-created-date="29 January 2015 at 08:26" title="29 January 2015 at 08:26 (click to toggle)">3 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>I've changed the <code class=" language-php"><span class="token function">hook_form_FORM_ID_alter</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> with <code class=" language-php"><span class="token function">hook_form_alter</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> and passed the form_id.<br>
+This is the first project that I've used <code class=" language-php"><span class="token function">hook_form_FORM_ID_alter</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>, every other was with <code class=" language-php"><span class="token function">hook_form_alter</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> :) </p>
+<p>Now there's no sign of the altered form in the second form. That's great, but when I tested with the Poster it still validates from the first altered form.</p>
+<p>I don't know if you have been working with services module and REST, but it's easy to setup. In "server" settings it has to be checked both options for json and in "Resources" I'm using alias for the user called "registration".<br>
+In my case the path endpoint is "app", so it will be called "website_url/app/registration".<br>
+Even with this setup the Poster calls the altered form, not the second form and it's not working.</p>
+<p>Now I've tried with different approach:<br>
+I've created an alias for the multistep form and it's on "/registration" path and the default form stays on "user/register" path, I've deleted the alias on the REST setting and when the Poster calls "website_url/app/user" it register the user successfully!</p>
+<p>The problem is most of spam bots knows this path "user/register" and will be register automatically. The point is to use some other path like "/registration", so it will be used only for JSON and mobile app that will be synchronized with the website, REST server, SOAP external web service and the external database.</p>
+<p>Yeah, it becomes very complicated, I know.</p></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/2411645%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/2411645%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+
+<div class="indented"><a id="comment-9564257"></a>
+<div class="comment comment-content-9564257 clearfix">
+  <a href="https://www.drupal.org/u/jaypan" title="View user profile." class="picture"><img src="./Create a registration form _ Drupal.org_files/picture-324696-1401239339.png" width="80" height="80" alt="Jaypan’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/node/2411645#comment-9564257" class="permalink active" rel="bookmark">I do use services with a REST</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/jaypan" title="View user profile." data-uid="324696" class="username">Jaypan</a> commented <time pubdate="" datetime="2015-01-29T09:13:06+00:00" data-created-date="29 January 2015 at 09:13" title="29 January 2015 at 09:13 (click to toggle)">3 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>EDIT: Before doing the following, can you list your goals? I think there may be an easier method to do achieve your goals than the method I've listed below. What paths do you want? What should happen at these paths? What are you trying to prevent from happening, and what are you trying to make happen?</p>
+<p>----------------------------</p>
+<p>I do use services with a REST server (in fact it's literally what I'm working on today). I can see the current problem you have. In the function _user_resource_create() (in services/resources/user_resource.inc), the service is submitting the submitted data to the user_register_form() here:</p>
+<pre class="codeblock language-php"><code class=" language-php">  <span class="token function">drupal_form_submit</span><span class="token punctuation">(</span><span class="token string">'user_register_form'</span><span class="token punctuation">,</span> <span class="token variable">$form_state</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>
+Of course the problem for you is that you have overridden user_register_form() as a multistep form.</p>
+<p>The way I see it, you have two options:</p>
+<p>1) Create your own resource with a CREATE method<br>
+2) Override the callback for the user resource using hook_services_resources_alter()</p>
+<p>Then in whichever method you choose, you would copy the existing callback, but change user_register_form to user_register_form_second.</p>
+<p>I would do #2 myself. To do so, you would do the following:</p>
+<pre class="codeblock language-php"><code class=" language-php"><span class="token keyword keyword-function">function</span> <span class="token function">custom_register_services_resources_alter</span><span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token variable">$resources</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+  <span class="token variable">$resources</span><span class="token punctuation">[</span><span class="token string">'file'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'operations'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'create'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'file'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'module'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'custom_register'</span><span class="token punctuation">;</span>
+  <span class="token variable">$resources</span><span class="token punctuation">[</span><span class="token string">'file'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'operations'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'create'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'file'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'custom_register.resource'</span><span class="token punctuation">;</span>
+  <span class="token variable">$resources</span><span class="token punctuation">[</span><span class="token string">'file'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'operations'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'create'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'callback'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'_custom_register_user_resource_create'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>The above tells Services to use the function <code class=" language-php"><span class="token function">_custom_register_user_resource_create</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> located in the file custom_register/custom_register.resource.inc. You will then copy the contents of <code class=" language-php"><span class="token function">_user_resource_create</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> to <code class=" language-php"><span class="token function">_custom_register_user_resource_create</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>, changing this line:</p>
+<pre class="codeblock language-php"><code class=" language-php"><span class="token function">drupal_form_submit</span><span class="token punctuation">(</span><span class="token string">'user_register_form'</span><span class="token punctuation">,</span> <span class="token variable">$form_state</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>To this:</p>
+<pre class="codeblock language-php"><code class=" language-php"><span class="token function">drupal_form_submit</span><span class="token punctuation">(</span><span class="token string">'user_register_form_second'</span><span class="token punctuation">,</span> <span class="token variable">$form_state</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>
+Note that because of this, you shouldn't even need your hook_form() implementation, since you will never be accessing the form at the path /register. </p></div></div></div>        <div class="user-signature clearfix">
+      <hr>
+Checkout my <a href="http://www.sensei-and-the-geek.com/" rel="nofollow">Japan podcasts</a>.    </div>
+      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/2411645%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/2411645%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+
+<div class="indented"><a id="comment-9564419"></a>
+<div class="comment comment-by-node-author comment-content-9564419 clearfix">
+  <a href="https://www.drupal.org/u/satvision83" title="View user profile." class="picture"><img src="./Create a registration form _ Drupal.org_files/default-avatar.png" width="80" height="80" alt="satvision83’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/node/2411645#comment-9564419" class="permalink active" rel="bookmark">The project is</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/satvision83" title="View user profile." data-uid="1832998" class="username">satvision83</a> commented <time pubdate="" datetime="2015-01-29T14:52:16+00:00" data-created-date="29 January 2015 at 14:52" title="29 January 2015 at 14:52 (click to toggle)">3 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>EDIT:<br>
+Jay, I've just edited "user_resource.inc" on line 326 with "user_register_form_second" and the poster is working great.<br>
+I think that will be right solution for this, 'cause I wont need REST for 'user_register_form' in future.<br>
+Thank you very very much to teach me about hook_forms() and lot's of ideas here.<br>
+If you have some new advice here, I'm pleased to read.<br>
+_________________________________________________________</p>
+<p>The project is for a bank and right now I'm adding the last features. It's quite complex.<br>
+It will have a mobile application too, and that's why I'm doing this on the website, so the app can be synchronized when a special user registers there.  These users are not regular like anyone, but they are clients.<br>
+There were many new features, so the mobile app will be able to get the whole data from the website.</p>
+<p>So the task here is on the "/registration" page to be able to register with JSON and I'm passing the details to the other guy that works for the bank.<br>
+But as you see because of the altered multistep form, the Services module is trying to post the data on "user_register_form", not "user_register_form_second".<br>
+As I mention it before when I'm disabling the custom_register.module, posting data with JSON is working perfectly and it's registering a user with no problems.</p>
+<p>OK, now I've did this, correct me If I do something wrong:</p>
+<p>First, I'm using now hook_form_alter() with the form_id parameter, not hook_form_FORM_ID_alter().<br>
+That's for the multistep form.</p>
+<p>Down bellow I've added this code:</p>
+<pre class="codeblock language-php"><code class=" language-php"><span class="token comment" spellcheck="true">/*
+ * Implements hook_forms().
+ */</span>
+<span class="token keyword keyword-function">function</span> <span class="token function">custom_register_forms</span><span class="token punctuation">(</span><span class="token variable">$form_id</span><span class="token punctuation">,</span> <span class="token variable">$args</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token variable">$forms</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment" spellcheck="true">// Alias the user_register_form() form</span>
+  <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span><span class="token variable">$form_id</span> <span class="token operator">==</span> <span class="token string">'user_register_form_second'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token variable">$forms</span><span class="token punctuation">[</span><span class="token string">'user_register_form_second'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span> <span class="token punctuation">(</span>
+      <span class="token string">'callback'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'user_register_form'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword keyword-return">return</span> <span class="token variable">$forms</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">/*
+ * Implements hook_menu().
+*/</span>
+
+<span class="token keyword keyword-function">function</span> <span class="token function">custom_register_menu</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token variable">$items</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token variable">$items</span><span class="token punctuation">[</span><span class="token string">'registration'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+		<span class="token string">'title'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'Registration'</span><span class="token punctuation">,</span>
+		<span class="token string">'page callback'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'drupal_get_form'</span><span class="token punctuation">,</span>
+		<span class="token string">'page arguments'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token string">'user_register_form_second'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token string">'access arguments'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token string">'access content'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+	<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token keyword keyword-return">return</span> <span class="token variable">$items</span><span class="token punctuation">;</span>	
+<span class="token punctuation">}</span>
+<span class="token keyword keyword-function">function</span> <span class="token function">custom_register_services_resources_alter</span><span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token variable">$resources</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token variable">$resources</span><span class="token punctuation">[</span><span class="token string">'file'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'operations'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'create'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'file'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'module'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'custom_register'</span><span class="token punctuation">;</span>
+  <span class="token variable">$resources</span><span class="token punctuation">[</span><span class="token string">'file'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'operations'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'create'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'file'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'custom_register.resource'</span><span class="token punctuation">;</span>
+  <span class="token variable">$resources</span><span class="token punctuation">[</span><span class="token string">'file'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'operations'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'create'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'callback'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'_custom_register_user_resource_create'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre><p>Created an alias, so the "/registration" path is displaying the default Drupal form.<br>
+As you see I've added your code for altering the services.<br>
+After that I've created a new file called: custom_register.resource.inc.<br>
+Inside that file I've copied all the contents from "user_resource.inc" and on line 326 I've set<br><code class=" language-php"><span class="token function">drupal_form_submit</span><span class="token punctuation">(</span><span class="token string">'user_register_form_second'</span><span class="token punctuation">,</span> <span class="token variable">$form_state</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></p>
+<p>I've tried again with poster, it doesn't work.</p>
+<p>I'll write this again. I've tried to do opposite, to set the multistep form on the "/registration" path, so "user/register" will be displaying the default form. The poster registers a new user with no problem, but I'm afraid  "user/register" is way too known path for the spam bots.<br>
+That's why I need not so regular path. Later I might change the "/registration" to something different, of course. After all that path will be only for registering the users with JSON, not for anyone.</p></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/2411645%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/2411645%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+</div></div></div></div></div></div></div></div><a id="comment-9553655"></a>
+<div class="comment comment-content-9553655 clearfix">
+  <a href="https://www.drupal.org/u/worldfallz" title="View user profile." class="picture"><img src="./Create a registration form _ Drupal.org_files/picture-155304-1458438965.png" width="80" height="80" alt="WorldFallz’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/node/2411645#comment-9553655" class="permalink active" rel="bookmark">_</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/worldfallz" title="View user profile." data-uid="155304" class="username">WorldFallz</a> commented <time pubdate="" datetime="2015-01-26T14:50:00+00:00" data-created-date="26 January 2015 at 14:50" title="26 January 2015 at 14:50 (click to toggle)">3 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>I'd never thought to do it this way-- brilliant!</p></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/2411645%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/2411645%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+
+<div class="indented"><a id="comment-9553947"></a>
+<div class="comment comment-content-9553947 clearfix">
+  <a href="https://www.drupal.org/u/jaypan" title="View user profile." class="picture"><img src="./Create a registration form _ Drupal.org_files/picture-324696-1401239339.png" width="80" height="80" alt="Jaypan’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/node/2411645#comment-9553947" class="permalink active" rel="bookmark">Thanks WF!</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/jaypan" title="View user profile." data-uid="324696" class="username">Jaypan</a> commented <time pubdate="" datetime="2015-01-26T15:55:46+00:00" data-created-date="26 January 2015 at 15:55" title="26 January 2015 at 15:55 (click to toggle)">3 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Thanks WF!</p>
+<p>You can look at my <a href="http://dgo.to/fancy_login" rel="nofollow">Fancy Login module</a> to see how I've used this technique to customize all three user/* forms and ajaxify them. I actually had to look at it to remember how I did it :)</p></div></div></div>        <div class="user-signature clearfix">
+      <hr>
+Checkout my <a href="http://www.sensei-and-the-geek.com/" rel="nofollow">Japan podcasts</a>.    </div>
+      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/2411645%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/2411645%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+
+<div class="indented"><a id="comment-9561855"></a>
+<div class="comment comment-by-node-author comment-content-9561855 clearfix">
+  <a href="https://www.drupal.org/u/satvision83" title="View user profile." class="picture"><img src="./Create a registration form _ Drupal.org_files/default-avatar.png" width="80" height="80" alt="satvision83’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/node/2411645#comment-9561855" class="permalink active" rel="bookmark">Proper for your great module!</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/satvision83" title="View user profile." data-uid="1832998" class="username">satvision83</a> commented <time pubdate="" datetime="2015-01-28T16:06:56+00:00" data-created-date="28 January 2015 at 16:06" title="28 January 2015 at 16:06 (click to toggle)">3 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Congrats for your great module!</p></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/2411645%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/2411645%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+</div></div></div></div></div></div></div>
+  </section>
+  </div>
+  </div>
+</div>
+  </div>
+</div>
+                  </div> <!-- /#content -->
+
+      </div> <!-- /#column-left -->
+
+      
+          </div>  </div> <!-- /#page -->
+
+  <div id="footer" role="contentinfo">
+            <div class="region region-footer">
+    <div id="block-drupalorg-crosssite-drupalorg-footer" class="block block-drupalorg-crosssite">
+<div class="block-inner">
+    
+  <div class="content">
+    <h4 class="element-invisible">News items</h4><ul class="drupal-news"><li class="0 first"><a href="https://www.drupal.org/news">News</a></li>
+<li class="1"><a href="https://www.drupal.org/planet" title="News from Drupal community members">Planet Drupal</a></li>
+<li class="2"><a href="https://www.drupal.org/social-media" title="Drupal on social media">Social media directory</a></li>
+<li class="3"><a href="https://www.drupal.org/security" title="Advisories from the security team">Security announcements</a></li>
+<li class="4 last"><a href="https://jobs.drupal.org/" title="Drupal Jobs">Jobs</a></li>
+</ul><h4 class="element-invisible">Our community</h4><ul class="community"><li class="0 first"><a href="https://drupal.org/community">Community</a></li>
+<li class="1"><a href="https://drupal.org/getting-involved" title="Learn how to contribute to the Drupal project">Getting involved</a></li>
+<li class="2"><span><a href="https://drupal.org/drupal-services" title="People and organizations offering Drupal services">Services</a>, <a href="https://drupal.org/training" title="People and organizations offering Drupal training">Training</a> &amp; <a href="https://drupal.org/hosting" title="Organizations offering Drupal hosting">Hosting</a></span></li>
+<li class="3"><a href="https://groups.drupal.org/groups" title="groups.drupal.org">Groups &amp; Meetups</a></li>
+<li class="4"><a href="https://events.drupal.org/" title="Upcoming and past DrupalCons">DrupalCon</a></li>
+<li class="5 last"><a href="https://drupal.org/dcoc" title="Drupal code of conduct">Code of conduct</a></li>
+</ul><h4 class="element-invisible">Documentation</h4><ul class="get-started"><li class="0 first"><a href="https://drupal.org/documentation" title="Documentation for working with Drupal">Documentation</a></li>
+<li class="1"><a href="https://www.drupal.org/docs/8">Drupal 8 docs</a></li>
+<li class="2"><a href="https://www.drupal.org/docs/7">Drupal 7 docs</a></li>
+<li class="3"><a href="https://www.drupal.org/documentation/develop">Developer docs</a></li>
+<li class="4 last"><a href="https://api.drupal.org/" title="Drupal API reference">api.drupal.org</a></li>
+</ul><h4 class="element-invisible">Drupal code base</h4><ul class="download-extend"><li class="0 first"><a href="https://drupal.org/download">Download &amp; Extend</a></li>
+<li class="1"><a href="https://drupal.org/project/drupal" title="Download the latest version of the Drupal software">Drupal core</a></li>
+<li class="2"><a href="https://drupal.org/project/project_module" title="Download add-on features and functionality">Modules</a></li>
+<li class="3"><a href="https://drupal.org/project/project_theme" title="Download pre-designed styles for Drupal">Themes</a></li>
+<li class="4 last"><a href="https://drupal.org/project/project_distribution" title="Download a pre-packaged Drupal site">Distributions</a></li>
+</ul><h4 class="element-invisible">Governance of community</h4><ul class="about"><li class="0 first"><a href="https://drupal.org/about">About</a></li>
+<li class="1"><a href="https://drupal.org/about/accessibility" title="Our committment to accessibility">Web accessibility</a></li>
+<li class="2"><a href="https://drupal.org/association" title="About the Drupal Association">The Drupal Association</a></li>
+<li class="3"><a href="https://drupal.org/drupalorg" title="About Drupal.org">About Drupal.org</a></li>
+<li class="4"><a href="https://drupal.org/terms" title="Drupal.org terms of service">Terms of service</a></li>
+<li class="5 last"><a href="https://drupal.org/privacy" title="Drupal.org privacy policy">Privacy policy</a></li>
+</ul>  </div>
+  </div>
+</div>
+<div id="block-block-77" class="block block-block">
+<div class="block-inner">
+    
+  <div class="content">
+    <p>Drupal is a <a href="http://drupal.com/trademark" rel="nofollow">registered trademark</a> of <a href="https://dri.es/" rel="nofollow">Dries Buytaert</a>.</p>  </div>
+  </div>
+</div>
+  </div>
+      </div>
+  
+<!--[if lte IE 9]>
+<script type="text/javascript" src="https://www.drupal.org/files/advagg_js/js__79M6UrZjAw3oNGnUjsWip12JsvnUZmJGA3h9LI0kuzE__LqE6uSZqCOZhJYW910TDw_HTQzBKUPTZxunfaWkalq8__zGbh0Vkd6-Upw_meABdy9qwehpIxfCh8fKwHkW793IE.js#ie9-" onload="if(jQuery.isFunction(jQuery.holdReady)){jQuery.holdReady(true);}"></script>
+<![endif]-->
+
+<!--[if gt IE 9]>
+<script type="text/javascript" src="https://www.drupal.org/files/advagg_js/js__79M6UrZjAw3oNGnUjsWip12JsvnUZmJGA3h9LI0kuzE__LqE6uSZqCOZhJYW910TDw_HTQzBKUPTZxunfaWkalq8__zGbh0Vkd6-Upw_meABdy9qwehpIxfCh8fKwHkW793IE.js#ie10+" defer="defer" onload="if(jQuery.isFunction(jQuery.holdReady)){jQuery.holdReady(true);}"></script>
+<![endif]-->
+
+<!--[if !IE]><!-->
+<script type="text/javascript" src="./Create a registration form _ Drupal.org_files/js__79M6UrZjAw3oNGnUjsWip12JsvnUZmJGA3h9LI0kuzE__LqE6uSZqCOZhJYW910TDw_HTQzBKUPTZxunfaWkalq8__zGbh0Vkd6-Upw_meABdy9qwehpIxfCh8fKwHkW793IE.js" defer="defer" onload="if(jQuery.isFunction(jQuery.holdReady)){jQuery.holdReady(true);}"></script>
+<!--<![endif]-->
+<script type="text/javascript" src="./Create a registration form _ Drupal.org_files/js__H5AFmq1RrXKsrazzPq_xPQPy4K0wUKqecPjczzRiTgQ__ZHqvWr-79k4Y5DRTd0KcuNHgFp9UJZlb3B0Bi5eGu3M__zGbh0Vkd6-Upw_meABdy9qwehpIxfCh8fKwHkW793IE.js" defer="defer" onload="
+function advagg_mod_1() {
+  // Count how many times this function is called.
+  advagg_mod_1.count = ++advagg_mod_1.count || 1;
+  try {
+    if (advagg_mod_1.count &lt;= 40) {
+      init_drupal_core_settings();
+
+      // Set this to 100 so that this function only runs once.
+      advagg_mod_1.count = 100;
+    }
+  }
+  catch(e) {
+    if (advagg_mod_1.count &gt;= 40) {
+      // Throw the exception if this still fails after running 40 times.
+      throw e;
+    }
+    else {
+      // Try again in 1 ms.
+      window.setTimeout(advagg_mod_1, 1);
+    }
+  }
+}
+function advagg_mod_1_check() {
+  if (window.init_drupal_core_settings &amp;&amp; window.jQuery &amp;&amp; window.Drupal) {
+    advagg_mod_1();
+  }
+  else {
+    window.setTimeout(advagg_mod_1_check, 1);
+  }
+}
+advagg_mod_1_check();"></script>
+<script type="text/javascript" src="./Create a registration form _ Drupal.org_files/js__y-0WF9wbsKup6UtG11ZtdWgidCFrAqzehETdOPtD3QM__LyuAxUNiVV0aTeQ6yCz3raaZRgDHi84llpu8a4LvXWc__zGbh0Vkd6-Upw_meABdy9qwehpIxfCh8fKwHkW793IE.js" defer="defer"></script>
+<script type="text/javascript" defer="defer" async="async" src="./Create a registration form _ Drupal.org_files/analytics.js"></script>
+<script type="text/javascript" src="./Create a registration form _ Drupal.org_files/js__hHUWFbMAa11eJtx5V0ym9o0YBsB1udk34qUT5wr1ihI__w1AuxI-Is3CtQ1nu9fAoIO4cMrl8j5oxHT1ffMU00Zo__zGbh0Vkd6-Upw_meABdy9qwehpIxfCh8fKwHkW793IE.js" defer="defer"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-2360451-1", {"cookieDomain":"auto"});ga("set", "dimension3", "anonymous user");ga("set", "dimension4", "Forum topic");ga("set", "dimension1", "Module Development and Code Questions");ga("set", "dimension2", "community");ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+function init_drupal_core_settings() {jQuery.extend(Drupal.settings,{"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"bluecheese","theme_token":"3W5bR2rT0x5x13fh4yjkZpQWzI2V3b4UCYJ78h4c1FU"},"jcarousel":{"ajaxPath":"\/jcarousel\/ajax\/views"},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"urlIsAjaxTrusted":{"\/node\/2411645":true}});
+if(jQuery.isFunction(jQuery.holdReady)){jQuery.holdReady(false);}} if(window.jQuery && window.Drupal){init_drupal_core_settings();}
+//--><!]]>
+</script>
+<script type="text/javascript" src="./Create a registration form _ Drupal.org_files/js__to4E6ed7qbWQIIrZ8SjAf2iDoY3ZkHhlZySO3qQI4ws__30g4_YLNJDK0tUDy1vJDyqtAnbRAen2hxqieAjRIb3Q__zGbh0Vkd6-Upw_meABdy9qwehpIxfCh8fKwHkW793IE.js" defer="defer"></script>
+
+
+</body></html>

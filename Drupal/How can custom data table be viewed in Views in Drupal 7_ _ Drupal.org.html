@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<!-- saved from url=(0121)https://www.drupal.org/forum/support/module-development-and-code-questions/2012-03-03/how-can-custom-data-table-be-viewed -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr" xmlns:fb="http://ogp.me/ns/fb#" xmlns:og="http://ogp.me/ns#" xmlns:article="http://ogp.me/ns/article#" xmlns:book="http://ogp.me/ns/book#" xmlns:profile="http://ogp.me/ns/profile#" xmlns:video="http://ogp.me/ns/video#" xmlns:product="http://ogp.me/ns/product#" class="js"><head profile="http://www.w3.org/1999/xhtml/vocab"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width">
+  <meta name="MobileOptimized" content="width">
+  <!--[if IE]><![endif]-->
+
+<link rel="dns-prefetch" href="https://www.google-analytics.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link rel="preconnect" href="https://www.google-analytics.com/">
+<link rel="preconnect" href="https://stats.g.doubleclick.net/">
+<link rel="dns-prefetch" href="https://stats.g.doubleclick.net/">
+<meta name="description" content="I created a custom table using Schema API, and add some data to it. The table is called &quot;Cars&quot;, and have the following fields: serial number, make, model, year, mileage. Then I am going to Views to create views but can&#39;t find the table and the fields in the table cars. Could someone please let me know how this should be done? I know I can write a custom module to output myself, but I would like to feed the table back to View module for more flexibility. Thank you very much.">
+<meta name="generator" content="Drupal 7 (http://drupal.org)">
+<link rel="canonical" href="https://www.drupal.org/forum/support/module-development-and-code-questions/2012-03-03/how-can-custom-data-table-be-viewed">
+<link rel="shortlink" href="https://www.drupal.org/node/1466366">
+<meta property="og:site_name" content="Drupal.org">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.drupal.org/forum/support/module-development-and-code-questions/2012-03-03/how-can-custom-data-table-be-viewed">
+<meta property="og:title" content="How can custom data table be viewed in Views in Drupal 7?">
+<meta property="og:description" content="I created a custom table using Schema API, and add some data to it. The table is called &quot;Cars&quot;, and have the following fields: serial number, make, model, year, mileage. Then I am going to Views to create views but can&#39;t find the table and the fields in the table cars. Could someone please let me know how this should be done? I know I can write a custom module to output myself, but I would like to feed the table back to View module for more flexibility. Thank you very much.">
+<meta property="og:updated_time" content="2012-03-03T17:53:18+00:00">
+<meta property="article:published_time" content="2012-03-03T17:52:04+00:00">
+<meta property="article:modified_time" content="2012-03-03T17:53:18+00:00">
+  <title>How can custom data table be viewed in Views in Drupal 7? | Drupal.org</title>
+  <link type="text/css" rel="stylesheet" href="./How can custom data table be viewed in Views in Drupal 7_ _ Drupal.org_files/css__F7qWzHu9exaCJEYsQHu4vlsmrwSsr-qGjQnU92OTBGg__HE-ON2wi0ZHmA1wJMd9l5pXEt1FafFXA2XQdUHDdRdE__zGbh0Vkd6-Upw_meABdy9qwehpIxfCh8fKwHkW793IE.css" media="all">
+<link type="text/css" rel="stylesheet" href="./How can custom data table be viewed in Views in Drupal 7_ _ Drupal.org_files/css__QPp1snPjYt_xYr0c_V0IORcEElkIUBBBrvOB4ZE0Gnw__lAwma6H33ZZUXjcYq0FS15h4HhpUCPqHNjRgfdAUWE4__zGbh0Vkd6-Upw_meABdy9qwehpIxfCh8fKwHkW793IE.css" media="all">
+  <script type="text/javascript" async="" src="./How can custom data table be viewed in Views in Drupal 7_ _ Drupal.org_files/54419274f6c96ed073000003.js"></script><script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var preconnect_support = false; try {if (document.createElement("link").relList.supports("preconnect")) {preconnect_support = true;}} catch (e) {} if (!preconnect_support) { var prefetch = document.createElement("link"); prefetch.href = "https://stats.g.doubleclick.net/robots.txt"; prefetch.rel="prefetch"; document.getElementsByTagName("head")[0].appendChild(prefetch);}
+//--><!]]>
+</script>
+<script type="text/javascript" async="" src="./How can custom data table be viewed in Views in Drupal 7_ _ Drupal.org_files/tagjs"></script><img src="./How can custom data table be viewed in Views in Drupal 7_ _ Drupal.org_files/saved_resource" width="1" height="1" border="0"><img src="./How can custom data table be viewed in Views in Drupal 7_ _ Drupal.org_files/saved_resource(1)" width="1" height="1" border="0"><img src="./How can custom data table be viewed in Views in Drupal 7_ _ Drupal.org_files/saved_resource(2)" width="1" height="1" border="0"><img src="./How can custom data table be viewed in Views in Drupal 7_ _ Drupal.org_files/seg" width="1" height="1" border="0"></head>
+<body class="html not-front not-logged-in one-sidebar sidebar-second page-node page-node- page-node-1466366 node-type-forum drupalorg-site-main no-panels-layout project-issue-focused-input-processed">
+  <div id="skip-link">
+    <a class="element-invisible element-focusable" href="https://www.drupal.org/forum/support/module-development-and-code-questions/2012-03-03/how-can-custom-data-table-be-viewed#content">Skip to main content</a>
+    <a class="element-invisible element-focusable skip-link-search" href="https://www.drupal.org/forum/support/module-development-and-code-questions/2012-03-03/how-can-custom-data-table-be-viewed#search-block-form">Skip to search</a>
+  </div>
+        <div id="nav-header">
+    <div class="menu-nav">
+      <a class="nav-btn" id="nav-open-btn" href="https://www.drupal.org/forum/support/module-development-and-code-questions/2012-03-03/how-can-custom-data-table-be-viewed#block-system-main-menu"><img src="./How can custom data table be viewed in Views in Drupal 7_ _ Drupal.org_files/icon-w-menu.svg" alt="Main menu"></a>
+    </div>
+    <nav id="navigation-inner" class="container-12" role="navigation">
+        <div class="region region-navigation">
+    <div id="block-system-main-menu" class="block block-system block-menu">
+<div class="block-inner">
+    
+  <div class="content">
+    <div class="menu-block"><ul class="menu"><li class="first leaf"><a href="https://www.drupal.org/home" title="Drupal.org home page">Drupal.org home</a></li>
+<li class="leaf"><a href="https://www.drupal.org/download" title="Download and Extend Drupal">Download &amp; Extend</a></li>
+<li class="leaf"><a href="https://www.drupal.org/community" title="Drupal Community">Community</a></li>
+<li class="leaf"><a href="https://www.drupal.org/documentation" title="Drupal Documentation">Documentation</a></li>
+<li class="leaf"><a href="https://www.drupal.org/support" title="Support for using Drupal">Support</a></li>
+<li class="leaf"><a href="https://jobs.drupal.org/" title="Drupal Jobs">Jobs</a></li>
+<li class="leaf"><a href="https://www.drupal.org/drupal-services" title="Buy Drupal Products and Services">Marketplace</a></li>
+<li class="last leaf"><a href="https://www.drupal.org/about" title="">About</a></li>
+</ul></div><a class="close-btn" id="nav-close-btn" href="https://www.drupal.org/forum/support/module-development-and-code-questions/2012-03-03/how-can-custom-data-table-be-viewed#top">Return to Content</a>  </div>
+  </div>
+</div>
+<div id="block-search-form" class="block block-search">
+<div class="block-inner">
+    
+  <div class="content">
+    <form action="https://www.drupal.org/forum/support/module-development-and-code-questions/2012-03-03/how-can-custom-data-table-be-viewed" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+      <h2 class="element-invisible">Search form</h2>
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input placeholder="Search…" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input alt="Search" type="image" id="edit-submit" name="submit" value="Search" src="./How can custom data table be viewed in Views in Drupal 7_ _ Drupal.org_files/icon-w-search.svg" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-KyABANyr4DgyLjW1dO4nG0CiBy-qwjLukD21MldiHT4">
+<input type="hidden" name="form_id" value="search_block_form">
+</div>
+</div></form>  </div>
+  </div>
+</div>
+<div id="block-system-user-menu" class="block block-system block-menu">
+<div class="block-inner">
+    
+  <div class="content">
+    <div class="menu-block"><ul class="menu"><li class="button default"><a href="https://www.drupal.org/forum/support/module-development-and-code-questions/2012-03-03/how-can-custom-data-table-be-viewed#block-system-user-menu"><img src="./How can custom data table be viewed in Views in Drupal 7_ _ Drupal.org_files/icon-w-user.svg" alt="Log in, view profile, and more"></a><ul><li class="first leaf"><a href="https://www.drupal.org/user/login?destination=node/1466366" title="">Log in</a></li>
+<li class="last leaf"><a href="https://www.drupal.org/user/register?destination=node/1466366" title="">Create account</a></li>
+</ul></li></ul></div>  </div>
+  </div>
+</div>
+  </div>
+    </nav>
+  </div> <!-- /#nav-header -->
+
+    <div id="header" class="clearfix">
+    <div id="header-screen" class="clearfix">
+      <div id="header-inner" class="container-12 clearfix">
+        <div id="header-content">
+          <div id="header-left">
+            <div id="header-left-inner">
+              <div id="site-name"><a href="https://www.drupal.org/" title="Drupal"><img src="./How can custom data table be viewed in Views in Drupal 7_ _ Drupal.org_files/drupal-wordmark.svg" alt="Drupal"></a></div>
+                          </div> <!-- /#header-left-inner -->
+          </div> <!-- /#header-left -->
+
+          <div id="header-right">
+            <div id="header-right-inner" role="search">
+                          </div> <!-- /#header-right-inner -->
+          </div> <!-- /#header-right -->
+        </div> <!-- /#header-content -->
+      </div> <!-- /#header-inner -->
+    </div>
+  </div> <!-- /#header -->
+  
+  
+  <div id="page" class="clearfix">
+    <div id="page-heading">
+                    <div id="page-title-tools" class="container-12 clearfix" role="navigation">
+
+          <div class="page-title-wrapper">
+                                          <div id="page-title" class="h2">Community</div>
+                                    </div>
+
+                  </div> <!-- /#page-title-tools -->
+
+                  <div id="nav-content" class="container-12">
+            <ul class="links"><li class="home first"><a href="https://www.drupal.org/community">Community Home</a></li>
+<li class="getting-involved"><a href="https://www.drupal.org/getting-involved">Getting Involved</a></li>
+<li class="chat"><a href="https://www.drupal.org/irc">Chat</a></li>
+<li class="forum active last"><a href="https://www.drupal.org/forum" class="active">Forum</a></li>
+</ul>          </div> <!-- /#nav-content -->
+        
+        <div class="breadbox"><nav class="breadcrumb container-12"><span><a href="https://www.drupal.org/forum/support">Support</a></span><span><a href="https://www.drupal.org/forum/support/module-development-and-code-questions">Module Development and Code Questions</a></span></nav></div>
+
+                  <h1 id="page-subtitle" class="container-12">How can custom data table be viewed in Views in Drupal 7?</h1>
+        
+      
+    </div> <!-- /#page-heading -->
+
+    
+    <div class="container-12 page-inner">      
+      <div id="main" role="main">
+        
+        <div id="content" class="clearfix">
+                                        <div id="content-inner" class="clearfix">  <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+<div class="block-inner">
+    
+  <div class="content">
+    <div id="node-1466366" class="node node-forum node-content-1466366 clearfix">
+
+  
+      
+      <div class="submitted">
+      Posted by <a href="https://www.drupal.org/user/1831440" title="View user profile." data-uid="1831440" class="username">yao2004</a> on <time pubdate="" datetime="1330797124">3 Mar 2012 at 17:52 UTC</time>    </div>
+  
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>I created a custom table using Schema API, and add some data to it. The table is called "Cars", and have the following fields: serial number, make, model, year, mileage.</p>
+<p>Then I am going to Views to create views but can't find the table and the fields in the table cars. Could someone please let me know how this should be done?</p>
+<p>I know I can write a custom module to output myself, but I would like to feed the table back to View module for more flexibility.</p>
+<p>Thank you very much.</p></div></div></div>  </div>
+
+  <div class="node-footer"><ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/1466366%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/1466366%23comment-form">register</a> to post comments</span></li>
+</ul><span class="separator">⋅</span> <span class="terms">Categories: <a href="https://www.drupal.org/taxonomy/term/120">Drupal 7.x</a></span></div>
+
+</div>
+
+<section class="comments comment-wrapper timeago-processed">
+          <h2 class="title">Comments</h2>
+      
+  <a id="comment-5684056"></a>
+<div class="comment comment-content-5684056 clearfix">
+  <a href="https://www.drupal.org/u/jaypan" title="View user profile." class="picture"><img src="./How can custom data table be viewed in Views in Drupal 7_ _ Drupal.org_files/picture-324696-1401239339.png" width="80" height="80" alt="Jaypan’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/forum/support/module-development-and-code-questions/2012-03-03/how-can-custom-data-table-be-viewed#comment-5684056" class="permalink active" rel="bookmark">If you install the Advanced</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/jaypan" title="View user profile." data-uid="324696" class="username">Jaypan</a> commented <time pubdate="" datetime="2012-03-03T17:58:55+00:00" data-created-date="3 March 2012 at 17:58" title="3 March 2012 at 17:58 (click to toggle)">6 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>If you install the Advanced Help module, there are instructions about how to describe your fields to Views.</p></div></div></div>        <div class="user-signature clearfix">
+      <hr>
+Checkout my <a href="http://www.sensei-and-the-geek.com/" rel="nofollow">Japan podcasts</a>.    </div>
+      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/1466366%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/1466366%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+
+<div class="indented"><a id="comment-5685234"></a>
+<div class="comment comment-by-node-author comment-content-5685234 clearfix">
+  <a href="https://www.drupal.org/user/1831440" title="View user profile." class="picture"><img src="./How can custom data table be viewed in Views in Drupal 7_ _ Drupal.org_files/default-avatar.png" width="80" height="80" alt="yao2004’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/forum/support/module-development-and-code-questions/2012-03-03/how-can-custom-data-table-be-viewed#comment-5685234" class="permalink active" rel="bookmark">My codes do not work...</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/user/1831440" title="View user profile." data-uid="1831440" class="username">yao2004</a> commented <time pubdate="" datetime="2012-03-04T03:48:55+00:00" data-created-date="4 March 2012 at 03:48" title="4 March 2012 at 03:48 (click to toggle)">6 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Thank you very much, Jay. I looked through the advanced help, and did the following. I am a new programmer so still learning. I appreciate your help very much.</p>
+<p>1. I created a file: cars.views.inc<br>
+2. And I added the follow codes:</p>
+<p>But the table is not showing up in Views. I tried clean cache, and uninstall and reinstall the module. None of them worked. What am I missing here? Thank you very much again.</p>
+<p>&lt;?php</p>
+<p>function cars_views_data() {</p>
+<p>  $data['cars']['table']['group'] = t('cars');</p>
+<p>   $data['car']['table']['base'] = array(<br>
+    'field' =&gt; 'serial number',<br>
+    'title' =&gt; t('serial number'),<br>
+    'help' =&gt; t("serial number."),<br>
+    'weight' =&gt; -10,<br>
+  );</p>
+<p>    $data['cars']['make'] = array(<br>
+    'title' =&gt; t('car maker'),<br>
+    'help' =&gt; t('car maker.'),</p>
+<p>  );</p>
+<p>【other fields are omitted to shorten the script.】</p>
+<p>    return $data;</p>
+<p>}</p></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/1466366%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/1466366%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+
+<div class="indented"><a id="comment-5685330"></a>
+<div class="comment comment-content-5685330 clearfix">
+  <a href="https://www.drupal.org/u/jaypan" title="View user profile." class="picture"><img src="./How can custom data table be viewed in Views in Drupal 7_ _ Drupal.org_files/picture-324696-1401239339.png" width="80" height="80" alt="Jaypan’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/forum/support/module-development-and-code-questions/2012-03-03/how-can-custom-data-table-be-viewed#comment-5685330" class="permalink active" rel="bookmark">Sorry, I've only ever done</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/jaypan" title="View user profile." data-uid="324696" class="username">Jaypan</a> commented <time pubdate="" datetime="2012-03-04T05:22:55+00:00" data-created-date="4 March 2012 at 05:22" title="4 March 2012 at 05:22 (click to toggle)">6 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Sorry, I've only ever done views integration on D6, and it needed a lot more than that, but maybe they've slimmed it down for D7. </p></div></div></div>        <div class="user-signature clearfix">
+      <hr>
+Checkout my <a href="http://www.sensei-and-the-geek.com/" rel="nofollow">Japan podcasts</a>.    </div>
+      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/1466366%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/1466366%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+<a id="comment-5686428"></a>
+<div class="comment comment-content-5686428 clearfix">
+  <a href="https://www.drupal.org/u/worldfallz" title="View user profile." class="picture"><img src="./How can custom data table be viewed in Views in Drupal 7_ _ Drupal.org_files/picture-155304-1458438965.png" width="80" height="80" alt="WorldFallz’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/forum/support/module-development-and-code-questions/2012-03-03/how-can-custom-data-table-be-viewed#comment-5686428" class="permalink active" rel="bookmark">_</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/worldfallz" title="View user profile." data-uid="155304" class="username">WorldFallz</a> commented <time pubdate="" datetime="2012-03-04T14:55:11+00:00" data-created-date="4 March 2012 at 14:55" title="4 March 2012 at 14:55 (click to toggle)">6 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>you don't mention it-- you also need to implement hook_views_api in the .module file (this is also covered in the advanced help).</p></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/1466366%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/1466366%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+<a id="comment-5687874"></a>
+<div class="comment comment-content-5687874 clearfix">
+  <a href="https://www.drupal.org/u/bagz" title="View user profile." class="picture"><img src="./How can custom data table be viewed in Views in Drupal 7_ _ Drupal.org_files/default-avatar.png" width="80" height="80" alt="Bagz’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/forum/support/module-development-and-code-questions/2012-03-03/how-can-custom-data-table-be-viewed#comment-5687874" class="permalink active" rel="bookmark">have you checked</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/bagz" title="View user profile." data-uid="1064636" class="username">Bagz</a> commented <time pubdate="" datetime="2012-03-04T23:07:19+00:00" data-created-date="4 March 2012 at 23:07" title="4 March 2012 at 23:07 (click to toggle)">6 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>First thing I would do is check that your code is actually running by inserting a dsm or dpm statement just before the return? If it is executing then you know you have a syntax or coding problem somewhere...</p></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/1466366%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/1466366%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+</div></div><a id="comment-5687844"></a>
+<div class="comment comment-content-5687844 clearfix">
+  <a href="https://www.drupal.org/u/bagz" title="View user profile." class="picture"><img src="./How can custom data table be viewed in Views in Drupal 7_ _ Drupal.org_files/default-avatar.png" width="80" height="80" alt="Bagz’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/forum/support/module-development-and-code-questions/2012-03-03/how-can-custom-data-table-be-viewed#comment-5687844" class="permalink active" rel="bookmark">fiddly and tricky</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/bagz" title="View user profile." data-uid="1064636" class="username">Bagz</a> commented <time pubdate="" datetime="2012-03-04T22:58:57+00:00" data-created-date="4 March 2012 at 22:58" title="4 March 2012 at 22:58 (click to toggle)">6 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Had to do something similar recently for the revision scheduler module, which has a table that is not described to views. Here is my code, hope it may help you:</p>
+<pre class="codeblock language-php"><code class=" language-php"><span class="token comment" spellcheck="true">/**
+ * Implement hook_views_data().
+ *
+ * Describe table "revision_scheduler" so that it can be used by views
+ */</span>
+ <span class="token keyword keyword-function">function</span> <span class="token function">mymodule_views_data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token variable">$data</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token variable">$data</span><span class="token punctuation">[</span><span class="token string">'revision_scheduler'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'table'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'group'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'Revision Schedule'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token variable">$data</span><span class="token punctuation">[</span><span class="token string">'revision_scheduler'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'table'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'join'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+		<span class="token string">'node'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+			<span class="token string">'left_table'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'node_revision'</span><span class="token punctuation">,</span>
+			<span class="token string">'left_field'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'vid'</span><span class="token punctuation">,</span>
+			<span class="token string">'field'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'revision_id'</span><span class="token punctuation">,</span>
+			<span class="token string">'type'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'LEFT'</span><span class="token punctuation">,</span>
+		<span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token string">'node_revision'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+			<span class="token string">'left_field'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'vid'</span><span class="token punctuation">,</span>
+			<span class="token string">'field'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'revision_id'</span><span class="token punctuation">,</span>
+			<span class="token string">'type'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'LEFT'</span><span class="token punctuation">,</span>
+		<span class="token punctuation">)</span><span class="token punctuation">,</span>
+	<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token variable">$data</span><span class="token punctuation">[</span><span class="token string">'revision_scheduler'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'sid'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+		<span class="token string">'title'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'Revision Schedule ID'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token string">'help'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'Revision Schedule record ID.'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token string">'filter'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+			<span class="token string">'handler'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'views_handler_filter'</span><span class="token punctuation">,</span>
+		<span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token string">'field'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+			<span class="token string">'handler'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'views_handler_field'</span><span class="token punctuation">,</span>
+			<span class="token string">'click sortable'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token constant">TRUE</span><span class="token punctuation">,</span>
+		<span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token string">'sort'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+			<span class="token string">'handler'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'views_handler_sort'</span><span class="token punctuation">,</span>
+		<span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token string">'argument'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+			<span class="token string">'handler'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'views_handler_argument'</span><span class="token punctuation">,</span>
+		<span class="token punctuation">)</span><span class="token punctuation">,</span>
+	<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token variable">$data</span><span class="token punctuation">[</span><span class="token string">'revision_scheduler'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'operation'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+		<span class="token string">'title'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'Scheduled operation'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token string">'help'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'The scheduled moderation operation.'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token string">'filter'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+			<span class="token string">'handler'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'views_handler_filter_string'</span><span class="token punctuation">,</span>
+		<span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token string">'field'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+			<span class="token string">'handler'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'views_handler_field'</span><span class="token punctuation">,</span>
+			<span class="token string">'click sortable'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token constant">TRUE</span><span class="token punctuation">,</span>
+		<span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token string">'sort'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+			<span class="token string">'handler'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'views_handler_sort'</span><span class="token punctuation">,</span>
+		<span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token string">'argument'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+			<span class="token string">'handler'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'views_handler_argument'</span><span class="token punctuation">,</span>
+		<span class="token punctuation">)</span><span class="token punctuation">,</span>
+	<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token variable">$data</span><span class="token punctuation">[</span><span class="token string">'revision_scheduler'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'time_scheduled'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+		<span class="token string">'title'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'Scheduled date'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token string">'help'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'The date that this operation is scheduled for.'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token string">'field'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+			<span class="token string">'handler'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'views_handler_field_date'</span><span class="token punctuation">,</span>
+			<span class="token string">'click sortable'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token constant">TRUE</span><span class="token punctuation">,</span>
+		<span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token string">'sort'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+			<span class="token string">'handler'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'views_handler_sort_date'</span><span class="token punctuation">,</span>
+		<span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token string">'filter'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+			<span class="token string">'handler'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'views_handler_filter_date'</span><span class="token punctuation">,</span>
+		<span class="token punctuation">)</span><span class="token punctuation">,</span>
+	<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token variable">$data</span><span class="token punctuation">[</span><span class="token string">'revision_scheduler'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'time_executed'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+		<span class="token string">'title'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'Executed date'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token string">'help'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'The date that this operation was executed.'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token string">'field'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+			<span class="token string">'handler'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'views_handler_field_date'</span><span class="token punctuation">,</span>
+			<span class="token string">'click sortable'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token constant">TRUE</span><span class="token punctuation">,</span>
+		<span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token string">'sort'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+			<span class="token string">'handler'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'views_handler_sort_date'</span><span class="token punctuation">,</span>
+		<span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token string">'filter'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span>
+			<span class="token string">'handler'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'views_handler_filter_date'</span><span class="token punctuation">,</span>
+		<span class="token punctuation">)</span><span class="token punctuation">,</span>
+	<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword keyword-return">return</span> <span class="token variable">$data</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>
+Check out <a href="http://drupalcontrib.org/api/drupal/contributions!views!docs!views.api.php/function/hook_views_data/7" rel="nofollow">http://drupalcontrib.org/api/drupal/contributions!views!docs!views.api.php/function/hook_views_data/7</a>, it has lots of helpful comments...</p></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/1466366%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/1466366%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+<a id="comment-5725014"></a>
+<div class="comment comment-content-5725014 clearfix">
+  <a href="https://www.drupal.org/u/rameshp" title="View user profile." class="picture"><img src="./How can custom data table be viewed in Views in Drupal 7_ _ Drupal.org_files/default-avatar.png" width="80" height="80" alt="ramesh.p’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/forum/support/module-development-and-code-questions/2012-03-03/how-can-custom-data-table-be-viewed#comment-5725014" class="permalink active" rel="bookmark">Tutorial to expose custom table to views in Drupal 7</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/rameshp" title="View user profile." data-uid="1540914" class="username">ramesh.p</a> commented <time pubdate="" datetime="2012-03-13T10:43:35+00:00" data-created-date="13 March 2012 at 10:43" title="13 March 2012 at 10:43 (click to toggle)">6 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>The below link will help you to integrate your custom data to views in Drupal 7<br><a href="http://mydons.com/how-to-expose-custom-module-table-to-views-in-drupal/" rel="nofollow">How to Expose custom module table to views in drupal</a></p></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/1466366%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/1466366%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+<a id="comment-7956447"></a>
+<div class="comment comment-content-7956447 clearfix">
+  <a href="https://www.drupal.org/u/rohan-chopra" title="View user profile." class="picture"><img src="./How can custom data table be viewed in Views in Drupal 7_ _ Drupal.org_files/default-avatar.png" width="80" height="80" alt="rohan chopra’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/forum/support/module-development-and-code-questions/2012-03-03/how-can-custom-data-table-be-viewed#comment-7956447" class="permalink active" rel="bookmark">Data Module will do it for</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/rohan-chopra" title="View user profile." data-uid="2714607" class="username">rohan chopra</a> commented <time pubdate="" datetime="2013-10-11T11:32:46+00:00" data-created-date="11 October 2013 at 11:32" title="11 October 2013 at 11:32 (click to toggle)">4 years ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Data Module will do it for you.<br><a href="https://drupal.org/project/data" rel="nofollow">https://drupal.org/project/data</a></p></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/1466366%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/1466366%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+
+<div class="indented"><a id="comment-12053141"></a>
+<div class="comment comment-content-12053141 clearfix">
+  <a href="https://www.drupal.org/u/artisingh" title="View user profile." class="picture"><img src="./How can custom data table be viewed in Views in Drupal 7_ _ Drupal.org_files/default-avatar.png" width="80" height="80" alt="artisingh’s picture"></a>
+  
+    <h3><a href="https://www.drupal.org/forum/support/module-development-and-code-questions/2012-03-03/how-can-custom-data-table-be-viewed#comment-12053141" class="permalink active" rel="bookmark">Data module worked for me</a></h3>
+  
+  <div class="submitted">
+        <a href="https://www.drupal.org/u/artisingh" title="View user profile." data-uid="3015279" class="username">artisingh</a> commented <time pubdate="" datetime="2017-04-24T13:35:32+00:00" data-created-date="24 April 2017 at 13:35" title="24 April 2017 at 13:35 (click to toggle)">6 months ago</time>  </div>
+
+  <div class="content">
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Thanks, Rohan</p>
+<p>It's really very good module. It provided so many things to maintain custom table. </p></div></div></div>      </div>
+
+  <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://www.drupal.org/user/login?destination=comment/reply/1466366%23comment-form">Log in</a> or <a href="https://www.drupal.org/user/register?destination=comment/reply/1466366%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+</div>
+  </section>
+  </div>
+  </div>
+</div>
+  </div>
+</div>
+                  </div> <!-- /#content -->
+
+      </div> <!-- /#column-left -->
+
+              <div id="aside" role="complementary">
+          <div id="aside-region">
+              <div class="region region-sidebar-second">
+    <div id="block-views-forum-topics-block" class="block block-views">
+<div class="block-inner">
+    <h2>New forum topics</h2>
+  
+  <div class="content">
+    <div class="view view-forum-topics view-id-forum_topics view-display-id-block view-dom-id-15c6de22ccf8ff4b3840ed7debbc7a82">
+        
+  
+  
+      <div class="view-content">
+      <div class="item-list">    <ul>          <li class="">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.drupal.org/forum/support/module-development-and-code-questions/2017-10-22/new-refund-view">New Refund View</a></span>  </div></li>
+          <li class="">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.drupal.org/forum/support/post-installation/2017-10-21/commerce-product-product-feed">Commerce product &amp;&amp; product feed</a></span>  </div></li>
+          <li class="">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.drupal.org/forum/support/post-installation/2017-10-21/entity-rest-api-post-response-body">Entity rest API - post response body</a></span>  </div></li>
+          <li class="">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.drupal.org/forum/support/post-installation/2017-10-21/drupal-8-reference-field-default-value-from-nid">Drupal 8 reference field default value from nid</a></span>  </div></li>
+          <li class="">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.drupal.org/forum/support/installing-drupal/2017-10-21/drupal-8-installation">Drupal 8 installation</a></span>  </div></li>
+          <li class="">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.drupal.org/forum/support/post-installation/2017-10-21/composer-require-drupal-with-2-gb-only">composer require drupal/...  with 2 GB only ?</a></span>  </div></li>
+          <li class="">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.drupal.org/forum/general/general-discussion/2017-10-21/admin-tool-bar-is-missing-in-my-drupal7">Admin tool bar is missing in my drupal7 </a></span>  </div></li>
+          <li class="">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.drupal.org/forum/support/post-installation/2017-10-20/flexiform-node-author">Flexiform node author</a></span>  </div></li>
+          <li class="">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.drupal.org/forum/support/module-development-and-code-questions/2017-10-20/telerik-controls-in-d8-module">Telerik Controls in D8 Module</a></span>  </div></li>
+          <li class="">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.drupal.org/forum/support/post-installation/2017-10-20/how-to-send-webform-submission-email-by-smtp-correctly">How to send webform submission email by SMTP correctly?</a></span>  </div></li>
+      </ul></div>    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+  </div>
+</div>
+  </div>
+          </div> <!-- /#column-right-region -->
+        </div> <!-- /#column-right -->
+      
+          </div>  </div> <!-- /#page -->
+
+  <div id="footer" role="contentinfo">
+            <div class="region region-footer">
+    <div id="block-drupalorg-crosssite-drupalorg-footer" class="block block-drupalorg-crosssite">
+<div class="block-inner">
+    
+  <div class="content">
+    <h4 class="element-invisible">News items</h4><ul class="drupal-news"><li class="0 first"><a href="https://www.drupal.org/news">News</a></li>
+<li class="1"><a href="https://www.drupal.org/planet" title="News from Drupal community members">Planet Drupal</a></li>
+<li class="2"><a href="https://www.drupal.org/social-media" title="Drupal on social media">Social media directory</a></li>
+<li class="3"><a href="https://www.drupal.org/security" title="Advisories from the security team">Security announcements</a></li>
+<li class="4 last"><a href="https://jobs.drupal.org/" title="Drupal Jobs">Jobs</a></li>
+</ul><h4 class="element-invisible">Our community</h4><ul class="community"><li class="0 first"><a href="https://drupal.org/community">Community</a></li>
+<li class="1"><a href="https://drupal.org/getting-involved" title="Learn how to contribute to the Drupal project">Getting involved</a></li>
+<li class="2"><span><a href="https://drupal.org/drupal-services" title="People and organizations offering Drupal services">Services</a>, <a href="https://drupal.org/training" title="People and organizations offering Drupal training">Training</a> &amp; <a href="https://drupal.org/hosting" title="Organizations offering Drupal hosting">Hosting</a></span></li>
+<li class="3"><a href="https://groups.drupal.org/groups" title="groups.drupal.org">Groups &amp; Meetups</a></li>
+<li class="4"><a href="https://events.drupal.org/" title="Upcoming and past DrupalCons">DrupalCon</a></li>
+<li class="5 last"><a href="https://drupal.org/dcoc" title="Drupal code of conduct">Code of conduct</a></li>
+</ul><h4 class="element-invisible">Documentation</h4><ul class="get-started"><li class="0 first"><a href="https://drupal.org/documentation" title="Documentation for working with Drupal">Documentation</a></li>
+<li class="1"><a href="https://www.drupal.org/docs/8">Drupal 8 docs</a></li>
+<li class="2"><a href="https://www.drupal.org/docs/7">Drupal 7 docs</a></li>
+<li class="3"><a href="https://www.drupal.org/documentation/develop">Developer docs</a></li>
+<li class="4 last"><a href="https://api.drupal.org/" title="Drupal API reference">api.drupal.org</a></li>
+</ul><h4 class="element-invisible">Drupal code base</h4><ul class="download-extend"><li class="0 first"><a href="https://drupal.org/download">Download &amp; Extend</a></li>
+<li class="1"><a href="https://drupal.org/project/drupal" title="Download the latest version of the Drupal software">Drupal core</a></li>
+<li class="2"><a href="https://drupal.org/project/project_module" title="Download add-on features and functionality">Modules</a></li>
+<li class="3"><a href="https://drupal.org/project/project_theme" title="Download pre-designed styles for Drupal">Themes</a></li>
+<li class="4 last"><a href="https://drupal.org/project/project_distribution" title="Download a pre-packaged Drupal site">Distributions</a></li>
+</ul><h4 class="element-invisible">Governance of community</h4><ul class="about"><li class="0 first"><a href="https://drupal.org/about">About</a></li>
+<li class="1"><a href="https://drupal.org/about/accessibility" title="Our committment to accessibility">Web accessibility</a></li>
+<li class="2"><a href="https://drupal.org/association" title="About the Drupal Association">The Drupal Association</a></li>
+<li class="3"><a href="https://drupal.org/drupalorg" title="About Drupal.org">About Drupal.org</a></li>
+<li class="4"><a href="https://drupal.org/terms" title="Drupal.org terms of service">Terms of service</a></li>
+<li class="5 last"><a href="https://drupal.org/privacy" title="Drupal.org privacy policy">Privacy policy</a></li>
+</ul>  </div>
+  </div>
+</div>
+<div id="block-block-77" class="block block-block">
+<div class="block-inner">
+    
+  <div class="content">
+    <p>Drupal is a <a href="http://drupal.com/trademark" rel="nofollow">registered trademark</a> of <a href="https://dri.es/" rel="nofollow">Dries Buytaert</a>.</p>  </div>
+  </div>
+</div>
+  </div>
+      </div>
+  
+<!--[if lte IE 9]>
+<script type="text/javascript" src="https://www.drupal.org/files/advagg_js/js__79M6UrZjAw3oNGnUjsWip12JsvnUZmJGA3h9LI0kuzE__LqE6uSZqCOZhJYW910TDw_HTQzBKUPTZxunfaWkalq8__zGbh0Vkd6-Upw_meABdy9qwehpIxfCh8fKwHkW793IE.js#ie9-" onload="if(jQuery.isFunction(jQuery.holdReady)){jQuery.holdReady(true);}"></script>
+<![endif]-->
+
+<!--[if gt IE 9]>
+<script type="text/javascript" src="https://www.drupal.org/files/advagg_js/js__79M6UrZjAw3oNGnUjsWip12JsvnUZmJGA3h9LI0kuzE__LqE6uSZqCOZhJYW910TDw_HTQzBKUPTZxunfaWkalq8__zGbh0Vkd6-Upw_meABdy9qwehpIxfCh8fKwHkW793IE.js#ie10+" defer="defer" onload="if(jQuery.isFunction(jQuery.holdReady)){jQuery.holdReady(true);}"></script>
+<![endif]-->
+
+<!--[if !IE]><!-->
+<script type="text/javascript" src="./How can custom data table be viewed in Views in Drupal 7_ _ Drupal.org_files/js__79M6UrZjAw3oNGnUjsWip12JsvnUZmJGA3h9LI0kuzE__LqE6uSZqCOZhJYW910TDw_HTQzBKUPTZxunfaWkalq8__zGbh0Vkd6-Upw_meABdy9qwehpIxfCh8fKwHkW793IE.js" defer="defer" onload="if(jQuery.isFunction(jQuery.holdReady)){jQuery.holdReady(true);}"></script>
+<!--<![endif]-->
+<script type="text/javascript" src="./How can custom data table be viewed in Views in Drupal 7_ _ Drupal.org_files/js__H5AFmq1RrXKsrazzPq_xPQPy4K0wUKqecPjczzRiTgQ__ZHqvWr-79k4Y5DRTd0KcuNHgFp9UJZlb3B0Bi5eGu3M__zGbh0Vkd6-Upw_meABdy9qwehpIxfCh8fKwHkW793IE.js" defer="defer" onload="
+function advagg_mod_1() {
+  // Count how many times this function is called.
+  advagg_mod_1.count = ++advagg_mod_1.count || 1;
+  try {
+    if (advagg_mod_1.count &lt;= 40) {
+      init_drupal_core_settings();
+
+      // Set this to 100 so that this function only runs once.
+      advagg_mod_1.count = 100;
+    }
+  }
+  catch(e) {
+    if (advagg_mod_1.count &gt;= 40) {
+      // Throw the exception if this still fails after running 40 times.
+      throw e;
+    }
+    else {
+      // Try again in 1 ms.
+      window.setTimeout(advagg_mod_1, 1);
+    }
+  }
+}
+function advagg_mod_1_check() {
+  if (window.init_drupal_core_settings &amp;&amp; window.jQuery &amp;&amp; window.Drupal) {
+    advagg_mod_1();
+  }
+  else {
+    window.setTimeout(advagg_mod_1_check, 1);
+  }
+}
+advagg_mod_1_check();"></script>
+<script type="text/javascript" src="./How can custom data table be viewed in Views in Drupal 7_ _ Drupal.org_files/js__y-0WF9wbsKup6UtG11ZtdWgidCFrAqzehETdOPtD3QM__RyqY9XJd9ufuluFN4mmhv-aKW7TydZryLoo9T-QS5sQ__zGbh0Vkd6-Upw_meABdy9qwehpIxfCh8fKwHkW793IE.js" defer="defer"></script>
+<script type="text/javascript" defer="defer" async="async" src="./How can custom data table be viewed in Views in Drupal 7_ _ Drupal.org_files/analytics.js"></script>
+<script type="text/javascript" src="./How can custom data table be viewed in Views in Drupal 7_ _ Drupal.org_files/js__hHUWFbMAa11eJtx5V0ym9o0YBsB1udk34qUT5wr1ihI__w1AuxI-Is3CtQ1nu9fAoIO4cMrl8j5oxHT1ffMU00Zo__zGbh0Vkd6-Upw_meABdy9qwehpIxfCh8fKwHkW793IE.js" defer="defer"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-2360451-1", {"cookieDomain":"auto"});ga("set", "dimension3", "anonymous user");ga("set", "dimension4", "Forum topic");ga("set", "dimension1", "Module Development and Code Questions");ga("set", "dimension2", "community");ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+function init_drupal_core_settings() {jQuery.extend(Drupal.settings,{"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"bluecheese","theme_token":"xL_6jWVD_jCW8PUVdKNG38dbaSyHRkAUmI2vUCTg-Kk"},"jcarousel":{"ajaxPath":"\/jcarousel\/ajax\/views"},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"urlIsAjaxTrusted":{"\/forum\/support\/module-development-and-code-questions\/2012-03-03\/how-can-custom-data-table-be-viewed":true}});
+if(jQuery.isFunction(jQuery.holdReady)){jQuery.holdReady(false);}} if(window.jQuery && window.Drupal){init_drupal_core_settings();}
+//--><!]]>
+</script>
+<script type="text/javascript" src="./How can custom data table be viewed in Views in Drupal 7_ _ Drupal.org_files/js__to4E6ed7qbWQIIrZ8SjAf2iDoY3ZkHhlZySO3qQI4ws__30g4_YLNJDK0tUDy1vJDyqtAnbRAen2hxqieAjRIb3Q__zGbh0Vkd6-Upw_meABdy9qwehpIxfCh8fKwHkW793IE.js" defer="defer"></script>
+
+
+</body></html>
