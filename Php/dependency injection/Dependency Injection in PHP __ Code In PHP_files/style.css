@@ -1,0 +1,57 @@
+body {
+    margin-top: 75px;
+    background:#fcfcfc;
+}
+
+article a{
+    color:#FF8000;
+}
+
+article a:hover{
+    color:#000;
+}
+
+article h3{
+    font-size:30px;
+    font-weight:bold;
+}
+
+.panel, .list-group-item {
+    background:#fcfcfc;
+}
+
+.post-content, .page-content, .main-content {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    color:#333;
+}
+
+.fa-rss {
+    background-color: #F4B83F;
+    color: #fff;
+}
+
+footer {
+    margin: 10px 0;
+}
+
+pre.code {
+    padding:0;
+    border:0;
+}
+
+p code, ul code {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #000;
+    background-color: #ffe4b7;
+    border-radius: 4px;
+}
+
+::selection {
+  background: orange; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: orange; /* Gecko Browsers */
+}

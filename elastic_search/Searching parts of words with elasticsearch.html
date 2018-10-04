@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<!-- saved from url=(0080)https://www.avisi.nl/blog/2012/02/22/searching-parts-of-words-with-elasticsearch -->
+<html class="no-js" lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./Searching parts of words with elasticsearch_files/collectedforms.js" type="text/javascript" id="CollectedForms-2937602" crossorigin="anonymous" data-leadin-portal-id="2937602" data-leadin-env="prod" data-loader="hs-scriptloader" data-hsjs-portal="2937602" data-hsjs-env="prod"></script><script src="./Searching parts of words with elasticsearch_files/2937602.js" type="text/javascript" id="hs-analytics"></script>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="author" content="Gert-Jan van de Streek">
+    <meta name="description" content="Searching parts of words with elasticsearch">
+    <meta name="generator" content="HubSpot">
+    <title>Searching parts of words with elasticsearch</title>
+    <link rel="shortcut icon" href="https://www.avisi.nl/hubfs/32.png?t=1530000868574">
+    
+
+    <link rel="stylesheet" href="./Searching parts of words with elasticsearch_files/combined-css-241cb5b043c078fa40b0af1e6391cb2c.css"><script id="twitter-wjs" src="./Searching parts of words with elasticsearch_files/widgets.js"></script><script type="text/javascript" async="" src="./Searching parts of words with elasticsearch_files/platform.js" gapi_processed="true"></script><script id="facebook-jssdk" src="./Searching parts of words with elasticsearch_files/all.js"></script><script async="" src="./Searching parts of words with elasticsearch_files/analytics.js"></script><script src="./Searching parts of words with elasticsearch_files/jquery-1.7.1.js"></script>
+<script>hsjQuery = window['jQuery'];</script>
+    
+    <meta property="og:description" content="Searching parts of words with elasticsearch">
+    <meta property="og:title" content="Searching parts of words with elasticsearch">
+    <meta name="twitter:description" content="Searching parts of words with elasticsearch">
+    <meta name="twitter:title" content="Searching parts of words with elasticsearch">
+
+
+    
+    
+
+    
+<!--  Added by GoogleAnalytics integration -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-19797902-7', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- /Added by GoogleAnalytics integration -->
+
+    
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<link rel="amphtml" href="https://www.avisi.nl/blog/2012/02/22/searching-parts-of-words-with-elasticsearch?hs_amp=true">
+
+<meta property="og:image" content="https://www.avisi.nl/hubfs/Imported_Blog_Media/Screen-Shot-2012-02-22-at-11_30_58-PM1-1.png?t=1530000868574#keepProtocol">
+<meta property="og:image:width" content="446">
+<meta property="og:image:height" content="407">
+<meta name="twitter:image" content="https://www.avisi.nl/hubfs/Imported_Blog_Media/Screen-Shot-2012-02-22-at-11_30_58-PM1-1.png?t=1530000868574#keepProtocol">
+
+<meta property="og:url" content="https://www.avisi.nl/blog/2012/02/22/searching-parts-of-words-with-elasticsearch">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="canonical" href="https://www.avisi.nl/blog/2012/02/22/searching-parts-of-words-with-elasticsearch">
+
+<meta property="og:type" content="article">
+<link rel="alternate" type="application/rss+xml" href="https://www.avisi.nl/blog/rss.xml">
+<meta name="twitter:domain" content="www.avisi.nl">
+<script src="./Searching parts of words with elasticsearch_files/in.js" type="text/javascript">
+    lang: en_US
+</script><script src="./Searching parts of words with elasticsearch_files/secureAnonymousFramework"></script>
+
+<meta http-equiv="content-language" content="en">
+
+
+
+
+
+
+
+
+<style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_loader{background-color:#f6f7f9;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f9;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_customer_chat_bounce_in_v1{animation-duration:250ms;animation-name:fb_bounce_in_v1}.fb_customer_chat_bounce_out_v1{animation-duration:250ms;animation-name:fb_bounce_out_v1}.fb_customer_chat_bounce_in_v2{animation-duration:300ms;animation-name:fb_bounce_in_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2{animation-duration:300ms;animation-name:fb_bounce_out_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_v2_mobile_chat_started{animation-duration:300ms;animation-name:fb_bounce_in_v2_mobile_chat_started;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2_mobile_chat_started{animation-duration:300ms;animation-name:fb_bounce_out_v2_mobile_chat_started;transition-timing-function:ease-in}.fb_customer_chat_bubble_pop_in{animation-duration:250ms;animation-name:fb_customer_chat_bubble_bounce_in_animation}.fb_customer_chat_bubble_animated_no_badge{box-shadow:0 3px 12px rgba(0, 0, 0, .15);transition:box-shadow 150ms linear}.fb_customer_chat_bubble_animated_no_badge:hover{box-shadow:0 5px 24px rgba(0, 0, 0, .3)}.fb_customer_chat_bubble_animated_with_badge{box-shadow:-5px 4px 14px rgba(0, 0, 0, .15);transition:box-shadow 150ms linear}.fb_customer_chat_bubble_animated_with_badge:hover{box-shadow:-5px 8px 24px rgba(0, 0, 0, .2)}.fb_invisible_flow{display:inherit;height:0;overflow-x:hidden;width:0}.fb_mobile_overlay_active{background-color:#fff;height:100%;overflow:hidden;position:fixed;visibility:hidden;width:100%}@keyframes fb_bounce_in_v1{0%{opacity:0;transform:scale(.8, .8);transform-origin:bottom right}80%{opacity:.8;transform:scale(1.03, 1.03)}100%{opacity:1;transform:scale(1, 1)}}@keyframes fb_bounce_in_v2{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}50%{transform:scale(1.03, 1.03);transform-origin:bottom right}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}}@keyframes fb_bounce_in_v2_mobile_chat_started{0%{opacity:0;top:20px}100%{opacity:1;top:0}}@keyframes fb_bounce_out_v1{from{opacity:1}to{opacity:0}}@keyframes fb_bounce_out_v2{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}}@keyframes fb_bounce_out_v2_mobile_chat_started{0%{opacity:1;top:0}100%{opacity:0;top:20px}}@keyframes fb_customer_chat_bubble_bounce_in_animation{0%{bottom:6pt;opacity:0;transform:scale(0, 0);transform-origin:center}70%{bottom:18pt;opacity:1;transform:scale(1.2, 1.2)}100%{transform:scale(1, 1)}}</style></head>
+<body class="   hs-content-id-5864158674 hs-blog-post hs-blog-id-5799593948" style=""><style type="text/css">div#hs-eu-cookie-confirmation{background:#fff;height:auto;left:0;position:absolute;top:0;width:100%;z-index:100000000 !important;border-bottom:1px solid #cbd6e2;border-top:1px solid #cbd6e2;box-shadow:0 1px 5px #eaf0f6;color:#33475b;font-family:inherit;font-size:inherit;font-weight:normal !important;line-height:inherit;text-align:left;text-shadow:none !important;font-size:12px;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;line-height:18px}div#hs-eu-cookie-confirmation *{box-sizing:border-box !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner{background:#fff;margin:0 auto;max-width:1000px;padding:20px}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a{background:none !important;border:none !important;box-shadow:none !important;color:#0091ae;font-family:inherit;font-size:inherit;font-weight:normal !important;line-height:inherit;text-align:left;text-shadow:none !important;text-decoration:none !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a:hover{background:none !important;border:none !important;box-shadow:none !important;color:#0091ae;font-family:inherit;font-size:inherit;font-weight:normal !important;line-height:inherit;text-align:left;text-shadow:none !important;text-decoration:underline !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner div#hs-en-cookie-confirmation-buttons-area{margin:10px 0 0 !important;text-align:right !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a#hs-eu-confirmation-button,div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a#hs-eu-decline-button{border-radius:3px;display:inline-block;padding:10px 16px !important;text-decoration:none !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a#hs-eu-confirmation-button{background-color:#0099bb !important;border:1px solid #0099bb !important;margin-right:12px !important;color:#fff;font-family:inherit;font-size:inherit;font-weight:normal !important;line-height:inherit;text-align:left;text-shadow:none !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a#hs-eu-decline-button{border:1px solid #0099bb !important;color:#0099bb;font-family:inherit;font-size:inherit;font-weight:normal !important;line-height:inherit;text-align:left;text-shadow:none !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner p{margin:0 0 12px;color:#33475b;font-family:inherit;font-size:inherit;font-weight:normal !important;line-height:inherit;text-align:left;text-shadow:none !important}@media print{div#hs-eu-cookie-confirmation{display:none !important}}@media screen and (max-width: 480px){div#hs-eu-cookie-confirmation{font-size:12px !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner{padding:8px 14px 14px !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a{font-size:12px !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a#hs-eu-confirmation-button{font-size:12px !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner p{font-size:12px !important;margin-bottom:12px !important;line-height:15px !important}}@media only screen and (min-width: 960px){div#hs-eu-cookie-confirmation{position:fixed}div#hs-eu-cookie-confirmation.hs-cookie-notification-position-bottom{bottom:0;top:auto;box-shadow:0 -1px 3px #eaf0f6}}
+</style><div id="hs-eu-cookie-confirmation" class="hs-cookie-notification-position-bottom can-use-gradients"><div id="hs-eu-cookie-confirmation-inner"><p style=""></p><p>Op Avisi.nl gebruiken we cookies om informatie te verzamelen over hoe je onze website gebruikt en om te kunnen onthouden wie je bent. We gebruiken deze informatie om jouw ervaring te verbeteren en op maat te maken, en voor analysedoeleinden over onze bezoekers, zowel op deze website als op andere media. Wil je meer weten over hoe we cookies gebruiken en hoe we je persoonsgegevens verwerken? Lees dan onze <a href="https://www.avisi.nl/nl/privacy-statement/" target="_blank">privacyverklaring</a>.</p><p></p><p id="hs-eu-cookie-disclaimer">Als je niet akkoord gaat, leggen we geen informatie over je vast, anders dan een cookie waarin we die voorkeur van je onthouden. We kunnen je dan echter geen optimale ervaring aanbieden. Dat willen we natuurlijk wel graag kunnen doen. Vind je dat goed?</p><div id="hs-en-cookie-confirmation-buttons-area"><a href="https://www.avisi.nl/blog/2012/02/22/searching-parts-of-words-with-elasticsearch#" id="hs-eu-confirmation-button">Ja, graag!</a><a href="https://www.avisi.nl/blog/2012/02/22/searching-parts-of-words-with-elasticsearch#" id="hs-eu-decline-button">Nee, liever niet</a></div></div></div>
+    <div class="header-container-wrapper">
+    <div class="header-container container-fluid">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-1 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget " style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_module_152939619821017" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><div class="container">  
+  <header class="header">
+      <div class="header__logo">
+        <a href="https://www.avisi.nl/">
+        	<img class="logo" src="./Searching parts of words with elasticsearch_files/avisi.svg" width="100">
+        </a>
+    	</div>
+      <nav class="header__menu">
+        <input class="menu__toggle" type="checkbox" hidden="" id="menu__opener">
+        <div class="menu menu--inline menu--mobile menu--right">
+          <div class="menu__wrapper">
+            
+              
+              
+              	
+              
+              <a class="menu__link " href="https://www.avisi.nl/cases-overzicht">Cases</a>
+            
+              
+              
+              	
+              
+              <a class="menu__link " href="https://www.avisi.nl/atlassian">Atlassian</a>
+            
+              
+              
+              	
+              
+              <a class="menu__link " href="https://www.avisi.nl/diensten">Diensten</a>
+            
+              
+              
+              	
+              
+              <a class="menu__link " href="https://www.avisi.nl/werken-bij">Werken bij</a>
+            
+              
+              
+              	
+              
+              <a class="menu__link " href="https://www.avisi.nl/contact">Contact</a>
+            
+              
+              
+              	
+              
+              <a class="menu__link " href="https://www.avisi.nl/over-ons">Over ons</a>
+            
+            
+            
+            	
+            
+            <a class="menu__link " href="https://www.avisi.nl/blog">Blog</a>
+          </div>
+          <label class="menu__icon" for="menu__opener">☰</label>
+        </div>
+      </nav>
+    </header>
+</div></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+    </div><!--end header -->
+</div><!--end header wrapper -->
+
+<div class="body-container-wrapper">
+    <div class="body-container container-fluid">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-1 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell " style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-2 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget " style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_module_1529401289981185" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-blog_content" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+    <article class="blog-section blog-text">
+    <div class="blog-post-wrapper cell-wrapper">
+       <div class="blog-section">
+            <div class="blog-post-wrapper cell-wrapper">
+                <div class="section post-header">
+                    <h1><span id="hs_cos_wrapper_name" class="hs_cos_wrapper hs_cos_wrapper_meta_field hs_cos_wrapper_type_text" style="" data-hs-cos-general-type="meta_field" data-hs-cos-type="text">Searching parts of words with elasticsearch</span></h1>
+                    <div id="hubspot-author_data" class="hubspot-editable" data-hubspot-form-id="author_data" data-hubspot-name="Blog Author">
+                        <span class="hs-author-label"></span>
+                        
+                            <a class="author-link" href="https://www.avisi.nl/blog/author/gert-jan-van-de-streek">Gert-Jan van de Streek</a> op 23 February, 2012
+                            
+                            
+                        
+                    </div>
+                </div>
+                <div class="section post-body">
+                    <span id="hs_cos_wrapper_post_body" class="hs_cos_wrapper hs_cos_wrapper_meta_field hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="meta_field" data-hs-cos-type="rich_text"><p>I figured out how to search parts of words with <a href="http://www.elasticsearch.org/">elasticsearch</a>. If you are not familiar with the terms used in the documentation this can be quite a challenge. I will show you the key parts of the configuration you need.</p> 
+<p> 
+ <!--more-->First you need to know a little about the search engine. When you store documents, the text is indexed. This is done by tokenizing the text, basically chopping it up and then running those chops through one or more filters. When searching the same happens to the search terms (chop / filter / used for search). The tokenization and filtering for indexing and searching can be configured independently. Most of the time these configurations are to be kept the same, as illustrated by this case that uses a lowercase filter:</p> 
+<ul> 
+ <li>text to be indexed: Lorem Ipsum,</li> 
+ <li>tokenized: 'Lorem', 'Ipsum'</li> 
+ <li>filtered: 'lorem', 'ipsum'</li> 
+</ul> 
+<p>If you search for this text (using the lowercase filter again):</p> 
+<ul> 
+ <li>text you search for: 'Lorem'</li> 
+ <li>tokenized: 'Lorem'</li> 
+ <li>filtered: 'lorem'</li> 
+</ul> 
+<p>Notice that both the indexed text and the search term are lowercase and will thus match. If you would not configure a lowercase search filter this would not return a result.</p> 
+<p>In the case where you want to search for parts of words however, the filters used for index time differ from the filters used for search. Here is the elasticsearch configuration for <a href="http://www.elasticsearch.org/guide/reference/api/admin-indices-create-index.html">creating an index</a>, that defines the filters to be used for indexing and for searching:</p> 
+<p><img class="alignnone size-full wp-image-1679" style="border-style: initial; border-color: initial; border-image: initial; border-width: 0px;" title="Screen Shot 2012-02-22 at 11.30.58 PM" src="./Searching parts of words with elasticsearch_files/Screen-Shot-2012-02-22-at-11_30_58-PM1-1.png" alt="" width="446" height="407" srcset="https://www.avisi.nl/hs-fs/hubfs/Imported_Blog_Media/Screen-Shot-2012-02-22-at-11_30_58-PM1-1.png?t=1530000868574&amp;width=223&amp;height=204&amp;name=Screen-Shot-2012-02-22-at-11_30_58-PM1-1.png 223w, https://www.avisi.nl/hs-fs/hubfs/Imported_Blog_Media/Screen-Shot-2012-02-22-at-11_30_58-PM1-1.png?t=1530000868574&amp;width=446&amp;height=407&amp;name=Screen-Shot-2012-02-22-at-11_30_58-PM1-1.png 446w, https://www.avisi.nl/hs-fs/hubfs/Imported_Blog_Media/Screen-Shot-2012-02-22-at-11_30_58-PM1-1.png?t=1530000868574&amp;width=669&amp;height=611&amp;name=Screen-Shot-2012-02-22-at-11_30_58-PM1-1.png 669w, https://www.avisi.nl/hs-fs/hubfs/Imported_Blog_Media/Screen-Shot-2012-02-22-at-11_30_58-PM1-1.png?t=1530000868574&amp;width=892&amp;height=814&amp;name=Screen-Shot-2012-02-22-at-11_30_58-PM1-1.png 892w, https://www.avisi.nl/hs-fs/hubfs/Imported_Blog_Media/Screen-Shot-2012-02-22-at-11_30_58-PM1-1.png?t=1530000868574&amp;width=1115&amp;height=1018&amp;name=Screen-Shot-2012-02-22-at-11_30_58-PM1-1.png 1115w, https://www.avisi.nl/hs-fs/hubfs/Imported_Blog_Media/Screen-Shot-2012-02-22-at-11_30_58-PM1-1.png?t=1530000868574&amp;width=1338&amp;height=1221&amp;name=Screen-Shot-2012-02-22-at-11_30_58-PM1-1.png 1338w" sizes="(max-width: 446px) 100vw, 446px"></p> 
+<p>The numbers correspond to the critical parts of the configuration (explained below).</p> 
+<ol> 
+ <li>At index time, we use the translation filter, that is of type ngram, declared at (3).</li> 
+ <li>Notice that for the search we DO NOT use the ngram filter</li> 
+ <li>The declaration of the ngram filter.</li> 
+</ol> 
+<div>
+  The way the ngram filter works, is that it explodes the token stream into more tokens. The token 'lorem' for example, is exploded into these tokens: 
+</div> 
+<div></div> 
+<div> 
+ <ul> 
+  <li>l</li> 
+  <li>lo</li> 
+  <li>lor</li> 
+  <li>lore</li> 
+  <li>lorem</li> 
+ </ul> 
+ <div>
+   All of these are indexed, making it possible to find any part of the word lorem. The configuration parameters min_gram and max_gram indicate the shortest and longest token &nbsp;to be extracted from the input token. A min_gram of 2 and a max_gram 0f 4 would result in: 
+ </div> 
+ <div> 
+  <ul> 
+   <li>lo</li> 
+   <li>lor</li> 
+   <li>lore</li> 
+  </ul> 
+  <div>
+    This shortens the time required for indexing, but limits the parts of the words you are able to find. 
+  </div> 
+ </div> 
+ <div></div> 
+ <div>
+   To use the defined filters from your 
+  <a href="http://www.elasticsearch.org/guide/reference/api/admin-indices-put-mapping.html">elasticsearch mapping</a> you would use this configuration in your mapping: 
+ </div> 
+</div> 
+<p><a href="http://blog.avisi.nl/2012/02/22/searching-parts-of-words-with-elasticsearch/screen-shot-2012-02-22-at-11-36-35-pm-2/" rel="attachment wp-att-1683"><img class="alignnone size-full wp-image-1683" title="Screen Shot 2012-02-22 at 11.36.35 PM" src="./Searching parts of words with elasticsearch_files/Screen-Shot-2012-02-22-at-11_36_35-PM1-1.png" alt="" width="471" height="201" srcset="https://www.avisi.nl/hs-fs/hubfs/Imported_Blog_Media/Screen-Shot-2012-02-22-at-11_36_35-PM1-1.png?t=1530000868574&amp;width=236&amp;height=101&amp;name=Screen-Shot-2012-02-22-at-11_36_35-PM1-1.png 236w, https://www.avisi.nl/hs-fs/hubfs/Imported_Blog_Media/Screen-Shot-2012-02-22-at-11_36_35-PM1-1.png?t=1530000868574&amp;width=471&amp;height=201&amp;name=Screen-Shot-2012-02-22-at-11_36_35-PM1-1.png 471w, https://www.avisi.nl/hs-fs/hubfs/Imported_Blog_Media/Screen-Shot-2012-02-22-at-11_36_35-PM1-1.png?t=1530000868574&amp;width=707&amp;height=302&amp;name=Screen-Shot-2012-02-22-at-11_36_35-PM1-1.png 707w, https://www.avisi.nl/hs-fs/hubfs/Imported_Blog_Media/Screen-Shot-2012-02-22-at-11_36_35-PM1-1.png?t=1530000868574&amp;width=942&amp;height=402&amp;name=Screen-Shot-2012-02-22-at-11_36_35-PM1-1.png 942w, https://www.avisi.nl/hs-fs/hubfs/Imported_Blog_Media/Screen-Shot-2012-02-22-at-11_36_35-PM1-1.png?t=1530000868574&amp;width=1178&amp;height=503&amp;name=Screen-Shot-2012-02-22-at-11_36_35-PM1-1.png 1178w, https://www.avisi.nl/hs-fs/hubfs/Imported_Blog_Media/Screen-Shot-2012-02-22-at-11_36_35-PM1-1.png?t=1530000868574&amp;width=1413&amp;height=603&amp;name=Screen-Shot-2012-02-22-at-11_36_35-PM1-1.png 1413w" sizes="(max-width: 471px) 100vw, 471px"></a></p></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</article>
+</div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+    </div><!--end body -->
+</div><!--end body wrapper -->
+
+<div class="footer-container-wrapper">
+    <div class="footer-container container-fluid">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-1 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget " style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_module_152939949858416" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><div class="container">  
+	<footer class="footer" style="background-image: url(&#39;https://www.avisi.nl/hubfs/space.svg?t=1530000868574&#39;);">
+    <div class="footer__logo">
+      <a href="https://www.avisi.nl/">
+      	<img class="logo" src="./Searching parts of words with elasticsearch_files/avisi.svg" alt="vast.png" width="100">
+      </a>
+    </div>
+    <div class="address footer__address">
+      <article class="address__contact">
+        <div id="hs_cos_wrapper_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_inline_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="inline_rich_text" data-hs-cos-field="footer_cont"><p><strong>eem contact op</strong>&nbsp;</p>
+<p><a href="mailto:info@avisi.nl" rel="" target="">info@avisi.nl</a></p>
+<p><a href="tel:0882847400" rel="" target="">088 284 74 00</a></p></div>
+        <div>
+          <a class="social social--inline social--linkedin" href="https://nl.linkedin.com/company/avisi">LinkedIn</a>
+          <a class="social social--inline social--twitter" href="https://twitter.com/avisi_it">Twitter</a>
+          <a class="social social--inline social--facebook" href="https://www.facebook.com/Avisi.IT/">Facebook</a>
+          <a class="social social--inline social--instagram" href="https://instagram.com/avisi_it">Instagram</a>
+        </div>
+      </article>
+      <article class="address__location hidden--mobile">
+        <div id="hs_cos_wrapper_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_inline_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="inline_rich_text" data-hs-cos-field="footer_adres"><p><strong>Bezoek ons<br><br></strong></p>
+<p><strong>Avisi B.V.</strong></p>
+<p>Nieuwe Stationsstraat 10<br>6811 KS Arnhem<br>Nederland</p></div>
+      </article>
+    </div>
+    <nav class="footer__navigation">
+      <div class="menu menu--inline menu--separators menu--compact">
+        
+        	              
+          
+          	
+          
+        	<a href="https://www.avisi.nl/" class="menu__link ">Home</a>
+        
+        	              
+          
+          	
+          
+        	<a href="https://www.avisi.nl/privacyverklaring" class="menu__link ">Privacyverklaring</a>
+        
+        	              
+          
+          	
+          
+        	<a href="https://www.avisi.nl/securityverklaring" class="menu__link ">Securityverklaring</a>
+        
+        
+        
+       		
+        
+        <a class="menu__link " href="https://www.avisi.nl/blog">Blog</a>
+      </div>
+    </nav>
+  </footer>
+</div></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+    </div><!--end footer -->
+</div><!--end footer wrapper -->
+
+    
+<script type="text/javascript" src="./Searching parts of words with elasticsearch_files/public_common.js"></script>
+<script>
+(function () {
+    window.addEventListener('load', function () {
+        setTimeout(function () {
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/_hcms/perf', true /*async*/);
+            xhr.setRequestHeader("Content-type", "application/json");
+            xhr.onreadystatechange = function () {
+                // do nothing.
+            };
+            var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+            function populateNetworkInfo(name, connection, info) {
+                if (name in connection) {
+                    info[name] = connection[name];
+                }
+            }
+            var networkInfo = {};
+            if (connection) {
+                ['type', 'effectiveType', 'downlink', 'rtt'].forEach(function(name) {
+                    populateNetworkInfo(name, connection, networkInfo);
+                });
+            }
+            var perfData = {
+                url: location.href,
+                portal: 2937602,
+                content: 5864158674,
+                group: -1,
+                connection: networkInfo,
+                timing: performance.timing
+            };
+            xhr.send(JSON.stringify(perfData));
+        }, 3000);  // Execute this 3 seconds after onload.
+    });
+})();
+</script>
+
+<script>
+if (typeof hsVars !== 'undefined') { hsVars['language'] = 'en'; }
+</script>
+
+<script src="./Searching parts of words with elasticsearch_files/project.js"></script>
+
+<!-- Start of HubSpot Analytics Code -->
+<script type="text/javascript">
+var _hsq = _hsq || [];
+_hsq.push(["setContentType", "blog-post"]);
+_hsq.push(["setCanonicalUrl", "https:\/\/www.avisi.nl\/blog\/2012\/02\/22\/searching-parts-of-words-with-elasticsearch"]);
+_hsq.push(["setPageId", "5864158674"]);
+_hsq.push(["setContentMetadata", {
+    "contentPageId": 5864158674,
+    "legacyPageId": "5864158674",
+    "contentFolderId": null,
+    "contentGroupId": 5799593948,
+    "abTestId": null,
+    "languageVariantId": 5864158674,
+    "languageCode": null
+}]);
+</script>
+
+<script type="text/javascript" id="hs-script-loader" async="" defer="" src="./Searching parts of words with elasticsearch_files/2937602(1).js"></script>
+<!-- End of HubSpot Analytics Code -->
+
+
+<script type="text/javascript">
+var hsVars = {
+    ticks: 1530017927870,
+    page_id: 5864158674,
+    content_group_id: 5799593948,
+    portal_id: 2937602,
+    app_hs_base_url: "https://app.hubspot.com",
+    language: "en",
+    analytics_page_type: "blog-post",
+    category_id: 3,
+    folder_id: 0
+}
+</script>
+
+
+
+
+
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Searching parts of words with elasticsearch_files/xaOI6zd9HW9.html" style="border: none;"></iframe></div></div></div>
+ <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&status=0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script type="text/javascript">
+  window.___gcfg = {
+    lang: 'en-US',
+    parsetags: 'onload'
+  };
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/platform.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+ <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+ 
+
+
+    
+    <!-- Generated by the HubSpot Template Builder - template version 1.03 -->
+
+
+<!-- end coded_template: id:5887116559 path:generated_layouts/5887116558.html -->
+<iframe scrolling="no" frameborder="0" allowtransparency="true" src="./Searching parts of words with elasticsearch_files/widget_iframe.c5b006ac082bc92aa829181b9ce63af1.html" title="Twitter settings iframe" style="display: none;"></iframe><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" title="Twitter analytics iframe" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" src="./Searching parts of words with elasticsearch_files/saved_resource.html"></iframe></body></html>

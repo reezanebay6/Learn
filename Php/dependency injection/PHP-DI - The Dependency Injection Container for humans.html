@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)http://php-di.org/doc/understanding-di.html -->
+<html class="no-js"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>.gitter-hidden{box-sizing:border-box;display:none}.gitter-icon{box-sizing:border-box;width:22px;height:22px;fill:currentColor}.gitter-chat-embed{box-sizing:border-box;z-index:100;position:fixed;top:0;left:60%;bottom:0;right:0;display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;background-color:#fff;border-left:1px solid #333;box-shadow:-12px 0 18px 0 rgba(50,50,50,.3);transition:transform .3s cubic-bezier(.16,.22,.22,1.7)}@context border-box{.gitter-chat-embed{box-sizing:border-box;background-color:#fff}}.gitter-chat-embed.is-collapsed:not(.is-loading){box-sizing:border-box;transform:translateX(110%)}.gitter-chat-embed:after{box-sizing:border-box;content:"";z-index:-1;position:absolute;top:0;left:100%;bottom:0;right:-100%;background-color:#fff}@context border-box{.gitter-chat-embed:after{box-sizing:border-box;background-color:#fff}}@media(max-width:1150px){.gitter-chat-embed{box-sizing:border-box;left:45%}}@media(max-width:944px){.gitter-chat-embed{box-sizing:border-box;left:30%}}@media(max-width:600px){.gitter-chat-embed{box-sizing:border-box;left:15%}}@media(max-width:500px){.gitter-chat-embed{box-sizing:border-box;left:0;border-left:none}}.gitter-chat-embed>iframe{box-sizing:border-box;-ms-flex:1;flex:1;width:100%;height:100%;border:0}.gitter-chat-embed-loading-wrapper{box-sizing:border-box;position:absolute;top:0;left:0;bottom:0;right:0;display:none;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center}.is-loading .gitter-chat-embed-loading-wrapper{box-sizing:border-box;display:-ms-flexbox;display:flex}.gitter-chat-embed-loading-indicator{box-sizing:border-box;opacity:.75;background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNzkyIDE3OTIiIGZpbGw9IiMzYTMxMzMiPjxwYXRoIGQ9Ik01MjYgMTM5NHEwIDUzLTM3LjUgOTAuNXQtOTAuNSAzNy41cS01MiAwLTkwLTM4dC0zOC05MHEwLTUzIDM3LjUtOTAuNXQ5MC41LTM3LjUgOTAuNSAzNy41IDM3LjUgOTAuNXptNDk4IDIwNnEwIDUzLTM3LjUgOTAuNXQtOTAuNSAzNy41LTkwLjUtMzcuNS0zNy41LTkwLjUgMzcuNS05MC41IDkwLjUtMzcuNSA5MC41IDM3LjUgMzcuNSA5MC41em0tNzA0LTcwNHEwIDUzLTM3LjUgOTAuNXQtOTAuNSAzNy41LTkwLjUtMzcuNS0zNy41LTkwLjUgMzcuNS05MC41IDkwLjUtMzcuNSA5MC41IDM3LjUgMzcuNSA5MC41em0xMjAyIDQ5OHEwIDUyLTM4IDkwdC05MCAzOHEtNTMgMC05MC41LTM3LjV0LTM3LjUtOTAuNSAzNy41LTkwLjUgOTAuNS0zNy41IDkwLjUgMzcuNSAzNy41IDkwLjV6bS05NjQtOTk2cTAgNjYtNDcgMTEzdC0xMTMgNDctMTEzLTQ3LTQ3LTExMyA0Ny0xMTMgMTEzLTQ3IDExMyA0NyA0NyAxMTN6bTExNzAgNDk4cTAgNTMtMzcuNSA5MC41dC05MC41IDM3LjUtOTAuNS0zNy41LTM3LjUtOTAuNSAzNy41LTkwLjUgOTAuNS0zNy41IDkwLjUgMzcuNSAzNy41IDkwLjV6bS02NDAtNzA0cTAgODAtNTYgMTM2dC0xMzYgNTYtMTM2LTU2LTU2LTEzNiA1Ni0xMzYgMTM2LTU2IDEzNiA1NiA1NiAxMzZ6bTUzMCAyMDZxMCA5My02NiAxNTguNXQtMTU4IDY1LjVxLTkzIDAtMTU4LjUtNjUuNXQtNjUuNS0xNTguNXEwLTkyIDY1LjUtMTU4dDE1OC41LTY2cTkyIDAgMTU4IDY2dDY2IDE1OHoiLz48L3N2Zz4=);animation:spin 2s infinite linear}@keyframes spin{0%{box-sizing:border-box;transform:rotate(0deg)}to{box-sizing:border-box;transform:rotate(359.9deg)}}.gitter-chat-embed-action-bar{box-sizing:border-box;position:absolute;top:0;left:0;right:0;display:-ms-flexbox;display:flex;-ms-flex-pack:end;justify-content:flex-end;padding-bottom:.7em;background:linear-gradient(180deg,#fff 0,#fff 50%,hsla(0,0%,100%,0))}.gitter-chat-embed-action-bar-item{box-sizing:border-box;display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center;width:40px;height:40px;padding-left:0;padding-right:0;opacity:.65;background:none;background-position:50%;background-repeat:no-repeat;background-size:22px 22px;border:0;outline:none;cursor:pointer;cursor:hand;transition:all .2s ease}.gitter-chat-embed-action-bar-item:focus,.gitter-chat-embed-action-bar-item:hover{box-sizing:border-box;opacity:1}.gitter-chat-embed-action-bar-item:active{box-sizing:border-box;filter:hue-rotate(80deg) saturate(150)}.gitter-chat-embed-action-bar-item-pop-out{box-sizing:border-box;margin-right:-4px;background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMTcxLjQyOSIgZmlsbD0iIzNhMzEzMyI+PHBhdGggZD0iTTE1Ny4xNDMsMTAzLjU3MXYzNS43MTRjMCw4Ljg1NC0zLjE0NCwxNi40MjYtOS40MzEsMjIuNzEzcy0xMy44NTgsOS40MzEtMjIuNzEyLDkuNDMxSDMyLjE0MyBjLTguODU0LDAtMTYuNDI1LTMuMTQ0LTIyLjcxMi05LjQzMVMwLDE0OC4xNCwwLDEzOS4yODVWNDYuNDI5YzAtOC44NTQsMy4xNDQtMTYuNDI1LDkuNDMxLTIyLjcxMiBjNi4yODctNi4yODcsMTMuODU4LTkuNDMxLDIyLjcxMi05LjQzMWg3OC41NzJjMS4wNDEsMCwxLjg5NiwwLjMzNSwyLjU2NiwxLjAwNGMwLjY3LDAuNjcsMS4wMDQsMS41MjUsMS4wMDQsMi41NjdWMjUgYzAsMS4wNDItMC4zMzQsMS44OTctMS4wMDQsMi41NjdjLTAuNjcsMC42Ny0xLjUyNSwxLjAwNC0yLjU2NiwxLjAwNEgzMi4xNDNjLTQuOTExLDAtOS4xMTUsMS43NDktMTIuNjEyLDUuMjQ2IHMtNS4yNDYsNy43MDEtNS4yNDYsMTIuNjEydjkyLjg1NmMwLDQuOTExLDEuNzQ5LDkuMTE1LDUuMjQ2LDEyLjYxMnM3LjcwMSw1LjI0NSwxMi42MTIsNS4yNDVIMTI1YzQuOTEsMCw5LjExNS0xLjc0OCwxMi42MTEtNS4yNDUgYzMuNDk3LTMuNDk3LDUuMjQ2LTcuNzAxLDUuMjQ2LTEyLjYxMnYtMzUuNzE0YzAtMS4wNDIsMC4zMzQtMS44OTcsMS4wMDQtMi41NjdjMC42Ny0wLjY2OSwxLjUyNS0xLjAwNCwyLjU2Ny0xLjAwNGg3LjE0MyBjMS4wNDIsMCwxLjg5NywwLjMzNSwyLjU2NywxLjAwNEMxNTYuODA5LDEwMS42NzQsMTU3LjE0MywxMDIuNTI5LDE1Ny4xNDMsMTAzLjU3MXogTTIwMCw3LjE0M3Y1Ny4xNDMgYzAsMS45MzUtMC43MDcsMy42MDktMi4xMjEsNS4wMjJjLTEuNDEzLDEuNDE0LTMuMDg4LDIuMTIxLTUuMDIxLDIuMTIxYy0xLjkzNSwwLTMuNjA5LTAuNzA3LTUuMDIyLTIuMTIxbC0xOS42NDQtMTkuNjQzIGwtNzIuNzY3LDcyLjc2OWMtMC43NDQsMC43NDQtMS42LDEuMTE1LTIuNTY3LDEuMTE1cy0xLjgyMy0wLjM3MS0yLjU2Ny0xLjExNUw3Ny41NjcsMTA5LjcxYy0wLjc0NC0wLjc0NC0xLjExNi0xLjYtMS4xMTYtMi41NjcgYzAtMC45NjcsMC4zNzItMS44MjIsMS4xMTYtMi41NjZsNzIuNzY4LTcyLjc2OGwtMTkuNjQ0LTE5LjY0M2MtMS40MTMtMS40MTQtMi4xMi0zLjA4OC0yLjEyLTUuMDIyYzAtMS45MzUsMC43MDctMy42MDksMi4xMi01LjAyMiBDMTMyLjEwNSwwLjcwNywxMzMuNzc5LDAsMTM1LjcxNSwwaDU3LjE0M2MxLjkzNCwwLDMuNjA4LDAuNzA3LDUuMDIxLDIuMTIxQzE5OS4yOTMsMy41MzQsMjAwLDUuMjA4LDIwMCw3LjE0M3oiLz48L3N2Zz4=)}.gitter-chat-embed-action-bar-item-collapse-chat{box-sizing:border-box;background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNzEuNDI5IDE3MS40MjkiIGZpbGw9IiMzYTMxMzMiPjxwYXRoIGQ9Ik0xMjIuNDMzLDEwNi4xMzhsLTE2LjI5NSwxNi4yOTVjLTAuNzQ0LDAuNzQ0LTEuNiwxLjExNi0yLjU2NiwxLjExNmMtMC45NjgsMC0xLjgyMy0wLjM3Mi0yLjU2Ny0xLjExNmwtMTUuMjktMTUuMjkgbC0xNS4yOSwxNS4yOWMtMC43NDQsMC43NDQtMS42LDEuMTE2LTIuNTY3LDEuMTE2cy0xLjgyMy0wLjM3Mi0yLjU2Ny0xLjExNmwtMTYuMjk0LTE2LjI5NWMtMC43NDQtMC43NDQtMS4xMTYtMS42LTEuMTE2LTIuNTY2IGMwLTAuOTY4LDAuMzcyLTEuODIzLDEuMTE2LTIuNTY3bDE1LjI5LTE1LjI5bC0xNS4yOS0xNS4yOWMtMC43NDQtMC43NDQtMS4xMTYtMS42LTEuMTE2LTIuNTY3czAuMzcyLTEuODIzLDEuMTE2LTIuNTY3IEw2NS4yOSw0OC45OTZjMC43NDQtMC43NDQsMS42LTEuMTE2LDIuNTY3LTEuMTE2czEuODIzLDAuMzcyLDIuNTY3LDEuMTE2bDE1LjI5LDE1LjI5bDE1LjI5LTE1LjI5IGMwLjc0NC0wLjc0NCwxLjYtMS4xMTYsMi41NjctMS4xMTZjMC45NjcsMCwxLjgyMiwwLjM3MiwyLjU2NiwxLjExNmwxNi4yOTUsMTYuMjk0YzAuNzQ0LDAuNzQ0LDEuMTE2LDEuNiwxLjExNiwyLjU2NyBzLTAuMzcyLDEuODIzLTEuMTE2LDIuNTY3bC0xNS4yOSwxNS4yOWwxNS4yOSwxNS4yOWMwLjc0NCwwLjc0NCwxLjExNiwxLjYsMS4xMTYsMi41NjcgQzEyMy41NDksMTA0LjUzOSwxMjMuMTc3LDEwNS4zOTQsMTIyLjQzMywxMDYuMTM4eiBNMTQ2LjQyOSw4NS43MTRjMC0xMS4wMTItMi43MTctMjEuMTY4LTguMTQ4LTMwLjQ2OSBzLTEyLjc5Ny0xNi42NjctMjIuMDk4LTIyLjA5OFM5Ni43MjYsMjUsODUuNzE0LDI1cy0yMS4xNjgsMi43MTYtMzAuNDY5LDguMTQ3UzM4LjU3OSw0NS45NDUsMzMuMTQ3LDU1LjI0NlMyNSw3NC43MDMsMjUsODUuNzE0IHMyLjcxNiwyMS4xNjgsOC4xNDcsMzAuNDY5czEyLjc5NywxNi42NjYsMjIuMDk4LDIyLjA5OHMxOS40NTcsOC4xNDgsMzAuNDY5LDguMTQ4czIxLjE2OC0yLjcxNywzMC40NjktOC4xNDggczE2LjY2Ni0xMi43OTcsMjIuMDk4LTIyLjA5OFMxNDYuNDI5LDk2LjcyNiwxNDYuNDI5LDg1LjcxNHogTTE3MS40MjksODUuNzE0YzAsMTUuNTUxLTMuODMyLDI5Ljg5My0xMS40OTYsNDMuMDI0IGMtNy42NjQsMTMuMTMzLTE4LjA2MiwyMy41My0zMS4xOTQsMzEuMTk0Yy0xMy4xMzIsNy42NjQtMjcuNDc0LDExLjQ5Ni00My4wMjQsMTEuNDk2cy0yOS44OTItMy44MzItNDMuMDI0LTExLjQ5NiBjLTEzLjEzMy03LjY2NC0yMy41MzEtMTguMDYyLTMxLjE5NC0zMS4xOTRDMy44MzIsMTE1LjYwNywwLDEwMS4yNjUsMCw4NS43MTRTMy44MzIsNTUuODIyLDExLjQ5Niw0Mi42OSBjNy42NjQtMTMuMTMzLDE4LjA2Mi0yMy41MzEsMzEuMTk0LTMxLjE5NEM1NS44MjIsMy44MzIsNzAuMTY0LDAsODUuNzE0LDBzMjkuODkzLDMuODMyLDQzLjAyNCwxMS40OTYgYzEzLjEzMyw3LjY2NCwyMy41MywxOC4wNjIsMzEuMTk0LDMxLjE5NEMxNjcuNTk3LDU1LjgyMiwxNzEuNDI5LDcwLjE2NCwxNzEuNDI5LDg1LjcxNHoiLz48L3N2Zz4=)}.gitter-open-chat-button{z-index:100;position:fixed;bottom:0;right:10px;padding:1em 3em;background-color:#36bc98;border:0;border-top-left-radius:.5em;border-top-right-radius:.5em;font-family:sans-serif;font-size:12px;letter-spacing:1px;text-transform:uppercase;text-align:center;text-decoration:none;cursor:pointer;cursor:hand;transition:all .3s ease}.gitter-open-chat-button,.gitter-open-chat-button:visited{box-sizing:border-box;color:#fff}.gitter-open-chat-button:focus,.gitter-open-chat-button:hover{box-sizing:border-box;background-color:#3ea07f;color:#fff}.gitter-open-chat-button:focus{box-sizing:border-box;box-shadow:0 0 8px rgba(62,160,127,.6);outline:none}.gitter-open-chat-button:active{box-sizing:border-box;color:#eee}.gitter-open-chat-button.is-collapsed{box-sizing:border-box;transform:translateY(120%)}</style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>PHP-DI - The Dependency Injection Container for humans</title>
+    <meta name="description" content="PHP-DI is a Dependency Injection Container for PHP that intends to be practical and powerful.">
+
+    <link rel="canonical" href="http://php-di.org/">
+
+    <meta name="application-name" content="PHP-DI">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://php-di.org/img/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://php-di.org/img/apple-touch-icon-152x152.png">
+    <link rel="icon" type="image/png" href="http://php-di.org/img/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://php-di.org/img/favicon-16x16.png" sizes="16x16">
+    <meta name="msapplication-TileColor" content="#484949">
+    <meta name="msapplication-TileImage" content="http://php-di.org/img/mstile-144x144.png">
+
+            <link href="./PHP-DI - The Dependency Injection Container for humans_files/css" media="all" rel="stylesheet" type="text/css">
+        <link href="./PHP-DI - The Dependency Injection Container for humans_files/docsearch.min.css" rel="stylesheet">
+        <link href="./PHP-DI - The Dependency Injection Container for humans_files/highlight.github.css" rel="stylesheet">
+        <link href="./PHP-DI - The Dependency Injection Container for humans_files/all.min.css" rel="stylesheet">
+    <script type="text/javascript" charset="utf-8" async="" src="./PHP-DI - The Dependency Injection Container for humans_files/button.3ebb4253c7cb2cc3c9eaac42044fc82c.js"></script></head>
+<body>
+
+    <header>
+        <div class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navigation">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="http://php-di.org/" title="Dependency injection container for PHP">PHP-DI</a>
+                </div>
+                <div class="navbar-form navbar-left hidden-xs hidden-sm">
+                    <span class="algolia-autocomplete" style="position: relative; display: inline-block; direction: ltr;"><input id="search-input" type="text" class="form-control aa-input" placeholder="Search..." autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-labelledby="search-input" aria-owns="algolia-autocomplete-listbox-0" dir="auto" style="position: relative; vertical-align: top;"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span class="aa-dropdown-menu" role="listbox" id="algolia-autocomplete-listbox-0" style="position: absolute; top: 100%; z-index: 100; display: none; left: 0px; right: auto;"><div class="aa-dataset-1"></div></span></span>
+                </div>
+                <div class="collapse navbar-collapse" id="top-navigation">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="http://php-di.org/doc/getting-started.html" title="Getting started with PHP-DI">Getting started</a></li>
+                        <li><a href="http://php-di.org/doc/" title="PHP-DI documentation">Documentation</a></li>
+                        <li><a href="http://php-di.org/news/" title="News about PHP-DI">News</a></li>
+                        <li><a href="http://php-di.org/change-log.html" title="PHP-DI&#39;s changelog">Change log</a></li>
+                        <li><a class="github" href="https://github.com/PHP-DI/PHP-DI" title="PHP-DI on GitHub"><i class="fa fa-github"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    
+    <div class="container documentation">
+
+        <div class="sidebar">
+            <ul>
+                                    <li>
+                        <span class="section-title">Introduction</span>
+
+                        <ul>
+                                                            <li class="">
+                                    <a href="http://php-di.org/doc/getting-started.html">
+                                        Getting started
+                                    </a>
+                                </li>
+                                                            <li class="active">
+                                    <a href="http://php-di.org/doc/understanding-di.html">
+                                        Understanding dependency injection
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="http://php-di.org/doc/best-practices.html">
+                                        "Best practices" guide
+                                    </a>
+                                </li>
+                                                    </ul>
+                    </li>
+                                    <li>
+                        <span class="section-title">Usage</span>
+
+                        <ul>
+                                                            <li class="">
+                                    <a href="http://php-di.org/doc/container-configuration.html">
+                                        Configuring the container
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="http://php-di.org/doc/container.html">
+                                        Using the container
+                                    </a>
+                                </li>
+                                                    </ul>
+                    </li>
+                                    <li>
+                        <span class="section-title">Definitions</span>
+
+                        <ul>
+                                                            <li class="">
+                                    <a href="http://php-di.org/doc/definition.html">
+                                        Introduction
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="http://php-di.org/doc/autowiring.html">
+                                        Autowiring
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="http://php-di.org/doc/php-definitions.html">
+                                        PHP definitions
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="http://php-di.org/doc/annotations.html">
+                                        Annotations
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="http://php-di.org/doc/definition-overriding.html">
+                                        Definition extensions and overriding
+                                    </a>
+                                </li>
+                                                    </ul>
+                    </li>
+                                    <li>
+                        <span class="section-title">Frameworks</span>
+
+                        <ul>
+                                                            <li class="">
+                                    <a href="http://php-di.org/doc/frameworks/slim.html">
+                                        Slim
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="http://php-di.org/doc/frameworks/symfony2.html">
+                                        Symfony
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="http://php-di.org/doc/frameworks/zf2.html">
+                                        Zend Framework 2
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="http://php-di.org/doc/frameworks/zf1.html">
+                                        Zend Framework 1
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="http://php-di.org/doc/frameworks/zend-expressive.html">
+                                        Zend Expressive
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="http://php-di.org/doc/frameworks/silly.html">
+                                        Silly
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="http://php-di.org/doc/frameworks/silex.html">
+                                        Silex
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="https://github.com/PHP-DI/demo">
+                                        Demo application
+                                    </a>
+                                </li>
+                                                    </ul>
+                    </li>
+                                    <li>
+                        <span class="section-title">Advanced topics</span>
+
+                        <ul>
+                                                            <li class="">
+                                    <a href="http://php-di.org/doc/performances.html">
+                                        Performances
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="http://php-di.org/doc/lazy-injection.html">
+                                        Lazy injection
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="http://php-di.org/doc/inject-on-instance.html">
+                                        Inject on an existing instance
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="http://php-di.org/doc/environments.html">
+                                        Injections depending on the environment
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="http://php-di.org/doc/ide-integration.html">
+                                        IDE integration
+                                    </a>
+                                </li>
+                                                    </ul>
+                    </li>
+                                    <li>
+                        <span class="section-title">Migration guides</span>
+
+                        <ul>
+                                                            <li class="">
+                                    <a href="http://php-di.org/doc/migration/4.0.html">
+                                        From PHP-DI 3.x to 4.0
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="http://php-di.org/doc/migration/5.0.html">
+                                        From PHP-DI 4.x to 5.0
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="http://php-di.org/doc/migration/6.0.html">
+                                        From PHP-DI 5.x to 6.0
+                                    </a>
+                                </li>
+                                                    </ul>
+                    </li>
+                                    <li>
+                        <span class="section-title">Support</span>
+
+                        <ul>
+                                                            <li class="">
+                                    <a href="http://php-di.org/support.html">
+                                        Enterprise support
+                                    </a>
+                                </li>
+                                                    </ul>
+                    </li>
+                                    <li>
+                        <span class="section-title">Internals</span>
+
+                        <ul>
+                                                            <li class="">
+                                    <a href="http://php-di.org/contributing.html">
+                                        Contributing
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="http://php-di.org/doc/how-it-works.html">
+                                        How PHP-DI works
+                                    </a>
+                                </li>
+                                                    </ul>
+                    </li>
+                                    <li>
+                        <span class="section-title">Old documentation</span>
+
+                        <ul>
+                                                            <li class="">
+                                    <a href="https://github.com/PHP-DI/PHP-DI/tree/3.x/doc">
+                                        PHP-DI 3.x
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="https://github.com/PHP-DI/PHP-DI/tree/4.x/doc">
+                                        PHP-DI 4.x
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="https://github.com/PHP-DI/PHP-DI/tree/5.4/doc">
+                                        PHP-DI 5.x
+                                    </a>
+                                </li>
+                                                    </ul>
+                    </li>
+                            </ul>
+        </div>
+
+        <article>
+            <div class="pull-right">
+                <a href="https://github.com/PHP-DI/PHP-DI/blob/master/doc/understanding-di.md" class="btn btn-default btn-sm" title="Fork PHP-DI and improve the documentation via a pull request">
+                    Edit this page on GitHub
+                </a>
+            </div>
+
+            <h1 id="understanding-dependency-injection">Understanding Dependency Injection</h1>
+<p><em>Dependency injection</em> and <em>dependency injection containers</em> are different things:</p>
+<ul>
+<li><strong>dependency injection is a method</strong> for writing better code</li>
+<li><strong>a container is a tool</strong> to help injecting dependencies</li>
+</ul>
+<p>You don't <em>need</em> a container to do dependency injection. However a container can help you.</p>
+<p>PHP-DI is about this: making dependency injection more practical.</p>
+<h2 id="the-theory">The theory <a class="anchor" href="http://php-di.org/doc/understanding-di.html#the-theory">#</a></h2>
+<h3 id="classic-php-code">Classic PHP code <a class="anchor" href="http://php-di.org/doc/understanding-di.html#classic-php-code">#</a></h3>
+<p>Here is how a code <strong>not</strong> using DI will roughly work:</p>
+<ul>
+<li>Application needs Foo (e.g. a controller), so:</li>
+<li>Application creates Foo</li>
+<li>Application calls Foo
+<ul>
+<li>Foo needs Bar (e.g. a service), so:</li>
+<li>Foo creates Bar</li>
+<li>Foo calls Bar
+<ul>
+<li>Bar needs Bim (a service, a repository, …), so:</li>
+<li>Bar creates Bim</li>
+<li>Bar does something</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="using-dependency-injection">Using dependency injection <a class="anchor" href="http://php-di.org/doc/understanding-di.html#using-dependency-injection">#</a></h3>
+<p>Here is how a code using DI will roughly work:</p>
+<ul>
+<li>Application needs Foo, which needs Bar, which needs Bim, so:</li>
+<li>Application creates Bim</li>
+<li>Application creates Bar and gives it Bim</li>
+<li>Application creates Foo and gives it Bar</li>
+<li>Application calls Foo
+<ul>
+<li>Foo calls Bar
+<ul>
+<li>Bar does something</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>This is the pattern of <strong>Inversion of Control</strong>. The control of the dependencies is <strong>inverted</strong> from one being called to the one calling.</p>
+<p>The main advantage: the one at the top of the caller chain is always <strong>you</strong>. You can control all dependencies and have complete control over how your application works. You can replace a dependency by another (one you made for example).</p>
+<p>For example what if Library X uses Logger Y and you want to make it use your logger Z? With dependency injection, you don't have to change the code of Library X.</p>
+<h3 id="using-a-container">Using a container <a class="anchor" href="http://php-di.org/doc/understanding-di.html#using-a-container">#</a></h3>
+<p>Now how does a code using PHP-DI works:</p>
+<ul>
+<li>Application needs Foo so:</li>
+<li>Application gets Foo from the Container, so:
+<ul>
+<li>Container creates Bim</li>
+<li>Container creates Bar and gives it Bim</li>
+<li>Container creates Foo and gives it Bar</li>
+</ul></li>
+<li>Application calls Foo
+<ul>
+<li>Foo calls Bar
+<ul>
+<li>Bar does something</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>In short, <strong>the container takes away all the work of creating and injecting dependencies</strong>.</p>
+<h2 id="understanding-with-an-example">Understanding with an example <a class="anchor" href="http://php-di.org/doc/understanding-di.html#understanding-with-an-example">#</a></h2>
+<p>This is a real life example comparing a classic implementation (using <code>new</code> or singletons) VS using dependency injection.</p>
+<h3 id="without-dependency-injection">Without dependency injection <a class="anchor" href="http://php-di.org/doc/understanding-di.html#without-dependency-injection">#</a></h3>
+<p>Say you have:</p>
+<pre><code class="language-php hljs"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GoogleMaps</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCoordinatesFromAddress</span><span class="hljs-params">(<span class="hljs-variable">$address</span>)</span> </span>{
+        <span class="hljs-comment">// calls Google Maps webservice</span>
+    }
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">OpenStreetMap</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCoordinatesFromAddress</span><span class="hljs-params">(<span class="hljs-variable">$address</span>)</span> </span>{
+        <span class="hljs-comment">// calls OpenStreetMap webservice</span>
+    }
+}</code></pre>
+<p>The classic way of doing things is:</p>
+<pre><code class="language-php hljs"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StoreService</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getStoreCoordinates</span><span class="hljs-params">(<span class="hljs-variable">$store</span>)</span> </span>{
+        <span class="hljs-variable">$geolocationService</span> = <span class="hljs-keyword">new</span> GoogleMaps();
+        <span class="hljs-comment">// or $geolocationService = GoogleMaps::getInstance() if you use singletons</span>
+
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$geolocationService</span>-&gt;getCoordinatesFromAddress(<span class="hljs-variable">$store</span>-&gt;getAddress());
+    }
+}</code></pre>
+<p>Now we want to use the <code>OpenStreetMap</code> instead of <code>GoogleMaps</code>, how do we do?
+We have to change the code of <code>StoreService</code>, and all the other classes that use <code>GoogleMaps</code>.</p>
+<p><strong>Without dependency injection, your classes are tightly coupled to their dependencies.</strong></p>
+<h3 id="with-dependency-injection">With dependency injection <a class="anchor" href="http://php-di.org/doc/understanding-di.html#with-dependency-injection">#</a></h3>
+<p>The <code>StoreService</code> now uses dependency injection:</p>
+<pre><code class="language-php hljs"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StoreService</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-variable">$geolocationService</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(GeolocationService <span class="hljs-variable">$geolocationService</span>)</span> </span>{
+        <span class="hljs-variable">$this</span>-&gt;geolocationService = <span class="hljs-variable">$geolocationService</span>;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getStoreCoordinates</span><span class="hljs-params">(<span class="hljs-variable">$store</span>)</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;geolocationService-&gt;getCoordinatesFromAddress(<span class="hljs-variable">$store</span>-&gt;getAddress());
+    }
+}</code></pre>
+<p>And the services are defined using an interface:</p>
+<pre><code class="language-php hljs"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">GeolocationService</span> </span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCoordinatesFromAddress</span><span class="hljs-params">(<span class="hljs-variable">$address</span>)</span></span>;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GoogleMaps</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">GeolocationService</span> </span>{ ...
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">OpenStreetMap</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">GeolocationService</span> </span>{ ...</code></pre>
+<p>Now, it is for the user of the StoreService to decide which implementation to use. And it can be changed anytime, without
+having to rewrite the <code>StoreService</code>.</p>
+<p><strong>The <code>StoreService</code> is no longer tightly coupled to its dependency.</strong></p>
+<h2 id="with-php-di">With PHP-DI <a class="anchor" href="http://php-di.org/doc/understanding-di.html#with-php-di">#</a></h2>
+<p>You may see that dependency injection will leave with one drawback: you now have to handle injecting dependencies.</p>
+<p>That's where a container, and specifically PHP-DI, can help you.</p>
+<p>Instead of writing:</p>
+<pre><code class="language-php hljs"><span class="hljs-variable">$geolocationService</span> = <span class="hljs-keyword">new</span> GoogleMaps();
+<span class="hljs-variable">$storeService</span> = <span class="hljs-keyword">new</span> StoreService(<span class="hljs-variable">$geolocationService</span>);</code></pre>
+<p>You can write:</p>
+<pre><code class="language-php hljs"><span class="hljs-variable">$storeService</span> = <span class="hljs-variable">$container</span>-&gt;get(<span class="hljs-string">'StoreService'</span>);</code></pre>
+<p>and configure which GeolocationService PHP-DI should automatically inject in StoreService through configuration:</p>
+<pre><code class="language-php hljs"><span class="hljs-variable">$container</span>-&gt;set(<span class="hljs-string">'GeolocationService'</span>, \DI\create(<span class="hljs-string">'GoogleMaps'</span>));</code></pre>
+<p>If you change your mind, there's just one line of configuration to change now.</p>
+<p>Interested? Go ahead and read the <a href="http://php-di.org/doc/getting-started.html">Getting started</a> guide!</p>
+        </article>
+
+    </div>
+
+
+            <footer>
+            <div class="container">
+                                    <p>
+                        A question? Unsatisfied with the documentation?
+                        Please <a href="https://github.com/PHP-DI/PHP-DI/issues/new">create an issue</a>
+                        or chat on
+                        <a href="https://gitter.im/PHP-DI/PHP-DI" title="PHP-DI chat room">Gitter</a> or
+                        <a href="https://twitter.com/phpdi" title="PHP-DI on Twitter">Twitter</a>.
+                    </p>
+                                <p>
+                    <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" title="Twitter Tweet Button" src="./PHP-DI - The Dependency Injection Container for humans_files/tweet_button.4ddf50b7ac5c5f06f6679f003b742641.en.html" style="position: static; visibility: visible; width: 60px; height: 20px;"></iframe>
+                    <script type="text/javascript" async="" src="./PHP-DI - The Dependency Injection Container for humans_files/ga.js"></script><script id="twitter-wjs" src="./PHP-DI - The Dependency Injection Container for humans_files/widgets.js"></script><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                </p>
+                <p>
+                    By <a href="http://mnapoli.fr/" title="Software consulting and PHP news">Matthieu Napoli</a>
+                    and <a href="https://github.com/PHP-DI/PHP-DI/graphs/contributors" title="PHP-DI contributors">contributors</a>
+                    |
+                    Website generated with
+                    <a href="http://couscous.io/" title="Static website generator for software documentation">Couscous</a>,
+                    supported by <a href="https://prettyci.com/" title="Continuous integration for PHP coding standards">PrettyCI.com</a>.
+                </p>
+            </div>
+        </footer>
+    
+            <script src="./PHP-DI - The Dependency Injection Container for humans_files/jquery.min.js"></script>
+        <script src="./PHP-DI - The Dependency Injection Container for humans_files/bootstrap.min.js"></script>
+        <script src="./PHP-DI - The Dependency Injection Container for humans_files/highlight.min.js"></script>
+
+        <script>
+            $(function() {
+                hljs.initHighlightingOnLoad();
+
+                // Add anchors to headers
+                $('article h2, article h3, article h4, article h5').each(function () {
+                    var url = document.URL.replace(/#.*$/, "") + '#' + $(this).attr('id');
+                    $(this).append(' <a class="anchor" href="' + url + '">#</a>');
+                });
+            });
+        </script>
+    
+    <script>
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-15584647-13']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+    <!-- Gitter -->
+    <script>
+        ((window.gitter = {}).chat = {}).options = {
+            room: 'PHP-DI/PHP-DI'
+        };
+    </script>
+    <script src="./PHP-DI - The Dependency Injection Container for humans_files/sidecar.v1.js" async="" defer=""></script>
+
+    <script type="text/javascript" src="./PHP-DI - The Dependency Injection Container for humans_files/docsearch.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var search = docsearch({
+                apiKey: 'ef6af24cbacae1f85d3c44741df49167',
+                indexName: 'php-di',
+                inputSelector: '#search-input'
+            });
+            var delay = (function () {
+                var timer = 0;
+                return function (callback, ms) {
+                    clearTimeout(timer);
+                    timer = setTimeout(callback, ms);
+                };
+            })();
+            search.autocomplete.on('autocomplete:selected', function (e, suggestion) {
+                var articleTitle = suggestion.subcategory;
+                // Strip HTML tags
+                var div = document.createElement("div");
+                div.innerHTML = articleTitle;
+                articleTitle = div.textContent || div.innerText || "";
+                _gaq.push(['_trackEvent', 'search', 'click', articleTitle]);
+            });
+            $('#search-input').bind('input', function () {
+                var search = $(this).val();
+                if (search.length < 3) {
+                    return;
+                }
+                delay(function () {
+                    _gaq.push(['_trackPageview', '/search?q=' + search]);
+                }, 600);
+            });
+        });
+    </script>
+
+
+
+<iframe scrolling="no" frameborder="0" allowtransparency="true" src="./PHP-DI - The Dependency Injection Container for humans_files/widget_iframe.4ddf50b7ac5c5f06f6679f003b742641.html" title="Twitter settings iframe" style="display: none;"></iframe><aside class="gitter-chat-embed is-collapsed"><div class="gitter-chat-embed-action-bar"><a class="gitter-chat-embed-action-bar-item gitter-chat-embed-action-bar-item-pop-out" aria-label="Open Chat in Gitter.im" href="https://gitter.im/PHP-DI/PHP-DI" target="_blank" rel="noopener"></a><button class="gitter-chat-embed-action-bar-item gitter-chat-embed-action-bar-item-collapse-chat" aria-label="Collapse Gitter Chat"></button></div><div class="gitter-chat-embed-loading-wrapper">
+        <div class="gitter-chat-embed-loading-indicator gitter-icon"></div>
+      </div></aside><a href="https://gitter.im/PHP-DI/PHP-DI" class="gitter-open-chat-button">Open Chat</a><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" title="Twitter analytics iframe" src="./PHP-DI - The Dependency Injection Container for humans_files/saved_resource.html"></iframe></body></html>
