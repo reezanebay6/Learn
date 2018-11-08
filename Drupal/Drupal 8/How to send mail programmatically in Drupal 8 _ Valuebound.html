@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<!-- saved from url=(0084)https://www.valuebound.com/resources/blog/how-to-send-mail-programmatically-drupal-8 -->
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class=" js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+<meta name="title" content="How to send mail programmatically in Drupal 8 | Valuebound">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.valuebound.com/resources/blog/how-to-send-mail-programmatically-drupal-8">
+<meta name="description" content="How to send mail programmatically in Drupal 8||How we can use Mail API in Drupal 8 programmatically for sending emails">
+<meta name="abstract" content="How to send mail programmatically in Drupal 8||How we can use Mail API in Drupal 8 programmatically for sending emails">
+<meta name="keywords" content="send email programmatically,programmatic email in drupal8,Drupal 8, module development,">
+<meta name="image_src" content="">
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)">
+<meta name="MobileOptimized" content="width">
+<meta name="HandheldFriendly" content="true">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script async="" src="./How to send mail programmatically in Drupal 8 _ Valuebound_files/saved_resource"></script><script type="text/javascript" async="" src="./How to send mail programmatically in Drupal 8 _ Valuebound_files/analytics.js"></script><script async="" src="./How to send mail programmatically in Drupal 8 _ Valuebound_files/vt2.aspx"></script><script async="" src="./How to send mail programmatically in Drupal 8 _ Valuebound_files/get_counts"></script><script src="./How to send mail programmatically in Drupal 8 _ Valuebound_files/collectedforms.js" type="text/javascript" id="CollectedForms-609065" crossorigin="anonymous" data-leadin-portal-id="609065" data-leadin-env="prod" data-loader="hs-scriptloader" data-hsjs-portal="609065" data-hsjs-env="prod"></script><script src="./How to send mail programmatically in Drupal 8 _ Valuebound_files/leadflows.js" type="text/javascript" id="LeadFlows-609065" crossorigin="anonymous" data-leadin-portal-id="609065" data-leadin-env="prod" data-loader="hs-scriptloader" data-hsjs-portal="609065" data-hsjs-env="prod"></script><script src="./How to send mail programmatically in Drupal 8 _ Valuebound_files/609065.js" type="text/javascript" id="hs-analytics"></script><script async="" src="./How to send mail programmatically in Drupal 8 _ Valuebound_files/VisitorTrack2.js"></script><script type="text/javascript" id="zsiqscript" defer="" src="./How to send mail programmatically in Drupal 8 _ Valuebound_files/widget"></script><script async="" src="./How to send mail programmatically in Drupal 8 _ Valuebound_files/5ad04c5983e6290013a1c27b.js"></script><script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Article",
+            "name": "How to send mail programmatically in Drupal 8",
+            "headline": "How to send mail programmatically in Drupal 8",
+            "image": {
+                "@type": "ImageObject",
+                "representativeOfPage": "True",
+                "url": "//1554227851.rsc.cdn77.org/sites/default/files/send-emai-programatically-in-drupal-8.jpg",
+                "width": "1920",
+                "height": "1080"
+            },
+            "datePublished": "2016-03-15T14:46:51+0530",
+            "dateModified": "2016-03-15T14:46:51+0530",
+            "isAccessibleForFree": "True",
+            "author": {
+                "@type": "Person",
+                "@id": "https://www.valuebound.com/users/aditya",
+                "name": "aditya",
+                "url": "https://www.valuebound.com/users/aditya"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "@id": "https://www.valuebound.com/",
+                "name": "Valuebound",
+                "url": "https://www.valuebound.com/",
+                "sameAs": [
+                    "https://www.linkedin.com/company/valuebound",
+                    "https://www.facebook.com/valuebound",
+                    "https://twitter.com/valuebound"
+                ],
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.valuebound.com/sites/default/files/valuebound_logo.png",
+                    "width": "299",
+                    "height": "60"
+                }
+            },
+            "mainEntityOfPage": "https://www.valuebound.com/resources/blog/how-to-send-mail-programmatically-drupal-8"
+        }
+    ]
+}</script>
+<link rel="shortcut icon" href="https://1554227851.rsc.cdn77.org/sites/default/files/vb-notext-logo.png" type="image/png">
+<link rel="revision" href="https://www.valuebound.com/resources/blog/how-to-send-mail-programmatically-drupal-8">
+
+    <title>How to send mail programmatically in Drupal 8 | Valuebound</title>
+    <link rel="stylesheet" href="./How to send mail programmatically in Drupal 8 _ Valuebound_files/css_yDQLZpU_T8_nLEoGTzK0tqm8Z-VuKPhLhT34JM-h7vA.css" media="all">
+<link rel="stylesheet" href="./How to send mail programmatically in Drupal 8 _ Valuebound_files/css_5HdFOIc5ubJ8qme6Q3jxj2waXVasK7eMMKTb44Om8HY.css" media="all">
+
+    
+<!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+
+  <script type="text/javascript" async="" src="./How to send mail programmatically in Drupal 8 _ Valuebound_files/embed.js"></script><style type="text/css">#st-1 {
+  font-family: "Helvetica Neue", Verdana, Helvetica, Arial, sans-serif;;
+  direction: ltr;
+  display: block;
+  opacity: 1;
+  text-align: center;
+  z-index: 94034;
+}
+#st-1.st-animated {
+  -moz-transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in; -ms-transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in; -o-transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in; -webkit-transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in; transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in;
+}
+#st-1.st-hidden {
+  opacity: 0;
+}
+#st-1.st-hide {
+  display: none;
+}
+#st-1 .st-btn {
+  -moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+  -moz-transition: opacity 0.2s ease-in, top 0.2s ease-in; -ms-transition: opacity 0.2s ease-in, top 0.2s ease-in; -o-transition: opacity 0.2s ease-in, top 0.2s ease-in; -webkit-transition: opacity 0.2s ease-in, top 0.2s ease-in; transition: opacity 0.2s ease-in, top 0.2s ease-in;
+  -moz-border-radius: 0px;
+-webkit-border-radius: 0px;
+border-radius: 0px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  height: 48px;
+  line-height: 48px;
+  margin-right: 8px;
+  padding: 0 12px;
+  position: relative;
+  text-align: center;
+  top: 0;
+  vertical-align: top;
+  white-space: nowrap;
+}
+#st-1 .st-btn:last-child {
+  margin-right: 0;
+}
+#st-1 .st-btn > svg {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  top: 12px;
+  vertical-align: top;
+}
+#st-1 .st-btn > img {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  top: 12px;
+  vertical-align: top;
+}
+#st-1 .st-btn > span {
+  -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; -webkit-transition: all 0.2s ease-in; transition: all 0.2s ease-in;
+  color: #fff;
+  display: inline-block;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  min-width: 75px;
+  opacity: 1;
+  padding: 0 6px;
+  position: relative;
+  vertical-align: top;
+}
+#st-1.st-has-labels .st-btn {
+  min-width: 150px;
+}
+#st-1.st-has-labels .st-btn.st-remove-label {
+  min-width: 50px;
+}
+#st-1.st-has-labels .st-btn.st-remove-label > span {
+  display: none;
+}
+#st-1.st-has-labels .st-btn.st-hide-label > span {
+  display: none;
+}
+#st-1 .st-total {
+  color: #555;
+  display: inline-block;
+  font-weight: 500;
+  line-height: 18px;
+  margin-right: 0;
+  max-width: 80px;
+  padding: 4px 8px;
+  text-align: center;
+}
+#st-1 .st-total.st-hidden {
+  display: none;
+}
+#st-1 .st-total > span {
+  font-size: 24px;
+  line-height: 26px;
+  display: block;
+  padding: 0;
+}
+#st-1 .st-total > span.st-shares {
+  font-size: 14px;
+  line-height: 14px;
+}
+#st-1.st-justified {
+  display: flex;
+  text-align: center;
+}
+#st-1.st-justified .st-btn {
+  -moz-flex: 1;
+-ms-flex: 1;
+-webkit-flex: 1;
+flex: 1;
+}#st-1 .st-btn:hover {
+  opacity: .8;
+  top: -4px;
+}#st-1 .st-btn[data-network='linkedin'] {
+  background-color: #0077b5;
+}
+#st-1 .st-btn[data-network='twitter'] {
+  background-color: #55acee;
+}
+#st-1 .st-btn[data-network='facebook'] {
+  background-color: #3B5998;
+}</style><style type="text/css">#st-3 {
+  font-family: "Helvetica Neue", Verdana, Helvetica, Arial, sans-serif;;
+  -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; -webkit-transition: all 0.2s ease-in; transition: all 0.2s ease-in;
+  backface-visibility: hidden;
+  display: block;
+  position: fixed;
+  opacity: 1;
+  text-align: left;
+  top: 160px;
+  z-index: 94034;
+}
+#st-3.st-left {
+  left: 0px;
+}
+#st-3.st-hidden.st-left {
+  left: -48px;
+}
+#st-3.st-hidden {
+  width: 96px;
+}
+#st-3 > div {
+  clear: left;
+  float: left;
+}
+#st-3 .st-btn {
+  -moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+  -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; -webkit-transition: all 0.2s ease-in; transition: all 0.2s ease-in;
+  cursor: pointer;
+  display: inline-block;
+  font-size: NaNpx;
+  height: 48px;
+  line-height: 24px;
+  margin-bottom: 0;
+  opacity: 1;
+  overflow: hidden;
+  padding: 12px;
+  position: relative;
+  text-align: left;
+  top: 0;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 48px;
+}
+#st-3 .st-btn.st-first {
+  border-top-right-radius: 4px;
+}
+#st-3 .st-btn.st-last {
+  border-bottom-right-radius: 4px;
+}
+#st-3 .st-btn > svg {
+  -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; -webkit-transition: all 0.2s ease-in; transition: all 0.2s ease-in;
+  height: 24px;
+  margin-left: 0;
+  vertical-align: top;
+  width: 24px;
+}
+#st-3 .st-btn > img {
+  -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; -webkit-transition: all 0.2s ease-in; transition: all 0.2s ease-in;
+  height: 24px;
+  margin-left: 0;
+  vertical-align: top;
+  width: 24px;
+}
+#st-3 .st-btn > span {
+  -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; -webkit-transition: all 0.2s ease-in; transition: all 0.2s ease-in;
+  color: #fff;
+  display: inline-block;
+  font-weight: 500;
+  left: -35px;
+  letter-spacing: 0.5px;
+  opacity: 0;
+  padding: 0 6px;
+  position: relative;
+  vertical-align: top;
+  filter: alpha(opacity=0);
+}
+#st-3 .st-btn.st-hide-label > span {
+  display: none !important;
+}
+#st-3 .st-total {
+  -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; -webkit-transition: all 0.2s ease-in; transition: all 0.2s ease-in;
+  background: #fff;
+  color: #555;
+  display: inline-block;
+  font-weight: 500;
+  line-height: 18px;
+  margin-right: 0;
+  min-height: 34px;
+  max-width: 80px;
+  opacity: 1;
+  padding: 4px 0;
+  text-align: center;
+  width: 48px;
+}
+#st-3 .st-total.st-hidden {
+  display: none;
+}
+#st-3 .st-total > span {
+  display: block;
+  font-size: 18px;
+  line-height: 21px;
+  padding: 0;
+}
+#st-3 .st-total > span.st-shares {
+  font-size: 11px;
+  line-height: 11px;
+}
+#st-3 .st-toggle {
+  left: -48px;
+  -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; -webkit-transition: all 0.2s ease-in; transition: all 0.2s ease-in;
+  background: #ccc;
+  border-bottom-right-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 24px;
+  position: relative;
+  text-align: center;
+  width: 48px;
+}
+#st-3.st-hidden .st-toggle {
+  border-top-right-radius: 4px;
+}
+#st-3.st-left .st-toggle .st-left {
+  display: inline-block;
+}
+#st-3.st-left.st-hidden .st-toggle .st-left {
+  display: none;
+}
+#st-3.st-left .st-toggle .st-right {
+  display: none;
+}
+#st-3.st-left.st-hidden .st-toggle .st-right {
+  display: inline-block;
+}#st-3:hover .st-toggle {
+  left: 0;
+}
+#st-3.st-hidden:hover .st-toggle {
+  left: 48px;
+}
+#st-3.st-toggleable:hover .st-btn.st-last {
+  border-bottom-right-radius: 0;
+}
+#st-3.st-toggleable:hover .st-btn.st-last:hover {
+  border-bottom-right-radius: 4px;
+}
+#st-3 .st-btn:hover {
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+#st-3.st-has-labels .st-btn:hover {
+  width: 120px;
+}
+#st-3:not(.st-has-labels) .st-btn:hover {
+  width: 62px;
+}
+#st-3 .st-btn.st-hide-label:hover {
+  width: 62px;
+}
+#st-3 .st-btn:hover > svg {
+  margin-left: 5px;
+}
+#st-3 .st-btn:hover > img {
+  margin-left: 5px;
+}
+#st-3 .st-btn:hover > span {
+  opacity: 1;
+  display: inline-block;
+  left: 0;
+  filter: alpha(opacity=100);
+}
+@media (max-width: 1024px) {
+  #st-3 .st-btn:hover > svg {
+    margin-left: 0;
+  }
+  #st-3 .st-btn:hover > span {
+    display: none;
+  }
+}@media (max-width: 1024px) {
+  #st-3 {
+  bottom: 0;
+  display: flex;
+  left: 0;
+  right: 0;
+  top: auto;
+  width: 100%;
+}
+#st-3.st-hidden {
+  bottom: -48px;
+  width: 100%;
+}
+#st-3.st-hidden.st-left {
+  left: 0;
+}
+#st-3.st-hidden.st-right {
+  right: 0;
+}
+#st-3 > div {
+  -moz-flex: 1;
+  -ms-flex: 1;
+  -webkit-flex: 1;
+  clear: none;
+  flex: 1;
+  float: none;
+}
+#st-3 .st-total {
+  background: #fff;
+  padding: 6px 8px;
+}
+#st-3 .st-btn {
+  -moz-border-radius: 0 !important;
+-webkit-border-radius: 0 !important;
+border-radius: 0 !important;
+  text-align: center;
+  width: auto;
+}
+#st-3 .st-btn > span {
+  display: none;
+}
+#st-3 .st-toggle {
+  display: none;
+}body { padding-bottom: 48px; }
+}#st-3 .st-btn[data-network='linkedin'] {
+  background-color: #0077b5;
+}
+#st-3 .st-btn[data-network='facebook'] {
+  background-color: #3B5998;
+}
+#st-3 .st-btn[data-network='twitter'] {
+  background-color: #55acee;
+}</style><link rel="preload" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.d49f53e192b9080ef8880a7c9b24f1c3.css"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.18932c85febf9520158697cdc31f08ae.js"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.e7b46487e9e041aabc7c7cff31722578.js"><link rel="preload" as="script" href="https://disqus.com/next/config.js"><link rel="stylesheet" href="./How to send mail programmatically in Drupal 8 _ Valuebound_files/floatbutton.css"><script src="./How to send mail programmatically in Drupal 8 _ Valuebound_files/floatbutton.js"></script><style type="text/css" id="LeadinColors-82464">.leadinModal-82464 .leadinModal-content {
+  border-color: #888888 !important;
+}
+.leadinModal-82464 .leadinModal input:focus {
+  box-shadow: 0 0 0 2px #a3a3a3 !important;
+}
+.leadinModal-82464 .leadin-button-primary {
+  background: #888888 !important;
+  color: #FFFFFF !important;
+}
+.leadinModal-82464 .back-button {
+  border: 1px solid #888888 !important;
+}
+.leadinModal-82464 .leadin-button-primary:hover {
+  background: #a3a3a3 !important;
+}
+.leadinModal-82464 .leadin-button-primary-border {
+  border: 1px solid #FFFFFF !important;
+}
+.leadinModal-82464 .leadin-button-secondary {
+  background: #FFFFFF !important;
+  color: #888888 !important;
+}
+.leadinModal-82464 .leadin-button-secondary.leadin-dismiss-button {
+  color: #FFFFFF !important;
+  background: #888888 !important;
+  border: 1.25px solid #FFFFFF !important;
+}
+.leadinModal-82464 .leadin-button-secondary:hover {
+  color: #a3a3a3 !important;
+}
+.leadinModal-82464.leadinModal-theme-top.leadinModal-preview.leadinModal-v3 .leadinModal-close:before,
+.leadinModal-82464.leadinModal-theme-bottom-right-corner.leadinModal-preview.leadinModal-v3 .leadinModal-close:before,
+.leadinModal-82464.leadinEmbedded-theme-default.leadinModal-preview.leadinModal-v3 .leadinModal-close:before,
+.leadinModal-82464.leadinModal-theme-bottom-left-corner.leadinModal-preview.leadinModal-v3 .leadinModal-close:before {
+  color: #FFFFFF !important;
+}
+.leadinModal-82464.leadinModal-theme-top.leadinModal-preview.leadinModal-v3 .leadinModal-content,
+.leadinModal-82464.leadinModal-theme-bottom-right-corner.leadinModal-preview.leadinModal-v3 .leadinModal-content,
+.leadinModal-82464.leadinEmbedded-theme-default.leadinModal-preview.leadinModal-v3 .leadinModal-content,
+.leadinModal-82464.leadinModal-theme-bottom-left-corner.leadinModal-preview.leadinModal-v3 .leadinModal-content {
+  background: #888888 !important;
+}
+.leadinModal-82464.leadinModal-theme-top.leadinModal-preview.leadinModal-v3 .leadinModal-content h4,
+.leadinModal-82464.leadinModal-theme-bottom-right-corner.leadinModal-preview.leadinModal-v3 .leadinModal-content h4,
+.leadinModal-82464.leadinEmbedded-theme-default.leadinModal-preview.leadinModal-v3 .leadinModal-content h4,
+.leadinModal-82464.leadinModal-theme-bottom-left-corner.leadinModal-preview.leadinModal-v3 .leadinModal-content h4 {
+  color: #FFFFFF !important;
+}
+.leadinModal-82464.leadinModal-theme-top.leadinModal-preview.leadinModal-v3 .leadinModal-content p,
+.leadinModal-82464.leadinModal-theme-top.leadinModal-preview.leadinModal-v3 .leadinModal-content .secondary-dismiss,
+.leadinModal-82464.leadinModal-theme-bottom-right-corner.leadinModal-preview.leadinModal-v3 .leadinModal-content p,
+.leadinModal-82464.leadinModal-theme-bottom-right-corner.leadinModal-preview.leadinModal-v3 .leadinModal-content .secondary-dismiss,
+.leadinModal-82464.leadinEmbedded-theme-default.leadinModal-preview.leadinModal-v3 .leadinModal-content p,
+.leadinModal-82464.leadinEmbedded-theme-default.leadinModal-preview.leadinModal-v3 .leadinModal-content .secondary-dismiss,
+.leadinModal-82464.leadinModal-theme-bottom-left-corner.leadinModal-preview.leadinModal-v3 .leadinModal-content p {
+  color: #FFFFFF !important;
+}
+.leadinModal-82464.leadinModal-theme-top.leadinModal-preview.leadinModal-v3 .leadinModal-content ul,
+.leadinModal-82464.leadinModal-theme-bottom-right-corner.leadinModal-preview.leadinModal-v3 .leadinModal-content ul,
+.leadinModal-82464.leadinEmbedded-theme-default.leadinModal-preview.leadinModal-v3 .leadinModal-content ul,
+.leadinModal-82464.leadinModal-theme-bottom-left-corner.leadinModal-preview.leadinModal-v3 .leadinModal-content ul {
+  color: #FFFFFF !important;
+}
+.leadinModal-82464.leadinModal-theme-top.leadinModal-preview.leadinModal-v3 .leadinModal-content li,
+.leadinModal-82464.leadinModal-theme-bottom-right-corner.leadinModal-preview.leadinModal-v3 .leadinModal-content li,
+.leadinModal-82464.leadinEmbedded-theme-default.leadinModal-preview.leadinModal-v3 .leadinModal-content li,
+.leadinModal-82464.leadinModal-theme-bottom-left-corner.leadinModal-preview.leadinModal-v3 .leadinModal-content li {
+  color: #FFFFFF !important;
+}
+.leadinModal-82464.leadinModal-theme-top.leadinModal-preview.leadinModal-v3 .leadinModal-content ol,
+.leadinModal-82464.leadinModal-theme-bottom-right-corner.leadinModal-preview.leadinModal-v3 .leadinModal-content ol,
+.leadinModal-82464.leadinEmbedded-theme-default.leadinModal-preview.leadinModal-v3 .leadinModal-content ol,
+.leadinModal-82464.leadinModal-theme-bottom-left-corner.leadinModal-preview.leadinModal-v3 .leadinModal-content ol {
+  color: #FFFFFF !important;
+}</style><script src="./How to send mail programmatically in Drupal 8 _ Valuebound_files/alfalfa.4a5fcca1fe50a757044dfd331b660625.js" async="" charset="UTF-8"></script></head>
+  <body class="path-node page-node-type-article blockFloat-processed fixed--nav" style="touch-action: auto;"><style type="text/css">div#hs-eu-cookie-confirmation{position:absolute;left:0;top:0;width:100%;height:auto;background-color:#2d2d2d;border-bottom:1px solid gray;border-bottom:1px solid rgba(0,0,0,0.5);-webkit-box-shadow:0 1px 2px rgba(0,0,0,0.2);-moz-box-shadow:0 1px 2px rgba(0,0,0,0.2);box-shadow:0 1px 2px rgba(0,0,0,0.2);font-size:14px !important;line-height:18px !important;font-family:helvetica neue,helvetica,arial,sans !important;color:#fff !important;text-shadow:0 1px 0 rgba(0,0,0,0.7) !important;text-align:left !important;z-index:100000000 !important}div#hs-eu-cookie-confirmation.can-use-gradients{background-color:rgba(0,0,0,0);background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0,0,0,0.9)), color-stop(100%, rgba(0,0,0,0.75)));background-image:-webkit-linear-gradient(top, rgba(0,0,0,0.9),rgba(0,0,0,0.75));background-image:-moz-linear-gradient(top, rgba(0,0,0,0.9),rgba(0,0,0,0.75));background-image:-o-linear-gradient(top, rgba(0,0,0,0.9),rgba(0,0,0,0.75));background-image:linear-gradient(top, rgba(0,0,0,0.9),rgba(0,0,0,0.75));background-image:linear-gradient(to bottom, rgba(0,0,0,0.9),rgba(0,0,0,0.75))}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner{padding:12px 18px 18px}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a{font-family:helvetica neue,helvetica,arial,sans !important;color:#add8e6 !important;font-size:14px !important;text-decoration:none !important;background:none !important;border:none !important;font-weight:normal !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a:hover{text-decoration:underline !important;background:none !important;border:none !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner div#hs-en-cookie-confirmation-buttons-area{text-align:center !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a#hs-eu-confirmation-button{font-family:helvetica neue,helvetica,arial,sans !important;font-size:14px !important;font-weight:normal !important;margin-right:16px !important;padding:4px 12px !important;background-color:green !important;border:1px solid gray !important;border:1px solid rgba(0,0,0,0.5) !important;background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, transparent), color-stop(100%, rgba(0,0,0,0.2)));background-image:-webkit-linear-gradient(top, transparent,rgba(0,0,0,0.2));background-image:-moz-linear-gradient(top, transparent,rgba(0,0,0,0.2));background-image:-o-linear-gradient(top, transparent,rgba(0,0,0,0.2));background-image:linear-gradient(top, transparent,rgba(0,0,0,0.2));-webkit-border-radius:4px;-moz-border-radius:4px;-ms-border-radius:4px;-o-border-radius:4px;border-radius:4px;-webkit-box-shadow:0 1px 2px rgba(0,0,0,0.2),inset 0 1px 0 rgba(255,255,255,0.5);-moz-box-shadow:0 1px 2px rgba(0,0,0,0.2),inset 0 1px 0 rgba(255,255,255,0.5);box-shadow:0 1px 2px rgba(0,0,0,0.2),inset 0 1px 0 rgba(255,255,255,0.5);line-height:14px !important;color:#fff !important;text-shadow:0 1px 0 rgba(0,0,0,0.5) !important;text-decoration:none !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a#hs-eu-confirmation-button:hover{background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, transparent), color-stop(100%, rgba(0,0,0,0.3)));background-image:-webkit-linear-gradient(top, transparent,rgba(0,0,0,0.3));background-image:-moz-linear-gradient(top, transparent,rgba(0,0,0,0.3));background-image:-o-linear-gradient(top, transparent,rgba(0,0,0,0.3));background-image:linear-gradient(top, transparent,rgba(0,0,0,0.3))}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a#hs-eu-confirmation-button:active{background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0,0,0,0.3)), color-stop(100%, rgba(0,0,0,0.3)));background-image:-webkit-linear-gradient(top, rgba(0,0,0,0.3),rgba(0,0,0,0.3));background-image:-moz-linear-gradient(top, rgba(0,0,0,0.3),rgba(0,0,0,0.3));background-image:-o-linear-gradient(top, rgba(0,0,0,0.3),rgba(0,0,0,0.3));background-image:linear-gradient(top, rgba(0,0,0,0.3),rgba(0,0,0,0.3));-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.2);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.2);box-shadow:inset 0 1px 2px rgba(0,0,0,0.2)}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner p{line-height:18px !important;font-family:helvetica neue,helvetica,arial,sans !important;font-weight:normal !important;font-size:14px !important;margin:0 0 16px !important;padding:0 !important;color:#fff !important;text-align:left !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner p#hs-eu-cookie-disclaimer{margin:16px 0 !important}@media print{div#hs-eu-cookie-confirmation{display:none !important}}@media screen and (max-width: 480px){div#hs-eu-cookie-confirmation{font-size:12px !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner{padding:8px 14px 14px !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a{font-size:12px !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a#hs-eu-confirmation-button{font-size:12px !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner p{font-size:12px !important;margin-bottom:12px !important;line-height:15px !important}}
+</style><div id="hs-eu-cookie-confirmation" class=" can-use-gradients"><div id="hs-eu-cookie-confirmation-inner"><p style="">This website stores cookies on your computer. These cookies are used to improve your website and provide more personalized services to you, both on this website and through other media. To find out more about the cookies we use, see our Privacy Policy.</p><div id="hs-en-cookie-confirmation-buttons-area"><a href="https://www.valuebound.com/resources/blog/how-to-send-mail-programmatically-drupal-8#" id="hs-eu-confirmation-button">Accept</a></div></div></div><div id="off-canvas" class="mm-menu mm-menu_offcanvas mm-menu_keyboardfocus mm-menu_theme-dark mm-menu_effect-slide-menu mm-menu_position-right mm-menu_pagedim" aria-hidden="true"><button class="mm-tabstart" tabindex="0" type="button" aria-hidden="true" role="presentation"></button><div class="mm-panels"><div id="mm-1" class="mm-panel mm-panel_has-navbar mm-panel_opened"><div class="mm-navbar"><a class="mm-navbar__title">Menu</a></div><ul class="menu mm-listview">
+                    <li class="menu-item mm-listitem">
+        <a href="https://www.valuebound.com/case-studies" data-drupal-link-system-path="node/308">Case Study</a>
+              </li>
+                <li class="menu-item mm-listitem">
+        <a href="https://www.valuebound.com/solution">Solutions</a>
+              </li>
+                <li class="menu-item menu-item--expanded mm-listitem">
+        <a class="mm-btn_next" href="https://www.valuebound.com/resources/blog/how-to-send-mail-programmatically-drupal-8#mm-2"><span class="mm-sronly">Open submenu (About)</span></a><a href="https://www.valuebound.com/about" data-drupal-link-system-path="node/323">About</a>
+                                
+  
+              </li>
+                <li class="menu-item menu-item--expanded mm-listitem">
+        <a class="mm-btn_next" href="https://www.valuebound.com/resources/blog/how-to-send-mail-programmatically-drupal-8#mm-3"><span class="mm-sronly">Open submenu (Resources)</span></a><a href="https://www.valuebound.com/resources/blogs">Resources</a>
+                                
+  
+              </li>
+                <li class="menu-item mm-listitem">
+        <a href="https://www.valuebound.com/contact-us" class="contact button" target="_self" data-drupal-link-system-path="node/1126">Get in Touch</a>
+              </li>
+        </ul></div><div id="mm-2" class="mm-panel mm-hidden mm-panel_has-navbar" aria-hidden="true"><div class="mm-navbar"><a class="mm-btn mm-btn_prev mm-navbar__btn" href="https://www.valuebound.com/resources/blog/how-to-send-mail-programmatically-drupal-8#mm-1" aria-owns="mm-1" aria-haspopup="true"><span class="mm-sronly">Close submenu</span></a><a class="mm-navbar__title" href="https://www.valuebound.com/resources/blog/how-to-send-mail-programmatically-drupal-8#mm-1">About</a></div><ul class="menu mm-listview">
+                    <li class="menu-item mm-listitem">
+        <a href="https://www.valuebound.com/career" data-drupal-link-system-path="node/328">Career</a>
+              </li>
+        </ul></div><div id="mm-3" class="mm-panel mm-hidden mm-panel_has-navbar" aria-hidden="true"><div class="mm-navbar"><a class="mm-btn mm-btn_prev mm-navbar__btn" href="https://www.valuebound.com/resources/blog/how-to-send-mail-programmatically-drupal-8#mm-1" aria-owns="mm-1" aria-haspopup="true"><span class="mm-sronly">Close submenu</span></a><a class="mm-navbar__title" href="https://www.valuebound.com/resources/blog/how-to-send-mail-programmatically-drupal-8#mm-1">Resources</a></div><ul class="menu mm-listview">
+                    <li class="menu-item mm-listitem">
+        <a href="https://www.valuebound.com/resources/blogs">Blogs &amp; Insights</a>
+              </li>
+                <li class="menu-item mm-listitem">
+        <a href="https://www.valuebound.com/resources/press-releases" data-drupal-link-system-path="node/372">Press Releases</a>
+              </li>
+                <li class="menu-item mm-listitem">
+        <a href="https://www.valuebound.com/webinars" data-drupal-link-system-path="webinars">Webinars</a>
+              </li>
+                <li class="menu-item mm-listitem">
+        <a href="https://www.valuebound.com/resources/what-is-drupal" data-drupal-link-system-path="node/324">What is Drupal?</a>
+              </li>
+        </ul></div></div>
+              
+  
+
+<button class="mm-tabend" tabindex="0" type="button" aria-hidden="true" role="presentation"></button></div>
+        <a href="https://www.valuebound.com/resources/blog/how-to-send-mail-programmatically-drupal-8#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div id="mm-0" class="mm-page mm-slideout"><div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas="">
+    <div class="layout-container">
+
+  <header role="banner" id="header" class="site--header">
+    <div class="site--header-inner">
+      <div class="site--branding">
+          <div class="region region-branding">
+    <div id="block-valuebound-branding" class="block block-system block-system-branding-block">
+  <a href="https://www.valuebound.com/" title="Home" rel="home" class="site-logo">
+    <img src="./How to send mail programmatically in Drupal 8 _ Valuebound_files/vb-logo-white.svg" alt="Home" class="logo-white" style="display:none">
+    <img src="./How to send mail programmatically in Drupal 8 _ Valuebound_files/logo.svg" alt="Home" class="logo-orange">
+  </a>
+</div>
+
+  </div>
+
+      </div>
+      <div class="site--navigation">
+          <div class="region region-navigation">
+    <div id="block-horizontalmenu" class="block block-responsive-menu block-responsive-menu-horizontal-menu">
+  
+    
+      <nav class="responsive-menu-block-wrapper">
+  
+              <ul id="horizontal-menu" class="horizontal-menu sf-js-enabled sf-arrows sf-menu" style="touch-action: pan-y;">
+                    <li class="menu-item">
+        <a href="https://www.valuebound.com/case-studies" data-drupal-link-system-path="node/308">Case Study</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/solution">Solutions</a>
+              </li>
+                <li class="menu-item menu-item--expanded">
+        <a href="https://www.valuebound.com/about" data-drupal-link-system-path="node/323" class="sf-with-ul">About</a>
+                                <ul class="menu sub-nav" style="display: none;">
+                    <li class="menu-item">
+        <a href="https://www.valuebound.com/career" data-drupal-link-system-path="node/328">Career</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item menu-item--expanded">
+        <a href="https://www.valuebound.com/resources/blogs" class="sf-with-ul">Resources</a>
+                                <ul class="menu sub-nav" style="display: none;">
+                    <li class="menu-item">
+        <a href="https://www.valuebound.com/resources/blogs">Blogs &amp; Insights</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/resources/press-releases" data-drupal-link-system-path="node/372">Press Releases</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/webinars" data-drupal-link-system-path="webinars">Webinars</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/resources/what-is-drupal" data-drupal-link-system-path="node/324">What is Drupal?</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/contact-us" class="contact button" target="_self" data-drupal-link-system-path="node/1126">Get in Touch</a>
+              </li>
+        </ul>
+  
+
+
+</nav>
+  </div>
+<div id="block-responsivemenumobileicon" class="responsive-menu-toggle-wrapper responsive-menu-toggle block block-responsive-menu block-responsive-menu-toggle">
+  
+    
+      <a id="toggle-icon" class="toggle responsive-menu-toggle-icon" title="Menu" href="https://www.valuebound.com/resources/blog/how-to-send-mail-programmatically-drupal-8#off-canvas">
+  <span class="icon"></span><span class="label">Menu</span>
+</a>
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </header>
+
+  <main role="main" id="page" class="site--main-content">
+    <a id="main-content" tabindex="-1"></a>      <div class="region region-help">
+    
+
+  </div>
+
+    <div class="layout-content">
+        <div class="region region-content">
+    <div id="block-valuebound-content" class="block block-system block-system-main-block">
+  
+    
+      
+
+
+
+<div class="block block-vb-utility block-vb-social-share">
+  
+    
+      <div class="vb-social-share top-bar vb-share">
+  <div class="share-it-title"><a href="https://www.valuebound.com/resources/blogs">Blogs &amp; Insights</a> -- <span>How to send mail programmatically in Drupal 8</span></div><div class="share-this-text"> Share this</div>
+  <div class="sharethis-inline-share-buttons st-center st-has-labels  st-inline-share-buttons st-animated" id="st-1"><div class="st-btn st-first  st-remove-label" data-network="linkedin" style="display: inline-block;">
+  <svg fill="#fff" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 40 40">
+  <g>
+    <path d="m13.3 31.7h-5v-16.7h5v16.7z m18.4 0h-5v-8.9c0-2.4-0.9-3.5-2.5-3.5-1.3 0-2.1 0.6-2.5 1.9v10.5h-5s0-15 0-16.7h3.9l0.3 3.3h0.1c1-1.6 2.7-2.8 4.9-2.8 1.7 0 3.1 0.5 4.2 1.7 1 1.2 1.6 2.8 1.6 5.1v9.4z m-18.3-20.9c0 1.4-1.1 2.5-2.6 2.5s-2.5-1.1-2.5-2.5 1.1-2.5 2.5-2.5 2.6 1.2 2.6 2.5z"></path>
+  </g>
+</svg>
+  <span class="st-label">Share</span>
+</div><div class="st-btn  st-remove-label" data-network="twitter" style="display: inline-block;">
+  <svg fill="#fff" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 40 40">
+  <g>
+    <path d="m31.5 11.7c1.3-0.8 2.2-2 2.7-3.4-1.4 0.7-2.7 1.2-4 1.4-1.1-1.2-2.6-1.9-4.4-1.9-1.7 0-3.2 0.6-4.4 1.8-1.2 1.2-1.8 2.7-1.8 4.4 0 0.5 0.1 0.9 0.2 1.3-5.1-0.1-9.4-2.3-12.7-6.4-0.6 1-0.9 2.1-0.9 3.1 0 2.2 1 3.9 2.8 5.2-1.1-0.1-2-0.4-2.8-0.8 0 1.5 0.5 2.8 1.4 4 0.9 1.1 2.1 1.8 3.5 2.1-0.5 0.1-1 0.2-1.6 0.2-0.5 0-0.9 0-1.1-0.1 0.4 1.2 1.1 2.3 2.1 3 1.1 0.8 2.3 1.2 3.6 1.3-2.2 1.7-4.7 2.6-7.6 2.6-0.7 0-1.2 0-1.5-0.1 2.8 1.9 6 2.8 9.5 2.8 3.5 0 6.7-0.9 9.4-2.7 2.8-1.8 4.8-4.1 6.1-6.7 1.3-2.6 1.9-5.3 1.9-8.1v-0.8c1.3-0.9 2.3-2 3.1-3.2-1.1 0.5-2.3 0.8-3.5 1z"></path>
+  </g>
+</svg>
+  <span class="st-label">Tweet</span>
+</div><div class="st-btn st-last  st-remove-label" data-network="facebook" style="display: none;">
+  <svg fill="#fff" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 40 40">
+  <g>
+    <path d="m21.7 16.7h5v5h-5v11.6h-5v-11.6h-5v-5h5v-2.1c0-2 0.6-4.5 1.8-5.9 1.3-1.3 2.8-2 4.7-2h3.5v5h-3.5c-0.9 0-1.5 0.6-1.5 1.5v3.5z"></path>
+  </g>
+</svg>
+  <span class="st-label">Share</span>
+</div></div>
+  <a class="hamburger-menu">
+    <span></span><span></span><span></span>
+  </a>
+
+</div>
+<div class="main-navigation-quicklink" id="mySidenav">
+  
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.valuebound.com/case-studies" data-drupal-link-system-path="node/308">Case Study</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/solution">Solutions</a>
+              </li>
+                <li class="menu-item menu-item--expanded">
+        <a href="https://www.valuebound.com/about" data-drupal-link-system-path="node/323">About</a>
+                                <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.valuebound.com/career" data-drupal-link-system-path="node/328">Career</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item menu-item--expanded">
+        <a href="https://www.valuebound.com/resources/blogs">Resources</a>
+                                <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.valuebound.com/resources/blogs">Blogs &amp; Insights</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/resources/press-releases" data-drupal-link-system-path="node/372">Press Releases</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/webinars" data-drupal-link-system-path="webinars">Webinars</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/resources/what-is-drupal" data-drupal-link-system-path="node/324">What is Drupal?</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/contact-us" class="contact button" target="_self" data-drupal-link-system-path="node/1126">Get in Touch</a>
+              </li>
+        </ul>
+  
+
+
+</div>
+
+  </div>
+
+
+<article data-history-node-id="885" role="article" class="node node--type-article node--promoted node--view-mode-full column clearfix" about="/resources/blog/how-to-send-mail-programmatically-drupal-8" typeof="schema:Article">
+  <section class="parallax-window article--header engineering" style="background: url(/themes/custom/valuebound/images/engineering-bg.jpeg)">
+    <div class="article--meta-wrapper">
+      <div class="article--meta">
+        <h1 class="article--title"><span property="schema:name" class="field field--name-title field--type-string field--label-hidden">How to send mail programmatically in Drupal 8</span>
+</h1>
+        <div class="article--post-info">
+            <span class="article--author">
+              <a href="https://www.valuebound.com/users/aditya">
+                <span class="author-image"><img src="./How to send mail programmatically in Drupal 8 _ Valuebound_files/aditya_0.jpg" width="75" height="75"></span>
+                <span class="author-name">Aditya Anurag</span>
+              </a>
+            </span>
+          <span class="article--post-date">Mar 15, 2016</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="article--content-wrapper" id="article--content-area">
+    <div class="article--content">
+      
+            <div property="schema:text" class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>Sometime we require emails to be sent on certain events e.g. for a blog website or a news site we may need to send email after creating new article or blog or in case of e-commerce site we may need to send&nbsp; confirmation mail after successful completion of an order. In this article we are going to explore how we can use Mail API in Drupal 8 programmatically for sending emails.<br>Here we will be looking on how to send the email after successful creation of article.</p>
+
+<p>Sending email in Drupal is a two steps process:</p>
+
+<ul><li>Define your email properties (like subject, body, headers, etc.) in an appropriate hook_mail() implementation.</li>
+	<li>Use Mail manager to send email.</li>
+</ul><p><br><strong>Step 1:</strong></p>
+
+<p>When we send an <a href="http://valuebound.com/resources/blog/beginner%E2%80%99s-guide-to-mail-system-drupal-7-and-8">email programmatically</a>, we need to specify the module name that implements hook_mail().</p>
+
+<p>Now lets see how do we implement it.</p>
+<script src="./How to send mail programmatically in Drupal 8 _ Valuebound_files/3172ce229db257074d45.js"></script><link rel="stylesheet" href="./How to send mail programmatically in Drupal 8 _ Valuebound_files/gist-embed-1564cdcc2939872e81719982075d3d93.css"><div id="gist32738841" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-demomail-php" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-php ">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-demomail-php-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-demomail-php-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-pse">&lt;?php</span><span class="pl-s1"></span></td>
+      </tr>
+      <tr>
+        <td id="file-demomail-php-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-demomail-php-LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"></span></td>
+      </tr>
+      <tr>
+        <td id="file-demomail-php-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-demomail-php-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-c"><span class="pl-c">/**</span></span></span></td>
+      </tr>
+      <tr>
+        <td id="file-demomail-php-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-demomail-php-LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-c">* Implements hook_mail().</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-demomail-php-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-demomail-php-LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-c"><span class="pl-c">*/</span></span></span></td>
+      </tr>
+      <tr>
+        <td id="file-demomail-php-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-demomail-php-LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-k">function</span> <span class="pl-k">&lt;</span><span class="pl-c1">module_name</span><span class="pl-k">&gt;</span>_mail(<span class="pl-smi">$key</span>, <span class="pl-k">&amp;</span><span class="pl-smi">$message</span>, <span class="pl-smi">$params</span>) {</span></td>
+      </tr>
+      <tr>
+        <td id="file-demomail-php-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-demomail-php-LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"> <span class="pl-smi">$options</span> <span class="pl-k">=</span> <span class="pl-c1">array</span>(</span></td>
+      </tr>
+      <tr>
+        <td id="file-demomail-php-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-demomail-php-LC8" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">   <span class="pl-s"><span class="pl-pds">'</span>langcode<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-smi">$message</span>[<span class="pl-s"><span class="pl-pds">'</span>langcode<span class="pl-pds">'</span></span>],</span></td>
+      </tr>
+      <tr>
+        <td id="file-demomail-php-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-demomail-php-LC9" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"> );</span></td>
+      </tr>
+      <tr>
+        <td id="file-demomail-php-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-demomail-php-LC10" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"></span></td>
+      </tr>
+      <tr>
+        <td id="file-demomail-php-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-demomail-php-LC11" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"> <span class="pl-k">switch</span> (<span class="pl-smi">$key</span>) {</span></td>
+      </tr>
+      <tr>
+        <td id="file-demomail-php-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-demomail-php-LC12" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">   <span class="pl-k">case</span> <span class="pl-s"><span class="pl-pds">'</span>create_article<span class="pl-pds">'</span></span>:</span></td>
+      </tr>
+      <tr>
+        <td id="file-demomail-php-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-demomail-php-LC13" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">     <span class="pl-smi">$message</span>[<span class="pl-s"><span class="pl-pds">'</span>from<span class="pl-pds">'</span></span>] <span class="pl-k">=</span> <span class="pl-c1">\</span><span class="pl-c1">Drupal</span><span class="pl-k">::</span>config(<span class="pl-s"><span class="pl-pds">'</span>system.site<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>get(<span class="pl-s"><span class="pl-pds">'</span>mail<span class="pl-pds">'</span></span>);</span></td>
+      </tr>
+      <tr>
+        <td id="file-demomail-php-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-demomail-php-LC14" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">     <span class="pl-smi">$message</span>[<span class="pl-s"><span class="pl-pds">'</span>subject<span class="pl-pds">'</span></span>] <span class="pl-k">=</span> t(<span class="pl-s"><span class="pl-pds">'</span>Article created: @title<span class="pl-pds">'</span></span>, <span class="pl-c1">array</span>(<span class="pl-s"><span class="pl-pds">'</span>@title<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-smi">$params</span>[<span class="pl-s"><span class="pl-pds">'</span>node_title<span class="pl-pds">'</span></span>]), <span class="pl-smi">$options</span>);</span></td>
+      </tr>
+      <tr>
+        <td id="file-demomail-php-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-demomail-php-LC15" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">     <span class="pl-smi">$message</span>[<span class="pl-s"><span class="pl-pds">'</span>body<span class="pl-pds">'</span></span>][] <span class="pl-k">=</span> <span class="pl-smi">$params</span>[<span class="pl-s"><span class="pl-pds">'</span>message<span class="pl-pds">'</span></span>];</span></td>
+      </tr>
+      <tr>
+        <td id="file-demomail-php-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-demomail-php-LC16" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">     <span class="pl-k">break</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-demomail-php-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-demomail-php-LC17" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"> }</span></td>
+      </tr>
+      <tr>
+        <td id="file-demomail-php-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-demomail-php-LC18" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">}</span></td>
+      </tr>
+      <tr>
+        <td id="file-demomail-php-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-demomail-php-LC19" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"></span></td>
+      </tr>
+      <tr>
+        <td id="file-demomail-php-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-demomail-php-LC20" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"></span><span class="pl-pse"><span class="pl-s1">?</span>&gt;</span></td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/xaiwant/3172ce229db257074d45/raw/13a7a96698fd2165c2e5d7b8e39575a7f8f5bfc6/demomail.php" style="float:right">view raw</a>
+        <a href="https://gist.github.com/xaiwant/3172ce229db257074d45#file-demomail-php">demomail.php</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<p>This is a simple implementation that defines one template identified as test_message (the $key). The other two function arguments are:</p>
+
+<p><strong>$message:</strong> passed by reference, and inside which we add as much boilerplate about our email as we need</p>
+
+<p><strong>$params:</strong> an array of extra data that needs to go in the email and that is passed from the mail manager when we try to send the email</p>
+
+<p>This was all about implementation of hook_mail().</p>
+
+<p><strong>Step 2 :</strong> Using Mail manager to send email</p>
+
+<p><script src="./How to send mail programmatically in Drupal 8 _ Valuebound_files/99a5b702fa507c70a543.js"></script><link rel="stylesheet" href="./How to send mail programmatically in Drupal 8 _ Valuebound_files/gist-embed-1564cdcc2939872e81719982075d3d93.css"></p><div id="gist32739066" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-mail_manager-php" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-php ">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-mail_manager-php-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-mail_manager-php-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-pse">&lt;?php</span><span class="pl-s1"></span></td>
+      </tr>
+      <tr>
+        <td id="file-mail_manager-php-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-mail_manager-php-LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-c"><span class="pl-c">/**</span></span></span></td>
+      </tr>
+      <tr>
+        <td id="file-mail_manager-php-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-mail_manager-php-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-c">* Implements hook_entity_insert().</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-mail_manager-php-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-mail_manager-php-LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-c"><span class="pl-c">*/</span></span></span></td>
+      </tr>
+      <tr>
+        <td id="file-mail_manager-php-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-mail_manager-php-LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-k">function</span> <span class="pl-k">&lt;</span><span class="pl-c1">module_name</span><span class="pl-k">&gt;</span>_entity_insert(<span class="pl-c1">Drupal\Core\Entity\</span><span class="pl-c1">EntityInterface</span> <span class="pl-smi">$entity</span>) {</span></td>
+      </tr>
+      <tr>
+        <td id="file-mail_manager-php-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-mail_manager-php-LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"></span></td>
+      </tr>
+      <tr>
+        <td id="file-mail_manager-php-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-mail_manager-php-LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"> <span class="pl-k">if</span> (<span class="pl-smi">$entity</span><span class="pl-k">-&gt;</span>getEntityTypeId() <span class="pl-k">!</span><span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">'</span>node<span class="pl-pds">'</span></span> <span class="pl-k">||</span> (<span class="pl-smi">$entity</span><span class="pl-k">-&gt;</span>getEntityTypeId() <span class="pl-k">===</span> <span class="pl-s"><span class="pl-pds">'</span>node<span class="pl-pds">'</span></span> <span class="pl-k">&amp;&amp;</span> <span class="pl-smi">$entity</span><span class="pl-k">-&gt;</span>bundle() <span class="pl-k">!</span><span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">'</span>article<span class="pl-pds">'</span></span>)) {</span></td>
+      </tr>
+      <tr>
+        <td id="file-mail_manager-php-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-mail_manager-php-LC8" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">   <span class="pl-k">return</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-mail_manager-php-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-mail_manager-php-LC9" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"> }</span></td>
+      </tr>
+      <tr>
+        <td id="file-mail_manager-php-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-mail_manager-php-LC10" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"> <span class="pl-smi">$mailManager</span> <span class="pl-k">=</span> <span class="pl-c1">\</span><span class="pl-c1">Drupal</span><span class="pl-k">::</span>service(<span class="pl-s"><span class="pl-pds">'</span>plugin.manager.mail<span class="pl-pds">'</span></span>);</span></td>
+      </tr>
+      <tr>
+        <td id="file-mail_manager-php-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-mail_manager-php-LC11" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"> <span class="pl-smi">$module</span> <span class="pl-k">=</span> ‘<span class="pl-k">&lt;</span><span class="pl-c1">module_name</span><span class="pl-k">&gt;</span>’;</span></td>
+      </tr>
+      <tr>
+        <td id="file-mail_manager-php-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-mail_manager-php-LC12" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"> <span class="pl-smi">$key</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>create_article<span class="pl-pds">'</span></span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-mail_manager-php-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-mail_manager-php-LC13" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"> <span class="pl-smi">$to</span> <span class="pl-k">=</span> <span class="pl-c1">\</span><span class="pl-c1">Drupal</span><span class="pl-k">::</span>currentUser()<span class="pl-k">-&gt;</span>getEmail();</span></td>
+      </tr>
+      <tr>
+        <td id="file-mail_manager-php-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-mail_manager-php-LC14" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"> <span class="pl-smi">$params</span>[<span class="pl-s"><span class="pl-pds">'</span>message<span class="pl-pds">'</span></span>] <span class="pl-k">=</span> <span class="pl-smi">$entity</span><span class="pl-k">-&gt;</span>get(<span class="pl-s"><span class="pl-pds">'</span>body<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span><span class="pl-smi">value</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-mail_manager-php-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-mail_manager-php-LC15" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"> <span class="pl-smi">$params</span>[<span class="pl-s"><span class="pl-pds">'</span>node_title<span class="pl-pds">'</span></span>] <span class="pl-k">=</span> <span class="pl-smi">$entity</span><span class="pl-k">-&gt;</span>label();</span></td>
+      </tr>
+      <tr>
+        <td id="file-mail_manager-php-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-mail_manager-php-LC16" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"> <span class="pl-smi">$langcode</span> <span class="pl-k">=</span> <span class="pl-c1">\</span><span class="pl-c1">Drupal</span><span class="pl-k">::</span>currentUser()<span class="pl-k">-&gt;</span>getPreferredLangcode();</span></td>
+      </tr>
+      <tr>
+        <td id="file-mail_manager-php-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-mail_manager-php-LC17" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"> <span class="pl-smi">$send</span> <span class="pl-k">=</span> <span class="pl-c1">true</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-mail_manager-php-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-mail_manager-php-LC18" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"></span></td>
+      </tr>
+      <tr>
+        <td id="file-mail_manager-php-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-mail_manager-php-LC19" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"> <span class="pl-smi">$result</span> <span class="pl-k">=</span> <span class="pl-smi">$mailManager</span><span class="pl-k">-&gt;</span>mail(<span class="pl-smi">$module</span>, <span class="pl-smi">$key</span>, <span class="pl-smi">$to</span>, <span class="pl-smi">$langcode</span>, <span class="pl-smi">$params</span>, <span class="pl-c1">NULL</span>, <span class="pl-smi">$send</span>);</span></td>
+      </tr>
+      <tr>
+        <td id="file-mail_manager-php-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-mail_manager-php-LC20" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"> <span class="pl-k">if</span> (<span class="pl-smi">$result</span>[<span class="pl-s"><span class="pl-pds">'</span>result<span class="pl-pds">'</span></span>] <span class="pl-k">!</span><span class="pl-k">==</span> <span class="pl-c1">true</span>) {</span></td>
+      </tr>
+      <tr>
+        <td id="file-mail_manager-php-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-mail_manager-php-LC21" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">   drupal_set_message(t(<span class="pl-s"><span class="pl-pds">'</span>There was a problem sending your message and it was not sent.<span class="pl-pds">'</span></span>), <span class="pl-s"><span class="pl-pds">'</span>error<span class="pl-pds">'</span></span>);</span></td>
+      </tr>
+      <tr>
+        <td id="file-mail_manager-php-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-mail_manager-php-LC22" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"> }</span></td>
+      </tr>
+      <tr>
+        <td id="file-mail_manager-php-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-mail_manager-php-LC23" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"> <span class="pl-k">else</span> {</span></td>
+      </tr>
+      <tr>
+        <td id="file-mail_manager-php-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-mail_manager-php-LC24" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">   drupal_set_message(t(<span class="pl-s"><span class="pl-pds">'</span>Your message has been sent.<span class="pl-pds">'</span></span>));</span></td>
+      </tr>
+      <tr>
+        <td id="file-mail_manager-php-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-mail_manager-php-LC25" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"> }</span></td>
+      </tr>
+      <tr>
+        <td id="file-mail_manager-php-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-mail_manager-php-LC26" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"></span></td>
+      </tr>
+      <tr>
+        <td id="file-mail_manager-php-L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="file-mail_manager-php-LC27" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">}</span></td>
+      </tr>
+      <tr>
+        <td id="file-mail_manager-php-L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="file-mail_manager-php-LC28" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"></span><span class="pl-pse"><span class="pl-s1">?</span>&gt;</span></td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/xaiwant/99a5b702fa507c70a543/raw/2a4cad3503e7f7f829f07f76a5b91ba25932fd4c/mail_manager.php" style="float:right">view raw</a>
+        <a href="https://gist.github.com/xaiwant/99a5b702fa507c70a543#file-mail_manager-php">mail_manager.php</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<p></p>
+
+<p>This will gets triggered every time any Article will be created.</p>
+
+<p>Every time when we will create any Article, we load the Drupal Mail manager service and start setting values for email. We need the following information:</p>
+
+<ul><li>$module : the module name that implements hook_mail() and defines our template</li>
+	<li>$key : the template id</li>
+	<li>$to :the recipient email address (the one found on the current user account)</li>
+	<li>$langcode :the language which goes inside the $params array and which will be used to translate the subject message</li>
+	<li>$params['subject'] : email subject</li>
+	<li>$params['message'] the email body</li>
+	<li>$send : the boolean value indicating whether the email should be actually sent</li>
+</ul><p>We then pass all these values to the mail() method of the mail manager. The latter is responsible for building the email (calling the right hook_mail() implementation being one aspect of this) and finally delegating the actual delivery to the responsible plugin. By default, this will be PHPMail, which uses the default mail() function that comes with PHP.<br>
+And this is all about sending emails programmatically using Drupal 8. We have seen the steps required to send email programmatically by the mail manager whenever we want it. We have also mentioned the default mail delivery plugin which is used to send emails in Drupal 8.</p>
+
+<p><strong>Source :</strong> <a href="https://github.com/adityaanurag/demoMail.git" target="_blank">https://github.com/adityaanurag/demoMail.git</a></p>
+</div>
+      
+      
+      <div class="field field--name-field-tags field--type-entity-reference field--label-hidden field__items">
+              <div class="field__item"><a href="https://www.valuebound.com/tag/drupal-8" property="schema:about" hreflang="en">Drupal 8</a></div>
+              <div class="field__item"><a href="https://www.valuebound.com/tag/custom-module-development" property="schema:about" hreflang="en">Custom Module Development</a></div>
+              <div class="field__item"><a href="https://www.valuebound.com/tag/mail-api" property="schema:about" hreflang="en">Mail API</a></div>
+              <div class="field__item"><a href="https://www.valuebound.com/tag/learn-drupal" property="schema:about" hreflang="en">Learn Drupal</a></div>
+          </div>
+  
+      <div class="article--bottom my-3">
+        
+<div class="nav-pager my-3">
+      <div class="nav previous">
+      <a href="https://www.valuebound.com/resources/blog/managing-user-roles-permission-drupal-8">
+        <label>PREV</label>
+        <div class="previous pager-link">Managing user roles &amp;amp; permission in Drupal 8</div>
+      </a>
+    </div>
+    <div class="nav all">
+        <a href="https://www.valuebound.com/resources/blogs">
+      <span></span><span></span><span></span><span></span>
+    </a>
+      </div>
+      <div class="nav next">
+      <a href="https://www.valuebound.com/resources/blog/how-to-render-blocks-twig-files">
+        <label>NEXT</label>
+        <div class="next pager-link">How to render blocks in twig files</div>
+      </a>
+    </div>
+  </div>
+        <div class="article--bottom-author-info">
+          <div class="article--bottom-author-image">
+            <img src="./How to send mail programmatically in Drupal 8 _ Valuebound_files/aditya_0.jpg" width="150" height="150">
+          </div>
+          <div class="article--bottom-author-bio">
+            <h3>Aditya Anurag</h3>
+            <div class="author-bio">Drupal Developer having 4+ years of experience in web applications development, implementation and having strong knowledge of technical specifications, workflow development and deploying.</div>
+            <a href="https://www.valuebound.com/users/aditya" class="cta">More about Aditya Anurag</a>
+          </div>
+        </div>
+      </div>
+      <button class="show-comments">Leave a Comment</button>
+      <div id="disqus_thread"><iframe id="dsq-app4993" name="dsq-app4993" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./How to send mail programmatically in Drupal 8 _ Valuebound_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 4383px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+      <div class="pre-footer-solutions text-center">
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h3 class="serif italic">Building result driven and scalable Drupal solutions</h3>
+
+<p class="muted">Know about our solutions for Media &amp; Publishing industry</p>
+
+<p><a class="cta" href="https://www.valuebound.com/solution">View our Solutions</a></p>
+</div>
+      </div>
+    </div>
+    <div class="read-more-content hide-for-large"><a class="button">Continue Reading</a></div>
+    <aside class="article--sidebar" id="article--sidebar">
+      <div id="sticky--sidebar" class="hide-for-small blockFloat-processed blockFloat-0 floating-block-active" style="width: 280px; left: 930px; position: fixed; top: 0px;">
+        <div class="views-element-container"><div class="view view-related-articles view-id-related_articles view-display-id-block_1 js-view-dom-id-f4f932e34e31ee65ed46f5ce27d31ecdfbabd3e9eb37b209e35007195b4f2fb1">
+  
+    
+      <div class="view-header">
+      <h3 class="serif hero-title">You may also like</h3>
+    </div>
+      
+      <div class="view-content">
+          <div class="views-row"><div class="views-field views-field-field-thumbnail-image"><div class="field-content">  <a href="https://www.valuebound.com/resources/blog/implement-these-modules-make-your-drupal-site-more-secure"><img src="./How to send mail programmatically in Drupal 8 _ Valuebound_files/security-3497068_1920.jpg" width="1920" height="1152" alt="Drupal security" typeof="foaf:Image">
+</a>
+</div></div></div>
+
+    </div>
+  
+        <div class="attachment attachment-after">
+      <div class="views-element-container"><div class="view view-related-articles view-id-related_articles view-display-id-attachment_1 js-view-dom-id-c05af373f1235a6a273c175943345dba25660e5dfa7f453dfcdd5faec9439ecf">
+  
+    
+      <div class="view-header">
+      
+    </div>
+      
+      <div class="view-content">
+            <div class="views-row">
+    <div class="views-field views-field-title"><span class="field-content"><a href="https://www.valuebound.com/resources/blog/implement-these-modules-make-your-drupal-site-more-secure" hreflang="en">Implement These Modules to Make Your Drupal Site More Secure</a></span></div>
+  </div>
+      <div class="views-row">
+    <div class="views-field views-field-title"><span class="field-content"><a href="https://www.valuebound.com/resources/blog/content-management-system-past-present-and-future" hreflang="en">Content Management System: The Past, Present and The Future</a></span></div>
+  </div>
+      <div class="case-study">
+      <h5>CASE STUDY</h5>
+      <div class="views-element-container"><div class="view view-injected-case-study view-id-injected_case_study view-display-id-block_1 js-view-dom-id-c56c29ae3845b279cc61e159723b076234917d7eb389736eb9021ac2057f1fe5">
+  
+    
+      
+      <div class="view-content">
+          <div class="views-row"><div class="views-field views-field-title"><span class="field-content"><a href="https://www.valuebound.com/case-study/greenbook-data-solutions" hreflang="en">GreenBook Data Solutions</a></span></div></div>
+
+    </div>
+  
+          </div>
+</div>
+
+    </div>
+      <div class="views-row">
+    <div class="views-field views-field-title"><span class="field-content"><a href="https://www.valuebound.com/resources/blog/make-your-drupal-8-website-accessible-all" hreflang="en">Make Your Drupal 8 Website Accessible To All</a></span></div>
+  </div>
+      <div class="views-row">
+    <div class="views-field views-field-title"><span class="field-content"><a href="https://www.valuebound.com/resources/blog/10-great-examples-drupal-commerce-websites" hreflang="en">10 Great Examples of Drupal Commerce Websites</a></span></div>
+  </div>
+
+    </div>
+  
+          </div>
+</div>
+
+    </div>
+        </div>
+</div>
+
+        
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><div class="contact-block-breaker">
+<h4>Need our expertise with</h4>
+
+<h3 class="serif italic">Drupal Integration</h3>
+<a class="cta" href="https://www.valuebound.com/contact-us">Contact Us</a></div>
+</div>
+      
+      </div>
+    </aside>
+  </section>
+</article>
+
+  </div>
+
+  </div>
+
+    </div>
+          <section role="complementary" class="site--pre-footer">
+              </section>
+      </main>
+
+      <footer role="contentinfo" id="footer" class="site--footer">
+      <div class="site--footer-first">
+          <div class="region region-footer-first">
+    <div id="block-footerfirst" class="muted small block block-block-content block-block-content133ccaf3-87a2-43b2-9b7f-d72109d068a8">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><div class="footer-address">
+<div class="address-left my-1">
+<div class="my-1">55 Riverwalk Place<br>
+West New York, NJ 07047</div>
+
+<div>2845 California Street<br>
+San Francisco, CA 94115</div>
+</div>
+
+<div class="address-right my-1">
+<div class="my-1"><div floor=""> Sector 1, HSR Layout<br>
+Bangalore - 560102</div></div>
+
+<div>+1 (917) 891 2187<br><a href="mailto:info@valuebound.com">info@valuebound.com</a></div>
+</div>
+</div>
+</div>
+      
+  </div>
+<div id="block-footerthirdtop" class="my-2 zero-margin-top block block-block-content block-block-content70e9f368-86a0-4572-a800-4d9d23e3804a">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><a class="button outlined" href="https://www.valuebound.com/contact-us">Contact</a></p>
+</div>
+      
+  </div>
+
+  </div>
+
+      </div>
+      <div class="site--footer-second">
+          <div class="region region-footer-second">
+    <div id="block-footersecond" class="footer-badges block block-block-content block-block-contentf22a7568-896f-46ff-b8a2-850487207836">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p class="support-logo"><span class="da-membership-badge footer-badge image--inline"><img alt="Drupal Association Supporting membership" data-entity-type="file" data-entity-uuid="dd3325ed-c9cc-4e62-8745-38ebb862de0d" src="./How to send mail programmatically in Drupal 8 _ Valuebound_files/Drupal_Association_sup_partner_304_0.png"></span></p>
+
+<p class="partner-logos"><span class="amazee-partner-badge footer-badge image--inline"><img alt="Amazee.io" data-entity-type="file" data-entity-uuid="27a8db95-2801-4098-9a1c-2f73207d96f8" src="./How to send mail programmatically in Drupal 8 _ Valuebound_files/amazee_io_Drupal_hosting_0.png"></span><span class="acquia-partner-badge footer-badge image--inline"><img alt="Acquia partnership badge" data-entity-type="file" data-entity-uuid="9b2f13e8-f2bc-48a3-b495-50927649c581" src="./How to send mail programmatically in Drupal 8 _ Valuebound_files/acquia-partner-logo_0.png"></span> <span class="pantheon-partner-badge footer-badge image--inline"><img alt="Pantheon.io" data-entity-type="file" data-entity-uuid="bc21582e-814e-4415-a133-254cfcace7ad" src="./How to send mail programmatically in Drupal 8 _ Valuebound_files/pantheon_io_0.png"></span></p>
+</div>
+      
+  </div>
+
+  </div>
+
+      </div>
+      <div class="site--footer-third">
+          <div class="region region-footer-third">
+    <div id="block-footerlinks" class="block block-block-content block-block-contentaaebd469-5c5e-44a4-a768-d5430ab0fb76">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><div class="footer-navigation-links">
+<nav><ul><li class="menu-link services"><!-- Services -->
+	<ul><li><a href="https://www.valuebound.com/case-studies">Case Studies</a></li>
+		<li><a href="https://www.valuebound.com/industry-solutions/media-publishing">Media &amp; Publishing </a></li>
+		<li><a href="https://www.valuebound.com/about">About</a></li>
+		<li><a href="https://www.valuebound.com/career">Career</a></li>
+		<li><a href="https://www.valuebound.com/resources/blog">Blog</a></li>
+		<li><a href="https://www.valuebound.com/resources/press-releases">Press Release</a></li>
+		<li><a href="https://www.valuebound.com/resources/what-is-drupal">What is Drupal</a></li>
+	</ul></li>
+</ul></nav><nav><ul><li class="menu-link products">Products
+	<ul><li><a href="http://www.drupalmigrator.com/" target="_blank">Drupal Migrator</a></li>
+	</ul></li>
+</ul></nav><nav><ul><li class="menu-link cities">Cities
+	<ul><li><a href="https://www.valuebound.com/drupal-developers-los-angeles">Los Angeles</a></li>
+		<li><a href="https://www.valuebound.com/drupal-developers-seattle">Seattle</a></li>
+		<li><a href="https://www.valuebound.com/drupal-developers-houston">Houston</a></li>
+		<li><a href="https://www.valuebound.com/drupal-developers-atlanta">Atlanta</a></li>
+		<li><a href="https://www.valuebound.com/drupal-developers-chicago">Chicago</a></li>
+		<li><a href="https://www.valuebound.com/drupal-developers-new-york">New York</a></li>
+		<li><a href="https://www.valuebound.com/drupal-developers-washington-dc">Washington DC</a></li>
+		<li><a href="https://www.valuebound.com/drupal-developers-san-francisco">San Francisco</a></li>
+	</ul></li>
+</ul></nav></div>
+</div>
+      
+  </div>
+<div id="block-scriptsblock" class="block block-block-content block-block-contentc62b4fe7-e328-4bc2-8159-8f97179ecd91">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async="" defer="" src="./How to send mail programmatically in Drupal 8 _ Valuebound_files/609065(1).js"></script>
+<!-- End of HubSpot Embed Code -->
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="./How to send mail programmatically in Drupal 8 _ Valuebound_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1181407-3');
+</script>
+
+<script type="text/javascript">
+var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || 
+{widgetcode:"6f1e0ff17ada5bf04ed191541b14c071c26318b6032dd7ca636bd1f88dfec5d2", values:{},ready:function(){}};
+var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;
+s.src="https://salesiq.zoho.com/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);d.write("<div id='zsiqwidget'></div>");
+</script><div id="zsiqwidget"></div>
+
+<script type="text/javascript">
+(function(){
+vtid = 111486;var a = document.createElement('script'); a.async=true;
+a.src=('https:'==document.location.protocol ? 'https://' : 'http://') + 'code.visitor-track.com/VisitorTrack2.js';
+var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(a,s);
+})();
+</script>
+</div>
+      
+  </div>
+
+  </div>
+
+      </div>
+    </footer>
+  
+  
+      <div class="footer--bottom my-1">
+        <div class="region region-footer-bottom">
+    <div id="block-footerthirdbottom" class="muted small block block-block-content block-block-contentbf0dff04-07e6-4a19-a1e3-875c7052cb8e">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><div class="footer-third-bottom">
+<div class="footer-social-link">
+<a href="https://www.facebook.com/valuebound/" target="_blank" class="facebook"></a>
+<a href="https://twitter.com/valuebound" target="_blank" class="twitter"></a>
+<a href="https://in.linkedin.com/company/valuebound" target="_blank" class="linkedin"></a>
+</div>
+
+<p>©2018 Valuebound. All Rights Reserved</p>
+<p><a href="https://www.valuebound.com/privacy">Privacy Policy</a>&nbsp;&nbsp;<a href="https://www.valuebound.com/terms">Terms of Use</a>&nbsp;&nbsp;<a href="https://www.valuebound.com/career">Career</a></p>
+</div></div>
+      
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+
+
+  </div><div class="off-canvas-wrapper"></div><div id="st-3" class=" st-sticky-share-buttons st-left st-toggleable st-has-labels st-show-total "><div class="st-total st-hidden">
+  <span class="st-label"></span>
+  <span class="st-shares">
+    Shares
+  </span>
+</div><div class="st-btn st-first" data-network="linkedin" style="display: inline-block;">
+  <svg fill="#fff" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 40 40">
+  <g>
+    <path d="m13.3 31.7h-5v-16.7h5v16.7z m18.4 0h-5v-8.9c0-2.4-0.9-3.5-2.5-3.5-1.3 0-2.1 0.6-2.5 1.9v10.5h-5s0-15 0-16.7h3.9l0.3 3.3h0.1c1-1.6 2.7-2.8 4.9-2.8 1.7 0 3.1 0.5 4.2 1.7 1 1.2 1.6 2.8 1.6 5.1v9.4z m-18.3-20.9c0 1.4-1.1 2.5-2.6 2.5s-2.5-1.1-2.5-2.5 1.1-2.5 2.5-2.5 2.6 1.2 2.6 2.5z"></path>
+  </g>
+</svg>
+  <span class="st-label">Share</span>
+</div><div class="st-btn" data-network="facebook" style="display: inline-block;">
+  <svg fill="#fff" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 40 40">
+  <g>
+    <path d="m21.7 16.7h5v5h-5v11.6h-5v-11.6h-5v-5h5v-2.1c0-2 0.6-4.5 1.8-5.9 1.3-1.3 2.8-2 4.7-2h3.5v5h-3.5c-0.9 0-1.5 0.6-1.5 1.5v3.5z"></path>
+  </g>
+</svg>
+  <span class="st-label">Share</span>
+</div><div class="st-btn st-last" data-network="twitter" style="display: inline-block;">
+  <svg fill="#fff" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 40 40">
+  <g>
+    <path d="m31.5 11.7c1.3-0.8 2.2-2 2.7-3.4-1.4 0.7-2.7 1.2-4 1.4-1.1-1.2-2.6-1.9-4.4-1.9-1.7 0-3.2 0.6-4.4 1.8-1.2 1.2-1.8 2.7-1.8 4.4 0 0.5 0.1 0.9 0.2 1.3-5.1-0.1-9.4-2.3-12.7-6.4-0.6 1-0.9 2.1-0.9 3.1 0 2.2 1 3.9 2.8 5.2-1.1-0.1-2-0.4-2.8-0.8 0 1.5 0.5 2.8 1.4 4 0.9 1.1 2.1 1.8 3.5 2.1-0.5 0.1-1 0.2-1.6 0.2-0.5 0-0.9 0-1.1-0.1 0.4 1.2 1.1 2.3 2.1 3 1.1 0.8 2.3 1.2 3.6 1.3-2.2 1.7-4.7 2.6-7.6 2.6-0.7 0-1.2 0-1.5-0.1 2.8 1.9 6 2.8 9.5 2.8 3.5 0 6.7-0.9 9.4-2.7 2.8-1.8 4.8-4.1 6.1-6.7 1.3-2.6 1.9-5.3 1.9-8.1v-0.8c1.3-0.9 2.3-2 3.1-3.2-1.1 0.5-2.3 0.8-3.5 1z"></path>
+  </g>
+</svg>
+  <span class="st-label">Tweet</span>
+</div><div class="st-toggle">
+  <div class="st-left">
+    <svg fill="#fff" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 40 40">
+  <g>
+    <path d="m22 30.7q0 0.3-0.2 0.5l-1.1 1.1q-0.3 0.3-0.6 0.3t-0.5-0.3l-10.4-10.4q-0.2-0.2-0.2-0.5t0.2-0.5l10.4-10.4q0.3-0.2 0.5-0.2t0.6 0.2l1.1 1.1q0.2 0.3 0.2 0.5t-0.2 0.6l-8.8 8.7 8.8 8.8q0.2 0.2 0.2 0.5z m8.6 0q0 0.3-0.3 0.5l-1.1 1.1q-0.2 0.3-0.5 0.3t-0.5-0.3l-10.4-10.4q-0.2-0.2-0.2-0.5t0.2-0.5l10.4-10.4q0.2-0.2 0.5-0.2t0.5 0.2l1.1 1.1q0.3 0.3 0.3 0.5t-0.3 0.6l-8.7 8.7 8.7 8.8q0.3 0.2 0.3 0.5z"></path>
+  </g>
+</svg>
+  </div>
+  <div class="st-right">
+    <svg fill="#fff" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 40 40">
+  <g>
+    <path d="m22.3 21.4q0 0.3-0.2 0.5l-10.4 10.4q-0.3 0.3-0.6 0.3t-0.5-0.3l-1.1-1.1q-0.2-0.2-0.2-0.5t0.2-0.5l8.8-8.8-8.8-8.7q-0.2-0.3-0.2-0.6t0.2-0.5l1.1-1.1q0.3-0.2 0.5-0.2t0.6 0.2l10.4 10.4q0.2 0.2 0.2 0.5z m8.6 0q0 0.3-0.3 0.5l-10.4 10.4q-0.2 0.3-0.5 0.3t-0.5-0.3l-1.1-1.1q-0.2-0.2-0.2-0.5t0.2-0.5l8.8-8.8-8.8-8.7q-0.2-0.3-0.2-0.6t0.2-0.5l1.1-1.1q0.2-0.2 0.5-0.2t0.5 0.2l10.4 10.4q0.3 0.2 0.3 0.5z"></path>
+  </g>
+</svg>
+  </div>
+</div></div></div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/885","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","responsive_menu":{"position":"right","theme":"theme-dark","pagedim":"pagedim","breakpoint":"all and (min-width: 851px)","extension_keyboard":true,"superfish":{"active":true,"delay":300,"speed":100,"speedOut":100},"mediaQuery":"all and (min-width: 851px)"},"floatingBlock":{"blocks":{"#sticky--sidebar":{"container":"#article--sidebar"}}},"user":{"uid":0,"permissionsHash":"edb3c633bba38d8139c7fc0cf4e076222db9451e0603e34f2e0297ba98d303c9"}}</script>
+<script src="./How to send mail programmatically in Drupal 8 _ Valuebound_files/js_OwLQy48Cs4CjWfSyG49FXM6JCoS7AaSZtexVv9M4EaA.js"></script><iframe src="./How to send mail programmatically in Drupal 8 _ Valuebound_files/portal.html" id="st_gdpr_iframe" style="width: 0px; height: 0px; position: absolute; left: -5000px;"></iframe>
+
+  
+
+<div class="mm-page__blocker mm-slideout"></div><iframe style="display: none;" src="./How to send mail programmatically in Drupal 8 _ Valuebound_files/saved_resource(2).html"></iframe><div class="zsiq_floatmain zsiq_theme1 siq_bR" style="visibility: hidden; display: none;"><div id="zsiq_float" class="zsiq_float zsiq_off" style="font-family:salesiq-font"><div class="zsiq_flt_rel"><em id="zsiq_agtpic" class="zsiq_user sqico-chat"></em><div id="titlediv" class="zsiq_cnt"><div id="zsiq_maintitle" class="zsiq_ellips" title="We are offline">We are offline</div><p id="zsiq_byline" class="zsiq_ellips" title="Leave us a Message">Leave us a Message</p></div><em id="zsiq_unreadcnt" class="zsiq_unrdcnt" style="display: none;"></em><em id="zsiq_avcall" class="zsiqmin_unrdcnt zsiq_unrdcnt sqico-mincall" style="display: none;"></em></div></div></div><style id="floatthemecss">.zsiq_flt_rel{ background-color:#0091ff !important;}</style><div class="zls-sptwndw  siqembed siqtrans siqhide zsiq-mobhgt zsiq-newtheme siq_rht zsiq_size2" embedtheme="8" style="visibility: hidden; top: -10000px; display: block;"><div id="siqcht" class="zls-prelative"><iframe id="siqiframe" seamless="seamless" height="460" width="100%" src="./How to send mail programmatically in Drupal 8 _ Valuebound_files/saved_resource(3).html"></iframe></div></div></body></html>

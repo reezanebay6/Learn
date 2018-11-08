@@ -1,0 +1,1945 @@
+<!DOCTYPE html>
+<!-- saved from url=(0121)https://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe -->
+<html itemscope="" itemtype="http://schema.org/QAPage" class="html__responsive"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <title>How can I use "Dependency Injection" in simple php functions, and should I bother? - Stack Overflow</title>
+        <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+        <link rel="apple-touch-icon image_src" href="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+        <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="https://stackoverflow.com/opensearch.xml">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
+
+
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe">
+        <meta property="og:site_name" content="Stack Overflow">
+        <meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:domain" content="stackoverflow.com">
+        <meta name="twitter:title" property="og:title" itemprop="title name" content="How can I use &quot;Dependency Injection&quot; in simple php functions, and should I bother?">
+        <meta name="twitter:description" property="og:description" itemprop="description" content="I hear people talking about dependency injection and the benefit of it all the time, but I don&#39;t really understand it.
+
+I&#39;m wondering if it&#39;s a solution to the &quot;I pass database connections as argum...">
+        <script src="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/osd.js"></script><script src="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/amp4ads-host-v0.js"></script><script src="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/pubads_impl_rendering_257.js"></script><script src="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/rules-p-c1rF4kxgLUzNc.js" async=""></script><script async="" src="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/quant.js"></script><script async="" src="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/beacon.js"></script><script async="" src="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/analytics.js"></script><script src="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/jquery.min.js"></script>
+        <script src="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/stub.en.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/stacks.css">
+    <link rel="stylesheet" type="text/css" href="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/primary-unified.css">
+
+    
+            <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;How can I use &quot;Dependency Injection&quot; in simple php functions, and should I bother?&#39;" href="https://stackoverflow.com/feeds/question/2255771">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+
+            StackExchange.ready(function () {
+                                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:1,shownCommentCount:1,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:2255771});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '2255771');
+                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+            });
+        </script>
+
+        
+        
+        
+        
+        
+        
+                <script>
+        StackExchange.init({"locale":"en","serverTime":1538649216,"routeName":"Questions/Show","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"childUrl":"https://meta.stackoverflow.com","enableSocialMediaInSharePopup":true,"protocol":"https"},"user":{"fkey":"45259f605ffa638e5eb8656406541fd002227fe76f6575bdd54028a54b6ae38d","tid":"95d82102-09cc-923e-bf53-eecbe072245f","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true},"events":{"postType":{"question":1},"postEditionSection":{"title":1,"body":2,"tags":3}},"story":{"minCompleteBodyLength":75,"likedTagsMaxLength":300,"dislikedTagsMaxLength":300},"jobPreferences":{"maxNumDeveloperRoles":2,"maxNumIndustries":4},"svgIconPath":"https://cdn.sstatic.net/Img/svg-icons","svgIconHash":"0f0fc5e90a6d"}, {"site":{"allowImageUploads":true,"enableUserHovercards":true,"styleCode":true,"enableImgurHttps":true,"forceHttpsImages":true,"stacksValidation":true},"userMessaging":{"showNewFeatureNotice":true},"comments":{},"userProfile":{"openGraphAPIKey":"58740831ad23540e00c58987"},"tags":{},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true},"flags":{"allowRetractingFlags":true},"snippets":{"snippetsEnabled":true,"renderDomain":"stacksnippets.net"},"paths":{},"markdown":{"asteriskIntraWordEmphasis":true},"monitoring":{"clientTimingsAbsoluteTimeout":30000,"clientTimingsDebounceTimeout":1000},"mentions":{"maxNumUsersInDropdown":50},"slack":{"sidebarAdDismissCookie":"slack-sidebar-ad"}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"6e4eb4a813ab","js/moderator.en.js":"c48addfbc3c8","js/full-anon.en.js":"5ce832d1434e","js/full.en.js":"c912c316ba2b","js/wmd.en.js":"423c2bc936cb","js/mobile.en.js":"f941cd34fe0a","js/help.en.js":"ea9b6d3ca995","js/tageditor.en.js":"8fc88803d94e","js/tageditornew.en.js":"d6b32f1d53b8","js/inline-tag-editing.en.js":"6566adfb26a8","js/revisions.en.js":"8f22ba768cac","js/review.en.js":"cfcd16cbe572","js/tagsuggestions.en.js":"78eee7c19ab2","js/post-validation.en.js":"d21ed5c2f54d","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"42e7d53e438d","js/keyboard-shortcuts.en.js":"51553381ebae","js/external-editor.en.js":"04ad9b6d0aa8","js/adops.en.js":"22a9bd59b1e9","js/external-editor.en.js":"04ad9b6d0aa8","js/snippet-javascript.en.js":"70933074c72f","js/snippet-javascript-codemirror.en.js":"fcf36ec4cf2f"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    <noscript id="noscript-css">&lt;style&gt;body,.top-bar{margin-top:1.9em}&lt;/style&gt;</noscript>
+    <script async="" src="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/full-anon.en.js"></script><link rel="preload" href="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/integrator.js" as="script"><script type="text/javascript" src="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/integrator.js"></script><link rel="preload" href="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/integrator(1).js" as="script"><script type="text/javascript" src="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/integrator(1).js"></script><script src="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/pubads_impl_257.js" async=""></script><script async="" src="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/snippet-javascript.en.js"></script><script async="" src="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/post-validation.en.js"></script><script async="" src="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/prettify-full.en.js"></script><script async="" src="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/external-editor.en.js"></script><link rel="stylesheet" href="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/clc.min.css" type="text/css"></head>
+        <body class="question-page unified-theme new-topbar">
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+
+
+
+
+<header class="top-bar js-top-bar _fixed top-bar__network">
+    <div class="-container">
+        <div class="-main">
+                <a href="https://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe#" class="left-sidebar-toggle p0 ai-center jc-center js-left-sidebar-toggle"><span class="ps-relative"></span></a>
+                                <a href="https://stackoverflow.com/" class="-logo js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:8})">
+                        <span class="-img _glyph">Stack Overflow</span>
+                    </a>
+
+
+
+        </div>
+
+            <form id="search" action="https://stackoverflow.com/search" method="get" class="searchbar js-searchbar " autocomplete="off" role="search">
+                    <div class="ps-relative">
+                        <input name="q" type="text" placeholder="Search…" value="" autocomplete="off" maxlength="240" class="f-input js-search-field ">
+                        <button type="submit" aria-label="Search..." class="s-btn s-btn__primary btn-topbar-primary js-search-submit"><svg aria-hidden="true" class="svg-icon mx0 iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"></path></svg></button>
+                    </div>
+            </form>
+
+        
+
+
+
+
+
+<ol class="-secondary js-secondary-topbar-links drop-icons-responsively the-js-is-handling-responsiveness">
+        <li class="-item searchbar-trigger js-searchbar-trigger"><a href="https://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe#" class="-link"><svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"></path></svg></a></li>
+            <li class="-item">
+        <a href="https://stackexchange.com/users/?tab=inbox" class="-link js-inbox-button" title="Recent inbox messages">
+            <svg aria-hidden="true" class="svg-icon iconInbox" width="20" height="18" viewBox="0 0 20 18"><path d="M15.19 1H4.63c-.85 0-1.6.54-1.85 1.35L0 10.79V15c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2v-4.21l-2.87-8.44A2 2 0 0 0 15.19 1zm-.28 10l-2 2h-6l-2-2H1.96L4.4 3.68A1 1 0 0 1 5.35 3h9.12a1 1 0 0 1 .95.68L17.86 11h-2.95z"></path></svg>
+            <span class="indicator-badge js-unread-count _important" style="display: none;"></span>
+        </a>
+    </li>
+    <li class="-item">
+        <a href="https://stackexchange.com/users/?tab=reputation" class="-link js-achievements-button" title="Recent achievements: reputation, badges, and privileges earned" data-unread-class="_highlighted-positive">
+            <svg aria-hidden="true" class="svg-icon iconAchievements" width="18" height="18" viewBox="0 0 18 18"><path d="M15 2V1H3v1H0v4c0 1.6 1.4 3 3 3v1c.4 1.5 3 2.6 5 3v2H5s-1 1.5-1 2h10c0-.4-1-2-1-2h-3v-2c2-.4 4.6-1.5 5-3V9c1.6-.2 3-1.4 3-3V2h-3zM3 7c-.5 0-1-.5-1-1V4h1v3zm8.4 2.5L9 8 6.6 9.4l1-2.7L5 5h3l1-2.7L10 5h2.8l-2.3 1.8 1 2.7h-.1zM16 6c0 .5-.5 1-1 1V4h1v2z"></path></svg>
+            <span class="indicator-badge js-unread-count _positive" style="display: none;"></span>
+        </a>
+    </li>
+
+    <li class="-item help-button-item" data-remove-order="1"><a href="https://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe#" class="-link js-help-button" title="Help Center and other resources">
+        <svg aria-hidden="true" class="svg-icon iconHelp" width="18" height="18" viewBox="0 0 18 18"><path d="M9 1a8 8 0 1 0 0 16A8 8 0 0 0 9 1zm.81 12.13c-.02.71-.55 1.15-1.24 1.13-.66-.02-1.17-.49-1.15-1.2.02-.72.56-1.18 1.22-1.16.7.03 1.2.51 1.17 1.23zM11.77 8a5.8 5.8 0 0 1-1.02.91l-.53.37c-.26.2-.42.43-.5.69a4 4 0 0 0-.09.75c0 .05-.03.16-.18.16H7.88c-.16 0-.18-.1-.18-.15.03-.66.12-1.21.4-1.66a5.29 5.29 0 0 1 1.43-1.22c.16-.12.28-.25.38-.39a1.34 1.34 0 0 0 .02-1.71c-.24-.31-.51-.46-1.03-.46-.51 0-.8.26-1.02.6-.21.33-.18.73-.18 1.1H5.75c0-1.38.35-2.25 1.1-2.76.52-.35 1.17-.5 1.93-.5 1 0 1.79.18 2.49.71.64.5.98 1.18.98 2.12 0 .57-.2 1.05-.48 1.44z"></path></svg>
+    </a></li>
+
+    <li class="-item">
+        <a href="https://stackexchange.com/" class="-link js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 174 Stack Exchange sites">
+            <svg aria-hidden="true" class="svg-icon iconStackExchange" width="18" height="18" viewBox="0 0 18 18"><path d="M1 13c0 1.1.9 2 2 2h8v3l3-3h1a2 2 0 0 0 2-2v-2H1v2zM15 1H3a2 2 0 0 0-2 2v2h16V3a2 2 0 0 0-2-2zM1 6h16v4H1V6z"></path></svg>
+        </a>
+    </li>
+
+            <li class="-ctas">
+                        <a href="https://stackoverflow.com/users/login?ssrc=head&amp;returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f2255771%2fhow-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe" class="login-link s-btn btn-topbar-clear py8" rel="nofollow">Log In</a>
+                        <a href="https://stackoverflow.com/users/signup?ssrc=head&amp;returnurl=%2fusers%2fstory%2fcurrent" class="login-link s-btn s-btn__primary py8 btn-topbar-primary" rel="nofollow" data-ga="[&quot;sign up&quot;,&quot;Sign Up Navigation&quot;,&quot;Header&quot;,null,null]">Sign Up</a>
+
+            </li>
+
+    <li class="-dialog-container js-topbar-dialog-corral">
+
+
+    <div class="topbar-dialog siteSwitcher-dialog dno">
+        <div class="header">
+            <h3><a href="https://stackoverflow.com/">current community</a>
+            </h3>
+        </div>
+        <div class="modal-content current-site-container">
+            <ul class="current-site">
+                    <li class="grid">
+                            <div class="fl1">
+            <a href="https://stackoverflow.com/" class="current-site-link site-link js-gps-track grid gs8 gsx" data-id="1" data-gps-track="site_switcher.click({ item_type:3 })">
+        <div class="favicon favicon-stackoverflow site-icon grid--cell" title="Stack Overflow"></div>
+        <span class="grid--cell fl1">
+            Stack Overflow
+        </span>
+    </a>
+
+    </div>
+    <div class="related-links">
+            <a href="https://stackoverflow.com/help" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:14 })">help</a>
+                    <a href="https://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+
+                    </li>
+                    <li class="related-site grid">
+                            <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                            <a href="https://meta.stackoverflow.com/" class="site-link js-gps-track grid gs8 gsx" data-id="552" data-gps-track="site.switch({ target_site:552, item_type:3 }),site_switcher.click({ item_type:4 })">
+        <div class="favicon favicon-stackoverflowmeta site-icon grid--cell" title="Meta Stack Overflow"></div>
+        <span class="grid--cell fl1">
+            Meta Stack Overflow
+        </span>
+    </a>
+
+                    </li>
+            </ul>
+        </div>
+
+        <div class="header" id="your-communities-header">
+            <h3>
+your communities            </h3>
+
+        </div>
+        <div class="modal-content" id="your-communities-section">
+
+                <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=%2fusers%2fstory%2fcurrent" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f2255771%2fhow-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+                </div>
+        </div>
+
+        <div class="header">
+            <h3><a href="https://stackexchange.com/sites">more stack exchange communities</a>
+            </h3>
+            <a href="https://stackoverflow.blog/" class="fr">company blog</a>
+        </div>
+        <div class="modal-content">
+                <div class="child-content"></div>
+        </div>        
+    </div>
+            <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="https://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="https://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="https://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                Meta
+                                <span class="item-summary">
+                                    Discuss the workings and policies of this site
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                About Us
+                                <span class="item-summary">
+                                    Learn more about Stack Overflow the company
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.stackoverflowbusiness.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                Business
+                                <span class="item-summary">
+                                    Learn more about hiring developers or posting ads with us
+                                </span>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+                    <div class="topbar-dialog leftnav-dialog js-leftnav-dialog dno">
+                <div class="left-sidebar js-unpinned-left-sidebar" data-can-be="left-sidebar" data-is-here-when="sm"></div>
+            </div>
+    </li>
+</ol>
+
+    </div>
+</header>
+    <div id="js-gdpr-consent-banner" class="p16 bg-black-700 ff-sans fc-white ps-fixed b0 l0 r0 z-banner" role="banner" aria-hidden="false">
+        <div class="wmx8 mx-auto grid jc-center" role="alertdialog" aria-describedby="notice-message">
+            <div class="grid--cell mr12" aria-label="notice-message">
+                <p class="mb0 lh-lg">
+                    By using our site, you acknowledge that you have read and understand our <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="https://stackoverflow.com/legal/cookie-policy">Cookie Policy</a>, <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="https://stackoverflow.com/legal/privacy-policy">Privacy Policy</a>, and our <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="https://stackoverflow.com/legal/terms-of-service/public">Terms of Service</a>.
+                </p>
+            </div>
+            <a class="grid--cell fc-white js-notice-close" aria-label="notice-dismiss">
+                <svg aria-hidden="true" class="svg-icon m0 iconClear" width="18" height="18" viewBox="0 0 18 18"><path d="M15 4.41L13.59 3 9 7.59 4.41 3 3 4.41 7.59 9 3 13.59 4.41 15 9 10.41 13.59 15 15 13.59 10.41 9z"></path></svg>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        StackExchange.ready(function () { StackExchange.topbar.init({ observeSize: true }); });
+        StackExchange.scrollPadding.setPaddingTop(50, 10);     </script>
+
+
+    
+
+
+
+
+
+
+
+
+<div class="old-hero hero-container _fixed js-dismissable-hero" data-campaign-name="stk">
+    <div class="-container grid jc-sp-between ai-center md:fd-column md:pr32">
+        <div class="fl1 mr16 md:mb24">
+            <p class="-title"><strong>Join Stack Overflow</strong> to learn, share knowledge, and build your career.</p>
+        </div>
+
+        <div class="s-signup _hero fl1">
+            <div id="openid-buttons" class="-social ws-nowrap">
+                <a class="btn-outlined -white _medium _block" href="https://stackoverflow.com/users/signup?ssrc=hero&amp;returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f2255771%2fhow-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe" rel="nofollow" data-ga="[&quot;sign up&quot;,&quot;Sign Up Navigation&quot;,&quot;Question Hero&quot;,null,null]">
+                        <span class="sm:d-none">Email Sign Up</span>
+                        <span class="d-none sm:d-inline">Sign Up</span>
+                    
+                </a>
+                <span class="-or sm:d-none">or sign in with</span>
+                    <div class="major-provider btn _block _medium sm:d-none _google" data-provider="google" data-oauthserver="https://accounts.google.com/o/oauth2/auth" data-oauthversion="2.0" data-ga="[&quot;sign up&quot;,&quot;Sign Up Started - Google&quot;,&quot;Question Hero&quot;,null,null]">
+<svg aria-hidden="true" class="svg-icon native iconGoogle" width="18" height="18" viewBox="0 0 18 18"><g><path d="M16.51 8H8.98v3h4.3c-.18 1-.74 1.48-1.6 2.04v2.01h2.6a7.8 7.8 0 0 0 2.38-5.88c0-.57-.05-.66-.15-1.18z" fill="#4285F4"></path><path d="M8.98 17c2.16 0 3.97-.72 5.3-1.94l-2.6-2a4.8 4.8 0 0 1-7.18-2.54H1.83v2.07A8 8 0 0 0 8.98 17z" fill="#34A853"></path><path d="M4.5 10.52a4.8 4.8 0 0 1 0-3.04V5.41H1.83a8 8 0 0 0 0 7.18l2.67-2.07z" fill="#FBBC05"></path><path d="M8.98 4.18c1.17 0 2.23.4 3.06 1.2l2.3-2.3A8 8 0 0 0 1.83 5.4L4.5 7.49a4.77 4.77 0 0 1 4.48-3.3z" fill="#EA4335"></path></g></svg>                                                Google
+                    </div>
+                    <div class="major-provider btn _block _medium sm:d-none _facebook" data-provider="facebook" data-oauthserver="https://www.facebook.com/v2.0/dialog/oauth" data-oauthversion="2.0" data-ga="[&quot;sign up&quot;,&quot;Sign Up Started - Facebook&quot;,&quot;Question Hero&quot;,null,null]">
+                        <svg aria-hidden="true" class="svg-icon iconFacebook" width="18" height="18" viewBox="0 0 18 18"><path d="M1.88 1C1.4 1 1 1.4 1 1.88v14.24c0 .48.4.88.88.88h7.67v-6.2H7.46V8.4h2.09V6.61c0-2.07 1.26-3.2 3.1-3.2.88 0 1.64.07 1.87.1v2.16h-1.29c-1 0-1.19.48-1.19 1.18V8.4h2.39l-.31 2.42h-2.08V17h4.08c.48 0 .88-.4.88-.88V1.88c0-.48-.4-.88-.88-.88H1.88z" fill="#3C5A96"></path></svg>                        Facebook
+                    </div>
+                                    <a href="https://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe#" class="js-dismiss -dismiss md:ps-absolute" title="dismiss"><svg aria-hidden="true" class="svg-icon iconClear" width="18" height="18" viewBox="0 0 18 18"><path d="M15 4.41L13.59 3 9 7.59 4.41 3 3 4.41 7.59 9 3 13.59 4.41 15 9 10.41 13.59 15 15 13.59 10.41 9z"></path></svg></a>
+            </div>
+
+            <form id="login-form" action="https://stackoverflow.com/users/signup?ssrc=hero&amp;returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f2255771%2fhow-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe" method="POST">
+
+                <input type="hidden" name="fkey" value="45259f605ffa638e5eb8656406541fd002227fe76f6575bdd54028a54b6ae38d">
+
+                <input type="hidden" name="ssrc" value="">
+
+                <input type="hidden" id="oauth_version" name="oauth_version" value="">
+                <input type="hidden" id="oauth_server" name="oauth_server" value="">
+
+                <div id="se-login-fields">
+                    <input type="hidden" name="legalLinksShown" value="0">
+                </div>
+            </form>
+            <script>
+                StackExchange.ready(function () {
+                    StackExchange.InlineAuth.init();
+                })
+            </script>
+        </div>
+    </div>
+</div><script>
+    StackExchange.ready(function () {
+        StackExchange.Hero.init("stk", "a");
+
+        var location = 0;
+        if ($("body").hasClass("questions-page")) {
+            location = 1;
+        } else if ($("body").hasClass("question-page")) {
+            location = 1;
+        } else if ($("body").hasClass("faq-page")) {
+            location = 5;
+        } else if ($("body").hasClass("home-page")) {
+            location = 3;
+        }
+
+        $('.js-cta-button').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+            });
+        });
+
+        // TODO: we should review the class names and whatnot in use here. Older heroes use id selectors, the newer
+        // sticky question hero on SO has a .js-dismiss class instead, but it's apparently not used anywhere... 
+        // It's not great. Ideally we'd have a set of classes in the partials above that would correspond to 
+        // the behaviours we want here in a more clear way. 
+
+        // sticky question-page hero at the bottom of the page on SO
+        $('.js-dismiss').on('click', function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "close", location: location }, true);
+            });
+            StackExchange.Hero.dismiss();
+            $(".js-dismissable-hero").fadeOut("fast");
+        });
+    });
+</script>
+    <div class="container  ">
+                
+
+
+
+<div id="left-sidebar" data-is-here-when="md lg" class="left-sidebar js-pinned-left-sidebar">
+    <div class="left-sidebar--sticky-container js-sticky-leftnav">
+        <nav role="navigation">
+            <ol class="nav-links">
+                <li>    </li><li>
+        <a href="https://stackoverflow.com/" class="pl8 js-gps-track nav-links--link" data-gps-track="top_nav.click({is_current:false, location:2, destination:8})">
+Home        </a>
+    </li>
+
+                <li>
+                    <ol class="nav-links">
+                            <li class="fs-fine tt-uppercase ml8 mt16 mb4 fc-light">Public</li>
+                            <li class=" youarehere">
+        <a id="nav-questions" href="https://stackoverflow.com/questions" class="pl8 js-gps-track nav-links--link -link__with-icon" data-gps-track="top_nav.click({is_current:true, location:2, destination:1})">
+<svg aria-hidden="true" class="svg-icon iconGlobe" width="18" height="18" viewBox="0 0 18 18"><path d="M9 1a8 8 0 1 0 0 16A8 8 0 0 0 9 1zM8 15.32a6.4 6.4 0 0 1-5.23-7.75L7 11.68v.8c0 .88.12 1.32 1 1.32v1.52zm5.72-2c-.2-.66-1-1.32-1.72-1.32h-1v-2c0-.44-.56-1-1-1H6V7h1c.44 0 1-.56 1-1V5h2c.88 0 1.4-.72 1.4-1.6v-.33a6.4 6.4 0 0 1 2.32 10.24z"></path></svg>                <span class="-link--channel-name">Stack Overflow</span>
+        </a>
+    </li>
+
+    <li>
+        <a id="nav-tags" href="https://stackoverflow.com/tags" class=" js-gps-track nav-links--link" data-gps-track="top_nav.click({is_current:false, location:2, destination:2})">
+Tags        </a>
+    </li>
+    <li>
+        <a id="nav-users" href="https://stackoverflow.com/users" class=" js-gps-track nav-links--link" data-gps-track="top_nav.click({is_current:false, location:2, destination:3})">
+Users        </a>
+    </li>
+    <li>
+        <a id="nav-jobs" href="https://stackoverflow.com/jobs?med=site-ui&amp;ref=jobs-tab" class=" js-gps-track nav-links--link" data-gps-track="top_nav.click({is_current:false, location:2, destination:6})">
+Jobs        </a>
+    </li>
+                                            </ol>
+                </li>
+                    <li>
+                        <ol class="nav-links">
+                                <li class="p6">
+                                    <div class="ba bc-black-2 bar-sm p16 grid fd-column ps-relative overflow-hidden">
+                                        <strong class="grid--cell">Teams</strong>
+                                        <span class="grid--cell mt2 fs-caption fc-medium">Q&amp;A for work </span>
+                                        <a href="https://stackoverflow.com/teams" class="js-gps-track s-btn s-btn__outlined ta-center grid--cell mt12" data-gps-track="teams.create.left-sidenav.click" data-ga="[&quot;teams traffic&quot;,&quot;left nav cta&quot;,&quot;stackoverflow.com/teams&quot;,null,{&quot;dimension4&quot;:&quot;teams&quot;}]">
+                                            Learn More
+                                        </a>
+
+                                        <div class="ps-absolute t4 rn6">
+                                            <svg width="53" height="49" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M49 11l.2 31H18.9L9 49v-7H4V8h31" fill="#CCEAFF"></path><path d="M44.5 19v-.3l-.2-.1-18-13-.1-.1H.5v33h4V46l.8-.6 9.9-6.9h29.3V19z" stroke="#1060E1" stroke-miterlimit="10"></path><path d="M31 2l6-1.5 7 2V38H14.9L5 45v-7H1V6h25l5-4z" fill="#fff"></path><path d="M7 16.5h13m-13 6h14m-14 6h18" stroke="#1060E1" stroke-miterlimit="10"></path><path d="M39 30a14 14 0 1 0 0-28 14 14 0 0 0 0 28z" fill="#FFB935"></path><path d="M50.5 14a13.5 13.5 0 1 1-27 0 13.5 13.5 0 0 1 27 0z" stroke="#F48024" stroke-miterlimit="10"></path><path d="M32.5 21.5v-8h9v8h-9zm2-9.5V9.3A2.5 2.5 0 0 1 37 6.8a2.5 2.5 0 0 1 2.5 2.5V12h-5zm2 3v2m1-2v2" stroke="#fff" stroke-miterlimit="10"></path></svg>
+                                        </div>
+                                    </div>
+                                </li>
+                        </ol>
+                    </li>
+            </ol>
+        </nav>
+    </div>
+</div>
+        <div id="content" class="snippet-hidden">
+
+
+            
+
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+
+    <div class="inner-content clearfix">
+    
+    
+
+<style>.everyoneloves__top-leaderboard:empty,.everyoneloves__mid-leaderboard:empty{                height:90px;width:728px;box-sizing:border-box;
+}</style>
+        <div id="dfp-tlb" class="everyonelovesstackoverflow everyoneloves__top-leaderboard" data-google-query-id="CJCzt4DL7N0CFY9gKwodcMcGlw" data-clc-prefilled="true" data-clc-ready="true"><div id="google_ads_iframe_/248424177/stackoverflow.com/lb/question-pages_0__container__" style="border: 0pt none; display: inline-block; width: 728px; height: 90px;"><iframe frameborder="0" src="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/container.html" id="google_ads_iframe_/248424177/stackoverflow.com/lb/question-pages_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="728" height="90" data-is-safeframe="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" style="border: 0px; vertical-align: bottom;" data-load-complete="true"></iframe></div></div>            <div id="question-header" class="grid">
+                    <h1 itemprop="name" class="grid--cell fs-headline1 fl1"><a href="https://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe" class="question-hyperlink">How can I use “Dependency Injection” in simple php functions, and should I bother?</a></h1>
+
+            
+
+
+
+<div class="pl8 aside-cta grid--cell" role="navigation" aria-label="ask new question">
+            <a href="https://stackoverflow.com/questions/ask" class="d-inline-flex ai-center ws-nowrap s-btn s-btn__primary">Ask Question</a>
+</div>
+
+        </div>
+            <div id="mainbar" role="main" aria-label="question and answers">
+
+            
+
+<div class="question" data-questionid="2255771" id="question">
+
+    
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="2255771">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">67</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="https://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe#">favorite</a>
+        <div class="favoritecount"><b>38</b></div>
+
+
+
+</div>
+
+            </div>
+
+            
+<div class="postcell post-layout--right">
+    <div class="post-text" itemprop="text">
+
+<p>I hear people talking about dependency injection and the benefit of it all the time, but I don't really understand it.</p>
+
+<p>I'm wondering if it's a solution to the "I pass database connections as arguments all the time" problem.</p>
+
+<p>I tried reading wikipedia's entry on it, but the example is written in Java so I don't solidly understand the difference it is trying to make clear. ( <a href="http://en.wikipedia.org/wiki/Dependency_injection" rel="noreferrer">http://en.wikipedia.org/wiki/Dependency_injection</a> ).</p>
+
+<p>I read this dependency-injection-in-php article ( <a href="http://www.potstuck.com/2009/01/08/php-dependency-injection/" rel="noreferrer">http://www.potstuck.com/2009/01/08/php-dependency-injection/</a> ), and it seems like the objective is to not pass dependencies to an object directly, but to cordon off the creation of an object along with the creation of it's dependencies.  I'm not sure how to apply that in a using php functions context, though.</p>
+
+<p>Additionally, is the following Dependency Injection, and should I bother trying to do dependency injection in a functional context?</p>
+
+<p>Version 1: (the kind of code that I create, but don't like, every day)</p>
+
+<pre class="lang-php prettyprint prettyprinted" style=""><code><span class="kwd">function</span><span class="pln"> get_data_from_database</span><span class="pun">(</span><span class="pln">$database_connection</span><span class="pun">){</span><span class="pln">
+    $data </span><span class="pun">=</span><span class="pln"> $database_connection</span><span class="pun">-&gt;</span><span class="pln">query</span><span class="pun">(</span><span class="str">'blah'</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> $data</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>Version 2: (don't have to pass a database connection, but perhaps not dependency injection?)</p>
+
+<pre class="lang-php prettyprint prettyprinted" style=""><code><span class="kwd">function</span><span class="pln"> get_database_connection</span><span class="pun">(){</span><span class="pln">
+    </span><span class="kwd">static</span><span class="pln"> $db_connection</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">$db_connection</span><span class="pun">){</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> $db_connection</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="com">// create db_connection</span><span class="pln">
+      </span><span class="pun">...</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="kwd">function</span><span class="pln"> get_data_from_database</span><span class="pun">(){</span><span class="pln">
+   $conn </span><span class="pun">=</span><span class="pln"> get_database_connection</span><span class="pun">();</span><span class="pln">
+   $data </span><span class="pun">=</span><span class="pln"> $conn</span><span class="pun">-&gt;</span><span class="pln">query</span><span class="pun">(</span><span class="str">'blah'</span><span class="pun">);</span><span class="pln">
+   </span><span class="kwd">return</span><span class="pln"> $data</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+$data </span><span class="pun">=</span><span class="pln"> get_data_from_database</span><span class="pun">();</span></code></pre>
+
+<p>Version 3: (the creation of the "object"/data is separate, and the database code is still, so perhaps this would count as dependency injection?)</p>
+
+<pre class="lang-php prettyprint prettyprinted" style=""><code><span class="kwd">function</span><span class="pln"> factory_of_data_set</span><span class="pun">(){</span><span class="pln">
+    </span><span class="kwd">static</span><span class="pln"> $db_connection</span><span class="pun">;</span><span class="pln">
+    $data_set </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">;</span><span class="pln">
+    $db_connection </span><span class="pun">=</span><span class="pln"> get_database_connection</span><span class="pun">();</span><span class="pln">
+    $data_set </span><span class="pun">=</span><span class="pln"> $db_connection</span><span class="pun">-&gt;</span><span class="pln">query</span><span class="pun">(</span><span class="str">'blah'</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> $data_set</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+$data </span><span class="pun">=</span><span class="pln"> factory_of_data_set</span><span class="pun">();</span></code></pre>
+
+<p>Anyone have a good resource or just insight that makes the method and benefit -crystal- clear?</p>
+    </div>
+
+        <div class="post-taglist grid gs4 gsy fd-column">
+            <div class="grid ps-relative d-block">
+                <a href="https://stackoverflow.com/questions/tagged/php" class="post-tag js-gps-track" title="show questions tagged &#39;php&#39;" rel="tag">php</a> <a href="https://stackoverflow.com/questions/tagged/dependency-injection" class="post-tag js-gps-track" title="show questions tagged &#39;dependency-injection&#39;" rel="tag">dependency-injection</a> <a href="https://stackoverflow.com/questions/tagged/parameter-passing" class="post-tag js-gps-track" title="show questions tagged &#39;parameter-passing&#39;" rel="tag">parameter-passing</a> 
+            </div>
+        </div>
+
+    <div class="mb0 ">
+        <div class="mt16 pt4 grid gs8 gsy fw-wrap jc-end ai-start">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://stackoverflow.com/q/2255771" title="short permalink to this question" class="short-link" id="link-post-2255771">share</a><span class="lsep">|</span><a href="https://stackoverflow.com/posts/2255771/edit" class="suggest-edit-post" title="">improve this question</a></div>
+            </div>
+
+                <div class="post-signature grid--cell">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="https://stackoverflow.com/posts/2255771/revisions" title="show all edits to this post">edited <span title="2013-06-03 05:59:20Z" class="relativetime">Jun 3 '13 at 5:59</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/100297/martijn-pieters"><div class="gravatar-wrapper-32"><img src="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/24780fb6df85a943c7aea0402c843737" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://stackoverflow.com/users/100297/martijn-pieters">Martijn Pieters</a><span class="mod-flair" title="moderator">♦</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 677,354" dir="ltr">677k</span><span title="119 gold badges"><span class="badge1"></span><span class="badgecount">119</span></span><span title="2314 silver badges"><span class="badge2"></span><span class="badgecount">2314</span></span><span title="2178 bronze badges"><span class="badge3"></span><span class="badgecount">2178</span></span>
+        </div>
+    </div>
+</div>                </div>
+            <div class="post-signature owner grid--cell">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        asked <span title="2010-02-12 23:22:13Z" class="relativetime">Feb 12 '10 at 23:22</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/69993/kzqai"><div class="gravatar-wrapper-32"><img src="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/de72d419e1f2a366ad9fc2c29a6a82df" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://stackoverflow.com/users/69993/kzqai">Kzqai</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 14,514" dir="ltr">14.5k</span><span title="19 gold badges"><span class="badge1"></span><span class="badgecount">19</span></span><span title="86 silver badges"><span class="badge2"></span><span class="badgecount">86</span></span><span title="122 bronze badges"><span class="badge3"></span><span class="badgecount">122</span></span>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+                
+    <div class="post-layout--right">
+	    <div id="comments-2255771" class="comments js-comments-container ">
+            <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+    <li id="comment-2556166" class="comment js-comment " data-comment-id="2556166">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body" style="display: block;">
+                <span class="comment-copy">You don't need to pass in your db connection - just declare it as global in the function <code>global $database_connection;</code></span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/12280/adam-hopkinson" title="22,776 reputation" class="comment-user">Adam Hopkinson</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe#comment2556166_2255771"><span title="2010-03-31 15:03:51Z" class="relativetime-clean">Mar 31 '10 at 15:03</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+            </ul>
+	    </div>
+
+        <div id="comments-link-2255771" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe#" onclick=""></a>
+        </div>         
+    </div>        </div>
+</div>
+
+
+<div id="dfp-isb" class="everyonelovesstackoverflow everyoneloves__inline-sidebar" style="min-height: auto; height: auto; display: none;"></div>
+        <div id="answers">
+
+                <a name="tab-top"></a>
+                <div id="answers-header">
+                    <div class="subheader answers-subheader">
+                        <h2 data-answercount="5">
+                                5 Answers
+                                <span style="display:none;" itemprop="answerCount">5</span>
+                        </h2>
+                        <div>
+                            
+<div id="tabs">
+        <a href="https://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active" data-shortcut="A">
+            active</a>
+        <a href="https://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest" data-shortcut="O">
+            oldest</a>
+        <a class="youarehere is-selected " href="https://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes" data-shortcut="V">
+            votes</a>
+    </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+  
+<a name="2553910"></a>
+<div id="answer-2553910" class="answer accepted-answer" data-answerid="2553910" itemprop="acceptedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="2553910">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">74</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+
+
+</div>
+
+            </div>
+            
+
+
+<div class="answercell post-layout--right">
+    <div class="post-text" itemprop="text">
+<p>Dependency injection is a big word for "I have some more parameters in my constructor".</p>
+
+<p>It's what you did before the awfull Singleton wave when you did not like globals :</p>
+
+<pre class="lang-php prettyprint prettyprinted" style=""><code><span class="pun">&lt;?</span><span class="pln">php
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">User</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">private</span><span class="pln"> $_db</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">function</span><span class="pln"> __construct</span><span class="pun">(</span><span class="pln">$db</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        $this</span><span class="pun">-&gt;</span><span class="pln">_db </span><span class="pun">=</span><span class="pln"> $db</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+$db   </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Db</span><span class="pun">();</span><span class="pln">
+$user </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">User</span><span class="pun">(</span><span class="pln">$db</span><span class="pun">);</span></code></pre>
+
+<p>Now, the trick is to use a single class to manage your dependencies, something like that :</p>
+
+<pre class="lang-php prettyprint prettyprinted" style=""><code><span class="kwd">class</span><span class="pln"> </span><span class="typ">DependencyContainer</span><span class="pln"> 
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">private</span><span class="pln"> _instances </span><span class="pun">=</span><span class="pln"> array</span><span class="pun">();</span><span class="pln">
+    </span><span class="kwd">private</span><span class="pln"> _params </span><span class="pun">=</span><span class="pln"> array</span><span class="pun">();</span><span class="pln">
+
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> __construct</span><span class="pun">(</span><span class="pln">$params</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        $this</span><span class="pun">-&gt;</span><span class="pln">_params </span><span class="pun">=</span><span class="pln"> $params</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> getDb</span><span class="pun">()</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">empty</span><span class="pun">(</span><span class="pln">$this</span><span class="pun">-&gt;</span><span class="pln">_instances</span><span class="pun">[</span><span class="str">'db'</span><span class="pun">])</span><span class="pln"> 
+            </span><span class="pun">||</span><span class="pln"> </span><span class="pun">!</span><span class="pln">is_a</span><span class="pun">(</span><span class="pln">$this</span><span class="pun">-&gt;</span><span class="pln">_instances</span><span class="pun">[</span><span class="str">'db'</span><span class="pun">],</span><span class="pln"> </span><span class="str">'PDO'</span><span class="pun">)</span><span class="pln">
+        </span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            $this</span><span class="pun">-&gt;</span><span class="pln">_instances</span><span class="pun">[</span><span class="str">'db'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> PDO</span><span class="pun">(</span><span class="pln">
+                $this</span><span class="pun">-&gt;</span><span class="pln">_params</span><span class="pun">[</span><span class="str">'dsn'</span><span class="pun">],</span><span class="pln">
+                $this</span><span class="pun">-&gt;</span><span class="pln">_params</span><span class="pun">[</span><span class="str">'dbUser'</span><span class="pun">],</span><span class="pln"> 
+                $this</span><span class="pun">-&gt;</span><span class="pln">_params</span><span class="pun">[</span><span class="str">'dbPwd'</span><span class="pun">]</span><span class="pln">
+            </span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> $this</span><span class="pun">-&gt;</span><span class="pln">_instances</span><span class="pun">[</span><span class="str">'db'</span><span class="pun">];</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">User</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">private</span><span class="pln"> $_db</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> __construct</span><span class="pun">(</span><span class="typ">DependencyContainer</span><span class="pln"> $di</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+         $this</span><span class="pun">-&gt;</span><span class="pln">_db </span><span class="pun">=</span><span class="pln"> $di</span><span class="pun">-&gt;</span><span class="pln">getDb</span><span class="pun">();</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+$dependencies </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">DependencyContainer</span><span class="pun">(</span><span class="pln">$someParams</span><span class="pun">);</span><span class="pln">
+$user </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">User</span><span class="pun">(</span><span class="pln">$dependencies</span><span class="pun">);</span></code></pre>
+
+<p>You must think you just another class and more complexity. But, your user class may need something to log messages like lot of other classes. Just add a getMessageHandler function to your dependency container, and some <code>$this-&gt;_messages = $di-&gt;getMessageHandler()</code> to your user class. Nothing to change in the rest of your code.</p>
+
+<p>You'll get lot of infos on <a href="http://components.symfony-project.org/dependency-injection/trunk/book/00-Introduction" rel="noreferrer">symfony's doc</a></p>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://stackoverflow.com/a/2553910" title="short permalink to this answer" class="short-link" id="link-post-2553910">share</a><span class="lsep">|</span><a href="https://stackoverflow.com/posts/2553910/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </div>
+    <div class="post-signature grid--cell fl0">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="https://stackoverflow.com/posts/2553910/revisions" title="show all edits to this post">edited <span title="2014-05-08 19:55:43Z" class="relativetime">May 8 '14 at 19:55</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </div>
+            
+
+
+    <div class="post-signature grid--cell fl0">
+<div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2010-03-31 14:48:07Z" class="relativetime">Mar 31 '10 at 14:48</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/151758/arkh"><div class="gravatar-wrapper-32"><img src="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/jaJls.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://stackoverflow.com/users/151758/arkh">Arkh</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">7,660</span><span title="32 silver badges"><span class="badge2"></span><span class="badgecount">32</span></span><span title="37 bronze badges"><span class="badge3"></span><span class="badgecount">37</span></span>
+        </div>
+    </div>
+</div>
+
+    </div>
+    </div>
+</div>
+    
+    <div class="post-layout--right">
+	    <div id="comments-2553910" class="comments js-comments-container ">
+            <ul class="comments-list js-comments-list" data-remaining-comments-count="6" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+    <li id="comment-9254821" class="comment js-comment " data-comment-id="9254821">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+                    <span title="number of &#39;useful comment&#39; votes received" class="cool">2</span>
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body" style="display: block;">
+                <span class="comment-copy">thank you for the easy-to-understand quick start PDO example, bundled in with your answer to the actual question :)</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/443219/aditya-m-p" title="2,620 reputation" class="comment-user">Aditya M P</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe#comment9254821_2553910"><span title="2011-10-01 22:19:31Z" class="relativetime-clean">Oct 1 '11 at 22:19</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-14274698" class="comment js-comment " data-comment-id="14274698">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+                    <span title="number of &#39;useful comment&#39; votes received" class="cool">2</span>
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body" style="display: block;">
+                <span class="comment-copy">I feel crazy for being the first person to see it, but is the first word in this (great response) not the right word?</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/888821/thilo-savage" title="986 reputation" class="comment-user">Thilo Savage</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe#comment14274698_2553910"><span title="2012-06-07 21:02:48Z" class="relativetime-clean">Jun 7 '12 at 21:02</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-14276101" class="comment js-comment " data-comment-id="14276101">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body" style="display: block;">
+                <span class="comment-copy">@ThiloSavage first one to mention it. Thanks.</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/151758/arkh" title="7,660 reputation" class="comment-user">Arkh</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe#comment14276101_2553910"><span title="2012-06-07 22:21:32Z" class="relativetime-clean">Jun 7 '12 at 22:21</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-31198778" class="comment js-comment " data-comment-id="31198778">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body" style="display: block;">
+                <span class="comment-copy">While the answer does distill the fundamentals of DI quite nicely, the first sentence is an exaggeration.</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/1165940/andrew" title="152 reputation" class="comment-user">Andrew</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe#comment31198778_2553910"><span title="2013-12-27 22:21:09Z" class="relativetime-clean">Dec 27 '13 at 22:21</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-54661134" class="comment js-comment " data-comment-id="54661134">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+                    <span title="number of &#39;useful comment&#39; votes received" class="cool">2</span>
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body" style="display: block;">
+                <span class="comment-copy">This is a perfect example of an anti pattern. You are not actually doing dependency injection, you are merely passing the container around. This actually <i>hides</i> the dependencies of your classes, which is the exact contrary of the point of dependency injection.</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/576767/f%c3%a9lix-gagnon-grenier" title="5,443 reputation" class="comment-user">Félix Gagnon-Grenier</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe#comment54661134_2553910"><span title="2015-10-30 13:00:31Z" class="relativetime-clean">Oct 30 '15 at 13:00</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+            </ul>
+	    </div>
+
+        <div id="comments-link-2553910" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link  dno" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."></a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link " title="expand to show all comments on this post" href="https://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe#" onclick="">show <b>6</b> more comments</a>
+        </div>         
+    </div>    </div>
+</div>
+<div id="dfp-mlb" class="everyonelovesstackoverflow everyoneloves__mid-leaderboard" data-google-query-id="CJvitIDL7N0CFQbwjwodvz4FxQ" data-clc-prefilled="true" data-clc-ready="true"><div id="google_ads_iframe_/248424177/stackoverflow.com/mlb/question-pages_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/248424177/stackoverflow.com/mlb/question-pages_0" title="3rd party ad content" name="google_ads_iframe_/248424177/stackoverflow.com/mlb/question-pages_0" width="728" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; vertical-align: bottom;" data-load-complete="true" src="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/saved_resource.html"></iframe></div></div>
+  
+<a name="2553689"></a>
+<div id="answer-2553689" class="answer" data-answerid="2553689" itemscope="" itemtype="http://schema.org/Answer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="2553689">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">13</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+
+</div>
+
+            </div>
+            
+
+
+<div class="answercell post-layout--right">
+    <div class="post-text" itemprop="text">
+<p>Your first example <strong>IS</strong> dependancy injection, you are injecting the dependency on the database object into the function.</p>
+
+<p>Sarah has said this isn't, but imo it is, I believe she is thinking of dependency injection containers which are the next level up:</p>
+
+<p><a href="http://components.symfony-project.org/dependency-injection/trunk/book/02-Dependency-Injection-Containers" rel="noreferrer">http://components.symfony-project.org/dependency-injection/trunk/book/02-Dependency-Injection-Containers</a></p>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://stackoverflow.com/a/2553689" title="short permalink to this answer" class="short-link" id="link-post-2553689">share</a><span class="lsep">|</span><a href="https://stackoverflow.com/posts/2553689/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </div>
+            
+
+
+    <div class="post-signature grid--cell fl0">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2010-03-31 14:19:28Z" class="relativetime">Mar 31 '10 at 14:19</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/68534/jmoz"><div class="gravatar-wrapper-32"><img src="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/c7e9fe92e1fae212454418a55e1e30a7" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://stackoverflow.com/users/68534/jmoz">jmoz</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">4,074</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="21 silver badges"><span class="badge2"></span><span class="badgecount">21</span></span><span title="27 bronze badges"><span class="badge3"></span><span class="badgecount">27</span></span>
+        </div>
+    </div>
+</div>
+
+    </div>
+    </div>
+</div>
+    
+    <div class="post-layout--right">
+	    <div id="comments-2553689" class="comments js-comments-container ">
+            <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+    <li id="comment-86164502" class="comment js-comment " data-comment-id="86164502">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body" style="display: block;">
+                <span class="comment-copy">The link goes to a 404 resolution.</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/1905056/jay-bienvenu" title="920 reputation" class="comment-user">Jay Bienvenu</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe#comment86164502_2553689"><span title="2018-03-30 17:08:12Z" class="relativetime-clean">Mar 30 at 17:08</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+            </ul>
+	    </div>
+
+        <div id="comments-link-2553689" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe#" onclick=""></a>
+        </div>         
+    </div>    </div>
+</div>
+
+  
+<a name="2255957"></a>
+<div id="answer-2255957" class="answer" data-answerid="2255957" itemscope="" itemtype="http://schema.org/Answer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="2255957">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">7</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+
+</div>
+
+            </div>
+            
+
+
+<div class="answercell post-layout--right">
+    <div class="post-text" itemprop="text">
+<p>None of your examples look like dependency injection, version one is the closest though.  Dependency injection is a technique used in object oriented programming, where the constructor of an object has arguments for the service objects it needs, and those service objects are passed in by the creator of the instance (which could be a factory, a test, or a dependency injection framework).</p>
+
+<p>To get around your 'always passing the connection object' problem you may want to consider the template pattern.  The template pattern is basically an abstract base class with the common part of a repeated code block, and abstract methods to allow for the variation between the instances of those repeated code blocks.  Basically the base is a template of a block of code, and the abstract methods are the blanks to be filled in.  I personally use the template method pattern to do my database resource control in Java.</p>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://stackoverflow.com/a/2255957" title="short permalink to this answer" class="short-link" id="link-post-2255957">share</a><span class="lsep">|</span><a href="https://stackoverflow.com/posts/2255957/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </div>
+    <div class="post-signature grid--cell fl0">
+<div class="user-info ">
+    <div class="user-action-time">
+        answered <a href="https://stackoverflow.com/posts/2255957/revisions" title="show all edits to this post"><span title="2010-02-13 00:19:22Z" class="relativetime">Feb 13 '10 at 0:19</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </div>
+            
+
+
+    <div class="post-signature grid--cell fl0">
+<div class="user-info">
+    <div class="user-details">
+        <span class="community-wiki" title="This post is community owned as of Feb 13 &#39;10 at 0:19. Votes do not generate reputation, and it can be edited by users with 100 rep">
+            community wiki
+        </span>
+    </div><br>
+    <div class="user-details">
+        <a id="history-2255957" href="https://stackoverflow.com/posts/2255957/revisions" title="show revision history for this post">
+        Sarah Happy
+        </a>
+    </div>
+</div>
+
+    </div>
+    </div>
+</div>
+    
+    <div class="post-layout--right">
+	    <div id="comments-2255957" class="comments js-comments-container ">
+            <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+    <li id="comment-2216079" class="comment js-comment " data-comment-id="2216079">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body" style="display: block;">
+                <span class="comment-copy"><a href="http://en.wikipedia.org/wiki/Template_method_pattern" rel="nofollow noreferrer">en.wikipedia.org/wiki/Template_method_pattern</a> ?</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/69993/kzqai" title="14,514 reputation" class="comment-user owner">Kzqai</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe#comment2216079_2255957"><span title="2010-02-13 03:58:45Z" class="relativetime-clean">Feb 13 '10 at 3:58</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-2292477" class="comment js-comment " data-comment-id="2292477">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body" style="display: block;">
+                <span class="comment-copy">one of the possible implementations of that, yes.</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/116144/sarah-happy" title="253 reputation" class="comment-user">Sarah Happy</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe#comment2292477_2255957"><span title="2010-02-24 02:14:48Z" class="relativetime-clean">Feb 24 '10 at 2:14</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+            </ul>
+	    </div>
+
+        <div id="comments-link-2255957" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe#" onclick=""></a>
+        </div>         
+    </div>    </div>
+</div>
+
+  
+<a name="9982218"></a>
+<div id="answer-9982218" class="answer" data-answerid="9982218" itemscope="" itemtype="http://schema.org/Answer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="9982218">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+
+</div>
+
+            </div>
+            
+
+
+<div class="answercell post-layout--right">
+    <div class="post-text" itemprop="text">
+<p>I have done much searching on this topic myself (PHP Dependency Injection) and haven't found much to my liking. A lot has been written on the subject for other languages (Google Guice - <a href="http://code.google.com/p/google-guice/" rel="nofollow">http://code.google.com/p/google-guice/</a> ; Java Spring), but I couldn't find much available for PHP. Regardless of the language, however, the challenges are similar.</p>
+
+<p>The three versions you list in your question are the typical approach. Version 3 is the closest to the direction in which I have seen the industry going. By shifting the responsibility of creating your dependent objects outside of your class, you are free to manipulate them as you please in your test code. However, the problem that I encountered with that approach is that you end up with long chains of dependent objects in your constructor that can potentially not even be used by the receiving object, but get passed through to an secondary dependent object. It gets messy and you lose knowledge of what is coming from where.</p>
+
+<p>The Dependency Container example by @Arkh and @mmmshuddup is a great start, but I nonetheless found limitations with that approach as well. The final solution upon which I arrived was a custom built solution modeled somewhat after the Cake Pattern popular in Scala. It allows you to pass a single dependency into each of your constructors AND it lets you define the default construction of the dependent objects <em>per</em> class. This frees you from long dependency chains as well as losing control of the default implementations of your dependencies.</p>
+
+<p>I called the system Diesel and I've been really happy with it. I published the code on github for anyone interested. You can get to it from the blog I wrote on the subject, which describes the basic usage as well as goes into more detail on your question. <a href="http://developers.blog.box.com/2012/02/15/introducting-diesel-php-dependency-injection/" rel="nofollow">http://developers.blog.box.com/2012/02/15/introducting-diesel-php-dependency-injection/</a></p>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://stackoverflow.com/a/9982218" title="short permalink to this answer" class="short-link" id="link-post-9982218">share</a><span class="lsep">|</span><a href="https://stackoverflow.com/posts/9982218/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </div>
+            
+
+
+    <div class="post-signature grid--cell fl0">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2012-04-02 18:59:55Z" class="relativetime">Apr 2 '12 at 18:59</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/308472/ben"><div class="gravatar-wrapper-32"><img src="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/20047be859fe62ba8b9b681183ee38d8" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://stackoverflow.com/users/308472/ben">Ben</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1,192</span><span title="12 silver badges"><span class="badge2"></span><span class="badgecount">12</span></span><span title="10 bronze badges"><span class="badge3"></span><span class="badgecount">10</span></span>
+        </div>
+    </div>
+</div>
+
+    </div>
+    </div>
+</div>
+    
+    <div class="post-layout--right">
+	    <div id="comments-9982218" class="comments js-comments-container  dno">
+            <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+            </ul>
+	    </div>
+
+        <div id="comments-link-9982218" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe#" onclick=""></a>
+        </div>         
+    </div>    </div>
+</div>
+
+  
+<a name="10940899"></a>
+<div id="answer-10940899" class="answer" data-answerid="10940899" itemscope="" itemtype="http://schema.org/Answer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="10940899">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+
+</div>
+
+            </div>
+            
+
+
+<div class="answercell post-layout--right">
+    <div class="post-text" itemprop="text">
+<p>Dependency Injection is the idea of removing the dependency between 2 components in order to focus on why they are dependent.</p>
+
+<p>Imagine you have a component A that needs to use the services of another component B.</p>
+
+<p>If you hardcode the existence of B inside A, then you will be stuck when you will want A to use the sames services, but implemented by another component.</p>
+
+<p>So usually, you define a service interface that B and C will implement, and you make sure that when you use A, you feed it with objects compatible with the needed interface.</p>
+
+<p>In your case, you might consider that your interface is a service on which you can make a query.</p>
+
+<p>Your first case is the one that is the closer to the idea of Dependency Injection.</p>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://stackoverflow.com/a/10940899" title="short permalink to this answer" class="short-link" id="link-post-10940899">share</a><span class="lsep">|</span><a href="https://stackoverflow.com/posts/10940899/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </div>
+            
+
+
+    <div class="post-signature grid--cell fl0">
+<div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2012-06-07 22:45:21Z" class="relativetime">Jun 7 '12 at 22:45</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/292712/jerome-wagner"><div class="gravatar-wrapper-32"><img src="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/23f713a5f9ce7efa7083857d308645f0" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://stackoverflow.com/users/292712/jerome-wagner">Jerome WAGNER</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 14,731" dir="ltr">14.7k</span><span title="6 gold badges"><span class="badge1"></span><span class="badgecount">6</span></span><span title="45 silver badges"><span class="badge2"></span><span class="badgecount">45</span></span><span title="64 bronze badges"><span class="badge3"></span><span class="badgecount">64</span></span>
+        </div>
+    </div>
+</div>
+
+    </div>
+    </div>
+</div>
+    
+    <div class="post-layout--right">
+	    <div id="comments-10940899" class="comments js-comments-container  dno">
+            <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+            </ul>
+	    </div>
+
+        <div id="comments-link-10940899" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe#" onclick=""></a>
+        </div>         
+    </div>    </div>
+</div>
+                                    <a name="new-answer"></a>
+                        <form id="post-form" action="https://stackoverflow.com/questions/2255771/answer/submit" method="post" class="post-form">
+                            <input type="hidden" id="post-id" value="2255771">
+                            <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false">
+                            <input type="hidden" name="referrer" value="https://www.google.co.in/">
+                            <h2 class="space">Your Answer</h2>
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        var channelOptions = {
+            tags: "".split(" "),
+            id: "1"
+        };
+        initTagRenderer("".split(" "), "".split(" "), channelOptions);
+       
+        StackExchange.using("externalEditor", function() {
+                // Have to fire editor after snippets, if snippets enabled
+                if (StackExchange.settings.snippets.snippetsEnabled) {
+                    StackExchange.using("snippets", function() {
+                        createEditor();
+                    });
+                }
+                else {
+                    createEditor();
+                }
+            });
+
+            function createEditor() {
+                StackExchange.prepareEditor({
+                    heartbeatType: 'answer',
+                convertImagesToLinks: true,
+                noModals: false,
+                showLowRepImageUploadWarning: true,
+                reputationToPostImages: 10,
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                    ,immediatelyShowMarkdownHelp:true
+                    });
+                
+
+        }
+    });
+</script>
+
+
+<div id="post-editor" class="post-editor js-post-editor wz-element" data-wz-state="3,4,5,6,7,8">
+
+    <div style="position: relative;"> 
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar btr-sm"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li><li class="wmd-spacer wmd-spacer-max"></li></ul></div>
+                        <div class="js-stacks-validation">
+                <div class="ps-relative">
+                    <textarea id="wmd-input" class="wmd-input wz-element s-input bar0" name="post-text" cols="92" rows="15" tabindex="101" data-wz-state="8" data-min-length=""></textarea>
+                </div>
+                <div class="s-input-message mt4 d-none js-stacks-validation-message"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="45259f605ffa638e5eb8656406541fd002227fe76f6575bdd54028a54b6ae38d">
+        <input id="author" name="author" type="text">
+    </div>
+
+
+
+</div>
+
+                            <div style="position: relative;">
+                                
+                                            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="https://stackoverflow.com/users/login?ssrc=question_page&amp;returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f2255771%2fhow-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login" data-ga="[&quot;sign up&quot;,&quot;Sign Up Started - Google&quot;,&quot;New Post&quot;,null,null]">
+                            <svg aria-hidden="true" class="svg-icon native iconGoogle" width="18" height="18" viewBox="0 0 18 18"><g><path d="M16.51 8H8.98v3h4.3c-.18 1-.74 1.48-1.6 2.04v2.01h2.6a7.8 7.8 0 0 0 2.38-5.88c0-.57-.05-.66-.15-1.18z" fill="#4285F4"></path><path d="M8.98 17c2.16 0 3.97-.72 5.3-1.94l-2.6-2a4.8 4.8 0 0 1-7.18-2.54H1.83v2.07A8 8 0 0 0 8.98 17z" fill="#34A853"></path><path d="M4.5 10.52a4.8 4.8 0 0 1 0-3.04V5.41H1.83a8 8 0 0 0 0 7.18l2.67-2.07z" fill="#FBBC05"></path><path d="M8.98 4.18c1.17 0 2.23.4 3.06 1.2l2.3-2.3A8 8 0 0 0 1.83 5.4L4.5 7.49a4.77 4.77 0 0 1 4.48-3.3z" fill="#EA4335"></path></g></svg> Sign up using Google
+                        </div>
+                        <div class="preferred-login facebook-login" data-ga="[&quot;sign up&quot;,&quot;Sign Up Started - Facebook&quot;,&quot;New Post&quot;,null,null]">
+                            <svg aria-hidden="true" class="svg-icon iconFacebook" width="18" height="18" viewBox="0 0 18 18"><path d="M1.88 1C1.4 1 1 1.4 1 1.88v14.24c0 .48.4.88.88.88h7.67v-6.2H7.46V8.4h2.09V6.61c0-2.07 1.26-3.2 3.1-3.2.88 0 1.64.07 1.87.1v2.16h-1.29c-1 0-1.19.48-1.19 1.18V8.4h2.39l-.31 2.42h-2.08V17h4.08c.48 0 .88-.4.88-.88V1.88c0-.48-.4-.88-.88-.88H1.88z" fill="#3C5A96"></path></svg> Sign up using Facebook
+                        </div>
+                        <div class="preferred-login stackexchange-login" data-ga="[&quot;sign up&quot;,&quot;Sign Up Navigation&quot;,&quot;New Post&quot;,null,null]">
+                            <svg aria-hidden="true" class="svg-icon native iconLogoGlyphXSm" width="18" height="18" viewBox="0 0 18 18"><g><path fill="#BCBBBB" d="M14 16v-5h2v7H2v-7h2v5z"></path><path d="M5 15v-2h8v2H5zM12.09.72l4.5 6.06-1.2.9-4.51-6.06 1.21-.9zM8.34 4.3l.97-1.16 5.8 4.83-.96 1.16-5.8-4.83zm-1.9 3.36l.64-1.37 6.85 3.19-.63 1.37-6.85-3.2zM5.4 11.39l.38-1.67 7.42 1.48-.22 1.46-7.58-1.27z" fill="#F48024"></path></g></svg> Sign up using Email and Password
+                        </div>
+                    </div>
+                    <input type="hidden" name="manual-openid" class="manual-openid">
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false">
+                    <input type="hidden" name="use-google" class="use-google" value="false">
+                    <input type="button" class="submit-openid" value="Submit" style="display:none">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', 'https%3a%2f%2fstackoverflow.com%2fquestions%2f2255771%2fhow-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe%23new-answer', 'question_page');
+                    }
+                );
+            </script>
+            <noscript>
+                        &lt;h3&gt;Post as a guest&lt;/h3&gt;
+    &lt;div class="form-item"&gt;
+        &lt;table&gt;
+        &lt;tr&gt;
+                    &lt;td class="vm"&gt;
+                &lt;div&gt;
+                    &lt;label for="display-name"&gt;Name&lt;/label&gt;
+                    &lt;input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105"&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label for="m-address"&gt;Email&lt;/label&gt;
+                    &lt;input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown" /&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+            </noscript>
+
+                            </div>
+
+                                                            <div class="form-submit cbt grid gsx gs4">
+                                        <button id="submit-button" class="grid--cell s-btn s-btn__primary" type="submit" tabindex="120" autocomplete="off">
+Post Your Answer                                        </button>
+                                        <button class="grid--cell s-btn s-btn__danger discard-answer dno">Discard</button>
+                                                                            <p class="privacy-policy-agreement">
+                                            
+
+By clicking "Post Your Answer", you acknowledge that you have read our updated <a href="https://stackoverflow.com/legal/terms-of-service/public" name="tos" target="_blank" class="-link">terms of service</a>, <a href="https://stackoverflow.com/legal/privacy-policy" name="privacy" target="_blank" class="-link">privacy policy</a> and <a href="https://stackoverflow.com/legal/cookie-policy" name="cookie" target="_blank" class="-link">cookie policy</a>, and that your continued use of the website is subject to these policies.
+
+<input type="hidden" name="legalLinksShown" value="1">
+                                        </p>
+                                </div>
+                        </form>
+
+
+
+                        <h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?                            Browse other questions tagged <a href="https://stackoverflow.com/questions/tagged/php" class="post-tag" title="show questions tagged &#39;php&#39;" rel="tag">php</a> <a href="https://stackoverflow.com/questions/tagged/dependency-injection" class="post-tag" title="show questions tagged &#39;dependency-injection&#39;" rel="tag">dependency-injection</a> <a href="https://stackoverflow.com/questions/tagged/parameter-passing" class="post-tag" title="show questions tagged &#39;parameter-passing&#39;" rel="tag">parameter-passing</a>  or <a href="https://stackoverflow.com/questions/ask">ask your own question</a>.                        </h2>
+            </div>
+        </div>
+                <div id="sidebar" class="show-votes" role="complementary" aria-label="sidebar">
+                            <div class="module question-stats">
+                    <table id="qinfo">
+                        <tbody><tr>
+                            <td>
+                                <p class="label-key">asked</p>
+                            </td>
+                            <td style="padding-left: 10px">
+                                <p class="label-key" title="2010-02-12 23:22:13Z"><b>8 years, 7 months ago</b></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="label-key">viewed</p>
+                            </td>
+
+                            <td style="padding-left: 10px">
+                                <p class="label-key">
+                                    <b>25,100 times</b>
+                                </p>
+                            </td>
+                        </tr>
+                            <tr>
+                                <td>
+                                    <p class="label-key">active</p>
+                                </td>
+                                <td style="padding-left: 10px">
+                                    <p class="label-key"><b><a href="https://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe?lastactivity" class="lastactivity-link" title="2014-05-08 19:55:43Z">4 years, 4 months ago</a></b></p>
+                                </td>
+                            </tr>
+                    </tbody></table>
+                </div>
+            
+            
+<div id="dfp-tsb" class="everyonelovesstackoverflow everyoneloves__top-sidebar" style="min-height: auto; height: auto; display: none;" data-google-query-id="CJzitIDL7N0CFQbwjwodvz4FxQ" data-clc-ready="true"><div id="google_ads_iframe_/248424177/stackoverflow.com/sb/question-pages_0__container__" style="border: 0pt none; min-height: auto; height: auto; display: none;"><iframe id="google_ads_iframe_/248424177/stackoverflow.com/sb/question-pages_0" title="3rd party ad content" name="google_ads_iframe_/248424177/stackoverflow.com/sb/question-pages_0" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; vertical-align: bottom; min-height: auto; height: auto; display: none;" data-load-complete="true" src="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/saved_resource(1).html"></iframe></div></div>
+            <div id="hireme" class="blue tagged tex2jax_ignore clc-jobs-multi"><a class="top " href="https://stackoverflow.com/jobs" target="_blank" data-clc-click="https://clc.stackoverflow.com/click?an=41oXMPfGE81rHqofo_08mZhYZl_vZJzZf-zzyZgFptmMH_1uBxwPZGBm6NnAwNBgz8jIwCLNdGg71-xPPEseiQLFUw5E3CuxXPbnop0006fdXP9P8rzdCRLnORDN3W-Zs3er3WymqTu4Jh_l-b0Fov65ZLcl161fdozMBRkF0ky9j7le_eX59RYiubgi3DJpTZ8dA3_NGS2vlRcuz10AAA&amp;cr=10439&amp;ct=1&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs%3Fmed=clc&amp;sig=HBIXavBycNvOVQ"><span>Looking for a job?</span></a><div class="middle"><ul class="jobs"><li class="clc-dismissable"><div class="job-wrap"><a class="job" title="Node.js Developer (Remote) at X-Team. Click to learn more." href="https://stackoverflow.com/jobs/197763/nodejs-developer-remote-x-team" target="_blank" data-clc-click="https://clc.stackoverflow.com/click?an=41oXMPfGE81rHqofo_08mZhYZl_vZJzZf-zzyZgFptmMH_1uBxwPZGBm6NnAwNBgz8jIwCLNdGg71-xPPEseiQLFUw5E3CuxXPbnop0006fdXP9P8rzdCRLnORDN3W-Zs3er3WymqTu4Jh_l-b0Fov65ZLcl161fdozMBRkF0ky9j7le_eX59RYiubgi3DJpTZ8dA3_NGS2vlRcuz10AAA&amp;cr=356644&amp;ct=0&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs%2F197763%2Fnodejs-developer-remote-x-team%3Fmed=clc&amp;sig=eVO6DUivCK2OJw"><div class="title">Node.js Developer (Remote)</div><div><span class="company">X-Team</span><span class="location"><svg viewBox="0 0 12 12"><path d="M6 5.7c.4 0 .7-.1.9-.4.3-.3.4-.6.4-.9 0-.4-.1-.7-.4-.9-.2-.3-.5-.4-.9-.4s-.7.1-.9.4c-.3.2-.4.5-.4.9s.1.7.4.9c.2.3.5.4.9.4zm0-5c1 0 1.9.4 2.6 1.1.7.7 1.1 1.6 1.1 2.6 0 .5-.1 1.1-.4 1.8s-.5 1.3-.9 1.9c-.4.5-.7 1.1-1.1 1.6-.4.5-.7.9-.9 1.2l-.4.4c-.1-.1-.2-.3-.4-.5s-.5-.6-.9-1.2c-.4-.5-.8-1-1.1-1.6s-.7-1.1-.9-1.8c-.3-.7-.4-1.3-.4-1.8 0-1 .4-1.9 1.1-2.6S5 .7 6 .7z"></path></svg><span>No office location</span></span></div><div class="opts"><span class="opt remote"><svg viewBox="0 0 12 12"><path d="M6 9.8L3.9 7.7c1.3-.9 3-.9 4.2 0L6 9.8zm3-3a4.81 4.81 0 0 0-6 0L2.2 6c2.2-1.8 5.5-1.8 7.7 0l-.9.8zm1.7-1.7a7.27 7.27 0 0 0-9.4 0l-.9-.8c3.2-2.8 7.9-2.8 11.1 0l-.8.8z"></path></svg><span>Remote</span></span></div><span class="post-tag">node.js</span><span class="post-tag">javascript</span><div></div></a></div><a class="clc-dismiss" data-clc-click="https://clc.stackoverflow.com/click?an=41oXMPfGE81rHqofo_08mZhYZl_vZJzZf-zzyZgFptmMH_1uBxwPZGBm6NnAwNBgz8jIwCLNdGg71-xPPEseiQLFUw5E3CuxXPbnop0006fdXP9P8rzdCRLnORDN3W-Zs3er3WymqTu4Jh_l-b0Fov65ZLcl161fdozMBRkF0ky9j7le_eX59RYiubgi3DJpTZ8dA3_NGS2vlRcuz10AAA&amp;cr=356644&amp;ct=-1&amp;sig=53mucUOp3UwFwQ" data-clc-meta-target="-1"><svg viewBox="0 0 13.6 13.6"><path d="M11.4 2.3C8.9-.2 4.8-.2 2.3 2.3s-2.5 6.6 0 9.1 6.6 2.5 9.1 0 2.5-6.6 0-9.1zM8.6 9.5L6.8 7.7 5 9.5l-.9-.9 1.8-1.8L4.1 5l.9-.9 1.8 1.8 1.8-1.8.9.9-1.8 1.8 1.8 1.8-.9.9z"></path></svg><span class="clc-tooltip above-left">dismiss this job</span></a></li><li class="clc-dismissable"><div class="job-wrap"><a class="job" title="Full Stack Web Applications Engineer at PayPal. Click to learn more." href="https://stackoverflow.com/jobs/198376/full-stack-web-applications-engineer-paypal" target="_blank" data-clc-click="https://clc.stackoverflow.com/click?an=41oXMPfGE81rHqofo_08mZhYZl_vZJzZf-zzyZgFptmMH_1uBxwPZGBm6NnAwNBgz8jIwCLNdGg71-xPPEseiQLFUw5E3CuxXPbnop0006fdXP9P8rzdCRLnORDN3W-Zs3er3WymqTu4Jh_l-b0Fov65ZLcl161fdozMBRkF0ky9j7le_eX59RYiubgi3DJpTZ8dA3_NGS2vlRcuz10AAA&amp;cr=351469&amp;ct=0&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs%2F198376%2Ffull-stack-web-applications-engineer-paypal%3Fmed=clc&amp;sig=N9u_U9sqORwpxQ"><div class="title">Full Stack Web Applications Engineer</div><div><span class="company">PayPal</span><span class="location"><svg viewBox="0 0 12 12"><path d="M6 5.7c.4 0 .7-.1.9-.4.3-.3.4-.6.4-.9 0-.4-.1-.7-.4-.9-.2-.3-.5-.4-.9-.4s-.7.1-.9.4c-.3.2-.4.5-.4.9s.1.7.4.9c.2.3.5.4.9.4zm0-5c1 0 1.9.4 2.6 1.1.7.7 1.1 1.6 1.1 2.6 0 .5-.1 1.1-.4 1.8s-.5 1.3-.9 1.9c-.4.5-.7 1.1-1.1 1.6-.4.5-.7.9-.9 1.2l-.4.4c-.1-.1-.2-.3-.4-.5s-.5-.6-.9-1.2c-.4-.5-.8-1-1.1-1.6s-.7-1.1-.9-1.8c-.3-.7-.4-1.3-.4-1.8 0-1 .4-1.9 1.1-2.6S5 .7 6 .7z"></path></svg><span>Chennai, India</span></span></div><span class="post-tag">reactjs</span><span class="post-tag">web-services</span><div></div></a></div><a class="clc-dismiss" data-clc-click="https://clc.stackoverflow.com/click?an=41oXMPfGE81rHqofo_08mZhYZl_vZJzZf-zzyZgFptmMH_1uBxwPZGBm6NnAwNBgz8jIwCLNdGg71-xPPEseiQLFUw5E3CuxXPbnop0006fdXP9P8rzdCRLnORDN3W-Zs3er3WymqTu4Jh_l-b0Fov65ZLcl161fdozMBRkF0ky9j7le_eX59RYiubgi3DJpTZ8dA3_NGS2vlRcuz10AAA&amp;cr=351469&amp;ct=-1&amp;sig=nCCkmVIAI4VX6Q" data-clc-meta-target="-1"><svg viewBox="0 0 13.6 13.6"><path d="M11.4 2.3C8.9-.2 4.8-.2 2.3 2.3s-2.5 6.6 0 9.1 6.6 2.5 9.1 0 2.5-6.6 0-9.1zM8.6 9.5L6.8 7.7 5 9.5l-.9-.9 1.8-1.8L4.1 5l.9-.9 1.8 1.8 1.8-1.8.9.9-1.8 1.8 1.8 1.8-.9.9z"></path></svg><span class="clc-tooltip above-left">dismiss this job</span></a></li><li class="clc-dismissable"><div class="job-wrap"><a class="job" title="Software Engineer - San Francisco OR Remote - USA at HelloSign. Click to learn more." href="https://stackoverflow.com/jobs/197849/software-engineer-san-francisco-or-remote-usa-hellosign" target="_blank" data-clc-click="https://clc.stackoverflow.com/click?an=41oXMPfGE81rHqofo_08mZhYZl_vZJzZf-zzyZgFptmMH_1uBxwPZGBm6NnAwNBgz8jIwCLNdGg71-xPPEseiQLFUw5E3CuxXPbnop0006fdXP9P8rzdCRLnORDN3W-Zs3er3WymqTu4Jh_l-b0Fov65ZLcl161fdozMBRkF0ky9j7le_eX59RYiubgi3DJpTZ8dA3_NGS2vlRcuz10AAA&amp;cr=350843&amp;ct=0&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs%2F197849%2Fsoftware-engineer-san-francisco-or-remote-usa-hellosign%3Fmed=clc&amp;sig=sVp_0sC8o6FZUw"><div class="title">Software Engineer - San Francisco OR Remote - USA</div><div><span class="company">HelloSign</span><span class="location"><svg viewBox="0 0 12 12"><path d="M6 5.7c.4 0 .7-.1.9-.4.3-.3.4-.6.4-.9 0-.4-.1-.7-.4-.9-.2-.3-.5-.4-.9-.4s-.7.1-.9.4c-.3.2-.4.5-.4.9s.1.7.4.9c.2.3.5.4.9.4zm0-5c1 0 1.9.4 2.6 1.1.7.7 1.1 1.6 1.1 2.6 0 .5-.1 1.1-.4 1.8s-.5 1.3-.9 1.9c-.4.5-.7 1.1-1.1 1.6-.4.5-.7.9-.9 1.2l-.4.4c-.1-.1-.2-.3-.4-.5s-.5-.6-.9-1.2c-.4-.5-.8-1-1.1-1.6s-.7-1.1-.9-1.8c-.3-.7-.4-1.3-.4-1.8 0-1 .4-1.9 1.1-2.6S5 .7 6 .7z"></path></svg><span>San Francisco, CA</span></span></div><div class="opts"><span class="opt salary"><span>$125k - $200k</span></span><span class="opt remote"><svg viewBox="0 0 12 12"><path d="M6 9.8L3.9 7.7c1.3-.9 3-.9 4.2 0L6 9.8zm3-3a4.81 4.81 0 0 0-6 0L2.2 6c2.2-1.8 5.5-1.8 7.7 0l-.9.8zm1.7-1.7a7.27 7.27 0 0 0-9.4 0l-.9-.8c3.2-2.8 7.9-2.8 11.1 0l-.8.8z"></path></svg><span>Remote</span></span></div><span class="post-tag highlight">php</span><span class="post-tag">web-services</span><div></div></a></div><a class="clc-dismiss" data-clc-click="https://clc.stackoverflow.com/click?an=41oXMPfGE81rHqofo_08mZhYZl_vZJzZf-zzyZgFptmMH_1uBxwPZGBm6NnAwNBgz8jIwCLNdGg71-xPPEseiQLFUw5E3CuxXPbnop0006fdXP9P8rzdCRLnORDN3W-Zs3er3WymqTu4Jh_l-b0Fov65ZLcl161fdozMBRkF0ky9j7le_eX59RYiubgi3DJpTZ8dA3_NGS2vlRcuz10AAA&amp;cr=350843&amp;ct=-1&amp;sig=PwwaRu0TzuLC4w" data-clc-meta-target="-1"><svg viewBox="0 0 13.6 13.6"><path d="M11.4 2.3C8.9-.2 4.8-.2 2.3 2.3s-2.5 6.6 0 9.1 6.6 2.5 9.1 0 2.5-6.6 0-9.1zM8.6 9.5L6.8 7.7 5 9.5l-.9-.9 1.8-1.8L4.1 5l.9-.9 1.8 1.8 1.8-1.8.9.9-1.8 1.8 1.8 1.8-.9.9z"></path></svg><span class="clc-tooltip above-left">dismiss this job</span></a></li><li class="clc-dismissable"><div class="job-wrap"><a class="job" title="Technical Marketing Manager for Application Delivery Solutions at SUSE. Click to learn more." href="https://stackoverflow.com/jobs/203929/technical-marketing-manager-for-application-suse" target="_blank" data-clc-click="https://clc.stackoverflow.com/click?an=41oXMPfGE81rHqofo_08mZhYZl_vZJzZf-zzyZgFptmMH_1uBxwPZGBm6NnAwNBgz8jIwCLNdGg71-xPPEseiQLFUw5E3CuxXPbnop0006fdXP9P8rzdCRLnORDN3W-Zs3er3WymqTu4Jh_l-b0Fov65ZLcl161fdozMBRkF0ky9j7le_eX59RYiubgi3DJpTZ8dA3_NGS2vlRcuz10AAA&amp;cr=358138&amp;ct=0&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs%2F203929%2Ftechnical-marketing-manager-for-application-suse%3Fmed=clc&amp;sig=1vuRd33_HeC29w"><div class="title">Technical Marketing Manager for Application Delivery Solutions</div><div><span class="company">SUSE</span><span class="location"><svg viewBox="0 0 12 12"><path d="M6 5.7c.4 0 .7-.1.9-.4.3-.3.4-.6.4-.9 0-.4-.1-.7-.4-.9-.2-.3-.5-.4-.9-.4s-.7.1-.9.4c-.3.2-.4.5-.4.9s.1.7.4.9c.2.3.5.4.9.4zm0-5c1 0 1.9.4 2.6 1.1.7.7 1.1 1.6 1.1 2.6 0 .5-.1 1.1-.4 1.8s-.5 1.3-.9 1.9c-.4.5-.7 1.1-1.1 1.6-.4.5-.7.9-.9 1.2l-.4.4c-.1-.1-.2-.3-.4-.5s-.5-.6-.9-1.2c-.4-.5-.8-1-1.1-1.6s-.7-1.1-.9-1.8c-.3-.7-.4-1.3-.4-1.8 0-1 .4-1.9 1.1-2.6S5 .7 6 .7z"></path></svg><span>No office location</span></span></div><div class="opts"><span class="opt remote"><svg viewBox="0 0 12 12"><path d="M6 9.8L3.9 7.7c1.3-.9 3-.9 4.2 0L6 9.8zm3-3a4.81 4.81 0 0 0-6 0L2.2 6c2.2-1.8 5.5-1.8 7.7 0l-.9.8zm1.7-1.7a7.27 7.27 0 0 0-9.4 0l-.9-.8c3.2-2.8 7.9-2.8 11.1 0l-.8.8z"></path></svg><span>Remote</span></span></div><span class="post-tag">cloud</span><span class="post-tag">linux</span><div></div></a></div><a class="clc-dismiss" data-clc-click="https://clc.stackoverflow.com/click?an=41oXMPfGE81rHqofo_08mZhYZl_vZJzZf-zzyZgFptmMH_1uBxwPZGBm6NnAwNBgz8jIwCLNdGg71-xPPEseiQLFUw5E3CuxXPbnop0006fdXP9P8rzdCRLnORDN3W-Zs3er3WymqTu4Jh_l-b0Fov65ZLcl161fdozMBRkF0ky9j7le_eX59RYiubgi3DJpTZ8dA3_NGS2vlRcuz10AAA&amp;cr=358138&amp;ct=-1&amp;sig=RgpV1-te02-CGQ" data-clc-meta-target="-1"><svg viewBox="0 0 13.6 13.6"><path d="M11.4 2.3C8.9-.2 4.8-.2 2.3 2.3s-2.5 6.6 0 9.1 6.6 2.5 9.1 0 2.5-6.6 0-9.1zM8.6 9.5L6.8 7.7 5 9.5l-.9-.9 1.8-1.8L4.1 5l.9-.9 1.8 1.8 1.8-1.8.9.9-1.8 1.8 1.8 1.8-.9.9z"></path></svg><span class="clc-tooltip above-left">dismiss this job</span></a></li></ul></div><img src="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/impression.gif" class="impression" style="display: none;"></div>
+<script>;try{(function(a){function b(a){return'string'==typeof a?document.getElementById(a):a}function c(a){return a=b(a),!!a&&'none'===getComputedStyle(a).display}function d(a){return!c(a)}function e(a){return!!a}function f(a){return /^\s*$/.test(b(a).innerHTML)}function g(a){var b=a.style;b.height=b.maxHeight=b.minHeight='auto',b.display='none',[].forEach.call(a.children,g)}function h(a,b){var c;return function(){return a&&(c=a.call(b||this,arguments),a=null),c}}function i(a){var b=document.createElement('script');b.src=a,document.body.appendChild(b)}function j(a){return k([],a)}function k(a,b){return a.push=function(a){return b(),delete this.push,this.push(a)},a}function l(){try{return!new Function('return async()=>{};')}catch(a){return!0}}function m(){return'undefined'!=typeof googletag&&!!googletag.apiReady}function n(){m()||(googletag={cmd:j(A)})}function o(){var a=document.createElement('div');a.className='adsbox',a.id='clc-abd',a.style.position='absolute',a.style.pointerEvents='none',a.innerHTML='&nbsp;',document.body.appendChild(a)}function p(a){var b=a.serviceName,c=a.slot,d=a.lineItemId;try{var e=c.getSlotElementId(),f=[];e||f.push('id=0');var h=document.getElementById(e);if(!e||h?h.hasAttribute('data-clc-stalled')&&f.push('st=1'):f.push('el=0'),0!==f.length)return void B(f.join('&'));-1===x.dh.indexOf(d)?h.setAttribute('data-clc-prefilled','true'):g(h),h.setAttribute('data-clc-ready','true')}catch(a){var i=document.querySelector('#dfp-tsb, #dfp-isb, #clc-tsb');i&&i.setAttribute('data-clc-ready','true'),B('e=1')}}function q(){return Object.keys(F.ids)}function r(a){var b=F.ids[a],c=F.slots[b];'function'==typeof c&&(c=c(a));return{path:'/'+C+'/'+E+'/'+b+'/'+D,sizes:c,zone:b}}function s(a){return!(clc.collapse&&void 0!==clc.collapse[a])||!!clc.collapse[a]}function t(a,b){'dfp-isb'===a&&b.setTargeting('Sidebar',['Inline']),'dfp-tsb'===a&&b.setTargeting('Sidebar',['Right']);var c=r(a),d=c.path,e=c.sizes,f=c.zone,g=googletag.defineSlot(d,e,a);s(f)&&g.setCollapseEmptyDiv(!0,!0),g.addService(b),!1}function u(b){var c=a.dfp&&a.dfp.targeting||{};Object.keys(c).forEach(function(a){b.setTargeting(a,c[a])})}function v(a){var g=a.map(b).filter(e);return{eligible:g.filter(f).filter(d).map(function(a){return a.id}),ineligible:g.filter(c)}}function w(b){if(void 0===b&&(b=q()),!m())return n(),void googletag.cmd.push(function(){return w(b)});var c=v(b),d=c.eligible,e=c.ineligible;if(e.forEach(g),0!==d.length){o(),googletag.destroySlots();var f=googletag.pubads();f.enableSingleRequest(),a.sreEvent||(f.addEventListener('slotRenderEnded',p),a.sreEvent=!0),u(f),d.forEach(function(a){return t(a,f)}),googletag.enableServices(),d.forEach(function(a){googletag.display(a)})}}var x=function(a){for(var b=[],c=1;c<arguments.length;c++)b[c-1]=arguments[c];for(var d,e=0,f=b;e<f.length;e++)for(var g in d=f[e],d)a[g]=d[g];return a}({"lib":"https://cdn.sstatic.net/clc/clc.min.js?v=04d772c81312","style":"https://cdn.sstatic.net/clc/styles/clc.min.css?v=1db48f495ba1","u":"https://clc.stackoverflow.com/markup.js","wa":true,"kt":2000,"tto":true,"h":"clc.stackoverflow.com","allowed":"^(((talent\\.)?stackoverflow)|(blog\\.codinghorror)|(serverfault|askubuntu)|([^\\.]+\\.stackexchange))\\.com$","wv":true,"al":false,"dh":[4385506061,4386578282,4386579572]},a.options||{}),y=h(function(){var a=x.lib;l()&&(a=a.replace(/(\.min)?\.js(\?v=[0-9a-fA-F]+)?$/,'.ie$1.js$2')),i(a)}),z=a.cmd||[];Array.isArray(z)&&(0<z.length?y():k(z,y));var A=h(function(){i('https://www.googletagservices.com/tag/js/gpt.js')}),B=function(a){new Image().src='https://'+x.h+'/stalled.gif?'+a},C='248424177',D=/^\/tags\//.test(location.pathname)||/^\/questions\/tagged\//.test(location.pathname)?'tag-pages':'question-pages',E=location.hostname;var F={slots:{lb:[[728,90]],mlb:[[728,90]],sb:function(a){return'dfp-tsb'===a?[[300,250],[300,600]]:[[300,250]]},"tag-sponsorship":[[730,135]],"mobile-below-question":[[320,50],[300,250]]},ids:{"dfp-tlb":'lb',"dfp-mlb":'mlb',"dfp-tsb":'sb',"dfp-isb":'sb',"dfp-tag":'tag-sponsorship',"dfp-m-aq":'mobile-below-question',"clc-tlb":'lb',"clc-mlb":'mlb',"clc-tsb":'sb'}};(function(){var b=x.al;b&&z.push(function(){return a.load()})})(),n(),a.dfp={load:w},a.options=x,a.cmd=z})(this.clc=this.clc||{})}catch(a){window.console.error(a)}</script>            <script>
+                var clc = clc || {};
+                clc.collapse = { sb: !0,'tag-sponsorship':!0,lb:!1,mlb:!1,'mobile-below-question':!0};
+                clc.cmd = clc.cmd || [];
+                clc.cmd.push(function () { window.clc_request='AqTyktfkKdYIAAAAAJtrIgACAAAAAgAAAAAsAAAAfHBocHxkZXBlbmRlbmN5LWluamVjdGlvbnxwYXJhbWV0ZXItcGFzc2luZ3wA_40T_VTArUL7Wg'; clc.load(); });
+                                clc.dfp = clc.dfp || {};
+                clc.dfp.targeting = {Registered:['false'],'so-tag':['php','dependency-injection','parameter-passing']};
+                
+                var googletag = googletag || {};
+                googletag.cmd = googletag.cmd || [];
+                googletag.cmd.push(function () { clc.dfp.load(); });
+            </script>
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+
+<div class="spacer">
+	<a href="https://stackoverflow.com/q/36598272?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">1</div>
+	</a>
+	<a href="https://stackoverflow.com/questions/36598272/php-best-practice-global-database-variable-in-class-oop?noredirect=1&amp;lq=1" class="question-hyperlink">PHP - Best practice Global database variable in class (OOP)</a>
+</div>
+<div class="spacer">
+	<a href="https://stackoverflow.com/q/49009230?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="https://stackoverflow.com/questions/49009230/how-do-i-access-an-external-variable-in-a-php-class?noredirect=1&amp;lq=1" class="question-hyperlink">how do I access an external variable in a PHP class?</a>
+</div>
+<div class="spacer">
+	<a href="https://stackoverflow.com/q/12973644?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">4</div>
+	</a>
+	<a href="https://stackoverflow.com/questions/12973644/global-variable-in-php?noredirect=1&amp;lq=1" class="question-hyperlink">Global variable in php</a>
+</div>
+<div class="spacer">
+	<a href="https://stackoverflow.com/q/38702676?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">4</div>
+	</a>
+	<a href="https://stackoverflow.com/questions/38702676/what-is-a-dependency-injection-container?noredirect=1&amp;lq=1" class="question-hyperlink">What is a Dependency Injection Container?</a>
+</div>
+<div class="spacer">
+	<a href="https://stackoverflow.com/q/40886429?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="https://stackoverflow.com/questions/40886429/how-to-write-unit-tests-in-phpunit-for-classes-which-make-mysql-calls?noredirect=1&amp;lq=1" class="question-hyperlink">How to write unit tests in phpunit for classes which make mysql calls?</a>
+</div>
+<div class="spacer">
+	<a href="https://stackoverflow.com/q/18041740?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">2</div>
+	</a>
+	<a href="https://stackoverflow.com/questions/18041740/organizing-php-oop-classes-to-work-with-db?noredirect=1&amp;lq=1" class="question-hyperlink">organizing PHP OOP classes to work with DB</a>
+</div>
+<div class="spacer">
+	<a href="https://stackoverflow.com/q/13618173?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">2</div>
+	</a>
+	<a href="https://stackoverflow.com/questions/13618173/php-dependency-injection-is-my-code-here-actually-dependency-injection-containe?noredirect=1&amp;lq=1" class="question-hyperlink">PHP dependency injection. Is my code here actually dependency injection container?</a>
+</div>
+<div class="spacer">
+	<a href="https://stackoverflow.com/q/10146112?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">2</div>
+	</a>
+	<a href="https://stackoverflow.com/questions/10146112/use-an-object-previously-declared-in-an-other-class?noredirect=1&amp;lq=1" class="question-hyperlink">use an object previously declared in an other class</a>
+</div>
+<div class="spacer">
+	<a href="https://stackoverflow.com/q/43595320?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="https://stackoverflow.com/questions/43595320/how-to-use-database-connection-in-other-classes?noredirect=1&amp;lq=1" class="question-hyperlink">How to use database connection in other classes</a>
+</div>
+<div class="spacer">
+	<a href="https://stackoverflow.com/q/39940893?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">-1</div>
+	</a>
+	<a href="https://stackoverflow.com/questions/39940893/importance-of-interfaces-and-abstract-classes-in-php?noredirect=1&amp;lq=1" class="question-hyperlink">importance of Interfaces and Abstract Classes in PHP</a>
+</div>					<div class="spacer more">
+				<a href="https://stackoverflow.com/questions/linked/2255771?lq=1">see more linked questions…</a>
+			</div>
+	</div>
+</div>
+
+                <div class="module sidebar-related">
+                    <h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/60174?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">2780</div></a><a href="https://stackoverflow.com/questions/60174/how-can-i-prevent-sql-injection-in-php?rq=1" class="question-hyperlink">How can I prevent SQL injection in PHP?</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/130794?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">2689</div></a><a href="https://stackoverflow.com/questions/130794/what-is-dependency-injection?rq=1" class="question-hyperlink">What is dependency injection?</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/557742?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes large">423</div></a><a href="https://stackoverflow.com/questions/557742/dependency-injection-vs-factory-pattern?rq=1" class="question-hyperlink">Dependency Injection vs Factory Pattern</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/834303?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">1238</div></a><a href="https://stackoverflow.com/questions/834303/startswith-and-endswith-functions-in-php?rq=1" class="question-hyperlink">startsWith() and endsWith() functions in PHP</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/1053424?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">1350</div></a><a href="https://stackoverflow.com/questions/1053424/how-do-i-get-php-errors-to-display?rq=1" class="question-hyperlink">How do I get PHP errors to display?</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/3577641?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">1925</div></a><a href="https://stackoverflow.com/questions/3577641/how-do-you-parse-and-process-html-xml-in-php?rq=1" class="question-hyperlink">How do you parse and process HTML/XML in PHP?</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/10057671?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">1683</div></a><a href="https://stackoverflow.com/questions/10057671/how-does-php-foreach-actually-work?rq=1" class="question-hyperlink">How does PHP 'foreach' actually work?</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/12769982?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes large">933</div></a><a href="https://stackoverflow.com/questions/12769982/reference-what-does-this-error-mean-in-php?rq=1" class="question-hyperlink">Reference - What does this error mean in PHP?</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/12859942?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">2240</div></a><a href="https://stackoverflow.com/questions/12859942/why-shouldnt-i-use-mysql-functions-in-php?rq=1" class="question-hyperlink">Why shouldn't I use mysql_* functions in PHP?</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/14301389?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">464</div></a><a href="https://stackoverflow.com/questions/14301389/why-does-one-use-dependency-injection?rq=1" class="question-hyperlink">Why does one use dependency injection?</a></div>
+                    </div>
+                </div>
+
+<div id="hot-network-questions" class="module tex2jax_ignore">
+    <h4>
+        <a href="https://stackexchange.com/questions?tab=hot" class="js-gps-track s-link s-link__inherit" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="https://codegolf.stackexchange.com/questions/173323/same-number-letters" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Same number letters
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-politics" title="Politics Stack Exchange"></div><a href="https://politics.stackexchange.com/questions/34181/do-compulsory-voting-systems-allow-blank-votes-or-none-of-the-above-options" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:475 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Do compulsory voting systems allow blank votes or "none of the above" options?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-electronics" title="Electrical Engineering Stack Exchange"></div><a href="https://electronics.stackexchange.com/questions/399257/finite-state-machine-fsm" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:135 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Finite State Machine FSM
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-ell" title="English Language Learners Stack Exchange"></div><a href="https://ell.stackexchange.com/questions/181513/is-vietnamese-a-noun-or-an-adjective" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is Vietnamese a noun or an adjective?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="https://workplace.stackexchange.com/questions/120059/what-to-make-of-a-bizarre-interview" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What to make of a bizarre interview
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="https://worldbuilding.stackexchange.com/questions/126566/why-would-boarding-school-be-mandatory" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why would boarding school be mandatory?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="https://scifi.stackexchange.com/questions/195898/encyclopedia-about-imagined-near-future-spacecraft" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Encyclopedia about imagined near-future spacecraft
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="https://mathematica.stackexchange.com/questions/183060/create-lists-of-equivalences-from-pairs" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Create lists of equivalences from pairs
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-space" title="Space Exploration Stack Exchange"></div><a href="https://space.stackexchange.com/questions/31062/does-the-international-space-station-get-tv" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:508 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does the International Space Station get TV?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="https://rpg.stackexchange.com/questions/132930/why-is-allowing-players-to-stack-their-skill-proficiency-bonus-overpowered" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is allowing players to stack their skill proficiency bonus overpowered?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-vi" title="Vi and Vim Stack Exchange"></div><a href="https://vi.stackexchange.com/questions/17563/in-command-prompt" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:599 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    '&lt;,'&gt; in command prompt
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="https://rpg.stackexchange.com/questions/132921/can-hex-be-twinned" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can Hex be Twinned?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="https://travel.stackexchange.com/questions/123309/sending-a-new-laptop-into-japan-for-1-month-stay" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Sending a new laptop into japan for 1 month stay
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="https://workplace.stackexchange.com/questions/120209/how-to-ask-my-manager-if-i-am-about-to-be-fired" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to ask my manager if I am about to be fired?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="https://unix.stackexchange.com/questions/472991/what-type-of-operation-is-in-my-array" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What type of operation is /#/- in "${my_array[@]/#/-}"?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="https://academia.stackexchange.com/questions/117868/how-to-deal-with-your-research-results-becoming-obsolete" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to deal with your research results becoming obsolete?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-dba" title="Database Administrators Stack Exchange"></div><a href="https://dba.stackexchange.com/questions/219137/why-is-a-scan-faster-than-seek-for-this-predicate" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:182 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is a scan faster than seek for this predicate?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="https://security.stackexchange.com/questions/194980/is-it-possible-to-fake-received-field-in-the-e-mail" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it possible to fake 'received' field in the e-mail?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-cooking" title="Seasoned Advice"></div><a href="https://cooking.stackexchange.com/questions/92570/is-it-possible-to-remove-the-smell-from-rice-mistakenly-stored-in-a-detergent-bo" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:49 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it possible to remove the smell from rice mistakenly stored in a detergent box?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="https://workplace.stackexchange.com/questions/119646/offensive-language-behavior-from-co-worker-in-online-game" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Offensive language/behavior from co-worker in online game
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-interpersonal" title="Interpersonal Skills Stack Exchange"></div><a href="https://interpersonal.stackexchange.com/questions/19034/i-forgot-my-friends-birthday-how-can-i-convince-him-to-forgive-me" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:680 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    I forgot my friend's birthday, how can I convince him to forgive me?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-money" title="Personal Finance &amp; Money Stack Exchange"></div><a href="https://money.stackexchange.com/questions/100659/can-you-gift-someone-money-for-purpose-of-investing-to-avoid-capital-gains-upon" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can you gift someone money for purpose of investing to avoid capital gains upon inheritance?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="https://math.stackexchange.com/questions/2940671/chances-of-rolling-snake-eyes-at-least-once-in-a-series-of-rolls" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Chances of rolling "Snake Eyes" at least once in a series of rolls.
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-retrocomputing" title="Retrocomputing Stack Exchange"></div><a href="https://retrocomputing.stackexchange.com/questions/7841/is-there-an-accurate-speedwise-8086-emulator" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:648 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there an accurate (speedwise) 8086 emulator?
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+
+<div id="feed-link">
+    <a href="https://stackoverflow.com/feeds/question/2255771" title="feed of this question and its answers">
+        <svg aria-hidden="true" class="svg-icon fc-orange-400 iconRss" width="18" height="18" viewBox="0 0 18 18"><path d="M1 3c0-1.1.9-2 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3zm14.5 12C15.5 8.1 9.9 2.5 3 2.5V5a10 10 0 0 1 10 10h2.5zm-5 0A7.5 7.5 0 0 0 3 7.5V10a5 5 0 0 1 5 5h2.5zm-5 0A2.5 2.5 0 0 0 3 12.5V15h2.5z"></path></svg>
+        question feed
+    </a>
+</div>
+        </div>
+    </div>
+<script>StackExchange.ready(function(){$.get('/posts/2255771/ivc/4f00');});</script>
+<noscript>&lt;div&gt;&lt;img src="/posts/2255771/ivc/4f00" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;</noscript><div style="display:none" id="prettify-lang">lang-php</div></div>
+
+
+        </div>
+    </div><script src="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/clc.min.js"></script><script src="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/gpt.js"></script>
+
+    <footer id="footer" class="site-footer js-footer" role="contentinfo">
+        <div class="site-footer--container">
+                <div class="site-footer--logo">
+
+                    
+                    <a href="https://stackoverflow.com/"><svg aria-hidden="true" class="svg-icon native iconLogoGlyphMd" width="32" height="37" viewBox="0 0 32 37"><g><path fill="#BCBBBB" d="M26 33v-9h4v13H0V24h4v9z"></path><path d="M23.1 25.99l.68-2.95-16.1-3.35L7 23l16.1 2.99zM9.1 15.2l15 7 1.4-3-15-7-1.4 3zm4.2-7.4L26 18.4l2.1-2.5L15.4 5.3l-2.1 2.5zM21.5 0l-2.7 2 9.9 13.3 2.7-2L21.5 0zM7 30h16v-3H7v3z" fill="#F48024"></path></g></svg></a>
+                </div>
+            
+            <nav class="site-footer--nav">
+                    <div class="site-footer--col site-footer--col__visible js-footer-col" data-name="default">
+                        <h5 class="-title"><a href="https://stackoverflow.com/" class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 15})">Stack Overflow</a></h5>
+                        <ul class="-list js-primary-footer-links">
+                            <li class="-item"><a href="https://stackoverflow.com/questions" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 16})">Questions</a></li>
+                                <li class="-item"><a href="https://stackoverflow.com/jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 17})">Jobs</a></li>
+                                <li class="-item"><a href="https://stackoverflow.com/jobs/directory/developer-jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 11})">Developer Jobs Directory</a></li>
+                                     <li class="-item"><a href="https://stackoverflow.com/jobs/salary" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 28})">Salary Calculator</a></li>
+                                                            <li class="-item"><a href="https://stackoverflow.com/help" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 3 })">Help</a></li>
+                                <li class="-item"><a onclick="StackExchange.switchMobile(&quot;on&quot;)" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 12 })">Mobile</a></li>
+                        <li class="-item"><a class="-link" role="button">Disable Responsiveness</a></li></ul>
+                    </div>
+                    <div class="site-footer--col site-footer--col__visible js-footer-col" data-name="default">
+                        <h5 class="-title"><a href="https://www.stackoverflowbusiness.com/" class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 19 })">Products</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="https://stackoverflow.com/teams" class="js-gps-track -link" data-ga="[&quot;teams traffic&quot;,&quot;footer - site nav&quot;,&quot;stackoverflow.com/teams&quot;,null,{&quot;dimension4&quot;:&quot;teams&quot;}]" data-gps-track="footer.click({ location: 2, link: 29 })">Teams</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/talent" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 20 })">Talent</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/advertise" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 21 })">Engagement</a></li>
+                            <li class="-item"><a href="https://stackoverflow.com/enterprise" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 22 })">Enterprise</a></li>
+                        </ul>
+                    </div>
+                <div class="site-footer--col site-footer--col__visible js-footer-col" data-name="default">
+                    <h5 class="-title"><a class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">Company</a></h5>
+                    <ul class="-list">
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">About</a></li>
+                                                <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 27 })" href="https://stackoverflow.com/company/press">Press</a></li>
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 9 })" href="https://stackoverflow.com/company/work-here">Work Here</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 7 })" href="https://stackoverflow.com/legal">Legal</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 8 })" href="https://stackoverflow.com/legal/privacy-policy">Privacy Policy</a></li>
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 13 })" href="https://stackoverflow.com/company/contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="site-footer--col site-footer--categories-nav site-footer--col__visible">
+                    <a href="https://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe#" class="site-footer--back js-footer-back"><svg aria-hidden="true" class="svg-icon iconArrowLeftAlt" width="18" height="18" viewBox="0 0 18 18"><path d="M10.58 16L12 14.59 6.4 9 12 3.41 10.57 2l-7 7z"></path></svg></a>
+                    <div>
+                        <h5 class="-title"><a href="https://stackexchange.com/">Stack Exchange<br> Network</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="https://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Technology">Technology</a></li>
+                            <li class="-item"><a href="https://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Life / Arts">Life / Arts</a></li>
+                            <li class="-item"><a href="https://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Culture / Recreation">Culture / Recreation</a></li>
+                            <li class="-item"><a href="https://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Science">Science</a></li>
+                            <li class="-item"><a href="https://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Other">Other</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="site-footer--categories">
+                    <div class="site-footer--col site-footer--category js-footer-col" data-name="Technology">
+        <ul class="-list">
+                <li class="-item"><a href="https://stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                <li class="-item"><a href="https://serverfault.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="system and network administrators">Server Fault</a></li>
+                <li class="-item"><a href="https://superuser.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="computer enthusiasts and power users">Super User</a></li>
+                <li class="-item"><a href="https://webapps.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="power users of web applications">Web Applications</a></li>
+                <li class="-item"><a href="https://askubuntu.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                <li class="-item"><a href="https://webmasters.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="pro webmasters">Webmasters</a></li>
+                <li class="-item"><a href="https://gamedev.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and independent game developers">Game Development</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://tex.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                <li class="-item"><a href="https://softwareengineering.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professionals, academics, and students working within the systems development life cycle">Software Engineering</a></li>
+                <li class="-item"><a href="https://unix.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                <li class="-item"><a href="https://apple.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                <li class="-item"><a href="https://wordpress.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="WordPress developers and administrators">WordPress Development</a></li>
+                <li class="-item"><a href="https://gis.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                <li class="-item"><a href="https://electronics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://android.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                <li class="-item"><a href="https://security.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="information security professionals">Information Security</a></li>
+                <li class="-item"><a href="https://dba.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                <li class="-item"><a href="https://drupal.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Drupal developers and administrators">Drupal Answers</a></li>
+                <li class="-item"><a href="https://sharepoint.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="SharePoint enthusiasts">SharePoint</a></li>
+                <li class="-item"><a href="https://ux.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="user experience researchers and experts">User Experience</a></li>
+                <li class="-item"><a href="https://mathematica.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Wolfram Mathematica">Mathematica</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://salesforce.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                <li class="-item"><a href="https://expressionengine.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                <li class="-item"><a href="https://pt.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programadores profissionais e entusiastas">Stack Overflow em Português</a></li>
+                <li class="-item"><a href="https://blender.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who use Blender to create 3D graphics, animations, or games">Blender</a></li>
+                <li class="-item"><a href="https://networkengineering.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="network engineers">Network Engineering</a></li>
+                <li class="-item"><a href="https://crypto.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="software developers, mathematicians and others interested in cryptography">Cryptography</a></li>
+                <li class="-item"><a href="https://codereview.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="peer programmer code reviews">Code Review</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://magento.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of the Magento e-Commerce platform">Magento</a></li>
+                <li class="-item"><a href="https://softwarerecs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people seeking specific software recommendations">Software Recommendations</a></li>
+                <li class="-item"><a href="https://dsp.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="practitioners of the art and science of signal, image and video processing">Signal Processing</a></li>
+                <li class="-item"><a href="https://emacs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those using, extending or developing Emacs">Emacs</a></li>
+                <li class="-item"><a href="https://raspberrypi.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users and developers of hardware and software for Raspberry Pi">Raspberry Pi</a></li>
+                <li class="-item"><a href="https://ru.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="программистов">Stack Overflow на русском</a></li>
+                <li class="-item"><a href="https://codegolf.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programming puzzle enthusiasts and code golfers">Programming Puzzles &amp; Code Golf</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://es.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programadores y profesionales de la informática">Stack Overflow en español</a></li>
+                <li class="-item"><a href="https://ethereum.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Ethereum, the decentralized application platform and smart contract enabled blockchain">Ethereum</a></li>
+                <li class="-item"><a href="https://datascience.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Data science professionals, Machine Learning specialists, and those interested in learning more about the field">Data Science</a></li>
+                <li class="-item"><a href="https://arduino.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="developers of open-source hardware and software that is compatible with Arduino">Arduino</a></li>
+                <li class="-item"><a href="https://bitcoin.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Bitcoin crypto-currency enthusiasts">Bitcoin</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#technology" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (30)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Life / Arts">
+        <ul class="-list">
+                <li class="-item"><a href="https://photo.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                <li class="-item"><a href="https://scifi.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                <li class="-item"><a href="https://graphicdesign.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                <li class="-item"><a href="https://movies.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                <li class="-item"><a href="https://music.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="musicians, students, and enthusiasts">Music: Practice &amp; Theory</a></li>
+                <li class="-item"><a href="https://worldbuilding.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="writers/artists using science, geography and culture to construct imaginary worlds and settings">Worldbuilding</a></li>
+                <li class="-item"><a href="https://cooking.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Life / Arts"><ul class="-list">
+                <li class="-item"><a href="https://diy.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="contractors and serious DIYers">Home Improvement</a></li>
+                <li class="-item"><a href="https://money.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                <li class="-item"><a href="https://academia.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="academics and those enrolled in higher education">Academia</a></li>
+                <li class="-item"><a href="https://law.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="legal professionals, students, and others with experience or interest in law">Law</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#lifearts" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (15)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Culture / Recreation">
+        <ul class="-list">
+                <li class="-item"><a href="https://english.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                <li class="-item"><a href="https://skeptics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="scientific skepticism">Skeptics</a></li>
+                <li class="-item"><a href="https://judaism.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                <li class="-item"><a href="https://travel.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="road warriors and seasoned travelers">Travel</a></li>
+                <li class="-item"><a href="https://christianity.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                <li class="-item"><a href="https://ell.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="speakers of other languages learning English">English Language Learners</a></li>
+                <li class="-item"><a href="https://japanese.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, teachers, and linguists wanting to discuss the finer points of the Japanese language">Japanese Language</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Culture / Recreation"><ul class="-list">
+                <li class="-item"><a href="https://gaming.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                <li class="-item"><a href="https://bicycles.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                <li class="-item"><a href="https://rpg.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                <li class="-item"><a href="https://anime.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="anime and manga fans">Anime &amp; Manga</a></li>
+                <li class="-item"><a href="https://puzzling.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those who create, solve, and study puzzles">Puzzling</a></li>
+                <li class="-item"><a href="https://mechanics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="mechanics and DIY enthusiast owners of cars, trucks, and motorcycles">Motor Vehicle Maintenance &amp; Repair</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#culturerecreation" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (33)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Science">
+        <ul class="-list">
+                <li class="-item"><a href="https://mathoverflow.net/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional mathematicians">MathOverflow</a></li>
+                <li class="-item"><a href="https://math.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                <li class="-item"><a href="https://stats.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                <li class="-item"><a href="https://cstheory.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                <li class="-item"><a href="https://physics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="active researchers, academics and students of physics">Physics</a></li>
+                <li class="-item"><a href="https://chemistry.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="scientists, academics, teachers, and students in the field of chemistry">Chemistry</a></li>
+                <li class="-item"><a href="https://biology.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="biology researchers, academics, and students">Biology</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Science"><ul class="-list">
+                <li class="-item"><a href="https://cs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, researchers and practitioners of computer science">Computer Science</a></li>
+                <li class="-item"><a href="https://philosophy.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those interested in the study of the fundamental nature of knowledge, reality, and existence">Philosophy</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#science" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (10)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Other">
+        <ul class="-list">
+                <li class="-item"><a href="https://meta.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                <li class="-item"><a href="https://stackapps.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                <li class="-item"><a href="https://api.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programmatic interaction with Stack Exchange sites">API</a></li>
+                <li class="-item"><a href="https://data.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="querying Stack Exchange data using SQL">Data</a></li>
+                <li class="-item"><a href="https://area51.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                    </ul>
+    </div>
+                </div>
+            </nav>
+            <div class="site-footer--copyright fs-fine">
+                <ul class="-list">
+                    <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link:4 })" href="https://stackoverflow.blog/?blb=1">Blog</a></li>
+                    <li class="-item"><a href="https://www.facebook.com/officialstackoverflow/" class="-link">Facebook</a></li>
+                    <li class="-item"><a href="https://twitter.com/stackoverflow" class="-link">Twitter</a></li>
+                    <li class="-item"><a href="https://linkedin.com/company/stack-overflow" class="-link">LinkedIn</a></li>
+                </ul>
+
+                <p class="mt-auto mb24">
+site design / logo © 2018 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a>
+                            with <a href="https://stackoverflow.blog/2009/06/25/attribution-required/" rel="license">attribution required</a>.
+                    <span id="svnrev">rev&nbsp;2018.10.3.31808</span>
+                </p>
+            </div>
+        </div>
+
+            </footer>
+            <script>StackExchange.ready(function () { StackExchange.responsiveness.addSwitcher(); })</script>
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled
+            &lt;img src="https://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;
+        &lt;/div&gt;
+    </noscript>
+
+<script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+            StackExchange.ready(function () {
+
+                StackExchange.ga.init({
+                    sendTitles: true,
+                    tracker: window.ga,
+                    trackingCodes: [
+                        'UA-108242619-1'
+                    ]
+                });
+
+
+
+                    StackExchange.ga.setDimension('dimension2', '|php|dependency-injection|parameter-passing|');
+
+                    StackExchange.ga.setDimension('dimension3', 'Questions/Show');
+
+
+                StackExchange.ga.trackPageView();
+            });
+            
+/**/
+            
+            var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+            (function() {
+                var ssl = 'https:' == document.location.protocol,
+                    s = document.getElementsByTagName('script')[0],
+                    qc = document.createElement('script');
+                 qc.async = true;
+                    qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                    s.parentNode.insertBefore(qc, s);
+                    _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+/**/
+                 var sc = document.createElement('script');
+                    sc.async = true;
+                    sc.src = (ssl ? 'https://sb' : 'http://b') + '.scorecardresearch.com/beacon.js';
+                    s.parentNode.insertBefore(sc, s);
+                    _comscore.push({ c1: "2", c2: "17440561" });
+            })();
+            
+
+</script>
+            
+    
+    
+<div class="adsbox" id="clc-abd" style="position: absolute; pointer-events: none;">&nbsp;</div><script src="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/markup.js"></script><iframe id="google_osd_static_frame_8871382549813" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./How can I use _Dependency Injection_ in simple php functions, and should I bother_ - Stack Overflow_files/saved_resource(2).html"></iframe></body></html>

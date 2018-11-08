@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<!-- saved from url=(0075)https://www.drupion.com/blog/10-steps-creating-ctools-modal-window-drupal-7 -->
+<html lang="en" dir="ltr" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:og="http://ogp.me/ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sioc="http://rdfs.org/sioc/ns#" xmlns:sioct="http://rdfs.org/sioc/types#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" class="js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" src="./10 Steps to Creating A CTools Modal Window with Drupal 7 _ Managed Drupal and Wordpress Hosting_files/shares.json"></script><script type="text/javascript" src="./10 Steps to Creating A CTools Modal Window with Drupal 7 _ Managed Drupal and Wordpress Hosting_files/300lo.json"></script><script type="text/javascript" src="./10 Steps to Creating A CTools Modal Window with Drupal 7 _ Managed Drupal and Wordpress Hosting_files/_ate.track.config_resp"></script>
+
+<link rel="shortcut icon" href="https://www.drupion.com/sites/default/themes/druent/images/favicon.ico" type="image/vnd.microsoft.icon">
+<meta name="description" content="Modal windows are excellent design features because it allows you to easily display more information on a page without causing the inconvenience to the audience by making them load an entirely different page. I use modals where I want to display more information that isn&#39;t voluminous enough to merit a separate full page load.">
+<meta name="abstract" content="Modal windows are excellent design features because it allows you to easily display more information on a page without causing the inconvenience to the audience by making them load an entirely different page. I use modals where I want to display more information that isn&#39;t voluminous enough to merit a separate full page load.">
+<meta name="keywords" content="drupal, wordpress, hosting, webhosting, drupal hosting, wordpress hosting">
+<meta name="robots" content="follow, index">
+<meta name="news_keywords" content="drupal, wordpress, hosting, webhosting, drupal hosting, wordpress hosting">
+<meta name="rating" content="general">
+<meta name="generator" content="Drupal 7 (https://www.drupal.org)">
+<link rel="canonical" href="https://www.drupion.com/blog/10-steps-creating-ctools-modal-window-drupal-7">
+<link rel="shortlink" href="https://www.drupion.com/node/19">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="MobileOptimized" content="width">
+<meta name="HandheldFriendly" content="true">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="cleartype" content="on">
+<title>10 Steps to Creating A CTools Modal Window with Drupal 7 | Managed Drupal and Wordpress Hosting</title>
+<link type="text/css" rel="stylesheet" href="./10 Steps to Creating A CTools Modal Window with Drupal 7 _ Managed Drupal and Wordpress Hosting_files/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all">
+<link type="text/css" rel="stylesheet" href="./10 Steps to Creating A CTools Modal Window with Drupal 7 _ Managed Drupal and Wordpress Hosting_files/css_KIBKpAyP9h_Jh5Vuz78FOz6SagdAbz3VRp1q9djFuxo.css" media="all">
+<link type="text/css" rel="stylesheet" href="./10 Steps to Creating A CTools Modal Window with Drupal 7 _ Managed Drupal and Wordpress Hosting_files/css_VWGhZkkR4B4tMJA7PC_wov8dAxaI-MS03BCM3K8jjJA.css" media="screen">
+<link type="text/css" rel="stylesheet" href="./10 Steps to Creating A CTools Modal Window with Drupal 7 _ Managed Drupal and Wordpress Hosting_files/css_I664Nl5d7PhVf2xxobtPQuJY8TP-6Ozi46JUpqpm4Yo.css" media="all">
+<link type="text/css" rel="stylesheet" href="./10 Steps to Creating A CTools Modal Window with Drupal 7 _ Managed Drupal and Wordpress Hosting_files/css_jvmwfpel3sy1uO0E2DUlIGOhnYIdQm-lDic363LuOjk.css" media="all">
+<link type="text/css" rel="stylesheet" href="./10 Steps to Creating A CTools Modal Window with Drupal 7 _ Managed Drupal and Wordpress Hosting_files/css_e4NZMCLz097_B9SMjLHIj25YALc1M3c9g1gqiVxlueE.css" media="all">
+<link type="text/css" rel="stylesheet" href="./10 Steps to Creating A CTools Modal Window with Drupal 7 _ Managed Drupal and Wordpress Hosting_files/css_2THG1eGiBIizsWFeexsNe1iDifJ00QRS9uSd03rY9co.css" media="print">
+<link type="text/css" rel="stylesheet" href="./10 Steps to Creating A CTools Modal Window with Drupal 7 _ Managed Drupal and Wordpress Hosting_files/css_7rXlsHQP8d5kD5If82vNKlgfqb6RT7Oegp9tCCYdKFw.css" media="all">
+<script type="text/javascript" async="" src="./10 Steps to Creating A CTools Modal Window with Drupal 7 _ Managed Drupal and Wordpress Hosting_files/recaptcha__en.js"></script><script async="" src="./10 Steps to Creating A CTools Modal Window with Drupal 7 _ Managed Drupal and Wordpress Hosting_files/analytics.js"></script><script type="text/javascript" src="./10 Steps to Creating A CTools Modal Window with Drupal 7 _ Managed Drupal and Wordpress Hosting_files/js_v7z_ueNi9EIrZXPI8So7AkuzyXuKekr2jbdDptsM5Oc.js"></script>
+<script type="text/javascript" src="./10 Steps to Creating A CTools Modal Window with Drupal 7 _ Managed Drupal and Wordpress Hosting_files/js_s2_PF94bmYjoGmvk-JTKdXJlW7_P54YFEgpEGnWqFEE.js"></script>
+<script type="text/javascript" src="./10 Steps to Creating A CTools Modal Window with Drupal 7 _ Managed Drupal and Wordpress Hosting_files/js_Xdog1yvbsHUl33-wo9ctRnQMgE_3uBBG15y3yJm_2eY.js"></script>
+<script type="text/javascript" src="./10 Steps to Creating A CTools Modal Window with Drupal 7 _ Managed Drupal and Wordpress Hosting_files/js_Xh8myAw4H7Szmg9ozG0shFce-M0tjNQ4Ik8dzlSqLPs.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var google_recaptcha_onload = function() {grecaptcha.render("google_recaptcha_comment_node_blog_form", {
+    "sitekey" : "6LdF1CITAAAAAJI5YdMozx5fhN8-pBJKlj1IVJsN", 
+    "size" : "normal", 
+    "theme" : "light"});
+  };
+//--><!]]>
+</script>
+<script type="text/javascript" src="./10 Steps to Creating A CTools Modal Window with Drupal 7 _ Managed Drupal and Wordpress Hosting_files/js_aRYugmu1EANax99G3OFwWmWoWLS6muYUtgXevariX2Y.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"druent","theme_token":"bWqLhcxxVf9pGD6Az5F4LVlALW1tJrBL71zjdxPeYCE","jquery_version":"1.7","js":{"https:\/\/www.google.com\/recaptcha\/api.js?onload=google_recaptcha_onload\u0026render=explicit\u0026hl=en":1,"sites\/all\/modules\/addthis\/addthis.js":1,"sites\/all\/modules\/jquery_update\/replace\/jquery\/1.7\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/beautytips\/js\/jquery.bt.min.js":1,"sites\/all\/modules\/beautytips\/js\/beautytips.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/form.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/jquery_update\/js\/jquery_update.js":1,"sites\/all\/modules\/codefilter\/codefilter.js":1,"sites\/all\/modules\/custom_search\/js\/custom_search.js":1,"sites\/all\/modules\/views\/js\/base.js":1,"misc\/progress.js":1,"sites\/all\/modules\/views\/js\/ajax_view.js":1,"misc\/textarea.js":1,"modules\/filter\/filter.js":1,"0":1,"sites\/default\/themes\/druent\/js\/collapsible-menu.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/simplenews\/simplenews.css":1,"sites\/all\/modules\/codefilter\/codefilter.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"sites\/all\/modules\/stickynote\/css\/stickynote.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/custom_search\/custom_search.css":1,"modules\/filter\/filter.css":1,"sites\/default\/themes\/druent\/css\/layout.css":1,"sites\/default\/themes\/druent\/css\/style.css":1,"sites\/default\/themes\/druent\/css\/colors.css":1,"sites\/default\/themes\/druent\/css\/print.css":1,"sites\/default\/files\/fontyourface\/font.css":1,"public:\/\/fontyourface\/local_fonts\/Drupion-normal-bold\/stylesheet.css":1,"public:\/\/fontyourface\/local_fonts\/Drupion-normal-normal\/stylesheet.css":1}},"beautytipStyles":{"default":{"positions":["top","bottom"],"fill":"#FFF","padding":15,"strokeStyle":"#ABABAB","strokeWidth":1,"spikeLength":24,"spikeGirth":24,"cornerRadius":4,"centerPointX":"0.9","cssStyles":[],"shadowColor":"#000000","shadow":"1"},"plain":[],"netflix":{"positions":["right","left"],"fill":"#FFF","padding":5,"shadow":true,"shadowBlur":12,"strokeStyle":"#B9090B","spikeLength":50,"spikeGirth":60,"cornerRadius":10,"centerPointY":0.1,"overlap":-8,"cssStyles":{"fontSize":"12px","fontFamily":"arial,helvetica,sans-serif"}},"facebook":{"fill":"#F7F7F7","padding":8,"strokeStyle":"#B7B7B7","cornerRadius":0,"cssStyles":{"fontFamily":"\u0022lucida grande\u0022,tahoma,verdana,arial,sans-serif","fontSize":"11px"}},"transparent":{"fill":"rgba(0, 0, 0, .8)","padding":20,"strokeStyle":"#CC0","strokeWidth":3,"spikeLength":40,"spikeGirth":40,"cornerRadius":40,"cssStyles":{"color":"#FFF","fontWeight":"bold"}},"big-green":{"fill":"#00FF4E","padding":20,"strokeWidth":0,"spikeLength":40,"spikeGirth":40,"cornerRadius":15,"cssStyles":{"fontFamily":"\u0022lucida grande\u0022,tahoma,verdana,arial,sans-serif","fontSize":"14px"}},"google-maps":{"positions":["top","bottom"],"fill":"#FFF","padding":15,"strokeStyle":"#ABABAB","strokeWidth":1,"spikeLength":65,"spikeGirth":40,"cornerRadius":25,"centerPointX":0.9,"cssStyles":[]},"hulu":{"fill":"#F4F4F4","strokeStyle":"#666666","spikeLength":20,"spikeGirth":10,"width":350,"overlap":0,"centerPointY":1,"cornerRadius":0,"cssStyles":{"fontFamily":"\u0022Lucida Grande\u0022,Helvetica,Arial,Verdana,sans-serif","fontSize":"12px","padding":"10px 14px"},"shadow":true,"shadowColor":"rgba(0,0,0,.5)","shadowBlur":8,"shadowOffsetX":4,"shadowOffsetY":4}},"beautytips":{".beautytips":{"cssSelect":".beautytips","style":"google-maps"}},"custom_search":{"form_target":"_self","solr":0},"views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:917d10d045f1c5eab5b8579acfcb3a53":{"view_name":"blog","view_display_id":"block_2","view_args":"","view_path":"node\/19","view_base_path":"blog","view_dom_id":"917d10d045f1c5eab5b8579acfcb3a53","pager_element":0},"views_dom_id:157007f6e05707bbf86083a49bf5a42b":{"view_name":"blog","view_display_id":"block_3","view_args":"","view_path":"node\/19","view_base_path":"blog","view_dom_id":"157007f6e05707bbf86083a49bf5a42b","pager_element":0},"views_dom_id:06d0a182e95a69222074d13761b7633f":{"view_name":"blog","view_display_id":"block_1","view_args":"19","view_path":"node\/19","view_base_path":"blog","view_dom_id":"06d0a182e95a69222074d13761b7633f","pager_element":0},"views_dom_id:2572344f9fa7cd43ba804922c93842ef":{"view_name":"archive","view_display_id":"block","view_args":"","view_path":"node\/19","view_base_path":"archive","view_dom_id":"2572344f9fa7cd43ba804922c93842ef","pager_element":0}}},"urlIsAjaxTrusted":{"\/views\/ajax":true,"\/blog\/10-steps-creating-ctools-modal-window-drupal-7":true,"\/comment\/reply\/19":true},"addthis":{"async":0,"domready":1,"widget_url":"https:\/\/s7.addthis.com\/js\/300\/addthis_widget.js","addthis_config":{"pubid":"ra-57339b96fecdc78b","services_compact":"facebook_like,google_plusone,linkedin,twitter,more","services_exclude":"","data_track_clickback":false,"ui_508_compliant":false,"ui_click":false,"ui_cobrand":"","ui_delay":0,"ui_header_background":"","ui_header_color":"","ui_open_windows":false,"ui_use_css":true,"ui_use_addressbook":false,"ui_language":"en"},"addthis_share":{"templates":{"twitter":"{{title}} {{url}}"}}}});
+//--><!]]>
+</script>
+<!--[if (gte IE 6)&(lte IE 8)]>
+    <script src="/sites/default/themes/druent/js/selectivizr-min.js"></script>
+  <![endif]-->
+<!--[if lt IE 9]>
+    <script src="/sites/default/themes/druent/js/html5-respond.js"></script>
+  <![endif]-->
+<style type="text/css">.at-icon{fill:#fff;border:0}.at-icon-wrapper{display:inline-block;overflow:hidden}a .at-icon-wrapper{cursor:pointer}.at-rounded,.at-rounded-element .at-icon-wrapper{border-radius:12%}.at-circular,.at-circular-element .at-icon-wrapper{border-radius:50%}.addthis_32x32_style .at-icon{width:2pc;height:2pc}.addthis_24x24_style .at-icon{width:24px;height:24px}.addthis_20x20_style .at-icon{width:20px;height:20px}.addthis_16x16_style .at-icon{width:1pc;height:1pc}#at16lb{display:none;position:absolute;top:0;left:0;width:100%;height:100%;z-index:1001;background-color:#000;opacity:.001}#at_complete,#at_error,#at_share,#at_success{position:static!important}.at15dn{display:none}#at15s,#at16p,#at16p form input,#at16p label,#at16p textarea,#at_share .at_item{font-family:arial,helvetica,tahoma,verdana,sans-serif!important;font-size:9pt!important;outline-style:none;outline-width:0;line-height:1em}* html #at15s.mmborder{position:absolute!important}#at15s.mmborder{position:fixed!important;width:250px!important}#at15s{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgaGAgAjAxEAlGFVJHIUCAAQDcngCUgqGMqwAAAABJRU5ErkJggg==);float:none;line-height:1em;margin:0;overflow:visible;padding:5px;text-align:left;position:absolute}#at15s a,#at15s span{outline:0;direction:ltr;text-transform:none}#at15s .at-label{margin-left:5px}#at15s .at-icon-wrapper{width:1pc;height:1pc;vertical-align:middle}#at15s .at-icon{width:1pc;height:1pc}.at4-icon{display:inline-block;background-repeat:no-repeat;background-position:top left;margin:0;overflow:hidden;cursor:pointer}.addthis_16x16_style .at4-icon,.addthis_default_style .at4-icon,.at4-icon,.at-16x16{width:1pc;height:1pc;line-height:1pc;background-size:1pc!important}.addthis_32x32_style .at4-icon,.at-32x32{width:2pc;height:2pc;line-height:2pc;background-size:2pc!important}.addthis_24x24_style .at4-icon,.at-24x24{width:24px;height:24px;line-height:24px;background-size:24px!important}.addthis_20x20_style .at4-icon,.at-20x20{width:20px;height:20px;line-height:20px;background-size:20px!important}.at4-icon.circular,.circular .at4-icon,.circular.aticon{border-radius:50%}.at4-icon.rounded,.rounded .at4-icon{border-radius:4px}.at4-icon-left{float:left}#at15s .at4-icon{text-indent:20px;padding:0;overflow:visible;white-space:nowrap;background-size:1pc;width:1pc;height:1pc;background-position:top left;display:inline-block;line-height:1pc}.addthis_vertical_style .at4-icon,.at4-follow-container .at4-icon{margin-right:5px}html>body #at15s{width:250px!important}#at15s.atm{background:none!important;padding:0!important;width:10pc!important}#at15s_inner{background:#fff;border:1px solid #fff;margin:0}#at15s_head{position:relative;background:#f2f2f2;padding:4px;cursor:default;border-bottom:1px solid #e5e5e5}.at15s_head_success{background:#cafd99!important;border-bottom:1px solid #a9d582!important}.at15s_head_success a,.at15s_head_success span{color:#000!important;text-decoration:none}#at15s_brand,#at15sptx,#at16_brand{position:absolute}#at15s_brand{top:4px;right:4px}.at15s_brandx{right:20px!important}a#at15sptx{top:4px;right:4px;text-decoration:none;color:#4c4c4c;font-weight:700}#at15sptx:hover{text-decoration:underline}#at16_brand{top:5px;right:30px;cursor:default}#at_hover{padding:4px}#at_hover .at_item,#at_share .at_item{background:#fff!important;float:left!important;color:#4c4c4c!important}#at_share .at_item .at-icon-wrapper{margin-right:5px}#at_hover .at_bold{font-weight:700;color:#000!important}#at_hover .at_item{width:7pc!important;padding:2px 3px!important;margin:1px;text-decoration:none!important}#at_hover .at_item.athov,#at_hover .at_item:focus,#at_hover .at_item:hover{margin:0!important}#at_hover .at_item.athov,#at_hover .at_item:focus,#at_hover .at_item:hover,#at_share .at_item.athov,#at_share .at_item:hover{background:#f2f2f2!important;border:1px solid #e5e5e5;color:#000!important;text-decoration:none}.ipad #at_hover .at_item:focus{background:#fff!important;border:1px solid #fff}.at15t{display:block!important;height:1pc!important;line-height:1pc!important;padding-left:20px!important;background-position:0 0;text-align:left}.addthis_button,.at15t{cursor:pointer}.addthis_toolbox a.at300b,.addthis_toolbox a.at300m{width:auto}.addthis_toolbox a{margin-bottom:5px;line-height:initial}.addthis_toolbox.addthis_vertical_style{width:200px}.addthis_button_facebook_like .fb_iframe_widget{line-height:100%}.addthis_button_facebook_like iframe.fb_iframe_widget_lift{max-width:none}.addthis_toolbox a.addthis_button_counter,.addthis_toolbox a.addthis_button_facebook_like,.addthis_toolbox a.addthis_button_facebook_send,.addthis_toolbox a.addthis_button_facebook_share,.addthis_toolbox a.addthis_button_foursquare,.addthis_toolbox a.addthis_button_google_plusone,.addthis_toolbox a.addthis_button_linkedin_counter,.addthis_toolbox a.addthis_button_pinterest_pinit,.addthis_toolbox a.addthis_button_tweet{display:inline-block}.at-share-tbx-element .google_plusone_iframe_widget>span>div{vertical-align:top!important}.addthis_toolbox span.addthis_follow_label{display:none}.addthis_toolbox.addthis_vertical_style span.addthis_follow_label{display:block;white-space:nowrap}.addthis_toolbox.addthis_vertical_style a{display:block}.addthis_toolbox.addthis_vertical_style.addthis_32x32_style a{line-height:2pc;height:2pc}.addthis_toolbox.addthis_vertical_style .at300bs{margin-right:4px;float:left}.addthis_toolbox.addthis_20x20_style span{line-height:20px}.addthis_toolbox.addthis_32x32_style span{line-height:2pc}.addthis_toolbox.addthis_pill_combo_style .addthis_button_compact .at15t_compact,.addthis_toolbox.addthis_pill_combo_style a{float:left}.addthis_toolbox.addthis_pill_combo_style a.addthis_button_tweet{margin-top:-2px}.addthis_toolbox.addthis_pill_combo_style .addthis_button_compact .at15t_compact{margin-right:4px}.addthis_default_style .addthis_separator{margin:0 5px;display:inline}div.atclear{clear:both}.addthis_default_style .addthis_separator,.addthis_default_style .at4-icon,.addthis_default_style .at300b,.addthis_default_style .at300bo,.addthis_default_style .at300bs,.addthis_default_style .at300m{float:left}.at300b img,.at300bo img{border:0}a.at300b .at4-icon,a.at300m .at4-icon{display:block}.addthis_default_style .at300b,.addthis_default_style .at300bo,.addthis_default_style .at300m{padding:0 2px}.at300b,.at300bo,.at300bs,.at300m{cursor:pointer}.addthis_button_facebook_like.at300b:hover,.addthis_button_facebook_like.at300bs:hover,.addthis_button_facebook_send.at300b:hover,.addthis_button_facebook_send.at300bs:hover{opacity:1}.addthis_20x20_style .at15t,.addthis_20x20_style .at300bs{overflow:hidden;display:block;height:20px!important;width:20px!important;line-height:20px!important}.addthis_32x32_style .at15t,.addthis_32x32_style .at300bs{overflow:hidden;display:block;height:2pc!important;width:2pc!important;line-height:2pc!important}.at300bs{overflow:hidden;display:block;background-position:0 0;height:1pc;width:1pc;line-height:1pc!important}.addthis_default_style .at15t_compact,.addthis_default_style .at15t_expanded{margin-right:4px}#at_share .at_item{width:123px!important;padding:4px;margin-right:2px;border:1px solid #fff}#at16p{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgaGAgAjAxEAlGFVJHIUCAAQDcngCUgqGMqwAAAABJRU5ErkJggg==);z-index:10000001;position:absolute;top:50%;left:50%;width:300px;padding:10px;margin:0 auto;margin-top:-185px;margin-left:-155px;font-family:arial,helvetica,tahoma,verdana,sans-serif;font-size:9pt;color:#5e5e5e}#at_share{margin:0;padding:0}#at16pt{position:relative;background:#f2f2f2;height:13px;padding:5px 10px}#at16pt a,#at16pt h4{font-weight:700}#at16pt h4{display:inline;margin:0;padding:0;font-size:9pt;color:#4c4c4c;cursor:default}#at16pt a{position:absolute;top:5px;right:10px;color:#4c4c4c;text-decoration:none;padding:2px}#at15sptx:focus,#at16pt a:focus{outline:thin dotted}#at15s #at16pf a{top:1px}#_atssh{width:1px!important;height:1px!important;border:0!important}.atm{width:10pc!important;padding:0;margin:0;line-height:9pt;letter-spacing:normal;font-family:arial,helvetica,tahoma,verdana,sans-serif;font-size:9pt;color:#444;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgaGAgAjAxEAlGFVJHIUCAAQDcngCUgqGMqwAAAABJRU5ErkJggg==);padding:4px}.atm-f{text-align:right;border-top:1px solid #ddd;padding:5px 8px}.atm-i{background:#fff;border:1px solid #d5d6d6;padding:0;margin:0;box-shadow:1px 1px 5px rgba(0,0,0,.15)}.atm-s{margin:0!important;padding:0!important}.atm-s a:focus{border:transparent;outline:0;transition:none}#at_hover.atm-s a,.atm-s a{display:block;text-decoration:none;padding:4px 10px;color:#235dab!important;font-weight:400;font-style:normal;transition:none}#at_hover.atm-s .at_bold{color:#235dab!important}#at_hover.atm-s a:hover,.atm-s a:hover{background:#2095f0;text-decoration:none;color:#fff!important}#at_hover.atm-s .at_bold{font-weight:700}#at_hover.atm-s a:hover .at_bold{color:#fff!important}.atm-s a .at-label{vertical-align:middle;margin-left:5px;direction:ltr}.at_PinItButton{display:block;width:40px;height:20px;padding:0;margin:0;background-image:url(//s7.addthis.com/static/t00/pinit00.png);background-repeat:no-repeat}.at_PinItButton:hover{background-position:0 -20px}.addthis_toolbox .addthis_button_pinterest_pinit{position:relative}.at-share-tbx-element .fb_iframe_widget span{vertical-align:baseline!important}#at16pf{height:auto;text-align:right;padding:4px 8px}.at-privacy-info{position:absolute;left:7px;bottom:7px;cursor:pointer;text-decoration:none;font-family:helvetica,arial,sans-serif;font-size:10px;line-height:9pt;letter-spacing:.2px;color:#666}.at-privacy-info:hover{color:#000}.body .wsb-social-share .wsb-social-share-button-vert{padding-top:0;padding-bottom:0}.body .wsb-social-share.addthis_counter_style .addthis_button_tweet.wsb-social-share-button{padding-top:40px}.body .wsb-social-share.addthis_counter_style .addthis_button_google_plusone.wsb-social-share-button{padding-top:0}.body .wsb-social-share.addthis_counter_style .addthis_button_facebook_like.wsb-social-share-button{padding-top:21px}@media print{#at4-follow,#at4-share,#at4-thankyou,#at4-whatsnext,#at4m-mobile,#at15s,.at4,.at4-recommended{display:none!important}}@media screen and (max-width:400px){.at4win{width:100%}}@media screen and (max-height:700px) and (max-width:400px){.at4-thankyou-inner .at4-recommended-container{height:122px;overflow:hidden}.at4-thankyou-inner .at4-recommended .at4-recommended-item:first-child{border-bottom:1px solid #c5c5c5}}</style><style type="text/css">.at-branding-logo{font-family:helvetica,arial,sans-serif;text-decoration:none;font-size:10px;display:inline-block;margin:2px 0;letter-spacing:.2px}.at-branding-logo .at-branding-icon{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAMAAAC67D+PAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF////+GlNUkcc1QAAAB1JREFUeNpiYIQDBjQmAwMmkwEM0JnY1WIxFyDAABGeAFEudiZsAAAAAElFTkSuQmCC")}.at-branding-logo .at-branding-icon,.at-branding-logo .at-privacy-icon{display:inline-block;height:10px;width:10px;margin-left:4px;margin-right:3px;margin-bottom:-1px;background-repeat:no-repeat}.at-branding-logo .at-privacy-icon{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAKCAMAAABR24SMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABhQTFRF8fr9ot/xXcfn2/P5AKva////////AKTWodjhjAAAAAd0Uk5T////////ABpLA0YAAAA6SURBVHjaJMzBDQAwCAJAQaj7b9xifV0kUKJ9ciWxlzWEWI5gMF65KUTv0VKkjVeTerqE/x7+9BVgAEXbAWI8QDcfAAAAAElFTkSuQmCC")}.at-branding-logo span{text-decoration:none}.at-branding-logo .at-branding-addthis,.at-branding-logo .at-branding-powered-by{color:#666}.at-branding-logo .at-branding-addthis:hover{color:#333}.at-cv-with-image .at-branding-addthis,.at-cv-with-image .at-branding-addthis:hover{color:#fff}a.at-branding-logo:visited{color:initial}.at-branding-info{display:inline-block;padding:0 5px;color:#666;border:1px solid #666;border-radius:50%;font-size:10px;line-height:9pt;opacity:.7;transition:all .3s ease;text-decoration:none}.at-branding-info span{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.at-branding-info:before{content:'i';font-family:Times New Roman}.at-branding-info:hover{color:#0780df;border-color:#0780df}</style><script type="text/javascript" charset="utf-8" async="" src="./10 Steps to Creating A CTools Modal Window with Drupal 7 _ Managed Drupal and Wordpress Hosting_files/131.310ccc93ff404956e841.js"></script><script type="text/javascript" charset="utf-8" async="" src="./10 Steps to Creating A CTools Modal Window with Drupal 7 _ Managed Drupal and Wordpress Hosting_files/counter.dc44698f570e7b31c581.js"></script><style type="text/css">.addthis_counter{font-weight:700;display:inline-block;border:0;outline:0;cursor:pointer;color:#fff}.addthis_counter a{display:block;font-family:arial,helvetica,sans-serif!important;text-decoration:none!important;border:0}.addthis_counter{text-decoration:none!important;text-align:left}.addthis_counter .addthis_button_expanded{background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAACaCAMAAADcrusAAAAA21BMVEX////+bUznWjrnWjrBwcGJiYnm5ubFxcWMjIyRkZH39/f19fX////nWjr+bUzys6n+uq7/7+z87evqd2H+hm3/5+P+sKPxqJz65OH/9/b+el3paU//zcT2yMDshXH99vX+kXz+nIn/w7n0vrX30cz9bEv/3tn529f/1s/ukYH3aUn+ppbvnY/bUjTmWTn/3dX+9fP3aEj/9vT52NH/5d/aUTP9a0r74tzlWDjfWz386+f/7en4b1H/7uv4b1D/3db/9/X/7uraUjT+9vT87Oj87OnpZEb52dH+dlezszuQAAAABHRSTlMAExMAzBw6IQAAAnlJREFUeF6009eKKzEMBuBJriW5T2/pPdvbqb28/xMdGbOQiyxZZ9n/QnjAH8KWJxl8uqeI3H8ZJFcUmatkFktmCUXnXHIBIRevJ/AcBuUSQI0onZ8k1/QxkNqVJIvyNPl8S1/ZMFkuuYxtqhQoS2MA1RNIGKUArjwk/4Lk0jtXp0QpjEjJHiw5SbzZQlo6eUi+fafba0985LKwqSOqJdNaMdmQ5O+NOn6WYsNlPk7nnvRF6iF3lOBz/MZqZ6kvZCBS+bUn1h/MvTCXmumYArEKijlYJr6N6t8y/fcn5zz+dfwvNlhH9ZmtB8nw6REj8vg0TO4wMnfJPpbsE4zOueQGQm5eT+A5DKopgF5htjhJLvFDIE1eoeiq0+T3A/5lw2Q65TIxmdagDU4AdIsgYJUB5NUh+RMklzbPmwwxgxVq0YLBXCBvNpBVuTgkP3/hw6UnPmLamSxHbATTRjPZouDvrT5+lm7LZTHJFp60XeYhdxTgc/zGmtxg24lAhPZrT4w/WP7CXBqmEwzEaOgWYJj4Nrp9y/Tfn5zz+Hex5Ecy3EX12e+G/9mrQxUAYBgGooEFAm3//3snZmviJnL+6cMRrXSgHqsWOGb8iISEhISEqDxRAsSld5De/nLbr4MViEEYDMI5mFQ3ff/nXejx33YHcyqtc/8QQSXaRYfJZpAaFWx2FdwfMXyqYdYjp4punpP5fcgiiyyyyCKVl9+6nxQHCP+t20WHCTdIjQo2KjgDAT/Y7UQk/li1tkPtyaQlEhBARABBUV+lvhc1rz4w+FX4bKWLrA0cp7Ue+KhqnpA/mXggAQFEBBAU9VXqe1HzzgNTv2Iyx9Dc8gWOjkKMG1wfQQAAAABJRU5ErkJggg==");background-repeat:no-repeat;display:inline-block}.addthis_counter .atc_s{background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUBAMAAAB/pwA+AAAAFVBMVEUAAAD///////////////////////9Iz20EAAAABnRSTlMAwPm7kB4+mBDvAAAAP0lEQVQI12MIVksDgyRTBrM0KEhmAApChRnS4ACdKcCIl5ko6MAiKAZmJjAAARsKE6GAsGE43IBwJLLTER4CAHvvQkc3Hji8AAAAAElFTkSuQmCC");background-size:10px;background-repeat:no-repeat;background-color:#fe6d4c;background-position:5px 5px;display:inline-block;border-radius:2px;min-width:25px;text-decoration:none}.addthis_counter .atc_s:hover{background-color:#e75a3a}.addthis_counter.addthis_bubble_style{background-image:url("data:image/gif;base64,R0lGODlhUgBkAKIEAOrq6sLCwoWFhf///////wAAAAAAAAAAACH5BAEAAAQALAAAAABSAGQAAAP/SLoa/jDKSetkOGsdwPhgKI5kaYpAsK1sd75wPKZsjQVyrpuq7eO7YLDnqwGFyBixuDomn6UlkwOtkqTTm3ULwmYXTi7U+3WJreSp+VxNF9fs8ZcBjz/dRo8dPSfU90l4TXqAcn1/hTuCLYSJQ31gjY45i3mTipB0kpcnlTZhnDyZdKFKo2ClMJ5GqS+rLa2dpw2xorOgtR+vg7kou7y9AzSzYBbGx8gRxAwCzc7P0NHS09TSywoCm60AAsvZwSDcxALgId2z5OUf56fp6uyj7uXwmfLg9JD2wfh9+r38X76pGwBwisCBBYscRFhP2718Dh/OWThwXb+IEidi/New+SKIhD4ozmu3sRVIhSVLnVRYcWXIluNgopPZjmY8m/VwQlQnblxKRz29VRtKtCg0YsmSOsBgtGmzNz9zDCMgEkpQWGyI+KuyElebBVuhdI2jNc5JRF+pRtUBEu3XqlYSum0DNy6jPQHqcrVEVq2ds2spYQssY2xWsGZ/9MWW+NNiqo35cpmqV8jVFkqTMXVqlEnmz1I4i4Y3twplwjqCehVTthC71VxaA3qdSPYe2oVs/0WVG7HrBqgx+f1deouKylsEFDeOPPlyNM3tPpcTXSzw2oMT4QakOzJs475n8+Ye/vZ4vOV30+rN+Pf1PacBXQWdefPopgQSAAA7");background-repeat:no-repeat}.addthis_counter a.atc_s{font-size:11px;font-weight:100;color:#fff;padding:0 5px 0 20px;line-height:20px;overflow:hidden;cursor:pointer;transition:none}.addthis_counter .atc_s-span,.addthis_counter a.atc_s{display:block;height:20px}.addthis_counter .addthis_button_expanded.at300m .at4-icon{display:none!important}.addthis_counter a.addthis_button_expanded:hover,.addthis_counter.addthis_pill_style a.addthis_button_expanded:hover{text-decoration:none;color:#000}.addthis_counter .addthis_button_expanded{display:block;background-repeat:no-repeat;background-position:0 -40px;width:50px;height:33px;line-height:33px;padding-bottom:4px;margin-bottom:3px;text-align:center;text-decoration:none;font-size:1pc;font-weight:700;color:#333}.addthis_counter{vertical-align:top}.addthis_counter.addthis_native_counter .addthis_button_expanded{font-weight:400}* html .addthis_counter.compatmode0 .addthis_button_expanded{padding-bottom:0!important}* html .addthis_counter .addthis_button_expanded{height:37px}.addthis_counter .addthis_button_expanded:hover{background-position:0 -77px;cursor:pointer;color:#000}.addthis_counter .addthis_button_expanded .at300bs{display:none!important}.addthis_counter.addthis_pill_style{display:block;height:25px;overflow:hidden}.addthis_counter.addthis_pill_style a.atc_s{float:left}.addthis_counter.addthis_pill_style a.addthis_button_expanded{display:none;background-repeat:no-repeat;background-position:0 -114px;width:34px!important;height:20px;line-height:20px;margin:0 0 0 3px;padding:0 0 0 4px;float:left;text-align:center;text-decoration:none;font-family:arial,helvetica,sans-serif;font-weight:700;font-size:11px;color:#333;-ms-box-sizing:content-box;-o-box-sizing:content-box;box-sizing:content-box}.addthis_counter.addthis_pill_style.addthis_nonzero a.addthis_button_expanded{display:block!important;transition:none}.addthis_counter.addthis_pill_style a.addthis_button_expanded:hover{background-position:0 -134px!important}.addthis_counter.addthis_bubble_style{margin:0 0 0 -2px;text-align:center;font-weight:700;font-family:arial,helvetica,sans-serif;color:#000;background-repeat:no-repeat;background-position:0 -4pc;padding:0 0 0 4px;height:1pc;width:2pc!important;-ms-box-sizing:content-box;-o-box-sizing:content-box;box-sizing:content-box}.addthis_native_counter_parent .addthis_counter.addthis_bubble_style{background-position:0 -4pc!important}.addthis_counter.addthis_bubble_style.addthis_native_counter{margin:0 2px}.addthis_counter.addthis_bubble_style a.addthis_button_expanded{font-size:11px;height:1pc;line-height:1pc;width:34px;background:none}.addthis_counter.addthis_bubble_style:hover{background-position:-36px -4pc!important}.addthis_20x20_style .addthis_counter.addthis_bubble_style{background-repeat:no-repeat;background-position:0 -5pc!important;height:20px;width:35px!important;line-height:20px;padding:0 0 0 6px}.addthis_20x20_style .addthis_counter.addthis_bubble_style:hover{background-position:-41px -5pc!important}.addthis_20x20_style .addthis_counter.addthis_bubble_style a.addthis_button_expanded{background:none;font-size:9pt;line-height:20px;height:20px;margin:0;width:35px!important;padding:0!important}.addthis_20x20_style .addthis_counter.addthis_bubble_style.addthis_native_counter a.addthis_button_expanded{font-size:11px}.addthis_32x32_style .addthis_counter.addthis_bubble_style,.addthis_32x32_white_style .addthis_counter.addthis_bubble_style{background-repeat:no-repeat;background-position:0 0!important;height:2pc;width:56px!important;line-height:2pc;padding:0 0 0 6px}.addthis_32x32_style .addthis_counter.addthis_bubble_style a.addthis_button_expanded,.addthis_32x32_white_style .addthis_counter.addthis_bubble_style a.addthis_button_expanded{background:none;font-size:1pc;line-height:2pc;height:2pc;margin:0;width:56px!important;padding:0!important}.addthis_32x32_style .addthis_counter.addthis_bubble_style:hover,.addthis_32x32_white_style .addthis_counter.addthis_bubble_style:hover{background-position:0 -2pc!important}.addthis_counter.addthis_bubble_style .atc_s{display:none!important}* html .addthis_counter.addthis_bubble_style{width:36px!important;display:inline}* html .addthis_counter.bubblecompatmode0{width:2pc!important;display:block}* html .addthis_counter.addthis_bubble_style a.addthis_button_expanded{width:24px!important;height:14px!important;line-height:14px!important;padding:0;margin-top:1px!important;display:inline}* html .addthis_counter.bubblecompatmode0 a.addthis_button_expanded{width:36px}* html .addthis_32x32_style .addthis_counter.addthis_bubble_style{width:60px!important}* html .addthis_32x32_style .addthis_counter.addthis_bubble_style a.addthis_button_expanded{width:46px;height:26px!important;line-height:26px!important;margin-top:2px!important}* html .addthis_32x32_style .addthis_counter.bubblecompatmode0 a.addthis_button_expanded{height:2pc!important;line-height:2pc!important}</style></head>
+<body class="html not-front not-logged-in one-sidebar sidebar-second page-node page-node- page-node-19 node-type-blog triptych footer-columns">
+<div id="skip-link">
+<a href="https://www.drupion.com/blog/10-steps-creating-ctools-modal-window-drupal-7#main-content" class="element-invisible element-focusable">Skip to main content</a>
+</div>
+<div id="page-wrapper"><div id="page">
+<header id="header" role="banner" class="with-secondary-menu"><div class="section clearfix">
+<nav id="secondary-menu" role="navigation" class="navigation">
+<h2 class="element-invisible">Secondary menu</h2><ul id="secondary-menu-links" class="links inline clearfix"><li class="menu-868 first"><a href="https://www.drupion.com/#signup" title="">Get started</a></li>
+<li class="menu-873"><a href="https://docs.drupion.com/" title="">Documentation</a></li>
+<li class="menu-872 last"><a href="https://dashboard.drupion.com/" title="">Support</a></li>
+</ul> </nav> 
+<a href="https://www.drupion.com/" title="Home" rel="home" id="logo">
+<img src="./10 Steps to Creating A CTools Modal Window with Drupal 7 _ Managed Drupal and Wordpress Hosting_files/logo.png" alt="Home">
+</a>
+<div id="name-and-slogan" class="element-invisible">
+<div id="site-name" class="element-invisible">
+<strong>
+<a href="https://www.drupion.com/" title="Home" rel="home"><span>Managed Drupal and Wordpress Hosting</span></a>
+</strong>
+</div>
+</div> 
+<nav id="main-menu" role="navigation" class="navigation">
+<h2 class="element-invisible">Main menu</h2><ul id="main-menu-links" class="links clearfix"><li class="menu-824 first"><a href="https://www.drupion.com/shared-hosting">Web Hosting</a></li>
+<li class="menu-844"><a href="https://www.drupion.com/cloud-hosting">Cloud Hosting</a></li>
+<li class="menu-845"><a href="https://www.drupion.com/dedicated-hosting">Dedicated Hosting</a></li>
+<li class="menu-852"><a href="https://www.drupion.com/free-drupal-and-wordpress-hosting">Free Hosting</a></li>
+<li class="menu-858 last"><a href="https://www.drupion.com/other-services">Add-On Services</a></li>
+</ul> <a href="https://www.drupion.com/blog/10-steps-creating-ctools-modal-window-drupal-7#" id="menu-toggle">Menu</a></nav> 
+</div></header> </div>
+<div id="main-wrapper" class="clearfix"><div id="main" role="main" class="clearfix">
+<div id="content" class="column"><div class="section">
+<a id="main-content"></a>
+<h1 class="title" id="page-title">
+10 Steps to Creating A CTools Modal Window with Drupal 7 </h1>
+<div class="tabs">
+</div>
+<div class="region region-content">
+<div id="block-system-main" class="block block-system">
+<div class="block-content">
+<div class="content">
+<article id="node-19" class="node node-blog node-full clearfix" about="/blog/10-steps-creating-ctools-modal-window-drupal-7" typeof="sioc:Item foaf:Document" role="article">
+<span property="dc:title" content="10 Steps to Creating A CTools Modal Window with Drupal 7" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="4" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+<div class="content clearfix">
+<div class="field field-name-field-image field-type-image field-label-hidden"><div class="field-items"><div class="field-item even"><img typeof="foaf:Image" src="./10 Steps to Creating A CTools Modal Window with Drupal 7 _ Managed Drupal and Wordpress Hosting_files/coding_0.png" width="644" height="288" alt=""></div></div></div><span class="submitted-by">Submitted by Drupion Support on 25 September 2012 12:44</span><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Modal windows are excellent design features because it allows you to easily display more information on a page without causing the inconvenience to the audience by making them load an entirely different page. I use modals where I want to display more information that isn't voluminous enough to merit a separate full page load.</p>
+<p><img src="./10 Steps to Creating A CTools Modal Window with Drupal 7 _ Managed Drupal and Wordpress Hosting_files/modal_link.png" class="image-large"></p>
+<p>Figure 1: These are links of titles, generated by a view that when clicked trigger a modal window with additional content. </p>
+<p><img src="./10 Steps to Creating A CTools Modal Window with Drupal 7 _ Managed Drupal and Wordpress Hosting_files/modal_open.png" class="image-large"></p>
+<p>Figure 2: After clicking on a link as shown in figure 1, a modal window appears with additional information.</p>
+<p>There are two general ways to easily create modals in <strong>Drupal</strong>. The first, and common method is to use the <a href="https://drupal.org/project/colorbox">ColorBox </a>or the <a href="https://drupal.org/project/lightbox2">Lightbox2</a> modules. Both modules have some built-in functionality and can be configured at the site builder level.</p>
+<p>For more control over theming and content of the modal, and gain knowledge of how modal windows work, I took the plunge into Earl Miles' (aka <a href="http://angrydonuts.com/">Merlin of Chaos</a>) <a href="https://drupal.org/project/ctools">Chaos Tools, or CTools</a> method of modal creation. Here is how I did it.</p>
+<p>This tutorial requires an intermediate to advanced level of understanding of <strong>Drupal</strong> 7. You will need to build a module to do this.</p>
+<p>1. <strong>We'll name our module "Happy," so create a directory inside your <strong>Drupal</strong> install named, sites/all/modules/happy.</strong> </p>
+<p>Inside the 'happy' directory, create two blank files, 'happy.module' and 'happy.info.' Also, download and enable the <a href="https://drupal.org/project/ctools">CTools module</a> and the <a href="https://drupal.org/project/views">Views module</a>, as CTools a dependency for the modal, and Views is a dependency for this example.</p>
+<p>In addition, add the following for the modal customizations inside the module directory:</p>
+<ul><li>A "js" folder with "happy.js" within, eg 'sites/all/modules/happy/js/happy.js').</li>
+<li>A "css" directory with "happy.css" within, e.g. 'sites/all/modules/css/happy.css').</li>
+<li>An images directory for the custom AJAXs throbber gifs (if desired), e.g. 'sites/all/modules/happy/images/[image-name].gif'</li>
+<li>A theme directory for our custom Views template in 'sites/all/modules/happy/theme', and inside that directory a views template will be placed further along in this tutorial.</li>
+</ul><p><strong>2. Configure the module with the 'happy.info' file.</strong> </p>
+<p>Open, paste the below into the file, and save:</p>
+<div class="codeblock nowrap-expand"><code>name = Happy<br>description = An example module for creating modal windows using the CTools framework.<br>core = 7.x<br>package = User interface<br>php = 5.2.4<br>dependencies[] = ctools<br>dependencies[] = views</code></div>
+<p>Side note: For this example's purposes, we are using Views to generate a list of links to nodes that, when clicked, open the node content inside the modal window. Therefore, for this example, Views is a dependency.</p>
+<p><strong>3. Open the 'happy.module' and place the standard <strong>Drupal</strong> module scaffolding at the top, then save.</strong></p>
+<div class="codeblock nowrap-expand">
+<pre><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br></span><span style="color: #FF8000">/**<br>&nbsp;* @file<br>&nbsp;* Code for the Happy Modal.<br>&nbsp;*/<br></span><span style="color: #0000BB">?&gt;</span></span></code></pre></div>
+<p><strong>4. The first step is to define the menu path the modal link will open when the modal window appears.</strong> </p>
+<p>We do this with <strong>Drupal</strong> 7's <a href="https://api.drupal.org/api/drupal/modules!system!system.api.php/function/hook_menu/7">hook_menu()</a>:</p>
+<div class="codeblock nowrap-expand">
+<pre><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br></span><span style="color: #FF8000">/**<br>&nbsp;*&nbsp; Implements of hook_menu()<br>&nbsp;*/<br></span><span style="color: #007700">function </span><span style="color: #0000BB">happy_menu</span><span style="color: #007700">() {<br>&nbsp; </span><span style="color: #0000BB">$items</span><span style="color: #007700">[</span><span style="color: #DD0000">'happy/%ctools_js/%'</span><span style="color: #007700">] = array(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'title' </span><span style="color: #007700">=&gt; </span><span style="color: #DD0000">'The Happy Modal'</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'page arguments' </span><span style="color: #007700">=&gt; array(</span><span style="color: #0000BB">1</span><span style="color: #007700">, </span><span style="color: #0000BB">2</span><span style="color: #007700">),<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'page callback' </span><span style="color: #007700">=&gt; </span><span style="color: #DD0000">'happy_modal_page'</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'access callback' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">TRUE</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'type' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">MENU_NORMAL_ITEM</span><span style="color: #007700">,<br>&nbsp; );<br>&nbsp; return </span><span style="color: #0000BB">$items</span><span style="color: #007700">;<br>}<br></span><span style="color: #0000BB">?&gt;</span></span></code></pre></div>
+<p>Here are a couple of advanced points: The CTools module identifies "%ctools_js" as a placeholder in the request path. CTools will replace that placeholder argument with "js" or "nojs," depending upon the user's browser's Javascript capabilities. The "page callback" is a function that we will define next. This is where most of the heavy lifting takes place. Finally, there are no access restrictions in this example. That is, anonymous users can access the content of the modal since the 'page callback' is set to TRUE.</p>
+<p><strong>5. Define the 'page callback' function:</strong></p>
+<div class="codeblock nowrap-expand">
+<pre><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br></span><span style="color: #FF8000">/**<br>&nbsp;* A modal static page callback.<br>&nbsp;* @param $js<br>&nbsp;*&nbsp;&nbsp; boolean CTools determination whether the user's browser is javascript enabled. <br>&nbsp;* @param $nid<br>&nbsp;*&nbsp;&nbsp; string The node ID of passed as an argument from the hook_menu() path<br>&nbsp;* @return<br>&nbsp;*&nbsp;&nbsp; string The contents of the node, that will fill the modal window.<br>&nbsp;*/<br></span><span style="color: #007700">function </span><span style="color: #0000BB">happy_modal_page</span><span style="color: #007700">(</span><span style="color: #0000BB">$js </span><span style="color: #007700">= </span><span style="color: #0000BB">NULL</span><span style="color: #007700">, </span><span style="color: #0000BB">$nid </span><span style="color: #007700">= </span><span style="color: #0000BB">NULL</span><span style="color: #007700">) {<br>&nbsp; if (</span><span style="color: #0000BB">$nid </span><span style="color: #007700">== </span><span style="color: #0000BB">NULL</span><span style="color: #007700">) {<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #FF8000">// You can customize the string below, or use a drupal_goto() to<br>&nbsp;&nbsp;&nbsp; // send the user to a custom error page.<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #007700">return </span><span style="color: #DD0000">'No node id was sent. Error.'</span><span style="color: #007700">;<br>&nbsp; }<br>&nbsp; if (</span><span style="color: #0000BB">$js</span><span style="color: #007700">) {<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #FF8000">// Required includes for ctools to work:<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">ctools_include</span><span style="color: #007700">(</span><span style="color: #DD0000">'modal'</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">ctools_include</span><span style="color: #007700">(</span><span style="color: #DD0000">'ajax'</span><span style="color: #007700">);<br>&nbsp; }<br>&nbsp; </span><span style="color: #FF8000">// Load the node obkect<br>&nbsp; </span><span style="color: #0000BB">$node </span><span style="color: #007700">= </span><span style="color: #0000BB">node_load</span><span style="color: #007700">(</span><span style="color: #0000BB">$nid</span><span style="color: #007700">);<br>&nbsp; </span><span style="color: #FF8000">// <strong>Drupal</strong> 7 requires a render of the node object in order to obtain a string.<br>&nbsp; // Note that I am able to customize the fields by using the "Teaser" display mode <br>&nbsp; // under admin/structure/types.<br>&nbsp; </span><span style="color: #0000BB">$contents </span><span style="color: #007700">= </span><span style="color: #0000BB">render</span><span style="color: #007700">(</span><span style="color: #0000BB">node_view</span><span style="color: #007700">(</span><span style="color: #0000BB">$node</span><span style="color: #007700">, </span><span style="color: #DD0000">'teaser'</span><span style="color: #007700">, </span><span style="color: #0000BB">NULL</span><span style="color: #007700">));<br>&nbsp; return </span><span style="color: #0000BB">ctools_modal_render</span><span style="color: #007700">(</span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">title</span><span style="color: #007700">, </span><span style="color: #0000BB">$contents</span><span style="color: #007700">) ;<br>}<br></span><span style="color: #0000BB">?&gt;</span></span></code></pre></div>
+<p>Although it appears complicated, the function above is straight-forward. If the user's browser does not support Javascript, as determined for us by CTools, then we will give them non-Javascript content. Otherwise, we fire off the CTools modal and give them the Teaser view mode of a node.</p>
+<p><strong>6. Next, we need to inject the settings for the modal window into the parent's page load.</strong> </p>
+<p>You can do this is a number of hook functions where <strong>Drupal</strong> renders content for the page. Example hooks where the following code will work include hook_node_view (modify the $node-&gt;content object piece), hook_block_view, hook_field_load, and etc.</p>
+<p>For the purposes of this example, I am generating a View of node titles that when clicked, display the node's teaser inside the modal. For that, I used the Views hook, hook_views_pre_render():</p>
+<div class="codeblock nowrap-expand">
+<pre><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br></span><span style="color: #FF8000">/**<br>&nbsp;* inside happy.module<br>&nbsp;* Implements hook_views_pre_render()<br>&nbsp;*/<br></span><span style="color: #007700">function </span><span style="color: #0000BB">happy_views_pre_render</span><span style="color: #007700">(&amp;</span><span style="color: #0000BB">$views</span><span style="color: #007700">) {<br>&nbsp; </span><span style="color: #FF8000">// The View name I set up prior is "Happy Titles"<br>&nbsp; </span><span style="color: #007700">if (</span><span style="color: #0000BB">$views</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">name </span><span style="color: #007700">== </span><span style="color: #DD0000">'happy_titles'</span><span style="color: #007700">) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #FF8000">// Include the CTools tools that we need.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">ctools_include</span><span style="color: #007700">(</span><span style="color: #DD0000">'ajax'</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">ctools_include</span><span style="color: #007700">(</span><span style="color: #DD0000">'modal'</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #FF8000">// Add CTools' javascript to the page.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">ctools_modal_add_js</span><span style="color: #007700">();<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #FF8000">// Create our own javascript that will be used to theme a modal.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$happy_style </span><span style="color: #007700">= array(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'happy-modal-style' </span><span style="color: #007700">=&gt; array(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'modalSize' </span><span style="color: #007700">=&gt; array(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'type' </span><span style="color: #007700">=&gt; </span><span style="color: #DD0000">'fixed'</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'width' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">600</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'height' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">240</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'addWidth' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">10</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'addHeight' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">10</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'contentRight' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">0</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'contentBottom' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">0</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ),<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'modalOptions' </span><span style="color: #007700">=&gt; array(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'opacity' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">.6</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'background-color' </span><span style="color: #007700">=&gt; </span><span style="color: #DD0000">'#684C31'</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ),<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'animation' </span><span style="color: #007700">=&gt; </span><span style="color: #DD0000">'fadeIn'</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'modalTheme' </span><span style="color: #007700">=&gt; </span><span style="color: #DD0000">'happy_modal'</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #FF8000">// Customize the AJAX throbber like so:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // This function assumes the images are inside the module directory's "images"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // directory:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // ctools_image_path($image, $module = 'ctools', $dir = 'images')<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'throbber' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">theme</span><span style="color: #007700">(</span><span style="color: #DD0000">'image'</span><span style="color: #007700">, array(</span><span style="color: #DD0000">'path' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">ctools_image_path</span><span style="color: #007700">(</span><span style="color: #DD0000">'ajax-loader.gif'</span><span style="color: #007700">, </span><span style="color: #DD0000">'happy'</span><span style="color: #007700">), </span><span style="color: #DD0000">'alt' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">t</span><span style="color: #007700">(</span><span style="color: #DD0000">'Loading...'</span><span style="color: #007700">), </span><span style="color: #DD0000">'title' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">t</span><span style="color: #007700">(</span><span style="color: #DD0000">'Loading'</span><span style="color: #007700">))),<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'closeImage' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">theme</span><span style="color: #007700">(</span><span style="color: #DD0000">'image'</span><span style="color: #007700">, array(</span><span style="color: #DD0000">'path' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">ctools_image_path</span><span style="color: #007700">(</span><span style="color: #DD0000">'modal-close.png'</span><span style="color: #007700">, </span><span style="color: #DD0000">'happy'</span><span style="color: #007700">), </span><span style="color: #DD0000">'alt' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">t</span><span style="color: #007700">(</span><span style="color: #DD0000">'Close window'</span><span style="color: #007700">), </span><span style="color: #DD0000">'title' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">t</span><span style="color: #007700">(</span><span style="color: #DD0000">'Close window'</span><span style="color: #007700">))),<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ),<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; );<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #FF8000">// Add the settings array defined above to <strong>Drupal</strong> 7's JS settings:<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">drupal_add_js</span><span style="color: #007700">(</span><span style="color: #0000BB">$happy_style</span><span style="color: #007700">, </span><span style="color: #DD0000">'setting'</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #FF8000">// The function below assumes the happy.js file resides in [module_dir]/js<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">ctools_add_js</span><span style="color: #007700">(</span><span style="color: #DD0000">'happy'</span><span style="color: #007700">, </span><span style="color: #DD0000">'happy'</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #FF8000">// The function below assumes the happy.css file resides in [module_dir]/css<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">ctools_add_css</span><span style="color: #007700">(</span><span style="color: #DD0000">'happy'</span><span style="color: #007700">, </span><span style="color: #DD0000">'happy'</span><span style="color: #007700">);<br>&nbsp; }<br>}<br></span><span style="color: #0000BB">?&gt;</span></span></code></pre></div>
+<p>This is a lot to write when creating a modal. In summary, we have to load all of the CTools JS files. Then, we define the size and features of the modal using the CTools configuration array (in this example, the $happy_style). And finally, we inject the required settings, Javascript file, and CSS file for theming the modal contents.</p>
+<p><strong>7. Define the links that will trigger the modal window to appear.</strong> </p>
+<p>So far we have defined the page and content that will display inside the modal, and we have defined the initial styles of the modal. Now, we must define the trigger that will open the modal window. All that is really required are links with particular CTools classes. Since I am using Views, I am going to define a views template for my list of linkable titles. That way, I can modify the links inside the view to be CTools trigger aware.</p>
+<p>Alternatively, you may define the links that trigger the modal on the theme layer using the hook_preprocess hooks, or inside a views template inside the site's theme directory.</p>
+<p>I prefer to have all functionality of a custom module inside the same module directory. It's cleaner. Therefore, I opted to create a views template inside the Happy module directory.</p>
+<p>Here's the best way. First register the theme and views template:</p>
+<div class="codeblock nowrap-expand">
+<pre><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br></span><span style="color: #FF8000">/**<br>* Implements hook_theme().<br>*/<br></span><span style="color: #007700">function </span><span style="color: #0000BB">happy_theme</span><span style="color: #007700">() {<br>&nbsp; return array(<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'views_view_fields__happy' </span><span style="color: #007700">=&gt; array(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'variables' </span><span style="color: #007700">=&gt; array(</span><span style="color: #DD0000">'view' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">NULL</span><span style="color: #007700">, </span><span style="color: #DD0000">'options' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">NULL</span><span style="color: #007700">, </span><span style="color: #DD0000">'row' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">NULL</span><span style="color: #007700">),<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'template' </span><span style="color: #007700">=&gt; </span><span style="color: #DD0000">'views-view-fields--happy'</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'base hook' </span><span style="color: #007700">=&gt; </span><span style="color: #DD0000">'views_view_fields'</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #FF8000">// I am defining another directory inside the happy module dir called 'theme'<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'path' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">drupal_get_path</span><span style="color: #007700">(</span><span style="color: #DD0000">'module'</span><span style="color: #007700">, </span><span style="color: #DD0000">'happy'</span><span style="color: #007700">) . </span><span style="color: #DD0000">'/theme'</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp; ),<br>&nbsp; );<br>}<br></span><span style="color: #0000BB">?&gt;</span></span></code></pre></div>
+<p>After declaring this, you will need to create a [module_dir]/theme directory and place the 'views-view-fields--happy.tpl.php' file inside. For initial content, use the contents of the Views module's default "views-view-fields.tpl.php" template, located inside the Views module's theme directory.</p>
+<p><strong>8. Views Template.</strong> </p>
+<p>Because I have registered a hook_theme and inside the hook_theme, declared a Views template, I can use Views' hook_preprocess_view() to wrangle with the eventual display of the title links I created:</p>
+<div class="codeblock nowrap-expand">
+<pre><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br></span><span style="color: #FF8000">/*<br>&nbsp;* Implements hook_preprocess_view()<br>&nbsp;*/<br></span><span style="color: #007700">function </span><span style="color: #0000BB">happy_preprocess_views_view_fields</span><span style="color: #007700">(&amp;</span><span style="color: #0000BB">$vars</span><span style="color: #007700">) {<br>&nbsp; if (</span><span style="color: #0000BB">$vars</span><span style="color: #007700">[</span><span style="color: #DD0000">'view'</span><span style="color: #007700">]-&gt;</span><span style="color: #0000BB">name </span><span style="color: #007700">== </span><span style="color: #DD0000">'happy_titles'</span><span style="color: #007700">) {<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #FF8000">// Include the CTools tools that we need.<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">ctools_include</span><span style="color: #007700">(</span><span style="color: #DD0000">'ajax'</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">ctools_include</span><span style="color: #007700">(</span><span style="color: #DD0000">'modal'</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #FF8000">// The view has two fields, title (not linked and no styles added), and NID (again,<br>&nbsp;&nbsp;&nbsp; // no style added. They are available here as $vars['fields']-&gt;title and <br>&nbsp;&nbsp;&nbsp; // $vars['fields']-&gt;nid.<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$name </span><span style="color: #007700">= </span><span style="color: #0000BB">$vars</span><span style="color: #007700">[</span><span style="color: #DD0000">'fields'</span><span style="color: #007700">][</span><span style="color: #DD0000">'title'</span><span style="color: #007700">]-&gt;</span><span style="color: #0000BB">content</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #FF8000">// Create a path for the url that is like our hook_menu() declaration above.<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$href </span><span style="color: #007700">= </span><span style="color: #DD0000">'happy/nojs/' </span><span style="color: #007700">. </span><span style="color: #0000BB">$vars</span><span style="color: #007700">[</span><span style="color: #DD0000">'fields'</span><span style="color: #007700">][</span><span style="color: #DD0000">'nid'</span><span style="color: #007700">]-&gt;</span><span style="color: #0000BB">content</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #FF8000">// Here's the ctools function that generates the trigger inside the link<br>&nbsp;&nbsp;&nbsp; // ctools_modal_text_button($text, $dest, $alt, $class = '')<br>&nbsp;&nbsp;&nbsp; // http://api.drupalize.me/api/drupal/function/ctools_modal_text_button/7<br>&nbsp;&nbsp;&nbsp; // IMPORTANT: Include ctools-modal-[your declared style name] as a class so <br>&nbsp;&nbsp;&nbsp; // Ctools knows what Javascript settings to use in generating the modal:<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$vars</span><span style="color: #007700">[</span><span style="color: #DD0000">'ctools_link'</span><span style="color: #007700">] = </span><span style="color: #0000BB">ctools_modal_text_button</span><span style="color: #007700">(</span><span style="color: #0000BB">$name</span><span style="color: #007700">, </span><span style="color: #0000BB">$href</span><span style="color: #007700">, </span><span style="color: #0000BB">t</span><span style="color: #007700">(</span><span style="color: #DD0000">'View node content for @name'</span><span style="color: #007700">, array(</span><span style="color: #DD0000">'@name' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$name</span><span style="color: #007700">)), </span><span style="color: #DD0000">'ctools-modal-happy-modal-style'</span><span style="color: #007700">);<br>&nbsp; }<br>}<br></span><span style="color: #0000BB">?&gt;</span></span></code></pre></div>
+<p>At this point, the variable $ctools_link will be available to me in the views-view-fields--happy.tpl.php file. Inside that template, simply add the line:</p>
+<div class="codeblock nowrap-expand">
+<pre><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br></span><span style="color: #007700">print </span><span style="color: #0000BB">$ctools_link</span><span style="color: #007700">;<br></span><span style="color: #0000BB">?&gt;</span></span></code></pre></div>
+<p><strong>9. The Javascript file.</strong> </p>
+<p>We have accomplished all of the PHP tass for creating a CTools modal. Now we turn our attention to the Javascript.</p>
+<p>You can start with the default CTools modal js file inside the ctools_ajax_example module, but I have simplified that file for you, declaring all you need to get started.</p>
+<p>Here's the sites/all/modules/happy/js/happy.js file's contents:</p>
+<div class="codeblock nowrap-expand">
+<pre><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br></span><span style="color: #FF8000">/**<br>* Provide the HTML to create the modal dialog.<br>*/<br></span><span style="color: #007700">(function ($) {<br></span><span style="color: #0000BB"><strong>Drupal</strong></span><span style="color: #007700">.</span><span style="color: #0000BB">theme</span><span style="color: #007700">.</span><span style="color: #0000BB">prototype</span><span style="color: #007700">.</span><span style="color: #0000BB">happy_modal </span><span style="color: #007700">= function () {<br>&nbsp; var </span><span style="color: #0000BB">html </span><span style="color: #007700">= </span><span style="color: #DD0000">''</span><span style="color: #007700">;<br>&nbsp; </span><span style="color: #0000BB">html </span><span style="color: #007700">+= </span><span style="color: #DD0000">'&lt;div id="ctools-modal" class="popups-box"&gt;'</span><span style="color: #007700">;<br>&nbsp; </span><span style="color: #0000BB">html </span><span style="color: #007700">+= </span><span style="color: #DD0000">'&nbsp; &lt;div class="ctools-modal-content ctools-modal-happy-modal-content"&gt;'</span><span style="color: #007700">;<br>&nbsp; </span><span style="color: #0000BB">html </span><span style="color: #007700">+= </span><span style="color: #DD0000">'&nbsp;&nbsp;&nbsp; &lt;span class="popups-close"&gt;&lt;a class="close" href="#"&gt;' </span><span style="color: #007700">+ </span><span style="color: #0000BB"><strong>Drupal</strong></span><span style="color: #007700">.</span><span style="color: #0000BB">CTools</span><span style="color: #007700">.</span><span style="color: #0000BB">Modal</span><span style="color: #007700">.</span><span style="color: #0000BB">currentSettings</span><span style="color: #007700">.</span><span style="color: #0000BB">closeImage </span><span style="color: #007700">+ </span><span style="color: #DD0000">'&lt;/a&gt;&lt;/span&gt;'</span><span style="color: #007700">;<br>&nbsp; </span><span style="color: #0000BB">html </span><span style="color: #007700">+= </span><span style="color: #DD0000">'&nbsp;&nbsp;&nbsp; &lt;div class="modal-scroll"&gt;&lt;div id="modal-content" class="modal-content popups-body"&gt;&lt;/div&gt;&lt;/div&gt;'</span><span style="color: #007700">;<br>&nbsp; </span><span style="color: #0000BB">html </span><span style="color: #007700">+= </span><span style="color: #DD0000">'&nbsp; &lt;/div&gt;'</span><span style="color: #007700">;<br>&nbsp; </span><span style="color: #0000BB">html </span><span style="color: #007700">+= </span><span style="color: #DD0000">'&lt;/div&gt;'</span><span style="color: #007700">;<br>&nbsp; return </span><span style="color: #0000BB">html</span><span style="color: #007700">;<br>}<br>})(</span><span style="color: #0000BB">jQuery</span><span style="color: #007700">);<br></span><span style="color: #0000BB">?&gt;</span></span></code></pre></div>
+<p><strong>10. Now you're ready to style the modal.</strong> </p>
+<p>Using 'sites/all/modules/happy/css/happy.css', style the modal window to your tastes.</p>
+<p>At this point, you have created a CTools modal in <strong>Drupal</strong> 7. For more information, avoid Google until you have consumed the extensive help html files inside the CTools module at 'sites/all/modules/ctools/help/modal.html.'</p>
+<p>Happy Modaling with <strong>Drupal</strong> 7!</p>
+</div></div></div><div class="field field-name-field-tags field-type-taxonomy-term-reference field-label-inline clearfix"><h3 class="field-label">Tags: </h3><ul class="links inline"><li class="taxonomy-term-reference-0"><a href="https://www.drupion.com/tags/design" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Design</a></li><li class="taxonomy-term-reference-1"><a href="https://www.drupion.com/tags/drupal" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Drupal</a></li></ul></div><div class="field field-name-field-simplenews-term field-type-taxonomy-term-reference field-label-hidden clearfix"><ul class="links"><li class="taxonomy-term-reference-0"><a href="https://www.drupion.com/newsletter/drupion-newsletter" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Drupion Newsletter</a></li></ul></div><div class="field field-name-field-share field-type-addthis field-label-hidden"><div class="field-items"><div class="field-item even"><div class="addthis_toolbox addthis_default_style addthis_32x32_style " addthis:title="10 Steps to Creating A CTools Modal Window with Drupal 7 - Managed Drupal and Wordpress Hosting" addthis:url="https://www.drupion.com/blog/10-steps-creating-ctools-modal-window-drupal-7"><a href="https://www.addthis.com/bookmark.php?v=300" class="addthis_button_facebook at300b" title="Facebook"><span class="at-icon-wrapper" style="background-color: rgb(59, 89, 152); line-height: 32px; height: 32px; width: 32px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-facebook-1" title="Facebook" alt="Facebook" style="width: 32px; height: 32px;" class="at-icon at-icon-facebook"><title id="at-svg-facebook-1">Facebook</title><g><path d="M22 5.16c-.406-.054-1.806-.16-3.43-.16-3.4 0-5.733 1.825-5.733 5.17v2.882H9v3.913h3.837V27h4.604V16.965h3.823l.587-3.913h-4.41v-2.5c0-1.123.347-1.903 2.198-1.903H22V5.16z" fill-rule="evenodd"></path></g></svg></span></a>
+<a href="https://www.addthis.com/bookmark.php?v=300" class="addthis_button_twitter at300b" title="Twitter"><span class="at-icon-wrapper" style="background-color: rgb(29, 161, 242); line-height: 32px; height: 32px; width: 32px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-twitter-2" title="Twitter" alt="Twitter" style="width: 32px; height: 32px;" class="at-icon at-icon-twitter"><title id="at-svg-twitter-2">Twitter</title><g><path d="M27.996 10.116c-.81.36-1.68.602-2.592.71a4.526 4.526 0 0 0 1.984-2.496 9.037 9.037 0 0 1-2.866 1.095 4.513 4.513 0 0 0-7.69 4.116 12.81 12.81 0 0 1-9.3-4.715 4.49 4.49 0 0 0-.612 2.27 4.51 4.51 0 0 0 2.008 3.755 4.495 4.495 0 0 1-2.044-.564v.057a4.515 4.515 0 0 0 3.62 4.425 4.52 4.52 0 0 1-2.04.077 4.517 4.517 0 0 0 4.217 3.134 9.055 9.055 0 0 1-5.604 1.93A9.18 9.18 0 0 1 6 23.85a12.773 12.773 0 0 0 6.918 2.027c8.3 0 12.84-6.876 12.84-12.84 0-.195-.005-.39-.014-.583a9.172 9.172 0 0 0 2.252-2.336" fill-rule="evenodd"></path></g></svg></span></a>
+<a href="https://www.addthis.com/bookmark.php?v=300" class="addthis_button_linkedin at300b" target="_blank" title="LinkedIn"><span class="at-icon-wrapper" style="background-color: rgb(0, 119, 181); line-height: 32px; height: 32px; width: 32px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-linkedin-3" title="LinkedIn" alt="LinkedIn" style="width: 32px; height: 32px;" class="at-icon at-icon-linkedin"><title id="at-svg-linkedin-3">LinkedIn</title><g><path d="M26 25.963h-4.185v-6.55c0-1.56-.027-3.57-2.175-3.57-2.18 0-2.51 1.7-2.51 3.46v6.66h-4.182V12.495h4.012v1.84h.058c.558-1.058 1.924-2.174 3.96-2.174 4.24 0 5.022 2.79 5.022 6.417v7.386zM8.23 10.655a2.426 2.426 0 0 1 0-4.855 2.427 2.427 0 0 1 0 4.855zm-2.098 1.84h4.19v13.468h-4.19V12.495z" fill-rule="evenodd"></path></g></svg></span></a>
+<a href="https://www.addthis.com/bookmark.php?v=300" class="addthis_button_google_plusone_share at300b" target="_blank" title="Google+"><span class="at-icon-wrapper" style="background-color: rgb(220, 78, 65); line-height: 32px; height: 32px; width: 32px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-google_plusone_share-4" title="Google+" alt="Google+" style="width: 32px; height: 32px;" class="at-icon at-icon-google_plusone_share"><title id="at-svg-google_plusone_share-4">Google+</title><g><path d="M12 15v2.4h3.97c-.16 1.03-1.2 3.02-3.97 3.02-2.39 0-4.34-1.98-4.34-4.42s1.95-4.42 4.34-4.42c1.36 0 2.27.58 2.79 1.08l1.9-1.83C15.47 9.69 13.89 9 12 9c-3.87 0-7 3.13-7 7s3.13 7 7 7c4.04 0 6.72-2.84 6.72-6.84 0-.46-.05-.81-.11-1.16H12zm15 0h-2v-2h-2v2h-2v2h2v2h2v-2h2v-2z" fill-rule="evenodd"></path></g></svg></span></a>
+<a href="https://www.drupion.com/blog/10-steps-creating-ctools-modal-window-drupal-7#" class="addthis_counter addthis_bubble_style" style="display: inline-block;"><a class="addthis_button_expanded" target="_blank" title="More" href="https://www.drupion.com/blog/10-steps-creating-ctools-modal-window-drupal-7#">1</a><a class="atc_s addthis_button_compact">Share<span></span></a></a>
+<div class="atclear"></div></div>
+</div></div></div> </div>
+<section id="comments" class="comment-wrapper">
+<h2 class="title">Comments</h2>
+<a id="comment-1"></a>
+<article class="comment comment-by-anonymous clearfix" about="/comment/1#comment-1" typeof="sioc:Post sioct:Comment">
+<footer class="attribution">
+<div class="submitted">
+<p class="commenter-name">
+<span rel="sioc:has_creator"><span class="username" xml:lang="" typeof="sioc:UserAccount" property="foaf:name" datatype="">Umair</span></span> </p>
+<p class="comment-time">
+<span property="dc:date dc:created" content="2017-04-26T10:25:00-07:00" datatype="xsd:dateTime">Wed, 04/26/2017 - 10:25</span> </p>
+<p class="comment-permalink">
+<a href="https://www.drupion.com/comment/1#comment-1" class="permalink" rel="bookmark">Permalink</a> </p>
+</div>
+</footer>
+<div class="comment-text">
+<div class="comment-arrow"></div>
+<div class="content">
+<span rel="sioc:reply_of" resource="/blog/10-steps-creating-ctools-modal-window-drupal-7" class="rdf-meta element-hidden"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Thank you for this great tutorial. You have done a good effort. Would not it be good if you create a module which also has a admin ui?</p>
+<p>I guess you have already done half or more effort.</p>
+</div></div></div> </div> 
+<ul class="links inline"><li class="comment-reply first last"><a href="https://www.drupion.com/comment/reply/19/1">reply</a></li>
+</ul> </div> 
+</article>
+<a id="comment-2"></a>
+<article class="comment comment-by-anonymous clearfix" about="/comment/2#comment-2" typeof="sioc:Post sioct:Comment">
+<footer class="attribution">
+<div class="submitted">
+<p class="commenter-name">
+<span rel="sioc:has_creator"><span class="username" xml:lang="" typeof="sioc:UserAccount" property="foaf:name" datatype="">Umair</span></span> </p>
+<p class="comment-time">
+<span property="dc:date dc:created" content="2017-05-05T03:49:00-07:00" datatype="xsd:dateTime">Fri, 05/05/2017 - 03:49</span> </p>
+<p class="comment-permalink">
+<a href="https://www.drupion.com/comment/2#comment-2" class="permalink" rel="bookmark">Permalink</a> </p>
+</div>
+</footer>
+<div class="comment-text">
+<div class="comment-arrow"></div>
+<div class="content">
+<span rel="sioc:reply_of" resource="/blog/10-steps-creating-ctools-modal-window-drupal-7" class="rdf-meta element-hidden"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Thank you for a detailed tutorial. Dont you think this is a time consuming activity? Why not just use ctools_automodal_admin module instead? Please correct me if I am wrong.</p>
+<p>However, I was having 2 problems with ctools_automodal module. 1. Window not closing automatically. 2. View or page is not updated realtime in ajax enabled views. After page refresh, the view is updated.</p>
+<p>Problem 1 was solved using this code. <a href="https://www.drupal.org/node/2077393#comment-7810271">https://www.drupal.org/node/2077393#comment-7810271</a></p>
+<p>Problem 2 still not solved</p>
+</div></div></div> </div> 
+<ul class="links inline"><li class="comment-reply first last"><a href="https://www.drupion.com/comment/reply/19/2">reply</a></li>
+</ul> </div> 
+</article>
+<a id="comment-21"></a>
+<article class="comment comment-by-anonymous clearfix" about="/comment/21#comment-21" typeof="sioc:Post sioct:Comment">
+<footer class="attribution">
+<div class="submitted">
+<p class="commenter-name">
+<span rel="sioc:has_creator"><span class="username" xml:lang="" typeof="sioc:UserAccount" property="foaf:name" datatype="">Danish</span></span> </p>
+<p class="comment-time">
+<span property="dc:date dc:created" content="2018-06-13T01:21:00-07:00" datatype="xsd:dateTime">Wed, 06/13/2018 - 01:21</span> </p>
+<p class="comment-permalink">
+<a href="https://www.drupion.com/comment/21#comment-21" class="permalink" rel="bookmark">Permalink</a> </p>
+</div>
+</footer>
+<div class="comment-text">
+<div class="comment-arrow"></div>
+<div class="content">
+<span rel="sioc:reply_of" resource="/blog/10-steps-creating-ctools-modal-window-drupal-7" class="rdf-meta element-hidden"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Why would anyone go through all this coding instead of just using a colorbox module for the popup?</p>
+</div></div></div> </div> 
+<ul class="links inline"><li class="comment-reply first last"><a href="https://www.drupion.com/comment/reply/19/21">reply</a></li>
+</ul> </div> 
+</article>
+<a id="comment-22"></a>
+<article class="comment comment-by-anonymous clearfix" about="/comment/22#comment-22" typeof="sioc:Post sioct:Comment">
+<footer class="attribution">
+<div class="submitted">
+<p class="commenter-name">
+<span rel="sioc:has_creator"><span class="username" xml:lang="" typeof="sioc:UserAccount" property="foaf:name" datatype="">Md Manouwer</span></span> </p>
+<p class="comment-time">
+<span property="dc:date dc:created" content="2018-09-09T12:16:00-07:00" datatype="xsd:dateTime">Sun, 09/09/2018 - 12:16</span> </p>
+<p class="comment-permalink">
+<a href="https://www.drupion.com/comment/22#comment-22" class="permalink" rel="bookmark">Permalink</a> </p>
+</div>
+</footer>
+<div class="comment-text">
+<div class="comment-arrow"></div>
+<div class="content">
+<span rel="sioc:reply_of" resource="/blog/10-steps-creating-ctools-modal-window-drupal-7" class="rdf-meta element-hidden"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>great tutorial for creating modal using ctools</p>
+</div></div></div> </div> 
+<ul class="links inline"><li class="comment-reply first last"><a href="https://www.drupion.com/comment/reply/19/22">reply</a></li>
+</ul> </div> 
+</article>
+<h2 class="title comment-form">Add new comment</h2>
+<form class="comment-form user-info-from-cookie user-info-from-cookie-processed" action="https://www.drupion.com/comment/reply/19" method="post" id="comment-form" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-name">
+<label for="edit-name">Your name <span class="form-required" title="This field is required.">*</span></label>
+<input type="text" id="edit-name" name="name" value="" size="30" maxlength="60" class="form-text required">
+</div>
+<div class="form-item form-type-textfield form-item-mail">
+<label for="edit-mail">E-mail <span class="form-required" title="This field is required.">*</span></label>
+<input type="text" id="edit-mail" name="mail" value="" size="30" maxlength="64" class="form-text required">
+<div class="description">The content of this field is kept private and will not be shown publicly.</div>
+</div>
+<div class="field-type-text-long field-name-comment-body field-widget-text-textarea form-wrapper" id="edit-comment-body"><div id="comment-body-add-more-wrapper"><div class="text-format-wrapper"><div class="form-item form-type-textarea form-item-comment-body-und-0-value">
+<label for="edit-comment-body-und-0-value">Comment <span class="form-required" title="This field is required.">*</span></label>
+<div class="form-textarea-wrapper resizable textarea-processed resizable-textarea"><textarea class="text-full form-textarea required" id="edit-comment-body-und-0-value" name="comment_body[und][0][value]" cols="60" rows="5"></textarea><div class="grippie"></div></div>
+</div>
+<fieldset class="filter-wrapper element-invisible form-wrapper" id="edit-comment-body-und-0-format"><div class="fieldset-wrapper"><div class="filter-help form-wrapper" id="edit-comment-body-und-0-format-help"><p><a href="https://www.drupion.com/filter/tips" target="_blank">More information about text formats</a></p></div><div class="filter-guidelines form-wrapper filter-guidelines-processed" id="edit-comment-body-und-0-format-guidelines"><div class="filter-guidelines-item filter-guidelines-plain_text"><h3 style="display: none;">Plain text</h3><ul class="tips"><li>No HTML tags allowed.</li><li>Web page addresses and e-mail addresses turn into links automatically.</li><li>Lines and paragraphs break automatically.</li></ul></div></div></div></fieldset>
+</div>
+</div></div><input type="hidden" name="form_build_id" value="form-NnbEJ2r1MByjx-n4xa8QApCcsvreO2-ts0pbdGL0cGs">
+<input type="hidden" name="form_id" value="comment_node_blog_form">
+<div class="form-actions form-wrapper" id="edit-actions"><div id="google_recaptcha_comment_node_blog_form"><div style="width: 304px; height: 78px;"><div><iframe src="./10 Steps to Creating A CTools Modal Window with Drupal 7 _ Managed Drupal and Wordpress Hosting_files/anchor.html" width="304" height="78" role="presentation" name="a-rz9535cnnrr1" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div></div><input type="submit" id="edit-submit" name="op" value="Submit" class="form-submit"></div></div></form> </section>
+</article>
+</div>
+</div>
+</div>
+</div>
+</div></div> 
+<div id="sidebar-second" class="column sidebar"><div class="section">
+<div class="region region-sidebar-second">
+<div id="block-simplenews-5" class="block block-simplenews">
+<div class="block-content">
+<h2>Drupion Newsletter</h2>
+<div class="content">
+<p>Subscribe to the latest news on Drupal, Wordpress, releases, updates, security alerts.</p>
+<form class="simplenews-subscribe" action="https://www.drupion.com/blog/10-steps-creating-ctools-modal-window-drupal-7" method="post" id="simplenews-block-form-5" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-mail">
+<label for="edit-mail--2">E-mail <span class="form-required" title="This field is required.">*</span></label>
+<input type="text" id="edit-mail--2" name="mail" value="" size="20" maxlength="128" class="form-text required">
+</div>
+<input type="submit" id="edit-submit--3" name="op" value="Subscribe" class="form-submit"><input type="hidden" name="form_build_id" value="form-kLXq-vAouiY8pI5mlrtlDxwfVbmN9-9LcOiEoivFSdk">
+<input type="hidden" name="form_id" value="simplenews_block_form_5">
+</div></form>
+</div>
+</div>
+</div>
+<div id="block-views-blog-block-1" class="block block-views">
+<div class="block-content">
+<h2>Other Popular Posts</h2>
+<div class="content">
+<div class="view view-blog view-id-blog view-display-id-block_1 view-dom-id-06d0a182e95a69222074d13761b7633f jquery-once-1-processed">
+<div class="view-content">
+<div class="views-row views-row-1 views-row-odd views-row-first">
+<h3><a href="https://www.drupion.com/blog/drupal-860-released">Drupal 8.6.0 released</a></h3> </div>
+<div class="views-row views-row-2 views-row-even">
+<h3><a href="https://www.drupion.com/blog/changes-our-terms-and-policies-comply-eu-general-data-protection-regulation-gdpr">Changes to our terms and policies to comply with EU General Data Protection Regulation (GDPR)</a></h3> </div>
+<div class="views-row views-row-3 views-row-odd">
+<h3><a href="https://www.drupion.com/blog/drupal-and-wordpress-websites-hosted-drupion-are-protected-meltdown-and-spectre-attacks">Drupal and WordPress websites hosted on Drupion are protected from Meltdown and Spectre Attacks</a></h3> </div>
+<div class="views-row views-row-4 views-row-even">
+<h3><a href="https://www.drupion.com/blog/how-does-acquisition-symantecs-certificate-authority-business-digicert-inc-affect-drupion">How does acquisition of Symantec's Certificate Authority business by DigiCert, Inc. affect Drupion customers?</a></h3> </div>
+<div class="views-row views-row-5 views-row-odd views-row-last">
+<h3><a href="https://www.drupion.com/blog/global-wordpress-translation-day"> Global WordPress Translation Day</a></h3> </div>
+</div>
+</div> </div>
+</div>
+</div>
+<div id="block-views-archive-block" class="block block-views">
+<div class="block-content">
+<h2>Archive</h2>
+<div class="content">
+<div class="view view-archive view-id-archive view-display-id-block view-dom-id-2572344f9fa7cd43ba804922c93842ef jquery-once-1-processed">
+<div class="view-content">
+<div class="item-list">
+<ul class="views-summary">
+<li><a href="https://www.drupion.com/archive/201810">October 2018</a>
+(9)
+</li>
+<li><a href="https://www.drupion.com/archive/201809">September 2018</a>
+(5)
+</li>
+<li><a href="https://www.drupion.com/archive/201808">August 2018</a>
+(6)
+</li>
+<li><a href="https://www.drupion.com/archive/201807">July 2018</a>
+(11)
+</li>
+<li><a href="https://www.drupion.com/archive/201806">June 2018</a>
+(7)
+</li>
+<li><a href="https://www.drupion.com/archive/201805">May 2018</a>
+(17)
+</li>
+<li><a href="https://www.drupion.com/archive/201804">April 2018</a>
+(10)
+</li>
+<li><a href="https://www.drupion.com/archive/201803">March 2018</a>
+(5)
+</li>
+<li><a href="https://www.drupion.com/archive/201802">February 2018</a>
+(12)
+</li>
+<li><a href="https://www.drupion.com/archive/201801">January 2018</a>
+(9)
+</li>
+<li><a href="https://www.drupion.com/archive/201712">December 2017</a>
+(10)
+</li>
+<li><a href="https://www.drupion.com/archive/201711">November 2017</a>
+(10)
+</li>
+<li><a href="https://www.drupion.com/archive/201710">October 2017</a>
+(10)
+</li>
+<li><a href="https://www.drupion.com/archive/201709">September 2017</a>
+(7)
+</li>
+<li><a href="https://www.drupion.com/archive/201708">August 2017</a>
+(25)
+</li>
+<li><a href="https://www.drupion.com/archive/201707">July 2017</a>
+(4)
+</li>
+ <li><a href="https://www.drupion.com/archive/201706">June 2017</a>
+(5)
+</li>
+<li><a href="https://www.drupion.com/archive/201705">May 2017</a>
+(10)
+</li>
+<li><a href="https://www.drupion.com/archive/201704">April 2017</a>
+(10)
+</li>
+<li><a href="https://www.drupion.com/archive/201703">March 2017</a>
+(11)
+</li>
+<li><a href="https://www.drupion.com/archive/201702">February 2017</a>
+(14)
+</li>
+<li><a href="https://www.drupion.com/archive/201701">January 2017</a>
+(9)
+</li>
+<li><a href="https://www.drupion.com/archive/201612">December 2016</a>
+(2)
+</li>
+<li><a href="https://www.drupion.com/archive/201611">November 2016</a>
+(9)
+</li>
+<li><a href="https://www.drupion.com/archive/201610">October 2016</a>
+(4)
+</li>
+<li><a href="https://www.drupion.com/archive/201609">September 2016</a>
+(2)
+</li>
+<li><a href="https://www.drupion.com/archive/201608">August 2016</a>
+(10)
+</li>
+<li><a href="https://www.drupion.com/archive/201607">July 2016</a>
+(8)
+</li>
+<li><a href="https://www.drupion.com/archive/201606">June 2016</a>
+(9)
+</li>
+<li><a href="https://www.drupion.com/archive/201605">May 2016</a>
+(6)
+</li>
+<li><a href="https://www.drupion.com/archive/201604">April 2016</a>
+(2)
+</li>
+<li><a href="https://www.drupion.com/archive/201602">February 2016</a>
+(2)
+</li>
+<li><a href="https://www.drupion.com/archive/201601">January 2016</a>
+(1)
+</li>
+<li><a href="https://www.drupion.com/archive/201511">November 2015</a>
+(1)
+</li>
+<li><a href="https://www.drupion.com/archive/201510">October 2015</a>
+(3)
+</li>
+<li><a href="https://www.drupion.com/archive/201410">October 2014</a>
+(1)
+</li>
+<li><a href="https://www.drupion.com/archive/201407">July 2014</a>
+(1)
+</li>
+<li><a href="https://www.drupion.com/archive/201406">June 2014</a>
+(1)
+</li>
+<li><a href="https://www.drupion.com/archive/201403">March 2014</a>
+(2)
+</li>
+<li><a href="https://www.drupion.com/archive/201310">October 2013</a>
+(1)
+</li>
+<li><a href="https://www.drupion.com/archive/201309">September 2013</a>
+(1)
+</li>
+<li><a href="https://www.drupion.com/archive/201308">August 2013</a>
+(1)
+</li>
+<li><a href="https://www.drupion.com/archive/201307">July 2013</a>
+(1)
+</li>
+<li><a href="https://www.drupion.com/archive/201306">June 2013</a>
+(4)
+</li>
+<li><a href="https://www.drupion.com/archive/201305">May 2013</a>
+(1)
+</li>
+<li><a href="https://www.drupion.com/archive/201304">April 2013</a>
+(1)
+</li>
+<li><a href="https://www.drupion.com/archive/201303">March 2013</a>
+(1)
+</li>
+<li><a href="https://www.drupion.com/archive/201211">November 2012</a>
+(1)
+</li>
+<li><a href="https://www.drupion.com/archive/201209">September 2012</a>
+(4)
+</li>
+<li><a href="https://www.drupion.com/archive/201208">August 2012</a>
+(1)
+</li>
+</ul>
+</div>
+</div>
+<div class="item-list"><ul class="pager"><li class="pager-previous first">&nbsp;</li>
+<li class="pager-current">1 of 2</li>
+<li class="pager-next last"><a title="Go to next page" href="https://www.drupion.com/blog/10-steps-creating-ctools-modal-window-drupal-7?page=1">next ›</a></li>
+</ul></div>
+</div> </div>
+</div>
+</div>
+<div id="block-comment-recent" class="block block-comment">
+<div class="block-content">
+<h2>Recent Comments</h2>
+<div class="content">
+<div class="item-list"><ul><li class="first"><a href="https://www.drupion.com/comment/22#comment-22">great tutorial for creating</a>&nbsp;<span>1 month 2 weeks ago</span></li>
+<li><a href="https://www.drupion.com/comment/21#comment-21">Why would anyone go through</a>&nbsp;<span>4 months 1 day ago</span></li>
+<li><a href="https://www.drupion.com/comment/16#comment-16">Dear Hassan, </a>&nbsp;<span>9 months 3 weeks ago</span></li>
+<li><a href="https://www.drupion.com/comment/15#comment-15">Wow Drupion sounds good, so</a>&nbsp;<span>9 months 3 weeks ago</span></li>
+<li><a href="https://www.drupion.com/comment/14#comment-14">Maybe you could automate a</a>&nbsp;<span>1 year 2 months ago</span></li>
+<li><a href="https://www.drupion.com/comment/13#comment-13">Dear Andrea,</a>&nbsp;<span>1 year 2 months ago</span></li>
+<li><a href="https://www.drupion.com/comment/12#comment-12">I have several modules which</a>&nbsp;<span>1 year 2 months ago</span></li>
+<li><a href="https://www.drupion.com/comment/10#comment-10">We've rolled out a new</a>&nbsp;<span>1 year 2 months ago</span></li>
+<li><a href="https://www.drupion.com/comment/7#comment-7">Dear Sam,</a>&nbsp;<span>1 year 2 months ago</span></li>
+<li class="last"><a href="https://www.drupion.com/comment/9#comment-9">Hi Alex - thanks for your</a>&nbsp;<span>1 year 2 months ago</span></li>
+</ul></div> </div>
+</div>
+</div>
+</div>
+</div></div> 
+</div></div> 
+<div class="region region-get-started">
+<div id="block-block-15" class="block block-block">
+<div class="block-content">
+<div class="content">
+<a href="https://www.drupion.com/#signup" class="button">Get Started</a> or
+<a href="https://www.drupion.com/contact-us" class="contact">Contact Us With Your Questions</a> </div>
+</div>
+</div>
+</div>
+<div id="footer-wrapper"><div class="section">
+<footer id="footer" role="contentinfo" class="clearfix">
+<div class="region region-footer">
+<div id="block-search-form" class="block block-search">
+<div class="block-content">
+<div class="content">
+<form class="search-form" role="search" action="https://www.drupion.com/blog/10-steps-creating-ctools-modal-window-drupal-7" method="post" id="search-block-form" accept-charset="UTF-8" target="_self"><div><div class="container-inline">
+<h2 class="element-invisible">Search form</h2>
+<div class="form-actions form-wrapper" id="edit-actions--3"><input type="submit" id="edit-submit--5" name="op" value="Search" class="form-submit"></div><div class="form-item form-type-textfield form-item-search-block-form">
+<label class="element-invisible" for="edit-search-block-form--2">Search this site </label>
+<input title="Enter the terms you want to search." class="custom-search-box form-text" placeholder="Site Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="60" maxlength="128">
+</div>
+<input type="hidden" name="form_build_id" value="form-B_NeI0PJhzMpGDiCzhbrNmagB1ZOvhwOZoDcxi6Brts">
+<input type="hidden" name="form_id" value="search_block_form">
+</div>
+</div></form> </div>
+</div>
+</div>
+</div>
+</footer> 
+<div id="footer-columns" class="clearfix">
+<div class="region region-footer-firstcolumn">
+<nav id="block-menu-menu-hosting-plans-for-footer" class="block block-menu" role="navigation">
+<h2>Services</h2>
+<div class="content">
+<ul class="menu clearfix"><li class="first leaf"><a href="https://www.drupion.com/shared-hosting">Web Hosting</a></li>
+<li class="leaf"><a href="https://www.drupion.com/cloud-hosting">Cloud Hosting</a></li>
+<li class="leaf"><a href="https://www.drupion.com/dedicated-hosting">Dedicated Hosting</a></li>
+<li class="leaf"><a href="https://www.drupion.com/free-drupal-and-wordpress-hosting">Free Hosting</a></li>
+<li class="last leaf"><a href="https://www.drupion.com/other-services">Add-On Services</a></li>
+</ul> </div>
+</nav>
+<nav id="block-menu-menu-others" class="block block-menu" role="navigation">
+<div class="content">
+<ul class="menu clearfix"><li class="first leaf"><a href="https://www.drupion.com/blog" title="">What's New?</a></li>
+<li class="leaf"><a href="https://www.drupion.com/blog?tid=8&amp;tid_1=All" title="">Security Advisories</a></li>
+<li class="leaf"><a href="https://www.drupion.com/about/partner-program" title="">Reseller Program</a></li>
+<li class="leaf"><a href="https://www.drupion.com/about/partner-program#referral-program" title="">Referral Program</a></li>
+<li class="last leaf"><a href="https://www.drupion.com/reviews" title="">Customer Reviews</a></li>
+</ul> </div>
+</nav>
+</div>
+<div class="region region-footer-secondcolumn">
+<nav id="block-menu-menu-platform" class="block block-menu" role="navigation">
+<h2>Platform</h2>
+<div class="content">
+<ul class="menu clearfix"><li class="first leaf"><a href="https://www.drupion.com/about/platform/drupion" title="">Overview</a></li>
+<li class="leaf"><a href="https://www.drupion.com/about/platform/drupal-wordpress" title="">Drupal and WordPress</a></li>
+<li class="leaf"><a href="https://www.drupion.com/about/platform/varnish" title="">Varnish</a></li>
+<li class="leaf"><a href="https://www.drupion.com/about/platform/memcached" title="">Memcached</a></li>
+<li class="last leaf"><a href="https://www.drupion.com/about/platform/apache-solr" title="">Apache Solr</a></li>
+</ul> </div>
+</nav>
+</div>
+<div class="region region-footer-thirdcolumn">
+<nav id="block-menu-menu-about" class="block block-menu" role="navigation">
+<h2>About</h2>
+<div class="content">
+<ul class="menu clearfix"><li class="first leaf"><a href="https://www.drupion.com/about" title="">Overview</a></li>
+<li class="leaf"><a href="https://www.drupion.com/about/why-drupion" title="">Why Drupion?</a></li>
+<li class="leaf"><a href="https://www.drupion.com/about/data-centers" title="">Data Centers</a></li>
+<li class="leaf"><a href="https://www.drupion.com/about/careers" title="">Careers</a></li>
+<li class="last leaf"><a href="https://www.drupion.com/contact-us" title="">Contact Us</a></li>
+</ul> </div>
+</nav>
+</div>
+<div class="region region-footer-fourthcolumn">
+<div id="block-multiblock-3" class="block block-multiblock block-simplenews block-simplenews-5-instance">
+<div class="block-content">
+<h2>Drupion Newsletter</h2>
+<div class="content">
+<p>Subscribe to the latest news on Drupal, Wordpress, releases, updates, security alerts.</p>
+<form class="simplenews-subscribe" action="https://www.drupion.com/blog/10-steps-creating-ctools-modal-window-drupal-7" method="post" id="simplenews-block-form-5--2" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-mail">
+<label for="edit-mail--3">E-mail <span class="form-required" title="This field is required.">*</span></label>
+<input type="text" id="edit-mail--3" name="mail" value="" size="20" maxlength="128" class="form-text required">
+</div>
+<input type="submit" id="edit-submit--4" name="op" value="Subscribe" class="form-submit"><input type="hidden" name="form_build_id" value="form-RLF9kvG8JQVcCyMzCjlY2GUtWc2p3neDSlv6RiFprJk">
+<input type="hidden" name="form_id" value="simplenews_block_form_5">
+</div></form>
+</div>
+</div>
+</div>
+</div>
+</div> 
+<div id="legal">
+<ul class="legal-links"><li><a href="https://www.drupion.com/about/sitemap">Site Map</a></li>
+<li><a href="https://www.drupion.com/about/legal">Legal</a></li>
+<li><a href="https://www.drupion.com/about/policies/privacy">Privacy</a></li>
+</ul><br>
+<div class="small">© 2004-2018 Drupion Inc. All rights reserved.</div>
+<ul class="social"><li><a href="https://twitter.com/drupion" class="twitter"></a></li>
+
+
+<li><a href="https://www.drupion.com/rss.xml" class="rss"></a></li>
+</ul>
+</div>
+</div>
+</div></div> 
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-79524090-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type="text/javascript" defer="defer" src="./10 Steps to Creating A CTools Modal Window with Drupal 7 _ Managed Drupal and Wordpress Hosting_files/api.js"></script>
+<script type="text/javascript" src="./10 Steps to Creating A CTools Modal Window with Drupal 7 _ Managed Drupal and Wordpress Hosting_files/js_MLVgtzZ1ORq9krYqkeOsRay6ou_T-0QZytivuM9tTT8.js"></script>
+
+
+<div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0.3s, opacity 0.3s linear; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div class="g-recaptcha-bubble-arrow" style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;"></div><div class="g-recaptcha-bubble-arrow" style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;"></div><div style="z-index: 2000000000; position: relative;"><iframe title="recaptcha challenge" src="./10 Steps to Creating A CTools Modal Window with Drupal 7 _ Managed Drupal and Wordpress Hosting_files/bframe.html" name="c-rz9535cnnrr1" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox" style="width: 100%; height: 100%;"></iframe></div></div><div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; top: -9999px; z-index: 100000;"><iframe id="_atssh535" title="AddThis utility frame" src="./10 Steps to Creating A CTools Modal Window with Drupal 7 _ Managed Drupal and Wordpress Hosting_files/sh.e4e8af4de595fdb10ec1459d.html" style="height: 1px; width: 1px; position: absolute; top: 0px; z-index: 100000; border: 0px; left: 0px;"></iframe></div><style id="service-icons-0"></style></body></html>

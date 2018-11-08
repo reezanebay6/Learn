@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)http://php.net/manual/en/language.oop5.final.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" class=" js flexbox flexboxlegacy datauri"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: Final Keyword - Manual </title>
+
+ <link rel="shortcut icon" href="http://php.net/favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="http://php.net/manual/en/language.oop5.final.php">
+ <link rel="shorturl" href="http://php.net/oop5.final">
+ <link rel="alternate" href="http://php.net/oop5.final" hreflang="x-default">
+
+ <link rel="contents" href="http://php.net/manual/en/index.php">
+ <link rel="index" href="http://php.net/manual/en/language.oop5.php">
+ <link rel="prev" href="http://php.net/manual/en/language.oop5.magic.php">
+ <link rel="next" href="http://php.net/manual/en/language.oop5.cloning.php">
+
+ <link rel="alternate" href="http://php.net/manual/en/language.oop5.final.php" hreflang="en">
+ <link rel="alternate" href="http://php.net/manual/pt_BR/language.oop5.final.php" hreflang="pt_BR">
+ <link rel="alternate" href="http://php.net/manual/zh/language.oop5.final.php" hreflang="zh">
+ <link rel="alternate" href="http://php.net/manual/fr/language.oop5.final.php" hreflang="fr">
+ <link rel="alternate" href="http://php.net/manual/de/language.oop5.final.php" hreflang="de">
+ <link rel="alternate" href="http://php.net/manual/ja/language.oop5.final.php" hreflang="ja">
+ <link rel="alternate" href="http://php.net/manual/ro/language.oop5.final.php" hreflang="ro">
+ <link rel="alternate" href="http://php.net/manual/ru/language.oop5.final.php" hreflang="ru">
+ <link rel="alternate" href="http://php.net/manual/es/language.oop5.final.php" hreflang="es">
+ <link rel="alternate" href="http://php.net/manual/tr/language.oop5.final.php" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="./PHP_ Final Keyword - Manual_files/cached.php" media="screen">
+<link rel="stylesheet" type="text/css" href="./PHP_ Final Keyword - Manual_files/cached(1).php" media="screen">
+<link rel="stylesheet" type="text/css" href="./PHP_ Final Keyword - Manual_files/cached(2).php" media="screen">
+<link rel="stylesheet" type="text/css" href="./PHP_ Final Keyword - Manual_files/cached(3).php" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="http://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <!--<base href="http://php.net/manual/en/language.oop5.final.php">--><base href=".">
+
+</head>
+<body class="docs " style="">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="http://php.net/" class="brand"><img src="./PHP_ Final Keyword - Manual_files/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="http://php.net/downloads">Downloads</a></li>
+      <li class="active"><a href="http://php.net/docs.php">Documentation</a></li>
+      <li class=""><a href="http://php.net/get-involved">Get Involved</a></li>
+      <li class=""><a href="http://php.net/support">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="http://php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <span class="twitter-typeahead" style="position: relative; display: inline-block;"><input class="tt-hint search-query" type="text" autocomplete="off" spellcheck="off" disabled="" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);"><input type="search" name="pattern" class="search-query tt-query" placeholder="Search" accesskey="s" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;"><input type="submit" style="visibility: hidden; position: fixed"><span style="position: absolute; left: -9999px; visibility: hidden; white-space: nowrap; font-family: &quot;Fira Sans&quot;, &quot;Source Sans Pro&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></span><span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;"></span></span>
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href="http://php.net/manual/en/getting-started.php">Getting Started</a></dt>
+	<dd><a href="http://php.net/manual/en/introduction.php">Introduction</a></dd>
+	<dd><a href="http://php.net/manual/en/tutorial.php">A simple tutorial</a></dd>
+<dt><a href="http://php.net/manual/en/langref.php">Language Reference</a></dt>
+	<dd><a href="http://php.net/manual/en/language.basic-syntax.php">Basic syntax</a></dd>
+	<dd><a href="http://php.net/manual/en/language.types.php">Types</a></dd>
+	<dd><a href="http://php.net/manual/en/language.variables.php">Variables</a></dd>
+	<dd><a href="http://php.net/manual/en/language.constants.php">Constants</a></dd>
+	<dd><a href="http://php.net/manual/en/language.expressions.php">Expressions</a></dd>
+	<dd><a href="http://php.net/manual/en/language.operators.php">Operators</a></dd>
+	<dd><a href="http://php.net/manual/en/language.control-structures.php">Control Structures</a></dd>
+	<dd><a href="http://php.net/manual/en/language.functions.php">Functions</a></dd>
+	<dd><a href="http://php.net/manual/en/language.oop5.php">Classes and Objects</a></dd>
+	<dd><a href="http://php.net/manual/en/language.namespaces.php">Namespaces</a></dd>
+	<dd><a href="http://php.net/manual/en/language.errors.php">Errors</a></dd>
+	<dd><a href="http://php.net/manual/en/language.exceptions.php">Exceptions</a></dd>
+	<dd><a href="http://php.net/manual/en/language.generators.php">Generators</a></dd>
+	<dd><a href="http://php.net/manual/en/language.references.php">References Explained</a></dd>
+	<dd><a href="http://php.net/manual/en/reserved.variables.php">Predefined Variables</a></dd>
+	<dd><a href="http://php.net/manual/en/reserved.exceptions.php">Predefined Exceptions</a></dd>
+	<dd><a href="http://php.net/manual/en/reserved.interfaces.php">Predefined Interfaces and Classes</a></dd>
+	<dd><a href="http://php.net/manual/en/context.php">Context options and parameters</a></dd>
+	<dd><a href="http://php.net/manual/en/wrappers.php">Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href="http://php.net/manual/en/security.php">Security</a></dt>
+	<dd><a href="http://php.net/manual/en/security.intro.php">Introduction</a></dd>
+	<dd><a href="http://php.net/manual/en/security.general.php">General considerations</a></dd>
+	<dd><a href="http://php.net/manual/en/security.cgi-bin.php">Installed as CGI binary</a></dd>
+	<dd><a href="http://php.net/manual/en/security.apache.php">Installed as an Apache module</a></dd>
+	<dd><a href="http://php.net/manual/en/security.sessions.php">Session Security</a></dd>
+	<dd><a href="http://php.net/manual/en/security.filesystem.php">Filesystem Security</a></dd>
+	<dd><a href="http://php.net/manual/en/security.database.php">Database Security</a></dd>
+	<dd><a href="http://php.net/manual/en/security.errors.php">Error Reporting</a></dd>
+	<dd><a href="http://php.net/manual/en/security.globals.php">Using Register Globals</a></dd>
+	<dd><a href="http://php.net/manual/en/security.variables.php">User Submitted Data</a></dd>
+	<dd><a href="http://php.net/manual/en/security.magicquotes.php">Magic Quotes</a></dd>
+	<dd><a href="http://php.net/manual/en/security.hiding.php">Hiding PHP</a></dd>
+	<dd><a href="http://php.net/manual/en/security.current.php">Keeping Current</a></dd>
+<dt><a href="http://php.net/manual/en/features.php">Features</a></dt>
+	<dd><a href="http://php.net/manual/en/features.http-auth.php">HTTP authentication with PHP</a></dd>
+	<dd><a href="http://php.net/manual/en/features.cookies.php">Cookies</a></dd>
+	<dd><a href="http://php.net/manual/en/features.sessions.php">Sessions</a></dd>
+	<dd><a href="http://php.net/manual/en/features.xforms.php">Dealing with XForms</a></dd>
+	<dd><a href="http://php.net/manual/en/features.file-upload.php">Handling file uploads</a></dd>
+	<dd><a href="http://php.net/manual/en/features.remote-files.php">Using remote files</a></dd>
+	<dd><a href="http://php.net/manual/en/features.connection-handling.php">Connection handling</a></dd>
+	<dd><a href="http://php.net/manual/en/features.persistent-connections.php">Persistent Database Connections</a></dd>
+	<dd><a href="http://php.net/manual/en/features.safe-mode.php">Safe Mode</a></dd>
+	<dd><a href="http://php.net/manual/en/features.commandline.php">Command line usage</a></dd>
+	<dd><a href="http://php.net/manual/en/features.gc.php">Garbage Collection</a></dd>
+	<dd><a href="http://php.net/manual/en/features.dtrace.php">DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href="http://php.net/manual/en/funcref.php">Function Reference</a></dt>
+	<dd><a href="http://php.net/manual/en/refs.basic.php.php">Affecting PHP's Behaviour</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.utilspec.audio.php">Audio Formats Manipulation</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.remote.auth.php">Authentication Services</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.utilspec.cmdline.php">Command Line Specific Extensions</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.compression.php">Compression and Archive Extensions</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.creditcard.php">Credit Card Processing</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.crypto.php">Cryptography Extensions</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.database.php">Database Extensions</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.calendar.php">Date and Time Related Extensions</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.fileprocess.file.php">File System Related Extensions</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.international.php">Human Language and Character Encoding Support</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.utilspec.image.php">Image Processing and Generation</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.remote.mail.php">Mail Related Extensions</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.math.php">Mathematical Extensions</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.utilspec.nontext.php">Non-Text MIME Output</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.fileprocess.process.php">Process Control Extensions</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.basic.other.php">Other Basic Extensions</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.remote.other.php">Other Services</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.search.php">Search Engine Extensions</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.utilspec.server.php">Server Specific Extensions</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.basic.session.php">Session Extensions</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.basic.text.php">Text Processing</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.basic.vartype.php">Variable and Type Related Extensions</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.webservice.php">Web Services</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.utilspec.windows.php">Windows Only Extensions</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.xml.php">XML Manipulation</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.ui.php">GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="http://php.net/manual/en/language.oop5.cloning.php">
+          Object Cloning »
+        </a>
+      </div>
+              <div class="prev">
+        <a href="http://php.net/manual/en/language.oop5.magic.php">
+          « Magic Methods        </a>
+      </div>
+          <ul>
+            <li><a href="http://php.net/manual/en/index.php">PHP Manual</a></li>      <li><a href="http://php.net/manual/en/langref.php">Language Reference</a></li>      <li><a href="http://php.net/manual/en/language.oop5.php">Classes and Objects</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="http://php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value="en/language.oop5.final.php" selected="selected">English</option>
+            <option value="pt_BR/language.oop5.final.php">Brazilian Portuguese</option>
+            <option value="zh/language.oop5.final.php">Chinese (Simplified)</option>
+            <option value="fr/language.oop5.final.php">French</option>
+            <option value="de/language.oop5.final.php">German</option>
+            <option value="ja/language.oop5.final.php">Japanese</option>
+            <option value="ro/language.oop5.final.php">Romanian</option>
+            <option value="ru/language.oop5.final.php">Russian</option>
+            <option value="es/language.oop5.final.php">Spanish</option>
+            <option value="tr/language.oop5.final.php">Turkish</option>
+            <option value="help-translate.php">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://edit.php.net/?project=PHP&amp;perm=en/language.oop5.final.php">Edit</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=language.oop5.final">Report a Bug</a>
+    </div>
+  </div><div id="language.oop5.final" class="sect1">
+  <h2 class="title">Final Keyword<a class="genanchor" href="http://php.net/manual/en/language.oop5.final.php#language.oop5.final"> ¶</a></h2>
+  <p class="para">
+   PHP 5 introduces the final keyword, which prevents child classes from
+   overriding a method by prefixing the definition with <em class="emphasis">final</em>. If the class
+   itself is being defined final then it cannot be extended.
+  </p>
+  <p class="para">
+   </p><div class="example" id="language.oop5.traits.abstract.ex1">
+    <p><strong>Example #1 Final methods example</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">BaseClass&nbsp;</span><span style="color: #007700">{<br>&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">test</span><span style="color: #007700">()&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"BaseClass::test()&nbsp;called\n"</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;final&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">moreTesting</span><span style="color: #007700">()&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"BaseClass::moreTesting()&nbsp;called\n"</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;}<br>}<br><br>class&nbsp;</span><span style="color: #0000BB">ChildClass&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">BaseClass&nbsp;</span><span style="color: #007700">{<br>&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">moreTesting</span><span style="color: #007700">()&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"ChildClass::moreTesting()&nbsp;called\n"</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;}<br>}<br></span><span style="color: #FF8000">//&nbsp;Results&nbsp;in&nbsp;Fatal&nbsp;error:&nbsp;Cannot&nbsp;override&nbsp;final&nbsp;method&nbsp;BaseClass::moreTesting()<br></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+  <p></p>
+  <p class="para">
+   </p><div class="example" id="language.oop5.traits.static.ex1">
+    <p><strong>Example #2 Final class example</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br></span><span style="color: #007700">final&nbsp;class&nbsp;</span><span style="color: #0000BB">BaseClass&nbsp;</span><span style="color: #007700">{<br>&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">test</span><span style="color: #007700">()&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"BaseClass::test()&nbsp;called\n"</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Here&nbsp;it&nbsp;doesn't&nbsp;matter&nbsp;if&nbsp;you&nbsp;specify&nbsp;the&nbsp;function&nbsp;as&nbsp;final&nbsp;or&nbsp;not<br>&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">final&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">moreTesting</span><span style="color: #007700">()&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"BaseClass::moreTesting()&nbsp;called\n"</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;}<br>}<br><br>class&nbsp;</span><span style="color: #0000BB">ChildClass&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">BaseClass&nbsp;</span><span style="color: #007700">{<br>}<br></span><span style="color: #FF8000">//&nbsp;Results&nbsp;in&nbsp;Fatal&nbsp;error:&nbsp;Class&nbsp;ChildClass&nbsp;may&nbsp;not&nbsp;inherit&nbsp;from&nbsp;final&nbsp;class&nbsp;(BaseClass)<br></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  <p></p>
+  <blockquote class="note"><p><strong class="note">Note</strong>: 
+   <span class="simpara">
+    Properties cannot be declared final, only classes and methods 
+    may be declared as final.
+   </span>
+  </p></blockquote>
+ </div>
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="http://php.net/manual/add-note.php?sect=language.oop5.final&amp;redirect=http://php.net/manual/en/language.oop5.final.php"><img src="./PHP_ Final Keyword - Manual_files/notes-add@2x.png" alt="add a note" width="12" height="12"> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes <span class="count">13 notes</span></h3>
+ </div><div id="allnotes">
+  <div class="note" id="92295">  <div class="votes">
+    <div id="Vu92295">
+    <a href="http://php.net/manual/vote-note.php?id=92295&amp;page=language.oop5.final&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd92295">
+    <a href="http://php.net/manual/vote-note.php?id=92295&amp;page=language.oop5.final&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V92295" title="85% like this...">
+    211
+    </div>
+  </div>
+  <a href="http://php.net/manual/en/language.oop5.final.php#92295" class="name">
+  <strong class="user"><em>jriddy at gmail dot com</em></strong></a><a class="genanchor" href="http://php.net/manual/en/language.oop5.final.php#92295"> ¶</a><div class="date" title="2009-07-17 02:20"><strong>9 years ago</strong></div>
+  <div class="text" id="Hcom92295" style="opacity: 1;">
+<div class="phpcode"><code><span class="html">
+Note for Java developers: the 'final' keyword is not used for class constants in PHP. We use the keyword 'const'.<br><br><a href="http://php.net/manual/en/language.oop5.constants.php" rel="nofollow" target="_blank">http://php.net/manual/en/language.oop5.constants.php</a></span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="74058">  <div class="votes">
+    <div id="Vu74058">
+    <a href="http://php.net/manual/vote-note.php?id=74058&amp;page=language.oop5.final&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd74058">
+    <a href="http://php.net/manual/vote-note.php?id=74058&amp;page=language.oop5.final&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V74058" title="74% like this...">
+    49
+    </div>
+  </div>
+  <a href="http://php.net/manual/en/language.oop5.final.php#74058" class="name">
+  <strong class="user"><em>penartur at yandex dot ru</em></strong></a><a class="genanchor" href="http://php.net/manual/en/language.oop5.final.php#74058"> ¶</a><div class="date" title="2007-03-22 01:39"><strong>11 years ago</strong></div>
+  <div class="text" id="Hcom74058" style="opacity: 1;">
+<div class="phpcode"><code><span class="html">
+Note that you cannot ovverride final methods even if they are defined as private in parent class.
+<br>Thus, the following example:
+<br><span class="default">&lt;?php
+<br></span><span class="keyword">class </span><span class="default">parentClass </span><span class="keyword">{
+<br>&nbsp; &nbsp; final private function </span><span class="default">someMethod</span><span class="keyword">() { }
+<br>}
+<br>class </span><span class="default">childClass </span><span class="keyword">extends </span><span class="default">parentClass </span><span class="keyword">{
+<br>&nbsp; &nbsp; private function </span><span class="default">someMethod</span><span class="keyword">() { }
+<br>}
+<br></span><span class="default">?&gt;
+<br></span>dies with error "Fatal error: Cannot override final method parentClass::someMethod() in ***.php on line 7"
+<br>
+<br>Such behaviour looks slight unexpected because in child class we cannot know, which private methods exists in a parent class and vice versa.
+<br>
+<br>So, remember that if you defined a private final method, you cannot place method with the same name in child class.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="114038">  <div class="votes">
+    <div id="Vu114038">
+    <a href="http://php.net/manual/vote-note.php?id=114038&amp;page=language.oop5.final&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd114038">
+    <a href="http://php.net/manual/vote-note.php?id=114038&amp;page=language.oop5.final&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V114038" title="69% like this...">
+    25
+    </div>
+  </div>
+  <a href="http://php.net/manual/en/language.oop5.final.php#114038" class="name">
+  <strong class="user"><em>someone dot else at elsewhere dot net</em></strong></a><a class="genanchor" href="http://php.net/manual/en/language.oop5.final.php#114038"> ¶</a><div class="date" title="2014-01-04 10:40"><strong>4 years ago</strong></div>
+  <div class="text" id="Hcom114038" style="opacity: 1;">
+<div class="phpcode"><code><span class="html">
+@thomas at somewhere dot com<br><br>The 'final' keyword is extremely useful.&nbsp; Inheritance is also useful, but can be abused and becomes problematic in large applications.&nbsp; If you ever come across a finalized class or method that you wish to extend, write a decorator instead.<br><br><span class="default">&lt;?php<br></span><span class="keyword">final class </span><span class="default">Foo<br></span><span class="keyword">{<br>&nbsp; &nbsp; public </span><span class="default">method doFoo</span><span class="keyword">()<br>&nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// do something useful and return a result<br>&nbsp; &nbsp; </span><span class="keyword">}<br>}<br><br>final class </span><span class="default">FooDecorator<br></span><span class="keyword">{<br>&nbsp; &nbsp; private </span><span class="default">$foo</span><span class="keyword">;<br>&nbsp; &nbsp; <br>&nbsp; &nbsp; public function </span><span class="default">__construct</span><span class="keyword">(</span><span class="default">Foo $foo</span><span class="keyword">)<br>&nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">foo </span><span class="keyword">= </span><span class="default">$foo</span><span class="keyword">;<br>&nbsp; &nbsp; }<br>&nbsp; &nbsp; <br>&nbsp; &nbsp; public function </span><span class="default">doFoo</span><span class="keyword">()<br>&nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$result </span><span class="keyword">= </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">foo</span><span class="keyword">-&gt;</span><span class="default">doFoo</span><span class="keyword">();<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// ... customize result ...<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">return </span><span class="default">$result</span><span class="keyword">;<br>&nbsp; &nbsp; }<br>}<br></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="115148">  <div class="votes">
+    <div id="Vu115148">
+    <a href="http://php.net/manual/vote-note.php?id=115148&amp;page=language.oop5.final&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd115148">
+    <a href="http://php.net/manual/vote-note.php?id=115148&amp;page=language.oop5.final&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V115148" title="63% like this...">
+    8
+    </div>
+  </div>
+  <a href="http://php.net/manual/en/language.oop5.final.php#115148" class="name">
+  <strong class="user"><em>mattsch at gmail dot com</em></strong></a><a class="genanchor" href="http://php.net/manual/en/language.oop5.final.php#115148"> ¶</a><div class="date" title="2014-06-03 07:24"><strong>4 years ago</strong></div>
+  <div class="text" id="Hcom115148">
+<div class="phpcode"><code><span class="html">
+You can use final methods to replace class constants.&nbsp; The reason for this is you cannot unit test a class constant used in another class in isolation because you cannot mock a constant.&nbsp;&nbsp; Final methods allow you to have the same functionality as a constant while keeping your code loosely coupled.<br><br>Tight coupling example (bad to use constants):<br><br><span class="default">&lt;?php<br></span><span class="keyword">interface </span><span class="default">FooInterface<br></span><span class="keyword">{<br>}<br><br>class </span><span class="default">Foo </span><span class="keyword">implements </span><span class="default">FooInterface<br></span><span class="keyword">{<br>&nbsp; &nbsp; const </span><span class="default">BAR </span><span class="keyword">= </span><span class="default">1</span><span class="keyword">;<br><br>&nbsp; &nbsp; public function </span><span class="default">__construct</span><span class="keyword">()<br>&nbsp; &nbsp; {<br>&nbsp; &nbsp; }<br>}<br><br>interface </span><span class="default">BazInterface<br></span><span class="keyword">{<br>&nbsp; &nbsp; public function </span><span class="default">getFooBar</span><span class="keyword">();<br>}<br><br></span><span class="comment">// This class cannot be unit tested in isolation because the actual class Foo must also be loaded to get the value of Foo::BAR<br></span><span class="keyword">class </span><span class="default">Baz </span><span class="keyword">implements </span><span class="default">BazInterface<br></span><span class="keyword">{<br>&nbsp; &nbsp; private </span><span class="default">$foo</span><span class="keyword">;<br><br>&nbsp; &nbsp; public function </span><span class="default">__construct</span><span class="keyword">(</span><span class="default">FooInterface $foo</span><span class="keyword">)<br>&nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">foo </span><span class="keyword">= </span><span class="default">$foo</span><span class="keyword">;<br>&nbsp; &nbsp; }<br><br>&nbsp; &nbsp; public function </span><span class="default">getFooBar</span><span class="keyword">()<br>&nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; return </span><span class="default">Foo</span><span class="keyword">::</span><span class="default">BAR</span><span class="keyword">;<br>&nbsp; &nbsp; }<br><br>}<br><br></span><span class="default">$foo </span><span class="keyword">= new </span><span class="default">Foo</span><span class="keyword">();<br></span><span class="default">$baz </span><span class="keyword">= new </span><span class="default">Baz</span><span class="keyword">(</span><span class="default">$foo</span><span class="keyword">);<br></span><span class="default">$bar </span><span class="keyword">= </span><span class="default">$baz</span><span class="keyword">-&gt;</span><span class="default">getFooBar</span><span class="keyword">();<br></span><span class="default">?&gt;<br></span><br>Loose coupling example (eliminated constant usage):<br><br><span class="default">&lt;?php<br></span><span class="keyword">interface </span><span class="default">FooInterface<br></span><span class="keyword">{<br>&nbsp; &nbsp; public function </span><span class="default">bar</span><span class="keyword">();<br>}<br><br>class </span><span class="default">Foo </span><span class="keyword">implements </span><span class="default">FooInterface<br></span><span class="keyword">{<br>&nbsp; &nbsp; public function </span><span class="default">__construct</span><span class="keyword">()<br>&nbsp; &nbsp; {<br>&nbsp; &nbsp; }<br><br>&nbsp; &nbsp; final public function </span><span class="default">bar</span><span class="keyword">()<br>&nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; return </span><span class="default">1</span><span class="keyword">;<br>&nbsp; &nbsp; }<br>}<br><br>interface </span><span class="default">BazInterface<br></span><span class="keyword">{<br>&nbsp; &nbsp; public function </span><span class="default">getFooBar</span><span class="keyword">();<br>}<br><br></span><span class="comment">// This class can be unit tested in isolation because class Foo does not need to be loaded by mocking FooInterface and calling the final bar method.<br></span><span class="keyword">class </span><span class="default">Baz </span><span class="keyword">implements </span><span class="default">BazInterface<br></span><span class="keyword">{<br>&nbsp; &nbsp; private </span><span class="default">$foo</span><span class="keyword">;<br><br>&nbsp; &nbsp; public function </span><span class="default">__construct</span><span class="keyword">(</span><span class="default">FooInterface $foo</span><span class="keyword">)<br>&nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">foo </span><span class="keyword">= </span><span class="default">$foo</span><span class="keyword">;<br>&nbsp; &nbsp; }<br><br>&nbsp; &nbsp; public function </span><span class="default">getFooBar</span><span class="keyword">()<br>&nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; return </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">foo</span><span class="keyword">-&gt;</span><span class="default">bar</span><span class="keyword">();<br>&nbsp; &nbsp; }<br><br>}<br><br></span><span class="default">$foo </span><span class="keyword">= new </span><span class="default">Foo</span><span class="keyword">();<br></span><span class="default">$baz </span><span class="keyword">= new </span><span class="default">Baz</span><span class="keyword">(</span><span class="default">$foo</span><span class="keyword">);<br></span><span class="default">$bar </span><span class="keyword">= </span><span class="default">$baz</span><span class="keyword">-&gt;</span><span class="default">getFooBar</span><span class="keyword">();<br></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="115012">  <div class="votes">
+    <div id="Vu115012">
+    <a href="http://php.net/manual/vote-note.php?id=115012&amp;page=language.oop5.final&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd115012">
+    <a href="http://php.net/manual/vote-note.php?id=115012&amp;page=language.oop5.final&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V115012" title="61% like this...">
+    6
+    </div>
+  </div>
+  <a href="http://php.net/manual/en/language.oop5.final.php#115012" class="name">
+  <strong class="user"><em>cottton at i-stats dot net</em></strong></a><a class="genanchor" href="http://php.net/manual/en/language.oop5.final.php#115012"> ¶</a><div class="date" title="2014-05-12 06:02"><strong>4 years ago</strong></div>
+  <div class="text" id="Hcom115012">
+<div class="phpcode"><code><span class="html">
+imo good to know:<br><span class="default">&lt;?php<br></span><span class="keyword">class </span><span class="default">BaseClass<br></span><span class="keyword">{<br>&nbsp; &nbsp; protected static </span><span class="default">$var </span><span class="keyword">= </span><span class="string">'i belong to BaseClass'</span><span class="keyword">;<br><br>&nbsp; &nbsp; public static function </span><span class="default">test</span><span class="keyword">()<br>&nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">'&lt;hr&gt;'</span><span class="keyword">.<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">'i am `'</span><span class="keyword">.</span><span class="default">__METHOD__</span><span class="keyword">.</span><span class="string">'()` and this is my var: `'</span><span class="keyword">.</span><span class="default">self</span><span class="keyword">::</span><span class="default">$var</span><span class="keyword">.</span><span class="string">'`&lt;br&gt;'</span><span class="keyword">;<br>&nbsp; &nbsp; }<br>&nbsp; &nbsp; public static function </span><span class="default">changeVar</span><span class="keyword">(</span><span class="default">$val</span><span class="keyword">)<br>&nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">self</span><span class="keyword">::</span><span class="default">$var </span><span class="keyword">= </span><span class="default">$val</span><span class="keyword">;<br>&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">'&lt;hr&gt;'</span><span class="keyword">.<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">'i am `'</span><span class="keyword">.</span><span class="default">__METHOD__</span><span class="keyword">.</span><span class="string">'()` and i just changed my $var to: `'</span><span class="keyword">.</span><span class="default">self</span><span class="keyword">::</span><span class="default">$var</span><span class="keyword">.</span><span class="string">'`&lt;br&gt;'</span><span class="keyword">;<br>&nbsp; &nbsp; }<br>&nbsp; &nbsp; final public static function </span><span class="default">dontCopyMe</span><span class="keyword">(</span><span class="default">$val</span><span class="keyword">)<br>&nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">self</span><span class="keyword">::</span><span class="default">$var </span><span class="keyword">= </span><span class="default">$val</span><span class="keyword">;<br>&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">'&lt;hr&gt;'</span><span class="keyword">.<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">'i am `'</span><span class="keyword">.</span><span class="default">__METHOD__</span><span class="keyword">.</span><span class="string">'()` and i just changed my $var to: `'</span><span class="keyword">.</span><span class="default">self</span><span class="keyword">::</span><span class="default">$var</span><span class="keyword">.</span><span class="string">'`&lt;br&gt;'</span><span class="keyword">;<br>&nbsp; &nbsp; }<br>}<br><br>class </span><span class="default">ChildClass </span><span class="keyword">extends </span><span class="default">BaseClass<br></span><span class="keyword">{<br>&nbsp; &nbsp; protected static </span><span class="default">$var </span><span class="keyword">= </span><span class="string">'i belong to ChildClass'</span><span class="keyword">;<br><br>&nbsp; &nbsp; public static function </span><span class="default">test</span><span class="keyword">()<br>&nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">'&lt;hr&gt;'</span><span class="keyword">.<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">'i am `'</span><span class="keyword">.</span><span class="default">__METHOD__</span><span class="keyword">.</span><span class="string">'()` and this is my var: `'</span><span class="keyword">.</span><span class="default">self</span><span class="keyword">::</span><span class="default">$var</span><span class="keyword">.</span><span class="string">'`&lt;br&gt;'</span><span class="keyword">.<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">'and this is my parent var: `'</span><span class="keyword">.</span><span class="default">parent</span><span class="keyword">::</span><span class="default">$var</span><span class="keyword">.</span><span class="string">'`'</span><span class="keyword">;<br>&nbsp; &nbsp; }<br>&nbsp; &nbsp; public static function </span><span class="default">changeVar</span><span class="keyword">(</span><span class="default">$val</span><span class="keyword">)<br>&nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">self</span><span class="keyword">::</span><span class="default">$var </span><span class="keyword">= </span><span class="default">$val</span><span class="keyword">;<br>&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">'&lt;hr&gt;'</span><span class="keyword">.<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">'i am `'</span><span class="keyword">.</span><span class="default">__METHOD__</span><span class="keyword">.</span><span class="string">'()` and i just changed my $var to: `'</span><span class="keyword">.</span><span class="default">self</span><span class="keyword">::</span><span class="default">$var</span><span class="keyword">.</span><span class="string">'`&lt;br&gt;'</span><span class="keyword">.<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">'but the parent $var is still: `'</span><span class="keyword">.</span><span class="default">parent</span><span class="keyword">::</span><span class="default">$var</span><span class="keyword">.</span><span class="string">'`'</span><span class="keyword">;<br>&nbsp; &nbsp; }<br>&nbsp; &nbsp; public static function </span><span class="default">dontCopyMe</span><span class="keyword">(</span><span class="default">$val</span><span class="keyword">) </span><span class="comment">// Fatal error: Cannot override final method BaseClass::dontCopyMe() in ...<br>&nbsp; &nbsp; </span><span class="keyword">{<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">self</span><span class="keyword">::</span><span class="default">$var </span><span class="keyword">= </span><span class="default">$val</span><span class="keyword">;<br>&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">'&lt;hr&gt;'</span><span class="keyword">.<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">'i am `'</span><span class="keyword">.</span><span class="default">__METHOD__</span><span class="keyword">.</span><span class="string">'()` and i just changed my $var to: `'</span><span class="keyword">.</span><span class="default">self</span><span class="keyword">::</span><span class="default">$var</span><span class="keyword">.</span><span class="string">'`&lt;br&gt;'</span><span class="keyword">;<br>&nbsp; &nbsp; }<br>}<br><br></span><span class="default">BaseClass</span><span class="keyword">::</span><span class="default">test</span><span class="keyword">();&nbsp; </span><span class="comment">// i am `BaseClass::test()` and this is my var: `i belong to BaseClass`<br></span><span class="default">ChildClass</span><span class="keyword">::</span><span class="default">test</span><span class="keyword">(); </span><span class="comment">// i am `ChildClass::test()` and this is my var: `i belong to ChildClass`<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // and this is my parent var: `i belong to BaseClass`<br></span><span class="default">ChildClass</span><span class="keyword">::</span><span class="default">changeVar</span><span class="keyword">(</span><span class="string">'something new'</span><span class="keyword">); </span><span class="comment">// i am `ChildClass::changeVar()` and i just changed my $var to: `something new`<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // but the parent $var is still: `i belong to BaseClass`<br></span><span class="default">BaseClass</span><span class="keyword">::</span><span class="default">changeVar</span><span class="keyword">(</span><span class="string">'something different'</span><span class="keyword">); </span><span class="comment">// i am `BaseClass::changeVar()` and i just changed my $var to: `something different`<br></span><span class="default">BaseClass</span><span class="keyword">::</span><span class="default">dontCopyMe</span><span class="keyword">(</span><span class="string">'a text'</span><span class="keyword">); </span><span class="comment">// i am `BaseClass::dontCopyMe()` and i just changed my $var to: `a text`<br></span><span class="default">ChildClass</span><span class="keyword">::</span><span class="default">dontCopyMe</span><span class="keyword">(</span><span class="string">'a text'</span><span class="keyword">); </span><span class="comment">// Fatal error: Cannot override final method BaseClass::dontCopyMe() in ...<br></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="87444">  <div class="votes">
+    <div id="Vu87444">
+    <a href="http://php.net/manual/vote-note.php?id=87444&amp;page=language.oop5.final&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd87444">
+    <a href="http://php.net/manual/vote-note.php?id=87444&amp;page=language.oop5.final&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V87444" title="56% like this...">
+    4
+    </div>
+  </div>
+  <a href="http://php.net/manual/en/language.oop5.final.php#87444" class="name">
+  <strong class="user"><em>santoshjoshi2003 at yahoo dot co dot in</em></strong></a><a class="genanchor" href="http://php.net/manual/en/language.oop5.final.php#87444"> ¶</a><div class="date" title="2008-12-05 02:45"><strong>9 years ago</strong></div>
+  <div class="text" id="Hcom87444">
+<div class="phpcode"><code><span class="html">
+The use of final keyword is just like that occurs in Java<br>In java final has three uses<br>&nbsp; &nbsp; 1) prevent class Inheritance<br>&nbsp; &nbsp; 2) prevent method overriding or redifination of <br>&nbsp; &nbsp; &nbsp; &nbsp; method in subclass <br>&nbsp; &nbsp; 3) and to declare constants <br> But the third point seems to be missing from the PHP<br> I guess, as i am a java developer Currently gaining competence in PHP</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="100149">  <div class="votes">
+    <div id="Vu100149">
+    <a href="http://php.net/manual/vote-note.php?id=100149&amp;page=language.oop5.final&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd100149">
+    <a href="http://php.net/manual/vote-note.php?id=100149&amp;page=language.oop5.final&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V100149" title="54% like this...">
+    4
+    </div>
+  </div>
+  <a href="http://php.net/manual/en/language.oop5.final.php#100149" class="name">
+  <strong class="user"><em>Anonymous</em></strong></a><a class="genanchor" href="http://php.net/manual/en/language.oop5.final.php#100149"> ¶</a><div class="date" title="2010-09-28 07:06"><strong>8 years ago</strong></div>
+  <div class="text" id="Hcom100149">
+<div class="phpcode"><code><span class="html">
+The behaviour of FINAL is not as serious as you may think. A little explample:<br><span class="default">&lt;?php<br></span><span class="keyword">class </span><span class="default">A </span><span class="keyword">{<br>&nbsp; &nbsp;&nbsp; final private function </span><span class="default">method</span><span class="keyword">(){}&nbsp; &nbsp;&nbsp; <br>}<br><br>class </span><span class="default">B </span><span class="keyword">extends </span><span class="default">A </span><span class="keyword">{<br>&nbsp; &nbsp; private function </span><span class="default">method</span><span class="keyword">(){}<br>}<br></span><span class="default">?&gt;<br></span><br>Normally you would expect some of the following will happen:<br>- An error that final and private keyword cannot be used together<br>- No error as the private visibility says, that a method/var/etc. is only visible within the same class<br><br>But what happens is PHP is a little curios: "Cannot override final method A::method()"<br><br>So its possible to deny method names in subclasses! Don't know if this is&nbsp; a good behavior, but maybe its useful for your purpose.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="99705">  <div class="votes">
+    <div id="Vu99705">
+    <a href="http://php.net/manual/vote-note.php?id=99705&amp;page=language.oop5.final&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd99705">
+    <a href="http://php.net/manual/vote-note.php?id=99705&amp;page=language.oop5.final&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V99705" title="52% like this...">
+    1
+    </div>
+  </div>
+  <a href="http://php.net/manual/en/language.oop5.final.php#99705" class="name">
+  <strong class="user"><em>Baldurien</em></strong></a><a class="genanchor" href="http://php.net/manual/en/language.oop5.final.php#99705"> ¶</a><div class="date" title="2010-08-31 01:37"><strong>8 years ago</strong></div>
+  <div class="text" id="Hcom99705">
+<div class="phpcode"><code><span class="html">
+"Note for Java developers: the 'final' keyword is not used for class constants in PHP. We use the keyword 'const'."<br><br><a href="http://php.net/manual/en/language.oop5.constants.php" rel="nofollow" target="_blank">http://php.net/manual/en/language.oop5.constants.php</a><br><br>This is more or less true, regardless of the fact that constant (being defined at class level or not) in PHP are only scalar (int, string, etc) while in Java they may be pure object (ex: java.awat.Color.BLACK). The only possible solution of having such kind of constant is :<br><br><span class="default">&lt;?php<br></span><span class="keyword">class </span><span class="default">Bar </span><span class="keyword">{...}<br>class </span><span class="default">Foo </span><span class="keyword">{<br>&nbsp; public static </span><span class="default">$FOOBAR</span><span class="keyword">;<br><br>&nbsp; static function </span><span class="default">__init</span><span class="keyword">() {<br>&nbsp; &nbsp; static </span><span class="default">$init </span><span class="keyword">= </span><span class="default">false</span><span class="keyword">;<br>&nbsp; &nbsp; if (</span><span class="default">$init</span><span class="keyword">) throw new </span><span class="default">Exception</span><span class="keyword">(</span><span class="string">'Constants were already initialized'</span><span class="keyword">);<br>&nbsp; &nbsp; </span><span class="default">self</span><span class="keyword">::</span><span class="default">$FOOBAR </span><span class="keyword">= new </span><span class="default">Bar</span><span class="keyword">();<br>&nbsp; &nbsp; </span><span class="default">$init </span><span class="keyword">= </span><span class="default">true</span><span class="keyword">;<br>&nbsp; }<br>}<br></span><span class="default">Foo</span><span class="keyword">::</span><span class="default">__init</span><span class="keyword">();<br></span><span class="default">?&gt;<br></span>That said, perhaps it is useless unless PHP automatically calls the __init() method.<br><br>However, one alternative that could be done in certain case is this : <br><br><span class="default">&lt;?php<br></span><span class="keyword">function </span><span class="default">__autoload</span><span class="keyword">(</span><span class="default">$className</span><span class="keyword">) { <br>&nbsp; ... require </span><span class="default">the file where the </span><span class="keyword">class </span><span class="default">is </span><span class="keyword">...<br>&nbsp; if (</span><span class="default">interface_exists</span><span class="keyword">(</span><span class="default">$className</span><span class="keyword">, </span><span class="default">false</span><span class="keyword">)) return;<br>&nbsp; if (</span><span class="default">class_exists</span><span class="keyword">(</span><span class="default">$className</span><span class="keyword">, </span><span class="default">false</span><span class="keyword">)) {<br>&nbsp; &nbsp; </span><span class="default">$rc </span><span class="keyword">= new </span><span class="default">ReflectionClass</span><span class="keyword">(</span><span class="default">$className</span><span class="keyword">); <br>&nbsp; &nbsp; if (!</span><span class="default">$rc</span><span class="keyword">-&gt;</span><span class="default">hasMethod</span><span class="keyword">(</span><span class="string">'__init'</span><span class="keyword">)) return;<br>&nbsp; &nbsp; </span><span class="default">$m </span><span class="keyword">= </span><span class="default">$rc</span><span class="keyword">-&gt;</span><span class="default">getMethod</span><span class="keyword">(</span><span class="string">'__init'</span><span class="keyword">);<br>&nbsp; &nbsp; if (!(</span><span class="default">$m</span><span class="keyword">-&gt;</span><span class="default">isStatic</span><span class="keyword">() &amp;&amp; </span><span class="default">$m</span><span class="keyword">-&gt;</span><span class="default">isPrivate</span><span class="keyword">())) {<br>&nbsp; &nbsp; &nbsp; throw new </span><span class="default">Exception</span><span class="keyword">(</span><span class="default">$className </span><span class="keyword">. </span><span class="string">' __init() method must be private and static !'</span><span class="keyword">);<br>&nbsp; &nbsp; }<br>&nbsp; &nbsp; </span><span class="default">$m</span><span class="keyword">-&gt;</span><span class="default">invoke</span><span class="keyword">(</span><span class="default">null</span><span class="keyword">);<br>&nbsp; &nbsp; return;<br>&nbsp; }<br>&nbsp; throw new </span><span class="default">Exception</span><span class="keyword">(</span><span class="string">'Class or interface not found ' </span><span class="keyword">. </span><span class="default">$className</span><span class="keyword">);<br>}<br></span><span class="default">?&gt;<br></span><br>This can only work when one class is defined per file, since we are assured that __autoload() will be called to load the file containing the class.<br><br>eg: <br><br>test2.php:<br><span class="default">&lt;?php<br></span><span class="keyword">class </span><span class="default">B </span><span class="keyword">{<br> public static </span><span class="default">$X</span><span class="keyword">;<br> private static function </span><span class="default">__init</span><span class="keyword">() {<br>&nbsp;&nbsp; echo </span><span class="string">'B'</span><span class="keyword">, </span><span class="string">"\n"</span><span class="keyword">; <br>&nbsp;&nbsp; </span><span class="default">self</span><span class="keyword">::</span><span class="default">$X </span><span class="keyword">= array(</span><span class="default">1</span><span class="keyword">, </span><span class="default">2</span><span class="keyword">);<br> }<br>}<br>class </span><span class="default">A </span><span class="keyword">{<br>&nbsp; public static </span><span class="default">$Y</span><span class="keyword">;<br>&nbsp; private static function </span><span class="default">__init</span><span class="keyword">() {<br>&nbsp; &nbsp; echo </span><span class="string">'A'</span><span class="keyword">, </span><span class="string">"\n"</span><span class="keyword">; <br>&nbsp; &nbsp; </span><span class="default">self</span><span class="keyword">::</span><span class="default">$Y </span><span class="keyword">= array(</span><span class="default">3</span><span class="keyword">, </span><span class="default">4</span><span class="keyword">);<br>&nbsp; }<br>}<br></span><span class="default">?&gt;<br></span>test.php:<br><span class="default">&lt;?php<br></span><span class="keyword">function </span><span class="default">__autoload</span><span class="keyword">(</span><span class="default">$n</span><span class="keyword">) {<br>&nbsp; if (</span><span class="default">$n </span><span class="keyword">== </span><span class="string">'A' </span><span class="keyword">|| </span><span class="default">$n </span><span class="keyword">== </span><span class="string">'B'</span><span class="keyword">) require </span><span class="string">'test2.php'</span><span class="keyword">;<br>&nbsp; ... do </span><span class="default">our __init</span><span class="keyword">() </span><span class="default">trick </span><span class="keyword">...<br>}<br></span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">B</span><span class="keyword">::</span><span class="default">$X</span><span class="keyword">); </span><span class="comment">// shows B, then array(2) (1, 2)<br></span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">A</span><span class="keyword">::</span><span class="default">$Y</span><span class="keyword">); </span><span class="comment">// shows NULL.<br></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="78862">  <div class="votes">
+    <div id="Vu78862">
+    <a href="http://php.net/manual/vote-note.php?id=78862&amp;page=language.oop5.final&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd78862">
+    <a href="http://php.net/manual/vote-note.php?id=78862&amp;page=language.oop5.final&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V78862" title="53% like this...">
+    1
+    </div>
+  </div>
+  <a href="http://php.net/manual/en/language.oop5.final.php#78862" class="name">
+  <strong class="user"><em>slorenzo at clug dot org dot ve</em></strong></a><a class="genanchor" href="http://php.net/manual/en/language.oop5.final.php#78862"> ¶</a><div class="date" title="2007-10-30 11:13"><strong>10 years ago</strong></div>
+  <div class="text" id="Hcom78862">
+<div class="phpcode"><code><span class="html">
+<span class="default">&lt;?php<br></span><span class="keyword">class </span><span class="default">parentClass </span><span class="keyword">{<br>&nbsp; &nbsp; public function </span><span class="default">someMethod</span><span class="keyword">() { }<br>}<br>class </span><span class="default">childClass </span><span class="keyword">extends </span><span class="default">parentClass </span><span class="keyword">{<br>&nbsp; &nbsp; public final function </span><span class="default">someMethod</span><span class="keyword">() { } </span><span class="comment">//override parent function<br></span><span class="keyword">}<br><br></span><span class="default">$class </span><span class="keyword">= new </span><span class="default">childClass</span><span class="keyword">;<br></span><span class="default">$class</span><span class="keyword">-&gt;</span><span class="default">someMethod</span><span class="keyword">(); </span><span class="comment">//call the override function in chield class<br></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="114455">  <div class="votes">
+    <div id="Vu114455">
+    <a href="http://php.net/manual/vote-note.php?id=114455&amp;page=language.oop5.final&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd114455">
+    <a href="http://php.net/manual/vote-note.php?id=114455&amp;page=language.oop5.final&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V114455" title="23% like this...">
+    -11
+    </div>
+  </div>
+  <a href="http://php.net/manual/en/language.oop5.final.php#114455" class="name">
+  <strong class="user"><em>t at bestcodepractise dot com</em></strong></a><a class="genanchor" href="http://php.net/manual/en/language.oop5.final.php#114455"> ¶</a><div class="date" title="2014-02-22 10:18"><strong>4 years ago</strong></div>
+  <div class="text" id="Hcom114455" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+@someone<br>@thomas<br>Decorating a finalized class is not possible. The decorator that's mentioned is incomplete. There's a fundamental flaw in it. Look:<br><span class="default">&lt;?php<br></span><span class="comment">//copy'n'paste your FooBar, Foo definition<br><br></span><span class="default">$f </span><span class="keyword">= new </span><span class="default">Foo</span><span class="keyword">;<br></span><span class="default">$fd </span><span class="keyword">= new </span><span class="default">FooDecorator</span><span class="keyword">(</span><span class="default">$f</span><span class="keyword">);<br><br></span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">$fd </span><span class="keyword">instanceof </span><span class="default">$f</span><span class="keyword">);&nbsp; </span><span class="comment">//FALSE<br></span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">is_a</span><span class="keyword">(</span><span class="default">$fd</span><span class="keyword">, </span><span class="string">'Foo'</span><span class="keyword">)); </span><span class="comment">//FALSE<br></span><span class="default">fooFoo</span><span class="keyword">(</span><span class="default">$fd</span><span class="keyword">);&nbsp; </span><span class="comment">//E_RECOVERABLE_ERROR here !!!;<br><br></span><span class="default">?&gt;<br></span>What you've created is just an object that happens to have the same methods(a duck type). But if in the client code someone makes decision based on the type of your passed decorator they'll make incorrect decision - or to be more precise not the one that you, the author of the 'decorator' wants them to make. <br>FYI that's the correct implementation based on GoF:<br><span class="default">&lt;?php<br></span><span class="keyword">class </span><span class="default">Foo<br></span><span class="keyword">{<br>&nbsp; &nbsp; public </span><span class="default">method doFoo</span><span class="keyword">()<br>&nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// do something useful and return a result<br>&nbsp; &nbsp; </span><span class="keyword">}<br>}<br><br></span><span class="comment">//decorator must inherit the interface(the methods, type info etc.) //of the decorated class by *extending* it.<br></span><span class="keyword">class </span><span class="default">FooDecorator </span><span class="keyword">extends </span><span class="default">Foo <br></span><span class="keyword">{<br>&nbsp; &nbsp; private </span><span class="default">$foo</span><span class="keyword">;<br>&nbsp;&nbsp; <br>&nbsp; &nbsp; public function </span><span class="default">__construct</span><span class="keyword">(</span><span class="default">Foo $foo</span><span class="keyword">)<br>&nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">foo </span><span class="keyword">= </span><span class="default">$foo</span><span class="keyword">;<br>&nbsp; &nbsp; }<br>&nbsp;&nbsp; <br>&nbsp; &nbsp; public function </span><span class="default">doFoo</span><span class="keyword">()<br>&nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$result </span><span class="keyword">= </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">foo</span><span class="keyword">-&gt;</span><span class="default">doFoo</span><span class="keyword">();<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// ... customize result ...<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">return </span><span class="default">$result</span><span class="keyword">;<br>&nbsp; &nbsp; }<br>}<br><br>function </span><span class="default">fooFoo</span><span class="keyword">(</span><span class="default">Foo $f</span><span class="keyword">) {}<br></span><span class="default">$f </span><span class="keyword">= new </span><span class="default">Foo</span><span class="keyword">;<br></span><span class="default">$fd </span><span class="keyword">= new </span><span class="default">FooDecorator</span><span class="keyword">(</span><span class="default">$f</span><span class="keyword">);<br><br></span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">$fd </span><span class="keyword">instanceof </span><span class="default">$f</span><span class="keyword">); </span><span class="comment">//true<br></span><span class="default">fooFoo</span><span class="keyword">(</span><span class="default">$fd</span><span class="keyword">); </span><span class="comment">//no E_RECOVERABLE_ERROR here;<br><br></span><span class="default">?&gt;<br></span><br>I haven't come across any legitimate use of a finalizing class/method and I personally think that 'final' is has no much use and is just a copy'n'pasted from Java into PHP. The keyword makes code difficult to test. If you have to create a test double from a finalized class because you'll need create a derived type to shadow the methods you don't care about. If one of them is finalized you've already lost.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="116993">  <div class="votes">
+    <div id="Vu116993">
+    <a href="http://php.net/manual/vote-note.php?id=116993&amp;page=language.oop5.final&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd116993">
+    <a href="http://php.net/manual/vote-note.php?id=116993&amp;page=language.oop5.final&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V116993" title="18% like this...">
+    -7
+    </div>
+  </div>
+  <a href="http://php.net/manual/en/language.oop5.final.php#116993" class="name">
+  <strong class="user"><em>xavier dot inghels at gmail dot com</em></strong></a><a class="genanchor" href="http://php.net/manual/en/language.oop5.final.php#116993"> ¶</a><div class="date" title="2015-03-31 09:47"><strong>3 years ago</strong></div>
+  <div class="text" id="Hcom116993" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+Final is not really about overriding or overloading a method.<br>PHP doesn't support (yet ?) method ovverriding.<br><br>The final keyword however prevent you to redefine a method already previously declared.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="119439">  <div class="votes">
+    <div id="Vu119439">
+    <a href="http://php.net/manual/vote-note.php?id=119439&amp;page=language.oop5.final&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd119439">
+    <a href="http://php.net/manual/vote-note.php?id=119439&amp;page=language.oop5.final&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V119439" title="10% like this...">
+    -8
+    </div>
+  </div>
+  <a href="http://php.net/manual/en/language.oop5.final.php#119439" class="name">
+  <strong class="user"><em>suisuiruyi at gmail dot com</em></strong></a><a class="genanchor" href="http://php.net/manual/en/language.oop5.final.php#119439"> ¶</a><div class="date" title="2016-06-06 09:07"><strong>2 years ago</strong></div>
+  <div class="text" id="Hcom119439" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+Note: Properties cannot be declared final, only classes and methods may be declared as final.<br>you can use trait:<br><span class="default">&lt;?php<br></span><span class="keyword">trait </span><span class="default">PropertiesTrait </span><span class="keyword">{<br>&nbsp; &nbsp; public </span><span class="default">$same </span><span class="keyword">= </span><span class="default">true</span><span class="keyword">;<br>&nbsp; &nbsp; public </span><span class="default">$different </span><span class="keyword">= </span><span class="default">false</span><span class="keyword">;<br>}<br><br>class </span><span class="default">PropertiesExample </span><span class="keyword">{<br>&nbsp; &nbsp; use </span><span class="default">PropertiesTrait</span><span class="keyword">;<br>&nbsp; &nbsp; public </span><span class="default">$same </span><span class="keyword">= </span><span class="default">true</span><span class="keyword">; </span><span class="comment">// Strict Standards<br>&nbsp; &nbsp; </span><span class="keyword">public </span><span class="default">$different </span><span class="keyword">= </span><span class="default">true</span><span class="keyword">; </span><span class="comment">// 致命错误<br></span><span class="keyword">}<br></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="121514">  <div class="votes">
+    <div id="Vu121514">
+    <a href="http://php.net/manual/vote-note.php?id=121514&amp;page=language.oop5.final&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd121514">
+    <a href="http://php.net/manual/vote-note.php?id=121514&amp;page=language.oop5.final&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V121514" title="0% like this...">
+    -7
+    </div>
+  </div>
+  <a href="http://php.net/manual/en/language.oop5.final.php#121514" class="name">
+  <strong class="user"><em>John smith</em></strong></a><a class="genanchor" href="http://php.net/manual/en/language.oop5.final.php#121514"> ¶</a><div class="date" title="2017-08-11 08:59"><strong>1 year ago</strong></div>
+  <div class="text" id="Hcom121514" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+Right way:<br> final protected function example() {<br>}<br><br>Wrong way:<br><br>protected final function example() {<br>}<br><br>Source: Practices</span>
+</code></div>
+  </div>
+ </div></div>
+
+ <div class="foot"><a href="http://php.net/manual/add-note.php?sect=language.oop5.final&amp;redirect=http://php.net/manual/en/language.oop5.final.php"><img src="./PHP_ Final Keyword - Manual_files/notes-add@2x.png" alt="add a note" width="12" height="12"> <small>add a note</small></a></div>
+</section>    </section><!-- layout-content -->
+        <aside class="layout-menu">
+    
+        <ul class="parent-menu-list">
+                                    <li>
+                <a href="http://php.net/manual/en/language.oop5.php">Classes and Objects</a>
+    
+                                    <ul class="child-menu-list">
+    
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/oop5.intro.php" title="Introduction">Introduction</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.basic.php" title="The Basics">The Basics</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.properties.php" title="Properties">Properties</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.constants.php" title="Class Constants">Class Constants</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.autoload.php" title="Autoloading Classes">Autoloading Classes</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.decon.php" title="Constructors and Destructors">Constructors and Destructors</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.visibility.php" title="Visibility">Visibility</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.inheritance.php" title="Object Inheritance">Object Inheritance</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.paamayim-nekudotayim.php" title="Scope Resolution Operator (::)">Scope Resolution Operator (::)</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.static.php" title="Static Keyword">Static Keyword</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.abstract.php" title="Class Abstraction">Class Abstraction</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.interfaces.php" title="Object Interfaces">Object Interfaces</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.traits.php" title="Traits">Traits</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.anonymous.php" title="Anonymous classes">Anonymous classes</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.overloading.php" title="Overloading">Overloading</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.iterations.php" title="Object Iteration">Object Iteration</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.magic.php" title="Magic Methods">Magic Methods</a>
+                        </li>
+                          
+                        <li class="current">
+                            <a href="http://php.net/manual/en/language.oop5.final.php" title="Final Keyword">Final Keyword</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.cloning.php" title="Object Cloning">Object Cloning</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.object-comparison.php" title="Comparing Objects">Comparing Objects</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.typehinting.php" title="Type Hinting">Type Hinting</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.late-static-bindings.php" title="Late Static Bindings">Late Static Bindings</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.references.php" title="Objects and references">Objects and references</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.serialization.php" title="Object Serialization">Object Serialization</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.changelog.php" title="OOP Changelog">OOP Changelog</a>
+                        </li>
+                            
+                    </ul>
+                    
+            </li>
+                        
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="http://php.net/copyright.php">Copyright © 2001-2018 The PHP Group</a></li>
+        <li><a href="http://php.net/my.php">My PHP.net</a></li>
+        <li><a href="http://php.net/contact.php">Contact</a></li>
+        <li><a href="http://php.net/sites.php">Other PHP.net sites</a></li>
+        <li><a href="http://php.net/mirrors.php">Mirror sites</a></li>
+        <li><a href="http://php.net/privacy.php">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="./PHP_ Final Keyword - Manual_files/jquery.min.js"></script>
+<script type="text/javascript" src="./PHP_ Final Keyword - Manual_files/cached(4).php"></script>
+<script type="text/javascript" src="./PHP_ Final Keyword - Manual_files/cached(5).php"></script>
+<script type="text/javascript" src="./PHP_ Final Keyword - Manual_files/cached(6).php"></script>
+<script type="text/javascript" src="./PHP_ Final Keyword - Manual_files/cached(7).php"></script>
+<script type="text/javascript" src="./PHP_ Final Keyword - Manual_files/cached(8).php"></script>
+<script type="text/javascript" src="./PHP_ Final Keyword - Manual_files/cached(9).php"></script>
+
+<a id="toTop" href="javascript:;" style="display: inline;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="./PHP_ Final Keyword - Manual_files/to-top@2x.png"></a>
+
+
+
+
+</body></html>

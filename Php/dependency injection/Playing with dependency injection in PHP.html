@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<!-- saved from url=(0129)https://coderoncode.com/dependency-injection/design-patterns/programming/php/development/2014/01/06/dependency-injection-php.html -->
+<html lang="en" class="fa-events-icons-ready"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Playing with dependency injection in PHP</title>
+<meta name="description" content="Dependency Injection is a software design pattern that allows avoiding hard-coding dependencies and makes possible to change the dependencies both at runtime...">
+<meta name="keywords" content="php, dependency injection, design pattern, programming">
+<script type="text/javascript" async="" src="./Playing with dependency injection in PHP_files/analytics.js"></script><script type="text/javascript">window.mod_pagespeed_start = Number(new Date());</script><link rel="canonical" href="https://coderoncode.com/dependency-injection/design-patterns/programming/php/development/2014/01/06/dependency-injection-php.html">
+<link rel="alternate" type="application/rss+xml" title="CoderOnCode" href="https://coderoncode.com/feed.xml">
+<link rel="icon" type="image/png" href="https://coderoncode.com/dependency-injection/design-patterns/programming/php/development/2014/01/06/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://coderoncode.com/dependency-injection/design-patterns/programming/php/development/2014/01/06/favicon-16x16.png" sizes="16x16">
+<style>@font-face{font-family:'Born';src:url(/fonts/Born/Born.eot);src:url(/fonts/Born/Born.woff2) format("woff2") , url(/fonts/Born/Born.woff) format("woff") , url(/fonts/Born/Born.ttf) format("truetype") , url(/fonts/Born/Born.svg#Born) format("svg") , url(/fonts/Born/Born.eot?#iefix) format("embedded-opentype");font-weight:normal;font-style:normal}@font-face{font-family:'Roboto Mono';font-style:normal;font-weight:400;src:url(/fonts/roboto-mono-v5-latin/roboto-mono-v5-latin-regular.eot);src:local("Roboto Mono") , local("RobotoMono-Regular") , url(/fonts/roboto-mono-v5-latin/roboto-mono-v5-latin-regular.eot?#iefix) format("embedded-opentype") , url(/fonts/roboto-mono-v5-latin/roboto-mono-v5-latin-regular.woff2) format("woff2") , url(/fonts/roboto-mono-v5-latin/roboto-mono-v5-latin-regular.woff) format("woff") , url(/fonts/roboto-mono-v5-latin/roboto-mono-v5-latin-regular.ttf) format("truetype") , url(/fonts/roboto-mono-v5-latin/roboto-mono-v5-latin-regular.svg#RobotoMono) format("svg")}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;src:url(/fonts/roboto-v18-latin/roboto-v18-latin-regular.eot);src:local("Roboto") , local("Roboto-Regular") , url(/fonts/roboto-v18-latin/roboto-v18-latin-regular/roboto-v18-latin-regular.eot?#iefix) format("embedded-opentype") , url(/fonts/roboto-v18-latin/roboto-v18-latin-regular.woff2) format("woff2") , url(/fonts/roboto-v18-latin/roboto-v18-latin-regular.woff) format("woff") , url(/fonts/roboto-v18-latin/roboto-v18-latin-regular.ttf) format("truetype") , url(/fonts/roboto-v18-latin/roboto-v18-latin-regular.svg#Roboto) format("svg")}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;src:url(/fonts/open-sans-v15-latin/open-sans-v15-latin-regular.eot);src:local("Open Sans Regular") , local("OpenSans-Regular") , url(/fonts/open-sans-v15-latin/open-sans-v15-latin-regular.eot?#iefix) format("embedded-opentype") , url(/fonts/open-sans-v15-latin/open-sans-v15-latin-regular.woff2) format("woff2") , url(/fonts/open-sans-v15-latin/open-sans-v15-latin-regular.woff) format("woff") , url(/fonts/open-sans-v15-latin/open-sans-v15-latin-regular.ttf) format("truetype") , url(/fonts/open-sans-v15-latin/open-sans-v15-latin-regular.svg#OpenSans) format("svg")}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}*,*:before,*:after{box-sizing:border-box}.wrapper{padding:25px 0}@media only screen and (min-width:64.063em){.wrapper{padding:32px 0;margin-left:250px}}.off-canvas-container{display:flex;min-height:100vh;flex-direction:column}.off-canvas-container .wrapper{flex:1 0 auto}.icon{vertical-align:bottom}body{color:#222;background-color:#fff;font-size:19px;font-weight:400;font-family:Roboto,serif;line-height:32px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}h1,h2,h3,h4,h5,h6{font-family:Roboto,serif;font-size:19px;font-weight:700;margin:0 0 25px}@media only screen and (max-width:40em){h1,h2,h3,h4,h5,h6{font-size:16px}}h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{text-decoration:none}.post-content h1{font-size:32px}.post-content h2{font-size:28px}.post-content h3{font-size:26px}.post-content h4{font-size:22px;margin-bottom:5px}.post-content h5{font-size:19px;margin-bottom:5px}.post-content li{margin:0 0 12.5px}p{margin:0 0 32px}p.font-medium{margin:0 0 25px}p.font-small{margin:0 0 22px}p.font-tiny{margin:0 0 19px}@media only screen and (max-width:40em){p{margin:0 0 25px}}blockquote{margin:0;padding:0 64px 0 64px;font-style:italic}@media only screen and (max-width:40em){blockquote{padding:0 44px 0 44px}}hr{border:0;height:1px;background-color:#ecf0f1;margin:0 0 32px}@media only screen and (max-width:40em){hr{margin:0 0 25px}}ul,ol{margin:0 0 32px}ul ul,ul ol,ol ul,ol ol{margin:0}@media only screen and (max-width:40em){ul,ol{margin:0 0 25px}}a{color:#222;transition:.4s}a:visited{color:#222}a:hover{color:#7e7e7e}a:active{color:#222}a.custom{text-decoration:none}.box{padding-bottom:25px;margin-bottom:25px;overflow:hidden;border-bottom:1px solid #ecf0f1}@media only screen and (min-width:64.063em){.box{padding-bottom:32px;margin-bottom:32px}}.box--news-letter input[type="email"]{margin-bottom:0}.box__icon{float:left;width:32px;margin-right:10.66667px}.box__title{margin:0;font-weight:300;line-height:25px}@media only screen and (min-width:40.063em){.box__body{overflow:hidden}}.box__text{margin-top:11px;margin-bottom:0;font-size:14px;line-height:22px}.box a{text-decoration:none}.box--author,.box--news-letter{padding:25px;background-color:#fafafa}@media only screen and (min-width:64.063em){.box--author,.box--news-letter{padding:32px}}img,iframe{display:block}img{height:auto;max-width:100%}.post-content img,.post-content iframe,.post-content .fluid-width-video-wrapper,.post-content .twitter-tweet{margin-bottom:25px!important}@media only screen and (max-width:40em){.post-content img,.post-content iframe,.post-content .fluid-width-video-wrapper,.post-content .twitter-tweet{margin-bottom:22px}}.post-content p img{margin-bottom:0}.post__tags{margin-bottom:28px;font-size:14px}.post__tags a{padding:3px 11px;margin:4px 8px 4px 0;display:inline-block;font-size:12px;line-height:22px;color:#7e7e7e;border:1px solid #ecf0f1;text-decoration:none;transition:.4s}.post__tags a:before{content:"#";padding-right:2px}.post__tags a:hover{color:#222;border-color:#222}pre,code{font-family:"Roboto Mono",monospace;background-color:#fafafa}pre{overflow:auto;margin-top:0;margin-bottom:32px;padding:32px;font-size:16px;white-space:pre-wrap;word-wrap:break-word}@media only screen and (max-width:40em){pre{margin-bottom:22px;padding:25px}}p code{padding:3px 6px}.row{margin:0 auto;padding-left:13px;padding-right:13px;max-width:1100px}.row:before,.row:after{display:table;clear:both;content:" "}.row .row{padding:0;margin-right:-13px;margin-left:-13px}@media only screen and (min-width:64.063em){.row .row{margin-right:-16px;margin-left:-16px}.row{padding-left:16px;padding-right:16px}}.row--full{max-width:100%}.column{position:relative;float:left;padding-right:13px;padding-left:13px;width:100%}@media only screen and (min-width:64.063em){.column{padding-right:16px;padding-left:16px}}.column--center{float:none;margin:0 auto}@media only screen{.small-1{width:8.33333%}.small-2{width:16.66667%}.small-3{width:25%}.small-4{width:33.33333%}.small-5{width:41.66667%}.small-6{width:50%}.small-7{width:58.33333%}.small-8{width:66.66667%}.small-9{width:75%}.small-10{width:83.33333%}.small-11{width:91.66667%}.small-12{width:100%}}@media only screen and (min-width:40.063em){.medium-1{width:8.33333%}.medium-2{width:16.66667%}.medium-3{width:25%}.medium-4{width:33.33333%}.medium-5{width:41.66667%}.medium-6{width:50%}.medium-7{width:58.33333%}.medium-8{width:66.66667%}.medium-9{width:75%}.medium-10{width:83.33333%}.medium-11{width:91.66667%}.medium-12{width:100%}}@media only screen and (min-width:64.063em){.large-1{width:8.33333%}.large-2{width:16.66667%}.large-3{width:25%}.large-4{width:33.33333%}.large-5{width:41.66667%}.large-6{width:50%}.large-7{width:58.33333%}.large-8{width:66.66667%}.large-9{width:75%}.large-10{width:83.33333%}.large-11{width:91.66667%}.large-12{width:100%}}input[type="text"],input[type="tel"],input[type="number"],input[type="email"],textarea{width:100%;max-width:100%;margin-bottom:0;display:inline-block;border:1px solid #222;margin-bottom:8px;padding:6px 11px;font-family:Roboto,serif;font-size:14px;line-height:25px;letter-spacing:1px;outline:none;background:transparent;appearance:none;border-radius:0;transition:.4s}@media only screen and (min-width:64.063em){input[type="text"],input[type="tel"],input[type="number"],input[type="email"],textarea{padding:8px 16px}}input[type="text"]:focus,input[type="tel"]:focus,input[type="number"]:focus,input[type="email"]:focus,textarea:focus{border:1px solid #7e7e7e}.button{display:inline-block;text-align:center;padding:8px 16px;font-family:Roboto,serif;font-size:12px;line-height:25px;letter-spacing:1px;border:0;border-radius:0;text-decoration:none;color:#fff;background-color:#222;transition:.4s}.button--expand{width:100%}.button:active,.button:focus,.button:hover{color:#fff;background-color:#7e7e7e}.separator{position:relative;margin:32px auto;text-align:center;text-transform:uppercase;font-size:14px;font-weight:300;letter-spacing:1px}.separator:after{position:absolute;right:0;left:0;top:50%;content:"";border-bottom:1px solid #ecf0f1}.separator__title{position:relative;z-index:1;padding:0 16px;background:#fff none repeat scroll 0% 0%}@-webkit-keyframes spin{100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes spin{100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.icon{position:relative;display:inline-block;width:25px;height:25px;overflow:hidden;fill:currentColor}.icon__cnt{width:100%;height:100%;background:inherit;fill:inherit;pointer-events:none;transform:translateX(0);-ms-transform:translate(.5px,-.3px)}.icon--m{width:50px;height:50px}.icon--l{width:100px;height:100px}.icon--xl{width:150px;height:150px}.icon--xxl{width:200px;height:200px}.icon__spinner{position:absolute;top:0;left:0;width:100%;height:100%}.icon--ei-spinner .icon__spinner,.icon--ei-spinner-2 .icon__spinner{-webkit-animation:spin 1s steps(12) infinite;animation:spin 1s steps(12) infinite}.icon--ei-spinner-3 .icon__spinner{-webkit-animation:spin 1.5s linear infinite;animation:spin 1.5s linear infinite}.icon--ei-sc-facebook{fill:#3b5998}.icon--ei-sc-github{fill:#333}.icon--ei-sc-google-plus{fill:#dd4b39}.icon--ei-sc-instagram{fill:#3f729b}.icon--ei-sc-linkedin{fill:#0976b4}.icon--ei-sc-odnoklassniki{fill:#ed812b}.icon--ei-sc-skype{fill:#00aff0}.icon--ei-sc-soundcloud{fill:#f80}.icon--ei-sc-tumblr{fill:#35465c}.icon--ei-sc-twitter{fill:#55acee}.icon--ei-sc-vimeo{fill:#1ab7ea}.icon--ei-sc-vk{fill:#45668e}.icon--ei-sc-youtube{fill:#e52d27}.icon--ei-sc-pinterest{fill:#bd081c}.icon--ei-sc-telegram{fill:#08c}.post-card{margin-bottom:25px;padding-bottom:25px;border-bottom:1px solid #ecf0f1;text-align:center}.post-card__image{margin-bottom:16px;transition:.4s}@media only screen and (max-width:40em){.post-card__image{margin-bottom:13px}}.post-card__title{line-height:25px;margin-top:0;margin-bottom:0}.post-card__title a{display:block;border-bottom:none;transition:.4s}.post-card__title a:hover{color:#5f2b73}.post-card__meta{margin-bottom:8px;font-size:12px;line-height:22px;color:#7e7e7e}.post-card__meta a{color:#7e7e7e;text-decoration:none}.post-card:hover .post-card__image{opacity:.9}.post-card:hover .post-card__title a{color:#5f2b73}.post-card--featured__icon{position:absolute;bottom:8px;left:8px;fill:#fff}@media only screen and (min-width:64.063em){.post-card{margin-bottom:32px;padding-bottom:32px}}.post-list{display:flex;flex-wrap:wrap;display:-webkit-flex;-webkit-flex-wrap:wrap}.post-list .post-card-wrap{display:flex;display:-webkit-flex}.post-list .post-card{width:100%}.share-list{display:flex;display:-webkit-box;display:-ms-flexbox;padding:0;border:1px solid #ecf0f1;margin-bottom:32px;line-height:22px;list-style:none}.share-list li{flex:1;-ms-flex:1;-webkit-box-flex:1;text-align:center;margin:0;border-right:1px solid #ecf0f1}.share-list li:last-child{border-right:0}.share-list__link{display:block;padding:8px;font-size:14px;transition:.4s}.share-list__link:hover{background-color:#fafafa}.share-list__link:hover .share-list__icon--twitter{fill:#55acee}.share-list__link:hover .share-list__icon--facebook{fill:#3b5998}.share-list__link:hover .share-list__icon--google{fill:#dc4e41}.share-list__icon{fill:#222}@media only screen and (max-width:40em){.share-list{margin-bottom:25px}}.FlexEmbed{display:block;overflow:hidden;position:relative}.FlexEmbed:before{content:"";display:block;width:100%}.FlexEmbed--3by1:before{padding-bottom:33.33333%}.FlexEmbed--2by1:before{padding-bottom:50%}.FlexEmbed--16by9:before{padding-bottom:56.25%}.FlexEmbed--4by3:before{padding-bottom:75%}.CoverImage{max-height:600px;max-width:100%;background-position:50%;background-repeat:no-repeat;background-size:cover}.highlight{margin:0;background:#fff}.highlighter-rouge .highlight{background:#fafafa}.highlight .c{color:#998;font-style:italic}.highlight .err{color:#a61717;background-color:#e3d2d2}.highlight .k{font-weight:bold}.highlight .o{font-weight:bold}.highlight .cm{color:#998;font-style:italic}.highlight .cp{color:#999;font-weight:bold}.highlight .c1{color:#998;font-style:italic}.highlight .cs{color:#999;font-weight:bold;font-style:italic}.highlight .gd{color:#000;background-color:#fdd}.highlight .gd .x{color:#000;background-color:#faa}.highlight .ge{font-style:italic}.highlight .gr{color:#a00}.highlight .gh{color:#999}.highlight .gi{color:#000;background-color:#dfd}.highlight .gi .x{color:#000;background-color:#afa}.highlight .go{color:#888}.highlight .gp{color:#555}.highlight .gs{font-weight:bold}.highlight .gu{color:#aaa}.highlight .gt{color:#a00}.highlight .kc{font-weight:bold}.highlight .kd{font-weight:bold}.highlight .kp{font-weight:bold}.highlight .kr{font-weight:bold}.highlight .kt{color:#458;font-weight:bold}.highlight .m{color:#099}.highlight .s{color:#d14}.highlight .na{color:teal}.highlight .nb{color:#0086b3}.highlight .nc{color:#458;font-weight:bold}.highlight .no{color:teal}.highlight .ni{color:purple}.highlight .ne{color:#900;font-weight:bold}.highlight .nf{color:#900;font-weight:bold}.highlight .nn{color:#555}.highlight .nt{color:navy}.highlight .nv{color:teal}.highlight .ow{font-weight:bold}.highlight .w{color:#bbb}.highlight .mf{color:#099}.highlight .mh{color:#099}.highlight .mi{color:#099}.highlight .mo{color:#099}.highlight .sb{color:#d14}.highlight .sc{color:#d14}.highlight .sd{color:#d14}.highlight .s2{color:#d14}.highlight .se{color:#d14}.highlight .sh{color:#d14}.highlight .si{color:#d14}.highlight .sx{color:#d14}.highlight .sr{color:#009926}.highlight .s1{color:#d14}.highlight .ss{color:#990073}.highlight .bp{color:#999}.highlight .vc{color:teal}.highlight .vg{color:teal}.highlight .vi{color:teal}.highlight .il{color:#099}@media only screen and (min-width:64.063em){.navigation{margin-bottom:25px;padding-bottom:25px;border-bottom:1px solid #dadfe1}}.navigation li{display:block;margin-bottom:8px;font-size:14px;line-height:25px}.navigation li:last-child{margin-bottom:0}@media only screen and (max-width:64em){.navigation li{display:block;text-align:center;margin-right:0;line-height:32px}}.navigation a{transition:.4s;text-decoration:none}@media only screen and (max-width:64em){.navigation a{display:block;padding-top:8px;padding-bottom:8px;border-bottom:1px solid #ecf0f1}.navigation{margin-bottom:8px}}.social-nav{margin-bottom:25px;list-style:none;padding:0}.social-nav .icon{vertical-align:-moz-middle-with-baseline;vertical-align:-webkit-baseline-middle;fill:#222;transition:.4s}.social-nav .icon:hover{fill:#7e7e7e}.social-nav li{display:inline-block}@media only screen and (max-width:64em){.social-nav{text-align:center}}.pagination{clear:both;font-size:12px;line-height:25px}.pagination span,.pagination .icon{position:relative}.pagination .newer-posts{float:left;text-align:left}.pagination .newer-posts span,.pagination .newer-posts .icon{left:-8.33333px}.pagination .older-posts{float:right;text-align:right}.pagination .older-posts span,.pagination .older-posts .icon{right:-8.33333px}.pagination a{text-decoration:none;text-transform:uppercase;letter-spacing:.2em;transition:.4s}.post-navigation{flex-grow:1}.post-navigation .post-card{border-bottom:0;margin-bottom:0}.post-navigation:before{position:absolute;z-index:1;content:"";top:16px;padding:0 16px;font-size:14px;color:#7e7e7e;background-color:rgba(255,255,255,.9);transition:.4s}.post-navigation.prev:before{left:32px;content:"Previous Story"}.post-navigation.next:before{right:32px;content:"Next Story"}.post-navigation:hover:before{background-color:#fff}.sidebar{padding:13px 0;line-height:25px;color:#fafafa}.sidebar .social-nav .icon{fill:#fafafa}@media only screen and (max-width:64em){.sidebar{background-color:#0c1723;border-bottom:1px solid #ecf0f1}}@media only screen and (min-width:64.063em){.sidebar{position:fixed;top:0;left:0;width:250px;height:100%;background-color:#0c1723;padding:32px 0;display:flex;align-items:center;text-align:center}}.sidebar a{color:#fafafa}.sidebar a:visited{color:#fafafa}.sidebar a:hover{color:#3b5998}.sidebar__logo{margin-bottom:8px}.sidebar__logo a{transition:.4s;text-decoration:none;letter-spacing:1px}.sidebar__logo a:hover{color:#3b5998}@media only screen and (max-width:64em){.sidebar__logo{margin-bottom:0;line-height:25px}}.sidebar__description{margin-bottom:25px;padding-bottom:25px;border-bottom:1px solid #dadfe1}@media only screen and (max-width:64em){.sidebar__description{display:none}}.sidebar__bottom{text-align:center}@media only screen and (min-width:64.063em){.sidebar__bottom{position:absolute;right:0;left:0;bottom:32px}}@media only screen and (max-width:64em){.home-template .sidebar{border-bottom:1px solid #ecf0f1}}.off-canvas-toggle{display:none}@media only screen and (max-width:64em){.off-canvas-toggle{float:right;display:block;margin-right:8px;font-size:14px;cursor:pointer}html,body{overflow-x:hidden}.off-canvas-content{position:fixed;top:0;right:0;width:250px;height:100%;background-color:#0c1723;border-left:1px solid #ecf0f1;-webkit-transform:translate3d(0,0,0) translateX(250px);transform:translate3d(0,0,0) translateX(250px);-webkit-transition:all .4s cubic-bezier(.16,.63,.45,.98) 0s;transition:all .4s cubic-bezier(.16,.63,.45,.98) 0s}.off-canvas-container{-webkit-transform:translate3d(0,0,0) translateX(0);transform:translate3d(0,0,0) translateX(0);-webkit-transition:all .4s cubic-bezier(.16,.63,.45,.98) 0s;transition:all .4s cubic-bezier(.16,.63,.45,.98) 0s}.off-canvas-container.is-active{-webkit-transform:translate3d(0,0,0) translateX(-250px);transform:translate3d(0,0,0) translateX(-250px)}}.search-form-container{position:fixed;top:0;right:0;bottom:0;left:0;z-index:101;white-space:nowrap;background:#fff;opacity:0;visibility:hidden;transition:all .4s ease-in-out;transform:translate(0,-100%) scale(0,0)}.search-form-container__close{position:absolute;top:32px;right:32px;width:32px;height:32px;cursor:pointer;text-align:center}.search-form-container__close .icon{vertical-align:text-top;transition:.4s;fill:#222}.search-form-container__close .icon:hover{fill:#7e7e7e;transform:rotate(90deg)}@media only screen and (max-width:40em){.search-form-container__close{top:16px;right:16px}}.search-form-container.is-active{opacity:1;visibility:visible;transform:translate(0,0) scale(1,1)}.search-form{margin-bottom:16px}.search-form__field{padding:0;width:100%;outline:none;font-size:38px;line-height:64px;border:0;border-bottom:1px solid #ecf0f1}@media only screen and (max-width:40em){.search-form__field{font-size:28px;line-height:44px}}.search-form__field:focus{border:0;border-bottom:1px solid #ecf0f1}.search-form__submit{display:none}.search-form__fieldset{border:0;margin-top:64px;padding:0}.search-results{display:none;height:80vh;overflow:auto;white-space:normal}.search-results .heading{margin-right:16px;margin-bottom:16px;color:#7e7e7e}.search-results__item{margin-bottom:16px;margin-right:16px;padding-bottom:16px;border-bottom:1px solid #ecf0f1}.search-results__item__title{display:block;text-decoration:none;font-size:16px;line-height:25px}.search-results__item__date{font-size:12px;line-height:22px;color:#7e7e7e}.author-image{float:left;margin:0;margin-right:25px}.author-image .img{height:96px;width:96px;background-position:center;background-size:cover;border-radius:100%}@media only screen and (max-width:40em){.author-image .img{height:64px;width:64px}}@media only screen and (min-width:64.063em){.author-image{margin-right:32px}}.author-meta{text-indent:-1px}.author-meta .icon{fill:#222;transition:.4s}.author-meta a .icon:hover{fill:#7e7e7e}.post{position:relative;padding:32px;margin:0 auto;max-width:45em;background:#fff}@media only screen and (min-width:40.063em){.post{top:-64px}}@media only screen and (min-width:64.063em){.post{top:-96px;padding:64px}}.post__header{margin-bottom:13px;text-align:center}.post__title{margin-bottom:13px;font-size:32px;line-height:50px}@media only screen and (max-width:40em){.post__title{font-size:19px;line-height:32px}}.post__date{font-size:14px;line-height:22px;color:#7e7e7e}.post-content{margin-top:25px}.related article.post{margin:0;padding:0;max-width:auto;position:unset}.grey-bg{background-color:#fafafa}.no-bullets,.list-bare{list-style:none}.bullets-inside{list-style:inside}.list-bare{margin:0;padding:0}.text-left{text-align:left}.text-right{text-align:right}.text-center{text-align:center}.text-justify{text-align:justify}.inline{display:inline}.block{display:block}.inline-block{display:inline-block}.hide{display:none}.left{float:left}.right{float:right}.hidden{border:0 none;clip:rect(1px,1px,1px,1px);height:1px;overflow:hidden;padding:0;position:absolute!important;width:1px}.clearfix:before,.clearfix:after{content:" ";display:table}.clearfix:after{clear:both}.light{font-weight:300}.regular{font-weight:400}.bold{font-weight:700}.italic{font-style:italic}.cap{text-transform:capitalize}.uppercase{text-transform:uppercase}.ell{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.font-base{font-size:19px}.font-medium{font-size:16px;line-height:25px}.font-small{font-size:14px;line-height:22px}.font-tiny{font-size:12px;line-height:19px}</style>
+<script>var base_url="";</script>
+<script src="./Playing with dependency injection in PHP_files/embed.js" data-timestamp="1538573111452"></script><link href="./Playing with dependency injection in PHP_files/8f46060f30.css" media="all" rel="stylesheet"><style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style><link rel="preload" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.f3244a4acd28bc8a2a45c572f616dbdf.css"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.c11fe52243dba94195dd363cbd3310b9.js"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.20ff438196bd472ffc901aab4ecabd5b.js"><link rel="preload" as="script" href="https://disqus.com/next/config.js"><script src="./Playing with dependency injection in PHP_files/alfalfa.4a5fcca1fe50a757044dfd331b660625.js" async="" charset="UTF-8"></script></head>
+<body><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="ei-sprite" style="display:none"><symbol id="ei-archive-icon" viewBox="0 0 50 50"><path d="M42 20h-2v-5c0-.6-.4-1-1-1H11c-.6 0-1 .4-1 1v5H8v-5c0-1.7 1.3-3 3-3h28c1.7 0 3 1.3 3 3v5z"></path><path d="M37 40H13c-1.7 0-3-1.3-3-3V20h2v17c0 .6.4 1 1 1h24c.6 0 1-.4 1-1V20h2v17c0 1.7-1.3 3-3 3z"></path><path d="M29 26h-8c-.6 0-1-.4-1-1s.4-1 1-1h8c.6 0 1 .4 1 1s-.4 1-1 1z"></path><path d="M8 18h34v2H8z"></path></symbol><symbol id="ei-arrow-down-icon" viewBox="0 0 50 50"><path d="M25 42c-9.4 0-17-7.6-17-17S15.6 8 25 8s17 7.6 17 17-7.6 17-17 17zm0-32c-8.3 0-15 6.7-15 15s6.7 15 15 15 15-6.7 15-15-6.7-15-15-15z"></path><path d="M25 34.4l-9.7-9.7 1.4-1.4 8.3 8.3 8.3-8.3 1.4 1.4z"></path><path d="M24 16h2v17h-2z"></path></symbol><symbol id="ei-arrow-left-icon" viewBox="0 0 50 50"><path d="M25 42c-9.4 0-17-7.6-17-17S15.6 8 25 8s17 7.6 17 17-7.6 17-17 17zm0-32c-8.3 0-15 6.7-15 15s6.7 15 15 15 15-6.7 15-15-6.7-15-15-15z"></path><path d="M25.3 34.7L15.6 25l9.7-9.7 1.4 1.4-8.3 8.3 8.3 8.3z"></path><path d="M17 24h17v2H17z"></path></symbol><symbol id="ei-arrow-right-icon" viewBox="0 0 50 50"><path d="M25 42c-9.4 0-17-7.6-17-17S15.6 8 25 8s17 7.6 17 17-7.6 17-17 17zm0-32c-8.3 0-15 6.7-15 15s6.7 15 15 15 15-6.7 15-15-6.7-15-15-15z"></path><path d="M24.7 34.7l-1.4-1.4 8.3-8.3-8.3-8.3 1.4-1.4 9.7 9.7z"></path><path d="M16 24h17v2H16z"></path></symbol><symbol id="ei-arrow-up-icon" viewBox="0 0 50 50"><path d="M25 42c-9.4 0-17-7.6-17-17S15.6 8 25 8s17 7.6 17 17-7.6 17-17 17zm0-32c-8.3 0-15 6.7-15 15s6.7 15 15 15 15-6.7 15-15-6.7-15-15-15z"></path><path d="M33.3 26.7L25 18.4l-8.3 8.3-1.4-1.4 9.7-9.7 9.7 9.7z"></path><path d="M24 17h2v17h-2z"></path></symbol><symbol id="ei-bell-icon" viewBox="0 0 50 50"><path d="M42 36c-6.5 0-7.4-6.3-8.2-11.9C32.9 17.9 32.1 12 25 12s-7.9 5.9-8.8 12.1C15.4 29.7 14.5 36 8 36v-2c4.6 0 5.3-3.9 6.2-10.1.9-6.2 2-13.9 10.8-13.9s9.9 7.7 10.8 13.9C36.7 30.1 37.4 34 42 34v2z"></path><path d="M25 40c-2.8 0-5-2.2-5-5h2c0 1.7 1.3 3 3 3s3-1.3 3-3h2c0 2.8-2.2 5-5 5z"></path><path d="M8 34h34v2H8z"></path><path d="M27 10c0 1.1-.9 1.5-2 1.5s-2-.4-2-1.5.9-2 2-2 2 .9 2 2z"></path></symbol><symbol id="ei-calendar-icon" viewBox="0 0 50 50"><path d="M37 38H13c-1.7 0-3-1.3-3-3V13c0-1.7 1.1-3 2.5-3H14v2h-1.5c-.2 0-.5.4-.5 1v22c0 .6.4 1 1 1h24c.6 0 1-.4 1-1V13c0-.6-.3-1-.5-1H36v-2h1.5c1.4 0 2.5 1.3 2.5 3v22c0 1.7-1.3 3-3 3z"></path><path d="M17 14c-.6 0-1-.4-1-1V9c0-.6.4-1 1-1s1 .4 1 1v4c0 .6-.4 1-1 1z"></path><path d="M33 14c-.6 0-1-.4-1-1V9c0-.6.4-1 1-1s1 .4 1 1v4c0 .6-.4 1-1 1z"></path><path d="M20 10h10v2H20z"></path><path d="M12 16h26v2H12z"></path><path d="M34 20h2v2h-2z"></path><path d="M30 20h2v2h-2z"></path><path d="M26 20h2v2h-2z"></path><path d="M22 20h2v2h-2z"></path><path d="M18 20h2v2h-2z"></path><path d="M34 24h2v2h-2z"></path><path d="M30 24h2v2h-2z"></path><path d="M26 24h2v2h-2z"></path><path d="M22 24h2v2h-2z"></path><path d="M18 24h2v2h-2z"></path><path d="M14 24h2v2h-2z"></path><path d="M34 28h2v2h-2z"></path><path d="M30 28h2v2h-2z"></path><path d="M26 28h2v2h-2z"></path><path d="M22 28h2v2h-2z"></path><path d="M18 28h2v2h-2z"></path><path d="M14 28h2v2h-2z"></path><path d="M30 32h2v2h-2z"></path><path d="M26 32h2v2h-2z"></path><path d="M22 32h2v2h-2z"></path><path d="M18 32h2v2h-2z"></path><path d="M14 32h2v2h-2z"></path></symbol><symbol id="ei-camera-icon" viewBox="0 0 50 50"><path d="M39 38H11c-1.7 0-3-1.3-3-3V17c0-1.7 1.3-3 3-3h6c.2 0 .5-.2.6-.3l1.1-2.2c.4-.8 1.4-1.4 2.3-1.4h8c.9 0 1.9.6 2.3 1.4l1.1 2.2c.1.2.4.3.6.3h6c1.7 0 3 1.3 3 3v18c0 1.7-1.3 3-3 3zM11 16c-.6 0-1 .4-1 1v18c0 .6.4 1 1 1h28c.6 0 1-.4 1-1V17c0-.6-.4-1-1-1h-6c-.9 0-1.9-.6-2.3-1.4l-1.1-2.2c-.1-.2-.4-.4-.6-.4h-8c-.2 0-.5.2-.6.3l-1.1 2.2c-.4.9-1.4 1.5-2.3 1.5h-6z"></path><path d="M25 34c-5 0-9-4-9-9s4-9 9-9 9 4 9 9-4 9-9 9zm0-16c-3.9 0-7 3.1-7 7s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7z"></path><circle cx="35" cy="18" r="1"></circle><path d="M12 12h4v1h-4z"></path><path d="M25 21v-1c-2.8 0-5 2.2-5 5h1c0-2.2 1.8-4 4-4z"></path></symbol><symbol id="ei-cart-icon" viewBox="0 0 50 50"><path d="M35 34H13c-.3 0-.6-.2-.8-.4s-.2-.6-.1-.9l1.9-4.8L12.1 10H6V8h7c.5 0 .9.4 1 .9l2 19c0 .2 0 .3-.1.5L14.5 32H36l-1 2z"></path><path d="M15.2 29l-.4-2L38 22.2V14H14v-2h25c.6 0 1 .4 1 1v10c0 .5-.3.9-.8 1l-24 5z"></path><path d="M36 40c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path><path d="M12 40c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></symbol><symbol id="ei-chart-icon" viewBox="0 0 50 50"><path d="M18 36h-2V26h-4v10h-2V24h8z"></path><path d="M28 36h-2V20h-4v16h-2V18h8z"></path><path d="M38 36h-2V14h-4v22h-2V12h8z"></path><path d="M8 36h32v2H8z"></path></symbol><symbol id="ei-check-icon" viewBox="0 0 50 50"><path d="M25 42c-9.4 0-17-7.6-17-17S15.6 8 25 8s17 7.6 17 17-7.6 17-17 17zm0-32c-8.3 0-15 6.7-15 15s6.7 15 15 15 15-6.7 15-15-6.7-15-15-15z"></path><path d="M23 32.4l-8.7-8.7 1.4-1.4 7.3 7.3 11.3-11.3 1.4 1.4z"></path></symbol><symbol id="ei-chevron-down-icon" viewBox="0 0 50 50"><path d="M25 32.4l-9.7-9.7 1.4-1.4 8.3 8.3 8.3-8.3 1.4 1.4z"></path></symbol><symbol id="ei-chevron-left-icon" viewBox="0 0 50 50"><path d="M27.3 34.7L17.6 25l9.7-9.7 1.4 1.4-8.3 8.3 8.3 8.3z"></path></symbol><symbol id="ei-chevron-right-icon" viewBox="0 0 50 50"><path d="M22.7 34.7l-1.4-1.4 8.3-8.3-8.3-8.3 1.4-1.4 9.7 9.7z"></path></symbol><symbol id="ei-chevron-up-icon" viewBox="0 0 50 50"><path d="M33.3 28.7L25 20.4l-8.3 8.3-1.4-1.4 9.7-9.7 9.7 9.7z"></path></symbol><symbol id="ei-clock-icon" viewBox="0 0 50 50"><path d="M25 42c-9.4 0-17-7.6-17-17S15.6 8 25 8s17 7.6 17 17-7.6 17-17 17zm0-32c-8.3 0-15 6.7-15 15s6.7 15 15 15 15-6.7 15-15-6.7-15-15-15z"></path><path d="M30.3 33.7L24 27.4V16h2v10.6l5.7 5.7z"></path></symbol><symbol id="ei-close-o-icon" viewBox="0 0 50 50"><path d="M25 42c-9.4 0-17-7.6-17-17S15.6 8 25 8s17 7.6 17 17-7.6 17-17 17zm0-32c-8.3 0-15 6.7-15 15s6.7 15 15 15 15-6.7 15-15-6.7-15-15-15z"></path><path d="M32.283 16.302l1.414 1.415-15.98 15.98-1.414-1.414z"></path><path d="M17.717 16.302l15.98 15.98-1.414 1.415-15.98-15.98z"></path></symbol><symbol id="ei-close-icon" viewBox="0 0 50 50"><path d="M37.304 11.282l1.414 1.414-26.022 26.02-1.414-1.413z"></path><path d="M12.696 11.282l26.022 26.02-1.414 1.415-26.022-26.02z"></path></symbol><symbol id="ei-comment-icon" viewBox="0 0 50 50"><path d="M15 42h-2l1.2-1.6c.8-1.1 1.3-2.5 1.6-4.2C10.8 33.9 8 29.6 8 24c0-8.6 6.5-14 17-14s17 5.4 17 14c0 8.8-6.4 14-17 14h-.7c-1.6 1.9-4.4 4-9.3 4zm10-30c-9.4 0-15 4.5-15 12 0 6.4 3.9 9.4 7.2 10.7l.7.3-.1.8c-.2 1.6-.5 3-1.1 4.2 3.3-.4 5.2-2.1 6.3-3.5l.3-.4H25c13.5 0 15-8.4 15-12C40 16.5 34.4 12 25 12z"></path></symbol><symbol id="ei-credit-card-icon" viewBox="0 0 50 50"><path d="M39 38H11c-1.7 0-3-1.3-3-3V15c0-1.7 1.3-3 3-3h28c1.7 0 3 1.3 3 3v20c0 1.7-1.3 3-3 3zM11 14c-.6 0-1 .4-1 1v20c0 .6.4 1 1 1h28c.6 0 1-.4 1-1V15c0-.6-.4-1-1-1H11z"></path><path d="M9 16h32v6H9z"></path><path d="M12 26h1v2h-1z"></path><path d="M14 26h1v2h-1z"></path><path d="M16 26h1v2h-1z"></path><path d="M19 26h1v2h-1z"></path><path d="M21 26h1v2h-1z"></path><path d="M23 26h1v2h-1z"></path><path d="M26 26h1v2h-1z"></path><path d="M28 26h1v2h-1z"></path><path d="M30 26h1v2h-1z"></path><path d="M33 26h1v2h-1z"></path><path d="M35 26h1v2h-1z"></path><path d="M37 26h1v2h-1z"></path></symbol><symbol id="ei-envelope-icon" viewBox="0 0 50 50"><path opacity=".9" d="M31.796 24.244l9.97 9.97-1.415 1.414-9.97-9.97z"></path><path opacity=".9" d="M18.278 24.287l1.414 1.414-9.9 9.9-1.414-1.41z"></path><path d="M25 29.9c-1.5 0-3.1-.6-4.2-1.8L8.3 15.7l1.4-1.4 12.5 12.5c1.6 1.6 4.1 1.6 5.7 0l12.5-12.5 1.4 1.4-12.6 12.5c-1.1 1.1-2.7 1.7-4.2 1.7z"></path><path d="M39 38H11c-1.7 0-3-1.3-3-3V15c0-1.7 1.3-3 3-3h28c1.7 0 3 1.3 3 3v20c0 1.7-1.3 3-3 3zM11 14c-.6 0-1 .4-1 1v20c0 .6.4 1 1 1h28c.6 0 1-.4 1-1V15c0-.6-.4-1-1-1H11z"></path></symbol><symbol id="ei-exclamation-icon" viewBox="0 0 50 50"><path d="M25 42c-9.4 0-17-7.6-17-17S15.6 8 25 8s17 7.6 17 17-7.6 17-17 17zm0-32c-8.3 0-15 6.7-15 15s6.7 15 15 15 15-6.7 15-15-6.7-15-15-15z"></path><path d="M24 32h2v2h-2z"></path><path d="M25.6 30h-1.2l-.4-8v-6h2v6z"></path></symbol><symbol id="ei-external-link-icon" viewBox="0 0 50 50"><path d="M38.288 10.297l1.414 1.415-14.99 14.99-1.414-1.414z"></path><path d="M40 20h-2v-8h-8v-2h10z"></path><path d="M35 38H15c-1.7 0-3-1.3-3-3V15c0-1.7 1.3-3 3-3h11v2H15c-.6 0-1 .4-1 1v20c0 .6.4 1 1 1h20c.6 0 1-.4 1-1V24h2v11c0 1.7-1.3 3-3 3z"></path></symbol><symbol id="ei-eye-icon" viewBox="0 0 50 50"><path d="M25 36C13.5 36 8.3 25.9 8.1 25.4c-.1-.3-.1-.6 0-.9C8.3 24.1 13.5 14 25 14s16.7 10.1 16.9 10.6c.1.3.1.6 0 .9-.2.4-5.4 10.5-16.9 10.5zM10.1 25c1.1 1.9 5.9 9 14.9 9s13.7-7.1 14.9-9c-1.1-1.9-5.9-9-14.9-9s-13.7 7.1-14.9 9z"></path><path d="M25 34c-5 0-9-4-9-9s4-9 9-9 9 4 9 9-4 9-9 9zm0-16c-3.9 0-7 3.1-7 7s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7z"></path><path d="M25 30c-2.8 0-5-2.2-5-5 0-.6.4-1 1-1s1 .4 1 1c0 1.7 1.3 3 3 3s3-1.3 3-3-1.3-3-3-3c-.6 0-1-.4-1-1s.4-1 1-1c2.8 0 5 2.2 5 5s-2.2 5-5 5z"></path></symbol><symbol id="ei-gear-icon" viewBox="0 0 50 50"><path d="M25 34c-5 0-9-4-9-9s4-9 9-9 9 4 9 9-4 9-9 9zm0-16c-3.9 0-7 3.1-7 7s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7z"></path><path d="M27.7 44h-5.4l-1.5-4.6c-1-.3-2-.7-2.9-1.2l-4.4 2.2-3.8-3.8 2.2-4.4c-.5-.9-.9-1.9-1.2-2.9L6 27.7v-5.4l4.6-1.5c.3-1 .7-2 1.2-2.9l-2.2-4.4 3.8-3.8 4.4 2.2c.9-.5 1.9-.9 2.9-1.2L22.3 6h5.4l1.5 4.6c1 .3 2 .7 2.9 1.2l4.4-2.2 3.8 3.8-2.2 4.4c.5.9.9 1.9 1.2 2.9l4.6 1.5v5.4l-4.6 1.5c-.3 1-.7 2-1.2 2.9l2.2 4.4-3.8 3.8-4.4-2.2c-.9.5-1.9.9-2.9 1.2L27.7 44zm-4-2h2.6l1.4-4.3.5-.1c1.2-.3 2.3-.8 3.4-1.4l.5-.3 4 2 1.8-1.8-2-4 .3-.5c.6-1 1.1-2.2 1.4-3.4l.1-.5 4.3-1.4v-2.6l-4.3-1.4-.1-.5c-.3-1.2-.8-2.3-1.4-3.4l-.3-.5 2-4-1.8-1.8-4 2-.5-.3c-1.1-.6-2.2-1.1-3.4-1.4l-.5-.1L26.3 8h-2.6l-1.4 4.3-.5.1c-1.2.3-2.3.8-3.4 1.4l-.5.3-4-2-1.8 1.8 2 4-.3.5c-.6 1-1.1 2.2-1.4 3.4l-.1.5L8 23.7v2.6l4.3 1.4.1.5c.3 1.2.8 2.3 1.4 3.4l.3.5-2 4 1.8 1.8 4-2 .5.3c1.1.6 2.2 1.1 3.4 1.4l.5.1 1.4 4.3z"></path></symbol><symbol id="ei-heart-icon" viewBox="0 0 50 50"><path d="M25 39.7l-.6-.5C11.5 28.7 8 25 8 19c0-5 4-9 9-9 4.1 0 6.4 2.3 8 4.1 1.6-1.8 3.9-4.1 8-4.1 5 0 9 4 9 9 0 6-3.5 9.7-16.4 20.2l-.6.5zM17 12c-3.9 0-7 3.1-7 7 0 5.1 3.2 8.5 15 18.1 11.8-9.6 15-13 15-18.1 0-3.9-3.1-7-7-7-3.5 0-5.4 2.1-6.9 3.8L25 17.1l-1.1-1.3C22.4 14.1 20.5 12 17 12z"></path></symbol><symbol id="ei-image-icon" viewBox="0 0 50 50"><path d="M39 38H11c-1.7 0-3-1.3-3-3V15c0-1.7 1.3-3 3-3h28c1.7 0 3 1.3 3 3v20c0 1.7-1.3 3-3 3zM11 14c-.6 0-1 .4-1 1v20c0 .6.4 1 1 1h28c.6 0 1-.4 1-1V15c0-.6-.4-1-1-1H11z"></path><path d="M30 24c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path><path d="M35.3 37.7L19 22.4 9.7 31l-1.4-1.4 10.7-10 17.7 16.7z"></path><path d="M40.4 32.7L35 28.3 30.5 32l-1.3-1.6 5.8-4.7 6.6 5.4z"></path></symbol><symbol id="ei-like-icon" viewBox="0 0 50 50"><path d="M40 23.2c0-2.1-1.7-3.2-4-3.2h-6.7c.5-1.8.7-3.5.7-5 0-5.8-1.6-7-3-7-.9 0-1.6.1-2.5.6-.3.2-.4.4-.5.7l-1 5.4c-1.1 2.8-3.8 5.3-6 7V36c.8 0 1.6.4 2.6.9 1.1.5 2.2 1.1 3.4 1.1h9.5c2 0 3.5-1.6 3.5-3 0-.3 0-.5-.1-.7 1.2-.5 2.1-1.5 2.1-2.8 0-.6-.1-1.1-.3-1.6.8-.5 1.5-1.4 1.5-2.4 0-.6-.3-1.2-.6-1.7.8-.6 1.4-1.6 1.4-2.6zm-2.1 0c0 1.3-1.3 1.4-1.5 2-.2.7.8.9.8 2.1 0 1.2-1.5 1.2-1.7 1.9-.2.8.5 1 .5 2.2v.2c-.2 1-1.7 1.1-2 1.5-.3.5 0 .7 0 1.8 0 .6-.7 1-1.5 1H23c-.8 0-1.6-.4-2.6-.9-.8-.4-1.6-.8-2.4-1V23.5c2.5-1.9 5.7-4.7 6.9-8.2v-.2l.9-5c.4-.1.7-.1 1.2-.1.2 0 1 1.2 1 5 0 1.5-.3 3.1-.8 5H27c-.6 0-1 .4-1 1s.4 1 1 1h9c1 0 1.9.5 1.9 1.2z"></path><path d="M16 38h-6c-1.1 0-2-.9-2-2V22c0-1.1.9-2 2-2h6c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2zm-6-16v14h6V22h-6z"></path></symbol><symbol id="ei-link-icon" viewBox="0 0 50 50"><path d="M24 30.2c0 .2.1.5.1.8 0 1.4-.5 2.6-1.5 3.6l-2 2c-1 1-2.2 1.5-3.6 1.5-2.8 0-5.1-2.3-5.1-5.1 0-1.4.5-2.6 1.5-3.6l2-2c1-1 2.2-1.5 3.6-1.5.3 0 .5 0 .8.1l1.5-1.5c-.7-.3-1.5-.4-2.3-.4-1.9 0-3.6.7-4.9 2l-2 2c-1.3 1.3-2 3-2 4.9 0 3.8 3.1 6.9 6.9 6.9 1.9 0 3.6-.7 4.9-2l2-2c1.3-1.3 2-3 2-4.9 0-.8-.1-1.6-.4-2.3L24 30.2z"></path><path d="M33 10.1c-1.9 0-3.6.7-4.9 2l-2 2c-1.3 1.3-2 3-2 4.9 0 .8.1 1.6.4 2.3l1.5-1.5c0-.2-.1-.5-.1-.8 0-1.4.5-2.6 1.5-3.6l2-2c1-1 2.2-1.5 3.6-1.5 2.8 0 5.1 2.3 5.1 5.1 0 1.4-.5 2.6-1.5 3.6l-2 2c-1 1-2.2 1.5-3.6 1.5-.3 0-.5 0-.8-.1l-1.5 1.5c.7.3 1.5.4 2.3.4 1.9 0 3.6-.7 4.9-2l2-2c1.3-1.3 2-3 2-4.9 0-3.8-3.1-6.9-6.9-6.9z"></path><path d="M20 31c-.3 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l10-10c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-10 10c-.2.2-.4.3-.7.3z"></path></symbol><symbol id="ei-location-icon" viewBox="0 0 50 50"><path d="M25 42.5l-.8-.9C23.7 41.1 12 27.3 12 19c0-7.2 5.8-13 13-13s13 5.8 13 13c0 8.3-11.7 22.1-12.2 22.7l-.8.8zM25 8c-6.1 0-11 4.9-11 11 0 6.4 8.4 17.2 11 20.4 2.6-3.2 11-14 11-20.4 0-6.1-4.9-11-11-11z"></path><path d="M25 24c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5zm0-8c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3z"></path></symbol><symbol id="ei-lock-icon" viewBox="0 0 50 50"><path d="M34 23h-2v-4c0-3.9-3.1-7-7-7s-7 3.1-7 7v4h-2v-4c0-5 4-9 9-9s9 4 9 9v4z"></path><path d="M33 40H17c-1.7 0-3-1.3-3-3V25c0-1.7 1.3-3 3-3h16c1.7 0 3 1.3 3 3v12c0 1.7-1.3 3-3 3zM17 24c-.6 0-1 .4-1 1v12c0 .6.4 1 1 1h16c.6 0 1-.4 1-1V25c0-.6-.4-1-1-1H17z"></path><circle cx="25" cy="28" r="2"></circle><path d="M25.5 28h-1l-1 6h3z"></path></symbol><symbol id="ei-minus-icon" viewBox="0 0 50 50"><path d="M25 42c-9.4 0-17-7.6-17-17S15.6 8 25 8s17 7.6 17 17-7.6 17-17 17zm0-32c-8.3 0-15 6.7-15 15s6.7 15 15 15 15-6.7 15-15-6.7-15-15-15z"></path><path d="M16 24h18v2H16z"></path></symbol><symbol id="ei-navicon-icon" viewBox="0 0 50 50"><path d="M10 12h30v4H10z"></path><path d="M10 22h30v4H10z"></path><path d="M10 32h30v4H10z"></path></symbol><symbol id="ei-paperclip-icon" viewBox="0 0 50 50"><path d="M13.8 39.6c-1.5 0-3.1-.6-4.2-1.8-2.3-2.3-2.3-6.1 0-8.5l17-17c3.1-3.1 8.2-3.1 11.3 0 3.1 3.1 3.1 8.2 0 11.3L25.1 36.4 23.7 35l12.7-12.7c2.3-2.3 2.3-6.1 0-8.5-2.3-2.3-6.1-2.3-8.5 0l-17 17c-.8.8-1.2 1.8-1.2 2.8 0 1.1.4 2.1 1.2 2.8 1.6 1.6 4.1 1.6 5.7 0l12.7-12.7c.8-.8.8-2 0-2.8-.8-.8-2-.8-2.8 0L18 29.3l-1.4-1.4 8.5-8.5c1.6-1.6 4.1-1.6 5.7 0 1.6 1.6 1.6 4.1 0 5.7L18 37.8c-1.1 1.2-2.7 1.8-4.2 1.8z"></path></symbol><symbol id="ei-pencil-icon" viewBox="0 0 50 50"><path d="M9.6 40.4l2.5-9.9L27 15.6l7.4 7.4-14.9 14.9-9.9 2.5zm4.3-8.9l-1.5 6.1 6.1-1.5L31.6 23 27 18.4 13.9 31.5z"></path><path d="M17.8 37.3c-.6-2.5-2.6-4.5-5.1-5.1l.5-1.9c3.2.8 5.7 3.3 6.5 6.5l-1.9.5z"></path><path d="M29.298 19.287l1.414 1.414-13.01 13.02-1.414-1.41z"></path><path d="M11 39l2.9-.7c-.3-1.1-1.1-1.9-2.2-2.2L11 39z"></path><path d="M35 22.4L27.6 15l3-3 .5.1c3.6.5 6.4 3.3 6.9 6.9l.1.5-3.1 2.9zM30.4 15l4.6 4.6.9-.9c-.5-2.3-2.3-4.1-4.6-4.6l-.9.9z"></path></symbol><symbol id="ei-play-icon" viewBox="0 0 50 50"><path d="M25 42c-9.4 0-17-7.6-17-17S15.6 8 25 8s17 7.6 17 17-7.6 17-17 17zm0-32c-8.3 0-15 6.7-15 15s6.7 15 15 15 15-6.7 15-15-6.7-15-15-15z"></path><path d="M20 33.7V16.3L35 25l-15 8.7zm2-14v10.5l9-5.3-9-5.2z"></path></symbol><symbol id="ei-plus-icon" viewBox="0 0 50 50"><path d="M25 42c-9.4 0-17-7.6-17-17S15.6 8 25 8s17 7.6 17 17-7.6 17-17 17zm0-32c-8.3 0-15 6.7-15 15s6.7 15 15 15 15-6.7 15-15-6.7-15-15-15z"></path><path d="M16 24h18v2H16z"></path><path d="M24 16h2v18h-2z"></path></symbol><symbol id="ei-pointer-icon" viewBox="0 0 50 50"><path d="M33 38H21c-.6 0-1-.4-1-1 0-1.5-.7-2.4-1.8-3.8-.6-.7-1.3-1.6-2-2.7-1.9-3-3.6-6.6-4-7.9-.4-1.3-.1-2.2.3-2.7.4-.6 1.2-.9 2.1-.9 1.2 0 2.4 1 3.5 2.3V11c0-1.7 1.3-3 3-3s3 1.3 3 3v4.2c.3-.1.6-.2 1-.2 1.1 0 2 .6 2.5 1.4.4-.3.9-.4 1.4-.4 1.4 0 2.5.9 2.9 2.2.3-.1.7-.2 1.1-.2 1.7 0 3 1.3 3 3v3c0 2.6-.5 4.7-1 6.7s-1 3.9-1 6.3c0 .6-.4 1-1 1zm-11.1-2H32c.1-2.2.6-4 1-5.8.5-2 1-3.9 1-6.2v-3c0-.6-.4-1-1-1s-1 .4-1 1v1c0 .6-.4 1-1 1s-1-.4-1-1v-3c0-.6-.4-1-1-1s-1 .4-1 1v2c0 .6-.4 1-1 1s-1-.4-1-1v-3c0-.6-.4-1-1-1s-1 .4-1 1v2c0 .6-.4 1-1 1s-1-.4-1-1v-9c0-.6-.4-1-1-1s-1 .4-1 1v15c0 .6-.4 1-1 1s-1-.4-1-1v-.8c-.9-2.3-2.8-4.2-3.5-4.2-.2 0-.4 0-.5.1-.1.1-.1.4 0 .9.3 1.1 1.8 4.3 3.8 7.5.6 1 1.2 1.7 1.8 2.5 1.1 1.2 2.1 2.3 2.3 4z"></path></symbol><symbol id="ei-question-icon" viewBox="0 0 50 50"><path d="M25 42c-9.4 0-17-7.6-17-17S15.6 8 25 8s17 7.6 17 17-7.6 17-17 17zm0-32c-8.3 0-15 6.7-15 15s6.7 15 15 15 15-6.7 15-15-6.7-15-15-15z"></path><path d="M19.8 19.6c.3-.8.6-1.4 1.2-1.9.5-.5 1.1-.9 1.9-1.2s1.6-.4 2.5-.4c.7 0 1.4.1 2 .3.6.2 1.2.5 1.7.9s.9.9 1.1 1.5c.3.6.4 1.3.4 2 0 1-.2 1.8-.6 2.5s-1 1.3-1.6 2l-1.3 1.3c-.3.3-.6.6-.7.9-.2.3-.3.7-.3 1.1-.1.4-.1.7-.1 1.5h-1.6c0-.8 0-1.1.1-1.7.1-.5.3-1 .5-1.5.2-.4.5-.8.9-1.2.4-.4.9-.8 1.4-1.4.5-.5.9-1 1.2-1.5s.5-1.2.5-1.8c0-.5-.1-1-.3-1.4-.2-.4-.5-.8-.8-1.1-.3-.3-.7-.5-1.2-.7-.5-.2-.9-.3-1.4-.3-.7 0-1.3.1-1.8.4-.5.2-1 .6-1.3 1-.3.4-.6.9-.8 1.5s-.4.9-.4 1.6h-1.6c0-.9.1-1.6.4-2.4zM26 32v2h-2v-2h2z"></path></symbol><symbol id="ei-redo-icon" viewBox="0 0 50 50"><path d="M25 38c-7.2 0-13-5.8-13-13s5.8-13 13-13c5.4 0 10.1 3.4 11.9 8.7l-1.9.7c-1.5-4.6-5.4-7.4-10-7.4-6.1 0-11 4.9-11 11s4.9 11 11 11c4.3 0 8.2-2.5 10-6.4l1.8.8C34.7 35 30.1 38 25 38z"></path><path d="M38 22h-8v-2h6v-6h2z"></path></symbol><symbol id="ei-refresh-icon" viewBox="0 0 50 50"><path d="M25 38c-7.2 0-13-5.8-13-13 0-3.2 1.2-6.2 3.3-8.6l1.5 1.3C15 19.7 14 22.3 14 25c0 6.1 4.9 11 11 11 1.6 0 3.1-.3 4.6-1l.8 1.8c-1.7.8-3.5 1.2-5.4 1.2z"></path><path d="M34.7 33.7l-1.5-1.3c1.8-2 2.8-4.6 2.8-7.3 0-6.1-4.9-11-11-11-1.6 0-3.1.3-4.6 1l-.8-1.8c1.7-.8 3.5-1.2 5.4-1.2 7.2 0 13 5.8 13 13 0 3.1-1.2 6.2-3.3 8.6z"></path><path d="M18 24h-2v-6h-6v-2h8z"></path><path d="M40 34h-8v-8h2v6h6z"></path></symbol><symbol id="ei-retweet-icon" viewBox="0 0 50 50"><path d="M38 35h-2V17c0-.6-.4-1-1-1H18v-2h17c1.7 0 3 1.3 3 3v18z"></path><path d="M37 36.5l-6.8-7.8 1.6-1.4 5.2 6.2 5.2-6.2 1.6 1.4z"></path><path d="M32 36H15c-1.7 0-3-1.3-3-3V15h2v18c0 .6.4 1 1 1h17v2z"></path><path d="M18.2 22.7L13 16.5l-5.2 6.2-1.6-1.4 6.8-7.8 6.8 7.8z"></path></symbol><symbol id="ei-sc-facebook-icon" viewBox="0 0 50 50"><path d="M26 20v-3c0-1.3.3-2 2.4-2H31v-5h-4c-5 0-7 3.3-7 7v3h-4v5h4v15h6V25h4.4l.6-5h-5z"></path></symbol><symbol id="ei-sc-github-icon" viewBox="0 0 50 50"><path fill-rule="evenodd" clip-rule="evenodd" d="M25 10c-8.3 0-15 6.7-15 15 0 6.6 4.3 12.2 10.3 14.2.8.1 1-.3 1-.7v-2.6c-4.2.9-5.1-2-5.1-2-.7-1.7-1.7-2.2-1.7-2.2-1.4-.9.1-.9.1-.9 1.5.1 2.3 1.5 2.3 1.5 1.3 2.3 3.5 1.6 4.4 1.2.1-1 .5-1.6 1-2-3.3-.4-6.8-1.7-6.8-7.4 0-1.6.6-3 1.5-4-.2-.4-.7-1.9.1-4 0 0 1.3-.4 4.1 1.5 1.2-.3 2.5-.5 3.8-.5 1.3 0 2.6.2 3.8.5 2.9-1.9 4.1-1.5 4.1-1.5.8 2.1.3 3.6.1 4 1 1 1.5 2.4 1.5 4 0 5.8-3.5 7-6.8 7.4.5.5 1 1.4 1 2.8v4.1c0 .4.3.9 1 .7 6-2 10.2-7.6 10.2-14.2C40 16.7 33.3 10 25 10z"></path></symbol><symbol id="ei-sc-google-plus-icon" viewBox="0 0 50 50"><path d="M18 23v4.8h7.9c-.3 2.1-2.4 6-7.9 6-4.8 0-8.7-4-8.7-8.8s3.9-8.8 8.7-8.8c2.7 0 4.5 1.2 5.6 2.2l3.8-3.7C24.9 12.4 21.8 11 18 11c-7.7 0-14 6.3-14 14s6.3 14 14 14c8.1 0 13.4-5.7 13.4-13.7 0-.9-.1-1.6-.2-2.3H18z"></path><path d="M48 23h-4v-4h-4v4h-4v4h4v4h4v-4h4z"></path></symbol><symbol id="ei-sc-instagram-icon" viewBox="0 0 50 50"><path d="M25 12c-3.53 0-3.973.015-5.36.078-1.384.063-2.329.283-3.156.604a6.372 6.372 0 0 0-2.302 1.5 6.372 6.372 0 0 0-1.5 2.303c-.321.826-.54 1.771-.604 3.155C12.015 21.027 12 21.47 12 25c0 3.53.015 3.973.078 5.36.063 1.384.283 2.329.604 3.155.333.855.777 1.58 1.5 2.303a6.372 6.372 0 0 0 2.302 1.5c.827.32 1.772.54 3.156.604 1.387.063 1.83.078 5.36.078 3.53 0 3.973-.015 5.36-.078 1.384-.063 2.329-.283 3.155-.604a6.371 6.371 0 0 0 2.303-1.5 6.372 6.372 0 0 0 1.5-2.303c.32-.826.54-1.771.604-3.155.063-1.387.078-1.83.078-5.36 0-3.53-.015-3.973-.078-5.36-.063-1.384-.283-2.329-.605-3.155a6.372 6.372 0 0 0-1.499-2.303 6.371 6.371 0 0 0-2.303-1.5c-.826-.32-1.771-.54-3.155-.604C28.973 12.015 28.53 12 25 12m0 2.342c3.471 0 3.882.014 5.253.076 1.267.058 1.956.27 2.414.448.607.236 1.04.517 1.495.972.455.455.736.888.972 1.495.178.458.39 1.146.448 2.414.062 1.37.076 1.782.076 5.253s-.014 3.882-.076 5.253c-.058 1.268-.27 1.956-.448 2.414a4.028 4.028 0 0 1-.972 1.495 4.027 4.027 0 0 1-1.495.972c-.458.178-1.147.39-2.414.448-1.37.062-1.782.076-5.253.076s-3.883-.014-5.253-.076c-1.268-.058-1.956-.27-2.414-.448a4.027 4.027 0 0 1-1.495-.972 4.03 4.03 0 0 1-.972-1.495c-.178-.458-.39-1.146-.448-2.414-.062-1.37-.076-1.782-.076-5.253s.014-3.882.076-5.253c.058-1.268.27-1.956.448-2.414.236-.607.517-1.04.972-1.495a4.028 4.028 0 0 1 1.495-.972c.458-.178 1.146-.39 2.414-.448 1.37-.062 1.782-.076 5.253-.076"></path><path d="M25 18a7 7 0 1 0 0 14 7 7 0 0 0 0-14m0 11.5a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9m8.7-11.4a1.6 1.6 0 1 1-3.2 0 1.6 1.6 0 0 1 3.2 0"></path></symbol><symbol id="ei-sc-linkedin-icon" viewBox="0 0 50 50"><path d="M36.1 12H13.9c-1.1 0-1.9.8-1.9 1.9v22.2c0 1 .9 1.9 1.9 1.9h22.2c1.1 0 1.9-.8 1.9-1.9V13.9c0-1.1-.9-1.9-1.9-1.9zM20 34h-4V22h4v12zm-2-13.6c-1.3 0-2.4-1.1-2.4-2.4 0-1.3 1.1-2.4 2.4-2.4 1.3 0 2.4 1.1 2.4 2.4 0 1.3-1.1 2.4-2.4 2.4zM34 34h-4v-6c0-1.6-.4-3.2-2-3.2s-2 1.6-2 3.2v6h-4V22h4v1.4h.2c.5-1 1.8-1.8 3.3-1.8 3.7 0 4.5 2.4 4.5 5.4v7z"></path></symbol><symbol id="ei-sc-odnoklassniki-icon" viewBox="0 0 50 50"><path d="M25 26c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm0-12.2c-2.3 0-4.2 1.9-4.2 4.2s1.9 4.2 4.2 4.2 4.2-1.9 4.2-4.2-1.9-4.2-4.2-4.2z"></path><path d="M33.6 26.8c-.7-.9-1.9-1-2.8-.4 0 0-2.2 1.6-5.8 1.6-3.6 0-5.8-1.6-5.8-1.6-.9-.7-2.1-.5-2.8.4-.7.9-.5 2.1.4 2.8.1.1 2.2 1.7 5.7 2.2l-5.3 5.4c-.8.8-.8 2.1 0 2.8.4.4.9.6 1.4.6.5 0 1-.2 1.4-.6l5-5.1 5 5.1c.4.4.9.6 1.4.6.5 0 1-.2 1.4-.6.8-.8.8-2 0-2.8l-5.3-5.4c3.5-.6 5.6-2.2 5.7-2.2.9-.7 1.1-2 .4-2.8z"></path></symbol><symbol id="ei-sc-pinterest-icon" viewBox="0 0 50 50"><path d="M25 10c-8.3 0-15 6.7-15 15 0 6.4 4 11.8 9.5 14-.1-1.2-.2-3 .1-4.3.3-1.2 1.8-7.5 1.8-7.5s-.4-.9-.4-2.2c0-2.1 1.2-3.6 2.7-3.6 1.3 0 1.9 1 1.9 2.1 0 1.3-.8 3.2-1.2 5-.4 1.5.7 2.7 2.2 2.7 2.7 0 4.7-2.8 4.7-6.9 0-3.6-2.6-6.1-6.3-6.1-4.3 0-6.8 3.2-6.8 6.5 0 1.3.5 2.7 1.1 3.4.1.1.1.3.1.4-.1.5-.4 1.5-.4 1.7-.1.3-.2.3-.5.2-1.9-.9-3-3.6-3-5.8 0-4.7 3.4-9.1 9.9-9.1 5.2 0 9.2 3.7 9.2 8.7 0 5.2-3.3 9.3-7.8 9.3-1.5 0-2.9-.8-3.4-1.7 0 0-.8 2.9-.9 3.6-.3 1.3-1.3 2.9-1.9 3.9 1.4.5 2.9.7 4.4.7 8.3 0 15-6.7 15-15s-6.7-15-15-15z"></path></symbol><symbol id="ei-sc-skype-icon" viewBox="0 0 50 50"><path d="M38 27.3c.1-.8.2-1.6.2-2.4 0-1.8-.3-3.5-1-5.1-.7-1.6-1.6-3-2.8-4.2-1.2-1.2-2.6-2.2-4.2-2.8-1.6-.7-3.4-1-5.1-1-.8 0-1.7.1-2.5.2-1.1-.6-2.4-.9-3.7-.9-2.1 0-4.1.8-5.5 2.3-1.5 1.5-2.3 3.4-2.3 5.5 0 1.3.3 2.6 1 3.8-.1.7-.2 1.5-.2 2.3 0 1.8.3 3.5 1 5.1.7 1.6 1.6 3 2.8 4.2 1.2 1.2 2.6 2.2 4.2 2.8 1.6.7 3.4 1 5.1 1 .8 0 1.6-.1 2.3-.2 1.2.7 2.5 1 3.9 1 2.1 0 4.1-.8 5.5-2.3 1.5-1.5 2.3-3.4 2.3-5.5 0-1.3-.3-2.6-1-3.8zM25.1 33c-4.7 0-6.8-2.3-6.8-4 0-.9.7-1.5 1.6-1.5 2 0 1.5 2.9 5.2 2.9 1.9 0 3-1 3-2.1 0-.6-.3-1.4-1.6-1.7l-4.2-1c-3.4-.8-4-2.7-4-4.4 0-3.6 3.3-4.9 6.5-4.9 2.9 0 6.3 1.6 6.3 3.7 0 .9-.8 1.4-1.7 1.4-1.7 0-1.4-2.4-4.9-2.4-1.7 0-2.7.8-2.7 1.9 0 1.1 1.4 1.5 2.5 1.7l3.1.7c3.4.8 4.2 2.7 4.2 4.6.1 2.9-2.1 5.1-6.5 5.1z"></path></symbol><symbol id="ei-sc-soundcloud-icon" viewBox="0 0 50 50"><path d="M40 24h-.2c-.9-4.6-5-8-9.8-8-3.1 0-5.9 1.4-7.7 3.7-.2.3-.3.6-.3 1.2l-.4 9.1.4 5.5c0 .3.3.5.5.5H40c3.3 0 6-2.7 6-6s-2.7-6-6-6z"></path><path d="M18.9 20c-.3 0-.5.2-.5.5l-.8 9v1l.8 5c0 .3.3.5.6.5h.2c.3 0 .5-.2.6-.5l.8-5c0-.3.1-.7 0-1l-.8-9c0-.3-.3-.5-.5-.5h-.4z"></path><path d="M14.9 21c-.3 0-.5.2-.5.5l-.8 8v1l.8 5c0 .3.3.5.6.5h.2c.3 0 .5-.2.6-.5l.8-5c0-.3.1-.7 0-1l-.8-8c0-.3-.3-.5-.5-.5h-.4z"></path><path d="M11 24c-.3 0-.5.2-.6.5l-.8 5v1l.8 5c0 .3.3.5.6.5s.5-.2.6-.5l.8-5v-1l-.8-5c-.1-.3-.3-.5-.6-.5z"></path><path d="M7 23c-.3 0-.5.2-.6.5l-.9 6v1l.8 5c.2.3.4.5.7.5.3 0 .5-.2.6-.5l.8-5c0-.3.1-.7 0-1l-.9-6c0-.3-.2-.5-.5-.5z"></path><path d="M3.3 26c-.3 0-.5.2-.6.5l-.6 3c-.1.3-.1.7 0 1l.6 4c.1.3.3.5.6.5s.5-.2.6-.5l.6-4v-1l-.6-3c-.1-.3-.3-.5-.6-.5z"></path></symbol><symbol id="ei-sc-telegram-icon" viewBox="0 0 50 50"><path d="M37.1 13L9.4 24c-.9.3-.8 1.6.1 1.9l7 2.2 2.8 8.8c.2.7 1.1.9 1.6.4l4.1-3.8 7.8 5.7c.6.4 1.4.1 1.6-.6l5.4-23.2c.3-1.7-1.2-3-2.7-2.4zM20.9 29.8L20 35l-2-7.2L37.5 15 20.9 29.8z"></path></symbol><symbol id="ei-sc-tumblr-icon" viewBox="0 0 50 50"><path d="M30.9 32.4c-.5.2-1.5.5-2.3.5-2.2.1-2.7-1.6-2.7-2.8v-8.7h5.6v-4.2H26V10h-4.1c-.1 0-.2.1-.2.2-.2 2.2-1.3 6-5.5 7.5v3.6H19v9.1c0 3.1 2.3 7.6 8.4 7.5 2.1 0 4.3-.9 4.8-1.6l-1.3-3.9z"></path></symbol><symbol id="ei-sc-twitter-icon" viewBox="0 0 50 50"><path d="M39.2 16.8c-1.1.5-2.2.8-3.5 1 1.2-.8 2.2-1.9 2.7-3.3-1.2.7-2.5 1.2-3.8 1.5-1.1-1.2-2.7-1.9-4.4-1.9-3.3 0-6.1 2.7-6.1 6.1 0 .5.1.9.2 1.4-5-.2-9.5-2.7-12.5-6.3-.5.7-.8 1.7-.8 2.8 0 2.1 1.1 4 2.7 5-1 0-1.9-.3-2.7-.8v.1c0 2.9 2.1 5.4 4.9 5.9-.5.1-1 .2-1.6.2-.4 0-.8 0-1.1-.1.8 2.4 3 4.2 5.7 4.2-2.1 1.6-4.7 2.6-7.5 2.6-.5 0-1 0-1.4-.1 2.4 1.9 5.6 2.9 9 2.9 11.1 0 17.2-9.2 17.2-17.2V20c1.2-.9 2.2-1.9 3-3.2z"></path></symbol><symbol id="ei-sc-vimeo-icon" viewBox="0 0 50 50"><path d="M38 19.6c-.1 2.7-2 6.4-5.6 11.1-3.8 4.9-7 7.4-9.6 7.4-1.6 0-3-1.5-4.1-4.5-.7-2.7-1.5-5.5-2.2-8.2-.8-3-1.7-4.5-2.7-4.5-.2 0-.9.4-2.2 1.3l-1.3-1.7c1.4-1.2 2.7-2.4 4-3.6 1.8-1.6 3.2-2.4 4.1-2.5 2.2-.2 3.5 1.3 4 4.4.5 3.4.9 5.5 1.1 6.4.6 2.8 1.3 4.2 2.1 4.2.6 0 1.5-.9 2.6-2.8 1.2-1.8 1.8-3.2 1.9-4.2.2-1.6-.5-2.4-1.9-2.4-.7 0-1.3.2-2 .5 1.4-4.5 4-6.6 7.8-6.5 2.8.1 4.2 1.9 4 5.6z"></path></symbol><symbol id="ei-sc-vk-icon" viewBox="0 0 50 50"><path fill-rule="evenodd" clip-rule="evenodd" d="M25.1 35.9h2s.6-.1.9-.4c.3-.3.3-.9.3-.9s0-2.6 1.2-3c1.2-.4 2.8 2.6 4.4 3.7 1.2.9 2.1.7 2.1.7l4.4-.1s2.3-.1 1.2-2c-.1-.1-.6-1.3-3.3-3.8-2.8-2.6-2.4-2.1.9-6.6 2-2.7 2.8-4.3 2.6-5.1-.2-.7-1.7-.5-1.7-.5h-5s-.4-.1-.6.1c-.3.2-.4.5-.4.5s-.8 2.1-1.8 3.9c-2.2 3.7-3.1 3.9-3.4 3.7-.8-.5-.6-2.2-.6-3.3 0-3.6.6-5.1-1.1-5.5-.5-.1-.9-.2-2.3-.2-1.8 0-3.3 0-4.1.4-.6.3-1 .9-.7.9.3 0 1.1.2 1.5.7.4.9.4 2.4.4 2.4s.3 4.3-.7 4.8c-.7.4-1.6-.4-3.6-3.8-1-1.7-1.8-3.7-1.8-3.7s-.1-.4-.4-.6c-.3-.2-.8-.3-.8-.3H10s-.7 0-1 .3c-.2.3 0 .8 0 .8s3.7 8.6 7.9 13c3.9 4.2 8.2 3.9 8.2 3.9z"></path></symbol><symbol id="ei-sc-youtube-icon" viewBox="0 0 50 50"><path d="M39.7 18.6s-.3-2.1-1.2-3c-1.1-1.2-2.4-1.2-3-1.3C31.3 14 25 14 25 14s-6.3 0-10.5.3c-.6.1-1.9.1-3 1.3-.9.9-1.2 3-1.2 3S10 21 10 23.4v2.2c0 2.4.3 4.9.3 4.9s.3 2.1 1.2 3c1.1 1.2 2.6 1.2 3.3 1.3 2.4.1 10.2.2 10.2.2s6.3 0 10.5-.3c.6-.1 1.9-.1 3-1.3.9-.9 1.2-3 1.2-3s.3-2.4.3-4.8v-2.2c0-2.4-.3-4.8-.3-4.8zm-17.8 9.8V20l8.1 4.2-8.1 4.2z"></path></symbol><symbol id="ei-search-icon" viewBox="0 0 50 50"><path d="M23 36c-7.2 0-13-5.8-13-13s5.8-13 13-13 13 5.8 13 13-5.8 13-13 13zm0-24c-6.1 0-11 4.9-11 11s4.9 11 11 11 11-4.9 11-11-4.9-11-11-11z"></path><path d="M32.682 31.267l8.98 8.98-1.414 1.414-8.98-8.98z"></path></symbol><symbol id="ei-share-apple-icon" viewBox="0 0 50 50"><path d="M30.3 13.7L25 8.4l-5.3 5.3-1.4-1.4L25 5.6l6.7 6.7z"></path><path d="M24 7h2v21h-2z"></path><path d="M35 40H15c-1.7 0-3-1.3-3-3V19c0-1.7 1.3-3 3-3h7v2h-7c-.6 0-1 .4-1 1v18c0 .6.4 1 1 1h20c.6 0 1-.4 1-1V19c0-.6-.4-1-1-1h-7v-2h7c1.7 0 3 1.3 3 3v18c0 1.7-1.3 3-3 3z"></path></symbol><symbol id="ei-share-google-icon" viewBox="0 0 50 50"><path d="M15 30c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5zm0-8c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3z"></path><path d="M35 20c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5zm0-8c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3z"></path><path d="M35 40c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5zm0-8c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3z"></path><path d="M19.007 25.885l12.88 6.44-.895 1.788-12.88-6.44z"></path><path d="M30.993 15.885l.894 1.79-12.88 6.438-.894-1.79z"></path></symbol><symbol id="ei-spinner-2-icon" viewBox="0 0 50 50"><circle cx="25" cy="10" r="2"></circle><circle opacity=".3" cx="25" cy="40" r="2"></circle><circle opacity=".3" cx="32.5" cy="12" r="2"></circle><circle opacity=".3" cx="17.5" cy="38" r="2"></circle><circle opacity=".93" cx="17.5" cy="12" r="2"></circle><circle opacity=".3" cx="32.5" cy="38" r="2"></circle><circle opacity=".65" cx="10" cy="25" r="2"></circle><circle opacity=".3" cx="40" cy="25" r="2"></circle><circle opacity=".86" cx="12" cy="17.5" r="2"></circle><circle opacity=".3" cx="38" cy="32.5" r="2"></circle><circle opacity=".44" cx="12" cy="32.5" r="2"></circle><circle opacity=".3" cx="38" cy="17.5" r="2"></circle></symbol><symbol id="ei-spinner-3-icon" viewBox="0 0 50 50"><path d="M41.9 23.9c-.3-6.1-4-11.8-9.5-14.4-6-2.7-13.3-1.6-18.3 2.6-4.8 4-7 10.5-5.6 16.6 1.3 6 6 10.9 11.9 12.5 7.1 2 13.6-1.4 17.6-7.2-3.6 4.8-9.1 8-15.2 6.9-6.1-1.1-11.1-5.7-12.5-11.7-1.5-6.4 1.5-13.1 7.2-16.4 5.9-3.4 14.2-2.1 18.1 3.7 1 1.4 1.7 3.1 2 4.8.3 1.4.2 2.9.4 4.3.2 1.3 1.3 3 2.8 2.1 1.3-.8 1.2-2.5 1.1-3.8 0-.4.1.7 0 0z"></path></symbol><symbol id="ei-spinner-icon" viewBox="0 0 50 50"><path d="M25 18c-.6 0-1-.4-1-1V9c0-.6.4-1 1-1s1 .4 1 1v8c0 .6-.4 1-1 1z"></path><path opacity=".3" d="M25 42c-.6 0-1-.4-1-1v-8c0-.6.4-1 1-1s1 .4 1 1v8c0 .6-.4 1-1 1z"></path><path opacity=".3" d="M29 19c-.2 0-.3 0-.5-.1-.4-.3-.6-.8-.3-1.3l4-6.9c.3-.4.8-.6 1.3-.3.4.3.6.8.3 1.3l-4 6.9c-.2.2-.5.4-.8.4z"></path><path opacity=".3" d="M17 39.8c-.2 0-.3 0-.5-.1-.4-.3-.6-.8-.3-1.3l4-6.9c.3-.4.8-.6 1.3-.3.4.3.6.8.3 1.3l-4 6.9c-.2.2-.5.4-.8.4z"></path><path opacity=".93" d="M21 19c-.3 0-.6-.2-.8-.5l-4-6.9c-.3-.4-.1-1 .3-1.3.4-.3 1-.1 1.3.3l4 6.9c.3.4.1 1-.3 1.3-.2.2-.3.2-.5.2z"></path><path opacity=".3" d="M33 39.8c-.3 0-.6-.2-.8-.5l-4-6.9c-.3-.4-.1-1 .3-1.3.4-.3 1-.1 1.3.3l4 6.9c.3.4.1 1-.3 1.3-.2.1-.3.2-.5.2z"></path><path opacity=".65" d="M17 26H9c-.6 0-1-.4-1-1s.4-1 1-1h8c.6 0 1 .4 1 1s-.4 1-1 1z"></path><path opacity=".3" d="M41 26h-8c-.6 0-1-.4-1-1s.4-1 1-1h8c.6 0 1 .4 1 1s-.4 1-1 1z"></path><path opacity=".86" d="M18.1 21.9c-.2 0-.3 0-.5-.1l-6.9-4c-.4-.3-.6-.8-.3-1.3.3-.4.8-.6 1.3-.3l6.9 4c.4.3.6.8.3 1.3-.2.3-.5.4-.8.4z"></path><path opacity=".3" d="M38.9 33.9c-.2 0-.3 0-.5-.1l-6.9-4c-.4-.3-.6-.8-.3-1.3.3-.4.8-.6 1.3-.3l6.9 4c.4.3.6.8.3 1.3-.2.3-.5.4-.8.4z"></path><path opacity=".44" d="M11.1 33.9c-.3 0-.6-.2-.8-.5-.3-.4-.1-1 .3-1.3l6.9-4c.4-.3 1-.1 1.3.3.3.4.1 1-.3 1.3l-6.9 4c-.1.2-.3.2-.5.2z"></path><path opacity=".3" d="M31.9 21.9c-.3 0-.6-.2-.8-.5-.3-.4-.1-1 .3-1.3l6.9-4c.4-.3 1-.1 1.3.3.3.4.1 1-.3 1.3l-6.9 4c-.2.2-.3.2-.5.2z"></path></symbol><symbol id="ei-star-icon" viewBox="0 0 50 50"><path d="M15.2 40.6c-.2 0-.4-.1-.6-.2-.4-.3-.5-.7-.4-1.1l3.9-12-10.2-7.5c-.4-.3-.5-.7-.4-1.1s.5-.7 1-.7h12.7L25 5.9c.1-.4.5-.7 1-.7s.8.3 1 .7L30.9 18h12.7c.4 0 .8.2 1 .6s0 .9-.4 1.1L34 27.1l3.9 12c.1.4 0 .9-.4 1.1s-.8.3-1.2 0L26 33l-10.2 7.4c-.2.1-.4.2-.6.2zM26 30.7c.2 0 .4.1.6.2l8.3 6.1-3.2-9.8c-.1-.4 0-.9.4-1.1l8.3-6.1H30.1c-.4 0-.8-.3-1-.7L26 9.5l-3.2 9.8c-.1.4-.5.7-1 .7H11.5l8.3 6.1c.4.3.5.7.4 1.1L17.1 37l8.3-6.1c.2-.1.4-.2.6-.2z"></path></symbol><symbol id="ei-tag-icon" viewBox="0 0 50 50"><path d="M22 40.1c-.9 0-1.7-.3-2.3-.9l-8.9-8.9c-1.2-1.2-1.2-3.3 0-4.5l11.9-11.9c1-1 3-1.8 4.5-1.8h7.6c1.8 0 3.2 1.4 3.2 3.2v7.6c0 1.5-.8 3.4-1.8 4.5L24.3 39.2c-.6.6-1.4.9-2.3.9zM27.2 14c-1 0-2.4.6-3 1.3L12.3 27.2c-.5.5-.5 1.2 0 1.7l8.9 8.9c.5.4 1.2.4 1.7 0l11.9-11.9c.7-.7 1.3-2.1 1.3-3v-7.6c0-.7-.5-1.2-1.2-1.2h-7.7z"></path><path d="M30 24c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></symbol><symbol id="ei-trash-icon" viewBox="0 0 50 50"><path d="M20 18h2v16h-2z"></path><path d="M24 18h2v16h-2z"></path><path d="M28 18h2v16h-2z"></path><path d="M12 12h26v2H12z"></path><path d="M30 12h-2v-1c0-.6-.4-1-1-1h-4c-.6 0-1 .4-1 1v1h-2v-1c0-1.7 1.3-3 3-3h4c1.7 0 3 1.3 3 3v1z"></path><path d="M31 40H19c-1.6 0-3-1.3-3.2-2.9l-1.8-24 2-.2 1.8 24c0 .6.6 1.1 1.2 1.1h12c.6 0 1.1-.5 1.2-1.1l1.8-24 2 .2-1.8 24C34 38.7 32.6 40 31 40z"></path></symbol><symbol id="ei-trophy-icon" viewBox="0 0 50 50"><path d="M28.6 29.4c3-2.3 7.4-5.7 7.4-18.4v-1H14v1c0 12.7 4.5 16.1 7.4 18.4 1.7 1.3 2.6 2 2.6 3.6v3c-1.6.2-3.2.8-3.8 2H18c-1.1 0-2 .9-2 2h18c0-1.1-.9-2-2-2h-2.2c-.6-1.2-2.1-1.8-3.8-2v-3c0-1.6.8-2.3 2.6-3.6zm-3.6.5c-.6-.8-1.5-1.5-2.3-2.1-2.7-2.1-6.4-4.9-6.6-15.8h18c-.2 10.8-3.9 13.7-6.6 15.8-1 .7-1.9 1.3-2.5 2.1z"></path><path d="M18.8 27C18.7 27 8 24.7 8 13v-1h7v2h-5c.6 9.2 9.1 11 9.2 11l-.4 2z"></path><path d="M31.2 27l-.4-2c.4-.1 8.6-1.9 9.2-11h-5v-2h7v1c0 11.7-10.7 14-10.8 14z"></path></symbol><symbol id="ei-undo-icon" viewBox="0 0 50 50"><path d="M25 38c-5.1 0-9.7-3-11.8-7.6l1.8-.8c1.8 3.9 5.7 6.4 10 6.4 6.1 0 11-4.9 11-11s-4.9-11-11-11c-4.6 0-8.5 2.8-10.1 7.3l-1.9-.7c1.9-5.2 6.6-8.6 12-8.6 7.2 0 13 5.8 13 13s-5.8 13-13 13z"></path><path d="M20 22h-8v-8h2v6h6z"></path></symbol><symbol id="ei-unlock-icon" viewBox="0 0 50 50"><path d="M18 23h-2v-4c0-5 4-9 9-9 4.5 0 8.4 3.4 8.9 7.9l-2 .2c-.4-3.5-3.4-6.1-6.9-6.1-3.9 0-7 3.1-7 7v4z"></path><path d="M33 40H17c-1.7 0-3-1.3-3-3V25c0-1.7 1.3-3 3-3h16c1.7 0 3 1.3 3 3v12c0 1.7-1.3 3-3 3zM17 24c-.6 0-1 .4-1 1v12c0 .6.4 1 1 1h16c.6 0 1-.4 1-1V25c0-.6-.4-1-1-1H17z"></path><circle cx="25" cy="28" r="2"></circle><path d="M25.5 28h-1l-1 6h3z"></path></symbol><symbol id="ei-user-icon" viewBox="0 0 50 50"><path d="M25.1 42c-9.4 0-17-7.6-17-17s7.6-17 17-17 17 7.6 17 17-7.7 17-17 17zm0-32c-8.3 0-15 6.7-15 15s6.7 15 15 15 15-6.7 15-15-6.8-15-15-15z"></path><path d="M15.3 37.3l-1.8-.8c.5-1.2 2.1-1.9 3.8-2.7 1.7-.8 3.8-1.7 3.8-2.8v-1.5c-.6-.5-1.6-1.6-1.8-3.2-.5-.5-1.3-1.4-1.3-2.6 0-.7.3-1.3.5-1.7-.2-.8-.4-2.3-.4-3.5 0-3.9 2.7-6.5 7-6.5 1.2 0 2.7.3 3.5 1.2 1.9.4 3.5 2.6 3.5 5.3 0 1.7-.3 3.1-.5 3.8.2.3.4.8.4 1.4 0 1.3-.7 2.2-1.3 2.6-.2 1.6-1.1 2.6-1.7 3.1V31c0 .9 1.8 1.6 3.4 2.2 1.9.7 3.9 1.5 4.6 3.1l-1.9.7c-.3-.8-1.9-1.4-3.4-1.9-2.2-.8-4.7-1.7-4.7-4v-2.6l.5-.3s1.2-.8 1.2-2.4v-.7l.6-.3c.1 0 .6-.3.6-1.1 0-.2-.2-.5-.3-.6l-.4-.4.2-.5s.5-1.6.5-3.6c0-1.9-1.1-3.3-2-3.3h-.6l-.3-.5c0-.4-.7-.8-1.9-.8-3.1 0-5 1.7-5 4.5 0 1.3.5 3.5.5 3.5l.1.5-.4.5c-.1 0-.3.3-.3.7 0 .5.6 1.1.9 1.3l.4.3v.5c0 1.5 1.3 2.3 1.3 2.4l.5.3v2.6c0 2.4-2.6 3.6-5 4.6-1.1.4-2.6 1.1-2.8 1.6z"></path></symbol></svg>
+<!-- Google Analytics Code -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="./Playing with dependency injection in PHP_files/js"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-28450068-1');</script>
+<div class="off-canvas-container">
+<div class="sidebar">
+<div class="row">
+<div class="column small-10 large-12">
+<h1 class="sidebar__logo logo">
+<i class="fa fa-code-fork" aria-hidden="true"></i>
+<a href="https://coderoncode.com/">CoderOnCode</a></h1>
+<div class="sidebar__description font-small">Random ramblings about code, programming, and technology</div>
+</div>
+<label class="off-canvas-toggle"><div class="icon icon--ei-navicon icon--s "><svg class="icon__cnt"><use xlink:href="#ei-navicon-icon"></use></svg></div></label>
+<div class="off-canvas-content">
+<div class="column small-12 large-12">
+<nav class="navigation">
+<ul class="list-bare text-center">
+<!--  -->
+<!--  -->
+<li>
+<a class="page-link" href="https://coderoncode.com/about/">About</a>
+</li>
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<li><a class="subscribe-button icon-feed" href="https://coderoncode.com/feed.xml">RSS</a></li>
+</ul>
+</nav>
+</div>
+<div class="column small-12 large-12">
+<ul class="social-nav social-icons">
+<li>
+<a href="http://www.github.com/CoderOnCode" target="_blank">
+<div class="icon icon--ei-sc-github icon--s "><svg class="icon__cnt"><use xlink:href="#ei-sc-github-icon"></use></svg></div>
+</a>
+</li>
+<li>
+<a href="http://www.twitter.com/CoderOnCode" target="_blank">
+<div class="icon icon--ei-sc-twitter icon--s "><svg class="icon__cnt"><use xlink:href="#ei-sc-twitter-icon"></use></svg></div>
+</a>
+</li>
+<li>
+<a href="mailto:contact@coderoncode.com" target="_blank">
+<div class="icon icon--ei-envelope icon--s "><svg class="icon__cnt"><use xlink:href="#ei-envelope-icon"></use></svg></div>
+</a>
+</li>
+<li>
+<a class="toggle-search-button" href="https://coderoncode.com/dependency-injection/design-patterns/programming/php/development/2014/01/06/dependency-injection-php.html#">
+<div class="icon icon--ei-search icon--s "><svg class="icon__cnt"><use xlink:href="#ei-search-icon"></use></svg></div>
+</a>
+</li>
+</ul>
+</div>
+<div class="sidebar__bottom">
+<div class="column small-12 large-12">
+<div class="font-tiny">
+© 2017 CoderOnCode
+</div>
+</div>
+</div>
+</div> <!-- off-canvas-content -->
+</div>
+</div>
+<div class="search-form-container">
+<form class="search-form">
+<fieldset class="search-form__fieldset">
+<div class="row">
+<div class="column column--center large-8">
+<input class="search-form__field" placeholder="Type to search" autofocus="">
+<input class="search-form__submit" type="submit" value="search">
+</div>
+</div>
+</fieldset>
+</form>
+<div class="row">
+<div class="column column--center large-8">
+<div class="search-results"></div>
+</div>
+</div>
+<div class="close-search-button search-form-container__close">
+<div class="icon icon--ei-close icon--s "><svg class="icon__cnt"><use xlink:href="#ei-close-icon"></use></svg></div>
+</div>
+</div>
+<div class="wrapper">
+<div class="row row--full">
+<div class="column column--center medium-12 large-12">
+<div class="grey-bg CoverImage FlexEmbed FlexEmbed--16by9" style="background-image: url()"></div>
+</div>
+<div class="column column--center medium-12 large-10">
+<article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+<header class="post__header">
+<h2 class="post__title" itemprop="name headline">Playing with dependency injection in PHP</h2>
+<time class="post__date" datetime="2014-01-06T00:00:00-05:00" itemprop="datePublished">Jan 6, 2014</time>
+</header>
+<div class="post-content" itemprop="articleBody">
+<p><strong>Dependency Injection</strong> is a software design pattern that allows avoiding hard-coding dependencies and makes possible to change the dependencies both at runtime and compile time.</p>
+<p>By using <strong>Dependency Injection</strong> we can write more maintainable, testable, and modular code. All projects have dependencies. The larger the project the more dependencies is it bound to have; now having a great number of dependencies is nothing bad by itself however how those dependencies are managed and maintained is.</p>
+<p><strong>Dependency Injection</strong> is not a new pattern and it has been commonly used on many languages like Java, but this pattern is somewhat new in the <strong>PHP</strong> world and it’s gaining traction quickly thanks for frameworks like <a href="http://laravel.com/">laravel</a></p>
+<p>Let’s exemplify these concepts by creating a pair of classes first without dependency injection and then rewriting the code to use the dependency injection pattern; since I’m primarily a <strong>Magento</strong> developer I’ll be really original (wink, wink) and create a <strong>Product</strong> and a <strong>StockItem</strong> class.</p>
+<script src="./Playing with dependency injection in PHP_files/8275062.js"></script><link rel="stylesheet" href="./Playing with dependency injection in PHP_files/gist-embed-c2b1c51a2a8f23e346b3b1581e388f48.css"><div id="gist8275062" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-stockitem-php" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-php">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-stockitem-php-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-stockitem-php-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-pse">&lt;?php</span><span class="pl-s1"> </span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-stockitem-php-LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"> </span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-stockitem-php-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-k">class</span> <span class="pl-en">StockItem</span> {</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-stockitem-php-LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  </span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-stockitem-php-LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-k">private</span> <span class="pl-smi">$quantity</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-stockitem-php-LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-k">private</span> <span class="pl-smi">$status</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-stockitem-php-LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  </span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-stockitem-php-LC8" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-c1">__construct</span>(<span class="pl-smi">$quantity</span>, <span class="pl-smi">$status</span>){</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-stockitem-php-LC9" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">   <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">quantity</span> <span class="pl-k">=</span> <span class="pl-smi">$quantity</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-stockitem-php-LC10" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">   <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">status</span>   <span class="pl-k">=</span> <span class="pl-smi">$status</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-stockitem-php-LC11" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  }</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-stockitem-php-LC12" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  </span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-stockitem-php-LC13" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">getQuantity</span>(){</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-stockitem-php-LC14" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">   <span class="pl-k">return</span> <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">quantity</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-stockitem-php-LC15" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  }</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-stockitem-php-LC16" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  </span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-stockitem-php-LC17" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">getStatus</span>(){</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-stockitem-php-LC18" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">   <span class="pl-k">return</span> <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">status</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-stockitem-php-LC19" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  }</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-stockitem-php-LC20" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  </span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-stockitem-php-LC21" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">}</span></td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/amacgregor/8275062/raw/e9ab719f5fc7b4558845abb8a28ec612c53445e6/StockItem.php" style="float:right">view raw</a>
+        <a href="https://gist.github.com/amacgregor/8275062#file-stockitem-php">StockItem.php</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+
+<script src="./Playing with dependency injection in PHP_files/8275059.js"></script><link rel="stylesheet" href="./Playing with dependency injection in PHP_files/gist-embed-c2b1c51a2a8f23e346b3b1581e388f48.css"><div id="gist8275059" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-product-php" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-php">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-product-php-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-product-php-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-pse">&lt;?php</span><span class="pl-s1"> </span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-product-php-LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"></span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-product-php-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-k">class</span> <span class="pl-en">Product</span> {</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-product-php-LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-k">private</span> <span class="pl-smi">$stockItem</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-product-php-LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-k">private</span> <span class="pl-smi">$sku</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-product-php-LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  </span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-product-php-LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-c1">__construct</span>(<span class="pl-smi">$sku</span>, <span class="pl-smi">$stockQuantity</span>, <span class="pl-smi">$stockStatus</span>){</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-product-php-LC8" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">    <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">stockItem</span>  <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">StockItem</span>(<span class="pl-smi">$stockQuantity</span>, <span class="pl-smi">$stockStatus</span>);</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-product-php-LC9" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">    <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">sku</span>        <span class="pl-k">=</span> <span class="pl-smi">$sku</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-product-php-LC10" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  }</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-product-php-LC11" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  </span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-product-php-LC12" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">getStockItem</span>(){</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-product-php-LC13" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">    <span class="pl-k">return</span> <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">stockItem</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-product-php-LC14" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  }</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-product-php-LC15" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  </span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-product-php-LC16" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">getSku</span>(){</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-product-php-LC17" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">    <span class="pl-k">return</span> <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">sku</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-product-php-LC18" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  }</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-product-php-LC19" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">}</span></td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/amacgregor/8275059/raw/cf6fe761c11c30b105abc40c05fcdac693da94a3/Product.php" style="float:right">view raw</a>
+        <a href="https://gist.github.com/amacgregor/8275059#file-product-php">Product.php</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+
+<p>At first glance the code looks pretty normal and it’s what many PHP developers would call good code, however if we take a closer look at it using the <strong>S.O.L.I.D</strong> principle we can see that the code actually has many problems:</p>
+<ul>
+<li>
+<p>The <em>StockItem</em> is tightly coupled with the <em>Product</em> class, and while this might not look bad on this particular example. Let’s imagine that we made a change to the <em>StockItem</em> class to include a new parameter, we would then have to modify every single class where the <em>StockItem</em> object was created.</p>
+</li>
+<li>
+<p>The <em>Product</em> class knows too much, in this case the stock status and quantity, let’s say that our application can handle inventories from multiple sources and stores but for the same product. With that in mind it would be in our best interest to make the <em>Product</em> class know less about its inventory.</p>
+</li>
+<li>
+<p>We just made our life harder when it comes to unit testing the code. Since we are instantiating the stockItem inside the constructor it would be impossible to unit test the <em>Product</em> class without also testing the <em>StockItem</em> class.</p>
+</li>
+</ul>
+<h2 id="lets-inject-something">Let’s Inject something!</h2>
+<p>In the other hand by using dependency injection we can correct most of these problems, let’s take at the same code but using dependency injection:</p>
+<script src="./Playing with dependency injection in PHP_files/8275062.js"></script><link rel="stylesheet" href="./Playing with dependency injection in PHP_files/gist-embed-c2b1c51a2a8f23e346b3b1581e388f48.css"><div id="gist8275062" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-stockitem-php" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-php">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-stockitem-php-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-stockitem-php-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-pse">&lt;?php</span><span class="pl-s1"> </span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-stockitem-php-LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"> </span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-stockitem-php-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-k">class</span> <span class="pl-en">StockItem</span> {</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-stockitem-php-LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  </span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-stockitem-php-LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-k">private</span> <span class="pl-smi">$quantity</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-stockitem-php-LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-k">private</span> <span class="pl-smi">$status</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-stockitem-php-LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  </span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-stockitem-php-LC8" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-c1">__construct</span>(<span class="pl-smi">$quantity</span>, <span class="pl-smi">$status</span>){</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-stockitem-php-LC9" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">   <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">quantity</span> <span class="pl-k">=</span> <span class="pl-smi">$quantity</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-stockitem-php-LC10" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">   <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">status</span>   <span class="pl-k">=</span> <span class="pl-smi">$status</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-stockitem-php-LC11" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  }</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-stockitem-php-LC12" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  </span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-stockitem-php-LC13" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">getQuantity</span>(){</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-stockitem-php-LC14" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">   <span class="pl-k">return</span> <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">quantity</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-stockitem-php-LC15" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  }</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-stockitem-php-LC16" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  </span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-stockitem-php-LC17" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">getStatus</span>(){</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-stockitem-php-LC18" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">   <span class="pl-k">return</span> <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">status</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-stockitem-php-LC19" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  }</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-stockitem-php-LC20" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  </span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-stockitem-php-LC21" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">}</span></td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/amacgregor/8275062/raw/e9ab719f5fc7b4558845abb8a28ec612c53445e6/StockItem.php" style="float:right">view raw</a>
+        <a href="https://gist.github.com/amacgregor/8275062#file-stockitem-php">StockItem.php</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+
+<script src="./Playing with dependency injection in PHP_files/8275757.js"></script><link rel="stylesheet" href="./Playing with dependency injection in PHP_files/gist-embed-c2b1c51a2a8f23e346b3b1581e388f48.css"><div id="gist8275757" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-product-php" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-php">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-product-php-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-product-php-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-pse">&lt;?php</span><span class="pl-s1"> </span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-product-php-LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"> </span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-product-php-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-k">class</span> <span class="pl-en">Product</span> {</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-product-php-LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-k">private</span> <span class="pl-smi">$stockItem</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-product-php-LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-k">private</span> <span class="pl-smi">$sku</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-product-php-LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  </span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-product-php-LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-c1">__construct</span>(<span class="pl-smi">$sku</span>, <span class="pl-c1">StockItem</span> <span class="pl-smi">$stockItem</span>){</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-product-php-LC8" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">    <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">stockItem</span>  <span class="pl-k">=</span> <span class="pl-smi">$stockItem</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-product-php-LC9" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">    <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">sku</span>        <span class="pl-k">=</span> <span class="pl-smi">$sku</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-product-php-LC10" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  }</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-product-php-LC11" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  </span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-product-php-LC12" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">getStockItem</span>(){</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-product-php-LC13" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">    <span class="pl-k">return</span> <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">stockItem</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-product-php-LC14" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  }</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-product-php-LC15" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  </span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-product-php-LC16" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">getSku</span>(){</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-product-php-LC17" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">    <span class="pl-k">return</span> <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">sku</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-product-php-LC18" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  }</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-product-php-LC19" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">}</span></td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/amacgregor/8275757/raw/d6a2c291e2584db7f3b105efb6761cd356009701/Product.php" style="float:right">view raw</a>
+        <a href="https://gist.github.com/amacgregor/8275757#file-product-php">Product.php</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+
+<h2 id="constructor-injection">Constructor Injection</h2>
+<p>By using dependency injection we have more maintainable code, in the previous example we are using a type of dependency injection normally referred as <strong>Constructor Injection.</strong> By doing a simple change we can reduce the level of complexity of our code and improve the overall quality; not to mention that now we can easily run unit tests.</p>
+<p>Constructor injection is by far the most common method used and there are several advantages by using this particular type of injection:</p>
+<ul>
+<li>
+<p>If the <strong>dependency is required</strong> by the class and cannot work without it, by using constructor injection we guarantee that the required dependencies are present.</p>
+</li>
+<li>
+<p>Since the constructor is only ever called when instantiating our object we can be sure that the <strong>dependency can’t be changed or altered during the object lifetime.</strong></p>
+</li>
+</ul>
+<p>These two points make Constructor Injection extremely useful, however there is also a few drawbacks that make it unsuitable for all scenarios:</p>
+<ul>
+<li>
+<p>Since <strong>all dependencies are required</strong>, it’s not suitable when optional dependencies are needed.</p>
+</li>
+<li>
+<p>While using class inheritance trying to extend and <strong>override the constructor becomes difficult.</strong></p>
+</li>
+</ul>
+<h2 id="setter-injection">Setter Injection</h2>
+<p>Another common type of dependency injection is called setter injection and the same code as above would look something like this:</p>
+<script src="./Playing with dependency injection in PHP_files/8275062.js"></script><link rel="stylesheet" href="./Playing with dependency injection in PHP_files/gist-embed-c2b1c51a2a8f23e346b3b1581e388f48.css"><div id="gist8275062" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-stockitem-php" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-php">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-stockitem-php-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-stockitem-php-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-pse">&lt;?php</span><span class="pl-s1"> </span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-stockitem-php-LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"> </span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-stockitem-php-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-k">class</span> <span class="pl-en">StockItem</span> {</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-stockitem-php-LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  </span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-stockitem-php-LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-k">private</span> <span class="pl-smi">$quantity</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-stockitem-php-LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-k">private</span> <span class="pl-smi">$status</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-stockitem-php-LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  </span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-stockitem-php-LC8" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-c1">__construct</span>(<span class="pl-smi">$quantity</span>, <span class="pl-smi">$status</span>){</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-stockitem-php-LC9" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">   <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">quantity</span> <span class="pl-k">=</span> <span class="pl-smi">$quantity</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-stockitem-php-LC10" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">   <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">status</span>   <span class="pl-k">=</span> <span class="pl-smi">$status</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-stockitem-php-LC11" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  }</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-stockitem-php-LC12" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  </span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-stockitem-php-LC13" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">getQuantity</span>(){</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-stockitem-php-LC14" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">   <span class="pl-k">return</span> <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">quantity</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-stockitem-php-LC15" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  }</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-stockitem-php-LC16" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  </span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-stockitem-php-LC17" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">getStatus</span>(){</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-stockitem-php-LC18" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">   <span class="pl-k">return</span> <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">status</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-stockitem-php-LC19" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  }</span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-stockitem-php-LC20" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  </span></td>
+      </tr>
+      <tr>
+        <td id="file-stockitem-php-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-stockitem-php-LC21" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">}</span></td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/amacgregor/8275062/raw/e9ab719f5fc7b4558845abb8a28ec612c53445e6/StockItem.php" style="float:right">view raw</a>
+        <a href="https://gist.github.com/amacgregor/8275062#file-stockitem-php">StockItem.php</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+
+<script src="./Playing with dependency injection in PHP_files/8275875.js"></script><link rel="stylesheet" href="./Playing with dependency injection in PHP_files/gist-embed-c2b1c51a2a8f23e346b3b1581e388f48.css"><div id="gist8275875" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-product-php" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-php">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-product-php-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-product-php-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-pse">&lt;?php</span><span class="pl-s1"> </span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-product-php-LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"> </span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-product-php-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-k">class</span> <span class="pl-en">Product</span> {</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-product-php-LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-k">private</span> <span class="pl-smi">$stockItem</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-product-php-LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-k">private</span> <span class="pl-smi">$sku</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-product-php-LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  </span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-product-php-LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-c1">__construct</span>(<span class="pl-smi">$sku</span>){</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-product-php-LC8" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">    <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">sku</span>        <span class="pl-k">=</span> <span class="pl-smi">$sku</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-product-php-LC9" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  }</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-product-php-LC10" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  </span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-product-php-LC11" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">getStockItem</span>(){</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-product-php-LC12" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">    <span class="pl-k">return</span> <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">stockItem</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-product-php-LC13" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  }</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-product-php-LC14" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  </span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-product-php-LC15" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">getSku</span>(){</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-product-php-LC16" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">    <span class="pl-k">return</span> <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">sku</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-product-php-LC17" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  }</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-product-php-LC18" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  </span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-product-php-LC19" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">setStockItem</span>(<span class="pl-c1">StockItem</span> <span class="pl-smi">$stockItem</span>){</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-product-php-LC20" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">    <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">stockItem</span> <span class="pl-k">=</span> <span class="pl-smi">$stockItem</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-product-php-LC21" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  }</span></td>
+      </tr>
+      <tr>
+        <td id="file-product-php-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-product-php-LC22" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">}</span></td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/amacgregor/8275875/raw/e7d5266023e4f944ca7fa9c6e1b557714673c9d7/Product.php" style="float:right">view raw</a>
+        <a href="https://gist.github.com/amacgregor/8275875#file-product-php">Product.php</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+
+<p>As we can see, with Setter Injection the dependencies are provided to our class after it has been instantiated using setter methods. Setter Injection has a few advantages:</p>
+<ul>
+<li>
+<p>Allows for <strong>optional dependencies</strong> and the class can be created with default values.</p>
+</li>
+<li>
+<p><strong>Adding new dependencies is as easy</strong> as adding a new setter method and it won’t break any existing code.</p>
+</li>
+</ul>
+<p><strong>Setter Injection</strong> might be more suitable for situations where more flexibility is required.</p>
+<h2 id="so-is-dependency-injection-right-for-my-application">So is Dependency Injection right for my application?</h2>
+<p>At the end of the day is up to each developer the one that has to make the decision about what design patterns are the right fit for his application be it <strong>Dependency Injection</strong> or something else; that being said from personal experience using patterns like this might be an overkill for smaller projects.</p>
+<p>But if you are working on large and long running project, then there is good chance that dependency injection might the right solution for your project.</p>
+<h4 id="if-you-have-any-stories-about-using-dependency-injection-in-the-real-world-and-you-would-like-to-share-please-leave-a-comment-down-below">If you have any stories about using Dependency Injection in the real world and you would like to share please leave a comment down below.</h4>
+<div class="post__tags">
+<a href="https://coderoncode.com/tag/article">article</a>
+</div>
+</div>
+<hr>
+<div class="box box--author">
+<div class="box__body">
+<h4 class="box__title">
+</h4>
+<div class="author-meta box__text">
+</div>
+</div><!-- box__body -->
+</div><!-- box -->
+<ul class="share-list">
+<li>
+<a class="share-list__link" href="https://twitter.com/intent/tweet?text=Playing%20with%20dependency%20injection%20in%20PHP&amp;url=https://coderoncode.com/dependency-injection/design-patterns/programming/php/development/2014/01/06/dependency-injection-php.html&amp;via=CoderOnCode&amp;related=CoderOnCode" rel="nofollow" target="_blank" title="Share on Twitter">
+<div class="icon icon--ei-sc-twitter icon--s share-list__icon share-list__icon--twitter"><svg class="icon__cnt"><use xlink:href="#ei-sc-twitter-icon"></use></svg></div>
+</a>
+</li>
+<li>
+<a class="share-list__link" href="https://facebook.com/sharer.php?u=https://coderoncode.com/dependency-injection/design-patterns/programming/php/development/2014/01/06/dependency-injection-php.html" rel="nofollow" target="_blank" title="Share on Facebook">
+<div class="icon icon--ei-sc-facebook icon--s share-list__icon share-list__icon--facebook"><svg class="icon__cnt"><use xlink:href="#ei-sc-facebook-icon"></use></svg></div>
+</a>
+</li>
+<li>
+<a class="share-list__link" href="https://plus.google.com/share?url=https://coderoncode.com/dependency-injection/design-patterns/programming/php/development/2014/01/06/dependency-injection-php.html" rel="nofollow" target="_blank" title="Share on Google+">
+<div class="icon icon--ei-sc-google-plus icon--s share-list__icon share-list__icon--google"><svg class="icon__cnt"><use xlink:href="#ei-sc-google-plus-icon"></use></svg></div>
+</a>
+</li>
+</ul>
+<section class="related">
+<h5 class="separator">
+<span class="separator__title">Related</span>
+</h5>
+<article class="post" itemscope="" itemtype="http://schema.org/BlogPosting" role="article">
+<div class="article-item">
+<header class="post-header">
+<h4 class="post-title" itemprop="name"><a href="https://coderoncode.com/blockchain/2017/12/24/ethereum-zero-to-hero-developing-our-first-contract.html" itemprop="url">Ethereum Zero to Hero: Developing Our First Contract</a></h4>
+</header>
+<section class="post-excerpt" itemprop="description">
+<p></p><p>This is the third part of our Ethereum Zero to Hero guide. If you have not read the previous post, I highly recommend checking it before moving forward.</p>
+<p></p>
+</section>
+</div>
+</article>
+<hr>
+<article class="post" itemscope="" itemtype="http://schema.org/BlogPosting" role="article">
+<div class="article-item">
+<header class="post-header">
+<h4 class="post-title" itemprop="name"><a href="https://coderoncode.com/blockchain/2017/12/24/ethereum-zero-to-hero-setting-a-development-environment.html" itemprop="url">Ethereum Zero to Hero: Setting a Development Environment</a></h4>
+</header>
+<section class="post-excerpt" itemprop="description">
+<p></p><p>This is the second part of our Ethereum Zero to Hero guide. If you have not read part, I highly recommend it before jumping ahead.</p>
+<p></p>
+</section>
+</div>
+</article>
+<hr>
+<article class="post" itemscope="" itemtype="http://schema.org/BlogPosting" role="article">
+<div class="article-item">
+<header class="post-header">
+<h4 class="post-title" itemprop="name"><a href="https://coderoncode.com/blockchain/2017/12/24/ethereum-zero-to-hero-introduction.html" itemprop="url">Ethereum Zero to Hero: Introduction</a></h4>
+</header>
+<section class="post-excerpt" itemprop="description">
+<p></p><p>2017 has arguably been the year of Cryptocurrency, with <strong>Bitcoin</strong> being getting most of the spotlight; at the core of Bitcoin, we have the <strong>Blockchain</strong>.</p>
+<p></p>
+</section>
+</div>
+</article>
+<hr>
+<article class="post" itemscope="" itemtype="http://schema.org/BlogPosting" role="article">
+<div class="article-item">
+<header class="post-header">
+<h4 class="post-title" itemprop="name"><a href="https://coderoncode.com/technology/2017/12/18/5-trends-to-watchout-in-2018.html" itemprop="url">5 Trends To Watch Out On 2018</a></h4>
+</header>
+<section class="post-excerpt" itemprop="description">
+<p></p><p>With 2018 around the corner is prudent to take some time and see what new and existing trends will dominate 2018.</p>
+<p></p>
+</section>
+</div>
+</article>
+<hr>
+</section>
+<h5 class="separator">
+<span class="separator__title">Newsletter</span>
+</h5>
+<div class="box box--news-letter">
+<form action="https://aspirethemes.us12.list-manage.com/subscribe/post?u=9723f3c5c3a2637fbba3bc673&amp;id=7b50db9989" method="post" target="_blank">
+<div class="row">
+<div class="column medium-9 large-9">
+<input type="email" name="EMAIL" placeholder="Your email address">
+</div>
+<div class="column medium-3 large-3">
+<input type="submit" class="button button--expand" value="SIGN UP">
+</div>
+</div>
+</form>
+</div>
+<section class="disqus">
+<h5 class="separator">
+<span class="separator__title">Comments</span>
+</h5>
+<div id="disqus_thread"><iframe id="dsq-app9790" name="dsq-app9790" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Playing with dependency injection in PHP_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 391px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+<script>var disqus_config=function(){this.page.url="https://coderoncode.com/dependency-injection/design-patterns/programming/php/development/2014/01/06/dependency-injection-php.html";};(function(){var d=document,s=d.createElement('script');s.src='//codercode.disqus.com/embed.js';s.setAttribute('data-timestamp',+new Date());(d.head||d.body).appendChild(s);})();</script>
+<noscript>Please enable JavaScript to view the &lt;a href="<a class="vglnk" href="https://disqus.com/?ref_noscript" rel="nofollow"><span>https</span><span>://</span><span>disqus</span><span>.</span><span>com</span><span>/?</span><span>ref</span><span>_</span><span>noscript</span></a>" rel="nofollow"&gt;comments powered by Disqus.&lt;/a&gt;</noscript>
+</section>
+</article>
+</div>
+</div> <!-- row-->
+</div> <!-- wrapper -->
+</div>
+<script src="./Playing with dependency injection in PHP_files/jquery-2.1.4.min.js.pagespeed.jm.BnirE05kB4.js"></script>
+<script src="./Playing with dependency injection in PHP_files/evil-icons.min.js+jquery.fitvids.js+jquery.ghostHunter.min.js+script.js.pagespeed.jc._ZVWbTSbXJ.js"></script><script>eval(mod_pagespeed_nzBP_BIy3C);</script>
+<script>eval(mod_pagespeed_ZDRrFhU7kA);</script>
+<script>eval(mod_pagespeed_f_m5PLELzs);</script>
+<script>eval(mod_pagespeed_SrZ0Yqg7MZ);</script>
+<script src="./Playing with dependency injection in PHP_files/8f46060f30.js"></script>
+<script data-pagespeed-no-defer="">//<![CDATA[
+(function(){window.pagespeed=window.pagespeed||{};var f=window.pagespeed;function h(c,a,e,b){this.f=c;this.a=a;this.b=e;this.g=b}f.beaconUrl="";
+function k(c){var a=c.f,e=window.mod_pagespeed_start,b=Number(new Date)-e,a=a+(-1==a.indexOf("?")?"?":"&"),a=a+"ets="+("load"==c.a?"load:":"unload:");if("beforeunload"!=c.a||!window.mod_pagespeed_loaded){a=a+b+("&r"+c.a+"=");if(window.performance){var b=window.performance.timing,d=b.navigationStart,g=b.requestStart,a=a+(b[c.a+"EventStart"]-d),a=a+("&nav="+(b.fetchStart-d)),a=a+("&dns="+(b.domainLookupEnd-b.domainLookupStart)),a=a+("&connect="+(b.connectEnd-b.connectStart)),a=a+("&req_start="+(g-d))+
+("&ttfb="+(b.responseStart-g)),a=a+("&dwld="+(b.responseEnd-b.responseStart)),a=a+("&dom_c="+(b.domContentLoadedEventStart-d));window.performance.navigation&&(a+="&nt="+window.performance.navigation.type);d=-1;b.msFirstPaint?d=b.msFirstPaint:window.chrome&&window.chrome.loadTimes&&(d=Math.floor(1E3*window.chrome.loadTimes().firstPaintTime));d-=g;0<=d&&(a+="&fp="+d)}else a+=b;f.getResourceTimingData&&window.parent==window&&(a+=f.getResourceTimingData());a+=window.parent!=window?"&ifr=1":"&ifr=0";"load"==
+c.a&&(window.mod_pagespeed_loaded=!0,(b=window.mod_pagespeed_num_resources_prefetched)&&(a+="&nrp="+b),(b=window.mod_pagespeed_prefetch_start)&&(a+="&htmlAt="+(e-b)));f.criticalCss&&(e=f.criticalCss,a+="&ccis="+e.total_critical_inlined_size+"&cces="+e.total_original_external_size+"&ccos="+e.total_overhead_size+"&ccrl="+e.num_replaced_links+"&ccul="+e.num_unreplaced_links);a+="&dpr="+window.devicePixelRatio;""!=c.b&&(a+=c.b);document.referrer&&(a+="&ref="+encodeURIComponent(document.referrer));a+=
+"&url="+encodeURIComponent(c.g);f.beaconUrl=a;(new Image).src=a}}f.c=function(c,a,e,b){var d=new h(c,a,e,b);window.addEventListener?window.addEventListener(a,function(){k(d)},!1):window.attachEvent("on"+a,function(){k(d)})};f.addInstrumentationInit=f.c;})();
+
+pagespeed.addInstrumentationInit('/mod_pagespeed_beacon', 'load', '', 'https://coderoncode.com/dependency-injection/design-patterns/programming/php/development/2014/01/06/dependency-injection-php.html');
+//]]></script>
+
+<iframe style="display: none;" src="./Playing with dependency injection in PHP_files/saved_resource(1).html"></iframe></body></html>
