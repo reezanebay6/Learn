@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://x-team.com/blog/creating-and-subscribing-to-events/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" async="" src="./Drupal 8_ Creating and Subscribing to Events_files/analytics.js"></script><script type="text/javascript" async="" src="./Drupal 8_ Creating and Subscribing to Events_files/insight.min.js"></script><script async="" src="./Drupal 8_ Creating and Subscribing to Events_files/qevents.js"></script><script src="./Drupal 8_ Creating and Subscribing to Events_files/1477979408924202" async=""></script><script async="" src="./Drupal 8_ Creating and Subscribing to Events_files/fbevents.js"></script><script type="text/javascript" async="" src="./Drupal 8_ Creating and Subscribing to Events_files/uwt.js"></script><script type="text/javascript" async="" src="./Drupal 8_ Creating and Subscribing to Events_files/conversion_async.js"></script><script async="" src="./Drupal 8_ Creating and Subscribing to Events_files/gtm.js"></script><script src="./Drupal 8_ Creating and Subscribing to Events_files/tags.js"></script>
+      <!-- Data layer -->
+      <script>
+        var tags = "code | drupal";
+
+        dataLayer=[];
+        dataLayer.push({'authorName': 'Deji Akala' });
+        dataLayer.push({'postTags': tags });
+
+        var myarr = getXTags();
+        if (tags) {
+          var tagArr = tags.split(" | ");
+          var i, j;
+          var match = "";
+          for (i = 0; i < myarr.length; i++) {
+            for (j = 0; j < tagArr.length; ++j) {
+              if (myarr[i].toLowerCase() == tagArr[j].toLowerCase()) {
+                  match = myarr[i];
+              }
+            }
+          }
+          if (match) {
+            dataLayer.push({'mainTag': match.toLowerCase() });
+          }
+        }
+      </script>
+      <!-- End Data layer -->
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TBFZ4NW');</script>
+    <!-- End Google Tag Manager -->
+
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="https://x-team.com/blog/favicon.png">
+
+    <title>Drupal 8: Creating and Subscribing to Events</title>
+
+    <link href="./Drupal 8_ Creating and Subscribing to Events_files/normalize.min.css" rel="stylesheet">
+    <link href="./Drupal 8_ Creating and Subscribing to Events_files/screen.min.css" rel="stylesheet">
+    <link href="./Drupal 8_ Creating and Subscribing to Events_files/responsive.min.css" rel="stylesheet">
+    <link href="./Drupal 8_ Creating and Subscribing to Events_files/css" rel="stylesheet">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="This guide explains how to create and subscribe to events in Drupal.">
+    <link rel="shortcut icon" href="https://x-team.com/blog/favicon.png" type="image/png">
+    <link rel="canonical" href="https://x-team.com/blog/creating-and-subscribing-to-events/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="https://x-team.com/blog/creating-and-subscribing-to-events/amp/">
+    
+    <meta property="og:site_name" content="X-Team Blog - Commit. Push. Unleash.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Drupal 8: Creating and Subscribing to Events">
+    <meta property="og:description" content="This guide explains how to create and subscribe to events in Drupal.">
+    <meta property="og:url" content="https://x-team.com/blog/creating-and-subscribing-to-events/">
+    <meta property="og:image" content="https://res.cloudinary.com/dukp6c7f7/image/upload/f_auto,fl_lossy,q_auto/s3-ghost/2017/08/Social_Post__27_-1501637474353.png">
+    <meta property="article:published_time" content="2017-08-22T17:00:00.000Z">
+    <meta property="article:modified_time" content="2017-08-24T17:12:23.000Z">
+    <meta property="article:tag" content="code">
+    <meta property="article:tag" content="drupal">
+    
+    <meta property="article:publisher" content="https://www.facebook.com/x.team">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Drupal 8: Creating and Subscribing to Events">
+    <meta name="twitter:description" content="This guide explains how to create and subscribe to events in Drupal.">
+    <meta name="twitter:url" content="https://x-team.com/blog/creating-and-subscribing-to-events/">
+    <meta name="twitter:image" content="https://res.cloudinary.com/dukp6c7f7/image/upload/f_auto,fl_lossy,q_auto/s3-ghost/2017/08/Social_Post__27_-1501637474353.png">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Deji Akala">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="code, drupal">
+    <meta name="twitter:site" content="@xteam">
+    <meta name="twitter:creator" content="@dejiakala">
+    <meta property="og:image:width" content="855">
+    <meta property="og:image:height" content="448">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "X-Team Blog - Commit. Push. Unleash.",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://res.cloudinary.com/dukp6c7f7/image/upload/f_auto,fl_lossy,q_auto/s3-ghost//2018/02/x-black.png",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Deji Akala",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://res.cloudinary.com/dukp6c7f7/image/upload/f_auto,fl_lossy,q_auto/s3-ghost/2018/01/deji_20180114-1515962603782.png",
+            "width": 400,
+            "height": 400
+        },
+        "url": "https://x-team.com/blog/author/dakala/",
+        "sameAs": [
+            "https://twitter.com/dejiakala"
+        ]
+    },
+    "headline": "Drupal 8: Creating and Subscribing to Events",
+    "url": "https://x-team.com/blog/creating-and-subscribing-to-events/",
+    "datePublished": "2017-08-22T17:00:00.000Z",
+    "dateModified": "2017-08-24T17:12:23.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://res.cloudinary.com/dukp6c7f7/image/upload/f_auto,fl_lossy,q_auto/s3-ghost/2017/08/Social_Post__27_-1501637474353.png",
+        "width": 855,
+        "height": 448
+    },
+    "keywords": "code, drupal",
+    "description": "This guide explains how to create and subscribe to events in Drupal.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://x-team.com/blog/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="./Drupal 8_ Creating and Subscribing to Events_files/ghost-sdk.min.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "909957b4cf59"
+});
+</script>
+    <meta name="generator" content="Ghost 1.21">
+    <link rel="alternate" type="application/rss+xml" title="X-Team Blog - Commit. Push. Unleash." href="https://x-team.com/blog/rss/">
+    <style>  
+pre {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0 0 1.75em 0;
+    border: #E3EDF3 1px solid;
+    width: 100%;
+    padding: 10px;    
+    font-size: 0.9em;
+    white-space: pre;
+    overflow: auto;
+    background: #F7FAFB;
+    border-radius: 3px;
+}
+
+pre code, pre tt {
+    font-size: inherit;
+    white-space: pre-wrap;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+</style>
+<script src="./Drupal 8_ Creating and Subscribing to Events_files/embed.js" data-timestamp="1542114195523"></script><script src="./Drupal 8_ Creating and Subscribing to Events_files/saved_resource"></script><link rel="preload" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.d49f53e192b9080ef8880a7c9b24f1c3.css"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.18932c85febf9520158697cdc31f08ae.js"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.e7b46487e9e041aabc7c7cff31722578.js"><link rel="preload" as="script" href="https://disqus.com/next/config.js"></head>
+
+<body class=" post-template tag-code tag-drupal" itemscope="" itemtype="http://schema.org/WebPage">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TBFZ4NW"
+    height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="outer-wrapper">
+        <div class="header-outer">
+	<div class="clearfix header-inner">
+		<header class="left header" role="banner" itemscope="" itemtype="http://schema.org/WPHeader">
+			<div class="header">
+					<a class="title site-logo" href="https://x-team.com/"><img src="./Drupal 8_ Creating and Subscribing to Events_files/xteam_black.png" alt="X-Team Blog - Commit. Push. Unleash."></a>
+			</div>
+		</header>
+
+		<ul class="right socialnetwork">
+			<li class="icon-facebook"><a href="https://www.facebook.com/x.team">Facebook</a></li>
+			<li class="icon-twitter"><a href="https://twitter.com/xteam">Twitter</a></li>
+			<li class="icon-linkedin"><a href="https://www.linkedin.com/company/x-team">LinkedIn</a></li>
+		</ul>
+
+		<nav class="navigation">
+			<ul class="nav" role="menu">
+    <li class="nav-blog" role="menuitem"><a href="https://x-team.com/blog/">Blog</a></li>
+    <li class="nav-code" role="menuitem"><a href="https://x-team.com/blog/tag/code/">Code</a></li>
+    <li class="nav-community" role="menuitem"><a href="https://x-team.com/blog/tag/community/">Community</a></li>
+</ul>
+
+		<span class="button">&nbsp;</span></nav>
+	</div>
+</div>
+
+        <div class="container">
+            
+<table id="pagination" class="pagination-outer">
+	<tbody><tr class="pagination-inner">
+	<td class="item next-post no-cover">
+		<a href="https://x-team.com/blog/digital-nomad-thailand/" class="post">
+			<span class="label">Newer Post</span>
+			<h3 class="title">X-Outpost Thailand: The Story Begins</h3>
+		</a>
+	</td>
+	<td class="item older-post no-cover">
+		<a href="https://x-team.com/blog/changing-the-order-of-hooks-in-drupal/" class="post">
+			<span class="label">Older Post</span>
+			<h3 class="title">Changing the Order of Hooks in Drupal</h3>
+		</a>
+	</td>
+	</tr>
+</tbody></table>
+
+
+<div class="clearfix main-outer">
+	<main class="main-inner">
+		<article class="post tag-code tag-drupal clearfix" itemscope="" itemtype="http://schema.org/BlogPosting">
+			<img class="post-author-avatar" src="./Drupal 8_ Creating and Subscribing to Events_files/deji_20180114-1515962603782.png" itemprop="image">
+
+			<ul class="post-header">
+				<li class="post-author-name" itemprop="author">
+						<a class="author-name" href="https://x-team.com/blog/author/dakala/">
+							<span class="byline-author" itemscope="" itemtype="http://schema.org/Person">
+								<span itemprop="name">Deji Akala</span>
+							</span>
+						</a>
+				</li>
+				<li class="post-date">
+					<span itemprop="datePublished" content="Aug 22, 2017">Aug 22, 2017</span>
+				</li>
+			</ul>
+
+			<h1 class="wrapper-m title post-title" itemprop="headline">Drupal 8: Creating and Subscribing to Events</h1>
+
+			<section class="clearfix wrapper-m post-body" itemprop="articleBody">
+				<div class="kg-card-markdown"><p>The introduction of the <a href="https://symfony.com/doc/current/components/event_dispatcher.html">EventDispatcher Component</a> has brought an interesting approach to how components of an application talk to each other in a clean and organized manner. Interestingly, this is what the hook system, which is as old as the Drupal project, was designed to do. From the documentation of Drupal 1.0:</p>
+<blockquote>
+<p>The idea is to be able to run random code at given places in the engine. This random code should then be able to do whatever needed to enhance the functionality.  The places where code can be executed are called "hooks" and are defined by a fixed interface.</p>
+<p>In places where hooks are made available, the engine calls each module's exported functions.  This is done by iterating through the <code>modules</code> directory where all modules must reside.  Say your module is named <code>foo</code> (i.e. <code>modules/foo.module</code>) and if there was a hook called <code>bar</code>, the engine will call <code>foo_bar()</code> if this was exported by your module.</p>
+</blockquote>
+<p>The arrival of the EventDispatcher component in Drupal 8 does not do away with the hook system. Instead, they work alongside each other. The component is based on</p>
+<ul>
+<li>an event that will be dispatched by the application</li>
+<li>an event listener that will execute a callable when the event occurs</li>
+</ul>
+<p>In this tutorial, we are going to create an event and a listener for when the event is dispatched. Here is the problem we are going to solve. When a node is created, we want to notify the EventDispatcher system and log the title and author of the node.</p>
+<p>In order to do this, we will create a custom module, an event, dispatch it in a <code>hook_ENTITY_TYPE_insert</code> implementation and subscribe to it so we can log the data we are interested in. It is possible to do the logging in our <code>hook_ENTITY_TYPE_insert</code>, but we want to demonstrate the co-existence of the old and new system as well as learn a couple of things about the EventDispatcher system. In addition, other modules can subscribe to the new event and listen for the event without implementing <code>hook_ENTITY_TYPE_insert</code> directly.</p>
+<p>We assume that we have a custom module called <code>event_subscriber_demo</code>. See our article on <a href="https://x-team.com/blog/bitesize-drupal-drupal-8-modules/">Drupal 8 modules</a> for details on how to create a Drupal module. Here is our <code>event_subscriber_demo.info.yml</code> file:</p>
+<pre><code class="language-yml">name: Event subscriber demo
+type: module
+description: Demo of creating and subscribing to events
+core: 8.x
+package: X-Team
+</code></pre>
+<h2 id="createanevent">Create an Event</h2>
+<p>We need a class that extends <code>Symfony\Component\EventDispatcher\Event</code>. Create <code>src\Event\NodeInsertDemoEvent.php</code> and add the following:</p>
+<pre><code class="language-php hljs"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">Drupal</span>\<span class="hljs-title">event_subscriber_demo</span>\<span class="hljs-title">Event</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Symfony</span>\<span class="hljs-title">Component</span>\<span class="hljs-title">EventDispatcher</span>\<span class="hljs-title">Event</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Drupal</span>\<span class="hljs-title">Core</span>\<span class="hljs-title">Entity</span>\<span class="hljs-title">EntityInterface</span>;
+
+<span class="hljs-comment">/**
+ * Wraps a node insertion demo event for event listeners.
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NodeInsertDemoEvent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Event</span> </span>{
+
+  <span class="hljs-keyword">const</span> DEMO_NODE_INSERT = <span class="hljs-string">'event_subscriber_demo.node.insert'</span>;
+
+  <span class="hljs-comment">/**
+   * Node entity.
+   *
+   * <span class="hljs-doctag">@var</span> \Drupal\Core\Entity\EntityInterface
+   */</span>
+  <span class="hljs-keyword">protected</span> <span class="hljs-variable">$entity</span>;
+
+  <span class="hljs-comment">/**
+   * Constructs a node insertion demo event object.
+   *
+   * <span class="hljs-doctag">@param</span> \Drupal\Core\Entity\EntityInterface $entity
+   */</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(EntityInterface <span class="hljs-variable">$entity</span>)</span> </span>{
+    <span class="hljs-variable">$this</span>-&gt;entity = <span class="hljs-variable">$entity</span>;
+  }
+
+  <span class="hljs-comment">/**
+   * Get the inserted entity.
+   *
+   * <span class="hljs-doctag">@return</span> \Drupal\Core\Entity\EntityInterface
+   */</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getEntity</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;entity;
+  }
+}
+</code></pre>
+<p>What this means is that we can only create an instance of <code>NodeInsertDemoEvent</code> with an entity object. And we can access the entity with the accessor <code>getEntity()</code> method. We also have a nice constant <code>DEMO_NODE_INSERT</code> when we want to refer to this event later.</p>
+<h2 id="createalistener">Create a Listener</h2>
+<p>An event listener class must implement the <code>EventSubscriberInterface</code> with 2 mandatory methods:</p>
+<ul>
+<li><code>getSubscribedEvents()</code> which returns an array keyed by the event to listen to (<code>NodeInsertDemoEvent::DEMO_NODE_INSERT</code>) and a value of the name of a method to call (<code>onDemoNodeInsert</code>). We can leave the priority out and it will default to 0.</li>
+<li><code>onDemoNodeInsert()</code> which will take an instance of the <code>NodeInsertDemoEvent</code> class we created when the event is dispatched.</li>
+</ul>
+<p>Let us go ahead and create the <code>NodeInsertDemoSubscriber</code> class and namespace it properly under <code>src\EventSubscriber</code>:</p>
+<pre><code class="language-php hljs"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">Drupal</span>\<span class="hljs-title">event_subscriber_demo</span>\<span class="hljs-title">EventSubscriber</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Symfony</span>\<span class="hljs-title">Component</span>\<span class="hljs-title">EventDispatcher</span>\<span class="hljs-title">EventSubscriberInterface</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Drupal</span>\<span class="hljs-title">event_subscriber_demo</span>\<span class="hljs-title">Event</span>\<span class="hljs-title">NodeInsertDemoEvent</span>;
+
+<span class="hljs-comment">/**
+ * Logs the creation of a new node.
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NodeInsertDemoSubscriber</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">EventSubscriberInterface</span> </span>{
+
+  <span class="hljs-comment">/**
+   * Log the creation of a new node.
+   *
+   * <span class="hljs-doctag">@param</span> \Drupal\event_subscriber_demo\Event\NodeInsertDemoEvent $event
+   */</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onDemoNodeInsert</span><span class="hljs-params">(NodeInsertDemoEvent <span class="hljs-variable">$event</span>)</span> </span>{
+    <span class="hljs-variable">$entity</span> = <span class="hljs-variable">$event</span>-&gt;getEntity();
+    \Drupal::logger(<span class="hljs-string">'event_subscriber_demo'</span>)-&gt;notice(<span class="hljs-string">'New @type: @title. Created by: @owner'</span>,
+      <span class="hljs-keyword">array</span>(
+        <span class="hljs-string">'@type'</span> =&gt; <span class="hljs-variable">$entity</span>-&gt;getType(),
+        <span class="hljs-string">'@title'</span> =&gt; <span class="hljs-variable">$entity</span>-&gt;label(),
+        <span class="hljs-string">'@owner'</span> =&gt; <span class="hljs-variable">$entity</span>-&gt;getOwner()-&gt;getDisplayName()
+        ));
+  }
+
+  <span class="hljs-comment">/**
+   * {<span class="hljs-doctag">@inheritdoc</span>}
+   */</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getSubscribedEvents</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-variable">$events</span>[NodeInsertDemoEvent::DEMO_NODE_INSERT][] = [<span class="hljs-string">'onDemoNodeInsert'</span>];
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$events</span>;
+  }
+}
+</code></pre>
+<p>Inside the <code>onDemoNodeInsert()</code> method, we get our entity and log the desired information.</p>
+<h2 id="defineaservice">Define a Service</h2>
+<p>This is where we inform Drupal (and the EventDispatcher) about the event we have subscribed to. Only an appropriately-named YAML configuration file, <code>event_subscriber_demo.services.yml</code>, is required and it is as follows:</p>
+<pre><code class="language-yml">services:
+  event_subscriber_demo.node.insert:
+    class: Drupal\event_subscriber_demo\EventSubscriber\NodeInsertDemoSubscriber
+    tags:
+    - { name: 'event_subscriber' }
+</code></pre>
+<p>The key is <code>event_subscriber_demo.node.insert</code> and apart from specifying the subscriber class, we tag it with <code>event_subscriber</code> for the service container.</p>
+<h2 id="dispatchtheevent">Dispatch the Event</h2>
+<p>The event will be dispatched in the <code>event_subscriber_demo_node_insert()</code> function in the <code>event_subscriber_demo.module</code> file. Add this to it:</p>
+<pre><code class="language-php hljs"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">event_subscriber_demo_node_insert</span><span class="hljs-params">(Drupal\Core\Entity\EntityInterface <span class="hljs-variable">$entity</span>)</span> </span>{
+  <span class="hljs-comment">// Dispatch the node insert demo event so that subscribers can act accordingly.</span>
+  \Drupal::service(<span class="hljs-string">'event_dispatcher'</span>)-&gt;dispatch(NodeInsertDemoEvent::DEMO_NODE_INSERT, <span class="hljs-keyword">new</span> NodeInsertDemoEvent(<span class="hljs-variable">$entity</span>));
+}
+</code></pre>
+<p>When a new node is created, the hook is fired and we dispatch it as an event. Our listener picks up the broadcast and runs the code to log the data as required.</p>
+<h2 id="runit">Run it</h2>
+<p>Enable the <code>event_subscriber_demo</code> module. If you have already done so before writing the new classes, do a cache rebuild. Create a node. Check the logs at <code>admin/reports/dblog</code>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The EventDispatcher component is not difficult to understand. We have explored it by creating a custom event, listener and dispatched the event. Hope this will inspire you to dig deeper into the subject and enable you to write more awesome code.</p>
+<h2 id="code">Code</h2>
+<p>The demo module for this article is in the <a href="https://github.com/x-team/Drupal-8-Examples">X-Team Drupal 8 Examples Github repository</a>.</p>
+</div>
+			</section>
+
+			<div class="clearfix wrapper-m post-footer">
+	<ul class="button-action posted-under dropit">
+		<li class="option-box dropit-trigger">
+			<a class="selector" href="https://x-team.com/blog/creating-and-subscribing-to-events/#">Tags ...</a>
+				<ul class="option-list dropit-submenu" style="display: none;">
+					<li>
+						<a href="https://x-team.com/blog/tag/code/" title="code" class="tag-5a784c1dbd775900019b0e38">code</a>
+					</li>
+					<li>
+						<a href="https://x-team.com/blog/tag/drupal/" title="drupal" class="tag-5a784c1dbd775900019b0e3d">drupal</a>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+		</article>
+	</main>
+</div>
+<section class="subscription_outer wrapper-m">
+    <h2 class="subscription__title">
+      We'll help you unleash.
+    </h2>
+    <p class="subscription__subtitle">
+      Join the 30,000 developers who subscribe to our newsletter.
+    </p>
+    <div>
+      <form class="subscription__form" onsubmit="return formSubmit(this);" id="subscribe" name="subscribe">
+        <input type="email" value="" name="email" class="email subscription__form__email" id="email" placeholder="Your e-mail address" required="">
+        <input type="hidden" name="base_url" value="https://hooks.zapier.com/hooks/catch/576991/fvk06g/">
+        <input type="hidden" name="redirect" value="/join-subscriber-success/">
+        <input type="hidden" name="status" value="subscriber">
+        <input type="hidden" name="source" value="subscriber-landing-blog">
+        <input type="hidden" name="utm_source" id="utm_source" value="www.google.co.in">
+        <input type="hidden" name="utm_medium" id="utm_medium" value="">
+        <input type="hidden" name="utm_campaign" id="utm_campaign" value="">
+        <input type="hidden" name="utm_content" id="utm_content" value="">
+        <input type="hidden" name="utm_term" id="utm_term" value="">
+        <input type="submit" value="Subscribe" name="submit_form" class="button subscription__form__submit">
+      </form>
+    </div>
+</section>
+<div class="comment-outer">
+	<div class="wrapper-m comment-inner">
+		<div id="disqus_thread"><iframe id="dsq-app9809" name="dsq-app9809" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Drupal 8_ Creating and Subscribing to Events_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 393px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//xteamwordpress.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the &lt;a href="https://disqus.com/?ref_noscript"&gt;comments powered by Disqus.&lt;/a&gt;</noscript>
+	</div>
+</div>
+<section class="cta-outer">
+  <div class="wrapper-m">
+    <h2 class="cta-title">
+      Scale your <br>
+      Development team
+    </h2>
+    <p class="cta-subtitle">
+      We help you execute projects by providing trusted <span class="tag-skill">Drupal</span> developers who can join your team and immediately start delivering high-quality code.
+    </p>
+    <a href="https://x-team.com/hire-drupal-developers/?utm_source=blog&amp;utm_medium=cta&amp;utm_campaign=/blog/creating-and-subscribing-to-events/" title="Hire Drupal Developers" class="hire-btn tagged">Hire Drupal Developers</a>
+  </div>
+  <div class="relevant-tags">code, drupal </div>
+</section>
+
+
+        </div>
+
+        <aside id="footer-outer" class="footer-outer">
+
+	<div class="footer-tags">
+			<ul class="wrapper-s">
+					<li style=""><a href="https://x-team.com/blog/tag/code/">code <small>200</small></a></li>
+					<li style=""><a href="https://x-team.com/blog/tag/community/">community <small>82</small></a></li>
+					<li style=""><a href="https://x-team.com/blog/tag/remoteworking/">remoteworking <small>66</small></a></li>
+					<li style=""><a href="https://x-team.com/blog/tag/drupal/">drupal <small>44</small></a></li>
+					<li style=""><a href="https://x-team.com/blog/tag/javascript/">javascript <small>41</small></a></li>
+					<li style=""><a href="https://x-team.com/blog/tag/react/">react <small>28</small></a></li>
+					<li style=""><a href="https://x-team.com/blog/tag/redux/">redux <small>11</small></a></li>
+					<li style=""><a href="https://x-team.com/blog/tag/unleash/">unleash <small>10</small></a></li>
+					<li style=""><a href="https://x-team.com/blog/tag/css/">css <small>9</small></a></li>
+					<li style=""><a href="https://x-team.com/blog/tag/php/">php <small>8</small></a></li>
+					<li style="display: none;"><a href="https://x-team.com/blog/tag/ionic/">ionic <small>7</small></a></li>
+					<li style="display: none;"><a href="https://x-team.com/blog/tag/angular/">angular <small>7</small></a></li>
+					<li style="display: none;"><a href="https://x-team.com/blog/tag/node/">node <small>7</small></a></li>
+					<li style="display: none;"><a href="https://x-team.com/blog/tag/vue/">vue <small>7</small></a></li>
+					<li style="display: none;"><a href="https://x-team.com/blog/tag/android/">android <small>6</small></a></li>
+					<li style="display: none;"><a href="https://x-team.com/blog/tag/aws/">aws <small>6</small></a></li>
+					<li style="display: none;"><a href="https://x-team.com/blog/tag/x-outpost/">x-outpost <small>4</small></a></li>
+					<li style="display: none;"><a href="https://x-team.com/blog/tag/docker/">docker <small>3</small></a></li>
+					<li style="display: none;"><a href="https://x-team.com/blog/tag/devops/">devops <small>2</small></a></li>
+					<li style="display: none;"><a href="https://x-team.com/blog/tag/wordpress/">wordpress <small>2</small></a></li>
+					<li style="display: none;"><a href="https://x-team.com/blog/tag/ruby/">ruby <small>1</small></a></li>
+					<li style="display: none;"><a href="https://x-team.com/blog/tag/kotlin/">kotlin <small>1</small></a></li>
+			</ul><p class="maxlist-more"><a href="https://x-team.com/blog/creating-and-subscribing-to-events/#">Show All ...</a></p>
+	</div>
+</aside>
+
+<footer id="footer-credit" class="clearfix footer-credit" role="contentinfo" itemscope="" itemtype="http://schema.org/WPFooter">
+	<div class="left cr-copyright"><a href="https://x-team.com/">X-Team · Commit.Push.Unleash</a></div>
+	<div class="back-to-top"><a class="label" href="https://x-team.com/blog/creating-and-subscribing-to-events/#">Top</a></div>
+</footer>
+
+        <link rel="stylesheet" href="./Drupal 8_ Creating and Subscribing to Events_files/github.min.css">  
+<script src="./Drupal 8_ Creating and Subscribing to Events_files/highlight.min.js"></script>  
+<script>hljs.initHighlightingOnLoad();</script>
+    </div>
+
+    <script src="./Drupal 8_ Creating and Subscribing to Events_files/jQuery.js"></script>
+    <script src="./Drupal 8_ Creating and Subscribing to Events_files/dropit.js"></script>
+    <script src="./Drupal 8_ Creating and Subscribing to Events_files/hidemax.js"></script>
+    <script src="./Drupal 8_ Creating and Subscribing to Events_files/submit-utils.js"></script>
+    <script src="./Drupal 8_ Creating and Subscribing to Events_files/custom.js"></script>
+
+    <script id="dsq-count-scr" src="./Drupal 8_ Creating and Subscribing to Events_files/count.js" async=""></script>
+
+
+
+<script type="text/javascript" id="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","1477979408924202");fbq("track","PageView");</script>
+<noscript>&lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1477979408924202&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;</noscript>
+
+
+<script type="text/javascript" id="">var ref=google_tag_manager["GTM-TBFZ4NW"].macro(1);function extractDomain(a){a=-1<a.indexOf("://")?a.split("/")[2]:a.split("/")[0];return a=a.split(":")[0]}ref=extractDomain(ref);function createCookie(a,d,b){if(b){var c=new Date;c.setTime(c.getTime()+864E5*b);b="; expires\x3d"+c.toGMTString()}else b="";document.cookie=a+"\x3d"+d+b+"; path\x3d/"}var source="",sourceCookie=google_tag_manager["GTM-TBFZ4NW"].macro(2),utm_source=google_tag_manager["GTM-TBFZ4NW"].macro(3),gclid=google_tag_manager["GTM-TBFZ4NW"].macro(4);
+sourceCookie?(source=google_tag_manager["GTM-TBFZ4NW"].macro(5)+"|",utm_source&&!sourceCookie.includes(utm_source)?createCookie("utm_source",source+utm_source,1E3):gclid&&!sourceCookie.includes("adwords")?createCookie("utm_source",source+"adwords",1E3):source&&ref&&!sourceCookie.includes(ref)&&createCookie("utm_source",source+ref,1E3)):utm_source?createCookie("utm_source",utm_source,1E3):google_tag_manager["GTM-TBFZ4NW"].macro(6)?createCookie("utm_source","adwords",1E3):ref&&createCookie("utm_source",ref,1E3);
+var medium="",mediumCookie=google_tag_manager["GTM-TBFZ4NW"].macro(7),utm_medium=google_tag_manager["GTM-TBFZ4NW"].macro(8);mediumCookie?mediumCookie.includes(utm_medium)||void 0==utm_medium||(medium=google_tag_manager["GTM-TBFZ4NW"].macro(9)+"|",createCookie("utm_medium",medium+utm_medium,1E3)):utm_medium&&createCookie("utm_medium",utm_medium,1E3);var campaign="",campaignCookie=google_tag_manager["GTM-TBFZ4NW"].macro(10),utm_campaign=google_tag_manager["GTM-TBFZ4NW"].macro(11);
+campaignCookie?campaignCookie.includes(utm_campaign)||void 0==utm_campaign||(campaign=google_tag_manager["GTM-TBFZ4NW"].macro(12)+"|",createCookie("utm_campaign",campaign+utm_campaign,1E3)):utm_campaign&&createCookie("utm_campaign",utm_campaign,1E3);var keyword="",keywordCookie=google_tag_manager["GTM-TBFZ4NW"].macro(13),ga_keyword=google_tag_manager["GTM-TBFZ4NW"].macro(14);
+keywordCookie?keywordCookie.includes(ga_keyword)||void 0==ga_keyword||(keyword=google_tag_manager["GTM-TBFZ4NW"].macro(15)+"|",createCookie("ga_keyword",keyword+ga_keyword,1E3)):ga_keyword&&createCookie("ga_keyword",ga_keyword,1E3);var landing="",landingCookie=google_tag_manager["GTM-TBFZ4NW"].macro(16),ga_landing=google_tag_manager["GTM-TBFZ4NW"].macro(17);
+landingCookie?landingCookie.includes(ga_landing)||void 0==ga_landing||(ga_landing=google_tag_manager["GTM-TBFZ4NW"].macro(18)+"|",createCookie("ga_landing",landing+ga_landing,1E3)):ga_landing&&createCookie("ga_landing",ga_landing,1E3);var referral="",referralCookie=google_tag_manager["GTM-TBFZ4NW"].macro(19),utm_referral=google_tag_manager["GTM-TBFZ4NW"].macro(20);
+referralCookie?referralCookie.includes(utm_referral)||void 0==utm_referral||(utm_referral=google_tag_manager["GTM-TBFZ4NW"].macro(21)+"|",createCookie("utm_referral",referral+utm_referral,1E3)):utm_referral&&createCookie("utm_referral",utm_referral,1E3);</script><script type="text/javascript" id="">document.getElementById("utm_source")&&void 0!=google_tag_manager["GTM-TBFZ4NW"].macro(22)&&(document.getElementById("utm_source").value="www.google.co.in");document.getElementById("utm_medium")&&void 0!=google_tag_manager["GTM-TBFZ4NW"].macro(23)&&(document.getElementById("utm_medium").value="undefined");document.getElementById("utm_campaign")&&void 0!=google_tag_manager["GTM-TBFZ4NW"].macro(24)&&(document.getElementById("utm_campaign").value="undefined");
+document.getElementById("utm_content")&&void 0!=google_tag_manager["GTM-TBFZ4NW"].macro(25)&&(document.getElementById("utm_content").value="undefined");document.getElementById("utm_term")&&void 0!=google_tag_manager["GTM-TBFZ4NW"].macro(26)&&(document.getElementById("utm_term").value="undefined");document.getElementById("ga_keyword")&&void 0!=google_tag_manager["GTM-TBFZ4NW"].macro(27)&&(document.getElementById("ga_keyword").value="undefined");
+document.getElementById("ga_landingpage")&&void 0!=google_tag_manager["GTM-TBFZ4NW"].macro(28)&&(document.getElementById("ga_landingpage").value="undefined");document.getElementById("utm_referral")&&void 0!=google_tag_manager["GTM-TBFZ4NW"].macro(29)&&(document.getElementById("utm_referral").value="undefined");</script> 
+
+<script type="text/javascript" id="">!function(d,e,f,a,b,c){d.qp||(a=d.qp=function(){a.qp?a.qp.apply(a,arguments):a.queue.push(arguments)},a.queue=[],b=document.createElement(e),b.async=!0,b.src=f,c=document.getElementsByTagName(e)[0],c.parentNode.insertBefore(b,c))}(window,"script","https://a.quora.com/qevents.js");qp("init","e8b45ffb4616480bacd3d1baf9d241c6");qp("track","ViewContent");</script>
+<noscript>&lt;img height="1" width="1" style="display:none" src="https://q.quora.com/_/ad/e8b45ffb4616480bacd3d1baf9d241c6/pixel?tag=ViewContent&amp;amp;noscript=1"&gt;</noscript>
+<script type="text/javascript" id="">_linkedin_data_partner_id="190601";</script><script type="text/javascript" id="">(function(){var b=document.getElementsByTagName("script")[0],a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src="https://snap.licdn.com/li.lms-analytics/insight.min.js";b.parentNode.insertBefore(a,b)})();</script>
+<noscript>
+&lt;img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=190601&amp;amp;fmt=gif"&gt;
+</noscript><iframe style="display: none;" src="./Drupal 8_ Creating and Subscribing to Events_files/saved_resource(2).html"></iframe><script src="./Drupal 8_ Creating and Subscribing to Events_files/saved_resource(1)" type="text/javascript"></script><script src="./Drupal 8_ Creating and Subscribing to Events_files/adsct" type="text/javascript"></script></body></html>
