@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://www.faichi.com/blog/what-are-drupal-behaviors -->
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class=" js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="./What are Drupal Behaviors_drupal attach and de-tatch behaviour_files/29599efc73"></script><script src="./What are Drupal Behaviors_drupal attach and de-tatch behaviour_files/nr-1099.min.js"></script><script type="text/javascript" src="./What are Drupal Behaviors_drupal attach and de-tatch behaviour_files/p.js" async=""></script><script type="text/javascript" id="async-buttons" src="./What are Drupal Behaviors_drupal attach and de-tatch behaviour_files/async-buttons.js"></script><script async="" src="./What are Drupal Behaviors_drupal attach and de-tatch behaviour_files/track.js"></script><script async="" src="./What are Drupal Behaviors_drupal attach and de-tatch behaviour_files/analytics.js"></script><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1099.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-46858088-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");</script>
+<meta name="title" content="What are Drupal Behaviors?">
+<meta name="description" content="Faichi Solutions is a technology company that specializes in outsourced product engineering services and open source development. We specialize in development and integration of enterprise products and web applications, we have released over 40 products and 70 web + mobile apps for our customers. Also ranked as one of the top 10 Drupal service providers, globally.">
+<link rel="shortlink" href="http://www.faichi.com/node/1529">
+<link rel="canonical" href="http://www.faichi.com/blog/what-are-drupal-behaviors">
+<meta name="keywords" content="drupal development, drupal development company, outsourced product development">
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)">
+<meta name="MobileOptimized" content="width">
+<meta name="HandheldFriendly" content="true">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="http://www.faichi.com/sites/default/files/favicon.png" type="image/png">
+<link rel="shortlink" href="http://www.faichi.com/node/1529">
+<link rel="revision" href="http://www.faichi.com/blog/what-are-drupal-behaviors">
+<script>window.a2a_config=window.a2a_config||{};a2a_config.callbacks=a2a_config.callbacks||[];a2a_config.templates=a2a_config.templates||{};</script>
+
+    <title>What are Drupal Behaviors?</title>
+    <link rel="stylesheet" href="./What are Drupal Behaviors_drupal attach and de-tatch behaviour_files/css_rIEw_lmpkHESy020JFaEna0fZATUb60RjUOP6L_Ly_o.css" media="all">
+<link rel="stylesheet" href="./What are Drupal Behaviors_drupal attach and de-tatch behaviour_files/font-awesome.min.css" media="all">
+<link rel="stylesheet" href="./What are Drupal Behaviors_drupal attach and de-tatch behaviour_files/css_594eOwfZqX859DJavRJXvi8ugDEDRgyBtWQV8GMpDD0.css" media="all">
+<link rel="stylesheet" href="./What are Drupal Behaviors_drupal attach and de-tatch behaviour_files/css_fPc8lFDt2FPBCJEL4viZwt2CD6UloFUA6N01dq2Gy_c.css" media="all">
+
+    
+<!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+
+  <link rel="stylesheet" type="text/css" href="./What are Drupal Behaviors_drupal attach and de-tatch behaviour_files/buttons-secure.css"><iframe id="stSegmentFrame" name="stSegmentFrame" frameborder="0" scrolling="no" width="0px" height="0px" sandbox="allow-scripts allow-same-origin" style="display:none;" src="./What are Drupal Behaviors_drupal attach and de-tatch behaviour_files/saved_resource.html"></iframe></head>
+  <body class="no-banner path-node page-node-type-blog-post navbar-is-fixed-top has-glyphicons desktop header-fixed">
+    <a href="http://www.faichi.com/blog/what-are-drupal-behaviors#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas="">
+              <header class="navbar navbar-default navbar-fixed-top fixed" id="navbar" role="banner">
+      <div class="navbar-header pull-left">
+          <div class="region region-navigation">
+          <a class="logo navbar-btn pull-left" href="http://www.faichi.com/" title="Home" rel="home">
+      <img src="./What are Drupal Behaviors_drupal attach and de-tatch behaviour_files/FaichiLogo-saksoft.png" alt="Home">
+    </a>
+      
+  </div>
+
+                          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+              </div>
+
+                    <div class="navbar-collapse collapse">
+            <div class="region region-navigation-collapsible">
+    <nav role="navigation" aria-labelledby="block-faichi-main-menu-menu" id="block-faichi-main-menu" class="site-main-nav" style="display: block;">
+      
+              <ul class="menu nav navbar-nav">
+                            <li class="expanded dropdown">
+        <a href="http://www.faichi.com/" class="dropdown-toggle" data-target="#" data-toggle="dropdown">Our Services <span class="caret"></span></a>
+                                  <ul class="menu dropdown-menu">
+                            <li class="expanded dropdown">
+        <a href="http://www.faichi.com/healthcare-it-solutions" title="from menu settings" data-drupal-link-system-path="node/56">Healthcare Services</a>
+                                  <ul class="menu dropdown-menu">
+                            <li class="expanded dropdown">
+        <a href="http://www.faichi.com/accelerators-for-health-it" data-drupal-link-system-path="node/586">Accelerators for Health IT and ISVs</a>
+                  </li>
+                        <li class="expanded dropdown">
+        <a href="http://www.faichi.com/analytics-services" data-drupal-link-system-path="node/1443">Analytics Services</a>
+                  </li>
+                        <li class="expanded dropdown">
+        <a href="http://www.faichi.com/expertise/ehr-system-integration" data-drupal-link-system-path="node/1433">EHR Integration Services</a>
+                  </li>
+                        <li class="expanded dropdown">
+        <a href="http://www.faichi.com/patient-engagement" data-drupal-link-system-path="node/546">Patient Engagement</a>
+                  </li>
+                        <li class="expanded dropdown">
+        <a href="http://www.faichi.com/telemedicine" data-drupal-link-system-path="node/471">Remote Care Technologies</a>
+                  </li>
+                        <li class="expanded dropdown">
+        <a href="http://www.faichi.com/healthcare-information-systems" data-drupal-link-system-path="node/466">Healthcare Information Systems</a>
+                  </li>
+                        <li class="expanded dropdown">
+        <a href="http://www.faichi.com/content-management-system-for-healthcare" data-drupal-link-system-path="node/1429">Content Management System for Healthcare</a>
+                  </li>
+        </ul>
+  
+            </li>
+                        <li class="expanded dropdown">
+        <a href="http://www.faichi.com/drupal-development" data-drupal-link-system-path="node/591">Drupal Services</a>
+                                  <ul class="menu dropdown-menu">
+                            <li class="expanded dropdown">
+        <a href="http://www.faichi.com/development" data-drupal-link-system-path="node/676">Development</a>
+                  </li>
+                        <li class="expanded dropdown">
+        <a href="http://www.faichi.com/design" data-drupal-link-system-path="node/726">Design</a>
+                  </li>
+                        <li class="expanded dropdown">
+        <a href="http://www.faichi.com/strategy" data-drupal-link-system-path="node/616">Strategy</a>
+                  </li>
+                        <li class="expanded dropdown">
+        <a href="http://www.faichi.com/support" data-drupal-link-system-path="node/661">Support</a>
+                  </li>
+                        <li class="expanded dropdown">
+        <a href="http://www.faichi.com/drupal-give" data-drupal-link-system-path="drupal-give">Drupal Contribution</a>
+                  </li>
+        </ul>
+  
+            </li>
+                        <li class="expanded dropdown">
+        <a href="http://www.faichi.com/digital" data-drupal-link-system-path="node/1522">Digital Transformation </a>
+                                  <ul class="menu dropdown-menu">
+                            <li class="expanded dropdown">
+        <a href="http://www.faichi.com/digital/api-integration-services" data-drupal-link-system-path="node/1525">API &amp; Integration</a>
+                  </li>
+                        <li class="expanded dropdown">
+        <a href="http://www.faichi.com/digital/devops-agile-consulting" data-drupal-link-system-path="node/1526">Digital Consulting</a>
+                  </li>
+        </ul>
+  
+            </li>
+        </ul>
+  
+            </li>
+                        <li class="expanded dropdown">
+        <a href="http://www.faichi.com/" class="dropdown-toggle" data-target="#" data-toggle="dropdown">Knowledge Center <span class="caret"></span></a>
+                                  <ul class="menu dropdown-menu">
+                            <li class="expanded dropdown">
+        <a href="http://www.faichi.com/blogs" title="from menu system" data-drupal-link-system-path="blogs">Blogs</a>
+                  </li>
+                        <li class="expanded dropdown">
+        <a href="http://www.faichi.com/case-study-list" data-drupal-link-system-path="case-study-list">Case Studies</a>
+                  </li>
+                        <li class="expanded dropdown">
+        <a href="http://www.faichi.com/industry-news-list" title="from menu" data-drupal-link-system-path="industry-news-list">Industry News</a>
+                  </li>
+                        <li class="expanded dropdown">
+        <a href="http://www.faichi.com/whitepapers" data-drupal-link-system-path="whitepapers">Whitepapers</a>
+                  </li>
+        </ul>
+  
+            </li>
+                        <li class="expanded dropdown">
+        <a href="http://www.faichi.com/" class="dropdown-toggle" data-target="#" data-toggle="dropdown">About Us <span class="caret"></span></a>
+                                  <ul class="menu dropdown-menu">
+                            <li class="expanded dropdown">
+        <a href="http://www.faichi.com/life-at-faichi" data-drupal-link-system-path="life-at-faichi">Life at Faichi</a>
+                  </li>
+                        <li class="expanded dropdown">
+        <a href="http://www.faichi.com/about-us" data-drupal-link-system-path="about-us">Who We Are</a>
+                  </li>
+                        <li class="expanded dropdown">
+        <a href="http://www.faichi.com/careers" data-drupal-link-system-path="node/526">Careers</a>
+                  </li>
+                        <li class="expanded dropdown">
+        <a href="http://www.faichi.com/events" title="from menu system" data-drupal-link-system-path="events">Events</a>
+                  </li>
+        </ul>
+  
+            </li>
+                        <li class="expanded dropdown">
+        <a href="http://www.faichi.com/contact" data-drupal-link-system-path="contact">Contact Us</a>
+                  </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+          </header>
+  
+  <div role="main" class="main-container container-fluid js-quickedit-main-content">
+    <div class="row">
+
+            
+                  <section class="col-sm-12">
+
+                
+                
+                
+                          <a id="main-content"></a>
+            <div class="region region-content">
+        <ol class="breadcrumb">
+          <li>
+                  <a href="http://www.faichi.com/">Home</a>
+              </li>
+      </ol>
+
+    <h1 class="page-header"><span>What are Drupal Behaviors?</span>
+</h1>
+
+  <article data-history-node-id="1529" role="article" about="/blog/what-are-drupal-behaviors" class="blog-post full clearfix">
+
+  
+    
+
+      <footer>
+      <div class="author">
+            By <span><a title="View user profile." href="http://www.faichi.com/about/drupal-team" lang="" about="/about/drupal-team" typeof="schema:Person" property="schema:name" datatype="">Drupal Team</a></span>
+, on 17 Feb 2015        
+      </div>
+    </footer>
+  
+  <div class="content">
+    
+            <div class="field field--name-field-blog-summary field--type-text-with-summary field--label-hidden field--item"><p>Drupal has a ‘behaviors’ system to provide a modular and better way for attaching JavaScript functionality to place elements on a page. &nbsp;Drupal Behaviors allows you to override or extend the existing behavior. Find out how this Drupal core functionality helps.</p></div>
+      
+            <div class="field field--name-field-blog-image field--type-image field--label-hidden field--item">  <img src="./What are Drupal Behaviors_drupal attach and de-tatch behaviour_files/DrupalBehaviour1.jpg" width="480" height="360" alt="drupal behaviour" typeof="foaf:Image" class="img-responsive">
+
+
+</div>
+      
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><p class="text-align-justify">Drupal is a versatile content management system that interlocks both the database and the server, which offers a revolutionary programming edge where there are options to insert the behavior to override JavaScript for an appealing interface. These Drupal behaviors are event triggered programs that get attached to the page elements to be changed. While behaviours can be attached to specific contents, multiple behaviours are also attached and can be ablazed multiple times for a quick remake.</p>
+
+<p class="text-align-justify">Drupal behaviors handles infinite scroll’s AJAX call, since it has the ability to override or extend an existing behavior by a bouncing effect where it is an alternate for jQuery.ready.</p>
+
+<p class="text-align-justify">It can be reattached and you can attach behaviors to a specific context. Drupal has a “behaviors” system to provide a modular and better way for attaching JavaScript functionality to place elements on a page. In short, the advantage of Behaviors over the document.ready() is that they are automatically re-applied to any content that is loaded through AJAX.&nbsp;</p>
+
+<p class="text-align-justify">&nbsp;</p>
+
+<p class="text-align-justify"><strong>Drupal 7 has two handles:</strong></p>
+
+<p class="text-align-justify">• To add an element to a page, you use ‘attach’</p>
+
+<p class="text-align-justify">• To remove an element, you use ‘detach’</p>
+
+<p class="text-align-justify">drupal.js has a $(document).ready() function that calls the Drupal.attachBehaviors() function, which, in turn, cycles through the Drupal.behaviors object, calling every one of its properties Drupal.behaviors runs when the document is ready and when Ajax calls are made. If you want to apply Java scripts to the elements during the page loads and all the elements are created using AJAX, Drupal.behaviors is the ideal solution.</p>
+
+<p class="text-align-justify">With jQuery, you learn to put all your code inside the $(document).ready() function. When this is done, your code will run, manipulating elements and binding&nbsp;behaviors to events as per the instructions as soon as the DOM has &nbsp;loaded.&nbsp;</p>
+
+<p class="text-align-justify">However, for Drupal 6, we don't need to include the $(document).ready() function in our jQuery code. Instead, we put all <img alt="drupal" data-entity-type="file" data-entity-uuid="cfb54eb3-662f-479e-842b-d6a1dca93d92" height="92" src="./What are Drupal Behaviors_drupal attach and de-tatch behaviour_files/DrupalBehaviour2.jpg.png" width="154" class="align-right">our code inside a function that we assign as a property of Drupal.behaviors. The Drupal.behaviors object is itself a property of the Drupal object. So any function defined as a property of Drupal.behaviors will get called when the DOM has loaded.</p>
+
+<p class="text-align-justify">&nbsp;</p>
+
+<p class="text-align-justify">Drupal.js has a $(document).ready() function, which calls function, the Drupal.attachBehaviors() which in turn cycles through the Drupal.behaviors object calling every one of its properties and passing in the document as the context. The reason for doing it this way is that if your jQuery code makes AJAX calls, which result in new DOM elements being added to the page, you might want your behaviors to be attached to that new content as well. However, since it didn't exist when the DOM was loaded and Drupal.attachBehaviors() ran, it doesn't have any behaviors attached.&nbsp;</p>
+
+<p class="text-align-justify">Drupal behaviors are fired whenever attachBehaviors is called. The context variable that is passed in can often give you a better idea of what DOM element is being processed, but it is not a sure way to know if you are processing something again. Passing the context variable as the second argument to the jQuery selector is a good practice because then only the given context is searched and not the entire document. This becomes more important when attaching behaviors after an AJAX request. Therefore, when you use Drupal.behavior, processing happens once per DOM object.</p>
+
+<p class="text-align-justify">Example:</p>
+
+<p class="text-align-justify">Every time we save content or error occurs, a message box appears as shown below. In this example we will hide this message box. Inspect this element and look at the classes of the message box. Later we will inspect the classes of the element after behaviors are applied.</p>
+<img alt="drupal" data-entity-type="file" data-entity-uuid="093a2658-93f6-417d-94f9-b3add7423910" src="./What are Drupal Behaviors_drupal attach and de-tatch behaviour_files/DrupalBehaviour3.jpg_0.png" class="align-center"><p class="text-align-justify">You can hide the message box using simple JavaScript, if you use the JavaScript code below it will hide the message box for the first time when the document is ready.</p>
+<img alt="drupal" data-entity-type="file" data-entity-uuid="051a1cfd-18b1-4991-9edc-282520401158" src="./What are Drupal Behaviors_drupal attach and de-tatch behaviour_files/DrupalBehaviour4.jpg.png" class="align-center"><p class="text-align-justify">But what if an AJAX call is made resulting in showing up the box again, a good example is the file upload button resulting in exceeding file size error.</p>
+<img alt="drupal" data-entity-type="file" data-entity-uuid="9ca39f99-3960-4687-8d57-2f94966755e6" src="./What are Drupal Behaviors_drupal attach and de-tatch behaviour_files/DrupalBehaviour5.png" class="align-center"><p class="text-align-justify">The above code will not work for this error box since the code was executed only during page load, thankfully Drupal.behaviors helps to overcome this problem.</p>
+
+<p class="text-align-justify">Let’s create a js file we will name it as hide_messages.js, include this js file in our theme.info file or using drupal_add_js().</p>
+<img alt="drupal" data-entity-type="file" data-entity-uuid="56a4b418-7b86-4138-b3ed-74f90222e7f3" src="./What are Drupal Behaviors_drupal attach and de-tatch behaviour_files/DrupalBehaviour6.png" class="align-center"><p class="text-align-justify">Now the message box with class '.messages' gets applied by the above behavior , so any message box (status or error) gets hidden.</p>
+
+<h3 class="text-align-justify">Drupal.behaviors.customJS:</h3>
+
+<p class="text-align-justify">This is the namespace and should be unique.</p>
+
+<h3 class="text-align-justify">context:</h3>
+
+<p class="text-align-justify">Initially the context will contain the entire document and after AJAX call will have newly added elements.</p>
+
+<h3 class="text-align-justify">settings:</h3>
+
+<p class="text-align-justify">The use of settings is to pass values from PHP to Javascript.</p>
+
+<p class="text-align-justify">‘JQuery Once plugin’ has been integrated in Drupal 7 core, using this plugin ensures that the effect is applied on the element only once. It adds a 'class-name-processed' class to the element.</p>
+
+<p class="text-align-justify">Now after including the js file, inspect the element and check the classes of the message box, you will see class custom-hide-processed has been added.</p>
+<img alt="drupal" data-entity-type="file" data-entity-uuid="83bc450d-4f6d-4393-8ab7-5b1f14c842b4" src="./What are Drupal Behaviors_drupal attach and de-tatch behaviour_files/DrupalBehaviour7.png" class="align-center"><p class="text-align-justify">Now the message box will disappear after 10 seconds, as we hardcoded the duration (10000ms = 10 sec), in the next section we will pass this duration using settings.</p>
+
+<p class="text-align-justify">Now if we want the duration to be passed to javascript which later can be used to hide the message, we can use Drupal.settings.</p>
+
+<p class="text-align-justify">Using drupal_add_js, pass duration as settings.</p>
+<img alt="drupal" data-entity-type="file" data-entity-uuid="37582ad0-2ecd-4936-b08f-432612c94b77" src="./What are Drupal Behaviors_drupal attach and de-tatch behaviour_files/DrupalBehaviour8.png" class="align-center"><p class="text-align-justify">The below code demonstrates the usage of settings in javascript.</p>
+<img alt="drupal" data-entity-type="file" data-entity-uuid="12bd9f91-802a-4a4f-ad56-0d8204dd966d" src="./What are Drupal Behaviors_drupal attach and de-tatch behaviour_files/DrupalBehaviour9.png" class="align-center"><p class="text-align-justify"><strong>Detach Behaviors:</strong></p>
+
+<p class="text-align-justify">You can optionally specify a detach handler which is executed while detaching behaviors.</p>
+
+<p class="text-align-justify">You can use Drupal.detachBehaviors() to detach a behaviors.</p>
+<img alt="drupal" data-entity-type="file" data-entity-uuid="104875bb-a926-4899-a2a5-5d09d33ec4e0" src="./What are Drupal Behaviors_drupal attach and de-tatch behaviour_files/DrupalBehaviour10.png" class="align-center"><p class="text-align-justify">The biggest advantage of using Drupal behaviors is that they are re-attachable, which becomes very useful when utilising AHAH/AJAX. Note that the Drupal.behaviors architecture duplicates functionality already in jQuery, Drupal uses a “behaviors” system to provide a single mechanism for attaching JavaScript functionality to elements on a page. Therefore, Drupal enables individuals and groups of users in web development to create and manage data without the requirement of programming skills.</p>
+
+<p class="text-align-justify">This blog is written, compiled and edited by Gautam Das who loves Drupal and contributing to its core and enhancements. Faichi is an ardent community contributor and help companies develop and maintain&nbsp;<a href="http://www.faichi.com/drupal-web-development">enterprise sites</a>&nbsp;and OpenSAAS applications in Drupal. To know more about our Drupal practice,&nbsp;<a href="http://www.faichi.com/drupal-development">click here</a></p>
+</div>
+      <div class="sharethis-wrapper"><span st_url="http://www.faichi.com/blog/what-are-drupal-behaviors" st_title="What are Drupal Behaviors?" class="st_facebook_custom" displaytext="facebook" st_processed="yes"></span>
+<span st_url="http://www.faichi.com/blog/what-are-drupal-behaviors" st_title="What are Drupal Behaviors?" class="st_twitter_custom" displaytext="twitter" st_processed="yes"></span>
+<span st_url="http://www.faichi.com/blog/what-are-drupal-behaviors" st_title="What are Drupal Behaviors?" class="st_linkedin_custom" displaytext="linkedin" st_processed="yes"></span>
+<span st_url="http://www.faichi.com/blog/what-are-drupal-behaviors" st_title="What are Drupal Behaviors?" class="st_email_custom" displaytext="email" st_processed="yes"></span>
+</div>
+      <div class="field field--name-field-blog-tags field--type-entity-reference field--label-hidden field--items">
+              <div class="field--item">Drupal</div>
+              <div class="field--item">drupal behavior </div>
+          </div>
+  
+  </div>
+
+</article>
+
+<section class="views-element-container get-in-touch-block block block-views block-views-blockcall-to-action-block-2 clearfix" id="block-views-block-call-to-action-block-2" style="background-image: url(&quot;/sites/default/files/2017-03/shutterstock_282702926.jpg&quot;); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+  
+    
+
+      <div class="form-group"><div class="view view-call-to-action view-id-call_to_action view-display-id-block_2 js-view-dom-id-c8cb3b4cfeaa335307b84344b04b26ac0756824665f1aedf4625a66cf88789bf">
+  
+    
+      
+      <div class="view-content">
+          <div class="views-row"><div class="views-field views-field-field-call-action-image"><div class="field-content">  <img src="./What are Drupal Behaviors_drupal attach and de-tatch behaviour_files/shutterstock_282702926.jpg" width="1900" height="500" alt="" typeof="foaf:Image" class="img-responsive" style="display: none;">
+
+</div></div><h2 class="views-field views-field-title block-title"><span class="field-content">Get in Touch</span></h2><div class="views-field views-field-body body"><div class="field-content"></div></div><div class="views-field views-field-field-link-to-form contact-us"><div class="field-content"><a class="use-ajax" data-dialog-type="modal" href="http://www.faichi.com/form/query-form">Contact Us</a></div></div></div>
+
+    </div>
+  
+          </div>
+</div>
+
+  </section>
+
+
+  </div>
+
+              </section>
+
+            
+                              <div class="col-sm-12 highlighted">  <div class="region region-highlighted">
+    <section id="block-faichi-socialmedialinks" class="col-sm-6 block-social-media-links block block-social-media-links-block clearfix">
+  
+    
+
+      
+
+<ul class="platforms inline horizontal">
+            <li>
+            <a href="https://www.facebook.com/FaichiSolutions">
+                <span class="fa fa-facebook fa-2x"></span>
+            </a>
+
+                    </li>
+            <li>
+            <a href="https://www.twitter.com/FaichiSolutions">
+                <span class="fa fa-twitter fa-2x"></span>
+            </a>
+
+                    </li>
+            <li>
+            <a href="http://www.linkedin.com/company/faichi-solutions">
+                <span class="fa fa-linkedin fa-2x"></span>
+            </a>
+
+                    </li>
+            <li>
+            <a href="http://www.slideshare.net/faichisolutions/presentations">
+                <span class="fa fa-slideshare fa-2x"></span>
+            </a>
+
+                    </li>
+            <li>
+            <a href="http://www.faichi.com/contact">
+                <span class="fa fa-envelope fa-2x"></span>
+            </a>
+
+                    </li>
+    </ul>
+
+  </section>
+
+<section class="webform-submission-newsletter-form webform-submission-form webform-details-toggle col-sm-6 block-simplenews block block-webform block-webform-block clearfix" data-drupal-selector="webform-submission-newsletter-form" id="block-webform">
+  
+      <h2 class="block-title">Get Aggregated Monthly Industry News</h2>
+    
+
+      <form action="http://www.faichi.com/blog/what-are-drupal-behaviors" method="post" id="webform-submission-newsletter-form" accept-charset="UTF-8">
+  
+  <div class="js-webform-element-tooltip webform-element-tooltip form-item js-form-item form-type-email js-form-type-email form-item-email js-form-item-email form-no-label form-group">
+      <label for="edit-email" class="control-label sr-only js-form-required form-required">email</label>
+  
+  
+  <input data-drupal-selector="edit-email" class="form-email required form-control" type="email" id="edit-email" name="email" value="" size="60" maxlength="254" placeholder="Email" required="required" aria-required="true">
+
+  
+  </div>
+<input autocomplete="off" data-drupal-selector="form-czc0x4yaj4kddghi5dnvhzrcgaijx2s-j5txvit6wsk" type="hidden" name="form_build_id" value="form-CZC0X4yAJ4kddgHi5dNVhZrCGaiJx2s-j5txvIt6WSk" id="form-CZC0X4yAJ4kddgHi5dNVhZrCGaiJx2s-j5txvIt6WSk"><input data-drupal-selector="edit-webform-submission-newsletter-form" type="hidden" name="form_id" value="webform_submission_newsletter_form" id="edit-webform-submission-newsletter-form"><div data-drupal-selector="edit-actions" class="form-actions form-group js-form-wrapper form-wrapper" id="edit-actions">
+
+
+<button class="webform-button--submit button button--primary js-form-submit form-submit btn-primary btn" data-drupal-selector="edit-submit" type="submit" id="edit-submit" name="op" value="Submit">Submit</button>
+</div>
+
+  
+</form>
+
+  </section>
+
+
+  </div>
+</div>
+                  </div>
+  </div>
+
+      <footer class="footer container-fluid" role="contentinfo">
+        <div class="region region-footer">
+    <nav role="navigation" aria-labelledby="block-faichi-footer-menu" id="block-faichi-footer" class="col-sm-6 site-footer-nav">
+            
+  <h2 class="visually-hidden" id="block-faichi-footer-menu">Footer menu</h2>
+  
+
+        
+              <ul class="menu nav">
+                            <li class="expanded dropdown">
+        <a href="http://www.faichi.com/about-us" data-drupal-link-system-path="about-us">About Us</a>
+                  </li>
+                        <li class="expanded dropdown">
+        <a href="http://www.faichi.com/offshore-development-center" data-drupal-link-system-path="node/891">Services</a>
+                  </li>
+                        <li class="expanded dropdown">
+        <a href="http://www.faichi.com/case-study-list" data-drupal-link-system-path="case-study-list">SUCCESS STORIES</a>
+                  </li>
+                        <li class="expanded dropdown">
+        <a href="http://www.faichi.com/contact" data-drupal-link-system-path="contact">Contact Us</a>
+                  </li>
+                        <li class="expanded dropdown">
+        <a href="http://www.faichi.com/careers" data-drupal-link-system-path="node/526">Careers</a>
+                  </li>
+        </ul>
+  
+
+
+  </nav>
+<section id="block-copyright" class="col-sm-6 copyright block block-block-content block-block-content74f44c96-422c-4f22-bfe2-9382d4f416a0 clearfix">
+  
+    
+
+      
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><h5>640 W.California Ave suite 210, Sunnyvale, CA 94086</h5>
+
+<div class="phone"><span>☎ +1(408)769-4941</span> <span><a class="mail-sale" href="mailto:sales@faichi.com">✉ sales@faichi.com</a></span></div>
+
+<p>&nbsp;</p>
+
+<div class="copyright">© 2018&nbsp;Faichi Solutions (A Saksoft Company)</div>
+
+<p>&nbsp;</p>
+</div>
+      
+  </section>
+
+
+  </div>
+
+    </footer>
+  
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/1529","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","ajaxPageState":{"libraries":"addtoany\/addtoany,back_to_top\/back_to_top_icon,back_to_top\/back_to_top_js,bootstrap\/popover,bootstrap\/tooltip,core\/html5shiv,extra_body_classes\/extra_body_classes_js,faichi\/bootstrap-scripts,faichi\/global-styling,faichi_modal_popup\/modal,google_analytics\/google_analytics,modal\/modal,sharethis\/sharethis,sharethis\/sharethispickerexternalbuttons,sharethis\/sharethispickerexternalbuttonsws,social_media_links\/fontawesome.component,social_media_links\/social_media_links.theme,system\/base,video_embed_field\/responsive-video,views\/views.module,webform\/webform.element.details.save,webform\/webform.element.details.toggle,webform\/webform.element.tooltip,webform\/webform.form","theme":"faichi","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true},"back_to_top":{"back_to_top_button_trigger":"100","back_to_top_prevent_on_mobile":1,"back_to_top_prevent_in_admin":1,"back_to_top_button_type":"image","back_to_top_button_text":"Back to top"},"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":true},"bootstrap":{"forms_has_error_value_toggle":1,"modal_animation":1,"modal_backdrop":"true","modal_keyboard":1,"modal_show":1,"modal_size":"","popover_enabled":1,"popover_animation":1,"popover_container":"body","popover_content":"","popover_delay":"0","popover_html":0,"popover_placement":"right","popover_selector":"","popover_title":"","popover_trigger":"click","popover_trigger_autoclose":1,"tooltip_enabled":1,"tooltip_animation":1,"tooltip_container":"body","tooltip_delay":"0","tooltip_html":0,"tooltip_placement":"auto left","tooltip_selector":"","tooltip_trigger":"hover"},"sharethis":{"publisher":"dr-b26a10d-176a-72e-87f3-152e43c0bcfb","version":"5x","doNotCopy":false,"hashAddressBar":false,"doNotHash":false,"shorten":"false"},"extra_body_classes":{"device":1},"user":{"uid":0,"permissionsHash":"ab69b9e5b281a817d0965f0ca45cfbdd091a9808334c5856d59b5cb002f095ab"}}</script>
+<script src="./What are Drupal Behaviors_drupal attach and de-tatch behaviour_files/js__wiuonMtCg_MXvfUspJhIcbdxYoFfrVY9ONsbU9KXGs.js"></script>
+<script src="./What are Drupal Behaviors_drupal attach and de-tatch behaviour_files/page.js" async=""></script>
+<script src="./What are Drupal Behaviors_drupal attach and de-tatch behaviour_files/js_lTmfYwJgB3hG_A7xZe4BwQonxl6CmQwq8jTyA6aWVWw.js"></script>
+<script src="./What are Drupal Behaviors_drupal attach and de-tatch behaviour_files/buttons.js"></script>
+<script src="./What are Drupal Behaviors_drupal attach and de-tatch behaviour_files/js_nsGN7_jl3rRt3JnzmASCPFL2laJUlQFq9dOvq1Z68A8.js"></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"29599efc73","applicationID":"52593807","transactionName":"YwBTZ0RUWEpYAE1dWFpKcFBCXFlXFhNYU1JrBlBQXlA=","queueTime":0,"applicationTime":23,"atts":"T0dQEQxOS0Q=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+
+<div id="backtotop" style="display: block;">Back to top</div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div id="ads"></div><iframe src="./What are Drupal Behaviors_drupal attach and de-tatch behaviour_files/portal.html" id="st_gdpr_iframe" style="width: 0px; height: 0px; position: absolute; left: -5000px;"></iframe><div id="stcpDiv" style="position: absolute; top: -1999px; left: -1988px;">ShareThis Copy and Paste</div><div id="stwrapper" class="stwrapper stwrapper4x stwrapper4x" style="display: none;"><iframe allowtransparency="true" id="stLframe" class="stLframe" name="stLframe" frameborder="0" scrolling="no" src="./What are Drupal Behaviors_drupal attach and de-tatch behaviour_files/index.html"></iframe></div><div id="stOverlay" onclick="javascript:stWidget.closeWidget();"></div></body></html>

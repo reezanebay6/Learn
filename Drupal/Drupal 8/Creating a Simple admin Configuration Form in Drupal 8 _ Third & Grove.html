@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)https://www.thirdandgrove.com/creating-simple-configuration-form-drupal-8 -->
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class=" js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script type="text/javascript" async="" src="./Creating a Simple admin Configuration Form in Drupal 8 _ Third &amp; Grove_files/insight.min.js"></script><script async="" src="./Creating a Simple admin Configuration Form in Drupal 8 _ Third &amp; Grove_files/prum.min.js"></script><script async="" src="./Creating a Simple admin Configuration Form in Drupal 8 _ Third &amp; Grove_files/analytics.js"></script><script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-46758288-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");</script>
+<meta name="title" content="Creating a Simple Configuration Form in Drupal 8 | Third &amp; Grove">
+<meta name="description" content="Drupal 8’s way of managing configuration forms is fairly different from Drupal 7. In this post, we will create a simple module that has a configuration form with a few fields.">
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)">
+<meta name="MobileOptimized" content="width">
+<meta name="HandheldFriendly" content="true">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="https://www.thirdandgrove.com/themes/custom/tagv4/favicon.ico" type="image/vnd.microsoft.icon">
+<link rel="canonical" href="https://www.thirdandgrove.com/creating-simple-configuration-form-drupal-8">
+<link rel="shortlink" href="https://www.thirdandgrove.com/node/157">
+<link rel="revision" href="https://www.thirdandgrove.com/creating-simple-configuration-form-drupal-8">
+<title>Creating a Simple Configuration Form in Drupal 8 | Third &amp; Grove</title>
+<link rel="stylesheet" href="./Creating a Simple admin Configuration Form in Drupal 8 _ Third &amp; Grove_files/css_t2tDadcVqkhAbw_CGXjTNcDaDS6Bct5L_WrSeyhCv6c.css" media="all">
+<link rel="stylesheet" href="./Creating a Simple admin Configuration Form in Drupal 8 _ Third &amp; Grove_files/css_0YQ04J_AzMM6A0ST0WacR-RKsB7MYRJAuEmOkRSkbeU.css" media="all">
+<link rel="stylesheet" href="./Creating a Simple admin Configuration Form in Drupal 8 _ Third &amp; Grove_files/css" media="all">
+<!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+<script src="./Creating a Simple admin Configuration Form in Drupal 8 _ Third &amp; Grove_files/js_4PqSZcbNXUY_FFPedTq-DYOdO7XOuDdVcuXtDYPjesU.js"></script><script async="" src="./Creating a Simple admin Configuration Form in Drupal 8 _ Third &amp; Grove_files/hotjar-712044.js"></script>
+<script>
+    var _prum = [['id', '57e0090767f1c12012748558'],
+                 ['mark', 'firstbyte', (new Date()).getTime()]];
+    (function() {
+        var s = document.getElementsByTagName('script')[0]
+          , p = document.createElement('script');
+        p.async = 'async';
+        p.src = '//rum-static.pingdom.net/prum.min.js';
+        s.parentNode.insertBefore(p, s);
+    })();
+    </script>
+<script async="" src="./Creating a Simple admin Configuration Form in Drupal 8 _ Third &amp; Grove_files/modules-08c24eca841eeb7d4b9f88f742b631f8.js"></script><style type="text/css">iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;}</style></head>
+<body class="entitynodecanonical page-node-type-article">
+<a href="https://www.thirdandgrove.com/creating-simple-configuration-form-drupal-8#main-content" class="visually-hidden focusable">
+Skip to main content
+</a>
+<div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas="">
+<header role="banner" class="site-header">
+<div class="site-header__inner container">
+<a href="https://www.thirdandgrove.com/" class="site-logo__wrap">
+<div class="site-logo">
+<img src="./Creating a Simple admin Configuration Form in Drupal 8 _ Third &amp; Grove_files/tag-logo-color.svg" alt="Third and Grove, Drupal development agency" title="Third and Grove, Drupal development agency">
+</div>
+<span class="element-invisible"></span>
+</a>
+<div type="button" class="js-nav-trigger site-nav__trigger btn">
+<div class="site-nav__trigger-label">Menu</div>
+<div class="site-nav__trigger-icon"></div>
+</div>
+</div>
+<div class="header-dropdown" id="header-dropdown">
+<div class="views-exposed-form" data-drupal-selector="views-exposed-form-acquia-search-page" id="block-exposedformacquia-searchpage-2">
+<form action="https://www.thirdandgrove.com/search" method="get" id="views-exposed-form-acquia-search-page" accept-charset="UTF-8">
+<div class="js-form-item form-item js-form-type-textfield form-item-search js-form-item-search">
+<label for="edit-search">Search</label>
+<input data-drupal-selector="edit-search" type="text" id="edit-search" name="search" value="" size="30" maxlength="128" class="form-text">
+</div>
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions"><input data-drupal-selector="edit-submit-acquia-search" type="submit" id="edit-submit-acquia-search" value="Search" class="button js-form-submit form-submit">
+</div>
+</form>
+</div>
+<nav role="navigation" aria-labelledby="block-tagv4-mainnavigation-menu" id="block-tagv4-mainnavigation" class="site-nav__wrap">
+<h2 class="visually-hidden">Main navigation</h2>
+<ul class="site-nav">
+<li class="site-nav__item">
+<a href="https://www.thirdandgrove.com/work" data-drupal-link-system-path="node/706">Work</a>
+</li>
+<li class="site-nav__item">
+<a href="https://www.thirdandgrove.com/capabilities" data-drupal-link-system-path="node/701">Capabilities</a>
+</li>
+<li class="site-nav__item">
+<a href="https://www.thirdandgrove.com/articles" title="Posts by TAG staff" data-drupal-link-system-path="articles">Articles</a>
+</li>
+<li class="site-nav__item">
+<a href="https://www.thirdandgrove.com/contact-us" data-drupal-link-system-path="contact/contact_us">Contact Us</a>
+</li>
+<li class="site-nav__item">
+<a href="https://www.thirdandgrove.com/team" title="Third &amp; Grove Team" data-drupal-link-system-path="team">Team</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<main role="main" class="main-content">
+<a id="main-content" tabindex="-1"></a>
+<div class="layout-content">
+<div>
+<div id="block-pagetitle">
+<h1 class="page-title"><span property="schema:name" class="field-name--title">Creating a Simple Configuration Form in Drupal 8</span>
+</h1>
+</div>
+<div id="block-tagv4-content">
+<article role="article" about="/creating-simple-configuration-form-drupal-8" typeof="schema:Article" class="node-type-article node-type-article-full">
+<span property="schema:name" content="Creating a Simple Configuration Form in Drupal 8" class="hidden"></span>
+<header class="blog-header">
+<div class="field-name--field_category">
+<div><a href="https://www.thirdandgrove.com/taxonomy/term/11" hreflang="en">Technology</a></div>
+<div><a href="https://www.thirdandgrove.com/taxonomy/term/5" hreflang="en">Development</a></div>
+</div>
+<span class="blog-date">Feb 19 '16</span>
+</header>
+<div>
+<div property="schema:text" class="field-name--body"><p>Drupal 8’s way of managing configuration forms is fairly different from Drupal 7. In this post, we will create a simple module that has a configuration form with a few fields. </p>
+<p>First, start off by creating a module skeleton. You could use <a href="https://drupalconsole.com/" target="_blank">Drupal Console</a> for this, or just by following the <a href="https://www.drupal.org/node/2467149">tutorial found here.</a></p>
+<p>The first thing I recommend you doing is creating the route for your configuration form. For this example, I’m calling the module <em>Simple,</em> so I will be adding <em>simple.routing.yml</em>. Create your <em>mymodule.routing.yml</em> file and place it inside of your module directory. Place this code in there:</p>
+<p>
+</p>
+<div class="geshifilter"><pre class="yaml geshifilter-yaml" style="font-family:monospace;"><span style="color: #007F45;">simple.config</span><span style="font-weight: bold; color: brown;">:
+</span><span style="color: green;">
+  path</span><span style="font-weight: bold; color: brown;">: </span>'/admin/config/simple/config'
+<span style="color: #007F45;">
+  defaults</span><span style="font-weight: bold; color: brown;">:
+</span><span style="color: green;">
+    _form</span><span style="font-weight: bold; color: brown;">: </span>'\Drupal\simple\Form\SimpleConfigForm'
+<span style="color: green;">
+    _title</span><span style="font-weight: bold; color: brown;">: </span>'Simple Configuration'
+<span style="color: #007F45;">
+  requirements</span><span style="font-weight: bold; color: brown;">:
+</span><span style="color: green;">
+    _permission</span><span style="font-weight: bold; color: brown;">: </span>'administer site configuration'</pre></div>
+<p>
+</p>
+<p>Next, in <em>mymodule/src/Form/</em> create a new file called <em>SimpleConfigForm.php</em>. Paste the following code in there:</p>
+<p>
+</p>
+<div class="geshifilter"><pre class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">&lt;?php</span>
+&nbsp;
+<span style="color: #009933; font-style: italic;">/**
+&nbsp;
+ * @file
+&nbsp;
+ * Contains \Drupal\simple\Form\SimpleConfigForm.
+&nbsp;
+ */</span>
+&nbsp;
+<span style="color: #000000; font-weight: bold;">namespace</span> Drupal\simple\Form<span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #000000; font-weight: bold;">use</span> Drupal\Core\Form\ConfigFormBase<span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #000000; font-weight: bold;">use</span> Drupal\Core\Form\FormStateInterface<span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #000000; font-weight: bold;">class</span> SimpleConfigForm <span style="color: #000000; font-weight: bold;">extends</span> ConfigFormBase <span style="color: #009900;">{</span>
+&nbsp;
+  <span style="color: #009933; font-style: italic;">/**
+&nbsp;
+   * {@inheritdoc}
+&nbsp;
+   */</span>
+&nbsp;
+  <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">function</span> getFormId<span style="color: #009900;">(</span><span style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+&nbsp;
+    <span style="color: #b1b100;">return</span> <span style="color: #0000ff;">'simple_config_form'</span><span style="color: #339933;">;</span>
+&nbsp;
+  <span style="color: #009900;">}</span>
+&nbsp;
+  <span style="color: #009933; font-style: italic;">/**
+&nbsp;
+   * {@inheritdoc}
+&nbsp;
+   */</span>
+&nbsp;
+  <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">function</span> buildForm<span style="color: #009900;">(</span><a href="http://www.php.net/array"><span style="color: #990000;">array</span></a> <span style="color: #000088;">$form</span><span style="color: #339933;">,</span> FormStateInterface <span style="color: #000088;">$form_state</span><span style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+&nbsp;
+    <span style="color: #000088;">$form</span> <span style="color: #339933;">=</span> parent<span style="color: #339933;">::</span><span style="color: #004000;">buildForm</span><span style="color: #009900;">(</span><span style="color: #000088;">$form</span><span style="color: #339933;">,</span> <span style="color: #000088;">$form_state</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+    <span style="color: #000088;">$config</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">config</span><span style="color: #009900;">(</span><span style="color: #0000ff;">'simple.settings'</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+    <span style="color: #000088;">$form</span><span style="color: #009900;">[</span><span style="color: #0000ff;">'email'</span><span style="color: #009900;">]</span> <span style="color: #339933;">=</span> <a href="http://www.php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">(</span>
+&nbsp;
+      <span style="color: #0000ff;">'#type'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'textfield'</span><span style="color: #339933;">,</span>
+&nbsp;
+      <span style="color: #0000ff;">'#title'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">t</span><span style="color: #009900;">(</span><span style="color: #0000ff;">'Email'</span><span style="color: #009900;">)</span><span style="color: #339933;">,</span>
+&nbsp;
+      <span style="color: #0000ff;">'#default_value'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$config</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">get</span><span style="color: #009900;">(</span><span style="color: #0000ff;">'simple.email'</span><span style="color: #009900;">)</span><span style="color: #339933;">,</span>
+&nbsp;
+      <span style="color: #0000ff;">'#required'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #009900; font-weight: bold;">TRUE</span><span style="color: #339933;">,</span>
+&nbsp;
+    <span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+    <span style="color: #000088;">$node_types</span> <span style="color: #339933;">=</span> \Drupal\node\Entity\NodeType<span style="color: #339933;">::</span><span style="color: #004000;">loadMultiple</span><span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+    <span style="color: #000088;">$node_type_titles</span> <span style="color: #339933;">=</span> <a href="http://www.php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+    <span style="color: #b1b100;">foreach</span> <span style="color: #009900;">(</span><span style="color: #000088;">$node_types</span> <span style="color: #b1b100;">as</span> <span style="color: #000088;">$machine_name</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$val</span><span style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+&nbsp;
+      <span style="color: #000088;">$node_type_titles</span><span style="color: #009900;">[</span><span style="color: #000088;">$machine_name</span><span style="color: #009900;">]</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$val</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">label</span><span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+    <span style="color: #009900;">}</span>
+&nbsp;
+    <span style="color: #000088;">$form</span><span style="color: #009900;">[</span><span style="color: #0000ff;">'node_types'</span><span style="color: #009900;">]</span> <span style="color: #339933;">=</span> <a href="http://www.php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">(</span>
+&nbsp;
+      <span style="color: #0000ff;">'#type'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'checkboxes'</span><span style="color: #339933;">,</span>
+&nbsp;
+      <span style="color: #0000ff;">'#title'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">t</span><span style="color: #009900;">(</span><span style="color: #0000ff;">'Node Types'</span><span style="color: #009900;">)</span><span style="color: #339933;">,</span>
+&nbsp;
+      <span style="color: #0000ff;">'#options'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$node_type_titles</span><span style="color: #339933;">,</span>
+&nbsp;
+      <span style="color: #0000ff;">'#default_value'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$config</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">get</span><span style="color: #009900;">(</span><span style="color: #0000ff;">'simple.node_types'</span><span style="color: #009900;">)</span><span style="color: #339933;">,</span>
+&nbsp;
+    <span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+    <span style="color: #b1b100;">return</span> <span style="color: #000088;">$form</span><span style="color: #339933;">;</span>
+&nbsp;
+  <span style="color: #009900;">}</span>
+&nbsp;
+  <span style="color: #009933; font-style: italic;">/**
+&nbsp;
+   * {@inheritdoc}
+&nbsp;
+   */</span>
+&nbsp;
+  <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">function</span> submitForm<span style="color: #009900;">(</span><a href="http://www.php.net/array"><span style="color: #990000;">array</span></a> <span style="color: #339933;">&amp;</span><span style="color: #000088;">$form</span><span style="color: #339933;">,</span> FormStateInterface <span style="color: #000088;">$form_state</span><span style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+&nbsp;
+    <span style="color: #000088;">$config</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">config</span><span style="color: #009900;">(</span><span style="color: #0000ff;">'simple.settings'</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+    <span style="color: #000088;">$config</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">set</span><span style="color: #009900;">(</span><span style="color: #0000ff;">'simple.email'</span><span style="color: #339933;">,</span> <span style="color: #000088;">$form_state</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">getValue</span><span style="color: #009900;">(</span><span style="color: #0000ff;">'email'</span><span style="color: #009900;">)</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+    <span style="color: #000088;">$config</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">set</span><span style="color: #009900;">(</span><span style="color: #0000ff;">'simple.node_types'</span><span style="color: #339933;">,</span> <span style="color: #000088;">$form_state</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">getValue</span><span style="color: #009900;">(</span><span style="color: #0000ff;">'node_types'</span><span style="color: #009900;">)</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+    <span style="color: #000088;">$config</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">save</span><span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+    <span style="color: #b1b100;">return</span> parent<span style="color: #339933;">::</span><span style="color: #004000;">submitForm</span><span style="color: #009900;">(</span><span style="color: #000088;">$form</span><span style="color: #339933;">,</span> <span style="color: #000088;">$form_state</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+  <span style="color: #009900;">}</span>
+&nbsp;
+  <span style="color: #009933; font-style: italic;">/**
+&nbsp;
+   * {@inheritdoc}
+&nbsp;
+   */</span>
+&nbsp;
+  <span style="color: #000000; font-weight: bold;">protected</span> <span style="color: #000000; font-weight: bold;">function</span> getEditableConfigNames<span style="color: #009900;">(</span><span style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+&nbsp;
+    <span style="color: #b1b100;">return</span> <span style="color: #009900;">[</span>
+&nbsp;
+      <span style="color: #0000ff;">'simple.settings'</span><span style="color: #339933;">,</span>
+&nbsp;
+    <span style="color: #009900;">]</span><span style="color: #339933;">;</span>
+&nbsp;
+  <span style="color: #009900;">}</span>
+&nbsp;
+<span style="color: #009900;">}</span></pre></div>
+<p>
+</p>
+<p>Now, I obviously brushed over most of this code, but I will give a quick overview of what it does. First, we define the form id in the <em>getFormId()</em> function. You could use this id in a hook_alter method to modify things. Next the <em>buildForm()</em> method creates a form with two items. The first is a simple text field that is required. It is labeled to accept an email address. The second form item is a group of checkboxes.
+</p><p>
+</p>
+We use the <em>\Drupal\node\Entity\NodeType::loadMultiple()</em> method to load a list of all node types and we create a checkbox for each.
+<p>
+</p>
+<p>Notice that on both form fields, we have a <em>#default_value</em>. This is used to load the config of a previously saves form state. So, after you enter in fields, the page will refresh and your new values will be stored. We populate the field items for the next time you visit the form.</p>
+<p>Lastly, in the <em>submitForm</em> function, we simply load up our configuration and save the values that are found in the form state. From there we pass the flow to the parent object so it can flow through the stack.</p>
+<p>That’s it! All you have to do is go and enable the module and you should be able to access the form by going to <em>/admin/config/simple/config</em>.</p>
+<p>Happy Drupaling!</p></div>
+</div>
+<div><ul><li><div class="social-share-links se-block se-align-left">
+<div class="block-content">
+<div class="se-container">
+<div id="se-trigger-node157" class="se-trigger se-disabled">
+<img src="./Creating a Simple admin Configuration Form in Drupal 8 _ Third &amp; Grove_files/share-icon.svg" alt="Share icon">
+</div>
+<div class="se-links-container">
+<ul id="se-links-node157" class="se-links se-active">
+<li class="se-link facebook_share"> <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.thirdandgrove.com%2Fcreating-simple-configuration-form-drupal-8" target="_blank"><img src="./Creating a Simple admin Configuration Form in Drupal 8 _ Third &amp; Grove_files/facebook-share.svg" title="Share on Facebook" alt="Share on Facebook">
+</a>
+</li>
+<li class="se-link twitter"> <a href="https://twitter.com/intent/tweet?text=&amp;url=https%3A%2F%2Fwww.thirdandgrove.com%2Fcreating-simple-configuration-form-drupal-8" target="_blank"><img src="./Creating a Simple admin Configuration Form in Drupal 8 _ Third &amp; Grove_files/twitter.svg" title="Share on Twitter" alt="Share on Twitter">
+</a>
+</li>
+<li class="se-link linkedin"> <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.thirdandgrove.com%2Fcreating-simple-configuration-form-drupal-8" target="_blank"><img src="./Creating a Simple admin Configuration Form in Drupal 8 _ Third &amp; Grove_files/linkedin.svg" title="Share on LinkedIn" alt="Share on LinkedIn">
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</li></ul></div>
+<div class="forward-content-control">
+<a href="https://www.thirdandgrove.com/forward/node/157" title="Forward this article to a friend" class="forward-page">Email this article</a>
+</div>
+<div class="blog-tags">
+<div class="blog-tags-inner">
+Read more about:
+<div class="field-name--field_tags">
+<div><a href="https://www.thirdandgrove.com/taxonomy/term/197" property="schema:about" hreflang="en">Drupal 8</a></div>
+<div><a href="https://www.thirdandgrove.com/taxonomy/term/217" property="schema:about" hreflang="en">Drupal Planet</a></div>
+</div>
+</div>
+</div>
+<footer class="blog-footer">
+<div class="blog-footer-inner">
+<div class="about-author">
+<div typeof="schema:Person" about="/user/4">
+<h5>Written by</h5>
+<div class="field-name--user_picture"> <img src="./Creating a Simple admin Configuration Form in Drupal 8 _ Third &amp; Grove_files/curtis_0.jpg" width="150" height="150" alt="Profile picture for user curtis" typeof="foaf:Image">
+</div>
+<a href="https://www.thirdandgrove.com/articles-by/curtis" class="all-user-articles"> <span class="field-name--field_first_name">Curtis</span>
+<span class="field-name--field_last_name">Ogle</span>
+</a>
+<div class="field-name--field_bio"><p>Curtis received a Bachelor's degree in Computer Science from Hanover College. During his time in college, he interned with Vehicle Service Group (a subsidiary of the Dover Corporation) building websites for its eight brands. He served as a Java developer at Tata Consultancy Service. He enjoys hiking, baking, coffee, and coke products, and can always be found hanging out with his wife and dog.</p>
+</div>
+</div>
+</div>
+<div class="blog-related-content">
+<h5>Related Content</h5>
+<ul><li><a href="https://www.thirdandgrove.com/long-road-drupal-9" hreflang="en">The Long Road to Drupal 9</a></li><li><a href="https://www.thirdandgrove.com/decoupled-drupal-graphql" hreflang="en">Decoupled Drupal with GraphQL</a></li><li><a href="https://www.thirdandgrove.com/rendering-view-ajax-drupal-8" hreflang="en">Rendering a View with Ajax in Drupal 8</a></li><li><a href="https://www.thirdandgrove.com/high-level-overview-plugin-system-drupal-8" hreflang="en">A high-level overview of the Plugin system in Drupal 8</a></li><li><a href="https://www.thirdandgrove.com/using-batch-api-and-hookupdaten-drupal-8" hreflang="en">Using the Batch API and hook_update_N in Drupal 8</a></li></ul>
+</div>
+</div>
+</footer>
+</article>
+</div>
+</div>
+</div>
+</main>
+<div class="footer-contact-us">
+<div class="container">
+<div class="footer-cta-text">
+<h2>Looking for a solution? We'd love to help!</h2>
+<p>Start a conversation with <a href="https://www.thirdandgrove.com/contact-us">us</a> today</p>
+</div>
+<div class="footer-cta-btn-wrapper">
+<a href="https://www.thirdandgrove.com/contact-us" class="btn btn-cta cta-button">Contact Us</a>
+</div>
+</div>
+</div>
+<footer class="site-footer" role="contentinfo">
+<div class="container">
+<div class="company-menu">
+<h5>Company</h5>
+<ul>
+<li class="company-menu__item">
+<a href="https://www.thirdandgrove.com/contact-us" title="Get in touch with Third &amp; Grove" data-drupal-link-system-path="contact/contact_us">Contact Us</a>
+</li>
+<li class="company-menu__item">
+<a href="https://www.thirdandgrove.com/team" title="Third &amp; Grove team members" data-drupal-link-system-path="team">Team</a>
+</li>
+<li class="company-menu__item">
+<a href="https://www.thirdandgrove.com/team" title="Job openings at Third &amp; Grove" data-drupal-link-system-path="team">Careers</a>
+</li>
+</ul>
+</div>
+<div class="learn-more-menu">
+<h5>Learn More</h5>
+<ul>
+<li class="learn-more-menu__item">
+<a href="https://www.thirdandgrove.com/drupal-development" title="Drupal Development &amp; Design" data-drupal-link-system-path="node/656">Drupal Development</a>
+</li>
+<li class="learn-more-menu__item">
+<a href="https://www.thirdandgrove.com/drupal-support" title="Let’s maintain, protect and improve your Drupal website" data-drupal-link-system-path="node/531">Drupal Support</a>
+</li>
+<li class="learn-more-menu__item">
+<a href="https://www.thirdandgrove.com/drupal-magento" title="A Guide to Drupal + Magento Integration" data-drupal-link-system-path="node/696">Drupal &amp; Magento Integration</a>
+</li>
+<li class="learn-more-menu__item">
+<a href="https://www.thirdandgrove.com/drupal-hybris" title="Creating amazing customer experiences with Hybris" data-drupal-link-system-path="node/666">Drupal &amp; Hybris Integration</a>
+</li>
+<li class="learn-more-menu__item">
+<a href="https://www.thirdandgrove.com/ux-ideation" title="UX prototype ideation for startups" data-drupal-link-system-path="node/601">UX Ideation</a>
+</li>
+<li class="learn-more-menu__item">
+<a href="https://www.thirdandgrove.com/acquia-drupal">Acquia Drupal</a>
+</li>
+<li class="learn-more-menu__item">
+<a href="https://www.thirdandgrove.com/shopify-plus" data-drupal-link-system-path="node/421">Shopify Plus</a>
+</li>
+</ul>
+</div>
+<div class="locations-menu">
+<h5>Locations</h5>
+<ul>
+<li class="locations-menu__item">
+<a href="https://www.thirdandgrove.com/boston" title="Boston&#39;s Leading Drupal Development Agency" data-drupal-link-system-path="node/471">Boston</a>
+</li>
+<li class="locations-menu__item">
+<a href="https://www.thirdandgrove.com/san-francisco" title="San Francisco Drupal Development Agency" data-drupal-link-system-path="node/661">San Francisco</a>
+</li>
+</ul>
+</div>
+<div class="footer-social">
+<h5>Connect With Us</h5>
+<ul>
+ <li class="footer-social__item">
+<a href="https://www.linkedin.com/company/third-and-grove">
+<svg class="footer-social__icon footer-social__icon-linkedin" id="linkedin-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.468 40.32">
+<title>LinkedIn Icon</title>
+<path class="st0" d="M.1 10.75h7.96v29.57H.1zM24.43 10.75c-2.93 0-4.4 1.4-5.6 2.34v-2.35h-8.04v29.57h8.02v-18.6s-.3-3.73 4.15-3.73c2.68 0 3.9 1.52 3.9 3.7v18.62h8.46V21.97c0-10.08-8.1-11.22-10.9-11.22zM8.06 4.03c0 2.23-1.8 4.03-4.03 4.03C1.8 8.06 0 6.26 0 4.03 0 1.8 1.8 0 4.03 0c2.23 0 4.03 1.8 4.03 4.03z"></path>
+</svg>
+</a>
+</li>
+<li class="footer-social__item">
+<a href="https://twitter.com/thirdandgrove">
+<svg class="footer-social__icon footer-social__icon-twitter" id="twitter-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.32 32.878">
+<title>Twitter Icon</title>
+<path class="st0" d="M40.32 3.9c-1.6.67-3.17 1.1-4.76 1.27 1.8-1.08 3-2.6 3.63-4.56-1.65 1-3.4 1.65-5.25 2C32.3.88 30.3 0 27.9 0c-2.27 0-4.22.8-5.83 2.42-1.62 1.6-2.42 3.56-2.42 5.84 0 .62.07 1.25.2 1.9-3.38-.17-6.54-1.02-9.5-2.55C7.4 6.1 4.88 4.06 2.8 1.5 2.07 2.8 1.7 4.2 1.7 5.7c0 1.4.32 2.73 1 3.94.65 1.2 1.55 2.2 2.67 2.94-1.33-.05-2.57-.4-3.73-1.05v.1c0 2 .63 3.76 1.88 5.27 1.25 1.5 2.84 2.46 4.74 2.85-.7.2-1.44.3-2.17.3-.5-.02-1-.06-1.57-.14.53 1.65 1.5 3 2.9 4.08 1.43 1.06 3.03 1.6 4.82 1.65-3 2.36-6.42 3.54-10.25 3.54-.74 0-1.4-.04-2-.1 3.84 2.47 8.07 3.7 12.7 3.7 2.92 0 5.68-.46 8.25-1.4 2.58-.92 4.78-2.16 6.6-3.72 1.83-1.56 3.4-3.36 4.72-5.4 1.32-2.02 2.3-4.14 2.96-6.35.64-2.2.97-4.42.97-6.64 0-.47 0-.83-.03-1.07 1.63-1.18 3-2.6 4.15-4.27zm0 0"></path>
+</svg>
+</a>
+</li>
+<li class="footer-social__item">
+<a href="https://github.com/thirdandgrove">
+<svg class="footer-social__icon footer-social__icon-github" id="github-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.32 34.287">
+<title>Github Icon</title>
+<path class="st0" d="M37.02 9.35c.44-1.3.66-2.66.66-4.07 0-1.87-.4-3.63-1.24-5.28-1.72 0-3.25.3-4.58.94-1.32.63-2.83 1.6-4.53 2.94-2.13-.52-4.4-.78-6.78-.78-2.62 0-5.12.28-7.5.85C11.34 2.6 9.8 1.6 8.5.95 7.16.33 5.62 0 3.88 0c-.83 1.65-1.24 3.4-1.24 5.28 0 1.43.22 2.8.65 4.12C1.1 11.97 0 15.17 0 19c0 3.36.5 6.03 1.5 8.02.54 1.05 1.23 1.98 2.1 2.8.84.8 1.82 1.45 2.92 1.95 1.1.5 2.2.9 3.32 1.25 1.1.33 2.35.57 3.7.72 1.34.16 2.53.26 3.57.3 1.04.05 2.2.08 3.45.08 1.5 0 2.83-.04 4.05-.1 1.2-.08 2.6-.26 4.15-.54 1.56-.3 2.93-.67 4.12-1.16 1.2-.48 2.33-1.18 3.42-2.08 1.08-.9 1.93-1.98 2.54-3.22 1-2 1.48-4.68 1.48-8.02 0-3.85-1.1-7.06-3.3-9.65zm-2.9 17.63c-.52 1.06-1.17 1.9-1.96 2.5-.8.6-1.78 1.1-2.96 1.45-1.18.37-2.3.6-3.4.72-1.08.1-2.28.17-3.6.17h-4.07c-1.33 0-2.53-.06-3.62-.17-1.07-.12-2.2-.35-3.38-.72-1.18-.36-2.16-.85-2.95-1.45-.8-.6-1.45-1.44-1.97-2.5-.5-1.06-.77-2.3-.77-3.72 0-1.94.56-3.58 1.67-4.94 1.12-1.36 2.63-2.04 4.53-2.04.7 0 2.27.17 4.73.5 1.14.2 2.4.28 3.8.28s2.66-.1 3.8-.27c2.5-.35 4.07-.52 4.73-.52 1.9 0 3.4.68 4.52 2.04 1.12 1.36 1.67 3 1.67 4.94 0 1.42-.27 2.66-.78 3.72z"></path><path class="st0" d="M14.16 19.43c-.5-.55-1.08-.82-1.75-.82-.67 0-1.26.28-1.75.83-.5.55-.84 1.17-1.04 1.84-.2.68-.3 1.34-.3 2 0 .64.1 1.3.3 1.98.2.68.56 1.3 1.05 1.84.5.54 1.08.8 1.76.8.68 0 1.27-.26 1.76-.8.5-.56.84-1.17 1.04-1.85.2-.68.3-1.34.3-2 0-.63-.1-1.3-.3-1.98-.2-.67-.54-1.3-1.04-1.84zM29.67 19.43c-.5-.55-1.08-.82-1.76-.82s-1.25.28-1.74.83c-.5.55-.84 1.17-1.04 1.84s-.3 1.34-.3 2c0 .64.1 1.3.3 1.98.2.68.54 1.3 1.04 1.84s1.08.8 1.75.8 1.28-.26 1.77-.8c.5-.56.84-1.17 1.04-1.85.2-.68.32-1.34.32-2 0-.63-.1-1.3-.3-1.98-.2-.67-.56-1.3-1.05-1.84z"></path>
+</svg>
+</a>
+</li>
+<li class="footer-social__item">
+<a href="https://www.drupal.org/third-and-grove">
+<svg class="footer-social__icon footer-social__icon-d8" id="d8-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.862 40.32">
+<title>Drupal 8 Icon</title>
+ <path class="st0" d="M16.8 24.96c-3.5 0-6.36 2.85-6.36 6.37s2.85 6.36 6.37 6.36 6.37-2.86 6.37-6.37-2.85-6.36-6.36-6.36zM24.73 23.75c1.88 1.96 3.04 4.63 3.04 7.58 0 3.73-1.86 7-4.7 9 5.25-1.63 9.6-5.57 11.54-10.36 2.7-6.6.2-11.58-4-16.1.13.58.2 1.2.2 1.8-.02 3.85-2.57 7.07-6.07 8.08zM17.53 15.7c0 2.7 2.19 4.86 4.87 4.86s4.87-2.2 4.87-4.87c0-2.7-2.18-4.87-4.86-4.87S17.54 13 17.54 15.7z"></path>
+<path class="st0" d="M8.42 38.4c-1.6-1.92-2.57-4.38-2.57-7.07 0-5.62 4.2-10.24 9.65-10.88-.93-1.35-1.48-3-1.48-4.76 0-4.64 3.75-8.38 8.4-8.38.37 0 .75.02 1.1.07C20.8 5 18.06 2.6 15.9 0 17 11.5 5.4 7.32 1.13 17.9c-2.87 7.1-.28 15.9 7.28 20.5z"></path>
+</svg>
+</a>
+</li>
+</ul>
+</div>
+<p class="footer-copyright">© 2018 Third &amp; Grove LLC / All Rights Reserved</p>
+</div>
+</footer>
+</div>
+<script type="text/javascript">
+_linkedin_data_partner_id = "67006";
+</script><script type="text/javascript">
+(function(){var s = document.getElementsByTagName("script")[0];
+var b = document.createElement("script");
+b.type = "text/javascript";b.async = true;
+b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+s.parentNode.insertBefore(b, s);})();
+</script>
+<noscript>
+&lt;img height="1" width="1" alt="" src="https://dc.ads.linkedin.com/collect/?pid=67006&amp;amp;fmt=gif" /&gt;
+</noscript>
+<script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/157","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"ajaxTrustedUrl":{"\/search":true},"user":{"uid":0,"permissionsHash":"798e0a93f766e9a1c0aee1fc276f187b6d2c302a214bd3ec09f01c2a4f2c5241"}}</script>
+<script src="./Creating a Simple admin Configuration Form in Drupal 8 _ Third &amp; Grove_files/js_RgRrQ8s2At7xTsvQq_RXstzUyf2hTeC4_AQfI8GwSl8.js"></script>
+
+
+<iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame" src="./Creating a Simple admin Configuration Form in Drupal 8 _ Third &amp; Grove_files/rcj-da10bd4908deb9e19dfde013ec3fe4ff.html" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe><div id="ads"></div><script src="./Creating a Simple admin Configuration Form in Drupal 8 _ Third &amp; Grove_files/saved_resource" type="text/javascript"></script></body></html>
