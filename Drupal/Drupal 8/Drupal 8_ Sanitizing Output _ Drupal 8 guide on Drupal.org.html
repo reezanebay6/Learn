@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)https://www.drupal.org/docs/8/security/drupal-8-sanitizing-output -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr" xmlns:fb="http://ogp.me/ns/fb#" xmlns:og="http://ogp.me/ns#" xmlns:article="http://ogp.me/ns/article#" xmlns:book="http://ogp.me/ns/book#" xmlns:profile="http://ogp.me/ns/profile#" xmlns:video="http://ogp.me/ns/video#" xmlns:product="http://ogp.me/ns/product#" class="js"><head profile="http://www.w3.org/1999/xhtml/vocab"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width">
+  <meta name="MobileOptimized" content="width">
+  <!--[if IE]><![endif]-->
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+<link rel="dns-prefetch" href="https://www.google-analytics.com/">
+<link rel="preconnect" href="https://www.google-analytics.com/">
+<link rel="dns-prefetch" href="https://stats.g.doubleclick.net/">
+<link rel="preconnect" href="https://stats.g.doubleclick.net/">
+<script type="text/javascript" src="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/e671e25255"></script><script src="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/nr-1130.min.js"></script><script type="text/javascript" async="" src="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/insight.min.js"></script><script src="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/inferredEvents.js" async=""></script><script src="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/576466256018464" async=""></script><script async="" src="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/fbevents.js"></script><script async="" src="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/uwt.js"></script><script type="text/javascript" async="" src="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/54419274f6c96ed073000003.js"></script><script async="" src="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/init.js"></script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"XAcEV19XGwcCUldTDwg="};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(18),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,s){try{p?p-=1:o(s||new UncaughtException(t,n,e),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t,n){var e=n?null:c.now();i("err",[t,e])}var i=t("handle"),a=t(19),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),d=!0)}s.on("fn-start",function(t,n,e){d&&(p+=1)}),s.on("fn-err",function(t,n,e){d&&!e[l]&&(f(e,l,function(){return!0}),this.thrown=!0,o(e))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var x=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof x&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof x&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(21)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(21)(r);n.exports=r;var i=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;i&&i.pushState&&i.replaceState&&(a=i),o.inPlace(a,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(21)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(21)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(b?b.then(a):w?w(a):(E=-E,R.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(21)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var x=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!w&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],10:[function(t,n,e){function r(){var t=window.NREUM,n=t.info.accountID||null,e=t.info.agentID||null,r=t.info.trustKey||null,i="btoa"in window&&"function"==typeof window.btoa;if(!n||!e||!i)return null;var a={v:[0,1],d:{ty:"Browser",ac:n,ap:e,id:o.generateCatId(),tr:o.generateCatId(),ti:Date.now()}};return r&&n!==r&&(a.d.tk=r),btoa(JSON.stringify(a))}var o=t(16);n.exports={generateTraceHeader:r}},{}],11:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<p;r++)t.removeEventListener(l[r],this.listener,!1);n.aborted||(e.duration=s.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==n.status&&(n.status=0):a(this,t),e.cbTime=this.cbTime,d.emit("xhr-done",[t],t),c("xhr",[n,e,this.startTime]))}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return w(r)}function i(t,n){var e=f(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}function a(t,n){t.params.status=n.status;var e=o(n,t.lastSize);if(e&&(t.metrics.rxSize=e),t.sameOrigin){var r=n.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var s=t("loader");if(s.xhrWrappable){var c=t("handle"),f=t(12),u=t(10).generateTraceHeader,d=t("ee"),l=["load","error","abort","timeout"],p=l.length,h=t("id"),m=t(15),w=t(14),v=window.XMLHttpRequest;s.features.xhr=!0,t(9),d.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,n.loadCaptureCalled=!1,t.addEventListener("load",function(e){a(n,t)},!1),m&&(m>34||m<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),d.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),d.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var e=!1;if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(e=!!NREUM.init.distributed_tracing.enabled),e&&this.sameOrigin){var r=u();r&&n.setRequestHeader("newrelic",r)}}),d.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=w(r);i&&(e.txSize=i)}this.startTime=s.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{d.emit("internal-error",[e])}catch(r){}}};for(var a=0;a<p;a++)n.addEventListener(l[a],this.listener,!1)}),d.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),d.on("xhr-load-added",function(t,n){var e=""+h(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),d.on("xhr-load-removed",function(t,n){var e=""+h(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),d.on("addEventListener-end",function(t,n){n instanceof v&&"load"===t[0]&&d.emit("xhr-load-added",[t[1],t[2]],n)}),d.on("removeEventListener-end",function(t,n){n instanceof v&&"load"===t[0]&&d.emit("xhr-load-removed",[t[1],t[2]],n)}),d.on("fn-start",function(t,n,e){n instanceof v&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=s.now()))}),d.on("fn-end",function(t,n){this.xhrCbStart&&d.emit("xhr-cb-time",[s.now()-this.xhrCbStart,this.onload,n],n)})}},{}],12:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],13:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(18),s=t(19),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],e),t}finally{c.emit("fn-end",[f.now()],e)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t,n){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now(),!1,n])}},{}],14:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],15:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],16:[function(t,n,e){function r(){function t(){return n?15&n[e++]:16*Math.random()|0}var n=null,e=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(n=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<i.length;s++)o=i[s],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){function t(){return n?15&n[e++]:16*Math.random()|0}var n=null,e=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&Uint8Array&&(n=r.getRandomValues(new Uint8Array(31)));for(var o=[],i=0;i<16;i++)o.push(t().toString(16));return o.join("")}n.exports={generateUuid:r,generateCatId:o}},{}],17:[function(t,n,e){function r(t,n){if(!o)return!1;if(t!==o)return!1;if(!n)return!0;if(!i)return!1;for(var e=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==e[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}n.exports={agent:o,version:i,match:r}},{}],18:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],19:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],20:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],21:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(19),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=m(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[g[e]];return d&&d.push([x,e,r,a]),a}}function p(t,n){y[t]=m(t).concat(n)}function h(t,n){var e=y[t];if(e)for(var r=0;r<e.length;r++)e[r]===n&&e.splice(r,1)}function m(t){return y[t]||[]}function w(t){return d[t]=d[t]||o(e)}function v(t,n){f(t,function(t,e){n=n||"feature",g[e]=n,n in u||(u[n]=[])})}var y={},g={},x={on:p,addEventListener:p,removeEventListener:h,emit:e,get:w,listeners:m,context:n,buffer:v,abort:a,aborted:!1};return x}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(18),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!E++){var t=b.info=NREUM.info,n=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(g,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=p.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===p.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return R.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(18),u=t("ee"),d=t(17),l=window,p=l.document,h="addEventListener",m="attachEvent",w=l.XMLHttpRequest,v=w&&w.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:w,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var y=""+location,g={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1130.min.js"},x=w&&v&&v[h]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:y,features:{},xhrWrappable:x,userAgent:d};t(13),p[h]?(p[h]("DOMContentLoaded",i,!1),l[h]("load",r,!1)):(p[m]("onreadystatechange",o),l[m]("onload",r)),c("mark",["firstbyte",s],null,"api");var E=0,R=t(20)},{}]},{},["loader",2,11,4,3]);</script>
+<meta name="description" content="Basic techniques for sanitization of text output.">
+<meta name="generator" content="Drupal 7 (https://www.drupal.org)">
+<link rel="canonical" href="https://www.drupal.org/docs/8/security/drupal-8-sanitizing-output">
+<link rel="shortlink" href="https://www.drupal.org/node/2873797">
+<meta property="og:site_name" content="Drupal.org">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.drupal.org/docs/8/security/drupal-8-sanitizing-output">
+<meta property="og:title" content="Drupal 8: Sanitizing Output">
+<meta property="og:description" content="When handling and outputting text in HTML, you need to be careful that proper filtering or escaping is done. Otherwise, there might be bugs when users try to use angle brackets or ampersands, or worse you could open up XSS exploits.">
+<meta property="og:updated_time" content="2018-07-11T15:27:50+00:00">
+<meta property="article:published_time" content="2017-04-28T17:26:36+00:00">
+<meta property="article:modified_time" content="2018-07-11T15:27:50+00:00">
+  <title>Drupal 8: Sanitizing Output | Drupal 8 guide on Drupal.org</title>
+  <link type="text/css" rel="stylesheet" href="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/css__BJ6Ou6QsBRtnFTmxaakamOIS8n4QswDP2XnnZ1sxtaM__NBuvkP6eInGIkb1aJvUHx5PX79XApuxBDkk_77W5tYk__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/css__pb75Es3Qz_6dc5qRXFfBteLW3eKMf92-wDXx91C4Sts__x4ZhO-JDmwub5A-5im8235wCAhkc5qH6jmjVPMhMrYc__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="screen">
+<link type="text/css" rel="stylesheet" href="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/css__rxlkNswgFNTxNaSPriAIXx4ZlwBOB3RlBPezSG6R9_M__VHgdJ4r9tHl_YrvPjndJ9qh877SF9D0BV0kuzFGik7Y__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/css___gHaOfUPGMp9CmQToCayUOFNYCWkA0HSxl7r-Dtt9XI__lDrzWssmRvNcI9hewNcBnrsFz4QXcfZIDU6MaYNjq9k__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/css__VB5ewlXzRLK9G8c-SdackBhY4Kx6j7ZyCsGRWIjDFGo__qe-bB54HYzCh2FGCe62WdrVkshNF02DQLj9u3C7yZR4__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/css__rQ1alF2wtRJheC4MwbTGQHhDW1u3JWtM73MeXej8ZCI__p-VwQIrVeejdBOjfXDxhLZnsUhKi1r9hCeECIryJwZU__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="screen">
+<link type="text/css" rel="stylesheet" href="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/css__P6IUplZtg49jjx07vmYslkCOrJk37PuZ8DFTyLCIKxA__8WLLw30TFGwdXXi2OebbkVNSWKTWS5dEWLp7rfHtS28__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/css__8f1mYXI7glGDMs7Bx9TxdVZ8Q_aBetDl5aUglGDF004__-2CRiB16jOVlO1XcWAWhaWWluW3Lxo4Jhywz0oIiHkk__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/css__IND9Ea9cZJoyPbSkNshnqYv4c5MRWiCE06f8uY8qHPM__P6MQmonPAG9EwAkymq3qjeHUqjIQEfCps7JxljLqlUY__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/css__TfWyVKLagmeJkncT3LJJUcy3ESr1XKJqq3qz5tUtuGU__bQx6iO0FF7UXuwKRSbHWGshBIcB7PlbuJGcaPCIKHf4__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/css__v9yeCzgz7qs8Fbr-QWlDypB0PqI80y3jvDguhVToBCA__peMydGxnw5J-npl9TiHeBlNB52l8AUr_JLg6cBT-Ou4__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/css__vxxEWlql3uJOE6SxuswbSiGtjIUhlDGIEtXZIFy_4eA__nNAOKTKr_LLqGP0bgthGYh0vhAdtTU46IXmZBInTCAg__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/css__eFKSCujfWyJYO8J-qSi6T_n29lROS8isvrxzANeHaAY__D_EUHDAfEQdxcLiSDY7hREUWkG1Ge56_h2z3Er8V188__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/css__mXUsFOkFX1Vp3cPaBtPrMNLiyy4rOzIAVz7DppnovsY__4a32sD5wTTMzrJf7XqA8yck7wVaHdAmb-RLMBilVXyY__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/css__WF0PRotZAhCcl0aJjY5W2LYj8UwiYuB2dZEFluOh3Tc__FviX13FUB-Ppa2XB29BUIJQZ1Wg-F5XiDE7XD5y7mjQ__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/css__Fx0_w1L9q3nwzXnALG7UfjLF34FGYgJTz636-GWbM6k__0jWLTEHP3h5U5RcXuZcFhf0DdvRdzP3_wzCVNT015Ls__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/css__QPp1snPjYt_xYr0c_V0IORcEElkIUBBBrvOB4ZE0Gnw__tsHhQs-0ZQX3RWg3akBhY0psysZPLmDyllt5AIsfUdM__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all">
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var preconnect_support = false; try {if (document.createElement("link").relList.supports("preconnect")) {preconnect_support = true;}} catch (e) {} if (!preconnect_support) { var prefetch = document.createElement("link"); prefetch.href = "https://stats.g.doubleclick.net/robots.txt"; prefetch.rel="prefetch"; document.getElementsByTagName("head")[0].appendChild(prefetch);}
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,r){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date()})(window,document,"script","ga");ga("create", "UA-2360451-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("set", "dimension3", "anonymous user");ga("set", "dimension4", "Documentation page");ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" async="" src="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/tagjs"></script><a tabindex="-1" aria-hidden="true" href="https://www.drupal.org/docs/8/security/drupal-8-sanitizing-output?_pxhc=1570537353339" rel="nofollow" target="_blank" style="width: 0px; height: 0px; font-size: 0px; line-height: 0;"></a></head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-2873797 node-type-documentation drupalorg-site-main panels-layout new-style og-context og-context-node og-context-node-2786453 project-issue-focused-input-processed">
+  <div id="skip-link">
+    <a class="element-invisible element-focusable" href="https://www.drupal.org/docs/8/security/drupal-8-sanitizing-output#content">Skip to main content</a>
+    <a class="element-invisible element-focusable skip-link-search" href="https://www.drupal.org/docs/8/security/drupal-8-sanitizing-output#search-block-form">Skip to search</a>
+  </div>
+        <div id="nav-header">
+    <div class="menu-nav">
+      <a class="nav-btn" id="nav-open-btn" href="https://www.drupal.org/docs/8/security/drupal-8-sanitizing-output#block-system-main-menu"><img src="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/icon-w-menu.svg" alt="Main menu"></a>
+    </div>
+    <nav id="navigation-inner" class="container-12" role="navigation">
+        <div class="region region-navigation">
+    <div id="block-system-main-menu" class="block block-system block-menu">
+<div class="block-inner">
+    
+  <div class="content">
+    <div class="menu-block"><ul class="menu button"><li class="first leaf"><a href="https://www.drupal.org/home" title="Drupal.org home page">Drupal.org home</a></li>
+<li class="expanded"><a href="https://www.drupal.org/about" title="">Why Drupal?</a><div class="menu-block"><ul class="menu button"><li class="first leaf"><a href="https://www.drupal.org/developers" title="">For developers</a></li>
+<li class="leaf"><a href="https://www.drupal.org/marketers" title="Why marketers should choose Drupal for their ambitious digital experiences">For marketers</a></li>
+<li class="leaf"><a href="https://www.drupal.org/agencies" title="Learn why agencies are betting their future on Drupal">For agencies</a></li>
+<li class="leaf"><a href="https://www.drupal.org/case-studies" title="View case studies to see how your peers have built success on Drupal">Case studies</a></li>
+<li class="leaf"><a href="https://www.drupal.org/about" title="Learn about Drupal">About Drupal</a></li>
+<li class="leaf"><a href="https://www.drupal.org/about/9" title="Prepare for Drupal 9">Drupal 9</a></li>
+<li class="last leaf"><a href="https://www.drupal.org/about/in-the-news" title="">In the news</a></li>
+</ul></div></li>
+<li class="expanded"><a href="https://www.drupal.org/download" title="Build your solution on Drupal">Build</a><div class="menu-block"><ul class="menu button"><li class="first leaf"><a href="https://www.drupal.org/download" title="Download and Extend Drupal">Download &amp; Extend</a></li>
+<li class="leaf"><a href="https://git.drupalcode.org/project/drupal" title="">Browse Repository</a></li>
+<li class="leaf"><a href="https://www.drupal.org/documentation" title="">Documentation</a></li>
+<li class="leaf"><a href="https://www.drupal.org/project/modules" title="Find modules to extend Drupal to meet any need">Modules</a></li>
+<li class="leaf"><a href="https://www.drupal.org/project/themes" title="Browse themes as a starting point for making your Drupal site your own">Themes</a></li>
+<li class="leaf"><a href="https://www.drupal.org/project/distributions" title="Use a distribution to start with a version of Drupal customized to purpose">Distributions</a></li>
+<li class="leaf"><a href="https://www.drupal.org/project/issues" title="Dive into the issues queues and contribute back to Drupal">Issue queues</a></li>
+<li class="last leaf"><a href="https://www.drupal.org/about/strategic-initiatives" title="">Strategic Initiatives</a></li>
+</ul></div></li>
+<li class="expanded"><a href="https://www.drupal.org/industries" title="Examples of solutions built on Drupal">Solutions</a><div class="menu-block"><ul class="menu button"><li class="first leaf"><a href="https://www.drupal.org/industries" title="Learn why Drupal is the best solution for your industry">By industry</a></li>
+<li class="leaf"><a href="https://www.drupal.org/case-studies" title="View Drupal success stories">Case studies</a></li>
+<li class="last leaf"><a href="https://www.drupal.org/hosting" title="Find a solution for hosting your Drupal application">For hosting</a></li>
+</ul></div></li>
+<li class="expanded"><a href="https://www.drupal.org/drupal-services" title="Buy Drupal Products and Services">Services</a><div class="menu-block"><ul class="menu button"><li class="first leaf"><a href="https://www.drupal.org/drupal-services" title="View the Drupal service provider marketplace">Marketplace</a></li>
+<li class="leaf"><a href="https://www.drupal.org/hosting" title="Find trusted Drupal hosting providers">Hosting</a></li>
+<li class="last leaf"><a href="https://www.drupal.org/training" title="Find expert Drupal training">Training</a></li>
+</ul></div></li>
+<li class="expanded"><a href="https://www.drupal.org/community" title="Drupal Community">Community</a><div class="menu-block"><ul class="menu button"><li class="first leaf"><a href="https://www.drupal.org/community" title="View the community portal and find all the ways you can contribute to Drupal">Portal</a></li>
+<li class="leaf"><a href="https://www.drupal.org/getting-involved" title="Read the getting involved guide to learn where you can make the most impact">Getting involved</a></li>
+<li class="leaf"><a href="https://www.drupal.org/organizations" title="Learn about the organizations that are part of the Drupal ecosystem">Organizations</a></li>
+<li class="leaf"><a href="https://www.drupal.org/forum" title="Find support or chat with the community on the forum">Forum</a></li>
+<li class="leaf"><a href="https://www.drupal.org/community/agency-marketing/promotedrupal" title="">Promote Drupal</a></li>
+<li class="last leaf"><a href="https://www.drupal.org/case-studies/community" title="">Community Case Studies</a></li>
+</ul></div></li>
+<li class="expanded"><a href="https://www.drupal.org/documentation" title="Resources to help you on your Drupal journey">Resources</a><div class="menu-block"><ul class="menu button"><li class="first leaf"><a href="https://www.drupal.org/docs/user_guide/en/index.html" title="The Drupal 8 user guide will get you up to speed in no time">User guide</a></li>
+<li class="leaf"><a href="https://www.drupal.org/documentation" title="Drupal Documentation">Documentation</a></li>
+<li class="leaf"><a href="https://www.drupal.org/support" title="Support for using Drupal">Support</a></li>
+<li class="leaf"><a href="https://www.drupal.org/security" title="Find information about security releases for Drupal">Security</a></li>
+<li class="leaf"><a href="https://jobs.drupal.org/" title="Drupal Jobs">Jobs</a></li>
+<li class="leaf"><a href="https://events.drupal.org/" title="Learn about official Drupal Association events">Events</a></li>
+<li class="leaf"><a href="https://www.drupal.org/news" title="News about the Drupal ecosystem">Project News</a></li>
+<li class="leaf"><a href="https://www.drupal.org/association/supporters/press" title="News and press releases from Drupal Association supporting partners">Partner Press</a></li>
+<li class="last leaf"><a href="https://www.drupal.org/about/9" title="Prepare for Drupal 9">Drupal 9</a></li>
+</ul></div></li>
+<li class="expanded"><a href="https://www.drupal.org/association" title="About the Drupal Association - the non-profit that supports the Drupal project">Association</a><div class="menu-block"><ul class="menu button"><li class="first leaf"><a href="https://www.drupal.org/association" title="Learn about the Drupal Association - the nonprofit that supports the Drupal project">Drupal Association</a></li>
+<li class="leaf"><a href="https://www.drupal.org/association/supporters" title="Learn more about the organizations that support the Drupal Association and our mission">Supporters</a></li>
+<li class="leaf"><a href="https://www.drupal.org/promotedrupal" title="">Promote Drupal</a></li>
+<li class="leaf"><a href="https://www.drupal.org/association/support" title="We depend on you to move the Drupal project forward">Join us</a></li>
+<li class="last leaf"><a href="https://www.drupal.org/drupalorg" title="">About Drupal.org</a></li>
+</ul></div></li>
+<li class="last expanded"><a href="https://www.drupal.org/try-drupal" title="Try Drupal">Try Drupal</a><div class="menu-block"><ul class="menu button"><li class="first leaf"><a href="https://www.drupal.org/try-drupal" title="Demo Drupal online with a Drupal platform partner">Demo online</a></li>
+<li class="last leaf"><a href="https://www.drupal.org/download" title="">Download</a></li>
+</ul></div></li>
+</ul></div><a class="close-btn" href="https://www.drupal.org/docs/8/security/drupal-8-sanitizing-output#top">Return to content</a>  </div>
+  </div>
+</div>
+<div id="block-system-user-menu" class="block block-system block-menu">
+<div class="block-inner">
+    
+  <div class="content">
+    <div class="menu-block"><ul class="menu"><li class="button default"><a href="https://www.drupal.org/docs/8/security/drupal-8-sanitizing-output#block-system-user-menu"><img src="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/icon-w-user.svg" alt="Log in, view profile, and more"></a><ul><li class="first leaf"><a href="https://www.drupal.org/user/login?destination=node/2873797" title="">Log in</a></li>
+<li class="last leaf"><a href="https://www.drupal.org/user/register?destination=node/2873797" title="">Create account</a></li>
+</ul></li></ul></div>  </div>
+  </div>
+</div>
+<div id="block-search-form" class="block block-search">
+<div class="block-inner">
+    
+  <div class="content">
+    <form action="https://www.drupal.org/docs/8/security/drupal-8-sanitizing-output" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+      <h2 class="element-invisible">Search form</h2>
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input placeholder="Search…" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input alt="Search" type="image" id="edit-submit" name="submit" value="Search" src="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/icon-w-search.svg" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-wkoOQKVJeCkxobmagljog7xqVERUBUUXkW150ZVZmB4">
+<input type="hidden" name="form_id" value="search_block_form">
+</div>
+</div></form>  </div>
+  </div>
+</div>
+  </div>
+    </nav>
+  </div>
+
+    <div id="header" class="clearfix">
+    <div id="header-inner" class="container-12 clearfix">
+      <div id="header-left">
+        <div id="site-name"><a href="https://www.drupal.org/documentation">Documentation</a></div>
+              </div>
+      <div id="header-right">
+          <div class="region region-header">
+    <div id="block-drupalorg-search-documentation" class="block block-drupalorg">
+<div class="block-inner">
+    
+  <div class="content">
+    <form class="container-inline" action="https://www.drupal.org/docs/8/security/drupal-8-sanitizing-output" method="post" id="drupalorg-documentation-search-form" accept-charset="UTF-8"><div><input type="hidden" name="form_build_id" value="form-LJUvb9y4AUQh-baXTAEdZ9M3cZPrS-N5GydxBOOpFzo">
+<input type="hidden" name="form_id" value="drupalorg_documentation_search_form">
+<div class="form-item form-type-textfield form-item-drupalorg-documentation-search-form">
+  <label class="element-invisible" for="edit-drupalorg-documentation-search-form--2">Search </label>
+ <input placeholder="Search documentation…" type="text" id="edit-drupalorg-documentation-search-form--2" name="drupalorg_documentation_search_form" value="" size="15" maxlength="128" class="form-text">
+</div>
+<div class="form-actions form-wrapper" id="edit-actions--2"><input alt="Search" type="image" id="edit-submit--2" name="submit" value="Search" src="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/icon-w-search.svg" class="form-submit"></div></div></form>  </div>
+  </div>
+</div>
+  </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="page" class="clearfix">
+    <div class="breadbox"><nav class="breadcrumb container-12"><span><a href="https://www.drupal.org/docs/8">Drupal 8</a></span><span><a href="https://www.drupal.org/docs/8/security">Security in Drupal 8</a></span></nav></div>
+
+    
+    <div id="main" role="main">
+      
+      <div id="content" class="clearfix">
+                                <div id="content-inner" class="clearfix">
+
+          
+            <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+<div class="block-inner">
+    
+  <div class="content">
+    
+<div class="panelizer-view-mode node node-full node-documentation node-2873797">
+        
+<div class="panel-display hydra panel-layout clearfix ">
+
+  <div class="container preface clearfix panel-panel">
+    <div class="container-inner preface-inner panel-panel-inner">
+          </div>
+  </div>
+
+  <div class="container content clearfix">
+    <div class="container-inner content-inner panel-panel-inner">
+      <div class="column-content-region top-right-content column panel-panel">
+        <div class="column-content-region-inner top-right-content-inner column-inner panel-panel-inner">
+          <div class="panel-pane pane-block pane-table-of-contents-toc-w-3y7froeoqmgrpcmgnphqwt4pi3" id="on-this-page">
+  
+        <h3 class="pane-title">
+      On this page    </h3>
+    
+  
+  <div class="pane-content">
+    <div class="item-list"><ul class="anchor-list"><li class="anchor-list__item h2-tag first"><a href="https://www.drupal.org/docs/8/security/drupal-8-sanitizing-output#s-sanitization-for-front-end-use" class="toc-link toc-link-invalid-id active">Sanitization for Front End Use</a></li>
+<li class="anchor-list__item h3-tag"><a href="https://www.drupal.org/docs/8/security/drupal-8-sanitizing-output#s-twig-templates" class="toc-link toc-link-invalid-id active">Twig Templates</a></li>
+<li class="anchor-list__item h3-tag"><a href="https://www.drupal.org/docs/8/security/drupal-8-sanitizing-output#s-javascript-jquery-and-drupalcheckplain" class="toc-link toc-link-invalid-id active">Javascript (jQuery) and Drupal.checkPlain()</a></li>
+<li class="anchor-list__item h4-tag"><a href="https://www.drupal.org/docs/8/security/drupal-8-sanitizing-output#s-bad-practice" class="toc-link toc-link-invalid-id active">Bad Practice:</a></li>
+<li class="anchor-list__item h4-tag"><a href="https://www.drupal.org/docs/8/security/drupal-8-sanitizing-output#s-good-practice" class="toc-link toc-link-invalid-id active">Good Practice:</a></li>
+<li class="anchor-list__item h2-tag"><a href="https://www.drupal.org/docs/8/security/drupal-8-sanitizing-output#s-sanitization-for-back-end-use" class="toc-link toc-link-invalid-id active">Sanitization for Back End Use</a></li>
+<li class="anchor-list__item h3-tag"><a href="https://www.drupal.org/docs/8/security/drupal-8-sanitizing-output#s-text-replacement" class="toc-link toc-link-invalid-id active">Text Replacement</a></li>
+<li class="anchor-list__item h4-tag"><a href="https://www.drupal.org/docs/8/security/drupal-8-sanitizing-output#s-best-practices" class="toc-link toc-link-invalid-id active">Best Practices:</a></li>
+<li class="anchor-list__item h3-tag last"><a href="https://www.drupal.org/docs/8/security/drupal-8-sanitizing-output#s-emails" class="toc-link toc-link-invalid-id active">Emails</a></li>
+</ul></div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-block pane-og-menu-og-single-menu-block" id="security-in-drupal-8">
+  
+        <h2 class="pane-title">
+      <a href="https://www.drupal.org/docs/8/security">Security in Drupal 8</a>    </h2>
+    
+  
+  <div class="pane-content">
+    <ul class="menu"><li class="first leaf"><a href="https://www.drupal.org/docs/8/security/writing-secure-code-for-drupal-8">Drupal 8: Writing secure code</a></li>
+<li class="leaf"><a href="https://www.drupal.org/docs/8/security/security-of-generated-php-files">Security of generated PHP files</a></li>
+<li class="leaf"><a href="https://www.drupal.org/docs/8/security/secure-configuration-for-site-builders">Secure configuration for site builders</a></li>
+<li class="leaf active-trail"><a href="https://www.drupal.org/docs/8/security/drupal-8-sanitizing-output" class="active-trail active">Drupal 8: Sanitizing Output</a></li>
+<li class="leaf"><a href="https://www.drupal.org/docs/8/security/secure-database-queries">Secure Database Queries</a></li>
+<li class="last leaf"><a href="https://www.drupal.org/docs/8/security/us-nist-password-guidelines-review">US NIST Password Guidelines review</a></li>
+</ul>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-node-links">
+  
+      
+  
+  <div class="pane-content">
+      </div>
+
+  
+  </div>
+        </div>
+      </div>
+      <div class="column-content-region left-content column panel-panel ">
+        <div class="column-content-region-inner left-content-inner column-inner panel-panel-inner">
+          <div class="panel-pane pane-node-title">
+  
+      
+  
+  <div class="pane-content">
+    <h1>Drupal 8: Sanitizing Output</h1>
+  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-node-updated" id="last-updated-on">
+  
+        <span class="pane-title">
+      Last <a href="https://www.drupal.org/node/2873797/discuss">updated</a> on    </span>
+    
+  
+  <div class="pane-content">
+    11 July 2018  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-entity-field pane-node-field-documentation-status">
+  
+      
+  
+  <div class="pane-content">
+    <div class="field field-name-field-documentation-status field-type-list-text field-label-hidden"><div class="field-items"><div class="field-item even"><p class="incomplete">This documentation is <strong>incomplete</strong>. <a href="https://www.drupal.org/node/2873797/edit">Add more information</a>.</p></div></div></div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-entity-field pane-node-body">
+  
+      
+  
+  <div class="pane-content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>When handling and outputting text in HTML, you need to be careful that proper filtering or escaping is done. Otherwise, there might be bugs when users try to use angle brackets or ampersands, or worse you could open up <a href="http://en.wikipedia.org/wiki/Cross_site_scripting" rel="nofollow">XSS</a> exploits.</p>
+<h2 id="s-sanitization-for-front-end-use"><a class="toc-anchor" title="Permalink to this headline" href="https://www.drupal.org/docs/8/security/drupal-8-sanitizing-output#s-sanitization-for-front-end-use"></a>Sanitization for Front End Use</h2>
+<h3 id="s-twig-templates"><a class="toc-anchor" title="Permalink to this headline" href="https://www.drupal.org/docs/8/security/drupal-8-sanitizing-output#s-twig-templates"></a>Twig Templates</h3>
+<p>The Twig Theme engine auto escapes everything by default!&nbsp;That means that every string printed from a Twig template (e.g. anything between <code class=" language-php"><span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token punctuation">}</span><span class="token punctuation">}</span></code>) gets automatically sanitized if no filters are used.</p>
+<p>See <a href="https://www.drupal.org/node/2357633" rel="nofollow">Filters - Modifying Variables In Twig Templates</a> for the Twig filters available in Drupal, and <a href="https://twig.symfony.com/doc/2.x/filters/index.html" rel="nofollow">Twig's own documentation for filters</a> available from Twig.</p>
+<p>In order to take advantage of Twig’s automatic escaping and avoid safe markup being escaped,&nbsp;all dynamic HTML should be output from within the&nbsp;Twig templates.</p>
+<h3 id="s-javascript-jquery-and-drupalcheckplain"><a class="toc-anchor" title="Permalink to this headline" href="https://www.drupal.org/docs/8/security/drupal-8-sanitizing-output#s-javascript-jquery-and-drupalcheckplain"></a>Javascript (jQuery) and Drupal.checkPlain()</h3>
+<p>It is best practice to use the server&nbsp;to sanitize text, but there may be situations where you need to lean on the client (browser) to provide additional or temporary sanitization, such as an HTML element that updates on the client side as the user enters text.</p>
+<p>These examples&nbsp;are for use cases of outputting text to the DOM.&nbsp;If you're sending text to the server, such as when making an API&nbsp;call, you should review Back End practices.</p>
+<p>You can use <a href="https://api.drupal.org/api/drupal/includes%21bootstrap.inc/function/check_plain/7.x" rel="nofollow">Drupal.checkPlain()</a> to escape basic characters and prevent malicious elements being introduced into the DOM, avoiding some basic Clickjacking techniques.</p>
+<h4 id="s-bad-practice"><a class="toc-anchor" title="Permalink to this headline" href="https://www.drupal.org/docs/8/security/drupal-8-sanitizing-output#s-bad-practice"></a>Bad Practice:</h4>
+<pre class=" language-javascript"><code class=" language-php language-javascript"><span class="token keyword keyword-var">var</span> rawInputText <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#form-input'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><h4 id="s-good-practice"><a class="toc-anchor" title="Permalink to this headline" href="https://www.drupal.org/docs/8/security/drupal-8-sanitizing-output#s-good-practice"></a>Good Practice:</h4>
+<pre class=" language-javascript"><code class=" language-php language-javascript"><span class="token keyword keyword-var">var</span> rawInputText     <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#form-input'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-var">var</span> escapedInputText <span class="token operator">=</span> Drupal<span class="token punctuation">.</span><span class="token function">checkPlain</span><span class="token punctuation">(</span>rawInputText<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><h2 id="s-sanitization-for-back-end-use"><a class="toc-anchor" title="Permalink to this headline" href="https://www.drupal.org/docs/8/security/drupal-8-sanitizing-output#s-sanitization-for-back-end-use"></a>Sanitization for Back End Use</h2>
+<p>To understand how to properly prepare data for insertion or use in the database, please see&nbsp;<a href="https://www.drupal.org/node/2873816" rel="nofollow"><em>Drupal 8: Secure Database Queries</em></a></p>
+<h3 id="s-text-replacement"><a class="toc-anchor" title="Permalink to this headline" href="https://www.drupal.org/docs/8/security/drupal-8-sanitizing-output#s-text-replacement"></a>Text Replacement</h3>
+<p>We can leverage the <a href="https://www.drupal.org/developing/api/8/localization" rel="nofollow">Translation API</a> to build sanitized, translatable strings that are suitable for front end output. To understand <a href="https://www.drupal.org/node/2873816" rel="nofollow">how to properly prepare data for use in the database, please read <em>Drupal 8: Secure Database Queries</em></a>.</p>
+<p>There are three available placeholders in Drupal 8:</p>
+<ul><li><code class=" language-php">@variable</code>: When the placeholder replacement value is a string or a MarkupInterface object</li>
+<li><code class=" language-php"><span class="token operator">%</span>variable</code>: When the placeholder replacement value is to be wrapped in em tags.</li>
+<li><code class=" language-php"><span class="token punctuation">:</span>variable</code>: When the placeholder replacement value is a URL to be used in the "href" attribute</li>
+</ul><p>You can <a href="https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Component%21Render%21FormattableMarkup.php/function/FormattableMarkup%3A%3AplaceholderFormat/8.2.x" rel="nofollow"> learn more about these placeholders in the FormattableMarkup::placeholderFormat() documentation.</a></p>
+<h4 id="s-best-practices"><a class="toc-anchor" title="Permalink to this headline" href="https://www.drupal.org/docs/8/security/drupal-8-sanitizing-output#s-best-practices"></a>Best Practices:</h4>
+<ul><li>Use <a href="https://api.drupal.org/api/function/t" rel="nofollow">t()</a> and <a href="https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21StringTranslation%21TranslationInterface.php/function/TranslationInterface%3A%3AformatPlural/8.2.x" rel="nofollow">\Drupal::translation()-&gt;formatPlural() </a>with placeholders to construct safe, translatable strings. (See <a href="https://www.drupal.org/developing/api/8/localization" rel="nofollow">Translation API overview</a> for more details.)</li>
+<li>Use <a href="https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Component%21Utility%21Html.php/function/Html%3A%3Aescape/8" rel="nofollow">Html::escape()</a> for plain text.</li>
+<li>Use <a href="https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Component%21Utility%21Xss.php/function/Xss%3A%3Afilter/8" rel="nofollow">Xss::filter()</a> for text that should allow some HTML tags.</li>
+<li>Use <a href="https://api.drupal.org/api/drupal/core!lib!Drupal!Component!Utility!Xss.php/class/Xss" rel="nofollow">Xss::filterAdmin()</a> for text entered by admin users that should allow most HTML.</li>
+<li>Use <a href="https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Component%21Utility%21UrlHelper.php/function/UrlHelper%3A%3AstripDangerousProtocols/8.0.x" rel="nofollow">UrlHelper::stripDangerousProtocols()</a> or <a href="https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Component%21Utility%21UrlHelper.php/function/UrlHelper%3A%3AfilterBadProtocol/8.0.x" rel="nofollow">UrlHelper::filterBadProtocol()</a> for checking URLs - the former can be used in conjunction with <a href="https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Component%21Utility%21SafeMarkup.php/function/SafeMarkup%3A%3Aformat/8.0.x" rel="nofollow">SafeMarkup::format()</a>.</li>
+</ul><p>Strings sanitized by <code class=" language-php"><span class="token function">t</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>, <code class=" language-php"><span class="token scope">Html<span class="token punctuation">::</span></span><span class="token function">escape</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>, <code class=" language-php"><span class="token scope">Xss<span class="token punctuation">::</span></span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> or <code class=" language-php"><span class="token scope">Xss<span class="token punctuation">::</span></span><span class="token function">filterAdmin</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> are automatically marked safe, as are markup strings created from render arrays via <code class=" language-php"><span class="token function">drupal_render</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>.</p>
+<p>While it can also sanitize text, it's almost never correct to use <a href="https://api.drupal.org/api/drupal/core%21modules%21filter%21filter.module/function/check_markup/8" rel="nofollow">check_markup</a> in a theme or module except in the context of something like a text area with an associated text format.</p>
+<h3 id="s-emails"><a class="toc-anchor" title="Permalink to this headline" href="https://www.drupal.org/docs/8/security/drupal-8-sanitizing-output#s-emails"></a>Emails</h3>
+<p>The security of your email content is strongly tied with the mail service that you choose to use. Remember, the same best practices of outputting text for HTML consumption should be considered here.</p></div></div></div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-views-panes pane-documentation-related-content-related-content-pane" id="related-content">
+  
+        <h2 class="pane-title">
+      Related Content    </h2>
+    
+  
+  <div class="pane-content">
+    <div class="view view-documentation-related-content view-id-documentation_related_content view-display-id-related_content_pane view-dom-id-81a52bd4b6095b86caec646b88191359">
+        
+  
+  
+      <div class="view-content">
+        <div>
+    <div id="node-2489304" class="node node-documentation node-content-2489304 clearfix">
+
+  
+        <h2><a href="https://www.drupal.org/docs/7/security/writing-secure-code-0/avoid-using-data-from-form_stateinput">Avoid using data from $form_state['input']</a></h2>
+    
+  
+  <div class="content">
+    <div class="field field-name-field-summary field-type-text field-label-hidden"><div class="field-items"><div class="field-item even">In the Form API, using data from $form_state['input'], $_POST, and/or \Drupal::request()-&gt;request (Drupal 8) are a security risk.</div></div></div>  </div>
+
+  
+
+</div>
+
+  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+
+  
+  </div>
+        </div>
+      </div>
+      <div class="column-content-region bottom-right-content column panel-panel">
+        <div class="column-content-region-inner bottom-right-content-inner column-inner panel-panel-inner">
+          <div class="panel-pane pane-entity-field pane-node-field-tags" id="tags">
+  
+        <h2 class="pane-title">
+      Tags    </h2>
+    
+  
+  <div class="pane-content">
+    <div class="field field-name-field-tags field-type-taxonomy-term-reference field-label-hidden"><div class="field-items"><div class="field-item even"><a href="https://www.drupal.org/taxonomy/term/184447">security</a></div></div></div>  </div>
+
+  
+  </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container footer clearfix panel-panel">
+    <div class="container-inner footer-inner panel-panel-inner">
+          </div>
+  </div>
+
+</div><!-- /.sutro -->
+</div>
+  </div>
+  </div>
+</div>
+  </div>
+        </div>
+              </div> <!-- /#content -->
+
+    </div> <!-- /#column-left -->
+
+      </div> <!-- /#page -->
+
+  <div id="footer" role="contentinfo">
+            <div class="region region-footer">
+    <div id="block-drupalorg-documentation-license" class="block block-drupalorg">
+<div class="block-inner">
+    
+  <div class="content">
+    Drupal’s online documentation is © 2000-2019 by the individual contributors and can be used in accordance with the <a href="https://www.drupal.org/terms">Creative Commons License, Attribution-ShareAlike 2.0</a>. PHP code is distributed under the <a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GNU General Public License</a>.  </div>
+  </div>
+</div>
+<div id="block-drupalorg-crosssite-drupalorg-footer" class="block block-drupalorg-crosssite">
+<div class="block-inner">
+    
+  <div class="content">
+    <h4 class="element-invisible">News items</h4><ul class="drupal-news"><li class="0 first"><a href="https://www.drupal.org/news">News</a></li>
+<li class="1"><a href="https://www.drupal.org/planet" title="News from Drupal community members">Planet Drupal</a></li>
+<li class="2"><a href="https://www.drupal.org/social-media" title="Drupal on social media">Social media directory</a></li>
+<li class="3"><a href="https://www.drupal.org/security" title="Advisories from the security team">Security announcements</a></li>
+<li class="4 last"><a href="https://jobs.drupal.org/" title="Drupal Jobs">Jobs</a></li>
+</ul><h4 class="element-invisible">Our community</h4><ul class="community"><li class="0 first"><a href="https://drupal.org/community">Community</a></li>
+<li class="1"><a href="https://drupal.org/getting-involved" title="Learn how to contribute to the Drupal project">Getting involved</a></li>
+<li class="2"><span><a href="https://drupal.org/drupal-services" title="People and organizations offering Drupal services">Services</a>, <a href="https://drupal.org/training" title="People and organizations offering Drupal training">Training</a> &amp; <a href="https://drupal.org/hosting" title="Organizations offering Drupal hosting">Hosting</a></span></li>
+<li class="3"><a href="https://groups.drupal.org/groups" title="groups.drupal.org">Groups &amp; Meetups</a></li>
+<li class="4"><a href="https://events.drupal.org/" title="Upcoming and past DrupalCons">DrupalCon</a></li>
+<li class="5 last"><a href="https://drupal.org/dcoc" title="Drupal code of conduct">Code of conduct</a></li>
+</ul><h4 class="element-invisible">Documentation</h4><ul class="get-started"><li class="0 first"><a href="https://drupal.org/documentation" title="Documentation for working with Drupal">Documentation</a></li>
+<li class="1"><a href="https://www.drupal.org/docs/8">Drupal 8 docs</a></li>
+<li class="2"><a href="https://www.drupal.org/docs/7">Drupal 7 docs</a></li>
+<li class="3"><a href="https://www.drupal.org/documentation/develop">Developer docs</a></li>
+<li class="4 last"><a href="https://api.drupal.org/" title="Drupal API reference">api.drupal.org</a></li>
+</ul><h4 class="element-invisible">Drupal code base</h4><ul class="download-extend"><li class="0 first"><a href="https://drupal.org/download">Download &amp; Extend</a></li>
+<li class="1"><a href="https://drupal.org/project/drupal" title="Download the latest version of the Drupal software">Drupal core</a></li>
+<li class="2"><a href="https://drupal.org/project/project_module" title="Download add-on features and functionality">Modules</a></li>
+<li class="3"><a href="https://drupal.org/project/project_theme" title="Download pre-designed styles for Drupal">Themes</a></li>
+<li class="4 last"><a href="https://drupal.org/project/project_distribution" title="Download a pre-packaged Drupal site">Distributions</a></li>
+</ul><h4 class="element-invisible">Governance of community</h4><ul class="about"><li class="0 first"><a href="https://drupal.org/about">About</a></li>
+<li class="1"><a href="https://drupal.org/about/accessibility" title="Our committment to accessibility">Web accessibility</a></li>
+<li class="2"><a href="https://drupal.org/association" title="About the Drupal Association">Drupal Association</a></li>
+<li class="3"><a href="https://drupal.org/drupalorg" title="About Drupal.org">About Drupal.org</a></li>
+<li class="4"><a href="https://drupal.org/terms" title="Drupal.org terms of service">Terms of service</a></li>
+<li class="5 last"><a href="https://drupal.org/privacy" title="Drupal.org privacy policy">Privacy policy</a></li>
+</ul>  </div>
+  </div>
+</div>
+<div id="block-block-77" class="block block-block">
+<div class="block-inner">
+    
+  <div class="content">
+    <p>Drupal is a <a href="http://drupal.com/trademark">registered trademark</a> of <a href="https://dri.es/">Dries Buytaert</a>.</p>
+  </div>
+  </div>
+</div>
+  </div>
+      </div>
+    <div class="region region-page-bottom">
+    <script type="text/javascript">
+      (function(){
+          window._pxAppId = 'PXVnPBBfwe';
+          window._pxParam2 = '';
+          window._pxParam3 = '0';
+          var p = document.getElementsByTagName('script')[0],
+              s = document.createElement('script');
+          s.async = 1;
+          s.src = '/VnPBBfwe/init.js';
+          p.parentNode.insertBefore(s,p);
+      }());
+  </script>
+  <noscript>
+      &lt;div style="position:fixed; top:0; left:0; display:none" width="1" height="1"&gt;
+          &lt;img src="/VnPBBfwe/xhr/api/v1/collector/noScript.gif?appId=PXVnPBBfwe"&gt;
+      &lt;/div&gt;
+  </noscript>  </div>
+
+<!--[if lte IE 9]>
+<script type="text/javascript" src="/files/advagg_js/js__79M6UrZjAw3oNGnUjsWip12JsvnUZmJGA3h9LI0kuzE__LqE6uSZqCOZhJYW910TDw_HTQzBKUPTZxunfaWkalq8__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js#ie9-" onload="if(jQuery.isFunction(jQuery.holdReady)){jQuery.holdReady(true);}"></script>
+<![endif]-->
+
+<!--[if gt IE 9]>
+<script type="text/javascript" src="/files/advagg_js/js__79M6UrZjAw3oNGnUjsWip12JsvnUZmJGA3h9LI0kuzE__LqE6uSZqCOZhJYW910TDw_HTQzBKUPTZxunfaWkalq8__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js#ie10+" defer="defer" onload="if(jQuery.isFunction(jQuery.holdReady)){jQuery.holdReady(true);}"></script>
+<![endif]-->
+
+<!--[if !IE]><!-->
+<script type="text/javascript" src="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/js__79M6UrZjAw3oNGnUjsWip12JsvnUZmJGA3h9LI0kuzE__LqE6uSZqCOZhJYW910TDw_HTQzBKUPTZxunfaWkalq8__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer" onload="if(jQuery.isFunction(jQuery.holdReady)){jQuery.holdReady(true);}"></script>
+<!--<![endif]-->
+<script type="text/javascript" src="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/js__qvxhs9hiTVr_USTpngJWnfdQEU8sbxmerZ1FBORD7ks__c_vdLVdm2dhTjV0-cjXbrVvnpDDp5m6xnNff8tSZ1fg__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer"></script>
+<script type="text/javascript" src="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/js__H5AFmq1RrXKsrazzPq_xPQPy4K0wUKqecPjczzRiTgQ__JIy-3lUpq3qC8JjvfOMkqOB8loYzuE93VQgLvC7HpVM__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer" onload="
+function advagg_mod_1() {
+  // Count how many times this function is called.
+  advagg_mod_1.count = ++advagg_mod_1.count || 1;
+  try {
+    if (advagg_mod_1.count &lt;= 40) {
+      init_drupal_core_settings();
+
+      // Set this to 100 so that this function only runs once.
+      advagg_mod_1.count = 100;
+    }
+  }
+  catch(e) {
+    if (advagg_mod_1.count &gt;= 40) {
+      // Throw the exception if this still fails after running 40 times.
+      throw e;
+    }
+    else {
+      // Try again in 1 ms.
+      window.setTimeout(advagg_mod_1, 1);
+    }
+  }
+}
+function advagg_mod_1_check() {
+  if (window.init_drupal_core_settings &amp;&amp; window.jQuery &amp;&amp; window.Drupal) {
+    advagg_mod_1();
+  }
+  else {
+    window.setTimeout(advagg_mod_1_check, 1);
+  }
+}
+advagg_mod_1_check();"></script>
+<script type="text/javascript" src="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/js__W3HVetagCYpKE0fh-1m9ldkYrnM7EKUfayUOkYfG5ns__WuK1hQPJATa9bKz9C-kkuJb4wU7eT0t_GOkJsnF_TuM__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer"></script>
+<script type="text/javascript" src="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/js__ENYUZMe5BHbMK8_pF3i18y1CtuMx_ItPRfjUOF7vUds__MXaxQPtP7z2LRCIe-IOxTRyNSvHNhJSb9SX1jpwq-Z8__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer"></script>
+<script type="text/javascript" src="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/js__dTRSuW27RiJte-z_L4Px_rno5dZsdWKiU3HtuBiTSmc__1heMEGpuuHZnihe04BOr3X2vIc8bRMaEUwDqgCjyFsM__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer"></script>
+<script type="text/javascript" defer="defer" async="async" src="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/analytics.js"></script>
+<script type="text/javascript" src="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/js__gAfkvwHTHdM_vebZo2iTQLdnpDeigD9kUQ7XFOcxI1Y__G9O1Jd54B-E1iYd8UT-IVu_jRdw44oi8geXeCGkQUc0__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer" async="async"></script>
+<script type="text/javascript" src="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/js__pLKQd4r7OrHglE7Qkqw53K2UXCqQdhqQ9v0cz7hMCQY__OErfYuQdGbFHcCoLoUW_ESSvaumApNojzjJit8-2xcw__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer"></script>
+<script type="text/javascript" src="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/js__hHUWFbMAa11eJtx5V0ym9o0YBsB1udk34qUT5wr1ihI__v_laEepDqP2anEEp6ywEdbWv-xdkaC1VUNQ6A-wrXno__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+function init_drupal_core_settings() {jQuery.extend(Drupal.settings,{"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"bluecheese","theme_token":"JmUzm5bMhWSfcKMIitD2niq5DYeWfMiYZVBv12gWMBU"},"colorbox":{"transition":"elastic","speed":"100","opacity":"0.85","slideshow":false,"slideshowAuto":true,"slideshowSpeed":"2500","slideshowStart":"start slideshow","slideshowStop":"stop slideshow","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","overlayClose":true,"returnFocus":true,"maxWidth":"98%","maxHeight":"98%","initialWidth":"300","initialHeight":"250","fixed":true,"scrolling":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"better_exposed_filters":{"views":{"documentation_related_content":{"displays":{"related_content_pane":{"filters":[]}}}}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"urlIsAjaxTrusted":{"\/docs\/8\/security\/drupal-8-sanitizing-output":true},"ogContext":{"groupType":"node","gid":"2786453"}}); 
+if(jQuery.isFunction(jQuery.holdReady)){jQuery.holdReady(false);}} if(window.jQuery && window.Drupal){init_drupal_core_settings();}
+//--><!]]>
+</script>
+<script type="text/javascript" src="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/js__vj0LjvNwl-3K1P9LGT4BGuXCZcAovYsVlVmoJN3TMRg__KW8SiGceRY3sjIKVrffDjf2MK4A5Vp3EDDxVO-4pegI__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"e671e25255","applicationID":"4266189","transactionName":"Z1AEbREHVxAFU0RRV14aJ1oXD1YNS15fXF1vRQdeBjlPCgFH","queueTime":0,"applicationTime":1014,"atts":"SxcHG1kdRB4=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button type="button" id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div><script src="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/adsct" type="text/javascript"></script><script src="./Drupal 8_ Sanitizing Output _ Drupal 8 guide on Drupal.org_files/adsct(1)" type="text/javascript"></script></body></html>

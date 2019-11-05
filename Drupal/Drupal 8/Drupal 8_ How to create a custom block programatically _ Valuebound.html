@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<!-- saved from url=(0095)https://www.valuebound.com/resources/blog/drupal-8-how-to-create-a-custom-block-programatically -->
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class=" js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/2d4669245f"></script><script src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/nr-1130.min.js"></script><script type="text/javascript" async="" src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/analytics.js"></script><script async="" src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/get_counts"></script><script src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/leadflows.js" type="text/javascript" id="LeadFlows-609065" crossorigin="anonymous" data-leadin-portal-id="609065" data-leadin-env="prod" data-loader="hs-scriptloader" data-hsjs-portal="609065" data-hsjs-env="prod"></script><script src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/collectedforms-b.js" type="text/javascript" id="CollectedForms-609065" crossorigin="anonymous" data-leadin-portal-id="609065" data-leadin-env="prod" data-loader="hs-scriptloader" data-hsjs-portal="609065" data-hsjs-env="prod"></script><script src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/609065.js" type="text/javascript" id="hs-analytics"></script><script async="" src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/5ad04c5983e6290013a1c27b.js"></script><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1130.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<meta name="title" content="Drupal 8: How to create a custom block programatically | Valuebound">
+<link rel="canonical" href="https://www.valuebound.com/resources/blog/drupal-8-how-to-create-a-custom-block-programatically">
+<meta name="robots" content="index, follow">
+<meta name="description" content="In  Drupal 8 Blocks are made up of two separate API. Block Plugin API, is a reusable API and Block Entity API, use for block placement and visibility control.">
+<meta name="abstract" content="In  Drupal 8 Blocks are made up of two separate API. Block Plugin API, is a reusable API and Block Entity API, use for block placement and visibility control.">
+<meta name="image_src" content="">
+<meta name="keywords" content="Drupal 8, Custom block , Annotation-based plugins">
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)">
+<meta name="MobileOptimized" content="width">
+<meta name="HandheldFriendly" content="true">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Article",
+            "name": "Drupal 8: How to create a custom block programatically",
+            "headline": "Drupal 8: How to create a custom block programatically",
+            "image": {
+                "@type": "ImageObject",
+                "representativeOfPage": "True",
+                "url": "https://www.valuebound.com/sites/default/files/Getting_started_Drupal8_4.jpg",
+                "width": "1200",
+                "height": "400"
+            },
+            "datePublished": "2015-12-19T13:03:52+0530",
+            "isAccessibleForFree": "True",
+            "dateModified": "2015-12-19T13:03:52+0530",
+            "author": {
+                "@type": "Person",
+                "@id": "https://www.valuebound.com/users/xaiwant",
+                "name": "xaiwant",
+                "url": "https://www.valuebound.com/users/xaiwant"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "@id": "https://www.valuebound.com/",
+                "name": "Valuebound",
+                "url": "https://www.valuebound.com/",
+                "sameAs": [
+                    "https://www.linkedin.com/company/valuebound",
+                    "https://www.facebook.com/valuebound",
+                    "https://twitter.com/valuebound"
+                ],
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.valuebound.com/sites/default/files/valuebound_logo.png",
+                    "width": "299",
+                    "height": "60"
+                }
+            },
+            "mainEntityOfPage": "https://www.valuebound.com/resources/blog/drupal-8-how-to-create-a-custom-block-programatically"
+        }
+    ]
+}</script>
+<link rel="shortcut icon" href="https://www.valuebound.com/sites/default/files/vb-notext-logo.png" type="image/png">
+<link rel="revision" href="https://www.valuebound.com/resources/blog/drupal-8-how-to-create-a-custom-block-programatically">
+
+    <title>Drupal 8: How to create a custom block programatically | Valuebound</title>
+    <link rel="stylesheet" media="all" href="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/css_TO0SoQEk5483kYpxK7MkvHuvLvjK0s5MGIntdNtakqw.css">
+<link rel="stylesheet" media="all" href="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/css_L9EfcpvUVv-nH2bZ1EOX5bq13huomRFvk1RX7ySItX0.css">
+
+    
+<!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+<script src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/js_B7pS3ddmNLFYOJi3j28odiodelMu-EhaOeKlHZ8E6y0.js"></script>
+
+  <script type="text/javascript" async="" src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/embed.js"></script><iframe style="display: none;" src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/saved_resource.html"></iframe><style type="text/css">#st-1 {
+  font-family: "Helvetica Neue", Verdana, Helvetica, Arial, sans-serif;;
+  direction: ltr;
+  display: block;
+  opacity: 1;
+  text-align: center;
+  z-index: 94034;
+}
+#st-1.st-animated {
+  -moz-transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in; -ms-transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in; -o-transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in; -webkit-transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in; transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in;
+}
+#st-1.st-hidden {
+  opacity: 0;
+}
+#st-1.st-hide {
+  display: none;
+}
+#st-1 .st-btn {
+  -moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+  -moz-transition: opacity 0.2s ease-in, top 0.2s ease-in; -ms-transition: opacity 0.2s ease-in, top 0.2s ease-in; -o-transition: opacity 0.2s ease-in, top 0.2s ease-in; -webkit-transition: opacity 0.2s ease-in, top 0.2s ease-in; transition: opacity 0.2s ease-in, top 0.2s ease-in;
+  -moz-border-radius: 0px;
+-webkit-border-radius: 0px;
+border-radius: 0px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  height: 48px;
+  line-height: 48px;
+  margin-right: 8px;
+  padding: 0 12px;
+  position: relative;
+  text-align: center;
+  top: 0;
+  vertical-align: top;
+  white-space: nowrap;
+}
+#st-1 .st-btn:last-child {
+  margin-right: 0;
+}
+#st-1 .st-btn > svg {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  top: 12px;
+  vertical-align: top;
+}
+#st-1 .st-btn > img {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  position: relative;
+  top: 12px;
+  vertical-align: top;
+}
+#st-1 .st-btn > span {
+  -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; -webkit-transition: all 0.2s ease-in; transition: all 0.2s ease-in;
+  color: #fff;
+  display: inline-block;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  min-width: 75px;
+  opacity: 1;
+  padding: 0 6px;
+  position: relative;
+  vertical-align: top;
+}
+#st-1.st-has-labels .st-btn {
+  min-width: 150px;
+}
+#st-1.st-has-labels .st-btn.st-remove-label {
+  min-width: 50px;
+}
+#st-1.st-has-labels .st-btn.st-remove-label > span {
+  display: none;
+}
+#st-1.st-has-labels .st-btn.st-hide-label > span {
+  display: none;
+}
+#st-1 .st-total {
+  color: #555;
+  display: inline-block;
+  font-weight: 500;
+  line-height: 18px;
+  margin-right: 0;
+  max-width: 80px;
+  padding: 4px 8px;
+  text-align: center;
+}
+#st-1 .st-total.st-hidden {
+  display: none;
+}
+#st-1 .st-total > span {
+  font-size: 24px;
+  line-height: 26px;
+  display: block;
+  padding: 0;
+}
+#st-1 .st-total > span.st-shares {
+  font-size: 14px;
+  line-height: 14px;
+}
+#st-1.st-justified {
+  display: flex;
+  text-align: center;
+}
+#st-1.st-justified .st-btn {
+  -moz-flex: 1;
+-ms-flex: 1;
+-webkit-flex: 1;
+flex: 1;
+}#st-1 .st-btn:hover {
+  opacity: .8;
+  top: -4px;
+}#st-1 .st-btn[data-network='linkedin'] {
+  background-color: #0077b5;
+}
+#st-1 .st-btn[data-network='linkedin'] svg {
+  fill: #fff;
+}
+#st-1 .st-btn[data-network='linkedin'] > span {
+  color: #fff;
+}
+#st-1 .st-btn[data-network='twitter'] {
+  background-color: #55acee;
+}
+#st-1 .st-btn[data-network='twitter'] svg {
+  fill: #fff;
+}
+#st-1 .st-btn[data-network='twitter'] > span {
+  color: #fff;
+}
+#st-1 .st-btn[data-network='facebook'] {
+  background-color: #4267B2;
+}
+#st-1 .st-btn[data-network='facebook'] svg {
+  fill: #fff;
+}
+#st-1 .st-btn[data-network='facebook'] > span {
+  color: #fff;
+}</style><style type="text/css">#st-3 {
+  font-family: "Helvetica Neue", Verdana, Helvetica, Arial, sans-serif;;
+  -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; -webkit-transition: all 0.2s ease-in; transition: all 0.2s ease-in;
+  backface-visibility: hidden;
+  display: block;
+  position: fixed;
+  opacity: 1;
+  text-align: left;
+  top: 160px;
+  z-index: 94034;
+}
+#st-3.st-left {
+  left: 0px;
+}
+#st-3.st-hidden.st-left {
+  left: -48px;
+}
+#st-3.st-hidden {
+  width: 96px;
+}
+#st-3 > div {
+  clear: left;
+  float: left;
+}
+#st-3 .st-btn {
+  -moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+  -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; -webkit-transition: all 0.2s ease-in; transition: all 0.2s ease-in;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  font-size: NaNpx;
+  height: 48px;
+  line-height: 24px;
+  margin-bottom: 0;
+  opacity: 1;
+  overflow: hidden;
+  padding: 12px;
+  position: relative;
+  text-align: left;
+  top: 0;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 48px;
+}
+#st-3 .st-btn.st-first {
+  border-top: none;
+  border-top-right-radius: 4px;
+}
+#st-3 .st-btn.st-last {
+  border-bottom: none;
+  border-bottom-right-radius: 4px;
+}
+#st-3 .st-btn > svg {
+  -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; -webkit-transition: all 0.2s ease-in; transition: all 0.2s ease-in;
+  height: 24px;
+  margin-left: 0;
+  vertical-align: top;
+  width: 24px;
+}
+#st-3 .st-btn > img {
+  -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; -webkit-transition: all 0.2s ease-in; transition: all 0.2s ease-in;
+  height: 24px;
+  margin-left: 0;
+  vertical-align: top;
+  width: 24px;
+}
+#st-3 .st-btn > span {
+  -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; -webkit-transition: all 0.2s ease-in; transition: all 0.2s ease-in;
+  color: #fff;
+  display: inline-block;
+  font-weight: 500;
+  left: -35px;
+  letter-spacing: 0.5px;
+  opacity: 0;
+  padding: 0 6px;
+  position: relative;
+  vertical-align: top;
+  filter: alpha(opacity=0);
+}
+#st-3 .st-btn.st-hide-label > span {
+  display: none !important;
+}
+#st-3 .st-total {
+  -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; -webkit-transition: all 0.2s ease-in; transition: all 0.2s ease-in;
+  background: #fff;
+  color: #555;
+  display: inline-block;
+  font-weight: 500;
+  line-height: 18px;
+  margin-right: 0;
+  min-height: 34px;
+  max-width: 80px;
+  opacity: 1;
+  padding: 4px 0;
+  text-align: center;
+  width: 48px;
+}
+#st-3 .st-total.st-hidden {
+  display: none;
+}
+#st-3 .st-total > span {
+  display: block;
+  font-size: 18px;
+  line-height: 21px;
+  padding: 0;
+}
+#st-3 .st-total > span.st-shares {
+  font-size: 11px;
+  line-height: 11px;
+}
+#st-3 .st-toggle {
+  left: -48px;
+  -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; -webkit-transition: all 0.2s ease-in; transition: all 0.2s ease-in;
+  background: #ccc;
+  border-bottom-right-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 24px;
+  position: relative;
+  text-align: center;
+  width: 48px;
+}
+#st-3.st-hidden .st-toggle {
+  border-top-right-radius: 4px;
+}
+#st-3.st-left .st-toggle .st-left {
+  display: inline-block;
+}
+#st-3.st-left.st-hidden .st-toggle .st-left {
+  display: none;
+}
+#st-3.st-left .st-toggle .st-right {
+  display: none;
+}
+#st-3.st-left.st-hidden .st-toggle .st-right {
+  display: inline-block;
+}#st-3:hover .st-toggle {
+  left: 0;
+}
+#st-3.st-hidden:hover .st-toggle {
+  left: 48px;
+}
+#st-3.st-toggleable:hover .st-btn.st-last {
+  border-bottom-right-radius: 0;
+}
+#st-3.st-toggleable:hover .st-btn.st-last:hover {
+  border-bottom-right-radius: 4px;
+}
+#st-3 .st-btn:hover {
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+#st-3.st-has-labels .st-btn:hover {
+  width: 120px;
+}
+#st-3:not(.st-has-labels) .st-btn:hover {
+  width: 62px;
+}
+#st-3 .st-btn.st-hide-label:hover {
+  width: 62px;
+}
+#st-3 .st-btn:hover > svg {
+  margin-left: 5px;
+}
+#st-3 .st-btn:hover > img {
+  margin-left: 5px;
+}
+#st-3 .st-btn:hover > span {
+  opacity: 1;
+  display: inline-block;
+  left: 0;
+  filter: alpha(opacity=100);
+}
+@media (max-width: 1024px) {
+  #st-3 .st-btn:hover > svg {
+    margin-left: 0;
+  }
+  #st-3 .st-btn:hover > span {
+    display: none;
+  }
+}@media (max-width: 1024px) {
+  #st-3 {
+  bottom: 0;
+  display: flex;
+  left: 0;
+  right: 0;
+  top: auto;
+  width: 100%;
+}
+#st-3.st-hidden {
+  bottom: -48px;
+  width: 100%;
+}
+#st-3.st-hidden.st-left {
+  left: 0;
+}
+#st-3.st-hidden.st-right {
+  right: 0;
+}
+#st-3 > div {
+  -moz-flex: 1;
+  -ms-flex: 1;
+  -webkit-flex: 1;
+  clear: none;
+  flex: 1;
+  float: none;
+}
+#st-3 .st-total {
+  background: #fff;
+  padding: 6px 8px;
+}
+#st-3 .st-btn {
+  -moz-border-radius: 0 !important;
+-webkit-border-radius: 0 !important;
+border-radius: 0 !important;
+  text-align: center;
+  width: auto;
+}
+#st-3 .st-btn > span {
+  display: none;
+}
+#st-3 .st-toggle {
+  display: none;
+}body { padding-bottom: 48px; }
+}#st-3 .st-btn[data-network='linkedin'] {
+  background-color: #0077b5;
+}
+#st-3 .st-btn[data-network='linkedin'] svg {
+  fill: #fff;
+}
+#st-3 .st-btn[data-network='linkedin'] > span {
+  color: #fff;
+}
+#st-3 .st-btn[data-network='facebook'] {
+  background-color: #4267B2;
+}
+#st-3 .st-btn[data-network='facebook'] svg {
+  fill: #fff;
+}
+#st-3 .st-btn[data-network='facebook'] > span {
+  color: #fff;
+}
+#st-3 .st-btn[data-network='twitter'] {
+  background-color: #55acee;
+}
+#st-3 .st-btn[data-network='twitter'] svg {
+  fill: #fff;
+}
+#st-3 .st-btn[data-network='twitter'] > span {
+  color: #fff;
+}</style><link rel="prefetch" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.87f054b637f6b9ec9ca56cceb6325b72.css"><link rel="prefetch" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.d28f2e96d4e899ea48316ebb1bc9fb71.js"><link rel="prefetch" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.e70f911db9fde41e6be3e08eed381853.js"><link rel="prefetch" as="script" href="https://disqus.com/next/config.js"><script src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/alfalfalfa.0823c767a3bc925f628afd9bed26c958.js" async="" charset="UTF-8"></script></head>
+  <body class="path-node page-node-type-article blockFloat-processed fixed--nav" style="touch-action: auto;"><style type="text/css">div#hs-eu-cookie-confirmation{position:absolute;left:0;top:0;width:100%;height:auto;background-color:#2d2d2d;border-bottom:1px solid gray;border-bottom:1px solid rgba(0,0,0,0.5);-webkit-box-shadow:0 1px 2px rgba(0,0,0,0.2);-moz-box-shadow:0 1px 2px rgba(0,0,0,0.2);box-shadow:0 1px 2px rgba(0,0,0,0.2);font-size:14px !important;line-height:18px !important;font-family:helvetica neue,helvetica,arial,sans !important;color:#fff !important;text-shadow:0 1px 0 rgba(0,0,0,0.7) !important;text-align:left !important;z-index:100000000 !important}div#hs-eu-cookie-confirmation.can-use-gradients{background-color:rgba(0,0,0,0);background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0,0,0,0.9)), color-stop(100%, rgba(0,0,0,0.75)));background-image:-webkit-linear-gradient(top, rgba(0,0,0,0.9),rgba(0,0,0,0.75));background-image:-moz-linear-gradient(top, rgba(0,0,0,0.9),rgba(0,0,0,0.75));background-image:-o-linear-gradient(top, rgba(0,0,0,0.9),rgba(0,0,0,0.75));background-image:linear-gradient(top, rgba(0,0,0,0.9),rgba(0,0,0,0.75));background-image:linear-gradient(to bottom, rgba(0,0,0,0.9),rgba(0,0,0,0.75))}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner{padding:12px 18px 18px}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a{font-family:helvetica neue,helvetica,arial,sans !important;color:#add8e6 !important;font-size:14px !important;text-decoration:none !important;background:none !important;border:none !important;font-weight:normal !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a:hover{text-decoration:underline !important;background:none !important;border:none !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner div#hs-en-cookie-confirmation-buttons-area{text-align:center !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a#hs-eu-confirmation-button{font-family:helvetica neue,helvetica,arial,sans !important;font-size:14px !important;font-weight:normal !important;margin-right:16px !important;padding:4px 12px !important;background-color:green !important;border:1px solid gray !important;border:1px solid rgba(0,0,0,0.5) !important;background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, transparent), color-stop(100%, rgba(0,0,0,0.2)));background-image:-webkit-linear-gradient(top, transparent,rgba(0,0,0,0.2));background-image:-moz-linear-gradient(top, transparent,rgba(0,0,0,0.2));background-image:-o-linear-gradient(top, transparent,rgba(0,0,0,0.2));background-image:linear-gradient(top, transparent,rgba(0,0,0,0.2));-webkit-border-radius:4px;-moz-border-radius:4px;-ms-border-radius:4px;-o-border-radius:4px;border-radius:4px;-webkit-box-shadow:0 1px 2px rgba(0,0,0,0.2),inset 0 1px 0 rgba(255,255,255,0.5);-moz-box-shadow:0 1px 2px rgba(0,0,0,0.2),inset 0 1px 0 rgba(255,255,255,0.5);box-shadow:0 1px 2px rgba(0,0,0,0.2),inset 0 1px 0 rgba(255,255,255,0.5);line-height:14px !important;color:#fff !important;text-shadow:0 1px 0 rgba(0,0,0,0.5) !important;text-decoration:none !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a#hs-eu-confirmation-button:hover{background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, transparent), color-stop(100%, rgba(0,0,0,0.3)));background-image:-webkit-linear-gradient(top, transparent,rgba(0,0,0,0.3));background-image:-moz-linear-gradient(top, transparent,rgba(0,0,0,0.3));background-image:-o-linear-gradient(top, transparent,rgba(0,0,0,0.3));background-image:linear-gradient(top, transparent,rgba(0,0,0,0.3))}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a#hs-eu-confirmation-button:active{background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0,0,0,0.3)), color-stop(100%, rgba(0,0,0,0.3)));background-image:-webkit-linear-gradient(top, rgba(0,0,0,0.3),rgba(0,0,0,0.3));background-image:-moz-linear-gradient(top, rgba(0,0,0,0.3),rgba(0,0,0,0.3));background-image:-o-linear-gradient(top, rgba(0,0,0,0.3),rgba(0,0,0,0.3));background-image:linear-gradient(top, rgba(0,0,0,0.3),rgba(0,0,0,0.3));-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.2);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.2);box-shadow:inset 0 1px 2px rgba(0,0,0,0.2)}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner p{line-height:18px !important;font-family:helvetica neue,helvetica,arial,sans !important;font-weight:normal !important;font-size:14px !important;margin:0 0 16px !important;padding:0 !important;color:#fff !important;text-align:left !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner p#hs-eu-cookie-disclaimer{margin:16px 0 !important}@media print{div#hs-eu-cookie-confirmation{display:none !important}}@media screen and (max-width: 480px){div#hs-eu-cookie-confirmation{font-size:12px !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner{padding:8px 14px 14px !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a{font-size:12px !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a#hs-eu-confirmation-button{font-size:12px !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner p{font-size:12px !important;margin-bottom:12px !important;line-height:15px !important}}
+</style><div id="hs-eu-cookie-confirmation" class=" can-use-gradients"><div id="hs-eu-cookie-confirmation-inner"><p style="">This website stores cookies on your computer. These cookies are used to improve your website and provide more personalized services to you, both on this website and through other media. To find out more about the cookies we use, see our Privacy Policy.</p><div id="hs-en-cookie-confirmation-buttons-area"><a href="https://www.valuebound.com/resources/blog/drupal-8-how-to-create-a-custom-block-programatically#" id="hs-eu-confirmation-button">Accept</a></div></div></div><div id="off-canvas" class="mm-menu mm-menu_offcanvas mm-menu_keyboardfocus mm-menu_theme-dark mm-menu_effect-slide-menu mm-menu_position-right mm-menu_pagedim" aria-hidden="true"><button class="mm-tabstart" tabindex="0" type="button" aria-hidden="true" role="presentation"></button><div class="mm-panels"><div id="mm-1" class="mm-panel mm-panel_has-navbar mm-panel_opened"><div class="mm-navbar"><a class="mm-navbar__title">Menu</a></div><ul class="menu mm-listview">
+                    <li class="menu-item mm-listitem">
+        <a href="https://www.valuebound.com/case-studies" data-drupal-link-system-path="node/308">Case Study</a>
+              </li>
+                <li class="menu-item mm-listitem">
+        <a href="https://www.valuebound.com/solution">Solutions</a>
+              </li>
+                <li class="menu-item mm-listitem">
+        <a href="https://www.valuebound.com/services/drupal-web-development-services" data-drupal-link-system-path="services">Services</a>
+              </li>
+                <li class="menu-item menu-item--expanded mm-listitem">
+        <a class="mm-btn_next" href="https://www.valuebound.com/resources/blog/drupal-8-how-to-create-a-custom-block-programatically#mm-2"><span class="mm-sronly">Open submenu (About)</span></a><a href="https://www.valuebound.com/about" data-drupal-link-system-path="node/323">About</a>
+                                
+  
+              </li>
+                <li class="menu-item menu-item--expanded mm-listitem">
+        <a class="mm-btn_next" href="https://www.valuebound.com/resources/blog/drupal-8-how-to-create-a-custom-block-programatically#mm-3"><span class="mm-sronly">Open submenu (Resources)</span></a><a href="https://www.valuebound.com/resources/blogs">Resources</a>
+                                
+  
+              </li>
+                <li class="menu-item mm-listitem">
+        <a href="https://www.valuebound.com/contact-us" class="contact button" target="_self" data-drupal-link-system-path="node/1126">Get in Touch</a>
+              </li>
+        </ul></div><div id="mm-2" class="mm-panel mm-hidden mm-panel_has-navbar" aria-hidden="true"><div class="mm-navbar"><a class="mm-btn mm-btn_prev mm-navbar__btn" href="https://www.valuebound.com/resources/blog/drupal-8-how-to-create-a-custom-block-programatically#mm-1" aria-owns="mm-1" aria-haspopup="true"><span class="mm-sronly">Close submenu</span></a><a class="mm-navbar__title" href="https://www.valuebound.com/resources/blog/drupal-8-how-to-create-a-custom-block-programatically#mm-1">About</a></div><ul class="menu mm-listview">
+                    <li class="menu-item mm-listitem">
+        <a href="https://www.valuebound.com/about/our-partners" title="Partners" data-drupal-link-system-path="node/1148">Partners</a>
+              </li>
+                <li class="menu-item mm-listitem">
+        <a href="https://www.valuebound.com/career" data-drupal-link-system-path="node/328">Career</a>
+              </li>
+        </ul></div><div id="mm-3" class="mm-panel mm-hidden mm-panel_has-navbar" aria-hidden="true"><div class="mm-navbar"><a class="mm-btn mm-btn_prev mm-navbar__btn" href="https://www.valuebound.com/resources/blog/drupal-8-how-to-create-a-custom-block-programatically#mm-1" aria-owns="mm-1" aria-haspopup="true"><span class="mm-sronly">Close submenu</span></a><a class="mm-navbar__title" href="https://www.valuebound.com/resources/blog/drupal-8-how-to-create-a-custom-block-programatically#mm-1">Resources</a></div><ul class="menu mm-listview">
+                    <li class="menu-item mm-listitem">
+        <a href="https://www.valuebound.com/resources/blogs">Blogs &amp; Insights</a>
+              </li>
+                <li class="menu-item mm-listitem">
+        <a href="https://www.valuebound.com/resources/press-releases" data-drupal-link-system-path="node/372">Press Releases</a>
+              </li>
+                <li class="menu-item mm-listitem">
+        <a href="https://www.valuebound.com/webinars" data-drupal-link-system-path="webinars">Webinars</a>
+              </li>
+                <li class="menu-item mm-listitem">
+        <a href="https://www.valuebound.com/resources/what-is-drupal" data-drupal-link-system-path="node/324">What is Drupal?</a>
+              </li>
+        </ul></div></div>
+              
+  
+
+<button class="mm-tabend" tabindex="0" type="button" aria-hidden="true" role="presentation"></button></div>
+        <a href="https://www.valuebound.com/resources/blog/drupal-8-how-to-create-a-custom-block-programatically#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div id="mm-0" class="mm-page mm-slideout"><div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas="">
+    <div class="layout-container">
+
+  <header role="banner" id="header" class="site--header">
+    <div class="site--header-inner">
+      <div class="site--branding">
+          <div class="region region-branding">
+    <div id="block-valuebound-branding" class="block block-system block-system-branding-block">
+  <a href="https://www.valuebound.com/" title="Home" rel="home" class="site-logo">
+    <img src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/vb-logo-white.svg" alt="Home" class="logo-white" style="display:none">
+    <img src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/logo.svg" alt="Home" class="logo-orange">
+  </a>
+</div>
+
+  </div>
+
+      </div>
+      <div class="site--navigation">
+          <div class="region region-navigation">
+    <div id="block-horizontalmenu" class="block block-responsive-menu block-responsive-menu-horizontal-menu">
+  
+    
+      <nav class="responsive-menu-block-wrapper">
+  
+              <ul id="horizontal-menu" class="horizontal-menu sf-js-enabled sf-arrows sf-menu" style="touch-action: pan-y;">
+                    <li class="menu-item">
+        <a href="https://www.valuebound.com/case-studies" data-drupal-link-system-path="node/308">Case Study</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/solution">Solutions</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/services/drupal-web-development-services" data-drupal-link-system-path="services">Services</a>
+              </li>
+                <li class="menu-item menu-item--expanded">
+        <a href="https://www.valuebound.com/about" data-drupal-link-system-path="node/323" class="sf-with-ul">About</a>
+                                <ul class="menu sub-nav" style="display: none;">
+                    <li class="menu-item">
+        <a href="https://www.valuebound.com/about/our-partners" title="Partners" data-drupal-link-system-path="node/1148">Partners</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/career" data-drupal-link-system-path="node/328">Career</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item menu-item--expanded">
+        <a href="https://www.valuebound.com/resources/blogs" class="sf-with-ul">Resources</a>
+                                <ul class="menu sub-nav" style="display: none;">
+                    <li class="menu-item">
+        <a href="https://www.valuebound.com/resources/blogs">Blogs &amp; Insights</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/resources/press-releases" data-drupal-link-system-path="node/372">Press Releases</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/webinars" data-drupal-link-system-path="webinars">Webinars</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/resources/what-is-drupal" data-drupal-link-system-path="node/324">What is Drupal?</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/contact-us" class="contact button" target="_self" data-drupal-link-system-path="node/1126">Get in Touch</a>
+              </li>
+        </ul>
+  
+
+
+</nav>
+  </div>
+<div id="block-responsivemenumobileicon" class="responsive-menu-toggle-wrapper responsive-menu-toggle block block-responsive-menu block-responsive-menu-toggle">
+  
+    
+      <a id="toggle-icon" class="toggle aria-label=" menu"="" responsive-menu-toggle-icon"="" title="Menu" href="https://www.valuebound.com/resources/blog/drupal-8-how-to-create-a-custom-block-programatically#off-canvas">
+  <span class="icon"></span><span class="label">Menu</span>
+</a>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </header>
+
+  <main role="main" id="page" class="site--main-content">
+    <a id="main-content" tabindex="-1"></a>      <div class="region region-help">
+    <div data-drupal-messages-fallback="" class="hidden"></div>
+
+  </div>
+
+    <div class="layout-content">
+        <div class="region region-content">
+    <div id="block-valuebound-content" class="block block-system block-system-main-block">
+  
+    
+      
+
+
+
+<div class="block block-vb-utility block-vb-social-share">
+  
+    
+      <div class="vb-social-share top-bar vb-share">
+  <div class="share-it-title"><a href="https://www.valuebound.com/resources/blogs">Blogs &amp; Insights</a> -- <span>Drupal 8: How to create a custom block programatically</span></div><div class="share-this-text"> Share this</div>
+  <div class="sharethis-inline-share-buttons st-center st-has-labels  st-inline-share-buttons st-animated" id="st-1"><div class="st-btn st-first st-remove-label" data-network="linkedin" style="display: none;">
+  <img src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/linkedin.svg">
+  <span class="st-label">Share</span>
+</div><div class="st-btn st-remove-label" data-network="twitter" style="display: none;">
+  <img src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/twitter.svg">
+  <span class="st-label">Tweet</span>
+</div><div class="st-btn st-last st-remove-label" data-network="facebook" style="display: none;">
+  <img src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/facebook.svg">
+  <span class="st-label">Share</span>
+</div></div>
+  <a class="hamburger-menu">
+    <span></span><span></span><span></span>
+  </a>
+
+</div>
+<div class="main-navigation-quicklink" id="mySidenav">
+  
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.valuebound.com/case-studies" data-drupal-link-system-path="node/308">Case Study</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/solution">Solutions</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/services/drupal-web-development-services" data-drupal-link-system-path="services">Services</a>
+              </li>
+                <li class="menu-item menu-item--expanded">
+        <a href="https://www.valuebound.com/about" data-drupal-link-system-path="node/323">About</a>
+                                <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.valuebound.com/about/our-partners" title="Partners" data-drupal-link-system-path="node/1148">Partners</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/career" data-drupal-link-system-path="node/328">Career</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item menu-item--expanded">
+        <a href="https://www.valuebound.com/resources/blogs">Resources</a>
+                                <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.valuebound.com/resources/blogs">Blogs &amp; Insights</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/resources/press-releases" data-drupal-link-system-path="node/372">Press Releases</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/webinars" data-drupal-link-system-path="webinars">Webinars</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/resources/what-is-drupal" data-drupal-link-system-path="node/324">What is Drupal?</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/contact-us" class="contact button" target="_self" data-drupal-link-system-path="node/1126">Get in Touch</a>
+              </li>
+        </ul>
+  
+
+
+</div>
+
+  </div>
+
+
+<article data-history-node-id="855" role="article" class="node node--type-article node--promoted node--view-mode-full column clearfix" about="/resources/blog/drupal-8-how-to-create-a-custom-block-programatically" typeof="schema:Article">
+  <section class="parallax-window article--header engineering" style="background: url(/themes/custom/valuebound/images/engineering-bg.jpeg)">
+    <div class="article--meta-wrapper">
+      <div class="article--meta">
+        <h1 class="article--title"><span property="schema:name" class="field field--name-title field--type-string field--label-hidden">Drupal 8: How to create a custom block programatically</span>
+</h1>
+        <div class="article--post-info">
+            <span class="article--author">
+              <a href="https://www.valuebound.com/users/xaiwant">
+                <span class="author-image"><img src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/afa56313-8c58-4ae5-8e2b-57ef0a5e71b8.jpg" width="75" height="75"></span>
+                <span class="author-name">Jaywant Topno</span>
+              </a>
+            </span>
+          <span class="article--post-date">Dec 19, 2015</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="article--content-wrapper" id="article--content-area">
+    <div class="article--content">
+      
+            <div property="schema:text" class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p dir="ltr">In Drupal 8 Blocks are made up of two separate API. Block Plugin API, is a reusable API and Block Entity API, use for block placement and visibility control.</p>
+<p>Before we begin with custom Block module development. We assume that you’ve better understanding of <a href="https://www.drupal.org/developing/api/8/plugins">Plugin API</a> &amp; <a href="https://www.drupal.org/node/1882526">Annotation-based plugins</a>.</p>
+
+<p><strong>Creating a custom block require following steps:</strong></p>
+
+<ol><li dir="ltr">
+	<p dir="ltr">Create a block plugin using Annotations</p>
+	</li>
+	<li dir="ltr">
+	<p dir="ltr">Extend the Drupal\Core\Block\BlockBase class.</p>
+	</li>
+</ol><p dir="ltr">In Drupal 8, We need to keep the keep our custom, &nbsp;contributed module in root directory</p>
+
+<p dir="ltr">modules/custom</p>
+
+<p dir="ltr">module/contrib</p>
+
+<p dir="ltr"><strong>Step 1:</strong> &nbsp;An essential part of a Drupal 8 module, theme, or install profile is the .info.yml file (aka, "info yaml file") to store metadata about the project.</p>
+
+<p dir="ltr">In Drupal 8, .info file changes to .info.yml. Old .info files have been converted to YAML.</p>
+
+<p dir="ltr">Added name, description, core, package, dependencies, type (The type key, which is new in Drupal 8, is required and indicates the type of extension, e.g. module, theme or profile.</p>
+<script src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/29330e77e38cb3ab337a.js"></script><link rel="stylesheet" href="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/gist-embed-3a7ef482c296bb1a3bcefcbf22eaa3b6.css"><div id="gist31457600" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-article-info-yml" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-yaml ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-article-info-yml-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-article-info-yml-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-ent">name</span>: <span class="pl-s">Article Block</span></td>
+      </tr>
+      <tr>
+        <td id="file-article-info-yml-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-article-info-yml-LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-ent">description</span>: <span class="pl-s">A simple module to demonstrate Block.</span></td>
+      </tr>
+      <tr>
+        <td id="file-article-info-yml-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-article-info-yml-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-ent">core</span>: <span class="pl-s">8.x</span></td>
+      </tr>
+      <tr>
+        <td id="file-article-info-yml-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-article-info-yml-LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-ent">package</span>: <span class="pl-s">Custom</span></td>
+      </tr>
+      <tr>
+        <td id="file-article-info-yml-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-article-info-yml-LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-ent">dependencies</span>:</td>
+      </tr>
+      <tr>
+        <td id="file-article-info-yml-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-article-info-yml-LC6" class="blob-code blob-code-inner js-file-line">- <span class="pl-s">node</span></td>
+      </tr>
+      <tr>
+        <td id="file-article-info-yml-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-article-info-yml-LC7" class="blob-code blob-code-inner js-file-line">- <span class="pl-s">block</span></td>
+      </tr>
+      <tr>
+        <td id="file-article-info-yml-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-article-info-yml-LC8" class="blob-code blob-code-inner js-file-line"><span class="pl-ent">type</span>: <span class="pl-s">module</span></td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/xaiwant/29330e77e38cb3ab337a/raw/975d8d07c3770ce198e4af3a3571e432d3192542/article.info.yml" style="float:right">view raw</a>
+        <a href="https://gist.github.com/xaiwant/29330e77e38cb3ab337a#file-article-info-yml">article.info.yml</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<p dir="ltr">&nbsp;</p>
+
+<p dir="ltr"><strong>Step 2:</strong> &nbsp;We should follow the PSR-4 standard code for custom block(s) &amp; that has to be placed into article/src/Plugin/Block/ and named based on the class it contains. If we're going to define the class ArticleBlock this file would be article/src/Plugin/Block/ArticleBlock.php</p>
+
+<p dir="ltr" class="image--inline"><img alt="s33" data-entity-type="file" data-entity-uuid="0a5a7252-dd82-4309-a700-be4ce197b826" class="b-lazy b-loaded" src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/s33.png"></p>
+
+<p>&nbsp;</p>
+
+<p dir="ltr">Create a file ArticleBlock.php under modules/custom/article/src/Plugin/Block folder structure</p>
+
+<p dir="ltr">Annotation contains just the id and label:</p>
+
+<ol><li dir="ltr">
+	<p dir="ltr">The 'id' property in the annotation defines the unique, machine readable ID of your block.</p>
+	</li>
+	<li dir="ltr">
+	<p dir="ltr">The 'admin_label' annotation defines the human readable name of the block that will be used when displaying your block in the admin interface.</p>
+	</li>
+	<li dir="ltr">
+	<p dir="ltr">The 'Category' defines which section belongs to under block listing page.<br><br><br>
+	&nbsp;</p>
+	</li>
+</ol><script src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/a5ec1b27d4809ed1fc0b.js"></script><link rel="stylesheet" href="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/gist-embed-3a7ef482c296bb1a3bcefcbf22eaa3b6.css"><div id="gist31457680" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-articleblock-php" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-php ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-articleblock-php-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-articleblock-php-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-pse">&lt;?php</span><span class="pl-s1"></span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-articleblock-php-LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-c"><span class="pl-c">/**</span></span></span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-articleblock-php-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-c"> * @file</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-articleblock-php-LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-c"> * Contains \Drupal\article\Plugin\Block\XaiBlock.</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-articleblock-php-LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-c"> <span class="pl-c">*/</span></span></span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-articleblock-php-LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"></span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-articleblock-php-LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-k">namespace</span> <span class="pl-en">Drupal\article\Plugin\Block</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-articleblock-php-LC8" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"></span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-articleblock-php-LC9" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Drupal\Core\Block\BlockBase</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-articleblock-php-LC10" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"></span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-articleblock-php-LC11" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"></span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-articleblock-php-LC12" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-c"><span class="pl-c">/**</span></span></span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-articleblock-php-LC13" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-c"> * Provides a 'article' block.</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-articleblock-php-LC14" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-c"> *</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-articleblock-php-LC15" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-c"> * @Block(</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-articleblock-php-LC16" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-c"> *   id = "article_block",</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-articleblock-php-LC17" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-c"> *   admin_label = @Translation("Article block"),</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-articleblock-php-LC18" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-c"> *   category = @Translation("Custom article block example")</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-articleblock-php-LC19" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-c"> * )</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-articleblock-php-LC20" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-c"> <span class="pl-c">*/</span></span></span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-articleblock-php-LC21" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-k">class</span> <span class="pl-en">ArticleBlock</span> <span class="pl-k">extends</span> <span class="pl-e">BlockBase</span> {</span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-articleblock-php-LC22" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"></span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-articleblock-php-LC23" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-c"><span class="pl-c">/**</span></span></span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-articleblock-php-LC24" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-c">   * {@inheritdoc}</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-articleblock-php-LC25" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-c">   <span class="pl-c">*/</span></span></span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-articleblock-php-LC26" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">}</span></td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/xaiwant/a5ec1b27d4809ed1fc0b/raw/a6f88e2830c8c5c9d8097e3ddb718bc3becc390e/ArticleBlock.php" style="float:right">view raw</a>
+        <a href="https://gist.github.com/xaiwant/a5ec1b27d4809ed1fc0b#file-articleblock-php">ArticleBlock.php</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<p>The ArticleBlock extends BlockBase class. This class provides generic block configuration form, block settings and handling of user defined block visibility settings.</p>
+<script src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/c63efb1378f80695e60e.js"></script><link rel="stylesheet" href="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/gist-embed-3a7ef482c296bb1a3bcefcbf22eaa3b6.css"><div id="gist31458012" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-articleblock-php" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-php ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-articleblock-php-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-articleblock-php-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-pse">&lt;?php</span><span class="pl-s1"></span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-articleblock-php-LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-c"><span class="pl-c">/**</span></span></span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-articleblock-php-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-c"> * @file</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-articleblock-php-LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-c"> * Contains \Drupal\article\Plugin\Block\XaiBlock.</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-articleblock-php-LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-c"> <span class="pl-c">*/</span></span></span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-articleblock-php-LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-k">namespace</span> <span class="pl-en">Drupal\article\Plugin\Block</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-articleblock-php-LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Drupal\Core\Block\BlockBase</span>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-articleblock-php-LC8" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"></span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-articleblock-php-LC9" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-k">class</span> <span class="pl-en">ArticleBlock</span> <span class="pl-k">extends</span> <span class="pl-e">BlockBase</span> {</span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-articleblock-php-LC10" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-c"><span class="pl-c">/**</span></span></span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-articleblock-php-LC11" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-c">   * {@inheritdoc}</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-articleblock-php-LC12" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-c">   <span class="pl-c">*/</span></span></span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-articleblock-php-LC13" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">build</span>() {</span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-articleblock-php-LC14" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">    <span class="pl-k">return</span> <span class="pl-c1">array</span>(</span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-articleblock-php-LC15" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">      <span class="pl-s"><span class="pl-pds">'</span>#type<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>markup<span class="pl-pds">'</span></span>,</span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-articleblock-php-LC16" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">      <span class="pl-s"><span class="pl-pds">'</span>#markup<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>This block list the article.<span class="pl-pds">'</span></span>,</span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-articleblock-php-LC17" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">    );</span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-articleblock-php-LC18" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  }</span></td>
+      </tr>
+      <tr>
+        <td id="file-articleblock-php-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-articleblock-php-LC19" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">}</span></td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/xaiwant/c63efb1378f80695e60e/raw/8cc8bee4c314d5f70ede450fda80badd7fa3b757/ArticleBlock.php" style="float:right">view raw</a>
+        <a href="https://gist.github.com/xaiwant/c63efb1378f80695e60e#file-articleblock-php">ArticleBlock.php</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<p dir="ltr">&nbsp;</p>
+
+<p dir="ltr"><strong>Where are we displaying markup in our block ?</strong></p>
+
+<p dir="ltr">Save the file and enable the module. To enable a block visit /admin/structure/block and click on “place block” under one of the region. i’m selecting “Sidebar Second” for my visibility or search for your block “Article block” click on “place block” and configure it.</p>
+
+<p dir="ltr" class="image--inline"><img alt="s36" data-entity-type="file" data-entity-uuid="732b055d-f16d-4ea6-8d02-2e75ce593ca2" class="b-lazy b-loaded" src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/s36.png"></p>
+
+<p>&nbsp;</p>
+
+<p dir="ltr" class="image--inline"><img alt="s37" data-entity-type="file" data-entity-uuid="d0d3592c-1f4f-4391-af01-1e3099f5c9f0" class="b-lazy b-loaded" src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/s37.png"></p>
+
+<p dir="ltr">So, we have done with configuration. it’s time to visit our page. as we set the block to&nbsp;<front> page.</front></p>
+
+<p dir="ltr" class="image--inline"><img alt="s38" data-entity-type="file" data-entity-uuid="e0466470-d503-49a6-bf62-98a2015d936e" class="b-lazy b-loaded" src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/s38.png"></p>
+
+<p dir="ltr">&nbsp;</p>
+
+<p dir="ltr"><strong>Git Source code:</strong> <a href="https://github.com/xaiwant/drupal8-block" target="_blank">https://github.com/xaiwant/drupal8-block</a></p>
+</div>
+      
+      
+      <div class="field field--name-field-tags field--type-entity-reference field--label-hidden field__items">
+              <div class="field__item"><a href="https://www.valuebound.com/tag/custom-block" property="schema:about" hreflang="en">Custom Block</a></div>
+              <div class="field__item"><a href="https://www.valuebound.com/tag/drupal-8" property="schema:about" hreflang="en">Drupal 8</a></div>
+              <div class="field__item"><a href="https://www.valuebound.com/tag/custom-module-development" property="schema:about" hreflang="en">Custom Module Development</a></div>
+          </div>
+  
+      <div class="article--bottom my-3">
+        
+<div class="nav-pager my-3">
+      <div class="nav previous">
+      <a href="https://www.valuebound.com/resources/blog/Views-Contextual-Filters-to-Display-Content-by-passing-Raw-value-from-URL-in-drupal-8">
+        <label>PREV</label>
+        <div class="previous pager-link">Views Contextual Filters to Display Content by passing Raw value from URL in Drupal 8</div>
+      </a>
+    </div>
+    <div class="nav all">
+        <a href="https://www.valuebound.com/resources/blogs">
+      <span></span><span></span><span></span><span></span>
+    </a>
+      </div>
+      <div class="nav next">
+      <a href="https://www.valuebound.com/resources/blog/drupal-8-creating-custom-contact-us-block-with-form-field">
+        <label>NEXT</label>
+        <div class="next pager-link">Drupal 8: Creating custom contact us block with form field</div>
+      </a>
+    </div>
+  </div>
+        <div class="article--bottom-author-info">
+          <div class="article--bottom-author-image">
+            <img src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/afa56313-8c58-4ae5-8e2b-57ef0a5e71b8.jpg" width="150" height="150">
+          </div>
+          <div class="article--bottom-author-bio">
+            <h3>Jaywant Topno</h3>
+            <div class="author-bio">Jaywant is associated with Valuebound from past few years. Joined as a Trainee to get engaged with development ops and Drupal Community. Currently he is helping a Content delivery Team to produce a valuable information and newbies to understand Drupal. If you really want to hang around join him on CALL of DUTY, i believe you'll get a perfect head shot.</div>
+            <a href="https://www.valuebound.com/users/xaiwant" class="cta">More about Jaywant Topno</a>
+          </div>
+        </div>
+      </div>
+      <button class="show-comments">Leave a Comment</button>
+      <div id="disqus_thread"><iframe id="dsq-app8895" name="dsq-app8895" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/saved_resource(1).html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 1983px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+      <div class="pre-footer-solutions text-center">
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h3 class="serif italic">Building result driven and scalable Drupal solutions</h3>
+
+<p class="muted">Know about our solutions for Media &amp; Publishing industry</p>
+
+<p><a class="cta" href="https://www.valuebound.com/solution">View our Solutions</a></p>
+</div>
+      </div>
+    </div>
+    <div class="read-more-content hide-for-large"><a class="button">Continue Reading</a></div>
+    <aside class="article--sidebar" id="article--sidebar">
+      <div id="sticky--sidebar" class="hide-for-small blockFloat-processed blockFloat-0 floating-block-active" style="width: 280px; left: 930px; position: fixed; top: 0px;">
+        <div class="views-element-container"><div class="view view-related-articles view-id-related_articles view-display-id-block_1 js-view-dom-id-6a7b75a6d9949b8890c7ece1256017d06387b49467b5ea0c9dc1037b069aff2a">
+  
+    
+      <div class="view-header">
+      <h3 class="serif hero-title">You may also like</h3>
+    </div>
+      
+      <div class="view-content">
+          <div class="views-row"><div class="views-field views-field-field-thumbnail-image"><div class="field-content">  <a href="https://www.valuebound.com/resources/blog/flutter-fast-way-develop-ios-and-android-apps-single-codebase" hreflang="en"><img src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/flutter.png" width="400" height="200" alt="Flutter | Valuebound" typeof="foaf:Image">
+</a>
+</div></div></div>
+
+    </div>
+  
+        <div class="attachment attachment-after">
+      <div class="views-element-container"><div class="view view-related-articles view-id-related_articles view-display-id-attachment_1 js-view-dom-id-5a0d710028ece093229f63aa31fdf233a74839f56a2264f8bf11f40460228f9e">
+  
+    
+      <div class="view-header">
+      
+    </div>
+      
+      <div class="view-content">
+            <div class="views-row">
+    <div class="views-field views-field-title"><span class="field-content"><a href="https://www.valuebound.com/resources/blog/flutter-fast-way-develop-ios-and-android-apps-single-codebase" hreflang="en">Flutter - Fast way to develop iOS and Android apps from a single codebase			</a></span></div>
+  </div>
+      <div class="views-row">
+    <div class="views-field views-field-title"><span class="field-content"><a href="https://www.valuebound.com/resources/blog/build-your-cicd-pipeline-aws-elasticbeanstack-codepipeline-and-cloudformation" hreflang="en">Build your CI/CD pipeline with AWS Elasticbeanstack, Codepipeline and Cloudformation</a></span></div>
+  </div>
+      <div class="case-study">
+      <h5>CASE STUDY</h5>
+      <div class="views-element-container"><div class="view view-injected-case-study view-id-injected_case_study view-display-id-block_1 js-view-dom-id-e56659067e6750e093830a406a1d794e9f0bf8d7b35395493cca2ebf3d959ce1">
+  
+    
+      
+      <div class="view-content">
+          <div class="views-row"><div class="views-field views-field-title"><span class="field-content"><a href="https://www.valuebound.com/case-study/decoupled-drupal-development-helps-commonfloorcom-syndicate-content-easily" hreflang="en">Decoupled Drupal Development Helps CommonFloor.com Syndicate Content Easily</a></span></div></div>
+
+    </div>
+  
+          </div>
+</div>
+
+    </div>
+      <div class="views-row">
+    <div class="views-field views-field-title"><span class="field-content"><a href="https://www.valuebound.com/resources/blog/drupal-and-artificial-intelligence-personalization" hreflang="en">Drupal and Artificial Intelligence for Personalization</a></span></div>
+  </div>
+      <div class="views-row">
+    <div class="views-field views-field-title"><span class="field-content"><a href="https://www.valuebound.com/resources/blog/why-aligning-content-product-marketing-important-manufacturers" hreflang="en">Why Aligning Content To Product Marketing Is Important For Manufacturers</a></span></div>
+  </div>
+
+    </div>
+  
+          </div>
+</div>
+
+    </div>
+        </div>
+</div>
+
+        
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><div class="contact-block-breaker">
+<h4>Need our expertise with</h4>
+
+<h3 class="serif italic">Drupal Integration</h3>
+<a class="cta" href="https://www.valuebound.com/contact-us">Contact Us</a></div>
+</div>
+      
+      </div>
+    </aside>
+  </section>
+</article>
+
+  </div>
+
+  </div>
+
+    </div>
+          <section role="complementary" class="site--pre-footer">
+              </section>
+      </main>
+
+      <footer role="contentinfo" id="footer" class="site--footer">
+      <div class="site--footer-first">
+          <div class="region region-footer-first">
+    <div id="block-footerfirst" class="muted small block block-block-content block-block-content133ccaf3-87a2-43b2-9b7f-d72109d068a8">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><div class="footer-address">
+<div class="address-left my-1">
+<div class="my-1">747 Third Avenue<br>
+2nd Floor New York, NY 10017</div>
+<!-- <div>2845 California Street<br />
+San Francisco, CA 94115</div>
+</div> -->
+
+<div class="address-right my-1">
+<div class="my-1"><div floor=""> Sector 1, HSR Layout<br>
+Bangalore - 560102</div></div>
+
+<div>+1 (917) 891 2187<br><a href="mailto:hello@valuebound.com">hello@valuebound.com</a></div>
+</div>
+</div>
+</div>
+</div>
+      
+  </div>
+<div id="block-footerthirdtop" class="my-2 zero-margin-top block block-block-content block-block-content70e9f368-86a0-4572-a800-4d9d23e3804a">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><a class="button outlined" href="https://www.valuebound.com/contact-us">Contact</a></p>
+</div>
+      
+  </div>
+
+  </div>
+
+      </div>
+      <div class="site--footer-second">
+          <div class="region region-footer-second">
+    <div id="block-footersecond" class="footer-badges block block-block-content block-block-contentf22a7568-896f-46ff-b8a2-850487207836">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p class="support-logo"><span class="da-membership-badge footer-badge image--inline"><img alt="Drupal Association Supporting membership" data-entity-type="file" data-entity-uuid="dd3325ed-c9cc-4e62-8745-38ebb862de0d" class="b-lazy" data-src="/sites/default/files/inline-images/Drupal_Association_sup_partner_304_0.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></span></p>
+
+<p class="partner-logos"><span class="amazee-partner-badge footer-badge image--inline"><img alt="Amazee.io" data-entity-type="file" data-entity-uuid="27a8db95-2801-4098-9a1c-2f73207d96f8" class="b-lazy" data-src="/sites/default/files/inline-images/amazee_io_Drupal_hosting_0.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></span><span class="acquia-partner-badge footer-badge image--inline"><img alt="Acquia partnership badge" data-entity-type="file" data-entity-uuid="9b2f13e8-f2bc-48a3-b495-50927649c581" class="b-lazy" data-src="/sites/default/files/inline-images/acquia-partner-logo_0.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></span> <span class="pantheon-partner-badge footer-badge image--inline"><img alt="Pantheon.io" data-entity-type="file" data-entity-uuid="bc21582e-814e-4415-a133-254cfcace7ad" class="b-lazy" data-src="/sites/default/files/inline-images/pantheon_io_0.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></span></p>
+</div>
+      
+  </div>
+
+  </div>
+
+      </div>
+      <div class="site--footer-third">
+          <div class="region region-footer-third">
+    <div id="block-footerlinks" class="block block-block-content block-block-contentaaebd469-5c5e-44a4-a768-d5430ab0fb76">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><div class="footer-navigation-links">
+<nav><ul><li class="menu-link services"><!-- Services -->
+	<ul><li><a href="https://www.valuebound.com/case-studies">Case Studies</a></li>
+		<li><a href="https://www.valuebound.com/industry-solutions/media-publishing">Media &amp; Publishing </a></li>
+		<li><a href="https://www.valuebound.com/about">About</a></li>
+		<li><a href="https://www.valuebound.com/career">Career</a></li>
+		<li><a href="https://www.valuebound.com/resources/blog">Blog</a></li>
+		<li><a href="https://www.valuebound.com/resources/press-releases">Press Release</a></li>
+		<li><a href="https://www.valuebound.com/resources/what-is-drupal">What is Drupal</a></li>
+	</ul></li>
+</ul></nav><nav><ul><li class="menu-link products">Products
+	<ul><li><a href="http://www.drupalmigrator.com/" target="_blank" rel="noopener">Drupal Migrator</a></li>
+	</ul></li>
+</ul></nav><nav><ul><li class="menu-link cities">Cities
+	<ul><li><a href="https://www.valuebound.com/drupal-developers-los-angeles">Los Angeles</a></li>
+		<li><a href="https://www.valuebound.com/drupal-developers-seattle">Seattle</a></li>
+		<li><a href="https://www.valuebound.com/drupal-developers-houston">Houston</a></li>
+		<li><a href="https://www.valuebound.com/drupal-developers-atlanta">Atlanta</a></li>
+		<li><a href="https://www.valuebound.com/drupal-developers-chicago">Chicago</a></li>
+		<li><a href="https://www.valuebound.com/drupal-developers-new-york">New York</a></li>
+		<li><a href="https://www.valuebound.com/drupal-developers-washington-dc">Washington DC</a></li>
+		<li><a href="https://www.valuebound.com/drupal-developers-san-francisco">San Francisco</a></li>
+	</ul></li>
+</ul></nav></div>
+</div>
+      
+  </div>
+<div id="block-scriptsblock" class="block block-block-content block-block-contentc62b4fe7-e328-4bc2-8159-8f97179ecd91">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async="" defer="" src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/609065(1).js"></script>
+<!-- End of HubSpot Embed Code -->
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1181407-3');
+</script>
+
+
+<!-- Start Jumplead Code -->
+<script type="text/javascript">
+    window.Jumplead||function(b,d){function k(){return["<",l,' onload="var d=',c,";d."+m+"('head')[0].",n,"(d.",p,"('script')).",e,"='",q,"'\"></",l,">"].join("")}var c="document",f=b[c],l="body",p="createElement",m="getElementsByTagName",r=f[m]("head")[0],n="appendChild",a=f[p]("iframe"),e="src",g,q="//cdn.jumplead.com/tracking_code.js";b.jump=b.jump||function(){(b.jump.q=b.jump.q||[]).push(arguments)};d.events=b.jump;a.style.display="none";r[n](a);try{a.contentWindow[c].open()}catch(s){d.domain=f.domain,
+    g="javascript:var d="+c+".open();d.domain='"+f.domain+"';",a[e]=g+"void(0);"}try{var h=a.contentWindow[c];h.write(k());h.close();h.params=d}catch(t){a[e]=g+'d.write("'+k().replace(/"/g,'\"')+'");d.close();',a[e].contentDocument.params=d}}
+    (window,{account:"JL-1566796463-9796",version:4});
+</script>
+<!-- End Jumplead Code -->
+</div>
+      
+  </div>
+
+  </div>
+
+      </div>
+    </footer>
+  
+  
+      <div class="footer--bottom my-1">
+        <div class="region region-footer-bottom">
+    <div id="block-footerthirdbottom" class="muted small block block-block-content block-block-contentbf0dff04-07e6-4a19-a1e3-875c7052cb8e">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><div class="footer-third-bottom">
+<div class="footer-social-link">
+<a href="https://www.facebook.com/valuebound/" target="_blank" class="facebook" aria-label="facebook" rel="noopener"></a>
+<a href="https://twitter.com/valuebound" target="_blank" class="twitter" aria-label="twitter" rel="noopener"></a>
+<a href="https://in.linkedin.com/company/valuebound" target="_blank" class="linkedin" aria-label="linkedin" rel="noopener"></a>
+</div>
+
+<p>©2018 Valuebound. All Rights Reserved</p>
+<p><a href="https://www.valuebound.com/privacy">Privacy Policy</a>&nbsp;&nbsp;<a href="https://www.valuebound.com/terms">Terms of Use</a>&nbsp;&nbsp;<a href="https://www.valuebound.com/career">Career</a></p>
+</div></div>
+      
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+
+
+  </div><div class="off-canvas-wrapper"></div><div id="st-3" class=" st-sticky-share-buttons st-left st-toggleable st-has-labels st-show-total "><div class="st-total st-hidden">
+  <span class="st-label"></span>
+  <span class="st-shares">
+    Shares
+  </span>
+</div><div class="st-btn st-first" data-network="linkedin" style="display: inline-block;">
+  <img src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/linkedin.svg">
+  <span class="st-label">Share</span>
+</div><div class="st-btn" data-network="facebook" style="display: inline-block;">
+  <img src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/facebook.svg">
+  <span class="st-label">Share</span>
+</div><div class="st-btn st-last" data-network="twitter" style="display: inline-block;">
+  <img src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/twitter.svg">
+  <span class="st-label">Tweet</span>
+</div><div class="st-toggle">
+  <div class="st-left">
+    <img src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/arrow_left.svg">
+  </div>
+  <div class="st-right">
+    <img src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/arrow_right.svg">
+  </div>
+</div></div></div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/855","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","responsive_menu":{"position":"right","theme":"theme-dark","pagedim":"pagedim","breakpoint":"all and (min-width: 851px)","extension_keyboard":true,"superfish":{"active":true,"delay":300,"speed":100,"speedOut":100},"mediaQuery":"all and (min-width: 851px)"},"animate":{"animation_data":"[{\u0022aid\u0022:\u00221\u0022,\u0022parent\u0022:\u0022.path-drupal-campaign\u0022,\u0022identifier\u0022:\u0022[{\\\u0022section_identity\\\u0022:\\\u0022.migrate-drupal\\\u0022,\\\u0022section_animation\\\u0022:\\\u0022zoomIn\\\u0022,\\\u0022remove\\\u0022:\\\u0022Remove\\\u0022},{\\\u0022section_identity\\\u0022:\\\u0022.block-contact-block\\\u0022,\\\u0022section_animation\\\u0022:\\\u0022fadeInRight\\\u0022,\\\u0022remove\\\u0022:\\\u0022Remove\\\u0022},{\\\u0022section_identity\\\u0022:\\\u0022.drupal-section .et_pb_row_1\\\u0022,\\\u0022section_animation\\\u0022:\\\u0022fadeIn\\\u0022,\\\u0022remove\\\u0022:\\\u0022Remove\\\u0022},{\\\u0022section_identity\\\u0022:\\\u0022.drupal-section .tabs-wrapper\\\u0022,\\\u0022section_animation\\\u0022:\\\u0022zoomIn\\\u0022,\\\u0022remove\\\u0022:\\\u0022Remove\\\u0022},{\\\u0022section_identity\\\u0022:\\\u0022.best-drupal\\\u0022,\\\u0022section_animation\\\u0022:\\\u0022fadeInDown\\\u0022,\\\u0022remove\\\u0022:\\\u0022Remove\\\u0022},{\\\u0022section_identity\\\u0022:\\\u0022.drupal-campaign-details .et_pb_promo\\\u0022,\\\u0022section_animation\\\u0022:\\\u0022fadeIn\\\u0022,\\\u0022remove\\\u0022:\\\u0022Remove\\\u0022},{\\\u0022section_identity\\\u0022:\\\u0022.ceo-wrap\\\u0022,\\\u0022section_animation\\\u0022:\\\u0022zoomIn\\\u0022,\\\u0022remove\\\u0022:\\\u0022Remove\\\u0022},{\\\u0022section_identity\\\u0022:\\\u0022.easy-hassle\\\u0022,\\\u0022section_animation\\\u0022:\\\u0022fadeIn\\\u0022,\\\u0022remove\\\u0022:\\\u0022Remove\\\u0022}]\u0022}]"},"floatingBlock":{"blocks":{"#sticky--sidebar":{"container":"#article--sidebar"}}},"lazy":{"errorClass":"b-error","loadInvisible":false,"offset":100,"saveViewportOffsetDelay":50,"selector":".b-lazy","skipClass":"no-b-lazy","src":"data-src","successClass":"b-loaded","validateDelay":"25","placeholderSrc":"data:image\/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="},"user":{"uid":0,"permissionsHash":"926ce30361ce6ce54cce8bf88a0803f7dc67e07a998c7dd0dd67de7280ea82b3"}}</script>
+<script src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/js_pJa6srR3pTlze-rICrqcMP-qBl36TGa9-ye37PP-eHk.js"></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"2d4669245f","applicationID":"176888627","transactionName":"MwYBZURWWxBVBRFQWwpMIlJCXloNGxYEXlE7AAJSXlI=","queueTime":0,"applicationTime":30,"atts":"H0ECEwxMSB4=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+
+<div class="mm-page__blocker mm-slideout"></div><iframe src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/portal.html" id="st_gdpr_iframe" title="GDPR Consent Management" style="width: 0px; height: 0px; position: absolute; left: -5000px;"></iframe><iframe owner="archetype" style="display: none; visibility: hidden;" src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/saved_resource(2).html"></iframe><iframe style="display: none;" src="./Drupal 8_ How to create a custom block programatically _ Valuebound_files/saved_resource(3).html"></iframe></body></html>

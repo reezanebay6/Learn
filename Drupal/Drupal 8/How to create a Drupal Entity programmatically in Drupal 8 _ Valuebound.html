@@ -1,0 +1,2573 @@
+<!DOCTYPE html>
+<!-- saved from url=(0097)https://www.valuebound.com/resources/blog/how-to-create-a-drupal-entity-programmatically-drupal-8 -->
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class=" js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/2d4669245f"></script><script src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/nr-1130.min.js"></script><script type="text/javascript" async="" src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/analytics.js"></script><script async="" src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/get_counts"></script><script src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/leadflows.js" type="text/javascript" id="LeadFlows-609065" crossorigin="anonymous" data-leadin-portal-id="609065" data-leadin-env="prod" data-loader="hs-scriptloader" data-hsjs-portal="609065" data-hsjs-env="prod"></script><script src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/collectedforms-b.js" type="text/javascript" id="CollectedForms-609065" crossorigin="anonymous" data-leadin-portal-id="609065" data-leadin-env="prod" data-loader="hs-scriptloader" data-hsjs-portal="609065" data-hsjs-env="prod"></script><script src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/609065.js" type="text/javascript" id="hs-analytics"></script><script async="" src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/5ad04c5983e6290013a1c27b.js"></script><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1130.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<meta name="title" content="How to create a Drupal Entity programmatically in Drupal 8 | Valuebound">
+<link rel="canonical" href="https://www.valuebound.com/resources/blog/how-to-create-a-drupal-entity-programmatically-drupal-8">
+<meta name="robots" content="index, follow">
+<meta name="description" content="Entities have been introduced late in Drupal 7. Drupal entity is an instance of a particular instance type. For example, the entity type for taxonomy terms is named taxonomy_term and the class name Term. We include the class like  Drupal\taxonomy\Entity\Term. Here taxonomy is a core module name, and Term is the class name of Entity.">
+<meta name="abstract" content="Entities were introduced late in Drupal 7 . Contributed module expanded the API with improvements and create or delete options. Most of the changes have been added in Drupal 8. This article teaches us about creating a drupal entity programmatically in Drupal 8.">
+<meta name="image_src" content="">
+<meta name="keywords" content="drupal entity ,drupal node, drupal user, drupal 8 modules,drupal permissions.">
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)">
+<meta name="MobileOptimized" content="width">
+<meta name="HandheldFriendly" content="true">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Article",
+            "name": "How to create a Drupal Entity programmatically in Drupal 8",
+            "headline": "How to create a Drupal Entity programmatically in Drupal 8",
+            "image": {
+                "@type": "ImageObject",
+                "representativeOfPage": "True",
+                "url": "https://www.valuebound.com/sites/default/files/Simple-Blue-Background%20-%20Copy.jpg",
+                "width": "2560",
+                "height": "1600"
+            },
+            "datePublished": "2017-04-28T20:11:44+0530",
+            "isAccessibleForFree": "True",
+            "dateModified": "2017-04-28T20:11:44+0530",
+            "author": {
+                "@type": "Person",
+                "@id": "https://www.valuebound.com/users/ahana",
+                "name": "ahana",
+                "url": "https://www.valuebound.com/users/ahana"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "@id": "https://www.valuebound.com/",
+                "name": "Valuebound",
+                "url": "https://www.valuebound.com/",
+                "sameAs": [
+                    "https://www.linkedin.com/company/valuebound",
+                    "https://www.facebook.com/valuebound",
+                    "https://twitter.com/valuebound"
+                ],
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.valuebound.com/sites/default/files/valuebound_logo.png",
+                    "width": "299",
+                    "height": "60"
+                }
+            },
+            "mainEntityOfPage": "https://www.valuebound.com/resources/blog/how-to-create-a-drupal-entity-programmatically-drupal-8"
+        }
+    ]
+}</script>
+<link rel="shortcut icon" href="https://www.valuebound.com/sites/default/files/vb-notext-logo.png" type="image/png">
+<link rel="revision" href="https://www.valuebound.com/resources/blog/how-to-create-a-drupal-entity-programmatically-drupal-8">
+
+    <title>How to create a Drupal Entity programmatically in Drupal 8 | Valuebound</title>
+    <link rel="stylesheet" media="all" href="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/css_TO0SoQEk5483kYpxK7MkvHuvLvjK0s5MGIntdNtakqw.css">
+<link rel="stylesheet" media="all" href="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/css_L9EfcpvUVv-nH2bZ1EOX5bq13huomRFvk1RX7ySItX0.css">
+
+    
+<!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+<script src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/js_B7pS3ddmNLFYOJi3j28odiodelMu-EhaOeKlHZ8E6y0.js"></script>
+
+  <script type="text/javascript" async="" src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/embed.js"></script><iframe style="display: none;" src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/saved_resource.html"></iframe><style type="text/css">#st-1 {
+  font-family: "Helvetica Neue", Verdana, Helvetica, Arial, sans-serif;;
+  direction: ltr;
+  display: block;
+  opacity: 1;
+  text-align: center;
+  z-index: 94034;
+}
+#st-1.st-animated {
+  -moz-transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in; -ms-transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in; -o-transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in; -webkit-transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in; transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in;
+}
+#st-1.st-hidden {
+  opacity: 0;
+}
+#st-1.st-hide {
+  display: none;
+}
+#st-1 .st-btn {
+  -moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+  -moz-transition: opacity 0.2s ease-in, top 0.2s ease-in; -ms-transition: opacity 0.2s ease-in, top 0.2s ease-in; -o-transition: opacity 0.2s ease-in, top 0.2s ease-in; -webkit-transition: opacity 0.2s ease-in, top 0.2s ease-in; transition: opacity 0.2s ease-in, top 0.2s ease-in;
+  -moz-border-radius: 0px;
+-webkit-border-radius: 0px;
+border-radius: 0px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  height: 48px;
+  line-height: 48px;
+  margin-right: 8px;
+  padding: 0 12px;
+  position: relative;
+  text-align: center;
+  top: 0;
+  vertical-align: top;
+  white-space: nowrap;
+}
+#st-1 .st-btn:last-child {
+  margin-right: 0;
+}
+#st-1 .st-btn > svg {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  top: 12px;
+  vertical-align: top;
+}
+#st-1 .st-btn > img {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  position: relative;
+  top: 12px;
+  vertical-align: top;
+}
+#st-1 .st-btn > span {
+  -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; -webkit-transition: all 0.2s ease-in; transition: all 0.2s ease-in;
+  color: #fff;
+  display: inline-block;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  min-width: 75px;
+  opacity: 1;
+  padding: 0 6px;
+  position: relative;
+  vertical-align: top;
+}
+#st-1.st-has-labels .st-btn {
+  min-width: 150px;
+}
+#st-1.st-has-labels .st-btn.st-remove-label {
+  min-width: 50px;
+}
+#st-1.st-has-labels .st-btn.st-remove-label > span {
+  display: none;
+}
+#st-1.st-has-labels .st-btn.st-hide-label > span {
+  display: none;
+}
+#st-1 .st-total {
+  color: #555;
+  display: inline-block;
+  font-weight: 500;
+  line-height: 18px;
+  margin-right: 0;
+  max-width: 80px;
+  padding: 4px 8px;
+  text-align: center;
+}
+#st-1 .st-total.st-hidden {
+  display: none;
+}
+#st-1 .st-total > span {
+  font-size: 24px;
+  line-height: 26px;
+  display: block;
+  padding: 0;
+}
+#st-1 .st-total > span.st-shares {
+  font-size: 14px;
+  line-height: 14px;
+}
+#st-1.st-justified {
+  display: flex;
+  text-align: center;
+}
+#st-1.st-justified .st-btn {
+  -moz-flex: 1;
+-ms-flex: 1;
+-webkit-flex: 1;
+flex: 1;
+}#st-1 .st-btn:hover {
+  opacity: .8;
+  top: -4px;
+}#st-1 .st-btn[data-network='linkedin'] {
+  background-color: #0077b5;
+}
+#st-1 .st-btn[data-network='linkedin'] svg {
+  fill: #fff;
+}
+#st-1 .st-btn[data-network='linkedin'] > span {
+  color: #fff;
+}
+#st-1 .st-btn[data-network='twitter'] {
+  background-color: #55acee;
+}
+#st-1 .st-btn[data-network='twitter'] svg {
+  fill: #fff;
+}
+#st-1 .st-btn[data-network='twitter'] > span {
+  color: #fff;
+}
+#st-1 .st-btn[data-network='facebook'] {
+  background-color: #4267B2;
+}
+#st-1 .st-btn[data-network='facebook'] svg {
+  fill: #fff;
+}
+#st-1 .st-btn[data-network='facebook'] > span {
+  color: #fff;
+}</style><style type="text/css">#st-3 {
+  font-family: "Helvetica Neue", Verdana, Helvetica, Arial, sans-serif;;
+  -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; -webkit-transition: all 0.2s ease-in; transition: all 0.2s ease-in;
+  backface-visibility: hidden;
+  display: block;
+  position: fixed;
+  opacity: 1;
+  text-align: left;
+  top: 160px;
+  z-index: 94034;
+}
+#st-3.st-left {
+  left: 0px;
+}
+#st-3.st-hidden.st-left {
+  left: -48px;
+}
+#st-3.st-hidden {
+  width: 96px;
+}
+#st-3 > div {
+  clear: left;
+  float: left;
+}
+#st-3 .st-btn {
+  -moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+  -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; -webkit-transition: all 0.2s ease-in; transition: all 0.2s ease-in;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  font-size: NaNpx;
+  height: 48px;
+  line-height: 24px;
+  margin-bottom: 0;
+  opacity: 1;
+  overflow: hidden;
+  padding: 12px;
+  position: relative;
+  text-align: left;
+  top: 0;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 48px;
+}
+#st-3 .st-btn.st-first {
+  border-top: none;
+  border-top-right-radius: 4px;
+}
+#st-3 .st-btn.st-last {
+  border-bottom: none;
+  border-bottom-right-radius: 4px;
+}
+#st-3 .st-btn > svg {
+  -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; -webkit-transition: all 0.2s ease-in; transition: all 0.2s ease-in;
+  height: 24px;
+  margin-left: 0;
+  vertical-align: top;
+  width: 24px;
+}
+#st-3 .st-btn > img {
+  -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; -webkit-transition: all 0.2s ease-in; transition: all 0.2s ease-in;
+  height: 24px;
+  margin-left: 0;
+  vertical-align: top;
+  width: 24px;
+}
+#st-3 .st-btn > span {
+  -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; -webkit-transition: all 0.2s ease-in; transition: all 0.2s ease-in;
+  color: #fff;
+  display: inline-block;
+  font-weight: 500;
+  left: -35px;
+  letter-spacing: 0.5px;
+  opacity: 0;
+  padding: 0 6px;
+  position: relative;
+  vertical-align: top;
+  filter: alpha(opacity=0);
+}
+#st-3 .st-btn.st-hide-label > span {
+  display: none !important;
+}
+#st-3 .st-total {
+  -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; -webkit-transition: all 0.2s ease-in; transition: all 0.2s ease-in;
+  background: #fff;
+  color: #555;
+  display: inline-block;
+  font-weight: 500;
+  line-height: 18px;
+  margin-right: 0;
+  min-height: 34px;
+  max-width: 80px;
+  opacity: 1;
+  padding: 4px 0;
+  text-align: center;
+  width: 48px;
+}
+#st-3 .st-total.st-hidden {
+  display: none;
+}
+#st-3 .st-total > span {
+  display: block;
+  font-size: 18px;
+  line-height: 21px;
+  padding: 0;
+}
+#st-3 .st-total > span.st-shares {
+  font-size: 11px;
+  line-height: 11px;
+}
+#st-3 .st-toggle {
+  left: -48px;
+  -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; -webkit-transition: all 0.2s ease-in; transition: all 0.2s ease-in;
+  background: #ccc;
+  border-bottom-right-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 24px;
+  position: relative;
+  text-align: center;
+  width: 48px;
+}
+#st-3.st-hidden .st-toggle {
+  border-top-right-radius: 4px;
+}
+#st-3.st-left .st-toggle .st-left {
+  display: inline-block;
+}
+#st-3.st-left.st-hidden .st-toggle .st-left {
+  display: none;
+}
+#st-3.st-left .st-toggle .st-right {
+  display: none;
+}
+#st-3.st-left.st-hidden .st-toggle .st-right {
+  display: inline-block;
+}#st-3:hover .st-toggle {
+  left: 0;
+}
+#st-3.st-hidden:hover .st-toggle {
+  left: 48px;
+}
+#st-3.st-toggleable:hover .st-btn.st-last {
+  border-bottom-right-radius: 0;
+}
+#st-3.st-toggleable:hover .st-btn.st-last:hover {
+  border-bottom-right-radius: 4px;
+}
+#st-3 .st-btn:hover {
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+#st-3.st-has-labels .st-btn:hover {
+  width: 120px;
+}
+#st-3:not(.st-has-labels) .st-btn:hover {
+  width: 62px;
+}
+#st-3 .st-btn.st-hide-label:hover {
+  width: 62px;
+}
+#st-3 .st-btn:hover > svg {
+  margin-left: 5px;
+}
+#st-3 .st-btn:hover > img {
+  margin-left: 5px;
+}
+#st-3 .st-btn:hover > span {
+  opacity: 1;
+  display: inline-block;
+  left: 0;
+  filter: alpha(opacity=100);
+}
+@media (max-width: 1024px) {
+  #st-3 .st-btn:hover > svg {
+    margin-left: 0;
+  }
+  #st-3 .st-btn:hover > span {
+    display: none;
+  }
+}@media (max-width: 1024px) {
+  #st-3 {
+  bottom: 0;
+  display: flex;
+  left: 0;
+  right: 0;
+  top: auto;
+  width: 100%;
+}
+#st-3.st-hidden {
+  bottom: -48px;
+  width: 100%;
+}
+#st-3.st-hidden.st-left {
+  left: 0;
+}
+#st-3.st-hidden.st-right {
+  right: 0;
+}
+#st-3 > div {
+  -moz-flex: 1;
+  -ms-flex: 1;
+  -webkit-flex: 1;
+  clear: none;
+  flex: 1;
+  float: none;
+}
+#st-3 .st-total {
+  background: #fff;
+  padding: 6px 8px;
+}
+#st-3 .st-btn {
+  -moz-border-radius: 0 !important;
+-webkit-border-radius: 0 !important;
+border-radius: 0 !important;
+  text-align: center;
+  width: auto;
+}
+#st-3 .st-btn > span {
+  display: none;
+}
+#st-3 .st-toggle {
+  display: none;
+}body { padding-bottom: 48px; }
+}#st-3 .st-btn[data-network='linkedin'] {
+  background-color: #0077b5;
+}
+#st-3 .st-btn[data-network='linkedin'] svg {
+  fill: #fff;
+}
+#st-3 .st-btn[data-network='linkedin'] > span {
+  color: #fff;
+}
+#st-3 .st-btn[data-network='facebook'] {
+  background-color: #4267B2;
+}
+#st-3 .st-btn[data-network='facebook'] svg {
+  fill: #fff;
+}
+#st-3 .st-btn[data-network='facebook'] > span {
+  color: #fff;
+}
+#st-3 .st-btn[data-network='twitter'] {
+  background-color: #55acee;
+}
+#st-3 .st-btn[data-network='twitter'] svg {
+  fill: #fff;
+}
+#st-3 .st-btn[data-network='twitter'] > span {
+  color: #fff;
+}</style><link rel="prefetch" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.87f054b637f6b9ec9ca56cceb6325b72.css"><link rel="prefetch" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.d28f2e96d4e899ea48316ebb1bc9fb71.js"><link rel="prefetch" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.e70f911db9fde41e6be3e08eed381853.js"><link rel="prefetch" as="script" href="https://disqus.com/next/config.js"><script src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/alfalfalfa.0823c767a3bc925f628afd9bed26c958.js" async="" charset="UTF-8"></script><style type="text/css" id="LeadinColors-82464">.leadinModal-82464 .leadinModal-content {
+  border-color: #888888 !important;
+}
+.leadinModal-82464 .leadinModal input:focus {
+  box-shadow: 0 0 0 2px #6d6d6d !important;
+}
+.leadinModal-82464 .leadin-button-primary {
+  background: #888888 !important;
+  color: #FFFFFF !important;
+}
+.leadinModal-82464 .back-button {
+  border: 1px solid #888888 !important;
+}
+.leadinModal-82464 .leadin-button-primary:hover {
+  background: #6d6d6d !important;
+}
+.leadinModal-82464 .leadin-button-primary-border {
+  border: 1px solid #FFFFFF !important;
+}
+.leadinModal-82464 .leadin-button-secondary {
+  background: #FFFFFF !important;
+  color: #888888 !important;
+}
+.leadinModal-82464 .leadin-button-secondary.leadin-dismiss-button {
+  color: #FFFFFF !important;
+  background: #888888 !important;
+  border: 1.25px solid #FFFFFF !important;
+}
+.leadinModal-82464 .leadin-button-secondary:hover {
+  color: #6d6d6d !important;
+}
+.leadinModal-82464.leadinModal-theme-top.leadinModal-preview.leadinModal-v3 .leadinModal-close:before,
+.leadinModal-82464.leadinModal-theme-bottom-right-corner.leadinModal-preview.leadinModal-v3 .leadinModal-close:before,
+.leadinModal-82464.leadinEmbedded-theme-default.leadinModal-preview.leadinModal-v3 .leadinModal-close:before,
+.leadinModal-82464.leadinModal-theme-bottom-left-corner.leadinModal-preview.leadinModal-v3 .leadinModal-close:before {
+  color: #FFFFFF !important;
+}
+.leadinModal-82464.leadinModal-theme-top.leadinModal-preview.leadinModal-v3 .leadinModal-content,
+.leadinModal-82464.leadinModal-theme-bottom-right-corner.leadinModal-preview.leadinModal-v3 .leadinModal-content,
+.leadinModal-82464.leadinEmbedded-theme-default.leadinModal-preview.leadinModal-v3 .leadinModal-content,
+.leadinModal-82464.leadinModal-theme-bottom-left-corner.leadinModal-preview.leadinModal-v3 .leadinModal-content {
+  background: #888888 !important;
+}
+.leadinModal-82464.leadinModal-theme-top.leadinModal-preview.leadinModal-v3 .leadinModal-content h4,
+.leadinModal-82464.leadinModal-theme-bottom-right-corner.leadinModal-preview.leadinModal-v3 .leadinModal-content h4,
+.leadinModal-82464.leadinEmbedded-theme-default.leadinModal-preview.leadinModal-v3 .leadinModal-content h4,
+.leadinModal-82464.leadinModal-theme-bottom-left-corner.leadinModal-preview.leadinModal-v3 .leadinModal-content h4 {
+  color: #FFFFFF !important;
+}
+.leadinModal-82464.leadinModal-theme-top.leadinModal-preview.leadinModal-v3 .leadinModal-content p,
+.leadinModal-82464.leadinModal-theme-top.leadinModal-preview.leadinModal-v3 .leadinModal-content .secondary-dismiss,
+.leadinModal-82464.leadinModal-theme-bottom-right-corner.leadinModal-preview.leadinModal-v3 .leadinModal-content p,
+.leadinModal-82464.leadinModal-theme-bottom-right-corner.leadinModal-preview.leadinModal-v3 .leadinModal-content .secondary-dismiss,
+.leadinModal-82464.leadinEmbedded-theme-default.leadinModal-preview.leadinModal-v3 .leadinModal-content p,
+.leadinModal-82464.leadinEmbedded-theme-default.leadinModal-preview.leadinModal-v3 .leadinModal-content .secondary-dismiss,
+.leadinModal-82464.leadinModal-theme-bottom-left-corner.leadinModal-preview.leadinModal-v3 .leadinModal-content p {
+  color: #FFFFFF !important;
+}
+.leadinModal-82464.leadinModal-theme-top.leadinModal-preview.leadinModal-v3 .leadinModal-content ul,
+.leadinModal-82464.leadinModal-theme-bottom-right-corner.leadinModal-preview.leadinModal-v3 .leadinModal-content ul,
+.leadinModal-82464.leadinEmbedded-theme-default.leadinModal-preview.leadinModal-v3 .leadinModal-content ul,
+.leadinModal-82464.leadinModal-theme-bottom-left-corner.leadinModal-preview.leadinModal-v3 .leadinModal-content ul {
+  color: #FFFFFF !important;
+}
+.leadinModal-82464.leadinModal-theme-top.leadinModal-preview.leadinModal-v3 .leadinModal-content li,
+.leadinModal-82464.leadinModal-theme-bottom-right-corner.leadinModal-preview.leadinModal-v3 .leadinModal-content li,
+.leadinModal-82464.leadinEmbedded-theme-default.leadinModal-preview.leadinModal-v3 .leadinModal-content li,
+.leadinModal-82464.leadinModal-theme-bottom-left-corner.leadinModal-preview.leadinModal-v3 .leadinModal-content li {
+  color: #FFFFFF !important;
+}
+.leadinModal-82464.leadinModal-theme-top.leadinModal-preview.leadinModal-v3 .leadinModal-content ol,
+.leadinModal-82464.leadinModal-theme-bottom-right-corner.leadinModal-preview.leadinModal-v3 .leadinModal-content ol,
+.leadinModal-82464.leadinEmbedded-theme-default.leadinModal-preview.leadinModal-v3 .leadinModal-content ol,
+.leadinModal-82464.leadinModal-theme-bottom-left-corner.leadinModal-preview.leadinModal-v3 .leadinModal-content ol {
+  color: #FFFFFF !important;
+}</style></head>
+  <body class="path-node page-node-type-article blockFloat-processed fixed--nav" style="touch-action: auto;"><style type="text/css">div#hs-eu-cookie-confirmation{position:absolute;left:0;top:0;width:100%;height:auto;background-color:#2d2d2d;border-bottom:1px solid gray;border-bottom:1px solid rgba(0,0,0,0.5);-webkit-box-shadow:0 1px 2px rgba(0,0,0,0.2);-moz-box-shadow:0 1px 2px rgba(0,0,0,0.2);box-shadow:0 1px 2px rgba(0,0,0,0.2);font-size:14px !important;line-height:18px !important;font-family:helvetica neue,helvetica,arial,sans !important;color:#fff !important;text-shadow:0 1px 0 rgba(0,0,0,0.7) !important;text-align:left !important;z-index:100000000 !important}div#hs-eu-cookie-confirmation.can-use-gradients{background-color:rgba(0,0,0,0);background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0,0,0,0.9)), color-stop(100%, rgba(0,0,0,0.75)));background-image:-webkit-linear-gradient(top, rgba(0,0,0,0.9),rgba(0,0,0,0.75));background-image:-moz-linear-gradient(top, rgba(0,0,0,0.9),rgba(0,0,0,0.75));background-image:-o-linear-gradient(top, rgba(0,0,0,0.9),rgba(0,0,0,0.75));background-image:linear-gradient(top, rgba(0,0,0,0.9),rgba(0,0,0,0.75));background-image:linear-gradient(to bottom, rgba(0,0,0,0.9),rgba(0,0,0,0.75))}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner{padding:12px 18px 18px}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a{font-family:helvetica neue,helvetica,arial,sans !important;color:#add8e6 !important;font-size:14px !important;text-decoration:none !important;background:none !important;border:none !important;font-weight:normal !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a:hover{text-decoration:underline !important;background:none !important;border:none !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner div#hs-en-cookie-confirmation-buttons-area{text-align:center !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a#hs-eu-confirmation-button{font-family:helvetica neue,helvetica,arial,sans !important;font-size:14px !important;font-weight:normal !important;margin-right:16px !important;padding:4px 12px !important;background-color:green !important;border:1px solid gray !important;border:1px solid rgba(0,0,0,0.5) !important;background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, transparent), color-stop(100%, rgba(0,0,0,0.2)));background-image:-webkit-linear-gradient(top, transparent,rgba(0,0,0,0.2));background-image:-moz-linear-gradient(top, transparent,rgba(0,0,0,0.2));background-image:-o-linear-gradient(top, transparent,rgba(0,0,0,0.2));background-image:linear-gradient(top, transparent,rgba(0,0,0,0.2));-webkit-border-radius:4px;-moz-border-radius:4px;-ms-border-radius:4px;-o-border-radius:4px;border-radius:4px;-webkit-box-shadow:0 1px 2px rgba(0,0,0,0.2),inset 0 1px 0 rgba(255,255,255,0.5);-moz-box-shadow:0 1px 2px rgba(0,0,0,0.2),inset 0 1px 0 rgba(255,255,255,0.5);box-shadow:0 1px 2px rgba(0,0,0,0.2),inset 0 1px 0 rgba(255,255,255,0.5);line-height:14px !important;color:#fff !important;text-shadow:0 1px 0 rgba(0,0,0,0.5) !important;text-decoration:none !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a#hs-eu-confirmation-button:hover{background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, transparent), color-stop(100%, rgba(0,0,0,0.3)));background-image:-webkit-linear-gradient(top, transparent,rgba(0,0,0,0.3));background-image:-moz-linear-gradient(top, transparent,rgba(0,0,0,0.3));background-image:-o-linear-gradient(top, transparent,rgba(0,0,0,0.3));background-image:linear-gradient(top, transparent,rgba(0,0,0,0.3))}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a#hs-eu-confirmation-button:active{background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0,0,0,0.3)), color-stop(100%, rgba(0,0,0,0.3)));background-image:-webkit-linear-gradient(top, rgba(0,0,0,0.3),rgba(0,0,0,0.3));background-image:-moz-linear-gradient(top, rgba(0,0,0,0.3),rgba(0,0,0,0.3));background-image:-o-linear-gradient(top, rgba(0,0,0,0.3),rgba(0,0,0,0.3));background-image:linear-gradient(top, rgba(0,0,0,0.3),rgba(0,0,0,0.3));-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.2);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.2);box-shadow:inset 0 1px 2px rgba(0,0,0,0.2)}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner p{line-height:18px !important;font-family:helvetica neue,helvetica,arial,sans !important;font-weight:normal !important;font-size:14px !important;margin:0 0 16px !important;padding:0 !important;color:#fff !important;text-align:left !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner p#hs-eu-cookie-disclaimer{margin:16px 0 !important}@media print{div#hs-eu-cookie-confirmation{display:none !important}}@media screen and (max-width: 480px){div#hs-eu-cookie-confirmation{font-size:12px !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner{padding:8px 14px 14px !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a{font-size:12px !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a#hs-eu-confirmation-button{font-size:12px !important}div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner p{font-size:12px !important;margin-bottom:12px !important;line-height:15px !important}}
+</style><div id="hs-eu-cookie-confirmation" class=" can-use-gradients"><div id="hs-eu-cookie-confirmation-inner"><p style="">This website stores cookies on your computer. These cookies are used to improve your website and provide more personalized services to you, both on this website and through other media. To find out more about the cookies we use, see our Privacy Policy.</p><div id="hs-en-cookie-confirmation-buttons-area"><a href="https://www.valuebound.com/resources/blog/how-to-create-a-drupal-entity-programmatically-drupal-8#" id="hs-eu-confirmation-button">Accept</a></div></div></div><div id="off-canvas" class="mm-menu mm-menu_offcanvas mm-menu_keyboardfocus mm-menu_theme-dark mm-menu_effect-slide-menu mm-menu_position-right mm-menu_pagedim" aria-hidden="true"><button class="mm-tabstart" tabindex="0" type="button" aria-hidden="true" role="presentation"></button><div class="mm-panels"><div id="mm-1" class="mm-panel mm-panel_has-navbar mm-panel_opened"><div class="mm-navbar"><a class="mm-navbar__title">Menu</a></div><ul class="menu mm-listview">
+                    <li class="menu-item mm-listitem">
+        <a href="https://www.valuebound.com/case-studies" data-drupal-link-system-path="node/308">Case Study</a>
+              </li>
+                <li class="menu-item mm-listitem">
+        <a href="https://www.valuebound.com/solution">Solutions</a>
+              </li>
+                <li class="menu-item mm-listitem">
+        <a href="https://www.valuebound.com/services/drupal-web-development-services" data-drupal-link-system-path="services">Services</a>
+              </li>
+                <li class="menu-item menu-item--expanded mm-listitem">
+        <a class="mm-btn_next" href="https://www.valuebound.com/resources/blog/how-to-create-a-drupal-entity-programmatically-drupal-8#mm-2"><span class="mm-sronly">Open submenu (About)</span></a><a href="https://www.valuebound.com/about" data-drupal-link-system-path="node/323">About</a>
+                                
+  
+              </li>
+                <li class="menu-item menu-item--expanded mm-listitem">
+        <a class="mm-btn_next" href="https://www.valuebound.com/resources/blog/how-to-create-a-drupal-entity-programmatically-drupal-8#mm-3"><span class="mm-sronly">Open submenu (Resources)</span></a><a href="https://www.valuebound.com/resources/blogs">Resources</a>
+                                
+  
+              </li>
+                <li class="menu-item mm-listitem">
+        <a href="https://www.valuebound.com/contact-us" class="contact button" target="_self" data-drupal-link-system-path="node/1126">Get in Touch</a>
+              </li>
+        </ul></div><div id="mm-2" class="mm-panel mm-hidden mm-panel_has-navbar" aria-hidden="true"><div class="mm-navbar"><a class="mm-btn mm-btn_prev mm-navbar__btn" href="https://www.valuebound.com/resources/blog/how-to-create-a-drupal-entity-programmatically-drupal-8#mm-1" aria-owns="mm-1" aria-haspopup="true"><span class="mm-sronly">Close submenu</span></a><a class="mm-navbar__title" href="https://www.valuebound.com/resources/blog/how-to-create-a-drupal-entity-programmatically-drupal-8#mm-1">About</a></div><ul class="menu mm-listview">
+                    <li class="menu-item mm-listitem">
+        <a href="https://www.valuebound.com/about/our-partners" title="Partners" data-drupal-link-system-path="node/1148">Partners</a>
+              </li>
+                <li class="menu-item mm-listitem">
+        <a href="https://www.valuebound.com/career" data-drupal-link-system-path="node/328">Career</a>
+              </li>
+        </ul></div><div id="mm-3" class="mm-panel mm-hidden mm-panel_has-navbar" aria-hidden="true"><div class="mm-navbar"><a class="mm-btn mm-btn_prev mm-navbar__btn" href="https://www.valuebound.com/resources/blog/how-to-create-a-drupal-entity-programmatically-drupal-8#mm-1" aria-owns="mm-1" aria-haspopup="true"><span class="mm-sronly">Close submenu</span></a><a class="mm-navbar__title" href="https://www.valuebound.com/resources/blog/how-to-create-a-drupal-entity-programmatically-drupal-8#mm-1">Resources</a></div><ul class="menu mm-listview">
+                    <li class="menu-item mm-listitem">
+        <a href="https://www.valuebound.com/resources/blogs">Blogs &amp; Insights</a>
+              </li>
+                <li class="menu-item mm-listitem">
+        <a href="https://www.valuebound.com/resources/press-releases" data-drupal-link-system-path="node/372">Press Releases</a>
+              </li>
+                <li class="menu-item mm-listitem">
+        <a href="https://www.valuebound.com/webinars" data-drupal-link-system-path="webinars">Webinars</a>
+              </li>
+                <li class="menu-item mm-listitem">
+        <a href="https://www.valuebound.com/resources/what-is-drupal" data-drupal-link-system-path="node/324">What is Drupal?</a>
+              </li>
+        </ul></div></div>
+              
+  
+
+<button class="mm-tabend" tabindex="0" type="button" aria-hidden="true" role="presentation"></button></div>
+        <a href="https://www.valuebound.com/resources/blog/how-to-create-a-drupal-entity-programmatically-drupal-8#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div id="mm-0" class="mm-page mm-slideout"><div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas="">
+    <div class="layout-container">
+
+  <header role="banner" id="header" class="site--header">
+    <div class="site--header-inner">
+      <div class="site--branding">
+          <div class="region region-branding">
+    <div id="block-valuebound-branding" class="block block-system block-system-branding-block">
+  <a href="https://www.valuebound.com/" title="Home" rel="home" class="site-logo">
+    <img src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/vb-logo-white.svg" alt="Home" class="logo-white" style="display:none">
+    <img src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/logo.svg" alt="Home" class="logo-orange">
+  </a>
+</div>
+
+  </div>
+
+      </div>
+      <div class="site--navigation">
+          <div class="region region-navigation">
+    <div id="block-horizontalmenu" class="block block-responsive-menu block-responsive-menu-horizontal-menu">
+  
+    
+      <nav class="responsive-menu-block-wrapper">
+  
+              <ul id="horizontal-menu" class="horizontal-menu sf-js-enabled sf-arrows sf-menu" style="touch-action: pan-y;">
+                    <li class="menu-item">
+        <a href="https://www.valuebound.com/case-studies" data-drupal-link-system-path="node/308">Case Study</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/solution">Solutions</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/services/drupal-web-development-services" data-drupal-link-system-path="services">Services</a>
+              </li>
+                <li class="menu-item menu-item--expanded">
+        <a href="https://www.valuebound.com/about" data-drupal-link-system-path="node/323" class="sf-with-ul">About</a>
+                                <ul class="menu sub-nav" style="display: none;">
+                    <li class="menu-item">
+        <a href="https://www.valuebound.com/about/our-partners" title="Partners" data-drupal-link-system-path="node/1148">Partners</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/career" data-drupal-link-system-path="node/328">Career</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item menu-item--expanded">
+        <a href="https://www.valuebound.com/resources/blogs" class="sf-with-ul">Resources</a>
+                                <ul class="menu sub-nav" style="display: none;">
+                    <li class="menu-item">
+        <a href="https://www.valuebound.com/resources/blogs">Blogs &amp; Insights</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/resources/press-releases" data-drupal-link-system-path="node/372">Press Releases</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/webinars" data-drupal-link-system-path="webinars">Webinars</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/resources/what-is-drupal" data-drupal-link-system-path="node/324">What is Drupal?</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/contact-us" class="contact button" target="_self" data-drupal-link-system-path="node/1126">Get in Touch</a>
+              </li>
+        </ul>
+  
+
+
+</nav>
+  </div>
+<div id="block-responsivemenumobileicon" class="responsive-menu-toggle-wrapper responsive-menu-toggle block block-responsive-menu block-responsive-menu-toggle">
+  
+    
+      <a id="toggle-icon" class="toggle aria-label=" menu"="" responsive-menu-toggle-icon"="" title="Menu" href="https://www.valuebound.com/resources/blog/how-to-create-a-drupal-entity-programmatically-drupal-8#off-canvas">
+  <span class="icon"></span><span class="label">Menu</span>
+</a>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </header>
+
+  <main role="main" id="page" class="site--main-content">
+    <a id="main-content" tabindex="-1"></a>      <div class="region region-help">
+    <div data-drupal-messages-fallback="" class="hidden"></div>
+
+  </div>
+
+    <div class="layout-content">
+        <div class="region region-content">
+    <div id="block-valuebound-content" class="block block-system block-system-main-block">
+  
+    
+      
+
+
+
+<div class="block block-vb-utility block-vb-social-share">
+  
+    
+      <div class="vb-social-share top-bar vb-share">
+  <div class="share-it-title"><a href="https://www.valuebound.com/resources/blogs">Blogs &amp; Insights</a> -- <span>How to create a Drupal Entity programmatically in Drupal 8</span></div><div class="share-this-text"> Share this</div>
+  <div class="sharethis-inline-share-buttons st-center st-has-labels  st-inline-share-buttons st-animated" id="st-1"><div class="st-btn st-first st-remove-label" data-network="linkedin" style="display: none;">
+  <img src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/linkedin.svg">
+  <span class="st-label">Share</span>
+</div><div class="st-btn st-remove-label" data-network="twitter" style="display: none;">
+  <img src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/twitter.svg">
+  <span class="st-label">Tweet</span>
+</div><div class="st-btn st-last st-remove-label" data-network="facebook" style="display: none;">
+  <img src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/facebook.svg">
+  <span class="st-label">Share</span>
+</div></div>
+  <a class="hamburger-menu">
+    <span></span><span></span><span></span>
+  </a>
+
+</div>
+<div class="main-navigation-quicklink" id="mySidenav">
+  
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.valuebound.com/case-studies" data-drupal-link-system-path="node/308">Case Study</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/solution">Solutions</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/services/drupal-web-development-services" data-drupal-link-system-path="services">Services</a>
+              </li>
+                <li class="menu-item menu-item--expanded">
+        <a href="https://www.valuebound.com/about" data-drupal-link-system-path="node/323">About</a>
+                                <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.valuebound.com/about/our-partners" title="Partners" data-drupal-link-system-path="node/1148">Partners</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/career" data-drupal-link-system-path="node/328">Career</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item menu-item--expanded">
+        <a href="https://www.valuebound.com/resources/blogs">Resources</a>
+                                <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.valuebound.com/resources/blogs">Blogs &amp; Insights</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/resources/press-releases" data-drupal-link-system-path="node/372">Press Releases</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/webinars" data-drupal-link-system-path="webinars">Webinars</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/resources/what-is-drupal" data-drupal-link-system-path="node/324">What is Drupal?</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item">
+        <a href="https://www.valuebound.com/contact-us" class="contact button" target="_self" data-drupal-link-system-path="node/1126">Get in Touch</a>
+              </li>
+        </ul>
+  
+
+
+</div>
+
+  </div>
+
+
+<article data-history-node-id="982" role="article" class="node node--type-article node--promoted node--view-mode-full column clearfix" about="/resources/blog/how-to-create-a-drupal-entity-programmatically-drupal-8" typeof="schema:Article">
+  <section class="parallax-window article--header engineering" style="background: url(/themes/custom/valuebound/images/engineering-bg.jpeg)">
+    <div class="article--meta-wrapper">
+      <div class="article--meta">
+        <h1 class="article--title"><span property="schema:name" class="field field--name-title field--type-string field--label-hidden">How to create a Drupal Entity programmatically in Drupal 8</span>
+</h1>
+        <div class="article--post-info">
+            <span class="article--author">
+              <a href="https://www.valuebound.com/users/ahana">
+                <span class="author-image"><img src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/web-user_0.jpg" width="75" height="75"></span>
+                <span class="author-name">Ahana Kundu</span>
+              </a>
+            </span>
+          <span class="article--post-date">Apr 28, 2017</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="article--content-wrapper" id="article--content-area">
+    <div class="article--content">
+      
+            <div property="schema:text" class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item image--inline"><p dir="ltr">Entities have been introduced late in Drupal 7. Drupal entity is an instance of a particular instance type. For example, the entity type for taxonomy terms is named taxonomy_term and the class name Term. We include the class like &nbsp;Drupal\taxonomy\Entity\Term. Here taxonomy is a core&nbsp;module name, and Term is the class name of <a href="http://valuebound.com/resources/blog/create-custom-entity-type-drupal8-for-better-content-management">Entity.</a></p>
+<h3 dir="ltr"><b id="docs-internal-guid-e17cd1ae-aec7-9aff-c034-9183a1e63b20">A. How to create an user programmatically.</b></h3>
+
+<p dir="ltr">The fields to be created are as follows:</p>
+
+<ol dir="ltr"><li>&nbsp;Username</li>
+	<li><b id="docs-internal-guid-e17cd1ae-aec7-f889-8eb2-545c5ed34cc2">&nbsp;</b>Email address</li>
+	<li><b id="docs-internal-guid-e17cd1ae-aec7-f889-8eb2-545c5ed34cc2">&nbsp;</b>Password</li>
+	<li><b id="docs-internal-guid-e17cd1ae-aec7-f889-8eb2-545c5ed34cc2">&nbsp;</b>Status</li>
+	<li><b id="docs-internal-guid-e17cd1ae-aec7-f889-8eb2-545c5ed34cc2">&nbsp;</b>Roles</li>
+	<li><b id="docs-internal-guid-e17cd1ae-aec7-f889-8eb2-545c5ed34cc2">&nbsp;</b>Picture</li>
+	<li><b id="docs-internal-guid-e17cd1ae-aec7-f889-8eb2-545c5ed34cc2">&nbsp;</b>Timezone</li>
+</ol><p><b id="docs-internal-guid-e17cd1ae-aec7-f889-8eb2-545c5ed34cc2">If you want to create a Drupal user programmatically we can create it the way as given below:</b></p>
+
+<p>a) This is the first method</p>
+<script src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/660c184026c24779d9245dd0ae14288c.js"></script><link rel="stylesheet" href="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/gist-embed-3a7ef482c296bb1a3bcefcbf22eaa3b6.css"><div id="gist47115394" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-user-create" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-text ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-user-create-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-user-create-LC1" class="blob-code blob-code-inner js-file-line">$file_image='/var/www/html/drupal/sites/default/files/2017-04/images.jpeg';             </td>
+      </tr>
+      <tr>
+        <td id="file-user-create-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-user-create-LC2" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-user-create-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-user-create-LC3" class="blob-code blob-code-inner js-file-line">$file_content = file_get_contents($file_image);</td>
+      </tr>
+      <tr>
+        <td id="file-user-create-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-user-create-LC4" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-user-create-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-user-create-LC5" class="blob-code blob-code-inner js-file-line">$directory = 'public://Image/';</td>
+      </tr>
+      <tr>
+        <td id="file-user-create-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-user-create-LC6" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-user-create-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-user-create-LC7" class="blob-code blob-code-inner js-file-line">file_prepare_directory($directory, FILE_CREATE_DIRECTORY);</td>
+      </tr>
+      <tr>
+        <td id="file-user-create-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-user-create-LC8" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-user-create-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-user-create-LC9" class="blob-code blob-code-inner js-file-line">$file_image = file_save_data($file_content, $directory . basename($file_image),     FILE_EXISTS_REPLACE);</td>
+      </tr>
+      <tr>
+        <td id="file-user-create-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-user-create-LC10" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-user-create-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-user-create-LC11" class="blob-code blob-code-inner js-file-line">$user = User::create([</td>
+      </tr>
+      <tr>
+        <td id="file-user-create-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-user-create-LC12" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-user-create-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-user-create-LC13" class="blob-code blob-code-inner js-file-line">       'name' =&gt;'user',    </td>
+      </tr>
+      <tr>
+        <td id="file-user-create-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-user-create-LC14" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-user-create-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-user-create-LC15" class="blob-code blob-code-inner js-file-line">       'mail' =&gt; 'user@gmail.com',</td>
+      </tr>
+      <tr>
+        <td id="file-user-create-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-user-create-LC16" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-user-create-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-user-create-LC17" class="blob-code blob-code-inner js-file-line">        'pass' =&gt; 'password',</td>
+      </tr>
+      <tr>
+        <td id="file-user-create-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-user-create-LC18" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-user-create-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-user-create-LC19" class="blob-code blob-code-inner js-file-line">        'status' =&gt; 1,</td>
+      </tr>
+      <tr>
+        <td id="file-user-create-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-user-create-LC20" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-user-create-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-user-create-LC21" class="blob-code blob-code-inner js-file-line">        'roles' =&gt; array('editor','administrator'),</td>
+      </tr>
+      <tr>
+        <td id="file-user-create-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-user-create-LC22" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-user-create-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-user-create-LC23" class="blob-code blob-code-inner js-file-line">        'user_picture' =&gt; array('target_id' =&gt;$file_image-&gt;id()),</td>
+      </tr>
+      <tr>
+        <td id="file-user-create-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-user-create-LC24" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-user-create-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-user-create-LC25" class="blob-code blob-code-inner js-file-line">        'timezone'=&gt; 'Indian/Christmas'</td>
+      </tr>
+      <tr>
+        <td id="file-user-create-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-user-create-LC26" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-user-create-L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="file-user-create-LC27" class="blob-code blob-code-inner js-file-line">      ]);</td>
+      </tr>
+      <tr>
+        <td id="file-user-create-L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="file-user-create-LC28" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-user-create-L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td id="file-user-create-LC29" class="blob-code blob-code-inner js-file-line">$user-&gt;save();</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/ahana92/660c184026c24779d9245dd0ae14288c/raw/9fd8cf143a524809c630fba49d6dcdd6b0e2440e/user%20create" style="float:right">view raw</a>
+        <a href="https://gist.github.com/ahana92/660c184026c24779d9245dd0ae14288c#file-user-create">user create</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<p dir="ltr"><b id="docs-internal-guid-e17cd1ae-aec7-f889-8eb2-545c5ed34cc2">&nbsp;</b>&nbsp;The output is shown below:<b class="image--inline"><img alt="user create" data-entity-type="file" data-entity-uuid="db987a39-30b6-4267-ae5c-682cabc8cc97" title="New user is created." class="b-lazy b-loaded" src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/user_0.png"></b></p>
+
+<p>The use of Drupal\user\Entity\User; is to &nbsp;include&nbsp;the class User.</p>
+
+<p>User::create()is used to create an user where it takes the details about the user.</p>
+
+<p>Here name is the username whose account is to be created.</p>
+
+<p>Here mail is the email id of the user and&nbsp;pass is the password for the user.</p>
+
+<p>The status tells you if the user account is active or blocked. If it is 1 then the user account is active and if it is 0 then the account is blocked.</p>
+
+<p>The roles mention which roles is given to the user. To give the user more than one role simply pass an array of roles.</p>
+
+<p>The timezone mentions a timezone set for the user.</p>
+
+<p>The user_picture accepts the image’s file id to get the user image. To get the file id we have passed a static image here in $file_image='/var/www/html/drupal/sites/default/files/2017-04/images.jpeg'; The file_get_contents() reads a file into a string. $directory is the name of the folder where you want to save the uploaded image. file_prepare_directory($directory, FILE_CREATE_DIRECTORY); The above line creates the folder if it doesn't exist. The file_save_data saves the files details. The first parameter takes the file content, the second parameter takes the name of the folder you want to save your image and the name of the file, the third parameter tells you to replace the file if it already exists.</p>
+
+<p>b) This is the&nbsp;second way to create user &nbsp;</p>
+<script src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/334cd41478e8f46322a1ac1af4db41b5.js"></script><link rel="stylesheet" href="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/gist-embed-3a7ef482c296bb1a3bcefcbf22eaa3b6.css"><div id="gist47115540" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-user_create" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-text ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-user_create-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-user_create-LC1" class="blob-code blob-code-inner js-file-line">$values = array(</td>
+      </tr>
+      <tr>
+        <td id="file-user_create-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-user_create-LC2" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-user_create-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-user_create-LC3" class="blob-code blob-code-inner js-file-line">&nbsp; &nbsp; &nbsp; 'name' =&gt; 'name',</td>
+      </tr>
+      <tr>
+        <td id="file-user_create-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-user_create-LC4" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-user_create-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-user_create-LC5" class="blob-code blob-code-inner js-file-line">&nbsp; &nbsp; &nbsp; 'mail' =&gt; 'name@gmail.com',</td>
+      </tr>
+      <tr>
+        <td id="file-user_create-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-user_create-LC6" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-user_create-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-user_create-LC7" class="blob-code blob-code-inner js-file-line">&nbsp; &nbsp; &nbsp; 'roles' =&gt; array(),</td>
+      </tr>
+      <tr>
+        <td id="file-user_create-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-user_create-LC8" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-user_create-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-user_create-LC9" class="blob-code blob-code-inner js-file-line">&nbsp; &nbsp; &nbsp; 'pass' =&gt; 'password',</td>
+      </tr>
+      <tr>
+        <td id="file-user_create-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-user_create-LC10" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-user_create-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-user_create-LC11" class="blob-code blob-code-inner js-file-line">&nbsp; &nbsp; &nbsp; 'timezone'=&gt; 'Indian/Christmas',</td>
+      </tr>
+      <tr>
+        <td id="file-user_create-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-user_create-LC12" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-user_create-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-user_create-LC13" class="blob-code blob-code-inner js-file-line">&nbsp; &nbsp; &nbsp; 'status' =&gt; 1,</td>
+      </tr>
+      <tr>
+        <td id="file-user_create-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-user_create-LC14" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-user_create-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-user_create-LC15" class="blob-code blob-code-inner js-file-line">); &nbsp;</td>
+      </tr>
+      <tr>
+        <td id="file-user_create-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-user_create-LC16" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-user_create-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-user_create-LC17" class="blob-code blob-code-inner js-file-line">$account = entity_create('user', $values);</td>
+      </tr>
+      <tr>
+        <td id="file-user_create-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-user_create-LC18" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-user_create-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-user_create-LC19" class="blob-code blob-code-inner js-file-line">$account-&gt;save();</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/ahana92/334cd41478e8f46322a1ac1af4db41b5/raw/97c8ec428bf1600fa838073e510cfb40e62e0aa8/user_create" style="float:right">view raw</a>
+        <a href="https://gist.github.com/ahana92/334cd41478e8f46322a1ac1af4db41b5#file-user_create">user_create</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<p>The first parameter of entity_create accepts the entity type that we want to create and the second parameter accepts an array of values to be used to create that entity. The user created is saved to finally create the user.</p>
+
+<p>&nbsp;</p>
+
+<h3><strong>B. How to create a node programmatically</strong></h3>
+
+<p>If you want to create a drupal node programmatically we can create the way as given below:</p>
+
+<p>a) This is the first way to do this:</p>
+
+<p>&nbsp;</p>
+<script src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/25bfb2b319e588ab7fa0a2edbd2b5f6b.js"></script><link rel="stylesheet" href="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/gist-embed-3a7ef482c296bb1a3bcefcbf22eaa3b6.css"><div id="gist47115580" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-node_create" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-text ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-node_create-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-node_create-LC1" class="blob-code blob-code-inner js-file-line">&nbsp;use \Drupal\node\Entity\Node;</td>
+      </tr>
+      <tr>
+        <td id="file-node_create-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-node_create-LC2" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-node_create-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-node_create-LC3" class="blob-code blob-code-inner js-file-line">$node = Node::create([</td>
+      </tr>
+      <tr>
+        <td id="file-node_create-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-node_create-LC4" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-node_create-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-node_create-LC5" class="blob-code blob-code-inner js-file-line">&nbsp; &nbsp; &nbsp; &nbsp;'type' =&gt; 'new_content_type',</td>
+      </tr>
+      <tr>
+        <td id="file-node_create-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-node_create-LC6" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-node_create-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-node_create-LC7" class="blob-code blob-code-inner js-file-line">&nbsp; &nbsp; &nbsp; &nbsp;'title' =&gt; 'Creating a new node',</td>
+      </tr>
+      <tr>
+        <td id="file-node_create-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-node_create-LC8" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-node_create-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-node_create-LC9" class="blob-code blob-code-inner js-file-line">&nbsp; &nbsp; &nbsp; &nbsp;'body' =&gt; 'Body of the node',</td>
+      </tr>
+      <tr>
+        <td id="file-node_create-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-node_create-LC10" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-node_create-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-node_create-LC11" class="blob-code blob-code-inner js-file-line">&nbsp; &nbsp; &nbsp; &nbsp;'field_mail'=&gt;'email@gmail.com',</td>
+      </tr>
+      <tr>
+        <td id="file-node_create-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-node_create-LC12" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-node_create-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-node_create-LC13" class="blob-code blob-code-inner js-file-line">&nbsp; &nbsp; &nbsp; &nbsp;'field_link'=&gt;'<a class="vglnk" href="http://www.example.com/" rel="nofollow"><span>http</span><span>://</span><span>www</span><span>.</span><span>example</span><span>.</span><span>com</span></a>',</td>
+      </tr>
+      <tr>
+        <td id="file-node_create-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-node_create-LC14" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-node_create-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-node_create-LC15" class="blob-code blob-code-inner js-file-line">&nbsp; &nbsp; &nbsp; &nbsp;'field_date'=&gt;[ '2017-07-22', ],</td>
+      </tr>
+      <tr>
+        <td id="file-node_create-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-node_create-LC16" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-node_create-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-node_create-LC17" class="blob-code blob-code-inner js-file-line">]); &nbsp;</td>
+      </tr>
+      <tr>
+        <td id="file-node_create-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-node_create-LC18" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-node_create-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-node_create-LC19" class="blob-code blob-code-inner js-file-line">$node-&gt;save();</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/ahana92/25bfb2b319e588ab7fa0a2edbd2b5f6b/raw/a8c83b99e9d403942154dd0271b80d97350d02c8/node_create" style="float:right">view raw</a>
+        <a href="https://gist.github.com/ahana92/25bfb2b319e588ab7fa0a2edbd2b5f6b#file-node_create">node_create</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<img alt="node create" data-entity-type="file" data-entity-uuid="d18c9275-a5a6-4946-b742-e104f26daecb" title="Node has been created." class="align-center b-lazy" data-src="https://valuebound.com/sites/default/files/inline-images/node.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><p dir="ltr"><b id="docs-internal-guid-e17cd1ae-aecc-4ca5-9a75-a32f6a2c5bb0">&nbsp;</b>This will be the output.</p>
+
+<p dir="ltr">Here the use \Drupal\node\Entity\Node; is used to insert the class Node.</p>
+
+<p dir="ltr">Node::create() is used to create a node.</p>
+
+<p dir="ltr">Inside Node::create() the node details is passed.</p>
+
+<p dir="ltr">The type tells you the content type whose node is to be created.</p>
+
+<p dir="ltr">The title is the node title, body is the body part of a node.</p>
+
+<p dir="ltr">The&nbsp;field_mail is the email id to be entered if you have a field for email.</p>
+
+<p dir="ltr">The field_link allows you to add a link if you have any link field and field_date holds the value of date field.</p>
+
+<p><br>
+&nbsp;</p>
+
+<p dir="ltr">b) This is the second way to create the node <b>&nbsp;</b><b id="docs-internal-guid-e17cd1ae-aecc-4ca5-9a75-a32f6a2c5bb0">&nbsp;</b></p>
+<script src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/4ae331d323f000c6652faeec8157c69a.js"></script><link rel="stylesheet" href="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/gist-embed-3a7ef482c296bb1a3bcefcbf22eaa3b6.css"><div id="gist47115629" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-node-create" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-text ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-node-create-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-node-create-LC1" class="blob-code blob-code-inner js-file-line">$node = entity_create('node', array(</td>
+      </tr>
+      <tr>
+        <td id="file-node-create-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-node-create-LC2" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-node-create-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-node-create-LC3" class="blob-code blob-code-inner js-file-line">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'type' =&gt; 'new_content_type',</td>
+      </tr>
+      <tr>
+        <td id="file-node-create-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-node-create-LC4" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-node-create-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-node-create-LC5" class="blob-code blob-code-inner js-file-line">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'title' =&gt;'Creating another node',</td>
+      </tr>
+      <tr>
+        <td id="file-node-create-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-node-create-LC6" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-node-create-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-node-create-LC7" class="blob-code blob-code-inner js-file-line">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'body' =&gt; array(</td>
+      </tr>
+      <tr>
+        <td id="file-node-create-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-node-create-LC8" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-node-create-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-node-create-LC9" class="blob-code blob-code-inner js-file-line">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'value' =&gt;'The body of the content',</td>
+      </tr>
+      <tr>
+        <td id="file-node-create-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-node-create-LC10" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-node-create-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-node-create-LC11" class="blob-code blob-code-inner js-file-line">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'format' =&gt; 'full_html',</td>
+      </tr>
+      <tr>
+        <td id="file-node-create-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-node-create-LC12" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-node-create-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-node-create-LC13" class="blob-code blob-code-inner js-file-line">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ),</td>
+      </tr>
+      <tr>
+        <td id="file-node-create-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-node-create-LC14" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-node-create-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-node-create-LC15" class="blob-code blob-code-inner js-file-line">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'field_mail'=&gt;'email@gmail.com',</td>
+      </tr>
+      <tr>
+        <td id="file-node-create-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-node-create-LC16" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-node-create-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-node-create-LC17" class="blob-code blob-code-inner js-file-line">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'field_link'=&gt;'<a class="vglnk" href="http://www.example.com/" rel="nofollow"><span>http</span><span>://</span><span>www</span><span>.</span><span>example</span><span>.</span><span>com</span></a>',</td>
+      </tr>
+      <tr>
+        <td id="file-node-create-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-node-create-LC18" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-node-create-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-node-create-LC19" class="blob-code blob-code-inner js-file-line">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'field_date'=&gt;[ '2017-07-22',</td>
+      </tr>
+      <tr>
+        <td id="file-node-create-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-node-create-LC20" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-node-create-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-node-create-LC21" class="blob-code blob-code-inner js-file-line">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ],</td>
+      </tr>
+      <tr>
+        <td id="file-node-create-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-node-create-LC22" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-node-create-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-node-create-LC23" class="blob-code blob-code-inner js-file-line">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;)</td>
+      </tr>
+      <tr>
+        <td id="file-node-create-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-node-create-LC24" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-node-create-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-node-create-LC25" class="blob-code blob-code-inner js-file-line">&nbsp; );</td>
+      </tr>
+      <tr>
+        <td id="file-node-create-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-node-create-LC26" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-node-create-L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="file-node-create-LC27" class="blob-code blob-code-inner js-file-line">&nbsp;$node-&gt;save();</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/ahana92/4ae331d323f000c6652faeec8157c69a/raw/3011caa8b08d7f492aa479869fab331759e5b07c/node%20create" style="float:right">view raw</a>
+        <a href="https://gist.github.com/ahana92/4ae331d323f000c6652faeec8157c69a#file-node-create">node create</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<p dir="ltr"><b id="docs-internal-guid-e17cd1ae-aecc-4ca5-9a75-a32f6a2c5bb0">&nbsp; </b>The entity create function takes two parameter where the first parameter tells you which entity to create and the second parameter should be an array of the node details.&nbsp;</p>
+
+<h3>&nbsp;</h3>
+
+<h3 dir="ltr"><b id="docs-internal-guid-e17cd1ae-aecc-4ca5-9a75-a32f6a2c5bb0">C. How to create a taxonomy term programmatically</b></h3>
+
+<p>&nbsp;</p>
+
+<p dir="ltr"><b id="docs-internal-guid-e17cd1ae-aecc-4ca5-9a75-a32f6a2c5bb0">If you want to create taxonomy term programmatically we can create the way as given below:</b></p>
+
+<p>a) This is the first way to create term</p>
+<script src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/d4a1f907cae066de5177361d208e2200.js"></script><link rel="stylesheet" href="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/gist-embed-3a7ef482c296bb1a3bcefcbf22eaa3b6.css"><div id="gist47115676" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-term-create" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-text ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-term-create-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-term-create-LC1" class="blob-code blob-code-inner js-file-line">use Drupal\taxonomy\Entity\Term;</td>
+      </tr>
+      <tr>
+        <td id="file-term-create-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-term-create-LC2" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-term-create-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-term-create-LC3" class="blob-code blob-code-inner js-file-line">$term =Term::create([</td>
+      </tr>
+      <tr>
+        <td id="file-term-create-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-term-create-LC4" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-term-create-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-term-create-LC5" class="blob-code blob-code-inner js-file-line">'name' =&gt; 'term 1',</td>
+      </tr>
+      <tr>
+        <td id="file-term-create-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-term-create-LC6" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-term-create-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-term-create-LC7" class="blob-code blob-code-inner js-file-line">'vid' =&gt; 'new',</td>
+      </tr>
+      <tr>
+        <td id="file-term-create-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-term-create-LC8" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-term-create-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-term-create-LC9" class="blob-code blob-code-inner js-file-line">])</td>
+      </tr>
+      <tr>
+        <td id="file-term-create-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-term-create-LC10" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-term-create-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-term-create-LC11" class="blob-code blob-code-inner js-file-line">-&gt;save();</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/ahana92/d4a1f907cae066de5177361d208e2200/raw/98a0bf639809bc97aa10be26a6189ea911f6d038/term%20create" style="float:right">view raw</a>
+        <a href="https://gist.github.com/ahana92/d4a1f907cae066de5177361d208e2200#file-term-create">term create</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<p dir="ltr"><b id="docs-internal-guid-e17cd1ae-aecc-4ca5-9a75-a32f6a2c5bb0">&nbsp;</b> The output is shown below:</p>
+<img alt="term create" data-entity-type="file" data-entity-uuid="e8e49598-4ccd-43f5-ab46-4ecd6ff9e1d3" title="New term is created." class="align-center b-lazy" data-src="https://valuebound.com/sites/default/files/inline-images/term.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><p dir="ltr"><b id="docs-internal-guid-e17cd1ae-aecd-0c5d-2f86-9d79c15fac8a">&nbsp;</b> &nbsp;In above code use Drupal\taxonomy\Entity\Term; is used to insert the class Term</p>
+
+<p dir="ltr"><b id="docs-internal-guid-e17cd1ae-aecd-0c5d-2f86-9d79c15fac8a">&nbsp;</b> Term::create has been used to create the term where Term is the class name.</p>
+
+<p dir="ltr"><b>&nbsp;</b> Here name and vid are machine names where name represents the name of the new term you want to create, and vid is the name of the taxonomy term whose term you want to create.</p>
+
+<p dir="ltr">b) This is the second way to create a term<b id="docs-internal-guid-e17cd1ae-aecd-0c5d-2f86-9d79c15fac8a">&nbsp;</b> <script src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/37bb1758d2bfc1e1fccdeacfc830c434.js"></script><link rel="stylesheet" href="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/gist-embed-3a7ef482c296bb1a3bcefcbf22eaa3b6.css"></p><div id="gist47115730" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-term_create" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-text ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-term_create-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-term_create-LC1" class="blob-code blob-code-inner js-file-line">$values=array(</td>
+      </tr>
+      <tr>
+        <td id="file-term_create-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-term_create-LC2" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-term_create-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-term_create-LC3" class="blob-code blob-code-inner js-file-line">'name'=&gt;'term 2',</td>
+      </tr>
+      <tr>
+        <td id="file-term_create-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-term_create-LC4" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-term_create-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-term_create-LC5" class="blob-code blob-code-inner js-file-line">'vid'=&gt;'new',</td>
+      </tr>
+      <tr>
+        <td id="file-term_create-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-term_create-LC6" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-term_create-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-term_create-LC7" class="blob-code blob-code-inner js-file-line">);</td>
+      </tr>
+      <tr>
+        <td id="file-term_create-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-term_create-LC8" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-term_create-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-term_create-LC9" class="blob-code blob-code-inner js-file-line">$term = entity_create('taxonomy_term', $values);</td>
+      </tr>
+      <tr>
+        <td id="file-term_create-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-term_create-LC10" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-term_create-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-term_create-LC11" class="blob-code blob-code-inner js-file-line">$term-&gt;save();</td>
+      </tr>
+      <tr>
+        <td id="file-term_create-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-term_create-LC12" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/ahana92/37bb1758d2bfc1e1fccdeacfc830c434/raw/d9ec1f0c662390fd4dd72a8e1033f0851150a248/term_create" style="float:right">view raw</a>
+        <a href="https://gist.github.com/ahana92/37bb1758d2bfc1e1fccdeacfc830c434#file-term_create">term_create</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<p></p>
+
+<p>The entity create function takes two parameter where the first parameter tells you which entity to create and the second parameter should be an array of the term details.</p>
+
+<p>&nbsp;It should contain term name and the taxonomy name whose term you want to create. You can add the term description but it’s optional.</p>
+
+<p>&nbsp;</p>
+
+<h3 dir="ltr"><b id="docs-internal-guid-e17cd1ae-aecd-0c5d-2f86-9d79c15fac8a">D. How to create a custom menu</b></h3>
+
+<p>&nbsp;</p>
+
+<p dir="ltr">Create a form inside the Form folder as given in the code below.In Drupal 8 modules we write a form inside a Form folder.<b> </b></p>
+<script src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/4dc926a57f31914e75b943b1df2f7ebf.js"></script><link rel="stylesheet" href="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/gist-embed-3a7ef482c296bb1a3bcefcbf22eaa3b6.css"><div id="gist47115804" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-form" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-text ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-form-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-form-LC1" class="blob-code blob-code-inner js-file-line">&lt;?php</td>
+      </tr>
+      <tr>
+        <td id="file-form-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-form-LC2" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-form-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-form-LC3" class="blob-code blob-code-inner js-file-line">/**</td>
+      </tr>
+      <tr>
+        <td id="file-form-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-form-LC4" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-form-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-form-LC5" class="blob-code blob-code-inner js-file-line">* @file</td>
+      </tr>
+      <tr>
+        <td id="file-form-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-form-LC6" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-form-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-form-LC7" class="blob-code blob-code-inner js-file-line">* Contains \Drupal\techx\Form\Techxform</td>
+      </tr>
+      <tr>
+        <td id="file-form-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-form-LC8" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-form-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-form-LC9" class="blob-code blob-code-inner js-file-line">*/</td>
+      </tr>
+      <tr>
+        <td id="file-form-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-form-LC10" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-form-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-form-LC11" class="blob-code blob-code-inner js-file-line">namespace Drupal\techx\Form;</td>
+      </tr>
+      <tr>
+        <td id="file-form-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-form-LC12" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-form-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-form-LC13" class="blob-code blob-code-inner js-file-line"> </td>
+      </tr>
+      <tr>
+        <td id="file-form-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-form-LC14" class="blob-code blob-code-inner js-file-line">use Drupal\Core\Form\FormBase;</td>
+      </tr>
+      <tr>
+        <td id="file-form-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-form-LC15" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-form-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-form-LC16" class="blob-code blob-code-inner js-file-line">use Drupal\Core\Form\FormStateInterface;</td>
+      </tr>
+      <tr>
+        <td id="file-form-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-form-LC17" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-form-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-form-LC18" class="blob-code blob-code-inner js-file-line"> </td>
+      </tr>
+      <tr>
+        <td id="file-form-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-form-LC19" class="blob-code blob-code-inner js-file-line">class Techxform extends FormBase</td>
+      </tr>
+      <tr>
+        <td id="file-form-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-form-LC20" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-form-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-form-LC21" class="blob-code blob-code-inner js-file-line">{</td>
+      </tr>
+      <tr>
+        <td id="file-form-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-form-LC22" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-form-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-form-LC23" class="blob-code blob-code-inner js-file-line">  /**</td>
+      </tr>
+      <tr>
+        <td id="file-form-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-form-LC24" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-form-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-form-LC25" class="blob-code blob-code-inner js-file-line">   * {@inheritdoc}</td>
+      </tr>
+      <tr>
+        <td id="file-form-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-form-LC26" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-form-L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="file-form-LC27" class="blob-code blob-code-inner js-file-line">   */</td>
+      </tr>
+      <tr>
+        <td id="file-form-L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="file-form-LC28" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-form-L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td id="file-form-LC29" class="blob-code blob-code-inner js-file-line">  public function getFormId()</td>
+      </tr>
+      <tr>
+        <td id="file-form-L30" class="blob-num js-line-number" data-line-number="30"></td>
+        <td id="file-form-LC30" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-form-L31" class="blob-num js-line-number" data-line-number="31"></td>
+        <td id="file-form-LC31" class="blob-code blob-code-inner js-file-line">  {</td>
+      </tr>
+      <tr>
+        <td id="file-form-L32" class="blob-num js-line-number" data-line-number="32"></td>
+        <td id="file-form-LC32" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-form-L33" class="blob-num js-line-number" data-line-number="33"></td>
+        <td id="file-form-LC33" class="blob-code blob-code-inner js-file-line">      return 'menu_create';</td>
+      </tr>
+      <tr>
+        <td id="file-form-L34" class="blob-num js-line-number" data-line-number="34"></td>
+        <td id="file-form-LC34" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-form-L35" class="blob-num js-line-number" data-line-number="35"></td>
+        <td id="file-form-LC35" class="blob-code blob-code-inner js-file-line">  }</td>
+      </tr>
+      <tr>
+        <td id="file-form-L36" class="blob-num js-line-number" data-line-number="36"></td>
+        <td id="file-form-LC36" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-form-L37" class="blob-num js-line-number" data-line-number="37"></td>
+        <td id="file-form-LC37" class="blob-code blob-code-inner js-file-line"> public function buildForm(array $form, FormStateInterface $form_state)</td>
+      </tr>
+      <tr>
+        <td id="file-form-L38" class="blob-num js-line-number" data-line-number="38"></td>
+        <td id="file-form-LC38" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-form-L39" class="blob-num js-line-number" data-line-number="39"></td>
+        <td id="file-form-LC39" class="blob-code blob-code-inner js-file-line">  {</td>
+      </tr>
+      <tr>
+        <td id="file-form-L40" class="blob-num js-line-number" data-line-number="40"></td>
+        <td id="file-form-LC40" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-form-L41" class="blob-num js-line-number" data-line-number="41"></td>
+        <td id="file-form-LC41" class="blob-code blob-code-inner js-file-line">      $form['email'] = array(</td>
+      </tr>
+      <tr>
+        <td id="file-form-L42" class="blob-num js-line-number" data-line-number="42"></td>
+        <td id="file-form-LC42" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-form-L43" class="blob-num js-line-number" data-line-number="43"></td>
+        <td id="file-form-LC43" class="blob-code blob-code-inner js-file-line">          '#type' =&gt; 'email',</td>
+      </tr>
+      <tr>
+        <td id="file-form-L44" class="blob-num js-line-number" data-line-number="44"></td>
+        <td id="file-form-LC44" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-form-L45" class="blob-num js-line-number" data-line-number="45"></td>
+        <td id="file-form-LC45" class="blob-code blob-code-inner js-file-line">          '#title' =&gt; t('Email ID:'),</td>
+      </tr>
+      <tr>
+        <td id="file-form-L46" class="blob-num js-line-number" data-line-number="46"></td>
+        <td id="file-form-LC46" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-form-L47" class="blob-num js-line-number" data-line-number="47"></td>
+        <td id="file-form-LC47" class="blob-code blob-code-inner js-file-line">      );</td>
+      </tr>
+      <tr>
+        <td id="file-form-L48" class="blob-num js-line-number" data-line-number="48"></td>
+        <td id="file-form-LC48" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-form-L49" class="blob-num js-line-number" data-line-number="49"></td>
+        <td id="file-form-LC49" class="blob-code blob-code-inner js-file-line">      $form['submit'] = array(</td>
+      </tr>
+      <tr>
+        <td id="file-form-L50" class="blob-num js-line-number" data-line-number="50"></td>
+        <td id="file-form-LC50" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-form-L51" class="blob-num js-line-number" data-line-number="51"></td>
+        <td id="file-form-LC51" class="blob-code blob-code-inner js-file-line">          '#type' =&gt; 'submit',</td>
+      </tr>
+      <tr>
+        <td id="file-form-L52" class="blob-num js-line-number" data-line-number="52"></td>
+        <td id="file-form-LC52" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-form-L53" class="blob-num js-line-number" data-line-number="53"></td>
+        <td id="file-form-LC53" class="blob-code blob-code-inner js-file-line">          '#value' =&gt; $this-&gt;t('Save'),</td>
+      </tr>
+      <tr>
+        <td id="file-form-L54" class="blob-num js-line-number" data-line-number="54"></td>
+        <td id="file-form-LC54" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-form-L55" class="blob-num js-line-number" data-line-number="55"></td>
+        <td id="file-form-LC55" class="blob-code blob-code-inner js-file-line">      );</td>
+      </tr>
+      <tr>
+        <td id="file-form-L56" class="blob-num js-line-number" data-line-number="56"></td>
+        <td id="file-form-LC56" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-form-L57" class="blob-num js-line-number" data-line-number="57"></td>
+        <td id="file-form-LC57" class="blob-code blob-code-inner js-file-line"> </td>
+      </tr>
+      <tr>
+        <td id="file-form-L58" class="blob-num js-line-number" data-line-number="58"></td>
+        <td id="file-form-LC58" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-form-L59" class="blob-num js-line-number" data-line-number="59"></td>
+        <td id="file-form-LC59" class="blob-code blob-code-inner js-file-line">      return $form;</td>
+      </tr>
+      <tr>
+        <td id="file-form-L60" class="blob-num js-line-number" data-line-number="60"></td>
+        <td id="file-form-LC60" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-form-L61" class="blob-num js-line-number" data-line-number="61"></td>
+        <td id="file-form-LC61" class="blob-code blob-code-inner js-file-line">  }</td>
+      </tr>
+      <tr>
+        <td id="file-form-L62" class="blob-num js-line-number" data-line-number="62"></td>
+        <td id="file-form-LC62" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-form-L63" class="blob-num js-line-number" data-line-number="63"></td>
+        <td id="file-form-LC63" class="blob-code blob-code-inner js-file-line">  public function submitForm(array &amp;$form, FormStateInterface $form_state)</td>
+      </tr>
+      <tr>
+        <td id="file-form-L64" class="blob-num js-line-number" data-line-number="64"></td>
+        <td id="file-form-LC64" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-form-L65" class="blob-num js-line-number" data-line-number="65"></td>
+        <td id="file-form-LC65" class="blob-code blob-code-inner js-file-line">  {</td>
+      </tr>
+      <tr>
+        <td id="file-form-L66" class="blob-num js-line-number" data-line-number="66"></td>
+        <td id="file-form-LC66" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-form-L67" class="blob-num js-line-number" data-line-number="67"></td>
+        <td id="file-form-LC67" class="blob-code blob-code-inner js-file-line"> }</td>
+      </tr>
+      <tr>
+        <td id="file-form-L68" class="blob-num js-line-number" data-line-number="68"></td>
+        <td id="file-form-LC68" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-form-L69" class="blob-num js-line-number" data-line-number="69"></td>
+        <td id="file-form-LC69" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+      <tr>
+        <td id="file-form-L70" class="blob-num js-line-number" data-line-number="70"></td>
+        <td id="file-form-LC70" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/ahana92/4dc926a57f31914e75b943b1df2f7ebf/raw/33b63a3d3270b396a72ac1502059c4c1621ae7c9/form" style="float:right">view raw</a>
+        <a href="https://gist.github.com/ahana92/4dc926a57f31914e75b943b1df2f7ebf#file-form">form</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<p dir="ltr">Create a routing file which is module_name.routing.yml &nbsp;Here menu.route is the routing name and _form is the path of the form.<b id="docs-internal-guid-e17cd1ae-aecd-0c5d-2f86-9d79c15fac8a">&nbsp;</b></p>
+<script src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/6bb345118138fec5004b4c8c7a3d4d29.js"></script><link rel="stylesheet" href="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/gist-embed-3a7ef482c296bb1a3bcefcbf22eaa3b6.css"><div id="gist47115853" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-route" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-text ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-route-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-route-LC1" class="blob-code blob-code-inner js-file-line">menu.route:</td>
+      </tr>
+      <tr>
+        <td id="file-route-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-route-LC2" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-route-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-route-LC3" class="blob-code blob-code-inner js-file-line">path: '/techx/myform'</td>
+      </tr>
+      <tr>
+        <td id="file-route-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-route-LC4" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-route-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-route-LC5" class="blob-code blob-code-inner js-file-line">defaults:</td>
+      </tr>
+      <tr>
+        <td id="file-route-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-route-LC6" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-route-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-route-LC7" class="blob-code blob-code-inner js-file-line"> _title: 'Login form'</td>
+      </tr>
+      <tr>
+        <td id="file-route-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-route-LC8" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-route-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-route-LC9" class="blob-code blob-code-inner js-file-line"> _form: '\Drupal\techx\Form\Techxform'</td>
+      </tr>
+      <tr>
+        <td id="file-route-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-route-LC10" class="blob-code blob-code-inner js-file-line"> </td>
+      </tr>
+      <tr>
+        <td id="file-route-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-route-LC11" class="blob-code blob-code-inner js-file-line"> requirements:</td>
+      </tr>
+      <tr>
+        <td id="file-route-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-route-LC12" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-route-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-route-LC13" class="blob-code blob-code-inner js-file-line"> _permission: 'Menu permission'</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/ahana92/6bb345118138fec5004b4c8c7a3d4d29/raw/c885a1d9a43556a751e7057458b3aea5f4e816cf/route" style="float:right">view raw</a>
+        <a href="https://gist.github.com/ahana92/6bb345118138fec5004b4c8c7a3d4d29#file-route">route</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<p>In module_name.links.menu.yml file write the code for the menu as shown below:</p>
+
+<p><b id="docs-internal-guid-e17cd1ae-aecd-0c5d-2f86-9d79c15fac8a">&nbsp; </b>links.admin is the name of the menu.</p>
+
+<p dir="ltr">The title will appear as the menu name.</p>
+
+<p dir="ltr">The parent tells you the place where the menu will be created like system.admin will create the menu in the main navigation. If the parent is not mentioned then the menu will be created in the tools.</p>
+
+<p dir="ltr"><b id="docs-internal-guid-e17cd1ae-aecd-0c5d-2f86-9d79c15fac8a">&nbsp; </b>The route name is the name of the routing file of whose menu you want to create.</p>
+
+<p>The output is as follows.</p>
+<script src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/a662ca78e2da83857c0a2f9544764df4.js">
+<!--//--><![CDATA[// ><!--
+
+<!--//--><![CDATA[// ><!--
+
+<!--//--><![CDATA[// ><!--
+
+<!--//--><![CDATA[// ><!--
+
+<!--//--><![CDATA[// ><!--
+
+<!--//--><![CDATA[// ><!--
+
+<p dir="ltr"><b id="docs-internal-guid-e17cd1ae-aecd-0c5d-2f86-9d79c15fac8a">  The output is shown below:
+
+//--><!]]]]]]]]]]]]><![CDATA[><![CDATA[><![CDATA[><![CDATA[><![CDATA[>
+
+//--><!]]]]]]]]]]><![CDATA[><![CDATA[><![CDATA[><![CDATA[>
+
+//--><!]]]]]]]]><![CDATA[><![CDATA[><![CDATA[>
+
+//--><!]]]]]]><![CDATA[><![CDATA[>
+
+//--><!]]]]><![CDATA[>
+
+//--><!]]>
+</script><link rel="stylesheet" href="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/gist-embed-3a7ef482c296bb1a3bcefcbf22eaa3b6.css"><div id="gist47116069" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-links" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-text ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-links-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-links-LC1" class="blob-code blob-code-inner js-file-line">links.admin:</td>
+      </tr>
+      <tr>
+        <td id="file-links-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-links-LC2" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-links-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-links-LC3" class="blob-code blob-code-inner js-file-line">title: 'TechX'</td>
+      </tr>
+      <tr>
+        <td id="file-links-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-links-LC4" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-links-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-links-LC5" class="blob-code blob-code-inner js-file-line">description: 'Menu settings'</td>
+      </tr>
+      <tr>
+        <td id="file-links-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-links-LC6" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-links-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-links-LC7" class="blob-code blob-code-inner js-file-line">parent: system.admin</td>
+      </tr>
+      <tr>
+        <td id="file-links-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-links-LC8" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-links-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-links-LC9" class="blob-code blob-code-inner js-file-line">route_name: menu.route</td>
+      </tr>
+      <tr>
+        <td id="file-links-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-links-LC10" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/ahana92/a662ca78e2da83857c0a2f9544764df4/raw/76c9aff773824e9098928a66dbc842b7d17795a0/links" style="float:right">view raw</a>
+        <a href="https://gist.github.com/ahana92/a662ca78e2da83857c0a2f9544764df4#file-links">links</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<img alt="menu" data-entity-type="file" data-entity-uuid="9e368896-cfb3-4832-a412-62cea37ac0b7" title="Menu is created in the main navigation " class="align-center b-lazy" data-src="https://valuebound.com/sites/default/files/inline-images/menu1.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><p dir="ltr"><b id="docs-internal-guid-e17cd1ae-aecd-f59b-7084-123be66c36d5">&nbsp;</b> Here TechX is the menu created.</p>
+
+<p>&nbsp;</p>
+
+<h3 dir="ltr"><b id="docs-internal-guid-e17cd1ae-aecd-f59b-7084-123be66c36d5">E. How to create a custom permission</b></h3>
+
+<p>&nbsp;</p>
+
+<p dir="ltr"><b id="docs-internal-guid-e17cd1ae-aecd-f59b-7084-123be66c36d5">&nbsp;</b>Taking the example of the module above, create a file and name it as module_name.permissions.yml</p>
+
+<p dir="ltr"><b id="docs-internal-guid-e17cd1ae-aecd-f59b-7084-123be66c36d5">&nbsp; </b>Write the following code into it:</p>
+<script src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/1345c27d55c839776b2df98ebed7fd30.js"></script><link rel="stylesheet" href="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/gist-embed-3a7ef482c296bb1a3bcefcbf22eaa3b6.css"><div id="gist47116033" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-menu" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-text ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-menu-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-menu-LC1" class="blob-code blob-code-inner js-file-line">'Menu permission':</td>
+      </tr>
+      <tr>
+        <td id="file-menu-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-menu-LC2" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-menu-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-menu-LC3" class="blob-code blob-code-inner js-file-line">title: Menu permission</td>
+      </tr>
+      <tr>
+        <td id="file-menu-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-menu-LC4" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-menu-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-menu-LC5" class="blob-code blob-code-inner js-file-line">description: This permission sets which roles can see the menu</td>
+      </tr>
+      <tr>
+        <td id="file-menu-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-menu-LC6" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/ahana92/1345c27d55c839776b2df98ebed7fd30/raw/91a6f172cef351c43039f5ad67f421dd52cf8652/menu" style="float:right">view raw</a>
+        <a href="https://gist.github.com/ahana92/1345c27d55c839776b2df98ebed7fd30#file-menu">menu</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<p dir="ltr"><b id="docs-internal-guid-e17cd1ae-aecd-f59b-7084-123be66c36d5">&nbsp;</b>Here 'Menu permission': is the name of the permission that we mention in the routing file ,</p>
+
+<p dir="ltr"><b>&nbsp;</b>The&nbsp;title gives you the name displayed in the drupal's permissions page. In&nbsp;routing file under _permission we mention this permission name. So whichever role has this permission can view the form.</p>
+
+<p>This is how drupal permissions are given to a particular page when you don’t want to show the page for every user or role.</p>
+<script src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/6bb345118138fec5004b4c8c7a3d4d29.js"></script><link rel="stylesheet" href="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/gist-embed-3a7ef482c296bb1a3bcefcbf22eaa3b6.css"><div id="gist47115853" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-route" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-text ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-route-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-route-LC1" class="blob-code blob-code-inner js-file-line">menu.route:</td>
+      </tr>
+      <tr>
+        <td id="file-route-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-route-LC2" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-route-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-route-LC3" class="blob-code blob-code-inner js-file-line">path: '/techx/myform'</td>
+      </tr>
+      <tr>
+        <td id="file-route-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-route-LC4" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-route-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-route-LC5" class="blob-code blob-code-inner js-file-line">defaults:</td>
+      </tr>
+      <tr>
+        <td id="file-route-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-route-LC6" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-route-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-route-LC7" class="blob-code blob-code-inner js-file-line"> _title: 'Login form'</td>
+      </tr>
+      <tr>
+        <td id="file-route-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-route-LC8" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-route-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-route-LC9" class="blob-code blob-code-inner js-file-line"> _form: '\Drupal\techx\Form\Techxform'</td>
+      </tr>
+      <tr>
+        <td id="file-route-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-route-LC10" class="blob-code blob-code-inner js-file-line"> </td>
+      </tr>
+      <tr>
+        <td id="file-route-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-route-LC11" class="blob-code blob-code-inner js-file-line"> requirements:</td>
+      </tr>
+      <tr>
+        <td id="file-route-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-route-LC12" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-route-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-route-LC13" class="blob-code blob-code-inner js-file-line"> _permission: 'Menu permission'</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/ahana92/6bb345118138fec5004b4c8c7a3d4d29/raw/c885a1d9a43556a751e7057458b3aea5f4e816cf/route" style="float:right">view raw</a>
+        <a href="https://gist.github.com/ahana92/6bb345118138fec5004b4c8c7a3d4d29#file-route">route</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<p>So here we have learnt how to create entities in drupal 8 programmatically. In drupal 8 you can create node, user, taxonomy without code, but sometimes due to various project requirements and we need to create these programmatically.</p>
+</div>
+      
+      
+      <div class="field field--name-field-tags field--type-entity-reference field--label-hidden field__items">
+              <div class="field__item"><a href="https://www.valuebound.com/tag/drupal-api" property="schema:about" hreflang="en">Drupal API</a></div>
+              <div class="field__item"><a href="https://www.valuebound.com/tag/drupal-entity" property="schema:about" hreflang="en">Drupal Entity</a></div>
+          </div>
+  
+      <div class="article--bottom my-3">
+        
+<div class="nav-pager my-3">
+      <div class="nav previous">
+      <a href="https://www.valuebound.com/resources/blog/how-to-add-custom-js-css-to-drupal-7-page-theme-for-a-better-user-experience">
+        <label>PREV</label>
+        <div class="previous pager-link">How to add Custom JS / CSS to Drupal 7 page in theme for a better user experience</div>
+      </a>
+    </div>
+    <div class="nav all">
+        <a href="https://www.valuebound.com/resources/blogs">
+      <span></span><span></span><span></span><span></span>
+    </a>
+      </div>
+      <div class="nav next">
+      <a href="https://www.valuebound.com/resources/blog/how-can-publishers-improve-context-of-ads">
+        <label>NEXT</label>
+        <div class="next pager-link">How Can Publishers Improve The Context of Ads</div>
+      </a>
+    </div>
+  </div>
+        <div class="article--bottom-author-info">
+          <div class="article--bottom-author-image">
+            <img src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/web-user_0.jpg" width="150" height="150">
+          </div>
+          <div class="article--bottom-author-bio">
+            <h3>Ahana Kundu</h3>
+            <div class="author-bio">Working as a Drupal developer in Valuebound for 7 months now. It's great to work in Drupal!</div>
+            <a href="https://www.valuebound.com/users/ahana" class="cta">More about Ahana Kundu</a>
+          </div>
+        </div>
+      </div>
+      <button class="show-comments">Leave a Comment</button>
+      <div id="disqus_thread"><iframe id="dsq-app5605" name="dsq-app5605" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/saved_resource(1).html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 1076px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+      <div class="pre-footer-solutions text-center">
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h3 class="serif italic">Building result driven and scalable Drupal solutions</h3>
+
+<p class="muted">Know about our solutions for Media &amp; Publishing industry</p>
+
+<p><a class="cta" href="https://www.valuebound.com/solution">View our Solutions</a></p>
+</div>
+      </div>
+    </div>
+    <div class="read-more-content hide-for-large"><a class="button">Continue Reading</a></div>
+    <aside class="article--sidebar" id="article--sidebar">
+      <div id="sticky--sidebar" class="hide-for-small blockFloat-processed blockFloat-0 floating-block-active" style="width: 280px; left: 930px; position: fixed; top: 0px;">
+        <div class="views-element-container"><div class="view view-related-articles view-id-related_articles view-display-id-block_1 js-view-dom-id-edb988e4f6ece836c8bfceb9d46b31dda339abddb0bec4b849d17a79ff15dc41">
+  
+    
+      <div class="view-header">
+      <h3 class="serif hero-title">You may also like</h3>
+    </div>
+      
+      <div class="view-content">
+          <div class="views-row"><div class="views-field views-field-field-thumbnail-image"><div class="field-content">  <a href="https://www.valuebound.com/resources/blog/flutter-fast-way-develop-ios-and-android-apps-single-codebase" hreflang="en"><img src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/flutter.png" width="400" height="200" alt="Flutter | Valuebound" typeof="foaf:Image">
+</a>
+</div></div></div>
+
+    </div>
+  
+        <div class="attachment attachment-after">
+      <div class="views-element-container"><div class="view view-related-articles view-id-related_articles view-display-id-attachment_1 js-view-dom-id-213d9bf277a01f5a2062dff4eb09199cb22006293bc03d5c189ce417ab02f787">
+  
+    
+      <div class="view-header">
+      
+    </div>
+      
+      <div class="view-content">
+            <div class="views-row">
+    <div class="views-field views-field-title"><span class="field-content"><a href="https://www.valuebound.com/resources/blog/flutter-fast-way-develop-ios-and-android-apps-single-codebase" hreflang="en">Flutter - Fast way to develop iOS and Android apps from a single codebase			</a></span></div>
+  </div>
+      <div class="views-row">
+    <div class="views-field views-field-title"><span class="field-content"><a href="https://www.valuebound.com/resources/blog/build-your-cicd-pipeline-aws-elasticbeanstack-codepipeline-and-cloudformation" hreflang="en">Build your CI/CD pipeline with AWS Elasticbeanstack, Codepipeline and Cloudformation</a></span></div>
+  </div>
+      <div class="case-study">
+      <h5>CASE STUDY</h5>
+      <div class="views-element-container"><div class="view view-injected-case-study view-id-injected_case_study view-display-id-block_1 js-view-dom-id-a8d21e5b4a2661130ef9d4ddfc69f72d3aaa1d5731e342d20c40347c6e63c0b7">
+  
+    
+      
+      <div class="view-content">
+          <div class="views-row"><div class="views-field views-field-title"><span class="field-content"><a href="https://www.valuebound.com/case-study/decoupled-drupal-development-helps-commonfloorcom-syndicate-content-easily" hreflang="en">Decoupled Drupal Development Helps CommonFloor.com Syndicate Content Easily</a></span></div></div>
+
+    </div>
+  
+          </div>
+</div>
+
+    </div>
+      <div class="views-row">
+    <div class="views-field views-field-title"><span class="field-content"><a href="https://www.valuebound.com/resources/blog/drupal-and-artificial-intelligence-personalization" hreflang="en">Drupal and Artificial Intelligence for Personalization</a></span></div>
+  </div>
+      <div class="views-row">
+    <div class="views-field views-field-title"><span class="field-content"><a href="https://www.valuebound.com/resources/blog/why-aligning-content-product-marketing-important-manufacturers" hreflang="en">Why Aligning Content To Product Marketing Is Important For Manufacturers</a></span></div>
+  </div>
+
+    </div>
+  
+          </div>
+</div>
+
+    </div>
+        </div>
+</div>
+
+        
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><div class="contact-block-breaker">
+<h4>Need our expertise with</h4>
+
+<h3 class="serif italic">Drupal Integration</h3>
+<a class="cta" href="https://www.valuebound.com/contact-us">Contact Us</a></div>
+</div>
+      
+      </div>
+    </aside>
+  </section>
+</article>
+
+  </div>
+
+  </div>
+
+    </div>
+          <section role="complementary" class="site--pre-footer">
+              </section>
+      </main>
+
+      <footer role="contentinfo" id="footer" class="site--footer">
+      <div class="site--footer-first">
+          <div class="region region-footer-first">
+    <div id="block-footerfirst" class="muted small block block-block-content block-block-content133ccaf3-87a2-43b2-9b7f-d72109d068a8">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><div class="footer-address">
+<div class="address-left my-1">
+<div class="my-1">747 Third Avenue<br>
+2nd Floor New York, NY 10017</div>
+<!-- <div>2845 California Street<br />
+San Francisco, CA 94115</div>
+</div> -->
+
+<div class="address-right my-1">
+<div class="my-1"><div floor=""> Sector 1, HSR Layout<br>
+Bangalore - 560102</div></div>
+
+<div>+1 (917) 891 2187<br><a href="mailto:hello@valuebound.com">hello@valuebound.com</a></div>
+</div>
+</div>
+</div>
+</div>
+      
+  </div>
+<div id="block-footerthirdtop" class="my-2 zero-margin-top block block-block-content block-block-content70e9f368-86a0-4572-a800-4d9d23e3804a">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><a class="button outlined" href="https://www.valuebound.com/contact-us">Contact</a></p>
+</div>
+      
+  </div>
+
+  </div>
+
+      </div>
+      <div class="site--footer-second">
+          <div class="region region-footer-second">
+    <div id="block-footersecond" class="footer-badges block block-block-content block-block-contentf22a7568-896f-46ff-b8a2-850487207836">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p class="support-logo"><span class="da-membership-badge footer-badge image--inline"><img alt="Drupal Association Supporting membership" data-entity-type="file" data-entity-uuid="dd3325ed-c9cc-4e62-8745-38ebb862de0d" class="b-lazy" data-src="/sites/default/files/inline-images/Drupal_Association_sup_partner_304_0.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></span></p>
+
+<p class="partner-logos"><span class="amazee-partner-badge footer-badge image--inline"><img alt="Amazee.io" data-entity-type="file" data-entity-uuid="27a8db95-2801-4098-9a1c-2f73207d96f8" class="b-lazy" data-src="/sites/default/files/inline-images/amazee_io_Drupal_hosting_0.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></span><span class="acquia-partner-badge footer-badge image--inline"><img alt="Acquia partnership badge" data-entity-type="file" data-entity-uuid="9b2f13e8-f2bc-48a3-b495-50927649c581" class="b-lazy" data-src="/sites/default/files/inline-images/acquia-partner-logo_0.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></span> <span class="pantheon-partner-badge footer-badge image--inline"><img alt="Pantheon.io" data-entity-type="file" data-entity-uuid="bc21582e-814e-4415-a133-254cfcace7ad" class="b-lazy" data-src="/sites/default/files/inline-images/pantheon_io_0.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></span></p>
+</div>
+      
+  </div>
+
+  </div>
+
+      </div>
+      <div class="site--footer-third">
+          <div class="region region-footer-third">
+    <div id="block-footerlinks" class="block block-block-content block-block-contentaaebd469-5c5e-44a4-a768-d5430ab0fb76">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><div class="footer-navigation-links">
+<nav><ul><li class="menu-link services"><!-- Services -->
+	<ul><li><a href="https://www.valuebound.com/case-studies">Case Studies</a></li>
+		<li><a href="https://www.valuebound.com/industry-solutions/media-publishing">Media &amp; Publishing </a></li>
+		<li><a href="https://www.valuebound.com/about">About</a></li>
+		<li><a href="https://www.valuebound.com/career">Career</a></li>
+		<li><a href="https://www.valuebound.com/resources/blog">Blog</a></li>
+		<li><a href="https://www.valuebound.com/resources/press-releases">Press Release</a></li>
+		<li><a href="https://www.valuebound.com/resources/what-is-drupal">What is Drupal</a></li>
+	</ul></li>
+</ul></nav><nav><ul><li class="menu-link products">Products
+	<ul><li><a href="http://www.drupalmigrator.com/" target="_blank" rel="noopener">Drupal Migrator</a></li>
+	</ul></li>
+</ul></nav><nav><ul><li class="menu-link cities">Cities
+	<ul><li><a href="https://www.valuebound.com/drupal-developers-los-angeles">Los Angeles</a></li>
+		<li><a href="https://www.valuebound.com/drupal-developers-seattle">Seattle</a></li>
+		<li><a href="https://www.valuebound.com/drupal-developers-houston">Houston</a></li>
+		<li><a href="https://www.valuebound.com/drupal-developers-atlanta">Atlanta</a></li>
+		<li><a href="https://www.valuebound.com/drupal-developers-chicago">Chicago</a></li>
+		<li><a href="https://www.valuebound.com/drupal-developers-new-york">New York</a></li>
+		<li><a href="https://www.valuebound.com/drupal-developers-washington-dc">Washington DC</a></li>
+		<li><a href="https://www.valuebound.com/drupal-developers-san-francisco">San Francisco</a></li>
+	</ul></li>
+</ul></nav></div>
+</div>
+      
+  </div>
+<div id="block-scriptsblock" class="block block-block-content block-block-contentc62b4fe7-e328-4bc2-8159-8f97179ecd91">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async="" defer="" src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/609065(1).js"></script>
+<!-- End of HubSpot Embed Code -->
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1181407-3');
+</script>
+
+
+<!-- Start Jumplead Code -->
+<script type="text/javascript">
+    window.Jumplead||function(b,d){function k(){return["<",l,' onload="var d=',c,";d."+m+"('head')[0].",n,"(d.",p,"('script')).",e,"='",q,"'\"></",l,">"].join("")}var c="document",f=b[c],l="body",p="createElement",m="getElementsByTagName",r=f[m]("head")[0],n="appendChild",a=f[p]("iframe"),e="src",g,q="//cdn.jumplead.com/tracking_code.js";b.jump=b.jump||function(){(b.jump.q=b.jump.q||[]).push(arguments)};d.events=b.jump;a.style.display="none";r[n](a);try{a.contentWindow[c].open()}catch(s){d.domain=f.domain,
+    g="javascript:var d="+c+".open();d.domain='"+f.domain+"';",a[e]=g+"void(0);"}try{var h=a.contentWindow[c];h.write(k());h.close();h.params=d}catch(t){a[e]=g+'d.write("'+k().replace(/"/g,'\"')+'");d.close();',a[e].contentDocument.params=d}}
+    (window,{account:"JL-1566796463-9796",version:4});
+</script>
+<!-- End Jumplead Code -->
+</div>
+      
+  </div>
+
+  </div>
+
+      </div>
+    </footer>
+  
+  
+      <div class="footer--bottom my-1">
+        <div class="region region-footer-bottom">
+    <div id="block-footerthirdbottom" class="muted small block block-block-content block-block-contentbf0dff04-07e6-4a19-a1e3-875c7052cb8e">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><div class="footer-third-bottom">
+<div class="footer-social-link">
+<a href="https://www.facebook.com/valuebound/" target="_blank" class="facebook" aria-label="facebook" rel="noopener"></a>
+<a href="https://twitter.com/valuebound" target="_blank" class="twitter" aria-label="twitter" rel="noopener"></a>
+<a href="https://in.linkedin.com/company/valuebound" target="_blank" class="linkedin" aria-label="linkedin" rel="noopener"></a>
+</div>
+
+<p>©2018 Valuebound. All Rights Reserved</p>
+<p><a href="https://www.valuebound.com/privacy">Privacy Policy</a>&nbsp;&nbsp;<a href="https://www.valuebound.com/terms">Terms of Use</a>&nbsp;&nbsp;<a href="https://www.valuebound.com/career">Career</a></p>
+</div></div>
+      
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+
+
+  </div><div class="off-canvas-wrapper"></div><div id="st-3" class=" st-sticky-share-buttons st-left st-toggleable st-has-labels st-show-total "><div class="st-total st-hidden">
+  <span class="st-label"></span>
+  <span class="st-shares">
+    Shares
+  </span>
+</div><div class="st-btn st-first" data-network="linkedin" style="display: inline-block;">
+  <img src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/linkedin.svg">
+  <span class="st-label">Share</span>
+</div><div class="st-btn" data-network="facebook" style="display: inline-block;">
+  <img src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/facebook.svg">
+  <span class="st-label">Share</span>
+</div><div class="st-btn st-last" data-network="twitter" style="display: inline-block;">
+  <img src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/twitter.svg">
+  <span class="st-label">Tweet</span>
+</div><div class="st-toggle">
+  <div class="st-left">
+    <img src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/arrow_left.svg">
+  </div>
+  <div class="st-right">
+    <img src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/arrow_right.svg">
+  </div>
+</div></div></div><iframe src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/portal.html" id="st_gdpr_iframe" title="GDPR Consent Management" style="width: 0px; height: 0px; position: absolute; left: -5000px;"></iframe>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/982","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","responsive_menu":{"position":"right","theme":"theme-dark","pagedim":"pagedim","breakpoint":"all and (min-width: 851px)","extension_keyboard":true,"superfish":{"active":true,"delay":300,"speed":100,"speedOut":100},"mediaQuery":"all and (min-width: 851px)"},"animate":{"animation_data":"[{\u0022aid\u0022:\u00221\u0022,\u0022parent\u0022:\u0022.path-drupal-campaign\u0022,\u0022identifier\u0022:\u0022[{\\\u0022section_identity\\\u0022:\\\u0022.migrate-drupal\\\u0022,\\\u0022section_animation\\\u0022:\\\u0022zoomIn\\\u0022,\\\u0022remove\\\u0022:\\\u0022Remove\\\u0022},{\\\u0022section_identity\\\u0022:\\\u0022.block-contact-block\\\u0022,\\\u0022section_animation\\\u0022:\\\u0022fadeInRight\\\u0022,\\\u0022remove\\\u0022:\\\u0022Remove\\\u0022},{\\\u0022section_identity\\\u0022:\\\u0022.drupal-section .et_pb_row_1\\\u0022,\\\u0022section_animation\\\u0022:\\\u0022fadeIn\\\u0022,\\\u0022remove\\\u0022:\\\u0022Remove\\\u0022},{\\\u0022section_identity\\\u0022:\\\u0022.drupal-section .tabs-wrapper\\\u0022,\\\u0022section_animation\\\u0022:\\\u0022zoomIn\\\u0022,\\\u0022remove\\\u0022:\\\u0022Remove\\\u0022},{\\\u0022section_identity\\\u0022:\\\u0022.best-drupal\\\u0022,\\\u0022section_animation\\\u0022:\\\u0022fadeInDown\\\u0022,\\\u0022remove\\\u0022:\\\u0022Remove\\\u0022},{\\\u0022section_identity\\\u0022:\\\u0022.drupal-campaign-details .et_pb_promo\\\u0022,\\\u0022section_animation\\\u0022:\\\u0022fadeIn\\\u0022,\\\u0022remove\\\u0022:\\\u0022Remove\\\u0022},{\\\u0022section_identity\\\u0022:\\\u0022.ceo-wrap\\\u0022,\\\u0022section_animation\\\u0022:\\\u0022zoomIn\\\u0022,\\\u0022remove\\\u0022:\\\u0022Remove\\\u0022},{\\\u0022section_identity\\\u0022:\\\u0022.easy-hassle\\\u0022,\\\u0022section_animation\\\u0022:\\\u0022fadeIn\\\u0022,\\\u0022remove\\\u0022:\\\u0022Remove\\\u0022}]\u0022}]"},"floatingBlock":{"blocks":{"#sticky--sidebar":{"container":"#article--sidebar"}}},"lazy":{"errorClass":"b-error","loadInvisible":false,"offset":100,"saveViewportOffsetDelay":50,"selector":".b-lazy","skipClass":"no-b-lazy","src":"data-src","successClass":"b-loaded","validateDelay":"25","placeholderSrc":"data:image\/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="},"user":{"uid":0,"permissionsHash":"926ce30361ce6ce54cce8bf88a0803f7dc67e07a998c7dd0dd67de7280ea82b3"}}</script>
+<script src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/js_pJa6srR3pTlze-rICrqcMP-qBl36TGa9-ye37PP-eHk.js"></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"2d4669245f","applicationID":"176888627","transactionName":"MwYBZURWWxBVBRFQWwpMIlJCXloNGxYEXlE7AAJSXlI=","queueTime":0,"applicationTime":24,"atts":"H0ECEwxMSB4=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+
+<div class="mm-page__blocker mm-slideout"></div><iframe owner="archetype" style="display: none; visibility: hidden;" src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/saved_resource(2).html"></iframe><iframe style="display: none;" src="./How to create a Drupal Entity programmatically in Drupal 8 _ Valuebound_files/saved_resource(3).html"></iframe></body></html>

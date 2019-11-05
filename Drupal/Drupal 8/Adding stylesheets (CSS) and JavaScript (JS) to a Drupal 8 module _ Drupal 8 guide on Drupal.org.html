@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<!-- saved from url=(0115)https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr" xmlns:fb="http://ogp.me/ns/fb#" xmlns:og="http://ogp.me/ns#" xmlns:article="http://ogp.me/ns/article#" xmlns:book="http://ogp.me/ns/book#" xmlns:profile="http://ogp.me/ns/profile#" xmlns:video="http://ogp.me/ns/video#" xmlns:product="http://ogp.me/ns/product#" class="js"><head profile="http://www.w3.org/1999/xhtml/vocab"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width">
+  <meta name="MobileOptimized" content="width">
+  <!--[if IE]><![endif]-->
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+<link rel="dns-prefetch" href="https://www.google-analytics.com/">
+<link rel="preconnect" href="https://www.google-analytics.com/">
+<link rel="dns-prefetch" href="https://stats.g.doubleclick.net/">
+<link rel="preconnect" href="https://stats.g.doubleclick.net/">
+<script type="text/javascript" src="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/e671e25255"></script><script src="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/nr-1130.min.js"></script><script type="text/javascript" async="" src="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/insight.min.js"></script><script src="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/inferredEvents.js" async=""></script><script src="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/576466256018464" async=""></script><script async="" src="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/fbevents.js"></script><script async="" src="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/uwt.js"></script><script type="text/javascript" async="" src="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/54419274f6c96ed073000003.js"></script><script async="" src="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/init.js"></script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"XAcEV19XGwcCUldTDwg="};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(18),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,s){try{p?p-=1:o(s||new UncaughtException(t,n,e),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t,n){var e=n?null:c.now();i("err",[t,e])}var i=t("handle"),a=t(19),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),d=!0)}s.on("fn-start",function(t,n,e){d&&(p+=1)}),s.on("fn-err",function(t,n,e){d&&!e[l]&&(f(e,l,function(){return!0}),this.thrown=!0,o(e))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var x=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof x&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof x&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(21)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(21)(r);n.exports=r;var i=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;i&&i.pushState&&i.replaceState&&(a=i),o.inPlace(a,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(21)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(21)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(b?b.then(a):w?w(a):(E=-E,R.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(21)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var x=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!w&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],10:[function(t,n,e){function r(){var t=window.NREUM,n=t.info.accountID||null,e=t.info.agentID||null,r=t.info.trustKey||null,i="btoa"in window&&"function"==typeof window.btoa;if(!n||!e||!i)return null;var a={v:[0,1],d:{ty:"Browser",ac:n,ap:e,id:o.generateCatId(),tr:o.generateCatId(),ti:Date.now()}};return r&&n!==r&&(a.d.tk=r),btoa(JSON.stringify(a))}var o=t(16);n.exports={generateTraceHeader:r}},{}],11:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<p;r++)t.removeEventListener(l[r],this.listener,!1);n.aborted||(e.duration=s.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==n.status&&(n.status=0):a(this,t),e.cbTime=this.cbTime,d.emit("xhr-done",[t],t),c("xhr",[n,e,this.startTime]))}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return w(r)}function i(t,n){var e=f(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}function a(t,n){t.params.status=n.status;var e=o(n,t.lastSize);if(e&&(t.metrics.rxSize=e),t.sameOrigin){var r=n.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var s=t("loader");if(s.xhrWrappable){var c=t("handle"),f=t(12),u=t(10).generateTraceHeader,d=t("ee"),l=["load","error","abort","timeout"],p=l.length,h=t("id"),m=t(15),w=t(14),v=window.XMLHttpRequest;s.features.xhr=!0,t(9),d.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,n.loadCaptureCalled=!1,t.addEventListener("load",function(e){a(n,t)},!1),m&&(m>34||m<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),d.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),d.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var e=!1;if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(e=!!NREUM.init.distributed_tracing.enabled),e&&this.sameOrigin){var r=u();r&&n.setRequestHeader("newrelic",r)}}),d.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=w(r);i&&(e.txSize=i)}this.startTime=s.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{d.emit("internal-error",[e])}catch(r){}}};for(var a=0;a<p;a++)n.addEventListener(l[a],this.listener,!1)}),d.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),d.on("xhr-load-added",function(t,n){var e=""+h(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),d.on("xhr-load-removed",function(t,n){var e=""+h(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),d.on("addEventListener-end",function(t,n){n instanceof v&&"load"===t[0]&&d.emit("xhr-load-added",[t[1],t[2]],n)}),d.on("removeEventListener-end",function(t,n){n instanceof v&&"load"===t[0]&&d.emit("xhr-load-removed",[t[1],t[2]],n)}),d.on("fn-start",function(t,n,e){n instanceof v&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=s.now()))}),d.on("fn-end",function(t,n){this.xhrCbStart&&d.emit("xhr-cb-time",[s.now()-this.xhrCbStart,this.onload,n],n)})}},{}],12:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],13:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(18),s=t(19),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],e),t}finally{c.emit("fn-end",[f.now()],e)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t,n){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now(),!1,n])}},{}],14:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],15:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],16:[function(t,n,e){function r(){function t(){return n?15&n[e++]:16*Math.random()|0}var n=null,e=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(n=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<i.length;s++)o=i[s],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){function t(){return n?15&n[e++]:16*Math.random()|0}var n=null,e=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&Uint8Array&&(n=r.getRandomValues(new Uint8Array(31)));for(var o=[],i=0;i<16;i++)o.push(t().toString(16));return o.join("")}n.exports={generateUuid:r,generateCatId:o}},{}],17:[function(t,n,e){function r(t,n){if(!o)return!1;if(t!==o)return!1;if(!n)return!0;if(!i)return!1;for(var e=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==e[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}n.exports={agent:o,version:i,match:r}},{}],18:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],19:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],20:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],21:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(19),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=m(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[g[e]];return d&&d.push([x,e,r,a]),a}}function p(t,n){y[t]=m(t).concat(n)}function h(t,n){var e=y[t];if(e)for(var r=0;r<e.length;r++)e[r]===n&&e.splice(r,1)}function m(t){return y[t]||[]}function w(t){return d[t]=d[t]||o(e)}function v(t,n){f(t,function(t,e){n=n||"feature",g[e]=n,n in u||(u[n]=[])})}var y={},g={},x={on:p,addEventListener:p,removeEventListener:h,emit:e,get:w,listeners:m,context:n,buffer:v,abort:a,aborted:!1};return x}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(18),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!E++){var t=b.info=NREUM.info,n=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(g,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=p.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===p.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return R.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(18),u=t("ee"),d=t(17),l=window,p=l.document,h="addEventListener",m="attachEvent",w=l.XMLHttpRequest,v=w&&w.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:w,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var y=""+location,g={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1130.min.js"},x=w&&v&&v[h]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:y,features:{},xhrWrappable:x,userAgent:d};t(13),p[h]?(p[h]("DOMContentLoaded",i,!1),l[h]("load",r,!1)):(p[m]("onreadystatechange",o),l[m]("onload",r)),c("mark",["firstbyte",s],null,"api");var E=0,R=t(20)},{}]},{},["loader",2,11,4,3]);</script>
+<meta name="description" content="This documentation is for modules. For the themes, see Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 theme.">
+<meta name="generator" content="Drupal 7 (https://www.drupal.org)">
+<link rel="canonical" href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module">
+<link rel="shortlink" href="https://www.drupal.org/node/2274843">
+<meta property="og:site_name" content="Drupal.org">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module">
+<meta property="og:title" content="Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module">
+<meta property="og:description" content="This documentation is for modules. For themes, see Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 theme. In Drupal 8, stylesheets (CSS) and JavaScript (JS) are loaded through the same system for modules (code) and themes, for everything: asset libraries. Asset libraries can contain one or more CSS assets, one or more JS assets and one or more JS settings.">
+<meta property="og:updated_time" content="2019-07-23T11:02:06+00:00">
+<meta property="article:published_time" content="2014-05-27T10:44:03+00:00">
+<meta property="article:modified_time" content="2019-07-23T11:02:06+00:00">
+  <title>Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module | Drupal 8 guide on Drupal.org</title>
+  <link type="text/css" rel="stylesheet" href="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/css__BJ6Ou6QsBRtnFTmxaakamOIS8n4QswDP2XnnZ1sxtaM__NBuvkP6eInGIkb1aJvUHx5PX79XApuxBDkk_77W5tYk__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/css__pb75Es3Qz_6dc5qRXFfBteLW3eKMf92-wDXx91C4Sts__x4ZhO-JDmwub5A-5im8235wCAhkc5qH6jmjVPMhMrYc__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="screen">
+<link type="text/css" rel="stylesheet" href="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/css__rxlkNswgFNTxNaSPriAIXx4ZlwBOB3RlBPezSG6R9_M__VHgdJ4r9tHl_YrvPjndJ9qh877SF9D0BV0kuzFGik7Y__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/css___gHaOfUPGMp9CmQToCayUOFNYCWkA0HSxl7r-Dtt9XI__lDrzWssmRvNcI9hewNcBnrsFz4QXcfZIDU6MaYNjq9k__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/css__VB5ewlXzRLK9G8c-SdackBhY4Kx6j7ZyCsGRWIjDFGo__qe-bB54HYzCh2FGCe62WdrVkshNF02DQLj9u3C7yZR4__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/css__rQ1alF2wtRJheC4MwbTGQHhDW1u3JWtM73MeXej8ZCI__p-VwQIrVeejdBOjfXDxhLZnsUhKi1r9hCeECIryJwZU__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="screen">
+<link type="text/css" rel="stylesheet" href="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/css__P6IUplZtg49jjx07vmYslkCOrJk37PuZ8DFTyLCIKxA__8WLLw30TFGwdXXi2OebbkVNSWKTWS5dEWLp7rfHtS28__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/css__8f1mYXI7glGDMs7Bx9TxdVZ8Q_aBetDl5aUglGDF004__-2CRiB16jOVlO1XcWAWhaWWluW3Lxo4Jhywz0oIiHkk__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/css__IND9Ea9cZJoyPbSkNshnqYv4c5MRWiCE06f8uY8qHPM__P6MQmonPAG9EwAkymq3qjeHUqjIQEfCps7JxljLqlUY__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/css__TfWyVKLagmeJkncT3LJJUcy3ESr1XKJqq3qz5tUtuGU__bQx6iO0FF7UXuwKRSbHWGshBIcB7PlbuJGcaPCIKHf4__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/css__v9yeCzgz7qs8Fbr-QWlDypB0PqI80y3jvDguhVToBCA__peMydGxnw5J-npl9TiHeBlNB52l8AUr_JLg6cBT-Ou4__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/css__vxxEWlql3uJOE6SxuswbSiGtjIUhlDGIEtXZIFy_4eA__nNAOKTKr_LLqGP0bgthGYh0vhAdtTU46IXmZBInTCAg__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/css__eFKSCujfWyJYO8J-qSi6T_n29lROS8isvrxzANeHaAY__D_EUHDAfEQdxcLiSDY7hREUWkG1Ge56_h2z3Er8V188__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/css__mXUsFOkFX1Vp3cPaBtPrMNLiyy4rOzIAVz7DppnovsY__4a32sD5wTTMzrJf7XqA8yck7wVaHdAmb-RLMBilVXyY__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/css__WF0PRotZAhCcl0aJjY5W2LYj8UwiYuB2dZEFluOh3Tc__FviX13FUB-Ppa2XB29BUIJQZ1Wg-F5XiDE7XD5y7mjQ__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/css__Fx0_w1L9q3nwzXnALG7UfjLF34FGYgJTz636-GWbM6k__0jWLTEHP3h5U5RcXuZcFhf0DdvRdzP3_wzCVNT015Ls__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/css__QPp1snPjYt_xYr0c_V0IORcEElkIUBBBrvOB4ZE0Gnw__tsHhQs-0ZQX3RWg3akBhY0psysZPLmDyllt5AIsfUdM__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all">
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var preconnect_support = false; try {if (document.createElement("link").relList.supports("preconnect")) {preconnect_support = true;}} catch (e) {} if (!preconnect_support) { var prefetch = document.createElement("link"); prefetch.href = "https://stats.g.doubleclick.net/robots.txt"; prefetch.rel="prefetch"; document.getElementsByTagName("head")[0].appendChild(prefetch);}
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,r){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date()})(window,document,"script","ga");ga("create", "UA-2360451-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("set", "dimension3", "anonymous user");ga("set", "dimension4", "Documentation page");ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" async="" src="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/tagjs"></script><a tabindex="-1" aria-hidden="true" href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module?_pxhc=1569230222034" rel="nofollow" target="_blank" style="width: 0px; height: 0px; font-size: 0px; line-height: 0;"></a></head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-2274843 node-type-documentation drupalorg-site-main panels-layout new-style og-context og-context-node og-context-node-2804139 project-issue-focused-input-processed">
+  <div id="skip-link">
+    <a class="element-invisible element-focusable" href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#content">Skip to main content</a>
+    <a class="element-invisible element-focusable skip-link-search" href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#search-block-form">Skip to search</a>
+  </div>
+        <div id="nav-header">
+    <div class="menu-nav">
+      <a class="nav-btn" id="nav-open-btn" href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#block-system-main-menu"><img src="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/icon-w-menu.svg" alt="Main menu"></a>
+    </div>
+    <nav id="navigation-inner" class="container-12" role="navigation">
+        <div class="region region-navigation">
+    <div id="block-system-main-menu" class="block block-system block-menu">
+<div class="block-inner">
+    
+  <div class="content">
+    <div class="menu-block"><ul class="menu button"><li class="first leaf"><a href="https://www.drupal.org/home" title="Drupal.org home page">Drupal.org home</a></li>
+<li class="expanded"><a href="https://www.drupal.org/about" title="">Why Drupal?</a><div class="menu-block"><ul class="menu button"><li class="first leaf"><a href="https://www.drupal.org/developers" title="">For developers</a></li>
+<li class="leaf"><a href="https://www.drupal.org/marketers" title="Why marketers should choose Drupal for their ambitious digital experiences">For marketers</a></li>
+<li class="leaf"><a href="https://www.drupal.org/agencies" title="Learn why agencies are betting their future on Drupal">For agencies</a></li>
+<li class="leaf"><a href="https://www.drupal.org/case-studies" title="View case studies to see how your peers have built success on Drupal">Case studies</a></li>
+<li class="leaf"><a href="https://www.drupal.org/about" title="Learn about Drupal">About Drupal</a></li>
+<li class="leaf"><a href="https://www.drupal.org/about/9" title="Prepare for Drupal 9">Drupal 9</a></li>
+<li class="last leaf"><a href="https://www.drupal.org/about/in-the-news" title="">In the news</a></li>
+</ul></div></li>
+<li class="expanded"><a href="https://www.drupal.org/download" title="Build your solution on Drupal">Build</a><div class="menu-block"><ul class="menu button"><li class="first leaf"><a href="https://www.drupal.org/download" title="Download and Extend Drupal">Download &amp; Extend</a></li>
+<li class="leaf"><a href="https://git.drupalcode.org/project/drupal" title="">Browse Repository</a></li>
+<li class="leaf"><a href="https://www.drupal.org/documentation" title="">Documentation</a></li>
+<li class="leaf"><a href="https://www.drupal.org/project/modules" title="Find modules to extend Drupal to meet any need">Modules</a></li>
+<li class="leaf"><a href="https://www.drupal.org/project/themes" title="Browse themes as a starting point for making your Drupal site your own">Themes</a></li>
+<li class="leaf"><a href="https://www.drupal.org/project/distributions" title="Use a distribution to start with a version of Drupal customized to purpose">Distributions</a></li>
+<li class="leaf"><a href="https://www.drupal.org/project/issues" title="Dive into the issues queues and contribute back to Drupal">Issue queues</a></li>
+<li class="last leaf"><a href="https://www.drupal.org/about/strategic-initiatives" title="">Strategic Initiatives</a></li>
+</ul></div></li>
+<li class="expanded"><a href="https://www.drupal.org/industries" title="Examples of solutions built on Drupal">Solutions</a><div class="menu-block"><ul class="menu button"><li class="first leaf"><a href="https://www.drupal.org/industries" title="Learn why Drupal is the best solution for your industry">By industry</a></li>
+<li class="leaf"><a href="https://www.drupal.org/case-studies" title="View Drupal success stories">Case studies</a></li>
+<li class="last leaf"><a href="https://www.drupal.org/hosting" title="Find a solution for hosting your Drupal application">For hosting</a></li>
+</ul></div></li>
+<li class="expanded"><a href="https://www.drupal.org/drupal-services" title="Buy Drupal Products and Services">Services</a><div class="menu-block"><ul class="menu button"><li class="first leaf"><a href="https://www.drupal.org/drupal-services" title="View the Drupal service provider marketplace">Marketplace</a></li>
+<li class="leaf"><a href="https://www.drupal.org/hosting" title="Find trusted Drupal hosting providers">Hosting</a></li>
+<li class="last leaf"><a href="https://www.drupal.org/training" title="Find expert Drupal training">Training</a></li>
+</ul></div></li>
+<li class="expanded"><a href="https://www.drupal.org/community" title="Drupal Community">Community</a><div class="menu-block"><ul class="menu button"><li class="first leaf"><a href="https://www.drupal.org/community" title="View the community portal and find all the ways you can contribute to Drupal">Portal</a></li>
+<li class="leaf"><a href="https://www.drupal.org/getting-involved" title="Read the getting involved guide to learn where you can make the most impact">Getting involved</a></li>
+<li class="leaf"><a href="https://www.drupal.org/organizations" title="Learn about the organizations that are part of the Drupal ecosystem">Organizations</a></li>
+<li class="leaf"><a href="https://www.drupal.org/forum" title="Find support or chat with the community on the forum">Forum</a></li>
+<li class="leaf"><a href="https://www.drupal.org/community/agency-marketing/promotedrupal" title="">Promote Drupal</a></li>
+<li class="last leaf"><a href="https://www.drupal.org/case-studies/community" title="">Community Case Studies</a></li>
+</ul></div></li>
+<li class="expanded"><a href="https://www.drupal.org/documentation" title="Resources to help you on your Drupal journey">Resources</a><div class="menu-block"><ul class="menu button"><li class="first leaf"><a href="https://www.drupal.org/docs/user_guide/en/index.html" title="The Drupal 8 user guide will get you up to speed in no time">User guide</a></li>
+<li class="leaf"><a href="https://www.drupal.org/documentation" title="Drupal Documentation">Documentation</a></li>
+<li class="leaf"><a href="https://www.drupal.org/support" title="Support for using Drupal">Support</a></li>
+<li class="leaf"><a href="https://www.drupal.org/security" title="Find information about security releases for Drupal">Security</a></li>
+<li class="leaf"><a href="https://jobs.drupal.org/" title="Drupal Jobs">Jobs</a></li>
+<li class="leaf"><a href="https://events.drupal.org/" title="Learn about official Drupal Association events">Events</a></li>
+<li class="leaf"><a href="https://www.drupal.org/news" title="News about the Drupal ecosystem">Project News</a></li>
+<li class="leaf"><a href="https://www.drupal.org/association/supporters/press" title="News and press releases from Drupal Association supporting partners">Partner Press</a></li>
+<li class="last leaf"><a href="https://www.drupal.org/about/9" title="Prepare for Drupal 9">Drupal 9</a></li>
+</ul></div></li>
+<li class="expanded"><a href="https://www.drupal.org/association" title="About the Drupal Association - the non-profit that supports the Drupal project">Association</a><div class="menu-block"><ul class="menu button"><li class="first leaf"><a href="https://www.drupal.org/association" title="Learn about the Drupal Association - the nonprofit that supports the Drupal project">Drupal Association</a></li>
+<li class="leaf"><a href="https://www.drupal.org/association/supporters" title="Learn more about the organizations that support the Drupal Association and our mission">Supporters</a></li>
+<li class="leaf"><a href="https://www.drupal.org/promotedrupal" title="">Promote Drupal</a></li>
+<li class="leaf"><a href="https://www.drupal.org/association/support" title="We depend on you to move the Drupal project forward">Join us</a></li>
+<li class="last leaf"><a href="https://www.drupal.org/drupalorg" title="">About Drupal.org</a></li>
+</ul></div></li>
+<li class="last expanded"><a href="https://www.drupal.org/try-drupal" title="Try Drupal">Try Drupal</a><div class="menu-block"><ul class="menu button"><li class="first leaf"><a href="https://www.drupal.org/try-drupal" title="Demo Drupal online with a Drupal platform partner">Demo online</a></li>
+<li class="last leaf"><a href="https://www.drupal.org/download" title="">Download</a></li>
+</ul></div></li>
+</ul></div><a class="close-btn" href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#top">Return to content</a>  </div>
+  </div>
+</div>
+<div id="block-system-user-menu" class="block block-system block-menu">
+<div class="block-inner">
+    
+  <div class="content">
+    <div class="menu-block"><ul class="menu"><li class="button default"><a href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#block-system-user-menu"><img src="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/icon-w-user.svg" alt="Log in, view profile, and more"></a><ul><li class="first leaf"><a href="https://www.drupal.org/user/login?destination=node/2274843" title="">Log in</a></li>
+<li class="last leaf"><a href="https://www.drupal.org/user/register?destination=node/2274843" title="">Create account</a></li>
+</ul></li></ul></div>  </div>
+  </div>
+</div>
+<div id="block-search-form" class="block block-search">
+<div class="block-inner">
+    
+  <div class="content">
+    <form action="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+      <h2 class="element-invisible">Search form</h2>
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input placeholder="Search…" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input alt="Search" type="image" id="edit-submit" name="submit" value="Search" src="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/icon-w-search.svg" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-89TS6bVPRKcs7V1McN1VhE-FBd7k40fQuZzm4q0BqjY">
+<input type="hidden" name="form_id" value="search_block_form">
+</div>
+</div></form>  </div>
+  </div>
+</div>
+  </div>
+    </nav>
+  </div>
+
+    <div id="header" class="clearfix">
+    <div id="header-inner" class="container-12 clearfix">
+      <div id="header-left">
+        <div id="site-name"><a href="https://www.drupal.org/documentation">Documentation</a></div>
+              </div>
+      <div id="header-right">
+          <div class="region region-header">
+    <div id="block-drupalorg-search-documentation" class="block block-drupalorg">
+<div class="block-inner">
+    
+  <div class="content">
+    <form class="container-inline" action="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module" method="post" id="drupalorg-documentation-search-form" accept-charset="UTF-8"><div><input type="hidden" name="form_build_id" value="form-RvbHtizKETkqns5VojsRZqBThqTQiyuB8okMTUzPzgI">
+<input type="hidden" name="form_id" value="drupalorg_documentation_search_form">
+<div class="form-item form-type-textfield form-item-drupalorg-documentation-search-form">
+  <label class="element-invisible" for="edit-drupalorg-documentation-search-form--2">Search </label>
+ <input placeholder="Search documentation…" type="text" id="edit-drupalorg-documentation-search-form--2" name="drupalorg_documentation_search_form" value="" size="15" maxlength="128" class="form-text">
+</div>
+<div class="form-actions form-wrapper" id="edit-actions--2"><input alt="Search" type="image" id="edit-submit--2" name="submit" value="Search" src="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/icon-w-search.svg" class="form-submit"></div></div></form>  </div>
+  </div>
+</div>
+  </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="page" class="clearfix">
+    <div class="breadbox"><nav class="breadcrumb container-12"><span><a href="https://www.drupal.org/docs/8">Drupal 8</a></span><span><a href="https://www.drupal.org/docs/8/creating-custom-modules">Creating custom modules</a></span></nav></div>
+
+    
+    <div id="main" role="main">
+      
+      <div id="content" class="clearfix">
+                                <div id="content-inner" class="clearfix">
+
+          
+            <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+<div class="block-inner">
+    
+  <div class="content">
+    
+<div class="panelizer-view-mode node node-full node-documentation node-2274843">
+        
+<div class="panel-display hydra panel-layout clearfix ">
+
+  <div class="container preface clearfix panel-panel">
+    <div class="container-inner preface-inner panel-panel-inner">
+          </div>
+  </div>
+
+  <div class="container content clearfix">
+    <div class="container-inner content-inner panel-panel-inner">
+      <div class="column-content-region top-right-content column panel-panel">
+        <div class="column-content-region-inner top-right-content-inner column-inner panel-panel-inner">
+          <div class="panel-pane pane-block pane-table-of-contents-toc-w-3y7froeoqmgrpcmgnphqwt4pi3" id="on-this-page">
+  
+        <h3 class="pane-title">
+      On this page    </h3>
+    
+  
+  <div class="pane-content">
+    <div class="item-list"><ul class="anchor-list"><li class="anchor-list__item h2-tag first"><a href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#drupal-7" class="toc-link active">Differences compared to Drupal 7</a></li>
+<li class="anchor-list__item h2-tag"><a href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#process" class="toc-link active">The process</a></li>
+<li class="anchor-list__item h2-tag"><a href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#library" class="toc-link active">Defining a library</a></li>
+<li class="anchor-list__item h2-tag"><a href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#attaching" class="toc-link active">Attaching a library to page(s)</a></li>
+<li class="anchor-list__item h3-tag"><a href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#type" class="toc-link active">Attaching to a certain '#type' (for all instances of it)</a></li>
+<li class="anchor-list__item h3-tag"><a href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#render-array" class="toc-link active">Attaching to a render array</a></li>
+<li class="anchor-list__item h4-tag"><a href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#s-always-use-numeric-keys" class="toc-link toc-link-invalid-id active">Always use numeric keys!</a></li>
+<li class="anchor-list__item h3-tag"><a href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#block" class="toc-link active">Attaching to a render array of a Block Plugin</a></li>
+<li class="anchor-list__item h3-tag"><a href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#s-attaching-a-library-to-a-form" class="toc-link toc-link-invalid-id active">Attaching a library to a form</a></li>
+<li class="anchor-list__item h3-tag"><a href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#pages" class="toc-link active">Attaching a library to all (or a subset of) pages</a></li>
+<li class="anchor-list__item h3-tag"><a href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#s-attaching-a-library-in-a-preprocess-function" class="toc-link toc-link-invalid-id active">Attaching a library in a preprocess function</a></li>
+<li class="anchor-list__item h3-tag"><a href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#twig" class="toc-link active">Attaching a library in a twig template</a></li>
+<li class="anchor-list__item h3-tag"><a href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#tokens" class="toc-link active">Attaching a library during token replacement</a></li>
+<li class="anchor-list__item h3-tag"><a href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#configurable" class="toc-link active">Attaching configurable JavaScript</a></li>
+<li class="anchor-list__item h3-tag"><a href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#attributes" class="toc-link active">Adding attributes to script elements</a></li>
+<li class="anchor-list__item h2-tag"><a href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#disable-aggregation" class="toc-link active">Disabling Aggregation</a></li>
+<li class="anchor-list__item h2-tag"><a href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#external" class="toc-link active">CDN / externally hosted libraries</a></li>
+<li class="anchor-list__item h2-tag"><a href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#inline" class="toc-link active">Inline JavaScript</a></li>
+<li class="anchor-list__item h3-tag"><a href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#generate" class="toc-link active">Inline JavaScript that generates markup</a></li>
+<li class="anchor-list__item h3-tag"><a href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#entire-page" class="toc-link active">Inline JavaScript that affects the entire page</a></li>
+<li class="anchor-list__item h2-tag"><a href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#dynamic-css-js" class="toc-link active">Dynamically generated CSS and JS</a></li>
+<li class="anchor-list__item h3-tag"><a href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#hook_library_info_build" class="toc-link active">hook_library_info_build() added for dynamic library definitions</a></li>
+<li class="anchor-list__item h2-tag"><a href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#differences-with-drupal-7" class="toc-link active">Differences with Drupal 7</a></li>
+<li class="anchor-list__item h2-tag last"><a href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#more-info" class="toc-link active">More information</a></li>
+</ul></div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-block pane-og-menu-og-single-menu-block" id="creating-custom-modules">
+  
+        <h2 class="pane-title">
+      <a href="https://www.drupal.org/docs/8/creating-custom-modules">Creating custom modules</a>    </h2>
+    
+  
+  <div class="pane-content">
+    <ul class="menu"><li class="first leaf"><a href="https://www.drupal.org/docs/8/creating-custom-modules/getting-started-background-prerequisites-drupal-8">Getting Started - Background &amp; Prerequisites (Drupal 8)</a></li>
+<li class="leaf"><a href="https://www.drupal.org/docs/8/creating-custom-modules/prepare-a-module-skeleton">Prepare a Module skeleton</a></li>
+<li class="leaf"><a href="https://www.drupal.org/docs/8/creating-custom-modules/naming-and-placing-your-drupal-8-module">Naming and placing your Drupal 8 module</a></li>
+<li class="leaf"><a href="https://www.drupal.org/docs/8/creating-custom-modules/let-drupal-8-know-about-your-module-with-an-infoyml-file">Let Drupal 8 know about your module with an .info.yml file</a></li>
+<li class="leaf"><a href="https://www.drupal.org/docs/8/creating-custom-modules/add-a-composerjson-file">Add a composer.json file</a></li>
+<li class="leaf"><a href="https://www.drupal.org/docs/8/creating-custom-modules/a-hello-world-custom-page-module">A "Hello World" Custom Page Module</a></li>
+<li class="leaf"><a href="https://www.drupal.org/docs/8/creating-custom-modules/adding-a-basic-controller">Adding a basic controller</a></li>
+<li class="leaf"><a href="https://www.drupal.org/docs/8/creating-custom-modules/add-a-routing-file">Add a routing file</a></li>
+<li class="leaf"><a href="https://www.drupal.org/docs/8/creating-custom-modules/add-a-menu-link">Add a menu link</a></li>
+<li class="leaf"><a href="https://www.drupal.org/docs/8/creating-custom-modules/going-further">Going further</a></li>
+<li class="leaf"><a href="https://www.drupal.org/docs/8/creating-custom-modules/add-a-default-configuration">Add a Default Configuration</a></li>
+<li class="leaf"><a href="https://www.drupal.org/docs/8/creating-custom-modules/include-default-configuration-in-your-drupal-8-module">Include default configuration in your Drupal 8 module</a></li>
+<li class="leaf"><a href="https://www.drupal.org/docs/8/creating-custom-modules/a-practical-guide-to-building-basic-drupal-8-modules">A practical guide to building basic Drupal 8 modules</a></li>
+<li class="leaf"><a href="https://www.drupal.org/docs/8/creating-custom-modules/basic-structure">Basic structure</a></li>
+<li class="leaf"><a href="https://www.drupal.org/docs/8/creating-custom-modules/settings">Settings</a></li>
+<li class="leaf"><a href="https://www.drupal.org/docs/8/creating-custom-modules/defining-and-using-your-own-configuration-in-drupal-8">Defining and using your own configuration in Drupal 8</a></li>
+<li class="leaf"><a href="https://www.drupal.org/docs/8/creating-custom-modules/create-a-custom-page">Create a custom page</a></li>
+<li class="leaf"><a href="https://www.drupal.org/docs/8/creating-custom-modules/creating-custom-blocks" title="Turn https://www.drupal.org/node/2465705 into a sub-guide.">Creating custom blocks</a></li>
+<li class="leaf"><a href="https://www.drupal.org/docs/8/creating-custom-modules/creating-custom-field-types-widgets-and-formatters" title="Added menu link.">Creating custom field types, widgets, and formatters</a></li>
+<li class="leaf"><a href="https://www.drupal.org/docs/8/creating-custom-modules/subscribe-to-and-dispatch-events" title="Get to know Symfony events in Drupal 8 and find out how they relate to Drupal hooks.">Subscribe to and dispatch events</a></li>
+<li class="leaf"><a href="https://www.drupal.org/docs/8/creating-custom-modules/building-a-views-display-style-plugin-for-drupal-8">Building a Views display style plugin for Drupal 8</a></li>
+<li class="leaf"><a href="https://www.drupal.org/docs/8/creating-custom-modules/theming">Theming</a></li>
+<li class="leaf active-trail"><a href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module" class="active-trail active">Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module</a></li>
+<li class="leaf"><a href="https://www.drupal.org/docs/8/creating-custom-modules/testing-a-drupal-8-module">Testing</a></li>
+<li class="leaf"><a href="https://www.drupal.org/docs/8/creating-custom-modules/publish-your-module-on-drupalorg">Publish your module on drupal.org</a></li>
+<li class="last leaf"><a href="https://www.drupal.org/docs/8/creating-custom-modules/understanding-hooks">Understanding hooks</a></li>
+</ul>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-node-links">
+  
+      
+  
+  <div class="pane-content">
+      </div>
+
+  
+  </div>
+        </div>
+      </div>
+      <div class="column-content-region left-content column panel-panel ">
+        <div class="column-content-region-inner left-content-inner column-inner panel-panel-inner">
+          <div class="panel-pane pane-node-title">
+  
+      
+  
+  <div class="pane-content">
+    <h1>Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module</h1>
+  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-node-updated" id="last-updated-on">
+  
+        <span class="pane-title">
+      Last <a href="https://www.drupal.org/node/2274843/discuss">updated</a> on    </span>
+    
+  
+  <div class="pane-content">
+    23 July 2019  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-entity-field pane-node-body">
+  
+      
+  
+  <div class="pane-content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>This documentation is for modules. For themes, see <a href="https://www.drupal.org/node/2216195" rel="nofollow">Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 theme</a></strong>.</p>
+<p>In Drupal 8, stylesheets (CSS) and JavaScript (JS) are loaded through the same system for modules (code) and themes, for everything: asset libraries. Asset libraries can contain one or more CSS assets, one or more JS assets and one or more JS settings.</p>
+<p><strong>Drupal uses a high-level principle: assets (CSS or JS) are still only loaded if you tell Drupal it should load them. Drupal does not load all assets (CSS/JS) on all pages&nbsp;because this is bad for front-end performance.</strong></p>
+<h2 id="drupal-7"><a class="toc-anchor" title="Permalink to this headline" href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#drupal-7"></a>Differences compared to Drupal 7</h2>
+<p>There are two important differences compared to Drupal 7 for developers:</p>
+<ol><li>Only the JavaScript required on a particular page will be added to that page. In particular, by default Drupal doesn't need JavaScript on most pages that anonymous users can see. This means that <a href="https://www.drupal.org/node/1541860" rel="nofollow">jQuery is not automatically loaded on all pages anymore</a>.<br>
+	So, if your theme requires jQuery or some other JavaScript to be present (which also is defined in an asset library), you need to tell Drupal that this is the case, by declaring a dependency on the needed asset library.</li>
+<li>The <code class=" language-php">Drupal<span class="token punctuation">.</span>settings</code>&nbsp; javascript object is replaced by <code class=" language-php">drupalSettings</code>.</li>
+</ol><h2 id="process"><a class="toc-anchor" title="Permalink to this headline" href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#process"></a>The process</h2>
+<p><strong>The general steps for loading assets (CSS/JS) are:</strong></p>
+<ol><li>Save the CSS or JS to a file.</li>
+<li>Define a "library", which can contain both CSS and JS files.</li>
+<li>"Attach" the library to a render array in a hook.</li>
+</ol><p>But in the case of themes, there is an alternative to step 3: themes can choose to load any number of asset libraries on <em>all</em> pages.</p>
+<p><a id="define-library" name="define-library" rel="nofollow"></a></p>
+<h2 id="library"><a class="toc-anchor" title="Permalink to this headline" href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#library"></a>Defining a library</h2>
+<p>To define one or more (asset) libraries, add a <code class=" language-php"><span class="token operator">*</span><span class="token punctuation">.</span>libraries<span class="token punctuation">.</span>yml</code> file to the root of your module folder (alongside your .info.yml file). (If your module is named <code class=" language-php">fluffiness</code>, then the file name should be <code class=" language-php">fluffiness<span class="token punctuation">.</span>libraries<span class="token punctuation">.</span>yml</code>). Each "library" in the file is an entry detailing CSS and JS files (assets), like this:</p>
+<pre class=" language-php"><code class=" language-php">cuddly<span class="token operator">-</span>slider<span class="token punctuation">:</span>
+  version<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">.</span>x
+  css<span class="token punctuation">:</span>
+    layout<span class="token punctuation">:</span>
+      css<span class="token operator">/</span>cuddly<span class="token operator">-</span>slider<span class="token operator">-</span>layout<span class="token punctuation">.</span>css<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    theme<span class="token punctuation">:</span>
+      css<span class="token operator">/</span>cuddly<span class="token operator">-</span>slider<span class="token operator">-</span>theme<span class="token punctuation">.</span>css<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  js<span class="token punctuation">:</span>
+    js<span class="token operator">/</span>cuddly<span class="token operator">-</span>slider<span class="token punctuation">.</span>js<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre><p>You may notice the 'layout' and 'theme' keys for css which is not present for js. This indicates the style type the css file belongs to.</p>
+<p>You can set <code class=" language-php"><span class="token constant">CSS</span></code> weights with 5 different levels of styling:</p>
+<ul><li><code class=" language-php">base</code>: CSS reset/normalize plus HTML element styling. Key assigns a weight of <code class=" language-php"><span class="token constant">CSS_BASE</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">200</span></code></li>
+<li><code class=" language-php">layout</code>: macro arrangement of a web page, including any grid systems. Key assigns a weight of <code class=" language-php"><span class="token constant">CSS_LAYOUT</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">100</span></code></li>
+<li><code class=" language-php">component</code>: discrete, reusable UI elements. Key assigns a weight of <code class=" language-php"><span class="token constant">CSS_COMPONENT</span> <span class="token operator">=</span> <span class="token number">0</span></code></li>
+<li><code class=" language-php">state</code>: styles that deal with client-side changes to components. Key assigns a weight of <code class=" language-php"><span class="token constant">CSS_STATE</span> <span class="token operator">=</span> <span class="token number">100</span></code></li>
+<li><code class=" language-php">theme</code>: purely visual styling (“look-and-feel”) for a component. Key assigns a weight of <code class=" language-php"><span class="token constant">CSS_THEME</span> <span class="token operator">=</span> <span class="token number">200</span></code></li>
+</ul><p>This is defined by the <a href="https://smacss.com/" rel="nofollow">SMACSS</a> standard. So here if you specify theme it means that the CSS file contains theme related styling which is pure look and feel. <a href="https://www.drupal.org/node/1887922" rel="nofollow">More info here</a>. You <strong>cannot</strong> use other <em>keys</em> as these will cause strict warnings.</p>
+<p>This example assumes that the actual JavaScript <code class=" language-php">cuddly<span class="token operator">-</span>slider<span class="token punctuation">.</span>js</code> is located in the subfolder <code class=" language-php">js</code> of your module. You can also have the JS come from an external URL, include CSS files, and there are other possibilities. See <a href="https://www.drupal.org/theme-guide/8/assets#external" rel="nofollow">CDN / externally hosted libraries</a> for details.</p>
+<p>However, remember that Drupal 8 no longer loads jQuery on all pages by default; Drupal 8 only loads what's necessary. Therefore, we must declare that our module's <code class=" language-php">cuddly<span class="token operator">-</span>slider</code> library <em>declares a dependency</em> on the library that contains jQuery. It is neither a module nor a theme that provides jQuery, it's Drupal core: <code class=" language-php">core<span class="token operator">/</span>jquery</code> is the dependency we want to declare. (This is an extension name followed by a slash, followed by the library name, so if some other library wanted to depend on our <code class=" language-php">cuddly<span class="token operator">-</span>slider</code> library, it'd have to declare a dependency on <code class=" language-php">fluffiness<span class="token operator">/</span>cuddly<span class="token operator">-</span>slider</code>, because <code class=" language-php">fluffiness</code> is the name of our module.)</p>
+<p>So, to ensure jQuery is available for <code class=" language-php">js<span class="token operator">/</span>cuddly<span class="token operator">-</span>slider<span class="token punctuation">.</span>js</code>, we update the above to:</p>
+<pre class=" language-php"><code class=" language-php">cuddly<span class="token operator">-</span>slider<span class="token punctuation">:</span>
+  version<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">.</span>x
+  css<span class="token punctuation">:</span>
+    theme<span class="token punctuation">:</span>
+      css<span class="token operator">/</span>cuddly<span class="token operator">-</span>slider<span class="token punctuation">.</span>css<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  js<span class="token punctuation">:</span>
+    js<span class="token operator">/</span>cuddly<span class="token operator">-</span>slider<span class="token punctuation">.</span>js<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  dependencies<span class="token punctuation">:</span>
+    <span class="token operator">-</span> core<span class="token operator">/</span>jquery
+</code></pre><p>As you'd expect, the order the CSS and JS assets are listed is also the order in which they will be loaded.</p>
+<p><strong>By&nbsp;</strong><strong>default</strong>, Drupal, will attach&nbsp;the JS assets at page bottom&nbsp;to avoid some frequents problems like: DOM content loading block, access to unready DOM element from jquery code,&nbsp;etc... If for certain reason it's needed to <em>attach JS assets into the &lt;head&gt; section</em> it's possible the use of <strong>header</strong> option, in this way:</p>
+<pre class=" language-php"><code class=" language-php">cuddly<span class="token operator">-</span>slider<span class="token punctuation">:</span>
+  version<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">.</span>x
+  header<span class="token punctuation">:</span> <span class="token boolean">true</span>
+  js<span class="token punctuation">:</span>
+    js<span class="token operator">/</span>cuddly<span class="token operator">-</span>slider<span class="token punctuation">.</span>js<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre><p>So, now, the js/cuddly-slider.js&nbsp;<strong>will be attached at page top</strong>.</p>
+<h2 id="attaching"><a class="toc-anchor" title="Permalink to this headline" href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#attaching"></a>Attaching a library to page(s)</h2>
+<p>Depending on which assets you need to have loaded, you'll want to attach the corresponding asset library in a different way. After all, some asset libraries are needed on all pages, others only very rarely, and yet others on most, but not quite all.</p>
+<p>But what matters most is that we don't decide whether to attach a library based on <em>which page</em> we're on (i.e. which URL or <em>route</em>), but based on which <em>things</em> are visible on the page: if a page contains a <code class=" language-php"><span class="token string">'#type'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'table'</span></code>, a <code class=" language-php"><span class="token string">'#type'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'dropbutton'</span></code> and a <code class=" language-php"><span class="token string">'#type'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'foobar'</span></code>, then we'll only load the libraries associated with each of those <code class=" language-php"><span class="token string">'#type'</span></code>s.<br>
+But we're not limited to <code class=" language-php"><span class="token string">'#type'</span></code> only: perhaps we want to load a certain asset library only for a certain <em>instance</em> of a <code class=" language-php"><span class="token string">'#type'</span></code>. In that case, we just attach it to the render array of that instance.</p>
+<p>Of course, <em>very rarely</em>, there is a valid reason to actually load a certain asset on all pages (e.g. some analytics JavaScript that tracks page loads), regardless of the "things" on a page.</p>
+<p>The sub-sections here show examples of how to do these things.</p>
+<h3 id="type"><a class="toc-anchor" title="Permalink to this headline" href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#type"></a>Attaching to a certain <code class=" language-php"><span class="token string">'#type'</span></code> (for all instances of it)</h3>
+<p>To attach a library to a certain existing <code class=" language-php"><span class="token string">'#type'</span></code>, for all instances of it, we use <code class=" language-php"><span class="token function">hook_element_info_alter</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token keyword keyword-function">function</span> <span class="token function">yourmodule_element_info_alter</span><span class="token punctuation">(</span><span class="token keyword keyword-array">array</span> <span class="token operator">&amp;</span><span class="token variable">$types</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span><span class="token function">isset</span><span class="token punctuation">(</span><span class="token variable">$types</span><span class="token punctuation">[</span><span class="token string">'table'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token variable">$types</span><span class="token punctuation">[</span><span class="token string">'table'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'#attached'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'library'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'your_module/library_name'</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><p>Then <a href="https://www.drupal.org/node/42055" rel="nofollow">clear the cache</a> so that Drupal is aware of the new hook implementation you added.</p>
+<h3 id="render-array"><a class="toc-anchor" title="Permalink to this headline" href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#render-array"></a>Attaching to a render array</h3>
+<p>To attach a library to a render array (and perhaps a specific instance of a certain <code class=" language-php"><span class="token string">'#type'</span></code>), you must have access to that render array. Perhaps you're defining the render array. Perhaps you're modifying it in a hook. In either case, it will look somewhat like this:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$build</span><span class="token punctuation">[</span><span class="token string">'the_element_that_needs_the_asset_library'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'#attached'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'library'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'your_module/library_name'</span><span class="token punctuation">;</span>
+</code></pre><h4 id="s-always-use-numeric-keys"><a class="toc-anchor" title="Permalink to this headline" href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#s-always-use-numeric-keys"></a><a id="always-use-numeric-keys" name="always-use-numeric-keys" rel="nofollow"></a>Always use numeric keys!</h4>
+<p>You might want to help Drupal and not produce duplicate library entires by using non-numieric keys:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$build</span><span class="token punctuation">[</span><span class="token string">'the_element_that_needs_the_asset_library'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'#attached'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'library'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'your_module/library_name'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'your_module/library_name'</span><span class="token punctuation">;</span>
+</code></pre><p>Do not do this. Drupal's way of merging arrays will lead to an invalid nested array and notices like this (googlefood):</p>
+<pre class=" language-php"><code class=" language-php">Warning<span class="token punctuation">:</span> <span class="token function">explode</span><span class="token punctuation">(</span><span class="token punctuation">)</span> expects parameter <span class="token number">2</span> to be string<span class="token punctuation">,</span> <span class="token keyword keyword-array">array</span> given in Drupal\<span class="token package">Core<span class="token punctuation">\</span>Asset<span class="token punctuation">\</span>LibraryDependencyResolver</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">doGetDependencies</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+Notice<span class="token punctuation">:</span> <span class="token keyword keyword-Array">Array</span> to string conversion in <span class="token function">system_js_settings_alter</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+Notice<span class="token punctuation">:</span> <span class="token keyword keyword-Array">Array</span> to string conversion in Drupal\<span class="token package">Core<span class="token punctuation">\</span>Asset<span class="token punctuation">\</span>AttachedAssets</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">setLibraries</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre><h3 id="block"><a class="toc-anchor" title="Permalink to this headline" href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#block"></a>Attaching to a render array of a Block Plugin</h3>
+<p>To give another example of attaching a library to a render array, If you are building a block plugin in your module, you can attach the libraries to the render array in the build() function of your class extending the BlockBase class (as of Drupal 8 beta 6).</p>
+<pre class=" language-php"><code class=" language-php">    <span class="token keyword keyword-return">return</span> <span class="token punctuation">[</span>
+      <span class="token string">'#theme'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'your_module_theme_id'</span><span class="token punctuation">,</span>
+      <span class="token string">'#someVariable'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$some_variable</span><span class="token punctuation">,</span>
+      <span class="token string">'#attached'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span>
+        <span class="token string">'library'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span>
+          <span class="token string">'your_module/library_name'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre><h3 id="s-attaching-a-library-to-a-form"><a class="toc-anchor" title="Permalink to this headline" href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#s-attaching-a-library-to-a-form"></a><a id="forms" name="forms" rel="nofollow"></a>Attaching a library to a form</h3>
+<p>As forms are just render arrays, attaching a library works just the same:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token comment" spellcheck="true">/**
+ * Implements hook_form_alter().
+ */</span>
+<span class="token keyword keyword-function">function</span> <span class="token function">yourmodule_form_alter</span><span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token variable">$form</span><span class="token punctuation">,</span> \<span class="token package">Drupal<span class="token punctuation">\</span>Core<span class="token punctuation">\</span>Form<span class="token punctuation">\</span>FormStateInterface</span> <span class="token variable">$form_state</span><span class="token punctuation">,</span> <span class="token variable">$form_id</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">/* @var Drupal\Core\Entity\FieldableEntityInterface $entity */</span>
+  <span class="token variable">$formObject</span> <span class="token operator">=</span> <span class="token variable">$form_state</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">getFormObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span><span class="token variable">$formObject</span> <span class="token keyword keyword-instanceof">instanceof</span> <span class="token class-name"><span class="token punctuation">\</span>Drupal<span class="token punctuation">\</span>Core<span class="token punctuation">\</span>Entity<span class="token punctuation">\</span>EntityFormInterface</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token variable">$entity</span> <span class="token operator">=</span> <span class="token variable">$formObject</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">getEntity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>
+      <span class="token variable">$entity</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">getEntityTypeId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'node'</span>
+      <span class="token operator">&amp;&amp;</span> <span class="token function">in_array</span><span class="token punctuation">(</span><span class="token variable">$entity</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">bundle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'organisation'</span><span class="token punctuation">,</span> <span class="token string">'location'</span><span class="token punctuation">,</span> <span class="token string">'event'</span><span class="token punctuation">,</span> <span class="token string">'article'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token variable">$form</span><span class="token punctuation">[</span><span class="token string">'#attached'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'library'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'yourmodule/yourlibrary'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="pages"><a class="toc-anchor" title="Permalink to this headline" href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#pages"></a>Attaching a library to all (or a subset of) pages</h3>
+<p>In some cases, the asset library is not associated with a certain part of the page, because it is associated with the <em>entire</em> page. For this case, <code class=" language-php"><span class="token function">hook_page_attachments</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> exists. A clear example can be found in the Contextual Links module:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token comment" spellcheck="true">// From core/modules/contextual/contextual.module.</span>
+<span class="token keyword keyword-function">function</span> <span class="token function">contextual_page_attachments</span><span class="token punctuation">(</span><span class="token keyword keyword-array">array</span> <span class="token operator">&amp;</span><span class="token variable">$page</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>\<span class="token scope">Drupal<span class="token punctuation">::</span></span><span class="token function">currentUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">hasPermission</span><span class="token punctuation">(</span><span class="token string">'access contextual links'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-return">return</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token variable">$page</span><span class="token punctuation">[</span><span class="token string">'#attached'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'library'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'contextual/drupal.contextual-links'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre><h3 id="s-attaching-a-library-in-a-preprocess-function"><a class="toc-anchor" title="Permalink to this headline" href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#s-attaching-a-library-in-a-preprocess-function"></a>Attaching a library in a preprocess function</h3>
+<p>You can attach a library in a preprocess function using the special key <code class=" language-php"><span class="token string">'#attached'</span></code>:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token keyword keyword-function">function</span> <span class="token function">yourmodule_preprocess_maintenance_page</span><span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token variable">$variables</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token variable">$variables</span><span class="token punctuation">[</span><span class="token string">'#attached'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'library'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span>  <span class="token string">'your_module/library_name'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre><h3 id="twig"><a class="toc-anchor" title="Permalink to this headline" href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#twig"></a>Attaching a library in a twig template</h3>
+<p>You can also attach a library in a twig template by using the attach_library() twig function. So in any *.html.twig:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token function">attach_library</span><span class="token punctuation">(</span><span class="token string">'your_module/library_name'</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">}</span>
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span></span>Some markup <span class="token punctuation">{</span><span class="token punctuation">{</span> message <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></span>
+</code></pre><h3 id="tokens"><a class="toc-anchor" title="Permalink to this headline" href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#tokens"></a>Attaching a library during token replacement</h3>
+<p>You can also attach a library if your custom token is present in filtered text by adding the library to the BubbleableMetadata object during replacement in hook_tokens():</p>
+<pre class=" language-php"><code class=" language-php"><span class="token comment" spellcheck="true">/**
+ * Implements hook_tokens().
+ */</span>
+<span class="token keyword keyword-function">function</span> <span class="token function">your_module_tokens</span><span class="token punctuation">(</span><span class="token variable">$type</span><span class="token punctuation">,</span> <span class="token variable">$tokens</span><span class="token punctuation">,</span> <span class="token keyword keyword-array">array</span> <span class="token variable">$data</span><span class="token punctuation">,</span> <span class="token keyword keyword-array">array</span> <span class="token variable">$options</span><span class="token punctuation">,</span> \<span class="token package">Drupal<span class="token punctuation">\</span>Core<span class="token punctuation">\</span>Render<span class="token punctuation">\</span>BubbleableMetadata</span> <span class="token variable">$bubbleable_metadata</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token variable">$replacements</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span><span class="token variable">$type</span> <span class="token operator">==</span> <span class="token string">'your_module'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword keyword-foreach">foreach</span> <span class="token punctuation">(</span><span class="token variable">$tokens</span> <span class="token keyword keyword-as">as</span> <span class="token variable">$name</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$original</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword keyword-switch">switch</span> <span class="token punctuation">(</span><span class="token variable">$name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword keyword-case">case</span> <span class="token string">'your-token'</span><span class="token punctuation">:</span>
+                    <span class="token variable">$your_render_array</span> <span class="token operator">=</span> <span class="token function">your_module_build_your_renderable_thing</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token variable">$replacements</span><span class="token punctuation">[</span><span class="token variable">$original</span><span class="token punctuation">]</span> <span class="token operator">=</span>  \<span class="token scope">Drupal<span class="token punctuation">::</span></span><span class="token function">service</span><span class="token punctuation">(</span><span class="token string">'renderer'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token variable">$your_render_array</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token comment" spellcheck="true">// LOOK HERE! WE CAN ADD LIBRARIES TOO!</span>
+                    <span class="token variable">$bubbleable_metadata</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">addAttachments</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'library'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">'your_module/library_name'</span><span class="token punctuation">]</span> <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword keyword-break">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword keyword-return">return</span> <span class="token variable">$replacements</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre><p>Note that this example shows only how to do the library attachment during replacement -- to fully implement a custom token you must implement hook_token_info() as well.</p>
+<h3 id="configurable"><a class="toc-anchor" title="Permalink to this headline" href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#configurable"></a>Attaching configurable JavaScript</h3>
+<p>In some cases, you may want to add JavaScript to a page that depends on some computed PHP information. You can do so with&nbsp;<code class=" language-php">drupalSettings</code> (the successor to Drupal 7's <code class=" language-php">Drupal<span class="token punctuation">.</span>settings</code>), an array of settings defined in your PHP script that can be accessed as settings object in&nbsp;your JavaScript.</p>
+<p>For using <code class=" language-php">drupalSettings</code> in a&nbsp;library, we first have to declare&nbsp;a&nbsp;dependency on <code class=" language-php">core<span class="token operator">/</span>drupalSettings</code> in its library definition.</p>
+<p>So the library definition of our previous example becomes:</p>
+<pre class=" language-php"><code class=" language-php">cuddly<span class="token operator">-</span>slider<span class="token punctuation">:</span>
+  version<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">.</span>x
+  js<span class="token punctuation">:</span>
+    js<span class="token operator">/</span>cuddly<span class="token operator">-</span>slider<span class="token punctuation">.</span>js<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  dependencies<span class="token punctuation">:</span>
+    <span class="token operator">-</span> core<span class="token operator">/</span>jquery
+    <span class="token operator">-</span> core<span class="token operator">/</span>drupalSettings
+</code></pre><p>In our PHP files, we can now pass the desired <code class=" language-php">drupalSettings</code> alongside our library. By convention, we use our <a href="https://www.drupal.org/node/172169#camelcasing" rel="nofollow">lowerCamelCase</a> module name as the&nbsp;key for the settings, and add the <a href="https://www.drupal.org/node/172169#camelcasing" rel="nofollow">lowerCamelCase</a> name of the library as sub key.</p>
+<p>If we'd like to pass computed values <code class=" language-php"><span class="token string">'foo'</span></code> and <code class=" language-php"><span class="token string">'baz'</span></code>&nbsp;from PHP to our&nbsp;example's JavaScript, we could do:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$computed_settings</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token string">'foo'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'bar'</span><span class="token punctuation">,</span>
+  <span class="token string">'baz'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'qux'</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token variable">$build</span><span class="token punctuation">[</span><span class="token string">'#attached'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'library'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'your_module/library_name'</span><span class="token punctuation">;</span>
+<span class="token variable">$build</span><span class="token punctuation">[</span><span class="token string">'#attached'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'drupalSettings'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'fluffiness'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'cuddlySlider'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token variable">$computed_settings</span><span class="token punctuation">;</span>
+</code></pre><p>Then <code class=" language-php">cuddly<span class="token operator">-</span>slider<span class="token punctuation">.</span>js</code> will be able to access <code class=" language-php">drupalSettings<span class="token punctuation">.</span>fluffiness<span class="token punctuation">.</span>cuddlySlider<span class="token punctuation">.</span>foo</code>&nbsp;and&nbsp; <code class=" language-php">drupalSettings<span class="token punctuation">.</span>fluffiness<span class="token punctuation">.</span>cuddlySlider<span class="token punctuation">.</span>baz</code>&nbsp;, which will have values of <code class=" language-php"><span class="token string">'bar'</span></code>&nbsp;and <code class=" language-php"><span class="token string">'qux'</span></code> respectively.</p>
+<div class="note">
+<p>Render arrays are <a href="https://www.drupal.org/docs/8/api/render-api/cacheability-of-render-arrays" rel="nofollow">cached</a>. Depending on the nature of your computed values and the component you are attaching <code class=" language-php">drupalSettings</code> to, you may have to alter the <a href="https://www.drupal.org/docs/8/api/cache-api/cache-api" rel="nofollow">cacheablility metadata</a> accordingly.</p>
+</div>
+<h3 id="attributes"><a class="toc-anchor" title="Permalink to this headline" href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#attributes"></a>Adding attributes to script elements</h3>
+<p>If you want to add attributes on a script tag, you need to add an attributes key to the JSON following the script URL. Within the object following the attributes key, add the attribute name that you want to appear in&nbsp;the script as a new key. The value for this key will be the attribute value. If that value is set to true, the attribute will appear on its own without a value on the element.</p>
+<p>For example:</p>
+<pre class=" language-php"><code class=" language-php"> https<span class="token punctuation">:</span><span class="token comment" spellcheck="true">//maps.googleapis.com/maps/api/js?key=myownapikey&amp;signed_in=true&amp;libraries=drawing&amp;callback=initMap: {type: external, attributes: { defer: true, async: true, data-test: map-link } }</span>
+</code></pre><p>This would result in the following markup:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://maps.googleapis.com/maps/api/js?key<span class="token punctuation">=</span>myownapikey&amp;signed_in<span class="token punctuation">=</span>true&amp;libraries<span class="token punctuation">=</span>drawing&amp;callback<span class="token punctuation">=</span>initMap<span class="token punctuation">"</span></span> <span class="token attr-name">async</span> <span class="token attr-name">defer</span> <span class="token attr-name">data-test</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>map-link<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></span><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></span>
+</code></pre><h2 id="disable-aggregation"><a class="toc-anchor" title="Permalink to this headline" href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#disable-aggregation"></a>Disabling Aggregation</h2>
+<p>By default, multiple local files will be aggregated where possible. To disable this for a file, set its 'preprocess' flag to false.</p>
+<pre class=" language-php"><code class=" language-php">cuddly<span class="token operator">-</span>slider<span class="token punctuation">:</span>
+  version<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">.</span>x
+  js<span class="token punctuation">:</span>
+    js<span class="token operator">/</span>cuddly<span class="token operator">-</span>slider<span class="token punctuation">.</span>js<span class="token punctuation">:</span> <span class="token punctuation">{</span>preprocess<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">}</span>
+  dependencies<span class="token punctuation">:</span>
+    <span class="token operator">-</span> core<span class="token operator">/</span>jquery
+    <span class="token operator">-</span> core<span class="token operator">/</span>drupalSettings
+</code></pre><h2 id="external"><a class="toc-anchor" title="Permalink to this headline" href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#external"></a>CDN / externally hosted libraries</h2>
+<p>You might want to use JavaScript that is externally on a CDN (Content Delivery Network) to improve page loading speed. This can be done by declaring the library to be "external". It is also a good idea to include some information about the external library in the definition.</p>
+<pre class=" language-php"><code class=" language-php">angular<span class="token punctuation">.</span>angularjs<span class="token punctuation">:</span>
+  remote<span class="token punctuation">:</span> https<span class="token punctuation">:</span><span class="token comment" spellcheck="true">//github.com/angular/angular.js</span>
+  version<span class="token punctuation">:</span> <span class="token number">1.4</span><span class="token punctuation">.</span><span class="token number">4</span>
+  license<span class="token punctuation">:</span>
+    name<span class="token punctuation">:</span> <span class="token constant">MIT</span>
+    url<span class="token punctuation">:</span> https<span class="token punctuation">:</span><span class="token comment" spellcheck="true">//github.com/angular/angular.js/blob/master/LICENSE</span>
+    gpl<span class="token operator">-</span>compatible<span class="token punctuation">:</span> <span class="token boolean">true</span>
+  js<span class="token punctuation">:</span>
+    https<span class="token punctuation">:</span><span class="token comment" spellcheck="true">//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js: { type: external, minified: true }</span>
+</code></pre><h2 id="inline"><a class="toc-anchor" title="Permalink to this headline" href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#inline"></a>Inline JavaScript</h2>
+<p><strong>Inline JavaScript is highly discouraged</strong>. It's recommended to put the JS you want to use inline in a file instead&nbsp;because that allows that JavaScript to be cached on the client side. It also allows JavaScript code to be reviewed and linted. Inline JS with also conflict with the Content Security Policy of many sites and make your module unusable by them.</p>
+<h3 id="generate"><a class="toc-anchor" title="Permalink to this headline" href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#generate"></a>Inline JavaScript that generates markup</h3>
+<p>This is discouraged. Place the javascript in a file instead. Examples of this are ads, social media sharing buttons, social media listing widgets. These do use inline JavaScript. But they are just a special kind of content/markup, since they're not about decorating the site's content or making it interactive, instead they are about pulling in external content through JavaScript.</p>
+<p>You want to put these in either a custom block or even directly in a Twig template.</p>
+<p>E.g.:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></span><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>
+ad_client_id <span class="token operator">=</span> <span class="token string">"some identifier"</span>
+ad_width <span class="token operator">=</span> <span class="token number">160</span><span class="token punctuation">;</span>
+ad_height <span class="token operator">=</span> <span class="token number">90</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//--&gt;</span><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></span>
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://adserver.com/ad.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></span><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></span>
+</code></pre><pre class=" language-php"><code class=" language-php"><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>twitter-timeline<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://twitter.com/wimleers<span class="token punctuation">"</span></span> <span class="token attr-name">data-widget-id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>307116909013368833<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></span>Tweets by @wimleers<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span></span>
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span></span><span class="token operator">!</span><span class="token keyword keyword-function">function</span><span class="token punctuation">(</span>d<span class="token punctuation">,</span>s<span class="token punctuation">,</span>id<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token keyword keyword-var">var</span> js<span class="token punctuation">,</span>fjs<span class="token operator">=</span>d<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>p<span class="token operator">=</span><span class="token operator">/</span><span class="token operator">^</span>http<span class="token punctuation">:</span><span class="token operator">/</span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>d<span class="token punctuation">.</span>location<span class="token punctuation">)</span><span class="token operator">?</span><span class="token string">'http'</span><span class="token punctuation">:</span><span class="token string">'https'</span><span class="token punctuation">;</span><span class="token keyword keyword-if">if</span><span class="token punctuation">(</span><span class="token operator">!</span>d<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>js<span class="token operator">=</span>d<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>js<span class="token punctuation">.</span>id<span class="token operator">=</span>id<span class="token punctuation">;</span>js<span class="token punctuation">.</span>src<span class="token operator">=</span>p<span class="token operator">+</span><span class="token string">"://platform.twitter.com/widgets.js"</span><span class="token punctuation">;</span>fjs<span class="token punctuation">.</span>parentNode<span class="token punctuation">.</span><span class="token function">insertBefore</span><span class="token punctuation">(</span>js<span class="token punctuation">,</span>fjs<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">(</span>document<span class="token punctuation">,</span><span class="token string">"script"</span><span class="token punctuation">,</span><span class="token string">"twitter-wjs"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></span>
+</code></pre><h3 id="entire-page"><a class="toc-anchor" title="Permalink to this headline" href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#entire-page"></a>Inline JavaScript that affects the entire page</h3>
+<p><strong>Inline JavaScript is highly discouraged</strong>. Examples of inline JavaScript that affects the entire page are analytics (e.g. Google Analytics) and hosted font services. Inline JavaScript that affects the entire page can be in either of two categories: front-end/styling, or logical. Most of these cases can be satisfied with fixed javascript in a file plus added settings.</p>
+<p>In the case of front-end/styling (e.g. hosted font services), it belongs in the theme, and for that, please see <a href="https://www.drupal.org/node/2216195" rel="nofollow">“Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 theme”</a>.</p>
+<p>In the other case, the JS belongs in the module. In the appropriate hook — likely <code class=" language-php"><span class="token function">hook_page_attachments</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> — define attached HTML <code class=" language-php"><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>HEAD</span><span class="token punctuation">&gt;</span></span></span></code> data by using the <code class=" language-php"><span class="token string">'html_head'</span></code> key in the <code class=" language-php"><span class="token shell-comment comment">#attached</span></code> property:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token keyword keyword-function">function</span> <span class="token function">fluffiness_page_attachments</span><span class="token punctuation">(</span><span class="token keyword keyword-array">array</span> <span class="token operator">&amp;</span><span class="token variable">$attachments</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token variable">$attachments</span><span class="token punctuation">[</span><span class="token string">'#attached'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'html_head'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token comment" spellcheck="true">// The data.</span>
+    <span class="token punctuation">[</span>
+      <span class="token string">'#type'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'html_tag'</span><span class="token punctuation">,</span>
+      <span class="token comment" spellcheck="true">// The HTML tag to add, in this case a  tag.</span>
+      <span class="token string">'#tag'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'script'</span><span class="token punctuation">,</span>
+      <span class="token comment" spellcheck="true">// The value of the HTML tag, here we want to end up with</span>
+      <span class="token comment" spellcheck="true">// alert("Hello world!");.</span>
+      <span class="token string">'#value'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'alert("Hello world!");'</span><span class="token punctuation">,</span>
+      <span class="token comment" spellcheck="true">// Set attributes like src to load a file.</span>
+      <span class="token string">'#attributes'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword keyword-array">array</span><span class="token punctuation">(</span><span class="token string">'src'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token comment" spellcheck="true">// A key, to make it possible to recognize this HTML  element when altering.</span>
+    <span class="token string">'hello-world'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h2 id="dynamic-css-js"><a class="toc-anchor" title="Permalink to this headline" href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#dynamic-css-js"></a>Dynamically generated CSS and JS</h2>
+<p>In extremely rare and advanced cases, you may have the need to dynamically generate CSS and JS. There are two categories of "dynamicness":</p>
+<ol><li>Dynamically built, but used across multiple requests</li>
+<li>Dynamically built for each request</li>
+</ol><p>If the dynamic CSS/JS is used across multiple requests, then you can use <a href="https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Render%21theme.api.php/function/hook_library_info_alter/8.2.x" rel="nofollow"><code class=" language-php"><span class="token function">hook_library_info_alter</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></a> to modify a library to include your dynamically/automatically generated CSS/JS. An example in Drupal 8 core of this is <a href="https://api.drupal.org/api/drupal/core%21modules%21color%21color.module/function/color_library_info_alter" rel="nofollow"><code class=" language-php"><span class="token function">color_library_info_alter</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></a>. Realize that just using <code class=" language-php"><span class="token function">hook_library_info_build</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> or&nbsp;<code class=" language-php"><span class="token function">hook_library_info_alter</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>&nbsp;to append a library will not automatically make the library appear in the page. You still have to define it as an attachment (either for the page or for a certain element) by using any of the techniques above.&nbsp;</p>
+<p>If the dynamic CSS/JS is built for each request, then you enter the truly advanced territory. This is hard, and for a good reason: per-request dynamic assets have to be built on <em>every single request</em> and therefore slow Drupal down. We want to make it hard to make Drupal slow down, so this is why we don't offer a nice API for this — since we don't want you to do it.<br>
+It is possible though. In the case of dynamic JS: please consider using <em>configurable JavaScript instead</em>, that is almost always the much better choice. Then the logic is stored in a file (and can be reviewed, linted and cached on the client side), and only the settings to configure the logic in that file need to be generated on each request. And in fact, this can also be used for dynamic CSS: attach dynamic CSS as <code class=" language-php">drupalSettings</code> and let some JS file add it to the page.<br>
+If using <code class=" language-php">drupalSettings</code> plus a JavaScript file is not an option, then you still have one option left: use <code class=" language-php"><span class="token function">hook_page_attachments</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>, where you add a new value to <code class=" language-php"><span class="token variable">$page</span><span class="token punctuation">[</span><span class="token string">'#attached'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'html_head'</span><span class="token punctuation">]</span></code>, which contains either a <code class=" language-php"><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span></span></code> tag or a <code class=" language-php"><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span></span></code> tag, as the “Inline JavaScript that affects the entire page” section above already showed.</p>
+<h3 id="hook_library_info_build"><a class="toc-anchor" title="Permalink to this headline" href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#hook_library_info_build"></a>hook_library_info_build() added for dynamic library definitions</h3>
+<p>For some advanced use cases — like detecting 3rd party libraries that need to be downloaded manually, and then exposing those as Drupal asset libraries (think Libraries API module) — you want to be able to still use PHP code to register libraries using some additional logic. That's why <a href="https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Render%21theme.api.php/function/hook_library_info_build/8.2.x" rel="nofollow"><code class=" language-php"><span class="token function">hook_library_info_build</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></a> was added</p>
+<p>Note that "dynamic" doesn't mean "runtime" (i.e. for every request) — that'd be terrible for performance. The dynamically added libraries are still cached, just like libraries defined in YML files. This means that you still need to attach the library to a page or element using any of the above techniques. It's "dynamic" because you can use logic to control this attaching of the libraries.</p>
+<h2 id="differences-with-drupal-7"><a class="toc-anchor" title="Permalink to this headline" href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#differences-with-drupal-7"></a>Differences with Drupal 7</h2>
+<ul><li>In Drupal 7 libraries had to be defined using <code class=" language-php"><span class="token function">hook_library_info</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>. <a href="https://www.drupal.org/node/2201089" rel="nofollow">That has been replaced with <code class=" language-php"><span class="token operator">*</span><span class="token punctuation">.</span>libraries<span class="token punctuation">.</span>yml</code> file</a>.</li>
+<li><a href="https://www.drupal.org/node/2169605" rel="nofollow">In Drupal 8 <code class=" language-php"><span class="token function">drupal_add_css</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>, <code class=" language-php"><span class="token function">drupal_add_js</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> and <code class=" language-php"><span class="token function">drupal_add_library</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> were removed in favor of <code class=" language-php"><span class="token shell-comment comment">#attached</span></code></a></li>
+<li>In Drupal8 drupal settings are now located in an external json file that it will be up to the module maintainers to check for if the js depends on it. <a href="https://www.drupal.org/node/2510104" rel="nofollow">Link to issue.</a> @TODO this will require further documenting.</li>
+</ul><h2 id="more-info"><a class="toc-anchor" title="Permalink to this headline" href="https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#more-info"></a>More information</h2>
+<ul><li><a href="https://www.drupal.org/node/1886770" rel="nofollow">CSS coding standards</a></li>
+<li><a href="https://www.drupal.org/node/172169" rel="nofollow">JavaScript coding standards</a></li>
+<li><a href="https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Asset%21LibraryDiscoveryParser.php/function/LibraryDiscoveryParser%3A%3AparseLibraryInfo" rel="nofollow">LibraryDiscoveryParser::parseLibraryInfo()</a></li>
+<li><a href="https://www.previousnext.com.au/blog/performance-improvements-drupal-8-libraries" rel="nofollow">"Performance improvements with Drupal 8 Libraries" by Rikki Bochow at PreviousNext</a></li>
+</ul></div></div></div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-views-panes pane-documentation-related-content-related-content-pane" id="related-content">
+  
+        <h2 class="pane-title">
+      Related Content    </h2>
+    
+  
+  <div class="pane-content">
+    <div class="view view-documentation-related-content view-id-documentation_related_content view-display-id-related_content_pane view-dom-id-9f6cac81cd600b794c17fb631b1a7b69">
+        
+  
+  
+      <div class="view-content">
+        <div>
+    <div id="node-2216195" class="node node-documentation node-content-2216195 clearfix">
+
+  
+        <h2><a href="https://www.drupal.org/docs/8/theming/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-theme">Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 theme</a></h2>
+    
+  
+  <div class="content">
+    <div class="field field-name-field-summary field-type-text field-label-hidden"><div class="field-items"><div class="field-item even">In Drupal 8, stylesheets (CSS) and JavaScript (JS) are loaded through the same system for modules (code) and themes, for everything: asset</div></div></div>  </div>
+
+  
+
+</div>
+
+  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+
+  
+  </div>
+        </div>
+      </div>
+      <div class="column-content-region bottom-right-content column panel-panel">
+        <div class="column-content-region-inner bottom-right-content-inner column-inner panel-panel-inner">
+                  </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container footer clearfix panel-panel">
+    <div class="container-inner footer-inner panel-panel-inner">
+          </div>
+  </div>
+
+</div><!-- /.sutro -->
+</div>
+  </div>
+  </div>
+</div>
+  </div>
+        </div>
+              </div> <!-- /#content -->
+
+    </div> <!-- /#column-left -->
+
+      </div> <!-- /#page -->
+
+  <div id="footer" role="contentinfo">
+            <div class="region region-footer">
+    <div id="block-drupalorg-documentation-license" class="block block-drupalorg">
+<div class="block-inner">
+    
+  <div class="content">
+    Drupal’s online documentation is © 2000-2019 by the individual contributors and can be used in accordance with the <a href="https://www.drupal.org/terms">Creative Commons License, Attribution-ShareAlike 2.0</a>. PHP code is distributed under the <a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GNU General Public License</a>.  </div>
+  </div>
+</div>
+<div id="block-drupalorg-crosssite-drupalorg-footer" class="block block-drupalorg-crosssite">
+<div class="block-inner">
+    
+  <div class="content">
+    <h4 class="element-invisible">News items</h4><ul class="drupal-news"><li class="0 first"><a href="https://www.drupal.org/news">News</a></li>
+<li class="1"><a href="https://www.drupal.org/planet" title="News from Drupal community members">Planet Drupal</a></li>
+<li class="2"><a href="https://www.drupal.org/social-media" title="Drupal on social media">Social media directory</a></li>
+<li class="3"><a href="https://www.drupal.org/security" title="Advisories from the security team">Security announcements</a></li>
+<li class="4 last"><a href="https://jobs.drupal.org/" title="Drupal Jobs">Jobs</a></li>
+</ul><h4 class="element-invisible">Our community</h4><ul class="community"><li class="0 first"><a href="https://drupal.org/community">Community</a></li>
+<li class="1"><a href="https://drupal.org/getting-involved" title="Learn how to contribute to the Drupal project">Getting involved</a></li>
+<li class="2"><span><a href="https://drupal.org/drupal-services" title="People and organizations offering Drupal services">Services</a>, <a href="https://drupal.org/training" title="People and organizations offering Drupal training">Training</a> &amp; <a href="https://drupal.org/hosting" title="Organizations offering Drupal hosting">Hosting</a></span></li>
+<li class="3"><a href="https://groups.drupal.org/groups" title="groups.drupal.org">Groups &amp; Meetups</a></li>
+<li class="4"><a href="https://events.drupal.org/" title="Upcoming and past DrupalCons">DrupalCon</a></li>
+<li class="5 last"><a href="https://drupal.org/dcoc" title="Drupal code of conduct">Code of conduct</a></li>
+</ul><h4 class="element-invisible">Documentation</h4><ul class="get-started"><li class="0 first"><a href="https://drupal.org/documentation" title="Documentation for working with Drupal">Documentation</a></li>
+<li class="1"><a href="https://www.drupal.org/docs/8">Drupal 8 docs</a></li>
+<li class="2"><a href="https://www.drupal.org/docs/7">Drupal 7 docs</a></li>
+<li class="3"><a href="https://www.drupal.org/documentation/develop">Developer docs</a></li>
+<li class="4 last"><a href="https://api.drupal.org/" title="Drupal API reference">api.drupal.org</a></li>
+</ul><h4 class="element-invisible">Drupal code base</h4><ul class="download-extend"><li class="0 first"><a href="https://drupal.org/download">Download &amp; Extend</a></li>
+<li class="1"><a href="https://drupal.org/project/drupal" title="Download the latest version of the Drupal software">Drupal core</a></li>
+<li class="2"><a href="https://drupal.org/project/project_module" title="Download add-on features and functionality">Modules</a></li>
+<li class="3"><a href="https://drupal.org/project/project_theme" title="Download pre-designed styles for Drupal">Themes</a></li>
+<li class="4 last"><a href="https://drupal.org/project/project_distribution" title="Download a pre-packaged Drupal site">Distributions</a></li>
+</ul><h4 class="element-invisible">Governance of community</h4><ul class="about"><li class="0 first"><a href="https://drupal.org/about">About</a></li>
+<li class="1"><a href="https://drupal.org/about/accessibility" title="Our committment to accessibility">Web accessibility</a></li>
+<li class="2"><a href="https://drupal.org/association" title="About the Drupal Association">Drupal Association</a></li>
+<li class="3"><a href="https://drupal.org/drupalorg" title="About Drupal.org">About Drupal.org</a></li>
+<li class="4"><a href="https://drupal.org/terms" title="Drupal.org terms of service">Terms of service</a></li>
+<li class="5 last"><a href="https://drupal.org/privacy" title="Drupal.org privacy policy">Privacy policy</a></li>
+</ul>  </div>
+  </div>
+</div>
+<div id="block-block-77" class="block block-block">
+<div class="block-inner">
+    
+  <div class="content">
+    <p>Drupal is a <a href="http://drupal.com/trademark">registered trademark</a> of <a href="https://dri.es/">Dries Buytaert</a>.</p>
+  </div>
+  </div>
+</div>
+  </div>
+      </div>
+    <div class="region region-page-bottom">
+    <script type="text/javascript">
+      (function(){
+          window._pxAppId = 'PXVnPBBfwe';
+          window._pxParam2 = '';
+          window._pxParam3 = '0';
+          var p = document.getElementsByTagName('script')[0],
+              s = document.createElement('script');
+          s.async = 1;
+          s.src = '/VnPBBfwe/init.js';
+          p.parentNode.insertBefore(s,p);
+      }());
+  </script>
+  <noscript>
+      &lt;div style="position:fixed; top:0; left:0; display:none" width="1" height="1"&gt;
+          &lt;img src="/VnPBBfwe/xhr/api/v1/collector/noScript.gif?appId=PXVnPBBfwe"&gt;
+      &lt;/div&gt;
+  </noscript>  </div>
+
+<!--[if lte IE 9]>
+<script type="text/javascript" src="/files/advagg_js/js__79M6UrZjAw3oNGnUjsWip12JsvnUZmJGA3h9LI0kuzE__LqE6uSZqCOZhJYW910TDw_HTQzBKUPTZxunfaWkalq8__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js#ie9-" onload="if(jQuery.isFunction(jQuery.holdReady)){jQuery.holdReady(true);}"></script>
+<![endif]-->
+
+<!--[if gt IE 9]>
+<script type="text/javascript" src="/files/advagg_js/js__79M6UrZjAw3oNGnUjsWip12JsvnUZmJGA3h9LI0kuzE__LqE6uSZqCOZhJYW910TDw_HTQzBKUPTZxunfaWkalq8__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js#ie10+" defer="defer" onload="if(jQuery.isFunction(jQuery.holdReady)){jQuery.holdReady(true);}"></script>
+<![endif]-->
+
+<!--[if !IE]><!-->
+<script type="text/javascript" src="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/js__79M6UrZjAw3oNGnUjsWip12JsvnUZmJGA3h9LI0kuzE__LqE6uSZqCOZhJYW910TDw_HTQzBKUPTZxunfaWkalq8__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer" onload="if(jQuery.isFunction(jQuery.holdReady)){jQuery.holdReady(true);}"></script>
+<!--<![endif]-->
+<script type="text/javascript" src="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/js__qvxhs9hiTVr_USTpngJWnfdQEU8sbxmerZ1FBORD7ks__c_vdLVdm2dhTjV0-cjXbrVvnpDDp5m6xnNff8tSZ1fg__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer"></script>
+<script type="text/javascript" src="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/js__H5AFmq1RrXKsrazzPq_xPQPy4K0wUKqecPjczzRiTgQ__JIy-3lUpq3qC8JjvfOMkqOB8loYzuE93VQgLvC7HpVM__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer" onload="
+function advagg_mod_1() {
+  // Count how many times this function is called.
+  advagg_mod_1.count = ++advagg_mod_1.count || 1;
+  try {
+    if (advagg_mod_1.count &lt;= 40) {
+      init_drupal_core_settings();
+
+      // Set this to 100 so that this function only runs once.
+      advagg_mod_1.count = 100;
+    }
+  }
+  catch(e) {
+    if (advagg_mod_1.count &gt;= 40) {
+      // Throw the exception if this still fails after running 40 times.
+      throw e;
+    }
+    else {
+      // Try again in 1 ms.
+      window.setTimeout(advagg_mod_1, 1);
+    }
+  }
+}
+function advagg_mod_1_check() {
+  if (window.init_drupal_core_settings &amp;&amp; window.jQuery &amp;&amp; window.Drupal) {
+    advagg_mod_1();
+  }
+  else {
+    window.setTimeout(advagg_mod_1_check, 1);
+  }
+}
+advagg_mod_1_check();"></script>
+<script type="text/javascript" src="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/js__W3HVetagCYpKE0fh-1m9ldkYrnM7EKUfayUOkYfG5ns__WuK1hQPJATa9bKz9C-kkuJb4wU7eT0t_GOkJsnF_TuM__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer"></script>
+<script type="text/javascript" src="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/js__ENYUZMe5BHbMK8_pF3i18y1CtuMx_ItPRfjUOF7vUds__MXaxQPtP7z2LRCIe-IOxTRyNSvHNhJSb9SX1jpwq-Z8__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer"></script>
+<script type="text/javascript" src="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/js__dTRSuW27RiJte-z_L4Px_rno5dZsdWKiU3HtuBiTSmc__1heMEGpuuHZnihe04BOr3X2vIc8bRMaEUwDqgCjyFsM__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer"></script>
+<script type="text/javascript" defer="defer" async="async" src="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/analytics.js"></script>
+<script type="text/javascript" src="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/js__gAfkvwHTHdM_vebZo2iTQLdnpDeigD9kUQ7XFOcxI1Y__G9O1Jd54B-E1iYd8UT-IVu_jRdw44oi8geXeCGkQUc0__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer" async="async"></script>
+<script type="text/javascript" src="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/js__pLKQd4r7OrHglE7Qkqw53K2UXCqQdhqQ9v0cz7hMCQY__OErfYuQdGbFHcCoLoUW_ESSvaumApNojzjJit8-2xcw__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer"></script>
+<script type="text/javascript" src="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/js__hHUWFbMAa11eJtx5V0ym9o0YBsB1udk34qUT5wr1ihI__v_laEepDqP2anEEp6ywEdbWv-xdkaC1VUNQ6A-wrXno__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+function init_drupal_core_settings() {jQuery.extend(Drupal.settings,{"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"bluecheese","theme_token":"laXXyDE97sQsi8sgA8cJoK9YAnSkqcIjVRG7ZisNUF8"},"colorbox":{"transition":"elastic","speed":"100","opacity":"0.85","slideshow":false,"slideshowAuto":true,"slideshowSpeed":"2500","slideshowStart":"start slideshow","slideshowStop":"stop slideshow","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","overlayClose":true,"returnFocus":true,"maxWidth":"98%","maxHeight":"98%","initialWidth":"300","initialHeight":"250","fixed":true,"scrolling":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"better_exposed_filters":{"views":{"documentation_related_content":{"displays":{"related_content_pane":{"filters":[]}}}}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"urlIsAjaxTrusted":{"\/docs\/8\/creating-custom-modules\/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module":true},"ogContext":{"groupType":"node","gid":"2804139"}}); 
+if(jQuery.isFunction(jQuery.holdReady)){jQuery.holdReady(false);}} if(window.jQuery && window.Drupal){init_drupal_core_settings();}
+//--><!]]>
+</script>
+<script type="text/javascript" src="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/js__vj0LjvNwl-3K1P9LGT4BGuXCZcAovYsVlVmoJN3TMRg__KW8SiGceRY3sjIKVrffDjf2MK4A5Vp3EDDxVO-4pegI__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"e671e25255","applicationID":"4266189","transactionName":"Z1AEbREHVxAFU0RRV14aJ1oXD1YNS15fXF1vRQdeBjlPCgFH","queueTime":0,"applicationTime":1048,"atts":"SxcHG1kdRB4=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button type="button" id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div><script src="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/saved_resource" type="text/javascript"></script><script src="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/adsct" type="text/javascript"></script><script src="./Adding stylesheets (CSS) and JavaScript (JS) to a Drupal 8 module _ Drupal 8 guide on Drupal.org_files/adsct(1)" type="text/javascript"></script></body></html>

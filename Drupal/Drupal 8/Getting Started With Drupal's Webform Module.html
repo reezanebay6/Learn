@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)https://www.ostraining.com/blog/drupal/webform-module/ -->
+<html lang="en-gb" dir="ltr" class="wf-opensans3a3002c4002c6002c8007cbreeserif7clato3a3002c4002c7002c900-n4-inactive wf-inactive"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="title" content="Getting Started With Drupal&#39;s Webform Module">
+    <meta class="viewport" name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="apple-touch-icon-precomposed" href="https://www.ostraining.com/templates/vg_progressive/apple_touch_icon.png">
+
+    <!--<base href="https://www.ostraining.com/blog/drupal/webform-module/">--><base href=".">
+	
+	<meta name="keywords" content="getting, started, with, cck, drupal, org, project, token, scroll, oll">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@ostraining">
+	<meta name="twitter:title" content="Getting Started With Drupal&#39;s Webform Module">
+	<meta name="twitter:description" content="
+One of our club members asked us how to create a survey form in Drupal 7. They wanted to achieve this without a need for custom coding.
+The Webform contri...">
+	<meta name="twitter:image" content="https://www.ostraining.com/cdn/images/webform-module-d7.jpg">
+	<meta name="robots" content="index, follow">
+	<meta name="author" content="Ed Andrea">
+	<meta name="metatitle" content="Getting Started With Drupal&#39;s Webform Module">
+	<meta name="generator" content="OSTraining">
+	<title>Getting Started With Drupal's Webform Module</title>
+	<link href="https://www.ostraining.com/templates/vg_progressive/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+	<link href="https://www.ostraining.com/blog/drupal/webform-module/" rel="canonical">
+	<link href="./Getting Started With Drupal&#39;s Webform Module_files/frontend.css" rel="stylesheet" type="text/css">
+	<link href="./Getting Started With Drupal&#39;s Webform Module_files/osembed.css" rel="stylesheet" type="text/css">
+	<link href="./Getting Started With Drupal&#39;s Webform Module_files/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="./Getting Started With Drupal&#39;s Webform Module_files/style.css" rel="stylesheet" type="text/css">
+	<link href="./Getting Started With Drupal&#39;s Webform Module_files/compojoom.css" rel="stylesheet" type="text/css">
+	<link href="./Getting Started With Drupal&#39;s Webform Module_files/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="./Getting Started With Drupal&#39;s Webform Module_files/galleria.compojoom.css" rel="stylesheet" type="text/css">
+	<link href="./Getting Started With Drupal&#39;s Webform Module_files/jquery.fileupload.css" rel="stylesheet" type="text/css">
+	<link href="./Getting Started With Drupal&#39;s Webform Module_files/jquery.fileupload-ui.css" rel="stylesheet" type="text/css">
+	<link href="./Getting Started With Drupal&#39;s Webform Module_files/style.min.css" rel="stylesheet" type="text/css">
+	<script async="" src="./Getting Started With Drupal&#39;s Webform Module_files/analytics.js"></script><script async="" src="./Getting Started With Drupal&#39;s Webform Module_files/prum.min.js"></script><script async="" src="./Getting Started With Drupal&#39;s Webform Module_files/analytics.js"></script><script type="application/json" class="joomla-script-options loaded">{"csrf.token":"de72ca3f2769e3b88af68d876a653ced","system.paths":{"root":"","base":""},"joomla.jtext":{"JLIB_FORM_FIELD_INVALID":"Invalid field:&#160","COM_COMMENT_PLEASE_FILL_IN_ALL_REQUIRED_FIELDS":"Please fill in all required fields.","COM_COMMENT_ANONYMOUS":"Anonymous"},"system.keepalive":{"interval":3600000,"uri":"\/component\/ajax\/?format=json&amp;Itemid=178"}}</script>
+	<script src="./Getting Started With Drupal&#39;s Webform Module_files/jquery.min.js" type="text/javascript"></script>
+	<script src="./Getting Started With Drupal&#39;s Webform Module_files/jquery-noconflict.js" type="text/javascript"></script>
+	<script src="./Getting Started With Drupal&#39;s Webform Module_files/jquery-migrate.min.js" type="text/javascript"></script>
+	<script src="./Getting Started With Drupal&#39;s Webform Module_files/mootools-core.js" type="text/javascript"></script>
+	<script src="./Getting Started With Drupal&#39;s Webform Module_files/core.js" type="text/javascript"></script>
+	<script src="./Getting Started With Drupal&#39;s Webform Module_files/punycode.js" type="text/javascript"></script>
+	<script src="./Getting Started With Drupal&#39;s Webform Module_files/validate.js" type="text/javascript"></script>
+	<script src="./Getting Started With Drupal&#39;s Webform Module_files/jquery.osdownloads.bundle.min.js" type="text/javascript"></script>
+	<script src="./Getting Started With Drupal&#39;s Webform Module_files/osembed.js" type="text/javascript"></script>
+	<!--[if lt IE 9]><script src="/media/system/js/polyfill.event.js?3d9d89323b08dfdd7a21fc9be7769d71" type="text/javascript"></script><![endif]-->
+	<script src="./Getting Started With Drupal&#39;s Webform Module_files/keepalive.js" type="text/javascript"></script>
+	<script src="./Getting Started With Drupal&#39;s Webform Module_files/assign.js" type="text/javascript"></script>
+	<script src="./Getting Started With Drupal&#39;s Webform Module_files/promise.js" type="text/javascript"></script>
+	<script src="./Getting Started With Drupal&#39;s Webform Module_files/caption.js" type="text/javascript"></script>
+	<script type="text/javascript">
+jQuery(window).on('load',  function() {
+				new JCaption('img.caption');
+			});
+	</script>
+	<link href="http://feeds.feedburner.com/ostraining" rel="alternate" type="application/rss+xml" title="OSTraining">
+	<link rel="canonical" href="https://www.ostraining.com/blog/drupal/webform-module/">
+
+
+    <!-- Google fonts -->
+    <link rel="stylesheet" href="./Getting Started With Drupal&#39;s Webform Module_files/css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./Getting Started With Drupal&#39;s Webform Module_files/system.css" type="text/css">
+    <link rel="stylesheet" href="./Getting Started With Drupal&#39;s Webform Module_files/buttons.css">
+    <link rel="stylesheet" href="./Getting Started With Drupal&#39;s Webform Module_files/social-icons.css">
+    <link rel="stylesheet" href="./Getting Started With Drupal&#39;s Webform Module_files/font-awesome.min(1).css">
+    <link rel="stylesheet" href="./Getting Started With Drupal&#39;s Webform Module_files/bootstrap.min.css">
+    <link rel="stylesheet" href="./Getting Started With Drupal&#39;s Webform Module_files/animate.css">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="./Getting Started With Drupal&#39;s Webform Module_files/style(1).css">
+
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="./Getting Started With Drupal&#39;s Webform Module_files/responsive.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./Getting Started With Drupal&#39;s Webform Module_files/pages.css">
+    <link rel="stylesheet" href="./Getting Started With Drupal&#39;s Webform Module_files/home-pages-customizer.css">
+
+    <!-- IE Styles-->
+    <link rel="stylesheet" href="./Getting Started With Drupal&#39;s Webform Module_files/ie.css">
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <link rel='stylesheet' href="/templates/vg_progressive/css/ie/ie8.css">
+    <![endif]-->
+
+    <link rel="stylesheet" href="./Getting Started With Drupal&#39;s Webform Module_files/joomla.css">
+            <link rel="stylesheet" href="./Getting Started With Drupal&#39;s Webform Module_files/custom.css">
+    
+    <style>
+        body,
+        input,
+        button,
+        select,
+        textarea {
+            font-family:'Open Sans', sans-serif;
+        }
+        #top-box,
+        .carousel-box .next:hover,
+        .carousel-box .prev:hover,
+        .product .product-hover,
+        #footer .up:hover,
+        .btn,
+        .btn:visited,
+        .slider .slider-nav,
+        .panel-group .active.panel .panel-heading > .panel-title > a,
+        .panel-group .active.panel .panel-heading > .panel-title > a:hover,
+        .banner-set .pagination a:hover,
+        .employee .employee-hover,
+        .carousel-box .pagination a:hover,
+        .sidebar .menu li > a,
+        .pagination > li > a:hover,
+        .pagination > li > a:focus,
+        .sidebar .tags a:hover,
+        .sidebar .banners .banner-text,
+        #catalog .category-img .description,
+        .product-bottom .related-products header:before,
+        .slider.rs-slider .tparrows,
+        .slider.rs-slider .tparrows:hover,
+        .toolbar .sort-catalog .dropdown-toggle,
+        .toolbar .grid-list .grid,
+        .toolbar .grid-list .list,
+        .toolbar .up-down,
+        .toolbar .up-down.active,
+        .toolbar .grid-list a.grid:hover,
+        .toolbar .grid-list a.list:hover,
+        .pagination > .active > a,
+        .pagination > .active > span,
+        .pagination > .active > span:hover,
+        .sidebar .tags a,
+        .sidebar .menu li.parent > a .open-sub:before,
+        .sidebar .menu li.parent > a .open-sub:after,
+        .panel-group .panel-default .panel-heading > .panel-title > a:before,
+        .panel-group .panel-default .panel-heading > .panel-title > a:after,
+        .new-radio.checked span,
+        .list .product .actions a:hover,
+        .product-page .col-md-7 .actions a:hover,
+        .product-page .image-box .thumblist-box .prev:hover,
+        .product-page .image-box .thumblist-box .next:hover,
+        .accordion-tab > li > a .open-sub:before,
+        .accordion-tab > li > a .open-sub:after,
+        .products-tab .accordion-tab > li > a .open-sub:before,
+        .products-tab .accordion-tab > li > a .open-sub:after,
+        .sidebar .calendar-wrap caption,
+        .btn-group.open .btn.dropdown-toggle,
+        .product .limit-offer,
+        .product .not-rotation-actions,
+        .fancybox-nav span:hover,
+        .header .primary .navbar .btn-navbar .icon-bar,
+        .progressive-slider-two .pagination a,
+        .progressive-slider-two .pagination a:hover,
+        .progressive-slider-two .pagination .selected,
+        .sidebar .side-menu > li > a,
+        .sidebar .menu li > span,
+        .sidebar .menu .sub a {
+            background-color: #2184cd;
+        }
+        .slider .slider-nav {
+            background-color: rgba(33,132,205,0.97);
+        }
+        .product .limit-offer,
+        .product .not-rotation-actions {
+            background-color: rgba(33,132,205,0.9);
+        }
+        .btn:hover,
+        .btn:focus,
+        .btn:active,
+        .btn.active,
+        .btn.disabled,
+        .btn[disabled] {
+            background-color: rgba(33,132,205,0.8);
+        }
+        #catalog .category-img .description,
+        .toolbar .sort-catalog .dropdown-toggle,
+        .toolbar .grid-list .grid,
+        .toolbar .grid-list .list,
+        .toolbar .up-down,
+        .toolbar .up-down.active,
+        .pagination > .active > a,
+        .pagination > .active > span,
+        .pagination > .active > span:hover,
+        .sidebar .tags a,
+        .btn-group.open .btn.dropdown-toggle {
+            background-color: rgba(33,132,205,0.7);
+        }
+        .sidebar .banners .banner-text {
+            background-color: rgba(33,132,205,0.65);
+        }
+        .slider.rs-slider .tparrows,
+        .product-page .add-cart-form .number .regulator a:hover,
+        .progressive-slider-two .pagination a {
+            background-color: rgba(33,132,205,0.5);
+        }
+        .pricing .bottom-box {
+            background-color: rgba(33,132,205,0.05);
+        }
+        .pricing:before {
+            background-color: rgba(33,132,205,0.06);
+        }
+        .pricing .options li,
+        .pricing .bottom-box {
+            border-color: rgba(33,132,205,0.1);
+        }
+        .header .cart-header .dropdown-toggle,
+        #footer .newsletter input:focus + .submit,
+        .icon,
+        .big-icon,
+        .big-icon:visited,
+        .service .icon,
+        .close:hover,
+        .close:focus,
+        .img-thumbnail:hover .bg-images i:before,
+        .box-404 h1,
+        .gallery-images:hover .bg-images i:before,
+        .features-block .header-box .icon-box,
+        .features-block .header-box,
+        .sidebar .newsletter input:focus + .submit,
+        .sidebar .section .selected .close:hover,
+        .package .title a,
+        .package .price-box .price,
+        .package .price-box .icon,
+        .pricing .title a,
+        .pricing .options li span,
+        .pricing .options li.active,
+        .banner-set .next:hover,
+        .banner-set .prev:hover,
+        .btn.btn-border,
+        .btn.btn-border .caret,
+        .product-remove:hover,
+        .one-page .header .primary .navbar .nav .active,
+        .post .entry-title a {
+            color: #2184cd;
+        }
+        .pricing .bottom-box .more {
+            color: rgba(33,132,205,0.7);
+        }
+        .pricing .options li {
+            color: rgba(33,132,205,0.4);
+        }
+        .phone-header a svg path,
+        .search-header a svg path,
+        .product .actions a svg path,
+        .sidebar .wishlist .add-cart:hover path,
+        .header .cart-header .dropdown-toggle .icon svg path,
+        .search-active .search-submit svg path,
+        .new-checkbox svg polygon,
+        .product-bottom .related-products li .button-box .wishlist:hover svg path,
+        .jslider .jslider-pointer svg path,
+        .rating-box .rating svg polygon,
+        .search-result .search-form .search-submit svg path {
+            fill: #2184cd;
+        }
+        @media (max-width: 979px) {
+            .header .primary .navbar .nav > .parent.active > a,
+            .header .primary .navbar .nav > .parent.active:hover > a,
+            .header .primary .navbar .nav .open-sub span,
+            .accordion-tab > li.active > a,
+            .accordion-tab > li.active > a:hover,
+            .accordion-tab > li.active > a:focus,
+            .accordion-tab > li.active:hover > a,
+            .products-tab .accordion-tab > li.active > a,
+            .products-tab .accordion-tab > li.active:hover > a {
+                background-color: #2184cd;
+            }
+            .header .primary .navbar .nav > .parent.active > a,
+            .header .primary .navbar .nav > .parent.active:hover > a {
+                border-color: #2184cd;
+            }
+        }
+        .rewindButton.w-control.w-is-visible {
+    height: 100% !important;
+    padding-top: 10px !important;
+    width: 48.75px !important;
+}    </style>
+
+
+
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','_pixGAnalytics');_pixGAnalytics('create', 'UA-487204-73', {cookieDomain: 'ostraining.com'});_pixGAnalytics('send', 'pageview');
+
+</script>
+
+<style type="text/css">.fancybox-margin{margin-right:0px;}</style><style type="text/css">@-webkit-keyframes bounce{0%,20%,50%,80%,to{-webkit-transform:translateY(0);transform:translateY(0)}40%{-webkit-transform:translateY(-30px);transform:translateY(-30px)}60%{-webkit-transform:translateY(-15px);transform:translateY(-15px)}}@keyframes bounce{0%,20%,50%,80%,to{-webkit-transform:translateY(0);transform:translateY(0)}40%{-webkit-transform:translateY(-30px);transform:translateY(-30px)}60%{-webkit-transform:translateY(-15px);transform:translateY(-15px)}}.om-animation-bounce{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:bounce;animation-name:bounce}@-webkit-keyframes bounceIn{0%{opacity:0;-webkit-transform:scale(.3);transform:scale(.3)}50%{opacity:1;-webkit-transform:scale(1.05);transform:scale(1.05)}70%{-webkit-transform:scale(.9);transform:scale(.9)}to{opacity:1;-webkit-transform:scale(1);transform:scale(1)}}@keyframes bounceIn{0%{opacity:0;-webkit-transform:scale(.3);transform:scale(.3)}50%{opacity:1;-webkit-transform:scale(1.05);transform:scale(1.05)}70%{-webkit-transform:scale(.9);transform:scale(.9)}to{opacity:1;-webkit-transform:scale(1);transform:scale(1)}}.om-animation-bounce-in{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:bounceIn;animation-name:bounceIn}@-webkit-keyframes bounceInDown{0%{opacity:0;-webkit-transform:translateY(-2000px);transform:translateY(-2000px)}60%{opacity:1;-webkit-transform:translateY(30px);transform:translateY(30px)}80%{-webkit-transform:translateY(-10px);transform:translateY(-10px)}to{-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes bounceInDown{0%{opacity:0;-webkit-transform:translateY(-2000px);transform:translateY(-2000px)}60%{opacity:1;-webkit-transform:translateY(30px);transform:translateY(30px)}80%{-webkit-transform:translateY(-10px);transform:translateY(-10px)}to{-webkit-transform:translateY(0);transform:translateY(0)}}.om-animation-bounce-in-down{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:bounceInDown;animation-name:bounceInDown}@-webkit-keyframes bounceInLeft{0%{opacity:0;-webkit-transform:translateX(-2000px);transform:translateX(-2000px)}60%{opacity:1;-webkit-transform:translateX(30px);transform:translateX(30px)}80%{-webkit-transform:translateX(-10px);transform:translateX(-10px)}to{-webkit-transform:translateX(0);transform:translateX(0)}}@keyframes bounceInLeft{0%{opacity:0;-webkit-transform:translateX(-2000px);transform:translateX(-2000px)}60%{opacity:1;-webkit-transform:translateX(30px);transform:translateX(30px)}80%{-webkit-transform:translateX(-10px);transform:translateX(-10px)}to{-webkit-transform:translateX(0);transform:translateX(0)}}.om-animation-bounce-in-left{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:bounceInLeft;animation-name:bounceInLeft}@-webkit-keyframes bounceInRight{0%{opacity:0;-webkit-transform:translateX(2000px);transform:translateX(2000px)}60%{opacity:1;-webkit-transform:translateX(-30px);transform:translateX(-30px)}80%{-webkit-transform:translateX(10px);transform:translateX(10px)}to{-webkit-transform:translateX(0);transform:translateX(0)}}@keyframes bounceInRight{0%{opacity:0;-webkit-transform:translateX(2000px);transform:translateX(2000px)}60%{opacity:1;-webkit-transform:translateX(-30px);transform:translateX(-30px)}80%{-webkit-transform:translateX(10px);transform:translateX(10px)}to{-webkit-transform:translateX(0);transform:translateX(0)}}.om-animation-bounce-in-right{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:bounceInRight;animation-name:bounceInRight}@-webkit-keyframes bounceInUp{0%{opacity:0;-webkit-transform:translateY(2000px);transform:translateY(2000px)}60%{opacity:1;-webkit-transform:translateY(-30px);transform:translateY(-30px)}80%{-webkit-transform:translateY(10px);transform:translateY(10px)}to{-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes bounceInUp{0%{opacity:0;-webkit-transform:translateY(2000px);transform:translateY(2000px)}60%{opacity:1;-webkit-transform:translateY(-30px);transform:translateY(-30px)}80%{-webkit-transform:translateY(10px);transform:translateY(10px)}to{-webkit-transform:translateY(0);transform:translateY(0)}}.om-animation-bounce-in-up{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:bounceInUp;animation-name:bounceInUp}@-webkit-keyframes flash{0%,50%,to{opacity:1}25%,75%{opacity:0}}@keyframes flash{0%,50%,to{opacity:1}25%,75%{opacity:0}}.om-animation-flash{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:flash;animation-name:flash}@-webkit-keyframes flip{0%{-webkit-transform:perspective(800px) translateZ(0) rotateY(0) scale(1);transform:perspective(800px) translateZ(0) rotateY(0) scale(1);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}40%{-webkit-transform:perspective(800px) translateZ(150px) rotateY(170deg) scale(1);transform:perspective(800px) translateZ(150px) rotateY(170deg) scale(1);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}50%{-webkit-transform:perspective(800px) translateZ(150px) rotateY(190deg) scale(1);transform:perspective(800px) translateZ(150px) rotateY(190deg) scale(1);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}80%{-webkit-transform:perspective(800px) translateZ(0) rotateY(1turn) scale(.95);transform:perspective(800px) translateZ(0) rotateY(1turn) scale(.95);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}to{-webkit-transform:perspective(800px) translateZ(0) rotateY(1turn) scale(1);transform:perspective(800px) translateZ(0) rotateY(1turn) scale(1);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}}@keyframes flip{0%{-webkit-transform:perspective(800px) translateZ(0) rotateY(0) scale(1);transform:perspective(800px) translateZ(0) rotateY(0) scale(1);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}40%{-webkit-transform:perspective(800px) translateZ(150px) rotateY(170deg) scale(1);transform:perspective(800px) translateZ(150px) rotateY(170deg) scale(1);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}50%{-webkit-transform:perspective(800px) translateZ(150px) rotateY(190deg) scale(1);transform:perspective(800px) translateZ(150px) rotateY(190deg) scale(1);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}80%{-webkit-transform:perspective(800px) translateZ(0) rotateY(1turn) scale(.95);transform:perspective(800px) translateZ(0) rotateY(1turn) scale(.95);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}to{-webkit-transform:perspective(800px) translateZ(0) rotateY(1turn) scale(1);transform:perspective(800px) translateZ(0) rotateY(1turn) scale(1);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}}.om-animation-flip{-webkit-animation-duration:1s;animation-duration:1s;-webkit-backface-visibility:visible;backface-visibility:visible;-webkit-animation-name:flip;animation-name:flip}@-webkit-keyframes flipInX{0%{-webkit-transform:perspective(800px) rotateX(90deg);transform:perspective(800px) rotateX(90deg);opacity:0}40%{-webkit-transform:perspective(800px) rotateX(-10deg);transform:perspective(800px) rotateX(-10deg)}70%{-webkit-transform:perspective(800px) rotateX(10deg);transform:perspective(800px) rotateX(10deg)}to{-webkit-transform:perspective(800px) rotateX(0deg);transform:perspective(800px) rotateX(0deg);opacity:1}}@keyframes flipInX{0%{-webkit-transform:perspective(800px) rotateX(90deg);transform:perspective(800px) rotateX(90deg);opacity:0}40%{-webkit-transform:perspective(800px) rotateX(-10deg);transform:perspective(800px) rotateX(-10deg)}70%{-webkit-transform:perspective(800px) rotateX(10deg);transform:perspective(800px) rotateX(10deg)}to{-webkit-transform:perspective(800px) rotateX(0deg);transform:perspective(800px) rotateX(0deg);opacity:1}}.om-animation-flip-down{-webkit-animation-duration:1s;animation-duration:1s;-webkit-backface-visibility:visible;backface-visibility:visible;-webkit-animation-name:flipInX;animation-name:flipInX}@-webkit-keyframes flipInY{0%{-webkit-transform:perspective(800px) rotateY(90deg);transform:perspective(800px) rotateY(90deg);opacity:0}40%{-webkit-transform:perspective(800px) rotateY(-10deg);transform:perspective(800px) rotateY(-10deg)}70%{-webkit-transform:perspective(800px) rotateY(10deg);transform:perspective(800px) rotateY(10deg)}to{-webkit-transform:perspective(800px) rotateY(0deg);transform:perspective(800px) rotateY(0deg);opacity:1}}@keyframes flipInY{0%{-webkit-transform:perspective(800px) rotateY(90deg);transform:perspective(800px) rotateY(90deg);opacity:0}40%{-webkit-transform:perspective(800px) rotateY(-10deg);transform:perspective(800px) rotateY(-10deg)}70%{-webkit-transform:perspective(800px) rotateY(10deg);transform:perspective(800px) rotateY(10deg)}to{-webkit-transform:perspective(800px) rotateY(0deg);transform:perspective(800px) rotateY(0deg);opacity:1}}.om-animation-flip-side{-webkit-animation-duration:1s;animation-duration:1s;-webkit-backface-visibility:visible;backface-visibility:visible;-webkit-animation-name:flipInY;animation-name:flipInY}@-webkit-keyframes lightSpeedIn{0%{-webkit-transform:translateX(100%) skewX(-30deg);transform:translateX(100%) skewX(-30deg);opacity:0}60%{-webkit-transform:translateX(-20%) skewX(30deg);transform:translateX(-20%) skewX(30deg);opacity:1}80%{-webkit-transform:translateX(0) skewX(-15deg);transform:translateX(0) skewX(-15deg);opacity:1}to{-webkit-transform:translateX(0) skewX(0deg);transform:translateX(0) skewX(0deg);opacity:1}}@keyframes lightSpeedIn{0%{-webkit-transform:translateX(100%) skewX(-30deg);transform:translateX(100%) skewX(-30deg);opacity:0}60%{-webkit-transform:translateX(-20%) skewX(30deg);transform:translateX(-20%) skewX(30deg);opacity:1}80%{-webkit-transform:translateX(0) skewX(-15deg);transform:translateX(0) skewX(-15deg);opacity:1}to{-webkit-transform:translateX(0) skewX(0deg);transform:translateX(0) skewX(0deg);opacity:1}}.om-animation-light-speed{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:lightSpeedIn;animation-name:lightSpeedIn;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}@-webkit-keyframes pulse{0%{-webkit-transform:scale(1);transform:scale(1)}50%{-webkit-transform:scale(1.1);transform:scale(1.1)}to{-webkit-transform:scale(1);transform:scale(1)}}@keyframes pulse{0%{-webkit-transform:scale(1);transform:scale(1)}50%{-webkit-transform:scale(1.1);transform:scale(1.1)}to{-webkit-transform:scale(1);transform:scale(1)}}.om-animation-pulse{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:pulse;animation-name:pulse}@-webkit-keyframes rollIn{0%{opacity:0;-webkit-transform:translateX(-100%) rotate(-120deg);transform:translateX(-100%) rotate(-120deg)}to{opacity:1;-webkit-transform:translateX(0) rotate(0deg);transform:translateX(0) rotate(0deg)}}@keyframes rollIn{0%{opacity:0;-webkit-transform:translateX(-100%) rotate(-120deg);transform:translateX(-100%) rotate(-120deg)}to{opacity:1;-webkit-transform:translateX(0) rotate(0deg);transform:translateX(0) rotate(0deg)}}.om-animation-roll-in{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:rollIn;animation-name:rollIn}@-webkit-keyframes rotateIn{0%{-webkit-transform-origin:center center;transform-origin:center center;-webkit-transform:rotate(-200deg);transform:rotate(-200deg);opacity:0}to{-webkit-transform-origin:center center;transform-origin:center center;-webkit-transform:rotate(0);transform:rotate(0);opacity:1}}@keyframes rotateIn{0%{-webkit-transform-origin:center center;transform-origin:center center;-webkit-transform:rotate(-200deg);transform:rotate(-200deg);opacity:0}to{-webkit-transform-origin:center center;transform-origin:center center;-webkit-transform:rotate(0);transform:rotate(0);opacity:1}}.om-animation-rotate{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:rotateIn;animation-name:rotateIn}@-webkit-keyframes rotateInDownLeft{0%{-webkit-transform-origin:left bottom;transform-origin:left bottom;-webkit-transform:rotate(-90deg);transform:rotate(-90deg);opacity:0}to{-webkit-transform-origin:left bottom;transform-origin:left bottom;-webkit-transform:rotate(0);transform:rotate(0);opacity:1}}@keyframes rotateInDownLeft{0%{-webkit-transform-origin:left bottom;transform-origin:left bottom;-webkit-transform:rotate(-90deg);transform:rotate(-90deg);opacity:0}to{-webkit-transform-origin:left bottom;transform-origin:left bottom;-webkit-transform:rotate(0);transform:rotate(0);opacity:1}}.om-animation-rotate-down-left{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:rotateInDownLeft;animation-name:rotateInDownLeft}@-webkit-keyframes rotateInDownRight{0%{-webkit-transform-origin:right bottom;transform-origin:right bottom;-webkit-transform:rotate(90deg);transform:rotate(90deg);opacity:0}to{-webkit-transform-origin:right bottom;transform-origin:right bottom;-webkit-transform:rotate(0);transform:rotate(0);opacity:1}}@keyframes rotateInDownRight{0%{-webkit-transform-origin:right bottom;transform-origin:right bottom;-webkit-transform:rotate(90deg);transform:rotate(90deg);opacity:0}to{-webkit-transform-origin:right bottom;transform-origin:right bottom;-webkit-transform:rotate(0);transform:rotate(0);opacity:1}}.om-animation-rotate-down-right{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:rotateInDownRight;animation-name:rotateInDownRight}@-webkit-keyframes rotateInUpLeft{0%{-webkit-transform-origin:left bottom;transform-origin:left bottom;-webkit-transform:rotate(90deg);transform:rotate(90deg);opacity:0}to{-webkit-transform-origin:left bottom;transform-origin:left bottom;-webkit-transform:rotate(0);transform:rotate(0);opacity:1}}@keyframes rotateInUpLeft{0%{-webkit-transform-origin:left bottom;transform-origin:left bottom;-webkit-transform:rotate(90deg);transform:rotate(90deg);opacity:0}to{-webkit-transform-origin:left bottom;transform-origin:left bottom;-webkit-transform:rotate(0);transform:rotate(0);opacity:1}}.om-animation-rotate-up-left{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:rotateInUpLeft;animation-name:rotateInUpLeft}@-webkit-keyframes rotateInUpRight{0%{-webkit-transform-origin:right bottom;transform-origin:right bottom;-webkit-transform:rotate(-90deg);transform:rotate(-90deg);opacity:0}to{-webkit-transform-origin:right bottom;transform-origin:right bottom;-webkit-transform:rotate(0);transform:rotate(0);opacity:1}}@keyframes rotateInUpRight{0%{-webkit-transform-origin:right bottom;transform-origin:right bottom;-webkit-transform:rotate(-90deg);transform:rotate(-90deg);opacity:0}to{-webkit-transform-origin:right bottom;transform-origin:right bottom;-webkit-transform:rotate(0);transform:rotate(0);opacity:1}}.om-animation-rotate-up-right{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:rotateInUpRight;animation-name:rotateInUpRight}@-webkit-keyframes rubberBand{0%{-webkit-transform:scale(1);transform:scale(1)}30%{-webkit-transform:scaleX(1.25) scaleY(.75);transform:scaleX(1.25) scaleY(.75)}40%{-webkit-transform:scaleX(.75) scaleY(1.25);transform:scaleX(.75) scaleY(1.25)}60%{-webkit-transform:scaleX(1.15) scaleY(.85);transform:scaleX(1.15) scaleY(.85)}to{-webkit-transform:scale(1);transform:scale(1)}}@keyframes rubberBand{0%{-webkit-transform:scale(1);transform:scale(1)}30%{-webkit-transform:scaleX(1.25) scaleY(.75);transform:scaleX(1.25) scaleY(.75)}40%{-webkit-transform:scaleX(.75) scaleY(1.25);transform:scaleX(.75) scaleY(1.25)}60%{-webkit-transform:scaleX(1.15) scaleY(.85);transform:scaleX(1.15) scaleY(.85)}to{-webkit-transform:scale(1);transform:scale(1)}}.om-animation-rubber-band{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:rubberBand;animation-name:rubberBand}@-webkit-keyframes shake{0%,to{-webkit-transform:translateX(0);transform:translateX(0)}10%,30%,50%,70%,90%{-webkit-transform:translateX(-10px);transform:translateX(-10px)}20%,40%,60%,80%{-webkit-transform:translateX(10px);transform:translateX(10px)}}@keyframes shake{0%,to{-webkit-transform:translateX(0);transform:translateX(0)}10%,30%,50%,70%,90%{-webkit-transform:translateX(-10px);transform:translateX(-10px)}20%,40%,60%,80%{-webkit-transform:translateX(10px);transform:translateX(10px)}}.om-animation-shake{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:shake;animation-name:shake}@-webkit-keyframes slideInDown{0%{opacity:0;-webkit-transform:translateY(-2000px);transform:translateY(-2000px)}to{-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes slideInDown{0%{opacity:0;-webkit-transform:translateY(-2000px);transform:translateY(-2000px)}to{-webkit-transform:translateY(0);transform:translateY(0)}}.om-animation-slide-in-down{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:slideInDown;animation-name:slideInDown}@-webkit-keyframes slideInLeft{0%{opacity:0;-webkit-transform:translateX(-2000px);transform:translateX(-2000px)}to{-webkit-transform:translateX(0);transform:translateX(0)}}@keyframes slideInLeft{0%{opacity:0;-webkit-transform:translateX(-2000px);transform:translateX(-2000px)}to{-webkit-transform:translateX(0);transform:translateX(0)}}.om-animation-slide-in-left{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:slideInLeft;animation-name:slideInLeft}@-webkit-keyframes slideInRight{0%{opacity:0;-webkit-transform:translateX(2000px);transform:translateX(2000px)}to{-webkit-transform:translateX(0);transform:translateX(0)}}@keyframes slideInRight{0%{opacity:0;-webkit-transform:translateX(2000px);transform:translateX(2000px)}to{-webkit-transform:translateX(0);transform:translateX(0)}}.om-animation-slide-in-right{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:slideInRight;animation-name:slideInRight}@-webkit-keyframes swing{20%{-webkit-transform:rotate(15deg);transform:rotate(15deg)}40%{-webkit-transform:rotate(-10deg);transform:rotate(-10deg)}60%{-webkit-transform:rotate(5deg);transform:rotate(5deg)}80%{-webkit-transform:rotate(-5deg);transform:rotate(-5deg)}to{-webkit-transform:rotate(0deg);transform:rotate(0deg)}}@keyframes swing{20%{-webkit-transform:rotate(15deg);transform:rotate(15deg)}40%{-webkit-transform:rotate(-10deg);transform:rotate(-10deg)}60%{-webkit-transform:rotate(5deg);transform:rotate(5deg)}80%{-webkit-transform:rotate(-5deg);transform:rotate(-5deg)}to{-webkit-transform:rotate(0deg);transform:rotate(0deg)}}.om-animation-swing{-webkit-animation-duration:1s;animation-duration:1s;-webkit-transform-origin:top center;transform-origin:top center;-webkit-animation-name:swing;animation-name:swing}@-webkit-keyframes tada{0%{-webkit-transform:scale(1);transform:scale(1)}10%,20%{-webkit-transform:scale(.9) rotate(-3deg);transform:scale(.9) rotate(-3deg)}30%,50%,70%,90%{-webkit-transform:scale(1.1) rotate(3deg);transform:scale(1.1) rotate(3deg)}40%,60%,80%{-webkit-transform:scale(1.1) rotate(-3deg);transform:scale(1.1) rotate(-3deg)}to{-webkit-transform:scale(1) rotate(0);transform:scale(1) rotate(0)}}@keyframes tada{0%{-webkit-transform:scale(1);transform:scale(1)}10%,20%{-webkit-transform:scale(.9) rotate(-3deg);transform:scale(.9) rotate(-3deg)}30%,50%,70%,90%{-webkit-transform:scale(1.1) rotate(3deg);transform:scale(1.1) rotate(3deg)}40%,60%,80%{-webkit-transform:scale(1.1) rotate(-3deg);transform:scale(1.1) rotate(-3deg)}to{-webkit-transform:scale(1) rotate(0);transform:scale(1) rotate(0)}}.om-animation-tada{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:tada;animation-name:tada}@-webkit-keyframes wobble{0%{-webkit-transform:translateX(0);transform:translateX(0)}15%{-webkit-transform:translateX(-25%) rotate(-5deg);transform:translateX(-25%) rotate(-5deg)}30%{-webkit-transform:translateX(20%) rotate(3deg);transform:translateX(20%) rotate(3deg)}45%{-webkit-transform:translateX(-15%) rotate(-3deg);transform:translateX(-15%) rotate(-3deg)}60%{-webkit-transform:translateX(10%) rotate(2deg);transform:translateX(10%) rotate(2deg)}75%{-webkit-transform:translateX(-5%) rotate(-1deg);transform:translateX(-5%) rotate(-1deg)}to{-webkit-transform:translateX(0);transform:translateX(0)}}@keyframes wobble{0%{-webkit-transform:translateX(0);transform:translateX(0)}15%{-webkit-transform:translateX(-25%) rotate(-5deg);transform:translateX(-25%) rotate(-5deg)}30%{-webkit-transform:translateX(20%) rotate(3deg);transform:translateX(20%) rotate(3deg)}45%{-webkit-transform:translateX(-15%) rotate(-3deg);transform:translateX(-15%) rotate(-3deg)}60%{-webkit-transform:translateX(10%) rotate(2deg);transform:translateX(10%) rotate(2deg)}75%{-webkit-transform:translateX(-5%) rotate(-1deg);transform:translateX(-5%) rotate(-1deg)}to{-webkit-transform:translateX(0);transform:translateX(0)}}.om-animation-wobble{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:wobble;animation-name:wobble}.om-content-lock{color:transparent!important;text-shadow:rgba(0,0,0,.5) 0 0 10px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;pointer-events:none;filter:url("data:image/svg+xml;utf9,<svg%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'><filter%20id='blur'><feGaussianBlur%20stdDeviation='10'%20/></filter></svg>#blur");-webkit-filter:blur(10px);-ms-filter:blur(10px);-o-filter:blur(10px);filter:blur(10px)}html.om-mobile-position,html.om-mobile-position body{position:fixed!important}html.om-ios-form,html.om-ios-form body{-webkit-transform:translateZ(0)!important;transform:translateZ(0)!important;-webkit-overflow-scrolling:touch!important;height:100%!important;overflow:auto!important}html.om-position-popup body{overflow:hidden!important}html.om-position-floating-top{transition:padding-top .5s ease!important}html.om-position-floating-bottom{transition:padding-bottom .5s ease!important}html.om-reset-dimensions{height:100%!important;width:100%!important}.om-verification-confirmation{font-family:Lato,Arial,Helvetica,sans-serif;position:fixed;border-radius:10px;bottom:20px;left:20px;padding:10px 20px;opacity:0;transition:opacity .3s ease-in;background:#85bf31;color:#fff;font-size:18px;font-weight:700;z-index:9999}</style><script src="./Getting Started With Drupal&#39;s Webform Module_files/legacy-api.min.js" async=""></script><link rel="stylesheet" href="./Getting Started With Drupal&#39;s Webform Module_files/css(1)" media="all"><script src="./Getting Started With Drupal&#39;s Webform Module_files/webfont.js" async=""></script></head>
+<body class="page-178  blog-page fixed-header fullwidth top-module  loaded background-opacity fixed" style="">
+
+<span id="block0"></span>
+
+<div class="page-box">
+<div class="page-box-content">
+
+    <div id="top-box" class="ost-yellow-image">
+        <div class="container">
+            
+
+<div class="custom myimage">
+	<div class="ost-top-image"><a href="https://www.ostraining.com/take-care-2019/"><strong>SPECIAL OFFER:</strong> Only $59 for access to everything in OSTraining for 1 year! You save $85!&nbsp;
+<span class="ostimer-countdown" style="background: #d61b11;"><!-- START: Modules Anywhere --><span class="ostimer-countdown" style="background: #d61b11;">
+
+    
+    
+            <span id="clockJS1">23 Hrs. 21 Mins. 54 Secs.</span>    
+    
+                    <script language="JavaScript" type="text/javascript">
+            ;(function(timerId) {
+                var clockJS = document.getElementById('clockJS' + timerId);
+                if (!clockJS) {
+                    console.log(timerId + ' Not found');
+                    return;
+                }
+
+                var secondsLeft   = 84324,
+                    countActive   = true,
+                    countStepper  = -1,
+                    transText     = {"day":["%s Days","%s Day"],"hour":["%s Hrs.","%s Hr."],"minute":["%s Mins.","%s Min."],"second":["%s Secs.","%s Sec."]},
+                    finishMessage = 'This offer has ended!',
+                    clockDayJS    = document.getElementById('clockDayJS' + timerId);
+
+                var calcAge = function(timeLeft, num1, num2, doublezero) {
+                    if (doublezero !== false) {
+                        doublezero = true;
+                    }
+
+                    s = ((Math.floor(timeLeft / num1)) % num2).toString();
+                    if (s.length < 2 && doublezero) {
+                        s = "0" + s;
+                    }
+
+                    return s;
+                };
+
+                var pluralize = function(strings, count, showZero) {
+                    if (count > 0 || showZero) {
+                        var string = +count === 1 ? strings[1] : strings[0];
+                        return string.indexOf('%s') < 0 ?
+                            count + ' ' + string :
+                            string.replace('%s', count);
+                    }
+
+                    return '';
+                };
+
+                var formatTime = function(timeLeft) {
+                    var displayArray = [
+                        pluralize(transText.hour, calcAge(timeLeft, 3600, 24, false)),
+                        pluralize(transText.minute, calcAge(timeLeft, 60, 60)),
+                        pluralize(transText.second, calcAge(timeLeft, 1, 60), true)
+                    ];
+
+                    return displayArray.join(' ');
+                };
+
+                var countBack = function(timeLeft) {
+                    if (timeLeft < 0) {
+                        clockJS.innerHTML = finishMessage;
+
+                        return;
+                    }
+
+                    clockJS.innerHTML = formatTime(timeLeft);
+
+                    if (clockDayJS && timeLeft > 0) {
+                        clockDayJS.innerHTML = pluralize(transText.day, calcAge(timeLeft, 86400, timeLeft, false));
+                    }
+                };
+
+                countStepper = Math.ceil(countStepper);
+
+                if (countStepper === 0) {
+                    countActive = false;
+                }
+
+                var SetTimeOutPeriod = (Math.abs(countStepper) - 1) * 1000 + 990;
+
+                if (countActive) {
+                    var repeatFunc = function() {
+                        secondsLeft += countStepper;
+                        countBack(secondsLeft);
+                        setTimeout(repeatFunc, SetTimeOutPeriod);
+                    };
+                    repeatFunc();
+                } else {
+                    countBack(timeLeft);
+                }
+            })(1);
+        </script>
+            </span>
+<!-- END: Modules Anywhere --></span></a> 
+
+
+ </div></div>
+<script>
+        jQuery(document).ready(function(){
+            jQuery("#top-box").addClass("ost-yellow-image");
+        });
+        </script>
+        </div>
+    </div>
+
+
+<header class="header header-two">
+    <div class="header-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6 col-md-3 logo-box">
+                    <div class="logo">
+                                                    <a href="https://www.ostraining.com/">
+                                <img src="./Getting Started With Drupal&#39;s Webform Module_files/logo-big.png" alt="OSTraining" class="logo-img">
+                            </a>
+                                            </div>
+                </div><!-- .logo-box -->
+
+                <div class="col-xs-6 col-md-9 right-box">
+                    <div class="right-box-wrapper">
+
+                        <div class="header-icons">
+
+                                                            <div class="search-header hidden-600">
+                                    <a href="https://www.ostraining.com/blog/drupal/webform-module/#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="13px" height="13px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                        <path d="M12.001,10l-0.5,0.5l-0.79-0.79c0.806-1.021,1.29-2.308,1.29-3.71c0-3.313-2.687-6-6-6C2.687,0,0,2.687,0,6
+                            s2.687,6,6,6c1.402,0,2.688-0.484,3.71-1.29l0.79,0.79l-0.5,0.5l4,4l2-2L12.001,10z M6,10c-2.206,0-4-1.794-4-4s1.794-4,4-4
+                            s4,1.794,4,4S8.206,10,6,10z"></path>
+                                            <image href="/templates/vg_progressive/images/png-icons/search-icon.png" alt="" width="16" height="16" style="vertical-align: top;">
+                    </image></svg>
+                                    </a>
+                                </div><!-- .search-header -->
+                            
+                            
+                        </div><!-- .header-icons -->
+
+                        <div class="primary">
+                            <div class="navbar navbar-default" role="navigation">
+
+                                <button type="button" class="navbar-toggle btn-navbar collapsed" data-toggle="collapse" data-target=".primary .navbar-collapse">
+                                    <span class="text">Menu</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+
+                                <nav class="collapse collapsing navbar-collapse">
+
+                                                                            <ul class="nav navbar-nav navbar-center _main menu_hoz">
+<li class="item-1012"><a class="" href="https://www.ostraining.com/">Videos</a></li><li class="item-1096"><a class="" href="https://www.ostraining.com/books">Books</a></li><li class="item-1053"><a class="" href="https://www.ostraining.com/login">Login</a></li><li class="item-3008 login-link b-radius-left-only force-b-radius-all m-right-link"><a class="" href="https://www.ostraining.com/pricing">Sign up today!</a></li></ul>
+
+                                    
+                                </nav>
+
+                            </div>
+                        </div><!-- .primary -->
+                    </div>
+                </div>
+
+                
+                                    <div class="search-active col-sm-9 col-md-9">
+                        <a href="https://www.ostraining.com/blog/drupal/webform-module/#" class="close"><span>close</span>×</a>
+
+                                                    <div class="search">
+	<form action="https://www.ostraining.com/" method="post" class="form-inline">
+		<input class="search-string form-control" id="mod-search-searchword" type="search" placeholder="Search" name="searchword"> <button class="search-submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="13px" height="13px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                            <path fill="#231F20" d="M12.001,10l-0.5,0.5l-0.79-0.79c0.806-1.021,1.29-2.308,1.29-3.71c0-3.313-2.687-6-6-6C2.687,0,0,2.687,0,6
+                                    s2.687,6,6,6c1.402,0,2.688-0.484,3.71-1.29l0.79,0.79l-0.5,0.5l4,4l2-2L12.001,10z M6,10c-2.206,0-4-1.794-4-4s1.794-4,4-4
+                                    s4,1.794,4,4S8.206,10,6,10z"></path>
+                            <image href="https://www.ostraining.com//templates/vg_progressive/images/png-icons/search-icon.png" alt="" width="16" height="16" style="vertical-align: top;">
+                        /svg&gt;
+                    </image></svg></button>		<input type="hidden" name="task" value="search">
+		<input type="hidden" name="option" value="com_search">
+		<input type="hidden" name="Itemid" value="178">
+	</form>
+</div>
+
+                        
+                    </div>
+                
+            </div><!--.row -->
+        </div>
+    </div><!-- .header-wrapper -->
+</header><!-- .header -->
+
+
+<div class="slider rs-slider">
+    <div class="tp-banner-container">
+        <div class="tp-banner">
+            
+
+<div class="custom">
+	<div><div class="uk-alert alert alert-info" data-uk-alert=""><center><strong>Join today and get access to 1,000's of books and videos.</strong> Learn WordPress, Drupal, Magento, Joomla and more! <a href="https://www.ostraining.com/pricing/" class="btn btn-primary">Sign up today!</a></center></div></div></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<section id="main">
+<article class="content">
+<div class="container">
+
+    
+    
+</div>
+
+<span id="block2"></span>
+
+<div class="container">
+    <div class="row" id="vg-mainbody">
+
+        
+        <div class="col-sm-8 col-md-9 vg_component_box">
+
+            <div class="container-disabled">
+                
+                                <article class="single-post post entry item-page blog-page" itemscope="" itemtype="http://schema.org/Article">
+    <meta itemprop="inLanguage" content="en-GB">
+            <header class="page-header">
+            <div class="container">
+                <h1 class="title"> Drupal Tutorials </h1>
+            </div>
+        </header>
+                    <header class="entry-header">
+            <h2 itemprop="name">
+                                                            <a href="https://www.ostraining.com/blog/drupal/webform-module/" itemprop="url"> Getting Started With Drupal's Webform Module</a>
+                                                </h2>
+                                            </header>
+    
+    
+                
+        <div class="row-fluid ost-meta-info">
+            <div class="col-md-12">
+                <footer class="entry-meta">
+                    
+		
+							<span class="autor-name" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+					Written by <span itemprop="name">Ed Andrea</span>	</span>
+			
+                                        <span class="time created">
+					<span class="icon-calendar"></span>
+					<time datetime="2018-04-06T01:31:49-04:00" itemprop="dateCreated">
+						on April 06, 2018					</time>
+			</span>            
+            
+                                        <span class="separator">|</span>
+            <span class="meta category-name">
+													<span itemprop="genre">Drupal</span>							</span>            
+		
+		
+            
+			
+					
+                </footer>
+            </div>
+        </div>
+
+    
+        
+                                            	<div itemprop="articleBody">
+		<div class="ost-intro-image"><img src="./Getting Started With Drupal&#39;s Webform Module_files/webform-module-d7.jpg" alt="Getting Started With Drupal&#39;s Webform Module" width="200" height="133"></div>
+<p>One of our club members asked us how to create a survey form in Drupal 7. They wanted to achieve this without a need for custom coding.</p>
+<p>The Webform contrib module is the perfect tool for the job. In this tutoral, you will learn how to use this module to survey what peanut butter, jelly and bread your site visitors prefer.</p>
+ 
+<p>Webform is a module for making forms and collecting information from users in Drupal.</p>
+<p>After a submission, you can send users a thank-you email as well as sending a notification to administrators.</p>
+<p>Results can be exported into Excel or other spreadsheet applications. Webform also provides some basic statistical review and has an extensive API for expanding its features.</p>
+<p>If you need to build a lot of customized, one-off forms, Webform is a more suitable solution than creating content types and using the CCK or Field modules.</p>
+<h2>Step #1. Download the Webform, CTools, Views, and Token Modules</h2>
+<ul>
+<li>Go to <a href="http://drupal.org/project/webform">http://drupal.org/project/webform</a>, and download the Webform module.</li>
+</ul>
+<p><img src="./Getting Started With Drupal&#39;s Webform Module_files/01.png" alt="Download the Webform module"></p>
+<ul>
+<li>Go to <a href="https://www.drupal.org/project/ctools">https://www.drupal.org/project/ctools</a>&nbsp;and download the Chaos tool suite (Ctools) module.</li>
+<li>Go to <a href="https://www.drupal.org/project/views">https://www.drupal.org/project/views</a>&nbsp;and download the Views module.</li>
+<li>Go to <a href="https://www.drupal.org/project/token">https://www.drupal.org/project/token</a>&nbsp;and download the Token module.</li>
+</ul>
+<p>Make sure you download the latest versions of the module for Drupal 7. They may have changed since we wrote this, so be sure to check.</p>
+<h2>Step #2. Install the Webform, CTools, Views, and Token Modules</h2>
+<p><img src="./Getting Started With Drupal&#39;s Webform Module_files/tutuploadsStep_2._Install_the_Webform_Module.png" alt="tutuploadsStep_2._Install_the_Webform_Module.png" width="481" height="325" style="padding: 3px; border: 1px solid #ccc;"></p>
+<p><strong>Note:</strong> if you don't see the <em>Install new module</em>&nbsp;link, please go to <em>Modules</em> and enable the <em>Update manager</em>&nbsp;module.</p>
+<h2>Step #3. Enable the Webform, CTools, Views, and Token Modules</h2>
+<p><img src="./Getting Started With Drupal&#39;s Webform Module_files/tutuploadsEnable_the_module.png" alt="tutuploadsEnable_the_module.png" width="532" height="168" style="padding: 3px; border: 1px solid #ccc;"></p>
+<ul>
+<li>Go to the <em>Modules</em> and enable the <em>Webform</em> module</li>
+<li>Scroll down to <em>Webform</em> and click the checkbox.</li>
+<li>Click <em>Save configuration</em>.</li>
+</ul>
+<h2>Step #4. Access the Form Fields</h2>
+<p><img src="./Getting Started With Drupal&#39;s Webform Module_files/tutuploadsAccess_the_form_fields.png" alt="tutuploadsAccess_the_form_fields.png" width="300" height="366" style="padding: 3px; border: 1px solid #ccc;"></p>
+<ul>
+<li>Go to <em>Structure&nbsp; &gt; Content types</em>.</li>
+</ul>
+<p><img src="./Getting Started With Drupal&#39;s Webform Module_files/tutuploadsmedia_1317093423174.png" alt="tutuploadsmedia_1317093423174.png" width="365" height="541" style="padding: 3px; border: 1px solid #ccc;"></p>
+<ul>
+<li>Scroll down to Webform.</li>
+<li>Locate the <em>edit, manage fields, manage display</em> and <em>delete</em> links.</li>
+</ul>
+<p><img src="./Getting Started With Drupal&#39;s Webform Module_files/tutuploadsmedia_1317094660865.png" alt="tutuploadsmedia_1317094660865.png" width="532" height="63" style="padding: 3px; border: 1px solid #ccc;"></p>
+<ul>
+<li>Click <em>Edit.</em></li>
+</ul>
+<p>You will be taken to the <em>Webform</em> module management page:</p>
+<p><img src="./Getting Started With Drupal&#39;s Webform Module_files/tutuploadsmedia_1317095178845.png" alt="tutuploadsmedia_1317095178845.png" width="532" height="71" style="padding: 3px; border: 1px solid #ccc;"></p>
+<p>This is not the place where you will be creating forms. Editing here is exactly the same as editing Fields in Content Types, which is a way to make fields available to this content type.</p>
+<p>From here you can edit fields, manage existing fields, the display and the comment functions by clicking on the appropriate tabs.</p>
+<p>But creating the actual form is done by adding content in the same way you would add an article.</p>
+<p>You won't need to do much here but review all your choices and see if there is anything you feel you must change.</p>
+<p>The default values will work for the purposes of our demonstration. After you create your first form and understand the module you might want to revisit the configuration.</p>
+<p>Now that the module is installed and the configuration is checked, you can begin building your survey form.</p>
+<h2>Step #5. Create a Web Form by Adding It as Content</h2>
+<p><img src="./Getting Started With Drupal&#39;s Webform Module_files/tutuploadsStep_3._Create_your_first_webform_by_adding_it_as_content.png" alt="tutuploadsStep_3._Create_your_first_webform_by_adding_it_as_content.png" width="244" height="657" style="padding: 3px; border: 1px solid #ccc;"></p>
+<ul>
+<li>Go to <em>Content &gt; Add Content &gt; Webform</em>.</li>
+</ul>
+<p><img src="./Getting Started With Drupal&#39;s Webform Module_files/tutuploadsCreate_the_basic_entry_form_and_configure_the_same_as_any.png" alt="tutuploadsCreate_the_basic_entry_form_and_configure_the_same_as_any.png" width="532" height="752" style="padding: 3px; border: 1px solid #ccc;"></p>
+<ul>
+<li>Give it a title and make the decisions on all basic options.</li>
+<li>Save this with the <em>Save</em> button at the bottom of the page.</li>
+</ul>
+<h2>Step #6. Add the Form Components</h2>
+<p><img src="./Getting Started With Drupal&#39;s Webform Module_files/tutuploadsStep_4._Start_adding_form_components.png" alt="tutuploadsStep_4._Start_adding_form_components.png" width="532" height="401" style="padding: 3px; border: 1px solid #ccc;"></p>
+<p>Now you will see the controls for creating and editing the rest of the form elements.</p>
+<p>Let's start adding Form components using the <em>WEBFORM</em> tab.</p>
+<p><img src="./Getting Started With Drupal&#39;s Webform Module_files/tutuploadsStep_5._Make_a_pre-filled_username_field_using_a_Token.png" alt="tutuploadsStep_5._Make_a_pre-filled_username_field_using_a_Token.png" width="532" height="138" style="padding: 3px; border: 1px solid #ccc;"></p>
+<ul>
+<li>Make sure you are under the <em>Webform</em> tab.</li>
+<li>Enter <em>Name</em> instead of the <em>New component name&nbsp;</em>text.</li>
+<li>Choose the&nbsp;textfield.</li>
+<li>Click <em>Add.</em></li>
+</ul>
+<p>We are surveying registered users, so we are going to automatically fill in their username.</p>
+<p>A name is a basic text field, but we want our registered users to show up on the textfield, so we're going to make use of the Tokens. Using Tokens is just an optional feature.</p>
+<p><img src="./Getting Started With Drupal&#39;s Webform Module_files/tutuploadsmedia_1317148972326.png" alt="tutuploadsmedia_1317148972326.png" width="532" height="532" style="padding: 3px; border: 1px solid #ccc;"></p>
+<ul>
+<li>Enter the %username token value in the Default value field. This will pull the username from the database and fill it in automatically.</li>
+</ul>
+<p><strong>Note:</strong> If you don't see the <em>TOKEN VALUES</em>, you probably don't have the <em>Token</em> module installed. You only need the <em>%username</em> token if you want to fill in the default values taken from the database.</p>
+<p>If this is going to be a blank field that the user will fill in when they visit the page, you can just leave the Default value blank. I used the token value here to illustrate the possibilities available to you.</p>
+<ul>
+<li>Scroll down the rest of the page and make any configuration selections you need.</li>
+<li>Click <em>Save component</em> at the very bottom of the page.</li>
+</ul>
+<h2>Step #7. Create the Select options Fields</h2>
+<p><img src="./Getting Started With Drupal&#39;s Webform Module_files/tutuploadsStep_6._Create_your_first_Select_field.png" alt="tutuploadsStep_6._Create_your_first_Select_field.png" width="532" height="161" style="padding: 3px; border: 1px solid #ccc;"></p>
+<p>Now let's create our first select field form component.</p>
+<ul>
+<li>Enter <em>Bread</em> as the filed label.</li>
+<li>Choose the <em>Select options</em> type from the drop-down.&nbsp;</li>
+<li>Click <em>Add.</em>&nbsp;</li>
+<li>On the next screen enter the options as displayed in the image below:</li>
+</ul>
+<p><img src="./Getting Started With Drupal&#39;s Webform Module_files/tutuploadsStep_7._Create_the_list_of_options_for_the_user_to_choose.png" alt="tutuploadsStep_7._Create_the_list_of_options_for_the_user_to_choose.png" width="532" height="333" style="padding: 3px; border: 1px solid #ccc;"></p>
+<ul>
+<li>Go to <em>Options</em> and create Key-Value pairs.</li>
+</ul>
+<p>These pairs consist of a machine-readable key and a plain language value separated by a "|" - This character is called a "pipe" and you can find it by holding shift while pressing the backslash key "\" key on most keyboards.</p>
+<p>Key-value pairs MUST be specified as "safe_key|Some readable option". Use of only alphanumeric characters and underscores is recommended in keys. Enter only one option per line.</p>
+<ul>
+<li>Save the component.</li>
+<li>Repeat this step for the flavor of the jelly and type of peanut butter.</li>
+</ul>
+<p><img src="./Getting Started With Drupal&#39;s Webform Module_files/tutuploads-_Default_choice_is_radio_buttons.png" alt="tutuploads-_Default_choice_is_radio_buttons.png" width="470" height="686" style="padding: 3px; border: 1px solid #ccc;"></p>
+<p>When you are creating lists, the default type is radio buttons. If you want checkboxes or a list box the choices are farther down on the page.</p>
+<p>You can also set the field as mandatory or optional. If you click the "Multiple" checkbox at the top, the list will appear as checkboxes.</p>
+<p>If you choose the <em>Listbox</em> under <em>DISPLAY</em> you will have a drop-down box. Selecting <em>Multiple</em> and <em>Listbox</em> will allow users to make multiple selections from a drop-down box.</p>
+<p>When you create the <em>Jelly</em> type, add <em>Other</em> as a choice. Then add a text field so people can write in their suggestions.</p>
+<h2>Step #8. Add a textarea Field</h2>
+<p><img src="./Getting Started With Drupal&#39;s Webform Module_files/tutuploadsStep_8._Add_a_Text_field.png" alt="tutuploadsStep_8._Add_a_Text_field.png" width="451" height="219" style="padding: 3px; border: 1px solid #ccc;"></p>
+<ul>
+<li>Add a <em>textarea</em> field. It will be a large area used for entering more extensive written responses.</li>
+</ul>
+<p>Other field types you might want to add for your purposes are an <em>E-Mail</em> field or <em>Date</em> field. You can choose these types from the drop-down <em>Type</em> box.</p>
+<p><img src="./Getting Started With Drupal&#39;s Webform Module_files/tutuploadsmedia_1317154370995.png" alt="tutuploadsmedia_1317154370995.png" width="449" height="269" style="padding: 3px; border: 1px solid #ccc;"></p>
+<h2>Step #9. Add a Preset Field Type for US States</h2>
+<p><img src="./Getting Started With Drupal&#39;s Webform Module_files/tutuploads-_Add_a_preset_field_type_-_an_added_feature_of_Webform.png" alt="tutuploads-_Add_a_preset_field_type_-_an_added_feature_of_Webform.png" width="388" height="325" style="padding: 3px; border: 1px solid #ccc;"></p>
+<p>There is a convenience feature you may want to use. You can create pre-built option lists and add them to your form. The module comes with several default lists.&nbsp;</p>
+<ul>
+<li>Add one for the US States to see how this looks on your form.</li>
+<li>Label it <em>State.</em></li>
+<li>Choose the <em>Select Options</em> type.&nbsp;</li>
+</ul>
+<p><img src="./Getting Started With Drupal&#39;s Webform Module_files/tutuploadsmedia_1317151406971.png" alt="tutuploadsmedia_1317151406971.png" width="254" height="194" style="padding: 3px; border: 1px solid #ccc;"></p>
+<ul>
+<li>Choose the&nbsp;<em>US States</em> from the drop down.</li>
+<li>Click <em>Save Component</em>.</li>
+</ul>
+<h2>Step #10. Check Your Survey Form</h2>
+<p><img src="./Getting Started With Drupal&#39;s Webform Module_files/tutuploadsStep_9._Check_your_form_and_fine-tune_the_view..png" alt="tutuploadsStep_9._Check_your_form_and_fine-tune_the_view..png" width="509" height="778" style="padding: 3px; border: 1px solid #ccc;"></p>
+<p>At this point, your form will look similar to the one on the image above.</p>
+<p>You can change the locations of the descriptions by clicking the <em>WEBFORM</em> tab and editing each item and making different configuration selections.</p>
+<ul>
+<li>Order the form fields the way you like and all the questions and fields correct.&nbsp;You can use drag and drop to move form elements to different positions.</li>
+</ul>
+<p>Next, let's configure the <em>E-Mail Option</em>.</p>
+<p><img src="./Getting Started With Drupal&#39;s Webform Module_files/tutuploadsStep_10.__Configure_the_E-Mail_options..png" alt="tutuploadsStep_10.__Configure_the_E-Mail_options..png" width="532" height="254" style="padding: 3px; border: 1px solid #ccc;"></p>
+<ul>
+<li>Go back to the <em>WEBFORM</em> tab &gt; <em>E-mails</em> tab.</li>
+<li>Fill in an e-mail address.&nbsp;</li>
+<li>Click <em>Add.</em></li>
+</ul>
+<p>Good job. You just set the email address to receive an email when the form is submitted. If you wish, you can add multiple e-mail addresses.</p>
+<p><img src="./Getting Started With Drupal&#39;s Webform Module_files/tutuploadsmedia_1317152290926.png" alt="tutuploadsmedia_1317152290926.png" width="490" height="589" style="padding: 3px; border: 1px solid #ccc;"></p>
+<p>There are lots of choices to make. Be sure you check every one of them so they are correct for your form. Be sure to save the changes.</p>
+<p>Let's move on to the last step.</p>
+<h2>Step #11. Configure the Form Settings</h2>
+<p><img src="./Getting Started With Drupal&#39;s Webform Module_files/tutuploadsStep_11._Configure_the_Form_Settings.png" alt="tutuploadsStep_11._Configure_the_Form_Settings.png" width="532" height="460" style="padding: 3px; border: 1px solid #ccc;"></p>
+<ul>
+<li>From the <em>WEBFORM</em> tab click the <em>Form settings</em> sub-tab at the top of the page.</li>
+<li>Check and modify settings as needed.&nbsp;</li>
+<li>Save your changes.</li>
+</ul>
+<h2>Step #12. Test Your Form</h2>
+<ul>
+<li>Now publish your form exactly like you would publish any other content item on your site.</li>
+<li>Log out of your site.</li>
+<li>Fill in our survey form as an anonymous user.</li>
+<li>Now log in back to your site.</li>
+</ul>
+<p><img src="./Getting Started With Drupal&#39;s Webform Module_files/03_results_tab.png" alt="The Results tab"></p>
+<ul>
+<li>Click the Results tab.</li>
+</ul>
+<p><img src="./Getting Started With Drupal&#39;s Webform Module_files/04_click_the_view_link.png" alt="Click the view link"></p>
+<ul>
+<li>On the next screen, click the <em>view</em> link.</li>
+</ul>
+<p><img src="./Getting Started With Drupal&#39;s Webform Module_files/05_submission_screen.png" alt="The Submission screen"></p>
+<p>You will see the Submission #... screen, resembling the one, displayed on the image above. Job done! If you wish, you can also run a test as a logged in user.</p>	</div>
+
+    <footer class="entry-meta">
+
+    	
+        
+        
+<span class="icons pull-right">
+	
+		
+	</span>
+    </footer>
+
+	                            <script type="text/x-template" id="ccomment-pagination">
+	<nav class="pagination text-center" v-if="pagination.last_page > 0">
+		<ul >
+			<li v-if="showPrevious()" :class="{ 'disabled' : pagination.current_page <= 1 }">
+				<span v-if="pagination.current_page <= 1">
+					<span aria-hidden="true">Newer</span>
+				</span>
+				<a href="#" v-if="pagination.current_page > 1 " :aria-label="config.ariaPrevioius"
+				   @click.prevent="changePage(pagination.current_page - 1)">
+					<span aria-hidden="true">Newer</span>
+				</a>
+			</li>
+			<li v-for="num in array" :class="{ 'active': num === pagination.current_page }">
+				<a href="#" @click.prevent="changePage(num)">{{ num }}</a>
+			</li>
+			<li v-if="showNext()"
+			    :class="{ 'disabled' : pagination.current_page === pagination.last_page || pagination.last_page === 0 }">
+				<span v-if="pagination.current_page === pagination.last_page || pagination.last_page === 0">
+					<span aria-hidden="true">Older</span>
+				</span>
+				<a href="#" v-if="pagination.current_page < pagination.last_page" :aria-label="config.ariaNext"
+				   @click.prevent="changePage(pagination.current_page + 1)">
+					<span aria-hidden="true">Older</span>
+				</a>
+			</li>
+		</ul>
+	</nav>
+</script>
+	<script type="text/x-template" id="ccomment-avatar">
+		<div class="ccomment-avatar">
+			<a v-if="profileLink" v-bind:href="profileLink">
+				<img v-bind:src="avatar"/>
+			</a>
+			<img v-else v-bind:src="avatar"/>
+		</div>
+	</script>
+
+	<script type="text/x-template" id="ccomment-user-name">
+		<a v-if="profileLink" :href="profileLink">
+			<span class="ccomment-author">{{name}}</span>
+		</a>
+		<span v-else class="ccomment-author">{{name}}</span>
+	</script>
+
+	<script type="text/x-template" id="ccomment-created">
+		<a :href="'#!/ccomment-comment=' + id" class="muted ccomment-created">
+			{{date}}
+		</a>
+	</script>
+
+	<div id="ccomment-token" style="display:none;">
+		<input type="hidden" name="de72ca3f2769e3b88af68d876a653ced" value="1">	</div>
+
+	
+<script type="text/x-template" id="ccomment-customfields">
+	<div class="ccomment-customfields" v-if="customfields">
+		<strong>Custom fields</strong>
+		<dl class="dl-horizontal">
+			<template v-for="customfield in customfields">
+				<dt>{{customfield.title}}</dt>
+				<dd>{{customfield.value}}</dd>
+			</template>
+		</dl>
+	</div>
+</script>
+
+<script type="text/x-template" id="ccomment-template">
+	<li v-bind:class="model.class+' ccomment-level-'+model.level">
+		<div class="ccomment-comment-content" v-bind:id="'ccomment-comment-'+model.id">
+			<div class="ccomment-data">
+									<ccomment-avatar
+							v-bind:avatar="model.avatar"
+							v-bind:profileLink="model.profileLink"/>
+								<div class="ccomment-content">
+					<div class="ccomment-meta">
+						<ccomment-user-name v-bind:name="model.name" v-bind:profileLink="model.profileLink"></ccomment-user-name>
+						<ccomment-created v-bind:date="model.date" v-bind:id="model.id"></ccomment-created>
+					</div>
+
+					<div v-html="model.comment">
+					</div>
+
+
+					<div v-if="model.galleria" class="js-ccomment-galleria galleria ccomment-galleria"></div>
+
+					<ccomment-customfields v-bind:customfields="model.customfields"></ccomment-customfields>
+					<div class="ccomment-actions">
+						
+													<button class="btn btn-small ccomment-quote btn-link" v-on:click="quote(model.id)">
+								Quote							</button>
+						
+													<button v-if="showReply" v-on:click="reply = !reply" class="btn btn-small ccomment-reply btn-link">
+								Reply							</button>
+						
+						<div class="pull-right ccomment-moderation">
+							<button v-if="model.commentModerator" class="btn btn-mini btn-ccomment-edit" v-on:click="edit(model.id)">
+								Edit							</button>
+
+													</div>
+					</div>
+				</div>
+			</div>
+
+
+			<keep-alive>
+				<ccomment-form v-if="reply" :ref="'form-'+model.id" v-bind:focus="true">
+					<input slot="parent-id" name="jform[parentid]" type="hidden" v-bind:value="model.id"/>
+				</ccomment-form>
+			</keep-alive>
+		</div>
+
+		<ul v-if="hasChildren">
+			<ccomment-comment class="item" v-for="model in getChild()" v-bind:key="model.id" v-bind:model="model">
+			</ccomment-comment>
+		</ul>
+	</li>
+
+</script>
+	
+	
+
+		<script type="text/x-template" id="ccomment-form">
+			<form class="ccomment-form" v-on:submit.prevent="onSubmit">
+				<div class="ccomment-error-form row-fluid  margin-bottom" v-if="error">
+					<div class="alert alert-error">
+						{{errorMessage}}
+					</div>
+				</div>
+				<div class="ccomment-info-form row-fluid  margin-bottom" v-if="info">
+					<div class="alert alert-info">
+						{{infoMessage}}
+					</div>
+				</div>
+				<div class="row-fluid margin-bottom">
+											<div class="span1 hidden-phone">
+							<ccomment-avatar v-bind:avatar="getAvatar"></ccomment-avatar>
+						</div>
+					
+					<div class="span11">
+						<textarea v-on:focus="toggle"
+								  name="jform[comment]"
+								  class='js-ccomment-textarea ccomment-textarea span12 required'
+								  placeholder="Leave a comment"
+						></textarea>
+
+						<div v-show="uploadImage">
+							
+<div class="fileupload">
+	<!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+	<div class="row fileupload-buttonbar">
+		<input type="file" name="files[]" class="js-ccomment-file-upload-real ccomment-file-upload-real" multiple/>
+		<div class="">
+			<!-- The global file processing state -->
+			<span class="fileupload-process"><span class="fa fa-spinner fa-pulse"></span></span>
+			Attach images by dragging & dropping or <span type="button" class="js-file-upload-fake ccomment-file-upload-fake btn-link"> by selecting them.</span>			<br/>
+			<small class="muted">The maximum file size for uploads is <strong>10MB</strong>.				Only <strong>gif,jpg,png</strong> files are allowed.</small>
+
+			<!-- The global progress state -->
+			<div class="fileupload-progress fade hide">
+				<!-- The global progress bar -->
+				<div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+					<div class="progress-bar progress-bar-success" style="width:0%;"></div>
+				</div>
+				<!-- The extended global progress state -->
+				<div class="progress-extended">&nbsp;</div>
+			</div>
+			<div class="ccomment-file-list">
+				<div class="alert alert-error hide compojoom-max-number-files">
+					The maximum number of 3 allowed files to upload has been reached. If you want to upload more files you have to delete one of the existing uploaded files first.				</div>
+				<table role="presentation" class="table table-striped">
+					<thead></thead>
+					<tbody class="files"></tbody>
+				</table>
+				<div class="alert alert-error hide compojoom-max-number-files">
+					The maximum number of 3 allowed files to upload has been reached. If you want to upload more files you have to delete one of the existing uploaded files first.				</div>
+			</div>
+		</div>
+	</div>
+</div>
+						</div>
+
+						<div v-show="active">
+							<div class="span4 muted small">
+								Posting as																	<button type="button"
+											v-on:click="display = !display"
+											class="btn-link btn-small ccomment-posting-as">{{getDefaultName}}
+									</button>
+															</div>
+															<label class="checkbox pull-right small ccomment-notify">
+									<input type="checkbox" value="1" name="jform[notify]ƒ"
+										   v-on:click="notify = !notify"/>
+									<span class="muted">
+										Notify me of followup comments via e-mail									</span>
+								</label>
+							
+
+						</div>
+					</div>
+											<div v-show="display"
+							 class="row-fluid ccomment-user-info offset1					span11">
+							<div class="span6">
+								<input name="jform[name]"
+									   class="ccomment-name span12 no-margin required nonEmpty"
+									   type='text'
+									   v-bind:value="getName"
+									   v-on:input="updateDefaultName"
+										required="required"									   placeholder="Enter your name*"
+									   tabindex="2"
+																	/>
+								<span class="help-block pull-right small muted">
+								Displayed next to your comments.							</span>
+							</div>
+
+															<div class="span6">
+									<input name='jform[email]'
+										   class="ccomment-email span12 no-margin required nonEmpty"
+										   type='text'
+										   v-bind:value='getEmail'
+										   v-on:input="updateUserEmail"
+										   placeholder="Enter your email*"
+										required="required"										   tabindex="3"
+																			/>
+									<p class="help-block small pull-right muted">
+										Not displayed publicly.																					<span class='gravatar'>
+											<a href='http://gravatar.com' target='_blank'>Gravatar</a> enabled										</span>
+																			</p>
+								</div>
+													</div>
+					
+
+					
+					
+
+					<div class="row-fluid ccomment-actions" v-show="active">
+												<div class="pull-right">
+							<button v-on:click="reset()"
+									type="button"
+									class="btn ccomment-cancel">
+								Cancel</button>
+							<button type="submit" class='btn btn-primary ccomment-send'
+									tabindex="7"
+									name='bsend'>
+								<span v-if="isSending">
+									Saving...								</span>
+								<span v-else>
+									Send								</span>
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<input type="hidden" name="jform[contentid]" v-bind:value="itemConfig.contentid"/>
+				<input type="hidden" name="jform[component]" v-bind:value="itemConfig.component"/>
+				<input type="hidden" name="jform[page]" v-bind:value="page"/>
+				<slot name="parent-id"></slot>
+			</form>
+		</script>
+
+	
+
+
+
+
+<!-- The template to display files available for upload -->
+<script id="template-upload" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+    <tr class="template-upload fade">
+        <td>
+            <span class="preview"></span>
+        </td>
+        <td>
+         <span class="name"><i>{%=file.name%}</i></span>
+            <div class="compojoom-single-file-progress">
+	            <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+	                <div class="progress-bar progress-bar-success" style="width:0%;"></div>
+	            </div>
+	           <small><strong class="size">Processing...</strong></small>
+			</div>
+        </td>
+        <td>
+            {% if (!i && !o.options.autoUpload) { %}
+                <button class="btn btn-default btn-xs start" disabled>
+                    <i class="fa fa-upload"></i>
+                    <span>Start</span>
+                </button>
+            {% } %}
+            {% if (!i) { %}
+                <button class="btn btn-default btn-xs btn-xs cancel pull-left">
+                    <i class="fa fa-stop"></i>
+                    <span>Cancel</span>
+                </button>
+            {% } %}
+        </td>
+    </tr>
+{% } %}
+</script>
+
+<!-- The template to display files available for download -->
+<script id="template-download" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+    <tr class="template-download fade">
+        <td style="">
+        {% if (file.thumbnailUrl) { %}
+            <span class="preview">
+                {% if (file.url) { %}
+					<a href="/{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" data-gallery>
+						<img src='{%=file.thumbnailUrl%}'>
+					</a>
+				{% } else { %}
+					<img src='{%=file.thumbnailUrl%}'>
+				{% } %}
+            </span>
+		{% } %}
+        </td>
+        <td>
+        {% if (!file.error) { %}
+	        <div class="file-meta">
+			    <div class="row">
+			        <div class="col-lg-4">
+			           <input type="text" class="form-control"
+			                placeholder="Title"
+							name="jform[picture_data][{%=file.name%}][title]"
+					        value="{%=file.title%}" />
+			        </div>
+			        <div class="col-lg-8">
+			            <input type="text" placeholder="Description" class="form-control"
+					                name="jform[picture_data][{%=file.name%}][description]"
+
+					                value="{%=file.description%}" />
+			        </div>
+			    </div>
+	        </div>
+		 {% } %}
+        {% if (file.error) { %}
+            <div><span class="label label-danger">Error</span> {%=file.error%}</div>
+        {% } %}
+        </td>
+        <td style="text-align: center">
+            {% if (file.deleteUrl) { %}
+                            {% } else { %}
+                 <button class="btn btn-default btn-xs btn-xs cancel">
+                    <i class="fa fa-stop"></i>
+                    <span>Cancel</span>
+                </button>
+            {% }%}
+            {% if (!file.error) { %}
+            <input type="hidden" name="jform[picture][]" value="{%=file.name%}" />
+            {% } %}
+        </td>
+    </tr>
+{% } %}
+</script>
+	
+<script type="text/x-template" id="ccomment-menu">
+	<div class="row-fluid ccomment-menu">
+		<h4 class="pull-left">
+			Comments			(<span class="ccomment-comment-counter">{{pagination.total_with_children}}</span>)
+		</h4>
+		<div class="pull-right">
+							<button
+						v-on:click="newComment"
+						class="ccomment-add-new btn btn-mini" title='Add New'>
+					Add New				</button>
+														</div>
+	</div>
+</script>
+
+	<!-- the ccomment root element -->
+	<div id="ccomment" class="ccomment"><div class="row-fluid ccomment-menu"><h4 class="pull-left">
+			Comments			(<span class="ccomment-comment-counter">13</span>)
+		</h4> <div class="pull-right"><button title="Add New" class="ccomment-add-new btn btn-mini">
+					Add New				</button></div></div> <form class="ccomment-form"><!----> <!----> <div class="row-fluid margin-bottom"><div class="span1 hidden-phone"><div class="ccomment-avatar"><img src="./Getting Started With Drupal&#39;s Webform Module_files/noavatar.png"></div></div> <div class="span11"><textarea name="jform[comment]" placeholder="Leave a comment" class="js-ccomment-textarea ccomment-textarea span12 required"></textarea> <div style="display: none;"><div class="fileupload"><div class="row fileupload-buttonbar"><input type="file" name="files[]" multiple="multiple" class="js-ccomment-file-upload-real ccomment-file-upload-real"> <div><span class="fileupload-process"><span class="fa fa-spinner fa-pulse"></span></span>
+			Attach images by dragging &amp; dropping or <span type="button" class="js-file-upload-fake ccomment-file-upload-fake btn-link"> by selecting them.</span> <br> <small class="muted">The maximum file size for uploads is <strong>10MB</strong>.				Only <strong>gif,jpg,png</strong> files are allowed.</small> <div class="fileupload-progress fade hide"><div role="progressbar" aria-valuemin="0" aria-valuemax="100" class="progress progress-striped active"><div class="progress-bar progress-bar-success" style="width: 0%;"></div></div> <div class="progress-extended">&nbsp;</div></div> <div class="ccomment-file-list"><div class="alert alert-error hide compojoom-max-number-files">
+					The maximum number of 3 allowed files to upload has been reached. If you want to upload more files you have to delete one of the existing uploaded files first.				</div> <table role="presentation" class="table table-striped"><thead></thead> <tbody class="files"></tbody></table> <div class="alert alert-error hide compojoom-max-number-files">
+					The maximum number of 3 allowed files to upload has been reached. If you want to upload more files you have to delete one of the existing uploaded files first.				</div></div></div></div></div></div> <div style="display: none;"><div class="span4 muted small">
+								Posting as																	<button type="button" class="btn-link btn-small ccomment-posting-as">Anonymous
+									</button></div> <label class="checkbox pull-right small ccomment-notify"><input type="checkbox" value="1" name="jform[notify]ƒ"> <span class="muted">
+										Notify me of followup comments via e-mail									</span></label></div></div> <div class="row-fluid ccomment-user-info offset1					span11" style="display: none;"><div class="span6"><input name="jform[name]" type="text" required="required" placeholder="Enter your name*" tabindex="2" class="ccomment-name span12 no-margin required nonEmpty"> <span class="help-block pull-right small muted">
+								Displayed next to your comments.							</span></div> <div class="span6"><input name="jform[email]" type="text" placeholder="Enter your email*" required="required" tabindex="3" class="ccomment-email span12 no-margin required nonEmpty"> <p class="help-block small pull-right muted">
+										Not displayed publicly.																					<span class="gravatar"><a href="http://gravatar.com/" target="_blank">Gravatar</a> enabled										</span></p></div></div> <div class="row-fluid ccomment-actions" style="display: none;"><div class="pull-right"><button type="button" class="btn ccomment-cancel">
+								Cancel</button> <button type="submit" tabindex="7" name="bsend" class="btn btn-primary ccomment-send"><span>
+									Send								</span></button></div></div></div> <input type="hidden" name="jform[contentid]" value="9215"> <input type="hidden" name="jform[component]" value="com_content"> <input type="hidden" name="jform[page]" value="1"> </form> <!----> <ul class="ccomment-comments-list"><li class="item ccomment-odd ccomment-comment  ccomment-level-0"><div id="ccomment-comment-2509" class="ccomment-comment-content"><div class="ccomment-data"><div class="ccomment-avatar"><img src="./Getting Started With Drupal&#39;s Webform Module_files/a1dd30c473337cdc042d3c567abda97b"></div> <div class="ccomment-content"><div class="ccomment-meta"><span class="ccomment-author">John Horning</span> <a href="https://www.ostraining.com/blog/drupal/webform-module/#!/ccomment-comment=2509" class="muted ccomment-created">
+			Saturday, 09 June 2012
+		</a></div> <div>This is great, but how do you add a new pre-built options list? I need to create a new list and it to the drop-down menu so I can select it.</div> <!----> <!----> <div class="ccomment-actions"><button class="btn btn-small ccomment-quote btn-link">
+								Quote							</button> <button class="btn btn-small ccomment-reply btn-link">
+								Reply							</button> <div class="pull-right ccomment-moderation"><!----></div></div></div></div> <!----></div> <ul><li class="item ccomment-parent-is-2509 ccomment-even ccomment-comment  ccomment-level-1"><div id="ccomment-comment-8401" class="ccomment-comment-content"><div class="ccomment-data"><div class="ccomment-avatar"><img src="./Getting Started With Drupal&#39;s Webform Module_files/857ca7504c193cde74ba066858888d5d"></div> <div class="ccomment-content"><div class="ccomment-meta"><span class="ccomment-author">Preetam</span> <a href="https://www.ostraining.com/blog/drupal/webform-module/#!/ccomment-comment=8401" class="muted ccomment-created">
+			Monday, 20 April 2015
+		</a></div> <div>Could you help me to know how can i add a password field in the form?? This is very important!!!<br>
+I want to create a web form for the registration of a new user where I am going to need a password field.<br>
+Any help will be appretiated. :-).<br>
+<br>
+Thanks in advance</div> <!----> <!----> <div class="ccomment-actions"><button class="btn btn-small ccomment-quote btn-link">
+								Quote							</button> <button class="btn btn-small ccomment-reply btn-link">
+								Reply							</button> <div class="pull-right ccomment-moderation"><!----></div></div></div></div> <!----></div> <!----></li></ul></li><!----><li class="item ccomment-odd ccomment-comment  ccomment-level-0"><div id="ccomment-comment-3018" class="ccomment-comment-content"><div class="ccomment-data"><div class="ccomment-avatar"><img src="./Getting Started With Drupal&#39;s Webform Module_files/fd14661faf6f4fa7e202813c76480fe7"></div> <div class="ccomment-content"><div class="ccomment-meta"><span class="ccomment-author">Guest</span> <a href="https://www.ostraining.com/blog/drupal/webform-module/#!/ccomment-comment=3018" class="muted ccomment-created">
+			Friday, 19 October 2012
+		</a></div> <div>You guys/gals ROCK! if only all mods and installs were as thoroughly explained as you folks have done.</div> <!----> <!----> <div class="ccomment-actions"><button class="btn btn-small ccomment-quote btn-link">
+								Quote							</button> <button class="btn btn-small ccomment-reply btn-link">
+								Reply							</button> <div class="pull-right ccomment-moderation"><!----></div></div></div></div> <!----></div> <!----></li><li class="item ccomment-even ccomment-comment  ccomment-level-0"><div id="ccomment-comment-3380" class="ccomment-comment-content"><div class="ccomment-data"><div class="ccomment-avatar"><img src="./Getting Started With Drupal&#39;s Webform Module_files/b813ee3743ae5af9c0bccb064e97724b"></div> <div class="ccomment-content"><div class="ccomment-meta"><span class="ccomment-author">TomekS</span> <a href="https://www.ostraining.com/blog/drupal/webform-module/#!/ccomment-comment=3380" class="muted ccomment-created">
+			Tuesday, 08 January 2013
+		</a></div> <div>Is there any possibility to limit options for one selection only? I mean that one option can be selected by all users once only. For example I would like to ditribute options for users in order thay send survey.<br>
+<br>
+Thank you in advance for any ideas.</div> <!----> <!----> <div class="ccomment-actions"><button class="btn btn-small ccomment-quote btn-link">
+								Quote							</button> <button class="btn btn-small ccomment-reply btn-link">
+								Reply							</button> <div class="pull-right ccomment-moderation"><!----></div></div></div></div> <!----></div> <!----></li><li class="item ccomment-odd ccomment-comment  ccomment-level-0"><div id="ccomment-comment-3786" class="ccomment-comment-content"><div class="ccomment-data"><div class="ccomment-avatar"><img src="./Getting Started With Drupal&#39;s Webform Module_files/c146cce42156e256649af75c626f4414"></div> <div class="ccomment-content"><div class="ccomment-meta"><span class="ccomment-author">Manoj</span> <a href="https://www.ostraining.com/blog/drupal/webform-module/#!/ccomment-comment=3786" class="muted ccomment-created">
+			Thursday, 07 March 2013
+		</a></div> <div>Thanks for nice tutorials, can any body help how can i store received values in database.</div> <!----> <!----> <div class="ccomment-actions"><button class="btn btn-small ccomment-quote btn-link">
+								Quote							</button> <button class="btn btn-small ccomment-reply btn-link">
+								Reply							</button> <div class="pull-right ccomment-moderation"><!----></div></div></div></div> <!----></div> <!----></li><li class="item ccomment-even ccomment-comment  ccomment-level-0"><div id="ccomment-comment-4042" class="ccomment-comment-content"><div class="ccomment-data"><div class="ccomment-avatar"><img src="./Getting Started With Drupal&#39;s Webform Module_files/cd052d7e3770116ce57f2f0dd55815e2"></div> <div class="ccomment-content"><div class="ccomment-meta"><span class="ccomment-author">hasjalil</span> <a href="https://www.ostraining.com/blog/drupal/webform-module/#!/ccomment-comment=4042" class="muted ccomment-created">
+			Sunday, 21 April 2013
+		</a></div> <div>Thanks for this nice tutorial</div> <!----> <!----> <div class="ccomment-actions"><button class="btn btn-small ccomment-quote btn-link">
+								Quote							</button> <button class="btn btn-small ccomment-reply btn-link">
+								Reply							</button> <div class="pull-right ccomment-moderation"><!----></div></div></div></div> <!----></div> <!----></li><li class="item ccomment-odd ccomment-comment  ccomment-level-0"><div id="ccomment-comment-4178" class="ccomment-comment-content"><div class="ccomment-data"><div class="ccomment-avatar"><img src="./Getting Started With Drupal&#39;s Webform Module_files/73e6642fd81cc6255f97c197e3d8b2e2"></div> <div class="ccomment-content"><div class="ccomment-meta"><span class="ccomment-author">David Walker</span> <a href="https://www.ostraining.com/blog/drupal/webform-module/#!/ccomment-comment=4178" class="muted ccomment-created">
+			Wednesday, 15 May 2013
+		</a></div> <div>Anybody able to tell me how to delete (un-needed) fields? (can't seem to find that anywhere in the Docs)</div> <!----> <!----> <div class="ccomment-actions"><button class="btn btn-small ccomment-quote btn-link">
+								Quote							</button> <button class="btn btn-small ccomment-reply btn-link">
+								Reply							</button> <div class="pull-right ccomment-moderation"><!----></div></div></div></div> <!----></div> <!----></li><li class="item ccomment-even ccomment-comment  ccomment-level-0"><div id="ccomment-comment-4497" class="ccomment-comment-content"><div class="ccomment-data"><div class="ccomment-avatar"><img src="./Getting Started With Drupal&#39;s Webform Module_files/de223ae541c2d9bd0fcd3cebbb21eeda"></div> <div class="ccomment-content"><div class="ccomment-meta"><span class="ccomment-author">Raf</span> <a href="https://www.ostraining.com/blog/drupal/webform-module/#!/ccomment-comment=4497" class="muted ccomment-created">
+			Saturday, 13 July 2013
+		</a></div> <div>Thanks. I have a website: <a href="http://rafaelninvalle.com/" class="ccomment-bbcode-url" rel="nofollow" target="_blank"></a><a class="bbcode_url" href="http://rafaelninvalle.com/" target="_blank" rel="nofollow">rafaelninvalle.com</a> and I'm trying to use this webform to design an order form. hard work!!!!!!!!!!!!!</div> <!----> <!----> <div class="ccomment-actions"><button class="btn btn-small ccomment-quote btn-link">
+								Quote							</button> <button class="btn btn-small ccomment-reply btn-link">
+								Reply							</button> <div class="pull-right ccomment-moderation"><!----></div></div></div></div> <!----></div> <!----></li><li class="item ccomment-odd ccomment-comment  ccomment-level-0"><div id="ccomment-comment-5286" class="ccomment-comment-content"><div class="ccomment-data"><div class="ccomment-avatar"><img src="./Getting Started With Drupal&#39;s Webform Module_files/4ed57a72fa4d4631ac39b9810f855e43"></div> <div class="ccomment-content"><div class="ccomment-meta"><span class="ccomment-author">eeyong</span> <a href="https://www.ostraining.com/blog/drupal/webform-module/#!/ccomment-comment=5286" class="muted ccomment-created">
+			Thursday, 10 October 2013
+		</a></div> <div>how do you enable one of the check box</div> <!----> <!----> <div class="ccomment-actions"><button class="btn btn-small ccomment-quote btn-link">
+								Quote							</button> <button class="btn btn-small ccomment-reply btn-link">
+								Reply							</button> <div class="pull-right ccomment-moderation"><!----></div></div></div></div> <!----></div> <!----></li><li class="item ccomment-even ccomment-comment  ccomment-level-0"><div id="ccomment-comment-5395" class="ccomment-comment-content"><div class="ccomment-data"><div class="ccomment-avatar"><img src="./Getting Started With Drupal&#39;s Webform Module_files/67154d450fdf94e67d8f6f6193e54a1b"></div> <div class="ccomment-content"><div class="ccomment-meta"><span class="ccomment-author">Ayesha</span> <a href="https://www.ostraining.com/blog/drupal/webform-module/#!/ccomment-comment=5395" class="muted ccomment-created">
+			Monday, 28 October 2013
+		</a></div> <div>This is a module where many developers face the heat in. Good to have this resource, so that I can share this with some of my clients who come up with similar issues.<br>
+Ayesha<br>
+<br>
+<a href="http://www.drupal-website-developer.com/" class="ccomment-bbcode-url" rel="nofollow" target="_blank"></a><a class="bbcode_url" href="http://www.drupal-website-d/" target="_blank" rel="nofollow">www.drupal-website-d</a>...</div> <!----> <!----> <div class="ccomment-actions"><button class="btn btn-small ccomment-quote btn-link">
+								Quote							</button> <button class="btn btn-small ccomment-reply btn-link">
+								Reply							</button> <div class="pull-right ccomment-moderation"><!----></div></div></div></div> <!----></div> <!----></li><li class="item ccomment-odd ccomment-comment  ccomment-level-0"><div id="ccomment-comment-6838" class="ccomment-comment-content"><div class="ccomment-data"><div class="ccomment-avatar"><img src="./Getting Started With Drupal&#39;s Webform Module_files/0b95865e6431128017f87567c9e73302"></div> <div class="ccomment-content"><div class="ccomment-meta"><span class="ccomment-author">Kev</span> <a href="https://www.ostraining.com/blog/drupal/webform-module/#!/ccomment-comment=6838" class="muted ccomment-created">
+			Wednesday, 18 June 2014
+		</a></div> <div>Just wanted to say thanks.</div> <!----> <!----> <div class="ccomment-actions"><button class="btn btn-small ccomment-quote btn-link">
+								Quote							</button> <button class="btn btn-small ccomment-reply btn-link">
+								Reply							</button> <div class="pull-right ccomment-moderation"><!----></div></div></div></div> <!----></div> <!----></li><li class="item ccomment-even ccomment-comment  ccomment-level-0"><div id="ccomment-comment-7029" class="ccomment-comment-content"><div class="ccomment-data"><div class="ccomment-avatar"><img src="./Getting Started With Drupal&#39;s Webform Module_files/bf632c7010be28773819e7524ed49179"></div> <div class="ccomment-content"><div class="ccomment-meta"><span class="ccomment-author">Jean-Charles Da Rocha</span> <a href="https://www.ostraining.com/blog/drupal/webform-module/#!/ccomment-comment=7029" class="muted ccomment-created">
+			Thursday, 24 July 2014
+		</a></div> <div>Hi, How do you add the first name in the congrats email sent after the user submitted the form?</div> <!----> <!----> <div class="ccomment-actions"><button class="btn btn-small ccomment-quote btn-link">
+								Quote							</button> <button class="btn btn-small ccomment-reply btn-link">
+								Reply							</button> <div class="pull-right ccomment-moderation"><!----></div></div></div></div> <!----></div> <!----></li><li class="item ccomment-odd ccomment-comment  ccomment-level-0"><div id="ccomment-comment-14576" class="ccomment-comment-content"><div class="ccomment-data"><div class="ccomment-avatar"><img src="./Getting Started With Drupal&#39;s Webform Module_files/6d28a29e9917f16f4acaf59f33fff44d"></div> <div class="ccomment-content"><div class="ccomment-meta"><span class="ccomment-author">shiva</span> <a href="https://www.ostraining.com/blog/drupal/webform-module/#!/ccomment-comment=14576" class="muted ccomment-created">
+			Thursday, 28 February 2019
+		</a></div> <div>How to add this form to the pages? For example in a contact us page?</div> <!----> <!----> <div class="ccomment-actions"><button class="btn btn-small ccomment-quote btn-link">
+								Quote							</button> <button class="btn btn-small ccomment-reply btn-link">
+								Reply							</button> <div class="pull-right ccomment-moderation"><!----></div></div></div></div> <!----></div> <!----></li></ul> <!----> <div class="row-fluid small muted ccomment-powered"><p class="text-center"></p></div></div>
+
+	<script type="text/javascript">
+		window.compojoom = compojoom = window.compojoom || {};
+		compojoom.ccomment = {
+			user: {"loggedin":false,"avatar":"https:\/\/www.ostraining.com\/media\/com_comment\/images\/noavatar.png"},
+			item: {"contentid":9215,"component":"com_content","count":13},
+			config: {"comments_per_page":15,"sort":0,"tree":1,"use_name":0,"tree_depth":5,"form_position":1,"voting":0,"copyright":1,"pagination_position":2,"avatars":0,"gravatar":1,"support_ubb":1,"support_emoticons":0,"support_picture":0,"name_required":1,"email_required":1,"baseUrl":"https:\/\/www.ostraining.com\/","langCode":"en","file_upload":{"url":"https:\/\/www.ostraining.com\/index.php?option=com_comment&amp;task=multimedia.doIt","formControl":"jform","fieldName":"picture","maxNumberOfFiles":3,"fileTypes":"gif,jpg,png","maxSize":"10","component":"com_comment","imageSize":{"x":"2400","y":"1800"}}}		};
+	</script>
+
+<script data-inline="" type="text/javascript" src="./Getting Started With Drupal&#39;s Webform Module_files/8e12eb270706cd6b2c8483104bf89b54.min.js"></script></article>
+                
+            </div>
+
+        </div>
+
+        
+            <div class="col-sm-4 col-md-3">
+
+                <aside class="widget list">
+
+<div class="custom">
+	<div class="ost-box-image">
+  <a href="https://www.ostraining.com/books/d8e/"><img src="./Getting Started With Drupal&#39;s Webform Module_files/drupal-8.jpg" alt=""></a>
+  <div class="ost-box-image-inner">
+    <p>
+       <strong>Join OSTraining and get the Drupal 8 Explained book!</strong>
+    </p>
+    <p>
+      <a href="https://www.ostraining.com/pricing/" class="btn btn-primary">Sign up today!</a>
+    </p>
+  </div>
+</div></div>
+<div class="clearfix"></div>
+    </aside><aside class="widget list"><div class="title-box"><h2 class="title">Popular New Posts</h2></div><ul class="mostread ost-light-gray mod-list">
+	<li itemscope="" itemtype="https://schema.org/Article">
+		<a href="https://www.ostraining.com/blog/drupal/create-masonry-like-view/" itemprop="url">
+			<span itemprop="name">
+				How to Create a Masonry-Like View in Drupal 8			</span>
+		</a>
+	</li>
+	<li itemscope="" itemtype="https://schema.org/Article">
+		<a href="https://www.ostraining.com/blog/drupal/theming-a-drupal-8-view-with-css-grid/" itemprop="url">
+			<span itemprop="name">
+				Theming a Drupal 8 View with CSS Grid			</span>
+		</a>
+	</li>
+	<li itemscope="" itemtype="https://schema.org/Article">
+		<a href="https://www.ostraining.com/blog/wordpress/wordpress-editing-permissions/" itemprop="url">
+			<span itemprop="name">
+				How to Change Edit Permissions For WordPress Content			</span>
+		</a>
+	</li>
+	<li itemscope="" itemtype="https://schema.org/Article">
+		<a href="https://www.ostraining.com/blog/drupal/useful-tips-for-securing-your-drupal-site/" itemprop="url">
+			<span itemprop="name">
+				Useful Tips for Securing your Drupal Site			</span>
+		</a>
+	</li>
+	<li itemscope="" itemtype="https://schema.org/Article">
+		<a href="https://www.ostraining.com/blog/drupal/development-environments-for-drupal-with-vagrant-and-scotchbox/" itemprop="url">
+			<span itemprop="name">
+				Development Environments for Drupal with Vagrant and Scotch Box			</span>
+		</a>
+	</li>
+</ul>
+<div class="clearfix"></div>
+    </aside><aside class="widget list"><div class="title-box"><h2 class="title">Blog Categories</h2></div><div class="sidebar">
+    <div class="menu">
+        <ul class="">
+        <li class="item-179"><a class="" href="http://www.ostraining.com/blog/wordpress/">WordPress Tutorials</a></li><li class="item-4295"><a class="" href="http://www.ostraining.com/blog/woocommerce/">WooCommerce Tutorials</a></li><li class="item-178 current active"><a class="" href="http://www.ostraining.com/blog/drupal/">Drupal Tutorials</a></li><li class="item-177"><a class="" href="http://www.ostraining.com/blog/joomla-cms/">Joomla Tutorials</a></li><li class="item-3988"><a class="" href="https://www.ostraining.com/blog/magento/">Magento Tutorials</a></li><li class="item-3953"><a class="" href="https://www.ostraining.com/blog/podcasting/">Podcasts</a></li><li class="item-254"><a class="" href="http://www.ostraining.com/blog/coding/">Coding Tutorials</a></li><li class="item-198"><a class="" href="http://www.ostraining.com/blog/news/">OSTraining News</a></li><li class="item-276"><a class="" href="http://www.ostraining.com/blog/general/">Web Design News</a></li></ul>
+    </div>
+</div><div class="clearfix"></div>
+    </aside><aside class="widget list"><div class="title-box"><h2 class="title">Blog License</h2></div>
+
+<div class="custom uk-panel-box ost-light-gray">
+	<p>All our blog posts are published under the Creative Commons&nbsp;Attribution-NonCommercial license:</p>
+<ul class="margin_license">
+<li>You can re-use these tutorials.</li>
+<li>You can modify these tutorials.</li>
+<li>You must link back to our original tutorial.</li>
+<li>You can't use these tutorials commercially.</li>
+</ul>
+<p><a href="http://creativecommons.org/licenses/by-nc/3.0/">Full license details</a>.</p></div>
+<div class="clearfix"></div>
+    </aside><aside class="widget list">
+
+<div class="custom ost-light-gray">
+	<p style="line-height: 18px;">Get these tutorials via RSS:</p>
+<p><a href="http://feeds.feedburner.com/ostrainingdrupal"><em class="fa fa-rss" style="color: #ed8034;"></em> The Drupal RSS Feed</a></p></div>
+<div class="clearfix"></div>
+    </aside>
+
+            </div>
+
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+    <span id="block10"></span>
+
+    <div style="background-color:#ffffff" class="cm-padding-bottom-36 " id="vg-bottom">
+
+        
+        
+        <div class="container">
+            <div class="row">
+
+                
+                    <div class="col-sm-12 col-md-12">
+
+                        
+
+<div class="custom">
+	<div><div class="uk-alert alert alert-info" data-uk-alert=""><center><strong>Join today and get access to 1,000's of books and videos.</strong> Learn WordPress, Drupal, Magento, Joomla and more! <a href="https://www.ostraining.com/pricing/" class="btn btn-primary">Sign up today!</a></center></div></div></div>
+
+
+                    </div>
+
+                                                                
+            </div>
+        </div>
+    </div>
+
+
+</article>
+</section><!-- #main -->
+
+</div><!-- .page-box-content -->
+</div><!-- .page-box -->
+
+    <footer id="footer">
+        <div class="footer-top">
+
+            
+                <div id="vg-footer">
+
+                    <div class="container">
+                        <div class="row sidebar">
+
+                            
+                                <aside class="col-sm-3 col-md-3">
+
+                                    <div class="title-block"><h3 class="title">Videos</h3></div>
+
+<div class="custom uk-text-center-small">
+	<p><a href="https://www.ostraining.com/classes/"><img src="./Getting Started With Drupal&#39;s Webform Module_files/videos-heading.jpg" alt=""></a></p>
+<nav class="links">
+<p><a href="https://www.ostraining.com/classes/">See all our the training classes in our video libary</a></p></nav></div>
+
+
+                                </aside>
+
+                                                        
+                                <aside class="col-sm-3 col-md-3">
+
+                                    <div class="title-block"><h3 class="title">Books</h3></div>
+
+<div class="custom uk-text-center-small">
+	<p><a href="https://www.ostraining.com/books/"><img src="./Getting Started With Drupal&#39;s Webform Module_files/books-heading.jpg" alt=""></a></p>
+<nav class="links">
+<p><a href="https://www.ostraining.com/books/">See all the training books available in our "Explained" series</a></p></nav></div>
+
+
+                                </aside>
+
+                                                        
+                                <aside class="col-sm-3 col-md-3">
+
+                                    <div class="title-block"><h3 class="title">Marketing</h3></div>
+
+<div class="custom uk-text-center-small">
+	<p><a href="https://marketing.ostraining.com/" target="_blank" rel="noopener"><img src="./Getting Started With Drupal&#39;s Webform Module_files/marketing-heading.jpg" alt=""></a></p>
+<nav class="links">
+<p><a href="https://marketing.ostraining.com/" target="_blank" rel="noopener">We can help you engage with the web design community</a></p></nav></div>
+
+
+                                </aside>
+
+                                                        
+                                <aside class="col-sm-3 col-md-3">
+
+                                    <div class="title-block"><h3 class="title">Podcast</h3></div>
+
+<div class="custom uk-text-center-small">
+	<p><a href="https://www.ostraining.com/podcast/"><img src="./Getting Started With Drupal&#39;s Webform Module_files/podcast-heading.jpg" alt=""></a></p>
+<p><a href="https://www.ostraining.com/podcast/">Listen to episodes of the OSTraining podcast</a></p></div>
+
+
+                                </aside>
+
+                            
+                        </div>
+                    </div>
+
+                                            <div class="ost-bottom-images">
+                            
+
+<div class="custom">
+	<p class="ost-social-networks cm-padding-bottom-36"><a href="https://www.ostraining.com/about/ostraining/">About Us</a> <span>/</span> <a href="https://www.ostraining.com/about/team">Our Team</a> <span>/</span> <a href="https://www.ostraining.com/blog/">Our Blog</a> <span>/</span> <a href="https://www.ostraining.com/faqs/">FAQs</a> <span>/</span> <a href="https://www.ostraining.com/terms/">Terms and Conditions</a> <span>/</span> <a href="https://www.ostraining.com/refund-policy/">Refund Policy</a></p></div>
+
+                        </div>
+                    
+                </div>
+
+            
+        </div><!-- .footer-top -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+
+                    
+                    
+                        <div class="col-md-12">
+
+                            
+
+<div class="custom">
+	<p class="ost-social-networks"><a href="mailto:support@ostraining.com" target="_blank" class="ost-social-email"><em class="fa  fa-envelope"></em> support@ostraining.com</a> <span>/</span> <a href="http://facebook.com/OSTraining" target="_blank" rel="noopener" class="ost-social-facebook"><em class="fa fa-facebook"></em> /OSTraining</a> <span>/</span> <a href="http://twitter.com/OSTraining" target="_blank" rel="noopener" class="ost-social-twitter"><em class="fa fa-twitter"></em> @OSTraining</a> <span>/</span> <a href="https://www.youtube.com/c/ostraining" target="_blank" rel="noopener" class="ost-social-youtube"><em class="fa fa-youtube-play"></em> OSTraining</a></p></div>
+
+                            
+
+                        </div>
+
+                    
+                    
+
+                </div>
+            </div>
+        </div><!-- .footer-bottom -->
+    </footer>
+    <div class="clearfix"></div>
+
+<script src="./Getting Started With Drupal&#39;s Webform Module_files/bootstrap.min.js"></script>
+<script src="./Getting Started With Drupal&#39;s Webform Module_files/jquery.carouFredSel-6.2.1-packed.js"></script>
+<script src="./Getting Started With Drupal&#39;s Webform Module_files/jquery.touchSwipe.min.js"></script>
+<script src="./Getting Started With Drupal&#39;s Webform Module_files/jquery.elevateZoom-3.0.8.min.js"></script>
+<script src="./Getting Started With Drupal&#39;s Webform Module_files/jquery.imagesloaded.min.js"></script>
+<script src="./Getting Started With Drupal&#39;s Webform Module_files/jquery.appear.js"></script>
+<script src="./Getting Started With Drupal&#39;s Webform Module_files/jquery.easing.1.3.js"></script>
+<script src="./Getting Started With Drupal&#39;s Webform Module_files/jquery.fancybox.pack.js"></script>
+<script src="./Getting Started With Drupal&#39;s Webform Module_files/jquery.knob.js"></script>
+<script src="./Getting Started With Drupal&#39;s Webform Module_files/jquery.stellar.min.js"></script>
+<script src="./Getting Started With Drupal&#39;s Webform Module_files/main.js"></script>
+
+
+<!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com-->
+<script type="text/javascript" src="./Getting Started With Drupal&#39;s Webform Module_files/api.min.js" data-account="3006" data-user="5722" async=""></script>
+<!-- / OptinMonster --><script>
+var _prum = [['id', '597f5d10a8340826ec6aa06a'],
+             ['mark', 'firstbyte', (new Date()).getTime()]];
+(function() {
+    var s = document.getElementsByTagName('script')[0]
+      , p = document.createElement('script');
+    p.async = 'async';
+    p.src = '//rum-static.pingdom.net/prum.min.js';
+    s.parentNode.insertBefore(p, s);
+})();
+</script>
+
+<noscript>&lt;strong&gt;JavaScript is currently disabled.&lt;/strong&gt;Please enable it for a better experience of &lt;a href="https://2glux.com/projects/jumi"&gt;Jumi&lt;/a&gt;.</noscript>
+<div id="om-s0tjdi2xzno2icfl-holder"></div><div id="om-cxpun82ee9nannyp-holder"></div><div id="om-svek3si6cfpoxwg4se2e-holder"><script type="text/javascript">if(!(window.ga&&ga.create)){(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','__omGaTracker');}</script></div><div id="om-svek3si6cfpoxwg4se2e" class="optin-monster-saas-overlay jacksonville-background jacksonville-svek3si6cfpoxwg4se2e jacksonville-optin-visible om-has-image jacksonville-has-image jacksonville-lightbox jacksonville-case-study" style="position: fixed; z-index: 888888888; top: 0px; left: 0px; zoom: 1; width: 100%; height: 100%; margin: 0px; padding: 0px; overflow: auto; display: none;"><style type="text/css" class="om-lightbox-case-study-styles jacksonville-template-styles">html div#om-svek3si6cfpoxwg4se2e *,html div#om-svek3si6cfpoxwg4se2e *:before,html div#om-svek3si6cfpoxwg4se2e *:after{box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box}html div#om-svek3si6cfpoxwg4se2e{background:none;border:0;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;float:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;height:auto;letter-spacing:normal;outline:none;position:static;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;width:auto;visibility:visible;overflow:visible;margin:0;padding:0;line-height:1;font-family:helvetica,arial,sans-serif;-webkit-box-shadow:none;-moz-box-shadow:none;-ms-box-shadow:none;-o-box-shadow:none;box-shadow:none;-webkit-appearance:none;font-style:normal}html div#om-svek3si6cfpoxwg4se2e .jacksonville-clearfix,html div#om-svek3si6cfpoxwg4se2e .jacksonville-yesno-clearfix,html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-clearfix{clear:both}html div#om-svek3si6cfpoxwg4se2e .jacksonville-clearfix:after,html div#om-svek3si6cfpoxwg4se2e .jacksonville-yesno-clearfix:after,html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-clearfix:after{clear:both;content:".";display:block;height:0;line-height:0;overflow:auto;visibility:hidden;zoom:1}html div#om-svek3si6cfpoxwg4se2e .jacksonville-element-row,html div#om-svek3si6cfpoxwg4se2e .jacksonville-yesno-element-row,html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-element-row{margin-left:auto;margin-right:auto;zoom:1;width:100%}html div#om-svek3si6cfpoxwg4se2e .jacksonville-element-row:before,html div#om-svek3si6cfpoxwg4se2e .jacksonville-yesno-element-row:before,html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-element-row:before,html div#om-svek3si6cfpoxwg4se2e .jacksonville-element-row:after,html div#om-svek3si6cfpoxwg4se2e .jacksonville-yesno-element-row:after,html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-element-row:after{display:table;content:" "}html div#om-svek3si6cfpoxwg4se2e .jacksonville-element-row:after,html div#om-svek3si6cfpoxwg4se2e .jacksonville-yesno-element-row:after,html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-element-row:after{clear:both}html div#om-svek3si6cfpoxwg4se2e .jacksonville-element-row-wrap,html div#om-svek3si6cfpoxwg4se2e .jacksonville-yesno-element-row-wrap,html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-element-row-wrap{position:relative;margin:0}html div#om-svek3si6cfpoxwg4se2e .jacksonville-element-row-content,html div#om-svek3si6cfpoxwg4se2e .jacksonville-yesno-element-row-content,html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-element-row-content{margin-left:auto;margin-right:auto}html div#om-svek3si6cfpoxwg4se2e .jacksonville-element-image,html div#om-svek3si6cfpoxwg4se2e .jacksonville-yesno-element-image,html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-element-image{position:relative}html div#om-svek3si6cfpoxwg4se2e .jacksonville-element-image img,html div#om-svek3si6cfpoxwg4se2e .jacksonville-yesno-element-image img,html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-element-image img{height:auto;max-width:100%;display:block}html div#om-svek3si6cfpoxwg4se2e .om-close,html div#om-svek3si6cfpoxwg4se2e .jacksonville-close,html div#om-svek3si6cfpoxwg4se2e .jacksonville-yesno-close,html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-close{cursor:pointer}html div#om-svek3si6cfpoxwg4se2e.jacksonville-yesno-active .om-close,html div#om-svek3si6cfpoxwg4se2e.jacksonville-yesno-active .jacksonville-close,html div#om-svek3si6cfpoxwg4se2e.jacksonville-yesno-active .jacksonville-yesno-close{display:none}html div#om-svek3si6cfpoxwg4se2e .jacksonville-form label{color:#484848}html div#om-svek3si6cfpoxwg4se2e .jacksonville-form input,html div#om-svek3si6cfpoxwg4se2e .jacksonville-form select,html div#om-svek3si6cfpoxwg4se2e .jacksonville-form textarea{background-color:#fff;width:100%;border:1px solid #ccc;font-size:16px;line-height:24px;padding:10px 6px;overflow:hidden;outline:none;margin:0;vertical-align:middle;height:32px;font-style:normal}html div#om-svek3si6cfpoxwg4se2e .jacksonville-form textarea{height:60px}html div#om-svek3si6cfpoxwg4se2e .jacksonville-form textarea,html div#om-svek3si6cfpoxwg4se2e .jacksonville-form input{-webkit-appearance:none;-webkit-border-radius:0}html div#om-svek3si6cfpoxwg4se2e .jacksonville-form input[type=submit],html div#om-svek3si6cfpoxwg4se2e .jacksonville-form button,html div#om-svek3si6cfpoxwg4se2e .jacksonville-yesno-form button,html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-form button{background:#484848;border:1px solid #484848;width:100%;color:#fff;font-size:20px;padding:12px 6px;line-height:28px;text-align:center;vertical-align:middle;cursor:pointer;margin:0;height:36px;font-style:normal}html div#om-svek3si6cfpoxwg4se2e .jacksonville-form input[type=checkbox],html div#om-svek3si6cfpoxwg4se2e .jacksonville-form input[type=radio]{width:auto!important;outline:invert none medium;padding:0;margin:0;height:auto!important;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;display:inline}html div#om-svek3si6cfpoxwg4se2e .jacksonville-form input[type=checkbox]{-webkit-appearance:checkbox}html div#om-svek3si6cfpoxwg4se2e .jacksonville-form input[type=radio]{-webkit-appearance:radio}html div#om-svek3si6cfpoxwg4se2e .jacksonville-form .jacksonville-button-yes,html div#om-svek3si6cfpoxwg4se2e .jacksonville-yesno-form .jacksonville-yesno-button-yes,html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-form .jacksonville-success-button-yes{margin-bottom:15px;cursor:pointer}html div#om-svek3si6cfpoxwg4se2e .jacksonville-form-horizontal .jacksonville-button-yes,html div#om-svek3si6cfpoxwg4se2e .jacksonville-yesno-form-horizontal .jacksonville-yesno-button-yes,html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-form-horizontal .jacksonville-success-button-yes{margin-bottom:0;margin-right:2%;cursor:pointer}html div#om-svek3si6cfpoxwg4se2e .jacksonville-form .jacksonville-button-no,html div#om-svek3si6cfpoxwg4se2e .jacksonville-yesno-form .jacksonville-yesno-button-no,html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-form .jacksonville-success-button-no{background-color:#666;border-color:#666;margin-bottom:0;cursor:pointer}html div#om-svek3si6cfpoxwg4se2e .jacksonville-form-horizontal .jacksonville-button-no,html div#om-svek3si6cfpoxwg4se2e .jacksonville-yesno-form-horizontal .jacksonville-yesno-button-no,html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-form-horizontal .jacksonville-success-button-no{margin-right:0;cursor:pointer}html div#om-svek3si6cfpoxwg4se2e .jacksonville-yes-button,html div#om-svek3si6cfpoxwg4se2e .jacksonville-no-button{cursor:pointer}html div#om-svek3si6cfpoxwg4se2e .jacksonville-form-horizontal button,html div#om-svek3si6cfpoxwg4se2e .jacksonville-yesno-form-horizontal button,html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-form-horizontal button{width:49%!important;max-width:none!important}html div#om-svek3si6cfpoxwg4se2e .jacksonville-form-horizontal.jacksonville-has-button button,html div#om-svek3si6cfpoxwg4se2e .jacksonville-yesno-form-horizontal.jacksonville-yesno-has-button button,html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-form-horizontal.jacksonville-success-has-button button{width:50%!important;display:block;margin:0 auto}html div#om-svek3si6cfpoxwg4se2e .jacksonville-segments{margin:0 0 15px}html div#om-svek3si6cfpoxwg4se2e .jacksonville-segments-horizontal{margin:15px 0 0}html div#om-svek3si6cfpoxwg4se2e .jacksonville-segments .jacksonville-segments-title{font-size:16px;display:block;line-height:1}html div#om-svek3si6cfpoxwg4se2e .jacksonville-segments-horizontal .jacksonville-segments-title{display:inline-block;margin-right:10px}html div#om-svek3si6cfpoxwg4se2e .jacksonville-segments .jacksonville-segments-wrap{margin-top:5px}html div#om-svek3si6cfpoxwg4se2e .jacksonville-segments-horizontal .jacksonville-segments-wrap{display:inline-block;margin-top:0}html div#om-svek3si6cfpoxwg4se2e .jacksonville-segments .jacksonville-segment-choice{display:inline-block;margin:0 10px 6px 0;vertical-align:middle}html div#om-svek3si6cfpoxwg4se2e .jacksonville-element-privacy-checkbox,html div#om-svek3si6cfpoxwg4se2e .jacksonville-form input.jacksonville-element-privacy-checkbox{vertical-align:top;display:inline;margin-right:5px;width:auto}html div#om-svek3si6cfpoxwg4se2e .jacksonville-element-privacy-inner-content{display:inline;vertical-align:bottom}html div#om-svek3si6cfpoxwg4se2e .jacksonville-segments label{font-size:12px;margin-left:4px;vertical-align:middle;line-height:12px}html div#om-svek3si6cfpoxwg4se2e .jacksonville-element-privacy,html div#om-svek3si6cfpoxwg4se2e .jacksonville-yesno-element-privacy,html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-element-privacy{color:#888;font-size:12px;font-family:'Open Sans',sans-serif;text-align:center;margin-top:10px;line-height:1}html div#om-svek3si6cfpoxwg4se2e .jacksonville-element-privacy-before,html div#om-svek3si6cfpoxwg4se2e .jacksonville-yesno-element-privacy-before,html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-element-privacy-before{margin-top:0;margin-bottom:10px}html div#om-svek3si6cfpoxwg4se2e .jacksonville-body,html div#om-svek3si6cfpoxwg4se2e .jacksonville-yesno-container,html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-container{position:relative;height:100%;transition:opacity .5s ease-in-out;-webkit-transition:opacity .5s ease-in-out;-moz-transition:opacity .5s ease-in-out;-o-transition:opacity .5s ease-in-out;opacity:1}html div#om-svek3si6cfpoxwg4se2e .jacksonville-transition-hidden{opacity:0!important;height:0!important;min-height:0!important;max-height:0!important;overflow:hidden!important;padding:0!important;margin:0!important;border-width:0!important;border-style:none!important;position:relative}html div#om-svek3si6cfpoxwg4se2e .jacksonville-link.link-type-button,html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-link.link-type-button{display:inline-block;padding:20px;text-align:center;text-decoration:none;border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px;font-weight:700;font-size:18px;color:#fff;line-height:1;margin-bottom:25px;cursor:pointer}html div#om-svek3si6cfpoxwg4se2e .jacksonville-field-comments{visibility:hidden;position:absolute!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;height:1px!important;width:1px!important;margin:-1px!important;padding:0!important;border:0!important;z-index:-1!important;max-width:1px!important;min-width:1px!important}html div#om-svek3si6cfpoxwg4se2e .fr-text-uppercase{text-transform:uppercase}html div#om-svek3si6cfpoxwg4se2e .fr-view .fr-text-spaced{letter-spacing:1px}html div#om-svek3si6cfpoxwg4se2e .fr-text-bordered{border-top:solid 1px #222;border-bottom:solid 1px #222;padding:10px 0}html div#om-svek3si6cfpoxwg4se2e .fr-text-gray{color:#AAA!important}html div#om-svek3si6cfpoxwg4se2e ul{list-style-type:disc}html div#om-svek3si6cfpoxwg4se2e ol{list-style:decimal}html div#om-svek3si6cfpoxwg4se2e ul,html div#om-svek3si6cfpoxwg4se2e ol{margin:0 0 1.5em 3em}html div#om-svek3si6cfpoxwg4se2e .jacksonville-element-title *:focus{outline:none}html div#om-svek3si6cfpoxwg4se2e{background:rgb(0,0,0);background:rgba(0,0,0,.7);width:100%;height:100%}html div#om-svek3si6cfpoxwg4se2e #om-lightbox-case-study-optin,html div#om-svek3si6cfpoxwg4se2e .jacksonville-outer-wrap{background:#fff;display:none;position:absolute;top:50%;left:50%;min-height:175px;max-width:700px;width:100%;z-index:888888888}html div#om-svek3si6cfpoxwg4se2e .jacksonville-optin-bar{margin-bottom:20px}html div#om-svek3si6cfpoxwg4se2e .jacksonville-bar{float:left;width:25%;height:11px;display:block}html div#om-svek3si6cfpoxwg4se2e .jacksonville-red-bar{background-color:#ef3e36}html div#om-svek3si6cfpoxwg4se2e .jacksonville-green-bar{background-color:#abb92e}html div#om-svek3si6cfpoxwg4se2e .jacksonville-orange-bar{background-color:#f57826}html div#om-svek3si6cfpoxwg4se2e .jacksonville-blue-bar{background-color:#17b4e9}html div#om-svek3si6cfpoxwg4se2e .jacksonville-close{position:absolute;top:-12px;right:-12px;text-decoration:none!important;display:block;width:35px;height:35px;background:url(https://a.optmstr.com/app/images/close.png) no-repeat scroll 0 0;z-index:1500;text-indent:-9999px;cursor:pointer}html div#om-svek3si6cfpoxwg4se2e .jacksonville-header{min-height:30px;padding:15px;width:100%}html div#om-svek3si6cfpoxwg4se2e .jacksonville-element-title{font-size:32px;font-family:'Bree Serif',serif;color:#484848;width:100%;margin-bottom:15px;text-shadow:0 1px #fff;text-align:center}html div#om-svek3si6cfpoxwg4se2e .jacksonville-element-tagline{font-size:24px;font-family:'Open Sans',sans-serif;line-height:1.25;color:#484848;width:100%;margin-bottom:30px;text-shadow:0 1px #fff;text-align:center}html div#om-svek3si6cfpoxwg4se2e .jacksonville-content{padding:15px}html div#om-svek3si6cfpoxwg4se2e .jacksonville-left{float:left;max-width:280px;width:100%;position:relative}html div#om-svek3si6cfpoxwg4se2e .jacksonville-right{float:right;max-width:370px;width:100%;background-color:#dadada;margin-right:-15px;padding:20px;position:relative}html div#om-svek3si6cfpoxwg4se2e .jacksonville-arrow{position:absolute;width:49px;height:56px;left:-40px;top:-40px}html div#om-svek3si6cfpoxwg4se2e .jacksonville-form input,html div#om-svek3si6cfpoxwg4se2e .jacksonville-form select,html div#om-svek3si6cfpoxwg4se2e .jacksonville-form textarea,html div#om-svek3si6cfpoxwg4se2e .jacksonville-form button{margin:0 0 15px;height:46px}html div#om-svek3si6cfpoxwg4se2e .jacksonville-form textarea{height:80px}html div#om-svek3si6cfpoxwg4se2e .jacksonville-form input[type=submit],html div#om-svek3si6cfpoxwg4se2e .jacksonville-form button{height:54px}html div#om-svek3si6cfpoxwg4se2e.jacksonville-success-visible .jacksonville-outer-wrap{max-width:780px!important}html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-container{min-height:300px}html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-close{font-size:32px!important;color:#666;font-weight:800;position:absolute!important;top:-21px!important;right:-17px!important;text-decoration:none!important;display:block!important;line-height:35px!important;padding:0!important;z-index:99999;background:#f0f0f0!important;border-radius:50px!important;width:40px!important;height:40px!important;text-align:center}html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-content{padding:5% 7%}html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-left{max-width:275px;width:100%;position:relative;display:inline-block;vertical-align:middle}html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-right{max-width:320px;width:100%;margin-left:70px;padding:20px 0;position:relative;display:inline-block;vertical-align:middle}html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-image{position:relative;max-width:275px;max-height:390px;margin:0 auto}html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-image img{display:block;margin:0 auto;text-align:center;height:auto;max-width:100%;max-height:390px}html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-element-title{font-size:24px;font-family:'Lato',Helvetica,Arial,"Lucida Grande",sans-serif;color:#666;font-weight:800;text-align:left;padding:0;padding-bottom:34px}html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-element-tagline{font-size:18px;font-family:'Lato',Helvetica,Arial,"Lucida Grande",sans-serif;color:#666;font-weight:300;text-align:left;padding:0;padding-bottom:34px}html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-link.link-type-button{font-size:18px;min-width:250px}@media (min-width:1px) and (max-width:700px){html div#om-svek3si6cfpoxwg4se2e .jacksonville-outer-wrap[style]{position:relative!important;width:100%!important;left:0!important}html div#om-svek3si6cfpoxwg4se2e .jacksonville-form input,html div#om-svek3si6cfpoxwg4se2e .jacksonville-form select,html div#om-svek3si6cfpoxwg4se2e .jacksonville-form textarea,html div#om-svek3si6cfpoxwg4se2e .jacksonville-form.jacksonville-has-email input[type=email],html div#om-svek3si6cfpoxwg4se2e .jacksonville-form input[type=submit],html div#om-svek3si6cfpoxwg4se2e .jacksonville-form button,html div#om-svek3si6cfpoxwg4se2e .jacksonville-form-horizontal.jacksonville-has-button button,html div#om-svek3si6cfpoxwg4se2e button{float:none;width:100%;max-width:100%;margin-right:0}html div#om-svek3si6cfpoxwg4se2e .jacksonville-form .jacksonville-field-name,html div#om-svek3si6cfpoxwg4se2e .jacksonville-form .jacksonville-field-email,html div#om-svek3si6cfpoxwg4se2e .jacksonville-form .jacksonville-button-yes{margin-bottom:15px}}@media (min-width:1px) and (max-width:700px){html div#om-svek3si6cfpoxwg4se2e .jacksonville-yesno-form button,html div#om-svek3si6cfpoxwg4se2e .jacksonville-yesno-form-horizontal.jacksonville-yesno-has-button button{float:none;width:100%;max-width:100%;margin-right:0}html div#om-svek3si6cfpoxwg4se2e .jacksonville-yesno-form .jacksonville-yesno-button-yes{margin-bottom:15px}}@media (min-width:1px) and (max-width:700px){html div#om-svek3si6cfpoxwg4se2e .jacksonville-close{right:0}html div#om-svek3si6cfpoxwg4se2e .jacksonville-left,html div#om-svek3si6cfpoxwg4se2e .jacksonville-right{float:none;width:100%;max-width:100%}html div#om-svek3si6cfpoxwg4se2e .jacksonville-left{margin-bottom:15px;text-align:center}}@media only screen and (-webkit-min-device-pixel-ratio:2),only screen and (min--moz-device-pixel-ratio:2),only screen and (-o-min-device-pixel-ratio:2/1),only screen and (min-device-pixel-ratio:2),only screen and (min-resolution:192dpi),only screen and (min-resolution:2dppx){html div#om-svek3si6cfpoxwg4se2e .jacksonville-close{background-image:url(https://a.optmstr.com/app/images/close@2x.png);background-size:35px 35px}}@media (min-width:1px) and (max-width:780px){html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-container{min-height:300px}html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-content{padding:5% 7%}html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-left{width:100%;margin:0 auto;display:block}html div#om-svek3si6cfpoxwg4se2e .jacksonville-success-right{max-width:100%;width:100%;margin:0 auto;display:block}}</style><div id="om-lightbox-case-study-optin" class="om-lightbox-case-study om-clearfix om-theme-case-study jacksonville-outer-wrap" style="display: block; top: 5px; left: 300px; margin-bottom: 0px;" role="main" aria-live="polite"><div id="om-lightbox-case-study-optin-wrap" class="jacksonville-element-row jacksonville-element-row-global jacksonville-clearfix jacksonville-body om-clearfix"><a class="om-close jacksonville-element-close jacksonville-close" title="Close" style="">×</a><div id="om-lightbox-case-study-optin-bar" class="jacksonville-clearfix jacksonville-optin-bar om-clearfix"><span class="jacksonville-bar jacksonville-red-bar om-bar om-red-bar"></span><span class="jacksonville-bar jacksonville-green-bar om-bar om-green-bar"></span><span class="jacksonville-bar jacksonville-orange-bar om-bar om-orange-bar"></span><span class="jacksonville-bar jacksonville-blue-bar om-bar om-blue-bar"></span></div><div id="om-lightbox-case-study-header" class="jacksonville-clearfix jacksonville-header om-clearfix"><div id="om-lightbox-case-study-optin-title" class="jacksonville-element-title jacksonville-element" data-element="title"><div class="jacksonville-element-title-wrap"><div id="jacksonville-element-title-content" class="jacksonville-element-title-content" data-editable="true" tabindex="0"><div>Get the best-selling Drupal book for free!</div></div></div></div><div id="om-lightbox-case-study-optin-tagline" class="jacksonville-element-tagline jacksonville-element" data-element="tagline"><div class="jacksonville-element-tagline-wrap"><div id="jacksonville-element-tagline-content" class="jacksonville-element-tagline-content" data-editable="true" data-save="true">Join over 10,000 readers and explore the first 5 chapters of Drupal 8 Explained</div></div></div></div><div id="om-lightbox-case-study-content" class="jacksonville-clearfix jacksonville-content om-clearfix"><div id="om-lightbox-case-study-left" class="jacksonville-left"><div id="om-lightbox-case-study-optin-image-container" class="om-image-container om-clearfix jacksonville-element-image jacksonville-element" data-element="image"><div id="jacksonville-image" class="jacksonville-image" data-image-id="main" data-context="lightbox" data-theme="case-study"><img class="optin-monster-saas-image optin-monster-saas-image-lightbox-case-study jacksonville-element-image-output" src="./Getting Started With Drupal&#39;s Webform Module_files/e1d436b08b071529700259-drupal-8.jpg" alt="" data-image-id="main" data-context="lightbox" data-theme="case-study"></div></div></div><div id="om-lightbox-case-study-right" class="jacksonville-right"><img id="om-lightbox-case-study-arrow" class="jacksonville-arrow" src="./Getting Started With Drupal&#39;s Webform Module_files/arrow.png" alt="Arrow"><div id="jacksonville-element-form" class="jacksonville-element-form jacksonville-element" data-element="form"><div id="jacksonville-form" class="om-form-area jacksonville-form om-has-name-email jacksonville-has-name-email jacksonville-has-buttons"><div class="jacksonville-form-wrap"><input id="om-lightbox-case-study-optin-comments" name="jacksonville-comments" type="text" data-selectable="true" data-target="#builder-setting-comments_value" class="jacksonville-field-comments" placeholder="" value="" style="" autocomplete="off"><input id="om-lightbox-case-study-optin-name" name="jacksonville-name" type="text" data-selectable="true" data-target="#builder-setting-name_value" class="jacksonville-field-name" placeholder="Enter your name here..." value="" style="color:#484848;font-family:Open Sans;" aria-live="polite" tabindex="1"><input id="om-lightbox-case-study-optin-email" name="jacksonville-email" type="email" data-selectable="true" data-target="#builder-setting-email_value" class="jacksonville-field-email" placeholder="Enter your email here..." value="" style="color:#484848;font-family:Open Sans;" aria-live="polite" tabindex="2"><input id="om-lightbox-case-study-optin-submit" name="jacksonville-submit" type="submit" data-selectable="true" data-target="#builder-setting-submit_value" class="jacksonville-field-submit" value="Get the free book!" style="color:#484848;background:rgba(244,169,56,1);border-color:#484848;font-family:Bree Serif;" aria-live="polite" tabindex="3"></div><div class="jacksonville-yesno-wrap" style="display:none"><button id="jacksonville-button-yes" type="button" name="jacksonville-yes" data-selectable="true" data-target="#builder-setting-yes_value" data-action="form" data-type="yes" class="jacksonville-button-yes jacksonville-button-yesno" title="Yes, I Want Access!" style="color:#ffffff;background:#83c11f;border-color:#83c11f;font-family:Open Sans;opacity:;">Yes, I Want Access!</button><button id="jacksonville-button-no" type="button" name="jacksonville-no" data-selectable="true" data-target="#builder-setting-no_value" data-action="close" data-type="no" class="jacksonville-button-no jacksonville-button-yesno" title="No Thanks" style="color:#ffffff;background:#666666;border-color:#666666;font-family:Open Sans;opacity:;">No Thanks</button></div></div></div></div></div></div><div id="jacksonville-success-container" class="optin-monster-saas-success-overlay jacksonville-success-container jacksonville-transition-hidden jacksonville-success-theme-download"></div></div><!--[if lte IE 9]><script type="text/javascript">var om_ie_browser = true;</script><![endif]--></div></body></html>

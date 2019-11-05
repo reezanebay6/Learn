@@ -1,0 +1,1 @@
+(function($,Drupal){Drupal.behaviors.foundationTopBarActive={attach:function(context,settings){var $active_links=$(context).find('.top-bar .menu-item > a.is-active');if($active_links.length){$active_links.once('foundationTopBarActive').each(function(){$(this).parent().addClass('active');});}}};})(jQuery,Drupal);

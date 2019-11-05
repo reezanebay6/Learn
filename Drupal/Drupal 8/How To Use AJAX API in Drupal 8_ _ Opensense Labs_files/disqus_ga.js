@@ -1,0 +1,3 @@
+(function($){"use strict";Drupal.disqus.disqusTrackNewComment=function(){if(typeof _gaq=="undefined"&&typeof ga=="undefined"){return;}
+var label=document.location.href.toLowerCase().substring((document.location.href.toLowerCase().indexOf(document.domain.toLowerCase()))+(document.domain.toLowerCase().length));if(typeof _gaq!='undefined'){_gaq.push(['_trackEvent','Disqus','Comment',label]);}
+else{ga('send',{'hitType':'event','eventCategory':'Disqus','eventAction':'Comment','eventLabel':label});}};})(jQuery);
