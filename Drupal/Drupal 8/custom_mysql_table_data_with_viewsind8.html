@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<!-- saved from url=(0082)https://www.lullabot.com/articles/building-views-query-plugins-for-drupal-8-part-2 -->
+<html lang="en" dir="ltr" prefix="og: http://ogp.me/ns#" class="js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="./custom_mysql_table_data_with_viewsind8_files/87ce98255b"></script><script src="./custom_mysql_table_data_with_viewsind8_files/nr-1153.min.js"></script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"87ce98255b",applicationID:"260346179"};window.NREUM||(NREUM={}),__nr_require=function(n,e,t){function r(t){if(!e[t]){var i=e[t]={exports:{}};n[t][0].call(i.exports,function(e){var i=n[t][1][e];return r(i||e)},i,i.exports)}return e[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(n,e,t){function r(){}function i(n,e,t){return function(){return o(n,[u.now()].concat(f(arguments)),e?null:this,t),e?void 0:this}}var o=n("handle"),a=n(4),f=n(5),c=n("ee").get("tracer"),u=n("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(n,e){s[e]=i(d+e,!0,"api")}),s.addPageAction=i(d+"addPageAction",!0),s.setCurrentRouteName=i(d+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(n,e){var t={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),n,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return e.apply(this,arguments)}catch(n){throw c.emit("fn-err",[arguments,this,n],t),n}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(n,e){m[e]=i(l+e)}),newrelic.noticeError=function(n,e){"string"==typeof n&&(n=new Error(n)),o("err",[n,u.now(),!1,e])}},{}],2:[function(n,e,t){function r(n,e){var t=n.getEntries();t.forEach(function(n){"first-paint"===n.name?a("timing",["fp",Math.floor(n.startTime)]):"first-contentful-paint"===n.name&&a("timing",["fcp",Math.floor(n.startTime)])})}function i(n){if(n instanceof c&&!s){var e,t=Math.round(n.timeStamp);e=t>1e12?Date.now()-t:f.now()-t,s=!0,a("timing",["fi",t,{type:n.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var o,a=n("handle"),f=n("loader"),c=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){o=new PerformanceObserver(r);try{o.observe({entryTypes:["paint"]})}catch(u){}}if("addEventListener"in document){var s=!1,p=["click","keydown","mousedown","pointerdown","touchstart"];p.forEach(function(n){document.addEventListener(n,i,!1)})}}},{}],3:[function(n,e,t){function r(n,e){if(!i)return!1;if(n!==i)return!1;if(!e)return!0;if(!o)return!1;for(var t=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],4:[function(n,e,t){function r(n,e){var t=[],r="",o=0;for(r in n)i.call(n,r)&&(t[o]=e(r,n[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],5:[function(n,e,t){function r(n,e,t){e||(e=0),"undefined"==typeof t&&(t=n?n.length:0);for(var r=-1,i=t-e||0,o=Array(i<0?0:i);++r<i;)o[r]=n[e+r];return o}e.exports=r},{}],6:[function(n,e,t){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(n,e,t){function r(){}function i(n){function e(n){return n&&n instanceof r?n:n?c(n,f,o):o()}function t(t,r,i,o){if(!d.aborted||o){n&&n(t,r,i);for(var a=e(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(n,e){h[n]=v(n).concat(e)}function m(n,e){var t=h[n];if(t)for(var r=0;r<t.length;r++)t[r]===e&&t.splice(r,1)}function v(n){return h[n]||[]}function g(n){return p[n]=p[n]||i(t)}function w(n,e){u(n,function(n,t){e=e||"feature",y[t]=e,e in s||(s[e]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:e,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var f="nr@context",c=n("gos"),u=n(4),s={},p={},d=e.exports=i();d.backlog=s},{}],gos:[function(n,e,t){function r(n,e,t){if(i.call(n,e))return n[e];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(n,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return n[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(n,e,t){function r(n,e,t,r){i.buffer([n],r),i.emit(n,e,t)}var i=n("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(n,e,t){function r(n){var e=typeof n;return!n||"object"!==e&&"function"!==e?-1:n===window?0:a(n,o,function(){return i++})}var i=1,o="nr@id",a=n("gos");e.exports=r},{}],loader:[function(n,e,t){function r(){if(!x++){var n=E.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(n&&n.licenseKey&&n.applicationID&&e))return s.abort();u(y,function(e,t){n[e]||(n[e]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=l.createElement("script");t.src="https://"+n.agent,e.parentNode.insertBefore(t,e)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=n("handle"),u=n(4),s=n("ee"),p=n(3),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1153.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=e.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};n(1),n(2),l[m]?(l[m]("DOMContentLoaded",o,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",i),d[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=n(6)},{}],"wrap-function":[function(n,e,t){function r(n){return!(n&&n instanceof Function&&n.apply&&!n[a])}var i=n("ee"),o=n(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;e.exports=function(n,e){function t(n,e,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){d([u,"",[r,a,i],f])}s(e+"start",[r,a,i],f);try{return c=n.apply(a,r)}catch(p){throw s(e+"err",[r,a,p],f),p}finally{s(e+"end",[r,a,c],f)}}return r(n)?n:(e||(e=""),nrWrapper[a]=n,p(n,nrWrapper),nrWrapper)}function u(n,e,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<e.length;c++)f=e[c],a=n[f],r(a)||(n[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||e){var o=c;c=!0;try{n.emit(t,r,i,e)}catch(a){d([a,t,r,i])}c=o}}function p(n,e){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(n);return t.forEach(function(t){Object.defineProperty(e,t,{get:function(){return n[t]},set:function(e){return n[t]=e,e}})}),e}catch(r){d([r])}for(var i in n)f.call(n,i)&&(e[i]=n[i]);return e}function d(e){try{n.emit("internal-error",e)}catch(t){}}return n||(n=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+<meta name="title" content="Building Views Query Plugins for Drupal 8, Part 2 | Lullabot">
+<link rel="canonical" href="https://www.lullabot.com/articles/building-views-query-plugins-for-drupal-8-part-2">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="In the second part of our series on Views query plugins, we dive into some code to build out a functioning Fitbit leaderboard.">
+<meta name="description" content="In the second part of our series on Views query plugins, we dive into some code to build out a functioning Fitbit leaderboard.">
+<meta name="twitter:title" content="Building Views Query Plugins for Drupal 8, Part 2">
+<meta name="twitter:site" content="@lullabot">
+<link rel="image_src" href="https://www.lullabot.com/sites/default/files/styles/max_800/public/sky-sunset-field-trees.jpg?itok=Fz1zC6qi">
+<meta name="twitter:creator" content="@m4olivei">
+<meta property="og:description" content="In the second part of our series on Views query plugins, we dive into some code to build out a functioning Fitbit leaderboard.">
+<meta name="twitter:image" content="https://www.lullabot.com/sites/default/files/styles/max_800/public/sky-sunset-field-trees.jpg?itok=Fz1zC6qi">
+<meta property="og:image" content="https://www.lullabot.com/sites/default/files/styles/max_800/public/sky-sunset-field-trees.jpg?itok=Fz1zC6qi">
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)">
+<meta name="MobileOptimized" content="width">
+<meta name="HandheldFriendly" content="true">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "ItemPage",
+            "@id": "https://www.lullabot.com/articles/building-views-query-plugins-for-drupal-8-part-2",
+            "breadcrumb": {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://www.lullabot.com/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Articles",
+                        "item": "https://www.lullabot.com/articles"
+                    }
+                ]
+            },
+            "publisher": {
+                "@type": "Organization",
+                "@id": "https://www.lullabot.com/",
+                "name": "Lullabot",
+                "url": "https://www.lullabot.com/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "/themes/lullabotcom/images/lullabot-logo.svg",
+                    "width": "40",
+                    "height": "40"
+                }
+            }
+        },
+        {
+            "@type": "Article",
+            "name": "Building Views Query Plugins for Drupal 8, Part 2",
+            "headline": "Building Views Query Plugins for Drupal 8, Part 2",
+            "description": "In the second part of our series on Views query plugins, we dive into some code to build out a functioning Fitbit leaderboard.",
+            "about": "Drupal Development",
+            "image": {
+                "@type": "ImageObject",
+                "representativeOfPage": "True",
+                "url": "https://www.lullabot.com/sites/default/files/styles/max_800/public/sky-sunset-field-trees.jpg?itok=Fz1zC6qi",
+                "width": "800",
+                "height": "500"
+            },
+            "datePublished": "Dec 28 2016 - 12:00 pm",
+            "dateModified": "Oct 14 2017 - 10:21 am",
+            "author": {
+                "@type": "Person",
+                "name": [
+                    "Matt Oliveira"
+                ],
+                "sameAs": [
+                    "https://www.lullabot.com/about/matt-oliveira"
+                ]
+            },
+            "publisher": {
+                "@type": "Organization",
+                "@id": "https://www.lullabot.com/",
+                "name": "Lullabot",
+                "url": "https://www.lullabot.com/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "/themes/lullabotcom/images/lullabot-logo.svg",
+                    "width": "40",
+                    "height": "40"
+                }
+            },
+            "mainEntityOfPage": "https://www.lullabot.com/articles/building-views-query-plugins-for-drupal-8-part-2"
+        }
+    ]
+}</script>
+<link rel="shortcut icon" href="https://www.lullabot.com/themes/lullabotcom/favicon-96x96.png" type="image/png">
+<link rel="revision" href="https://www.lullabot.com/articles/building-views-query-plugins-for-drupal-8-part-2">
+
+
+    <title>Building Views Query Plugins for Drupal 8, Part 2 | Lullabot</title>
+    
+<link href="https://www.google-analytics.com/" rel="preconnect">
+<link rel="preload" href="https://www.lullabot.com/themes/lullabotcom/fonts/FreightTextProBookLight.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="https://www.lullabot.com/themes/lullabotcom/fonts/FreightTextProLightItalic.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="https://www.lullabot.com/themes/lullabotcom/fonts/FreightSansProBold.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="https://www.lullabot.com/themes/lullabotcom/fonts/FreightTextProBook.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="https://www.lullabot.com/themes/lullabotcom/fonts/FreightTextProBookItalic.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="https://www.lullabot.com/themes/lullabotcom/fonts/FreightTextProBold.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="https://www.lullabot.com/themes/lullabotcom/fonts/FreightSansProBook.woff2" as="font" type="font/woff2" crossorigin="">
+
+    <link rel="stylesheet" media="all" href="./custom_mysql_table_data_with_viewsind8_files/css_SqLAPX_AVHyC8LpoqiMEerV0ypAXLF7mn3ewQbtd6HY.css">
+<link rel="stylesheet" media="all" href="./custom_mysql_table_data_with_viewsind8_files/css_JKDcYswUWHmmwQ08j2Oji82UEPvQ7tf4JjU9ClM36_k.css">
+<link rel="stylesheet" media="print" href="./custom_mysql_table_data_with_viewsind8_files/css_3y9HtvKS4l-ixVjTkk4WzfIM48KoLgOxct1EdMoYELA.css">
+<link rel="stylesheet" media="all" href="./custom_mysql_table_data_with_viewsind8_files/css_gjShlRcMUZHtBedj92jMx6rhhUMLaMel8D03bgPFIvE.css">
+
+
+    <noscript>
+      <link rel="stylesheet" type="text/css" href="/themes/lullabotcom/css/noscript.css" />
+    </noscript>
+
+        <meta name="monitor" content="naimah2eiZ0quoopei2Un7fagu6choof">
+    <meta name="theme-color" content="#ffffff">
+
+    
+<!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+
+  <script type="text/javascript" async="" src="./custom_mysql_table_data_with_viewsind8_files/count.js" id="dsq-count-scr"></script><script src="./custom_mysql_table_data_with_viewsind8_files/count-data.js"></script><link rel="prefetch" href="https://www.lullabot.com/"><link rel="prefetch" href="https://www.lullabot.com/our-work"><link rel="prefetch" href="https://www.lullabot.com/services"><link rel="prefetch" href="https://www.lullabot.com/about"><link rel="prefetch" href="https://www.lullabot.com/articles"><link rel="prefetch" href="https://www.lullabot.com/podcasts"><link rel="prefetch" href="https://www.lullabot.com/contact"><link rel="prefetch" href="https://www.lullabot.com/about/matt-oliveira"><link rel="prefetch" href="https://www.lullabot.com/articles/building-views-query-plugins-dupal-8-part-1"><link rel="prefetch" href="https://www.lullabot.com/articles/building-views-query-plugins-for-drupal-8-part-3"></head>
+  <body class="path--articles-building-views-query-plugins-for-drupal-8-part-2 page-node-type-article">
+    
+
+    <div class="body-inner">
+        <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas="">
+    
+  <input class="visually-hidden mobile-nav-button__checkbox" id="mobile-nav" type="checkbox">
+  <label class="mobile-nav-button" for="mobile-nav">
+    <div class="mobile-nav-button__line"></div>
+    <div class="mobile-nav-button__line"></div>
+    <div class="mobile-nav-button__line"></div>
+    <span class="visually-hidden">Open Navigation</span>
+  </label>
+  <header class="site-header is-fixed">
+    <div id="block-lullabotcom-branding" class="site-branding">
+    <a href="https://www.lullabot.com/articles/building-views-query-plugins-for-drupal-8-part-2#main-content" class="skip-link">Skip to main content</a>
+    <a href="https://www.lullabot.com/" rel="home" class="site-branding__logo">
+      <span class="u-element-invisible">Lullabot Homepage</span>
+      <svg width="150" height="30" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M27.03 14.821h-1.237v-2.826c0-1.641-1.325-2.97-2.96-2.97h-7.047V5.752a2.947 2.947 0 0 0 1.593-2.622A2.947 2.947 0 0 0 14.437.179a2.947 2.947 0 0 0-2.942 2.952c0 1.14.647 2.13 1.594 2.622v3.269H6.047a2.965 2.965 0 0 0-2.96 2.97v2.829H1.85c-.819 0-1.484.667-1.484 1.489v5.692c0 .822.665 1.489 1.484 1.489h1.236v2.965c0 1.64 1.325 2.97 2.96 2.97h16.79c1.635 0 2.96-1.33 2.96-2.97v-2.965h1.236c.82 0 1.484-.667 1.484-1.49V16.31c0-.822-.665-1.489-1.486-1.489z" fill="#ED1C24"></path><path d="M10.512 17.315c.928 0 1.68-.755 1.68-1.685 0-.931-.752-1.686-1.68-1.686-.928 0-1.68.755-1.68 1.686 0 .93.752 1.685 1.68 1.685zM18.537 17.315c.928 0 1.68-.755 1.68-1.685 0-.931-.752-1.686-1.68-1.686-.927 0-1.68.755-1.68 1.686 0 .93.753 1.685 1.68 1.685zM14.516 24.663c-2.9 0-5.632-1.13-7.687-3.184a1.119 1.119 0 0 1-.002-1.579 1.11 1.11 0 0 1 1.572-.002 8.594 8.594 0 0 0 6.117 2.536 8.603 8.603 0 0 0 6.129-2.547 1.112 1.112 0 0 1 1.573 0 1.121 1.121 0 0 1 0 1.578 10.802 10.802 0 0 1-7.702 3.198z" fill="#FFF"></path><path d="M149.583 11.246a1.27 1.27 0 0 1-1.291 1.282 1.282 1.282 0 0 1-1.302-1.282c0-.701.577-1.267 1.302-1.267.73 0 1.291.563 1.291 1.267zm-2.27 0c0 .563.416 1.01.987 1.01.553 0 .962-.447.962-1.002 0-.563-.407-1.018-.97-1.018s-.978.455-.978 1.01zm.778.665h-.292v-1.267c.115-.023.276-.04.485-.04.24 0 .347.04.438.093a.35.35 0 0 1 .123.277c0 .139-.107.246-.261.293v.016c.123.047.193.138.23.309.039.193.062.27.091.316h-.316c-.039-.047-.062-.162-.099-.309-.023-.138-.099-.201-.26-.201h-.139v.513zm.008-.72h.138c.162 0 .293-.055.293-.186 0-.115-.084-.193-.27-.193a.699.699 0 0 0-.16.015v.364z" fill="#223340" fill-rule="nonzero"></path><path d="M58.038 14.452c.27 0 .485.217.485.487v8.094c0 1.748.747 2.34 1.99 2.34.924 0 1.696-.354 2.272-.812a.492.492 0 0 0 .185-.384v-9.238c0-.27.217-.487.486-.487h3.818c.269 0 .485.217.485.487V28.31a.488.488 0 0 1-.425.485l-3.819.473a.486.486 0 0 1-.545-.484v-.479a.485.485 0 0 0-.79-.38c-1.056.864-2.415 1.503-3.907 1.503-2.83 0-4.54-1.903-4.54-4.993v-9.497c0-.27.216-.487.485-.487h3.82zM71.345 28.474V8.768c0-.246.183-.453.425-.484l3.819-.474a.486.486 0 0 1 .545.484v20.18c0 .27-.217.487-.485.487H71.83a.483.483 0 0 1-.485-.487zM79.715 28.474V8.768c0-.246.183-.453.425-.484l3.818-.474a.486.486 0 0 1 .545.484v20.18c0 .27-.216.487-.485.487H80.2a.483.483 0 0 1-.485-.487z" fill="#223340"></path><path d="M95.89 27.212c-1.024 1.217-2.177 2.217-4.167 2.217-2.488 0-4.416-1.78-4.416-4.025 0-2.706 1.996-4.896 8.274-5.14a.291.291 0 0 0 .281-.29c0-1.529-.777-2.217-2.55-2.217-1.401 0-3.021.55-4.601 1.314a.292.292 0 0 1-.407-.18l-.838-2.963a.292.292 0 0 1 .15-.34c1.527-.78 3.828-1.605 6.441-1.605 5.008 0 6.656 2.277 6.594 6.336l-.032 4.305c0 .893.15 1.063.892 1.154a.291.291 0 0 1 .25.327l-.395 2.913a.294.294 0 0 1-.253.251c-2.992.338-4.49-.502-5.126-2.057h-.096zm-.03-4.38a.29.29 0 0 0-.329-.288c-2.707.345-3.714.913-3.714 2.146 0 .936.746 1.56 1.805 1.56.915 0 1.661-.364 2.16-.883a.28.28 0 0 0 .078-.198v-2.337zM111.913 29.398c-.926 0-2.227-.23-3.156-.555a.477.477 0 0 0-.227-.024l-3.842.531a.489.489 0 0 1-.553-.484V8.768c0-.246.183-.453.426-.484l3.818-.474a.486.486 0 0 1 .545.484v6.55c0 .411.472.636.79.38.838-.673 1.925-1.238 3.284-1.238 3.576 0 6.158 2.934 6.158 7.553.003 4.802-3.325 7.859-7.243 7.859zm-.56-11.575c-.963 0-1.641.335-2.25.842a.49.49 0 0 0-.176.377v5.6c0 .477.093.642.25.725.524.283 1.184.443 1.956.443 2.053 0 3.235-1.623 3.235-4.025.002-2.497-1.057-3.962-3.016-3.962zM128.837 29.429c-4.352 0-7.68-2.745-7.68-7.676 0-4.93 3.484-7.77 7.868-7.77 4.354 0 7.65 2.808 7.65 7.676 0 4.87-3.513 7.77-7.838 7.77zm.063-11.795c-1.959 0-2.983 1.591-2.983 4.088 0 2.465 1.056 4.025 3.017 4.025 1.959 0 2.984-1.56 2.984-4.056-.003-2.434-1.059-4.057-3.018-4.057z" fill="#223340" fill-rule="nonzero"></path><path d="M145.292 29.429c-3.578 0-5.503-1.466-5.318-5.273l.202-5.096a.487.487 0 0 0-.405-.5l-1.34-.23a.486.486 0 0 1-.405-.494l.07-2.293a.487.487 0 0 1 .334-.447l1.526-.503a.486.486 0 0 0 .334-.452l.047-2.484a.487.487 0 0 1 .485-.479h3.667c.272 0 .488.22.485.492l-.02 2.481a.486.486 0 0 0 .485.492h2.618c.274 0 .493.225.485.5l-.07 2.8a.488.488 0 0 1-.485.476h-2.911a.486.486 0 0 0-.485.474l-.141 4.74c-.062 1.342.717 1.902 1.899 1.902.433 0 .897-.084 1.372-.215a.486.486 0 0 1 .607.398l.413 2.766a.488.488 0 0 1-.35.542c-.947.262-1.82.403-3.099.403zM52.345 28.15c-.616-.707-.892-1.71-.994-2.893-.016-.17-.128-.287-.269-.363a.432.432 0 0 0-.17-.066c-.017-.002-.028-.018-.046-.018h-7.22a.485.485 0 0 1-.485-.487V9.945a.485.485 0 0 0-.485-.486h-3.972a.485.485 0 0 0-.485.486v18.529c0 .27.216.487.485.487h13.281c.42.002.636-.492.36-.812z" fill="#223340"></path></g></svg>    </a>
+</div>
+<nav role="navigation" aria-labelledby="block-lullabotcom-main-menu-menu" id="block-lullabotcom-main-menu" class="header-main-menu">
+            
+  <h2 class="visually-hidden" id="block-lullabotcom-main-menu-menu">Main navigation</h2>
+  
+
+        
+              <ul class="header-main-menu__list">
+              <li class="header-main-menu__list-item">
+        <a class="" href="https://www.lullabot.com/our-work"><span>Work</span></a>
+              </li>
+          <li class="header-main-menu__list-item">
+        <a class="" href="https://www.lullabot.com/services"><span>Services</span></a>
+              </li>
+          <li class="header-main-menu__list-item">
+        <a class="" href="https://www.lullabot.com/about"><span>About</span></a>
+              </li>
+          <li class="header-main-menu__list-item">
+        <a class="is-active" href="https://www.lullabot.com/articles"><span>Blog</span></a>
+              </li>
+          <li class="header-main-menu__list-item">
+        <a class="" href="https://www.lullabot.com/podcasts"><span>Podcasts</span></a>
+              </li>
+          <li class="header-main-menu__list-item">
+        <a class="" href="https://www.lullabot.com/contact"><span>Contact</span></a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<button class="site-header__search-button u-no-style" aria-controls="block-lullabotcom-search">
+  <span class="visually-hidden">Toggle search form visibility</span>
+</button>
+<div class="search-block-form header-site-search large-screen-visibility-hidden" data-drupal-selector="search-block-form" id="block-lullabotcom-search" role="search">
+
+  
+      <h2 class="u-element-invisible">Search</h2>
+    
+  <form action="https://www.lullabot.com/search/node" method="get" id="search-block-form" accept-charset="UTF-8">
+  <div class="js-form-item form-item js-form-type-search form-item-keys js-form-item-keys form-no-label">
+      <label for="edit-keys" class="visually-hidden">Search</label>
+        <input title="Enter the terms you wish to search for." data-drupal-selector="edit-keys" type="search" id="edit-keys" name="keys" value="" size="15" maxlength="128" class="form-search" placeholder="Search">
+
+        </div>
+
+  <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
+
+  <input data-drupal-selector="edit-submit" type="submit" id="edit-submit" value="Search" class="button js-form-submit form-submit">
+
+
+  </div>
+
+</form>
+
+
+</div>
+
+    <div class="site-header__bg" style="transform: scaleX(1.11634);"></div>
+  </header>
+
+
+
+
+<a id="main-content" tabindex="-1"></a>
+
+<main class="site-content scroll-analytics">
+  <div data-drupal-messages-fallback="" class="hidden"></div>
+
+
+
+
+
+
+
+<article role="article" class="node node--type-article node--article--view-mode-full">
+  
+      
+
+
+
+
+<div class="u-grid-container hero hero--article hero--light-on-dark">
+  <header class="u-full-width-text hero__content">
+        
+
+        
+    
+
+          <h1 class="hero__title u-heading-l">
+        Building Views Query Plugins for Drupal 8, Part 2
+      </h1>
+          <div class="article__authors-and-date-wrapper">
+    <div class="article__authors">
+            <div class="article__authors">
+      by 
+            <a href="https://www.lullabot.com/about/matt-oliveira" hreflang="en">Matt Oliveira</a>
+      
+    </div>
+  
+    </div>
+    <div class="article__date">
+      December 28, 2016
+    </div>
+  </div>
+
+    </header>
+      <div class="hero__image-wrapper">
+      
+  
+
+
+      <picture>
+                <!--[if IE 9]><video style="display: none;"><![endif]-->
+              <source srcset="/sites/default/files/styles/promo_large/public/sky-sunset-field-trees.jpg?itok=lBS0KcvO 1x" media="(min-width: 768px)" type="image/jpeg">
+            <!--[if IE 9]></video><![endif]-->
+            <img src="./custom_mysql_table_data_with_viewsind8_files/sky-sunset-field-trees.jpg" alt="Biking in the country">
+
+  </picture>
+
+
+
+
+
+    </div>
+  
+  
+<div class="social-share-menu u-noscript-hidden">
+  <button class="u-no-style social-share-menu__share-button">
+    <span class="u-element-invisible">Share</span>
+    <svg width="19" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M5.431 8.242l7.734-4.257a3 3 0 1 1 .482.876L5.875 9.14a3 3 0 0 1-.043 1.853l7.823 4.137a3 3 0 1 1-.485.874l-7.822-4.136a3 3 0 1 1 .083-3.625z" fill="#6A7C8B" fill-rule="evenodd"></path></svg>  </button>
+  <div class="social-share-menu__menu">
+    <button class="u-no-style social-share-menu__button social-share--facebook">
+      <span class="u-element-invisible">Post on Facebook</span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="-300 386.9 9.8 21.1"><path d="M-293.5 408h-4.3v-10.5h-2.2v-3.7h2.2v-2.2c0-3 1.2-4.7 4.7-4.7h2.9v3.6h-1.8c-1.4 0-1.5.5-1.5 1.5v1.8h3.3l-.4 3.6h-2.9V408z"></path></svg>    </button>
+    <button class="u-no-style social-share-menu__button social-share--twitter">
+      <span class="u-element-invisible">Tweet on Twitter</span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="-293 387.2 23.2 18.8"><path d="M-269.8 389.4c-.9.4-1.8.6-2.7.7 1-.6 1.7-1.5 2.1-2.6-.9.5-1.9.9-3 1.2-1-.9-2.2-1.5-3.6-1.5-2.6 0-4.8 2.1-4.8 4.8 0 .4 0 .7.1 1.1-3.8-.3-7.3-2.2-9.7-5-.4.7-.6 1.5-.6 2.4 0 1.6.8 3.1 2.1 4-.8-.1-1.5-.3-2.2-.7v.1c0 2.3 1.6 4.2 3.8 4.7-.4.1-.8.2-1.3.2-.3 0-.6 0-.9-.1.7 1.8 2.5 3.2 4.5 3.2-1.6 1.3-3.7 2-5.9 2-.4 0-.8 0-1.1-.1 2.1 1.3 4.6 2.1 7.3 2.1 8.7 0 13.5-7.2 13.5-13.5v-.6c.9-.6 1.7-1.4 2.4-2.4z"></path></svg>    </button>
+    <button class="u-no-style social-share-menu__button social-share--linkedin">
+      <span class="u-element-invisible">Share on LinkedIn</span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="-294 386.4 21.5 20.6"><path d="M-289.1 407v-13.9h-4.6V407h4.6zm-2.3-15.8c1.6 0 2.6-1.1 2.6-2.4 0-1.4-1-2.4-2.6-2.4s-2.6 1-2.6 2.4c0 1.3 1 2.4 2.6 2.4zm4.8 15.8s.1-12.6 0-13.9h4.6v2c.6-.9 1.7-2.3 4.2-2.3 3 0 5.3 2 5.3 6.3v8h-4.6v-7.4c0-1.9-.7-3.1-2.3-3.1-1.3 0-2 .9-2.4 1.7-.1.3-.2.7-.2 1.1v7.8h-4.6v-.2z"></path></svg>    </button>
+  </div>
+</div>
+
+</div>
+  
+  
+
+  <div class="u-grid-container">
+   <div class="article__body u-content-text u-full-width-text body-text">
+          <aside class="u-list-bullet related-links">
+  <h3 class="u-list-bullet__heading">You Might Also Like</h3>
+  <ul>
+          <li><a href="https://www.lullabot.com/articles/building-views-query-plugins-dupal-8-part-1">Building Views Query Plugins for Drupal 8, Part 1</a></li>
+          <li><a href="https://www.lullabot.com/articles/building-views-query-plugins-for-drupal-8-part-3">Building Views Query Plugins for Drupal 8, Part 3</a></li>
+      </ul>
+</aside>
+
+    
+    <p>Welcome to the second installment of our three-part series on writing Views query plugins. <a href="https://www.lullabot.com/articles/building-views-query-plugins-dupal-8-part-1">In part one, we talked about the kind of thought and design work that must take place before coding begins</a>. In part two, we’ll start coding our plugin and end up with a basic functioning example.</p>
+
+<p>We’ve talked explicitly about needing to build a Views query plugin to accomplish our goal of having a customized Fitbit leaderboard, but we’ll also need field plugins to expose that data to Views, filter plugins to limit results sets, and, potentially, relationship plugins to span multiple API endpoints. There’s a lot to do, so let's dive in.<br>
+&nbsp;</p>
+
+<h2>Getting started</h2>
+
+<p>In Drupal 8, plugins are the standard replacement for info hooks. If you haven’t yet had cause to learn about the plugin system in Drupal 8, I suggest the <a href="https://drupalize.me/series/module-development-guide">Drupalize.Me Drupal 8 Module Development Guide</a>, which includes an excellent primer on Drupal 8 plugins.</p>
+
+<h3>Step 1: Create a views.inc file</h3>
+
+<p>Although most Views hooks required for Views plugins have gone the way of the <a href="https://en.wikipedia.org/wiki/Dodo">dodo</a>, there is still one that survives in Drupal 8:&nbsp;<code>hook_views_data</code>.&nbsp;The Views module looks for that hook in a file named <code>[module].views.inc,</code>&nbsp;which lives in your module's root directory. <code>hook_views_data</code>&nbsp;and <code>hook_views_data_alter</code>&nbsp;are the main things you’ll find here, but since Views is loading this file automatically for you, take advantage and put any Views-related procedural code you may need in this file.</p>
+
+<h3>Step 2: Implement hook_views_data()</h3>
+
+<p>Usually <code>hook_views_data</code>&nbsp;is used to describe the SQL tables that a module is making available to Views. However, in the case of a query plugin it is used to describe the data provided by the external service.</p>
+
+<pre class=" language-php line-numbers"><code class=" language-php">
+<span class="token comment">/**
+ * Implements hook_views_data().
+ */</span>
+<span class="token keyword">function</span> <span class="token function">fitbit_views_example_views_data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token variable">$data</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token comment">// Base data.</span>
+  <span class="token variable">$data</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'fitbit_profile'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'table'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'group'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'Fitbit profile'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token variable">$data</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'fitbit_profile'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'table'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'base'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token single-quoted-string string">'title'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'Fitbit profile'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token single-quoted-string string">'help'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'Fitbit profile data provided by the Fitbit API\'s User Profile endpoint.'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token single-quoted-string string">'query_id'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'fitbit'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token variable">$data</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>The format of the array is usually <code>$data[table_name]['table']</code>, but since there is no table I’ve used a short name for the Fitbit API endpoint, prefixed by the module name instead. So far, I’ve found that exposing each remote endpoint as a Views “table”—one-to-one—works well. It may be different for your implementation. This array needs to declare two keys—‘group’ and ‘base.'&nbsp;When Views UI refers to your data, it uses the ‘group’ value as a prefix. Whereas, the ‘base’ key alerts Views that this table is a base table—a core piece of data available to construct Views from (just like nodes, users and the like). The value of the ‘base’ key is an associative array with a few required keys. The ‘title’ and ‘help’ keys are&nbsp;self-explanatory and are also used in the Views UI. When you create a new view, ‘title’ is what shows up in the “Show” drop-down under “View Settings”:</p>
+
+<p>
+</p><div class="inline-entity inline-entity--medium inline-entity--type-media inline-entity--bundle-image">
+  
+<figure class="image image--wide"><img srcset="/sites/default/files/styles/max_325x325/public/assets/2016-12/view_settings.png?itok=ugo17sKs 325w, /sites/default/files/styles/max_650x650/public/assets/2016-12/view_settings.png?itok=S6gJntAV 650w, /sites/default/files/styles/max_800/public/assets/2016-12/view_settings.png?itok=7bTv1GZW 800w, /sites/default/files/styles/max_1300x1300/public/assets/2016-12/view_settings.png?itok=sQDn_t3p 1300w, /sites/default/files/styles/max_2600x2600/public/assets/2016-12/view_settings.png?itok=mFbANnkA 1490w" sizes="(min-width: 1290px) 1290px, 100vw" src="./custom_mysql_table_data_with_viewsind8_files/view_settings.png" alt="Showing our Fitbit profile base table available as an option in the new view wizard"></figure></div>
+<p></p>
+
+<p>The ‘query_id’ key is the most important. The value is the name of our query plugin. More on that later.</p>
+
+<h3>Step 3: Expose fields</h3>
+
+<p>The data you get out of a remote API isn’t going to be much use to people unless they have fields they can display. These fields are also exposed by&nbsp;<code>hook_views_data</code>.</p>
+
+<pre class=" language-php line-numbers"><code class=" language-php"><span class="token comment">// Fields.</span>
+<span class="token variable">$data</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'fitbit_profile'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'display_name'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token single-quoted-string string">'title'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'Display name'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token single-quoted-string string">'help'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'Fitbit users\' display name.'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token single-quoted-string string">'field'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span>
+    <span class="token single-quoted-string string">'id'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'standard'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$data</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'fitbit_profile'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'average_daily_steps'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token single-quoted-string string">'title'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'Average daily steps'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token single-quoted-string string">'help'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'The average daily steps over all the users logged Fitbit data.'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token single-quoted-string string">'field'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span>
+    <span class="token single-quoted-string string">'id'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'numeric'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$data</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'fitbit_profile'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'avatar'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token single-quoted-string string">'title'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'Avatar'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token single-quoted-string string">'help'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'Fitbit users\' account picture.'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token single-quoted-string string">'field'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span>
+    <span class="token single-quoted-string string">'id'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'fitbit_avatar'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$data</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'fitbit_profile'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'height'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token single-quoted-string string">'title'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'Height'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token single-quoted-string string">'help'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'Fibit users\'s height.'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token single-quoted-string string">'field'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span>
+    <span class="token single-quoted-string string">'id'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'numeric'</span><span class="token punctuation">,</span>
+    <span class="token single-quoted-string string">'float'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token constant">TRUE</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>The keys that make up a single field definition include ‘title’ and ‘help’— again self-explanatory—used in the Views UI. The ‘field’ key is used to tell Views how to handle this field. There is only one required sub-key, ‘id,' and it’s the name of a Views field plugin.&nbsp;</p>
+
+<p>The Views module includes a handful of field plugins, and if your data fits one of them, you can use it without implementing your own. Here we use&nbsp;<code>standard</code>, which works for any plain text data, and <code>numeric</code>, which works for, well, numeric data. There are a handful of others. Take a look inside <code>/core/modules/views/src/Plugin/views/field</code> to see all of the field plugins Views provides out-of-the-box. Find the value for ‘id’ in each field plugin's annotation. As an aside, Views eats its own dog food and implements a lot of its core functionality as Views plugins, providing examples for when you're implementing your Views plugins. A word of caution, many core Views plugins assume they are operating with an SQL-based query back-end. As such you’ll want to be careful mixing core Views plugins in with your custom query plugin implementation. We’ll mitigate some of this when we implement our query plugin shortly.</p>
+
+<h3>Step 4: Field plugins</h3>
+
+<p>Sometimes data from your external resource doesn’t line up with a field plugin that ships with Views core. In these cases, you need to implement a field plugin. For our use case, <code>avatar</code> is such a field. The API returns a URI for the avatar image. We’ll want Views to render that as an <code>&lt;img&gt;</code> tag, but Views core doesn’t offer a field plugin like that. You may have noticed that we set a field ‘id’ of ‘fitbit_avatar’ in <code>hook_views_data</code>&nbsp;above. That’s the name of our custom Views field plugin, which looks like this:</p>
+
+<pre class=" language-php line-numbers"><code class=" language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token keyword">namespace</span> <span class="token package">Drupal<span class="token punctuation">\</span>fitbit_views_example<span class="token punctuation">\</span>Plugin<span class="token punctuation">\</span>views<span class="token punctuation">\</span>field</span><span class="token punctuation">;</span>
+
+<span class="token keyword">use</span> <span class="token package">Drupal<span class="token punctuation">\</span>views<span class="token punctuation">\</span>Plugin<span class="token punctuation">\</span>views<span class="token punctuation">\</span>field<span class="token punctuation">\</span>FieldPluginBase</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token package">Drupal<span class="token punctuation">\</span>views<span class="token punctuation">\</span>ResultRow</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * Class Avatar
+ *
+ * @ViewsField("fitbit_avatar")
+ */</span>
+<span class="token keyword">class</span> <span class="token class-name">Avatar</span> <span class="token keyword">extends</span> <span class="token class-name">FieldPluginBase</span> <span class="token punctuation">{</span>
+  <span class="token comment">/**
+   * {@inheritdoc}
+   */</span>
+  <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">render</span><span class="token punctuation">(</span>ResultRow <span class="token variable">$values</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token variable">$avatar</span> <span class="token operator">=</span> <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token variable">$values</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$avatar</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">[</span>
+        <span class="token single-quoted-string string">'#theme'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'image'</span><span class="token punctuation">,</span>
+        <span class="token single-quoted-string string">'#uri'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$avatar</span><span class="token punctuation">,</span>
+        <span class="token single-quoted-string string">'#alt'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'Avatar'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Naming and file placement is important, as with any Drupal 8 plugin. Save the file&nbsp;at: <code>fitbit_views_example/src/Plugin/views/field/Avatar.php</code>. Notice the <code>namespace</code> follows the file path, and also notice the annotation: <code>@ViewsField("fitbit_avatar")</code>. The annotation declares this class as a Views field plugin with the ‘id’ ‘fitbit_avatar,' hence the use of that name back in our <code>hook_views_data</code>&nbsp;function. Also important, we're extending <code>FieldPluginBase</code>, which gives us a lot of base functionality for free. Yay OOO! As you can see,&nbsp;the <code>render</code> method gets the value of the field from the row and returns a render array so that it appears as an <code>&lt;img&gt;</code> tag.</p>
+
+<h3>Step 5: Create a class that extends QueryPluginBase</h3>
+
+<p>After all that setup, we’re almost ready to interact with a remote API. We have one more task: to create the class for our query plugin. Again, we’re creating a Drupal 8 plugin, and naming is important so the system knows that our plugin exists. We’ll create a file named:&nbsp;</p>
+
+<p><code>fitbit_views_example/src/Plugin/views/query/Fitbit.php</code>&nbsp;</p>
+
+<p>...that looks like this:</p>
+
+<pre class=" language-php line-numbers"><code class=" language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token keyword">namespace</span> <span class="token package">Drupal<span class="token punctuation">\</span>fitbit_views_example<span class="token punctuation">\</span>Plugin<span class="token punctuation">\</span>views<span class="token punctuation">\</span>query</span><span class="token punctuation">;</span>
+
+<span class="token keyword">use</span> <span class="token package">Drupal<span class="token punctuation">\</span>views<span class="token punctuation">\</span>Plugin<span class="token punctuation">\</span>views<span class="token punctuation">\</span>query<span class="token punctuation">\</span>QueryPluginBase</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * Fitbit views query plugin which wraps calls to the Fitbit API in order to
+ * expose the results to views.
+ *
+ * @ViewsQuery(
+ *   id = "fitbit",
+ *   title = @Translation("Fitbit"),
+ *   help = @Translation("Query against the Fitbit API.")
+ * )
+ */</span>
+<span class="token keyword">class</span> <span class="token class-name">Fitbit</span> <span class="token keyword">extends</span> <span class="token class-name">QueryPluginBase</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Here we use the <code>@ViewsQuery</code> annotation to identify our class as a Views query plugin, declaring our ‘id’ and providing some helpful meta information. We extend <code>QueryPluginBase</code> to inherit a lot of free functionality. Inheritance is a recurring theme with Views plugins. I’ve yet to come across a Views plugin type that doesn’t ship with a base class to extend. At this point, we’ve got enough code implemented to see some results in the UI. We can create a new view of type Fitbit profile and add the fields we’ve defined and we’ll get this:</p>
+
+<p>
+</p><div class="inline-entity inline-entity--medium inline-entity--type-media inline-entity--bundle-image">
+  
+<figure class="image image--wide"><img srcset="/sites/default/files/styles/max_325x325/public/assets/2016-12/fitbit_example_view_admin.png?itok=eRqr6OjX 325w, /sites/default/files/styles/max_650x650/public/assets/2016-12/fitbit_example_view_admin.png?itok=uG3ETy6Z 650w, /sites/default/files/styles/max_800/public/assets/2016-12/fitbit_example_view_admin.png?itok=-nPbneUU 800w, /sites/default/files/styles/max_2600x2600/public/assets/2016-12/fitbit_example_view_admin.png?itok=WrchHGW1 884w" sizes="(min-width: 1290px) 1290px, 100vw" src="./custom_mysql_table_data_with_viewsind8_files/fitbit_example_view_admin.png" alt="Showing our custom field plugins selected in the views admin"></figure></div>
+<p></p>
+
+<p>Not terribly exciting, we still haven’t queried the remote API, so it doesn’t actually do anything, but it’s good to stop here to make sure we haven’t made any syntax errors and that Drupal can find and use the plugins we’ve defined.</p>
+
+<p>As I mentioned, parts of Views core assume an SQL-query backend. To mitigate that, we need to implement two methods which will, in a sense, ignore core Views as a way to work around this limitation. &nbsp;Let’s get those out of the way:</p>
+
+<pre class=" language-php line-numbers"><code class=" language-php"><span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">ensureTable</span><span class="token punctuation">(</span><span class="token variable">$table</span><span class="token punctuation">,</span> <span class="token variable">$relationship</span> <span class="token operator">=</span> <span class="token keyword">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token single-quoted-string string">''</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">addField</span><span class="token punctuation">(</span><span class="token variable">$table</span><span class="token punctuation">,</span> <span class="token variable">$field</span><span class="token punctuation">,</span> <span class="token variable">$alias</span> <span class="token operator">=</span> <span class="token single-quoted-string string">''</span><span class="token punctuation">,</span> <span class="token variable">$params</span> <span class="token operator">=</span> <span class="token keyword">array</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token variable">$field</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><code>ensureTable</code> is used by Views core to make sure that the generated SQL query contains the appropriate JOINs to ensure that a given table is included in the results. In our case, we don’t have any concept of table joins, so we return an empty string, which satisfies plugins that may call this method. <code>addField</code> is used by Views core to limit the fields that are part of the result set. In our case, the Fitbit API has no way to limit the fields that come back in an API response, so we don’t need this. We’ll always provide values from the result set, which we defined&nbsp;in <code>hook_views_data</code>. Views takes care to only show the fields that are selected in the Views UI. To keep Views happy, we return <code>$field</code>, which is simply the name of the field.</p>
+
+<p>Before we come to the heart of our plugin query, the <code>execute</code> method, we’re going to need a couple of remote services to make this work. The base Fitbit module handles authenticating users, storing their access tokens, and providing a client to query the API. In order to work our magic then, we’ll need the <code>fitbit.client</code> and <code>fitbit.access_token_manager</code> services provided by the base module. To get them, follow a familiar Drupal 8 pattern:</p>
+
+<pre class=" language-php line-numbers"><code class=" language-php"><span class="token comment">/**
+ * Fitbit constructor.
+ *
+ * @param array $configuration
+ * @param string $plugin_id
+ * @param mixed $plugin_definition
+ * @param FitbitClient $fitbit_client
+ * @param FitbitAccessTokenManager $fitbit_access_token_manager
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">__construct</span><span class="token punctuation">(</span><span class="token keyword">array</span> <span class="token variable">$configuration</span><span class="token punctuation">,</span> <span class="token variable">$plugin_id</span><span class="token punctuation">,</span> <span class="token variable">$plugin_definition</span><span class="token punctuation">,</span> FitbitClient <span class="token variable">$fitbit_client</span><span class="token punctuation">,</span> FitbitAccessTokenManager <span class="token variable">$fitbit_access_token_manager</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">parent</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">__construct</span><span class="token punctuation">(</span><span class="token variable">$configuration</span><span class="token punctuation">,</span> <span class="token variable">$plugin_id</span><span class="token punctuation">,</span> <span class="token variable">$plugin_definition</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">fitbitClient</span> <span class="token operator">=</span> <span class="token variable">$fitbit_client</span><span class="token punctuation">;</span>
+  <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">fitbitAccessTokenManager</span> <span class="token operator">=</span> <span class="token variable">$fitbit_access_token_manager</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * {@inheritdoc}
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">function</span> <span class="token function">create</span><span class="token punctuation">(</span>ContainerInterface <span class="token variable">$container</span><span class="token punctuation">,</span> <span class="token keyword">array</span> <span class="token variable">$configuration</span><span class="token punctuation">,</span> <span class="token variable">$plugin_id</span><span class="token punctuation">,</span> <span class="token variable">$plugin_definition</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">static</span><span class="token punctuation">(</span>
+    <span class="token variable">$configuration</span><span class="token punctuation">,</span>
+    <span class="token variable">$plugin_id</span><span class="token punctuation">,</span>
+    <span class="token variable">$plugin_definition</span><span class="token punctuation">,</span>
+    <span class="token variable">$container</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'fitbit.client'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token variable">$container</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'fitbit.access_token_manager'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>This is a common way of doing <a href="https://www.drupal.org/docs/8/api/services-and-dependency-injection/services-and-dependency-injection-in-drupal-8">dependency injection in Drupal 8</a>. We’re grabbing the services we need from the service container in the <code>create</code> method, and storing them on our query plugin instance in the constructor.&nbsp;</p>
+
+<p>Now we’re finally ready for the heart of it, the <code>execute</code> method:</p>
+
+<pre class=" language-php line-numbers"><code class=" language-php"><span class="token comment">/**
+ * {@inheritdoc}
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">execute</span><span class="token punctuation">(</span>ViewExecutable <span class="token variable">$view</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$access_tokens</span> <span class="token operator">=</span> <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">fitbitAccessTokenManager</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">loadMultipleAccessToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token variable">$index</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token variable">$access_tokens</span> <span class="token keyword">as</span> <span class="token variable">$uid</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$access_token</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$data</span> <span class="token operator">=</span> <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">fitbitClient</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">getResourceOwner</span><span class="token punctuation">(</span><span class="token variable">$access_token</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token variable">$data</span> <span class="token operator">=</span> <span class="token variable">$data</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">toArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token variable">$row</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'display_name'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token variable">$data</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'displayName'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token variable">$row</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'average_daily_steps'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token variable">$data</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'averageDailySteps'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token variable">$row</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'avatar'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token variable">$data</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'avatar'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token variable">$row</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'height'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token variable">$data</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'height'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token comment">// 'index' key is required.</span>
+        <span class="token variable">$row</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'index'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token variable">$index</span><span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token variable">$view</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">result</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ResultRow</span><span class="token punctuation">(</span><span class="token variable">$row</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>The&nbsp;<code>execute</code> method is open ended. At a minimum, you’ll want to assign <code>ResultRow</code> objects to the <code>$view-&gt;result[]</code> member variable. As was mentioned in the first part of the series, the Fitbit API is atypical because we’re hitting the API once per row. For each successful request we build up an associative array, <code>$row</code>, where the keys are the field names we defined in <code>hook_views_data</code>&nbsp;and the values are made up of data from the API response. Here we are using the Fitbit client provided by the Fitbit base module to make a request to the <a href="https://dev.fitbit.com/docs/user/">User profile endpoint</a>. This endpoint contains the data we want for a first iteration of our leaderboard, namely: display name, avatar, and average daily steps. Note that it’s important to track an <code>index</code> for each row. Views requires it, and without it, you’ll be scratching your head as to why Views isn’t showing your data. Finally, we create a new <code>ResultRow</code> object with the <code>$row</code> variable we built up and add it to <code>$view-&gt;result</code>. There are other things that are important to do in execute like paging, filtering and sorting. For now, this is enough to get us off the ground.</p>
+
+<p>That’s it! We should now have a simple but functioning query plugin that can interact with the Fitbit API. After following the installation instructions for the Fitbit base module, connecting one or more Fitbit accounts and enabling the fitbit_views_example sub-module, you should be able to create a new View of type Fitbit profile, add Display name, Avatar, and Average Daily Steps fields and get a rudimentary leaderboard:</p>
+
+<p>
+</p><div class="inline-entity inline-entity--medium inline-entity--type-media inline-entity--bundle-image">
+  
+<figure class="image image--wide"><img srcset="/sites/default/files/styles/max_325x325/public/assets/2016-12/leaderboard_fitbit_integration_2016-12-09_19-45-32.png?itok=esu2Z60T 325w, /sites/default/files/styles/max_650x650/public/assets/2016-12/leaderboard_fitbit_integration_2016-12-09_19-45-32.png?itok=fXWrP5qT 650w, /sites/default/files/styles/max_800/public/assets/2016-12/leaderboard_fitbit_integration_2016-12-09_19-45-32.png?itok=kQ9e3H-d 800w, /sites/default/files/styles/max_2600x2600/public/assets/2016-12/leaderboard_fitbit_integration_2016-12-09_19-45-32.png?itok=G6YIWi2X 1029w" sizes="(min-width: 1290px) 1290px, 100vw" src="./custom_mysql_table_data_with_viewsind8_files/leaderboard_fitbit_integration_2016-12-09_19-45-32.png" alt="Screenshot of our rudimentary Fitbit leaderboard "></figure></div>
+<p></p>
+
+<h2>Debugging problems</h2>
+
+<p>If the message ‘broken or missing handler’ appears when attempting to add a field or other type of handler, it usually points to a class naming problem somewhere. Go through your keys and class definitions and make sure that you’ve got everything spelled correctly. Another common issue is Drupal throwing errors because&nbsp;it can’t find your plugins. As with any plugin in Drupal 8, make sure your files are named correctly, put in the right folder, with the right namespace, and with the correct annotation.</p>
+
+<h2>Summary</h2>
+
+<p>Most of the work here has nothing to do with interacting with remote services at all—it is all about declaring where your data lives and what its called. Once we get past the numerous steps that are necessary for defining any Views plugins, the meat of creating a new query plugin is pretty simple.</p>
+
+<ol><li>Create a class that extends QueryPluginBase</li>
+    <li>Implement some empty methods to mitigate assumptions about a SQL query backend</li>
+    <li>Inject any needed services</li>
+    <li>Override the <code>execute</code>&nbsp;method to retrieve your data into a <code>ResultRow</code> object with properties named for your fields, and store that object on the results array of the Views object.</li>
+</ol><p>In reality, most of your work will be spent investigating the API you are interacting with and figuring out how to model the data to fit into the array of fields that Views expects.</p>
+
+<h2>Next steps</h2>
+
+<p>In the third part of this article, we’ll look at the following topics:</p>
+
+<ol><li>Exposing configuration options for your query object</li>
+    <li>Adding options to field plugins</li>
+    <li>Creating filter plugins</li>
+</ol><p>Until next time!</p>
+
+    
+    </div>
+  </div>
+
+    
+
+  <div class="u-grid-container comments-outer" id="article-authors">
+    <div class="u-content-container u-full-width-text">
+      <div class="comments--header">
+        <div class="comments--button-wrapper">
+          <button class="show-comments js-show-comments u-no-style" aria-expanded="false">
+            <span class="disqus-comment-count u-css-art-chat-bubble" data-disqus-identifier="92bfb464-4a36-4460-8c9d-ec03bb0097b7">14</span>
+            <span>Join the conversation</span>
+            <span class="u-css-art-plus-sign"></span>
+          </button>
+        </div>
+        
+<div class="social-share-row">
+  <p class="social-share-row__text">share</p>
+  <button class="u-no-style social-share-row__button social-share--facebook">
+    <span class="u-element-invisible">Post on Facebook</span>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-300 386.9 9.8 21.1"><path d="M-293.5 408h-4.3v-10.5h-2.2v-3.7h2.2v-2.2c0-3 1.2-4.7 4.7-4.7h2.9v3.6h-1.8c-1.4 0-1.5.5-1.5 1.5v1.8h3.3l-.4 3.6h-2.9V408z"></path></svg>  </button>
+  <button class="u-no-style social-share-row__button social-share--twitter">
+    <span class="u-element-invisible">Tweet on Twitter</span>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-293 387.2 23.2 18.8"><path d="M-269.8 389.4c-.9.4-1.8.6-2.7.7 1-.6 1.7-1.5 2.1-2.6-.9.5-1.9.9-3 1.2-1-.9-2.2-1.5-3.6-1.5-2.6 0-4.8 2.1-4.8 4.8 0 .4 0 .7.1 1.1-3.8-.3-7.3-2.2-9.7-5-.4.7-.6 1.5-.6 2.4 0 1.6.8 3.1 2.1 4-.8-.1-1.5-.3-2.2-.7v.1c0 2.3 1.6 4.2 3.8 4.7-.4.1-.8.2-1.3.2-.3 0-.6 0-.9-.1.7 1.8 2.5 3.2 4.5 3.2-1.6 1.3-3.7 2-5.9 2-.4 0-.8 0-1.1-.1 2.1 1.3 4.6 2.1 7.3 2.1 8.7 0 13.5-7.2 13.5-13.5v-.6c.9-.6 1.7-1.4 2.4-2.4z"></path></svg>  </button>
+  <button class="u-no-style social-share-row__button social-share--linkedin">
+    <span class="u-element-invisible">Share on LinkedIn</span>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-294 386.4 21.5 20.6"><path d="M-289.1 407v-13.9h-4.6V407h4.6zm-2.3-15.8c1.6 0 2.6-1.1 2.6-2.4 0-1.4-1-2.4-2.6-2.4s-2.6 1-2.6 2.4c0 1.3 1 2.4 2.6 2.4zm4.8 15.8s.1-12.6 0-13.9h4.6v2c.6-.9 1.7-2.3 4.2-2.3 3 0 5.3 2 5.3 6.3v8h-4.6v-7.4c0-1.9-.7-3.1-2.3-3.1-1.3 0-2 .9-2.4 1.7-.1.3-.2.7-.2 1.1v7.8h-4.6v-.2z"></path></svg>  </button>
+</div>
+
+      </div>
+      <div class="comments" data-disqus-identifier="92bfb464-4a36-4460-8c9d-ec03bb0097b7">
+        <script>
+          var disqus_config = function () {
+            this.page.identifier = '92bfb464-4a36-4460-8c9d-ec03bb0097b7';
+            this.page.url = window.location.href;
+            this.page.title = 'Building Views Query Plugins for Drupal 8, Part 2';
+          };
+        </script>
+        <div id="disqus_thread"></div>
+      </div>
+    </div>
+  </div>
+
+      <div class="article__topics-wrapper">
+      
+  <div class="u-grid-full u-grid-container topics__container">
+    <h2 class="u-grid-full u-heading-m topics__heading">
+      Published <span class="u-line-under">in</span>
+    </h2>
+    <ul class="topics__list">
+              <li class="topics__item"><a href="https://www.lullabot.com/topics/drupal-development" hreflang="en">Drupal Development</a></li>
+          </ul>
+  </div>
+
+    </div>
+  
+    <div class="u-grid-container view__also-enjoy">
+    <div class="u-grid-full">
+      <h3 class="view__also-enjoy__heading">If you enjoyed this Article, you may also enjoy...</h3>
+      
+
+  <div class="view view-you-may-also-enjoy view-id-you_may_also_enjoy view-display-id-article js-view-dom-id-3d18967c40b7a805cb8a5ef3a3185d84ed1dc67cfb51109d92a1eb54d3c1e785">
+  
+    
+      
+      <div class="view-content">
+      <div class="u-list-border-bottom-dotted">
+
+  
+  <ul>
+
+          <li><div class="view__also-enjoy__type">Article</div><div class="view__also-enjoy__title"><a href="https://www.lullabot.com/articles/patch-less-composer-workflow-drupal-using-forks" hreflang="en">A Patch-less Composer Workflow for Drupal Using Forks</a></div></li>
+          <li><div class="view__also-enjoy__type">Article</div><div class="view__also-enjoy__title"><a href="https://www.lullabot.com/articles/indexing-content-from-drupal-8-to-elasticsearch" hreflang="en">Indexing content from Drupal 8 using Elasticsearch</a></div></li>
+          <li><div class="view__also-enjoy__type">Article</div><div class="view__also-enjoy__title"><a href="https://www.lullabot.com/articles/better-svg-sprite-reuse-in-drupal-8" hreflang="en">Better SVG Sprite Re-use with Twig in Drupal 8</a></div></li>
+    
+  </ul>
+
+</div>
+
+    </div>
+  
+          </div>
+
+
+
+    </div>
+  </div>
+
+  <div class="u-grid-container article__about-authors-outer">
+    <article class="u-grid-container bio-teaser">
+  <h3 class="bio-teaser__name">Matt Oliveira</h3>
+  <div class="bio-teaser__image">
+    <img src="./custom_mysql_table_data_with_viewsind8_files/headshots-comp_0002_mattoliveira.jpg.jpg" width="120" height="120" alt="Thumbnail">
+
+
+
+</div>
+
+      <div class="bio-teaser__body">Matt loves building websites, being outside and active, and spending time with his family.</div>
+  
+      <div class="bio-teaser__link"><a href="https://www.lullabot.com/about/matt-oliveira">More about Matt Oliveira</a></div>
+  </article>
+
+  </div>
+
+</article>
+
+
+</main>
+
+
+
+
+
+
+
+  <footer class="site-footer u-content-container">
+    <div class="footer__copyright">© 2019  Lullabot, Inc.</div>
+
+    <nav role="navigation" id="block-lullabotcom-footer" class="footer-menu">
+            
+  <h2 class="visually-hidden" id="block-lullabotcom-footer-menu">Footer menu</h2>
+  
+
+        
+              <ul>
+              <li>
+        <a href="https://www.lullabot.com/terms" data-drupal-link-system-path="node/1330">Terms of Service</a>
+              </li>
+          <li>
+        <a href="https://www.lullabot.com/jobs" data-drupal-link-system-path="node/41">Jobs</a>
+              </li>
+          <li>
+        <a href="https://www.lullabot.com/contact" data-drupal-link-system-path="node/42">Contact</a>
+              </li>
+          <li>
+        <a href="https://www.lullabot.com/how-we-built-site" data-drupal-link-system-path="node/9265">How We Built This Site</a>
+              </li>
+          <li>
+        <a href="https://www.lullabot.com/privacy-policy" data-drupal-link-system-path="node/9302">Privacy Policy</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+
+    <nav aria-label="Social media menu" class="footer__social-menu">
+      <ul>
+        <li class="footer__social-menu-item footer__social-menu-item--rss">
+          <a target="_blank" rel="noopener" href="https://www.lullabot.com/rss/feed">
+            <span class="visually-hidden">RSS Feed</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-299.1 390 13 13"><path fill="#ffffff" d="M-295.6 401.2c0 .9-.8 1.7-1.7 1.7-1 0-1.7-.8-1.7-1.7 0-.9.8-1.7 1.7-1.7.9 0 1.7.8 1.7 1.7zm-3.4-6.8v2.5c1.6 0 3.1.6 4.3 1.8 1.1 1.1 1.8 2.7 1.8 4.3h2.5c-.1-4.8-4-8.6-8.6-8.6zm0-4.4v2.5c5.8 0 10.5 4.7 10.5 10.5h2.5c-.1-7.2-6-13-13-13z"></path></svg>
+          </a>
+        </li>
+        <li class="footer__social-menu-item footer__social-menu-item--twitter">
+          <a target="_blank" rel="noopener" href="https://twitter.com/lullabot">
+            <span class="visually-hidden">Lullabot on Twitter</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-293 387.2 23.2 18.8"><path d="M-269.8 389.4c-.9.4-1.8.6-2.7.7 1-.6 1.7-1.5 2.1-2.6-.9.5-1.9.9-3 1.2-1-.9-2.2-1.5-3.6-1.5-2.6 0-4.8 2.1-4.8 4.8 0 .4 0 .7.1 1.1-3.8-.3-7.3-2.2-9.7-5-.4.7-.6 1.5-.6 2.4 0 1.6.8 3.1 2.1 4-.8-.1-1.5-.3-2.2-.7v.1c0 2.3 1.6 4.2 3.8 4.7-.4.1-.8.2-1.3.2-.3 0-.6 0-.9-.1.7 1.8 2.5 3.2 4.5 3.2-1.6 1.3-3.7 2-5.9 2-.4 0-.8 0-1.1-.1 2.1 1.3 4.6 2.1 7.3 2.1 8.7 0 13.5-7.2 13.5-13.5v-.6c.9-.6 1.7-1.4 2.4-2.4z"></path></svg>          </a>
+        </li>
+        <li class="footer__social-menu-item footer__social-menu-item--facebook">
+          <a target="_blank" rel="noopener" href="https://www.facebook.com/lullabots/">
+            <span class="visually-hidden">Lullabot on Facebook</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-300 386.9 9.8 21.1"><path d="M-293.5 408h-4.3v-10.5h-2.2v-3.7h2.2v-2.2c0-3 1.2-4.7 4.7-4.7h2.9v3.6h-1.8c-1.4 0-1.5.5-1.5 1.5v1.8h3.3l-.4 3.6h-2.9V408z"></path></svg>          </a>
+        </li>
+        <li class="footer__social-menu-item footer__social-menu-item--linkedin">
+          <a target="_blank" rel="noopener" href="https://www.linkedin.com/company/lullabot">
+            <span class="visually-hidden">Lullabot on LinkedIn</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-294 386.4 21.5 20.6"><path d="M-289.1 407v-13.9h-4.6V407h4.6zm-2.3-15.8c1.6 0 2.6-1.1 2.6-2.4 0-1.4-1-2.4-2.6-2.4s-2.6 1-2.6 2.4c0 1.3 1 2.4 2.6 2.4zm4.8 15.8s.1-12.6 0-13.9h4.6v2c.6-.9 1.7-2.3 4.2-2.3 3 0 5.3 2 5.3 6.3v8h-4.6v-7.4c0-1.9-.7-3.1-2.3-3.1-1.3 0-2 .9-2.4 1.7-.1.3-.2.7-.2 1.1v7.8h-4.6v-.2z"></path></svg>          </a>
+        </li>
+      </ul>
+    </nav>
+  </footer>
+
+
+  </div>
+
+    </div>
+
+    
+
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/1484","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","ckeditorheight":{"offset":1,"line_height":1.5,"unit":"em","disable_autogrow":null},"ajaxTrustedUrl":{"\/search\/node":true},"quicklink":{"admin_link_container_patterns":["#block-local-tasks-block a",".block-local-tasks-block a","#drupal-off-canvas a","#toolbar-administration a"],"ignore_admin_paths":1,"ignore_ajax_links":1,"ignore_file_ext":1,"debug":0,"url_patterns_to_ignore":["user\/logout","#","\/admin","\/edit"]},"user":{"uid":0,"permissionsHash":"1d35fff922575fe56aaca98c41d970a9bd21a3171bb920b899ba40e399529548"}}</script>
+<script src="./custom_mysql_table_data_with_viewsind8_files/polyfill.min.js"></script>
+<script src="./custom_mysql_table_data_with_viewsind8_files/js_AudpNw7QP7nPSRE__EEd3BT5xkn1heMci5Lof9yczFw.js"></script>
+<script src="./custom_mysql_table_data_with_viewsind8_files/analytics.js" async=""></script>
+<script src="./custom_mysql_table_data_with_viewsind8_files/js_dCLS8NmSWMaque6xhbKpnd8Yf4500ZAMXul1jT17NjA.js"></script>
+
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"87ce98255b","applicationID":"260346179","transactionName":"YQBQN0BSDxcEAE1dDFhKcwBGWg4KShNYUwZpBlMAWlY=","queueTime":0,"applicationTime":135,"atts":"TUdTQQhIHBk=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+
+</body></html>
