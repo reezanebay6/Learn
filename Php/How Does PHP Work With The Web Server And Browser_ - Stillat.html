@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<!-- saved from url=(0085)https://stillat.com/blog/2014/04/02/how-does-php-work-with-the-web-server-and-browser -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+
+        <title>How Does PHP Work With The Web Server And Browser? - Stillat</title>
+    
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#ffffff">
+    <script id="twitter-wjs" src="./How Does PHP Work With The Web Server And Browser_ - Stillat_files/widgets.js"></script><script async="" src="./How Does PHP Work With The Web Server And Browser_ - Stillat_files/analytics.js"></script><script>(function () { var xhr = new XMLHttpRequest(); xhr.open("POST", "/!/Gazelle/gazelle", true); xhr.setRequestHeader("X-CSRF-TOKEN", "kE0yGeCCVFGpCEymQvd6XFtS4YM4eF5wstavB5A1"); xhr.send(null); }());</script>
+    
+<link rel="apple-touch-icon" sizes="180x180" href="https://stillat.com/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="https://stillat.com/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://stillat.com/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="https://stillat.com/manifest.json">
+<link rel="mask-icon" href="https://stillat.com/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+    <meta name="author" content="Johnathon Koster"><meta name="description" content=""><meta itemprop="description" content=""><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="https://stillat.com/"><meta name="twitter:title" content="How Does PHP Work With The Web Server And Browser?"><meta name="twitter:description" content=""><meta name="twitter:image" content="https://stillat.s3.amazonaws.com/categories/stillat.png"><meta property="og:title" content="How Does PHP Work With The Web Server And Browser?"><meta property="og:type" content="article"><meta property="og:url" content="https://stillat.com/blog/2014/04/02/how-does-php-work-with-the-web-server-and-browser"><meta property="og:description" content=""><meta property="og:image" content="https://stillat.s3.amazonaws.com/categories/stillat.png"><meta property="og:site_name" content="Stillat"><meta property="fg:admins" content="136500226932263"><meta property="article:publisher" content="https://www.facebook.com/StillatLLC"><meta property="article:author" content="https://www.facebook.com/john.koster.71619"><meta name="last-modified" content="2017-07-11T04:04:12">
+    <link rel="canonical" href="https://stillat.com/blog/2014/04/02/how-does-php-work-with-the-web-server-and-browser">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./How Does PHP Work With The Web Server And Browser_ - Stillat_files/2018.css" rel="stylesheet">
+    <link href="./How Does PHP Work With The Web Server And Browser_ - Stillat_files/css" rel="stylesheet">
+    <link href="./How Does PHP Work With The Web Server And Browser_ - Stillat_files/icon" rel="stylesheet">
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-48760718-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</head>
+<body class="basic-gradient-light">
+<div class="notification pos-top pos-right search-box bg--white border--bottom" data-animation="from-top" data-notification-link="search-box">
+    <form action="https://stillat.com/search" method="get">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                <input type="search" name="q" value="" placeholder="Type search query and hit enter">
+            </div>
+        </div>
+    </form>
+<div class="notification-close-cross notification-close"></div></div>
+<div class="nav-container">
+    <div>
+        <div class="bar bar--sm visible-xs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-2">
+                        <a href="https://stillat.com/"><h1 class="logo__module"><svg width="100%" height="100%" viewBox="0 0 48 59" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><defs><lineargradient id="contact-gradient" x1="0%" y1="0%" x2="100%" y2="0%" gradientTransform="rotate(90)"><stop offset="50%" stop-color="rgb(255,255,255)"></stop><stop offset="50%" stop-color="rgb(20, 165, 178)"></stop></lineargradient></defs><path class="logo-top-block" d="M41.316,6.979l-11.791,14.973l-17.734,-6.979l11.791,-14.973l17.734,6.979Z" style="fill:#14a5b2;fill-rule:nonzero;"></path><path class="logo-middle-block" d="M29.525,21.952l-17.734,-6.979l-11.791,14.973l17.735,6.978l17.734,6.979l11.791,-14.973l-17.735,-6.978Z" style="fill:#10b7c5;fill-rule:nonzero;"></path><path class="path-bottom-block" d="M35.469,43.903l-11.791,14.973l-17.734,-6.979l11.791,-14.972l17.734,6.978Z" style="fill:#14a5b2;fill-rule:nonzero;"></path></svg> Sti<span>ll</span>at</h1></a>
+                    </div>
+                    <div class="col-xs-6 col-sm-10 text-right">
+                        <a href="https://stillat.com/blog/2014/04/02/how-does-php-work-with-the-web-server-and-browser#" class="hamburger-toggle" data-toggle-class="#menu1;hidden-xs hidden-sm"> <i class="icon icon--sm stack-interface stack-menu"></i> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav id="menu1" class="bar bar-1 hidden-xs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 hidden-xs">
+                        <div class="bar__module">
+                            <a href="https://stillat.com/"><h1 class="logo__module"><svg width="100%" height="100%" viewBox="0 0 48 59" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><defs><lineargradient id="contact-gradient" x1="0%" y1="0%" x2="100%" y2="0%" gradientTransform="rotate(90)"><stop offset="50%" stop-color="rgb(255,255,255)"></stop><stop offset="50%" stop-color="rgb(20, 165, 178)"></stop></lineargradient></defs><path class="logo-top-block" d="M41.316,6.979l-11.791,14.973l-17.734,-6.979l11.791,-14.973l17.734,6.979Z" style="fill:#14a5b2;fill-rule:nonzero;"></path><path class="logo-middle-block" d="M29.525,21.952l-17.734,-6.979l-11.791,14.973l17.735,6.978l17.734,6.979l11.791,-14.973l-17.735,-6.978Z" style="fill:#10b7c5;fill-rule:nonzero;"></path><path class="path-bottom-block" d="M35.469,43.903l-11.791,14.973l-17.734,-6.979l11.791,-14.972l17.734,6.978Z" style="fill:#14a5b2;fill-rule:nonzero;"></path></svg> Sti<span>ll</span>at</h1></a>
+                        </div>
+                    </div>
+                    <div class="col-md-9 col-sm-9 text-right text-left-xs text-left-sm">
+                        <div class="bar__module">
+                            <ul class="menu-horizontal text-left">
+                                <li>
+                                    <a href="https://stillat.com/blog/2014/04/02/how-does-php-work-with-the-web-server-and-browser#" data-notification-link="search-box" data-trigger="search">
+                                        <i class="stack-search"></i>
+                                    </a>
+                                </li>
+                                                                <li>
+                                    <a href="https://stillat.com/meerkat" class="">Meerkat</a>
+                                </li>
+                                                                <li>
+                                    <a href="https://stillat.com/tanager" class="">Tanager</a>
+                                </li>
+                                                                <li>
+                                    <a href="https://stillat.com/blog" class=" active">Blog</a>
+                                </li>
+                                                                <li>
+                                    <a href="https://stillat.com/projects" class="">Projects</a>
+                                </li>
+                                                                <li>
+                                    <a href="https://stillat.com/contact" class="">Contact</a>
+                                </li>
+                                
+                                <li><a href="https://bag.stillat.com/">Shop</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div class="main-container">
+
+    <section class="unpad">
+    <article itemscope="" itemtype="http://schema.org/Article">
+        <div class="imagebg text-center height-60" data-overlay="5">
+                            <style type="text/css">[data-overlay]:before {
+            background: #27ae60 !important;
+        }</style>
+                        <div class="container pos-vertical-center">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="article__title">
+                            <h1 itemprop="name">How Does PHP Work With The Web Server And Browser?</h1>
+                            <span itemprop="datePublished" content="2014-04-02">April 2, 2014</span>
+                                                        <span>
+                                <a href="https://stillat.com/explore/categories/servers" itemprop="articleSection">
+                                    <span class="icon category__icon icon-Circular-Point" style="color: #27ae60;"></span>
+                                    Servers
+                                </a>
+                            </span>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="pos-absolute pos-bottom col-xs-12 text-center">
+                <div class="article__author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+                    <img alt="John Koster" src="./How Does PHP Work With The Web Server And Browser_ - Stillat_files/aHR0cHM6Ly9zMy5hbWF6b25hd3MuY29tL3N0aWxsYXQvaW1nL2pvaG5fay0xNDc3MzY1NDAwLnBuZw==" class="img-rounded">
+                    <h6 class="type--uppercase">John Koster</h6>
+                </div>
+            </div>
+            
+        </div>
+        <div class="container padding__bottom-20">
+            <div class="row">
+                <div class="col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+                    <div class="article__body" itemprop="articleBody">
+                        <p>Admittedly this post is less about the actual task of programming, and more about the behind-the-scenes workings of PHP's execution environment.</p>
+
+<h2>Introduction</h2>
+
+<p>PHP is a popular server-side language that is particularly good for web applications. Some of the largest companies and organizations from around the world utilize PHP for their operations (some of them you probably use every single day). A large amount of web sites and applications are powered by PHP; therefore an understanding of the PHP language is mandatory to fully understand and accept the power behind popular frameworks (such as Laravel, CodeIgniter or Symfony), and how popular websites and applications may be handling user's data.</p>
+
+<p>To kick start this mini-series of posts, we will begin by looking at how users interact with the web server, and how the web server and PHP talk to one another.</p>
+
+<h2>The Language</h2>
+
+<p>PHP is an interpreted language. This means that you will write code statements (lines of code) and when a page is requested, the PHP <em>interpreter</em> will load your PHP code, parse it and then execute it. This differs from other languages, such as Java or C#, where the source code is compiled and then executed. This is useful for web development in the fact that you do not have to re-compile your source code for trivial code changes and the changes have immediate effect on all subsequent requests.</p>
+
+<p>PHP is written as standard text files with the <code>.php</code> extension. PHP files are often saved within a folder in a web server's public directory (or a <em>web root</em> directory). On most systems this will either be named <code>public</code> or <code>public_html</code>. For example, if a file was saved as <code>index.php</code> in a web root directory, a user could access it by typing <code>http://www.example.org</code> or <code>http://www.example.org/index.php</code>.</p>
+
+<pre><code class="hljs php"><span class="hljs-keyword">public</span>/
+| index.php
+</code></pre>
+
+<h3>PHP and Default Pages (Directory Indexes)</h3>
+
+<p>Most PHP and web server setups let you use a file named <code>index.php</code> just as you would use an <code>index.html</code> file. However, make sure you know which one takes priority so you don't get unexpected results (usually <code>index.php</code>).</p>
+
+<h2>The Request Life-cycle</h2>
+
+<p>So what exactly is happening when a user types in the URL <code>http://example.org</code>? When a user types in <code>http://example.org</code> in a Web client (a browser, for instance), the client issues a <code>GET</code> request to the server (let's assume that we are both using Apache). When Apache gets this request, it looks for a file named <code>index.php</code> (or <code>index.html</code>, remember the directory indexes from earlier?). If a file named <code>index.php</code> is found, Apache essentially says "Hey, this is a PHP file because it has the .php extension. I am going to give this to the PHP interpreter".</p>
+
+<p>After Apache decides that is is a PHP file, it gives it to the PHP interpreter. When PHP receives the file it reads through it and executes any PHP code it can find. After it is done with the file, the PHP interpreter gives the output of the code, if any, back to Apache. When Apache gets the output back from PHP, it sends that output back to a browser which renders it to the screen.</p>
+
+<h3>PHP And Apache Output</h3>
+
+<p>Beginners to PHP programming might often ask questions like "How do I make an image with PHP?" or "How do I make a text box with PHP?". In all honesty, PHP does neither. In a traditional sense, the main goal of PHP is to generate some HTML document that a browser can render.</p>
+
+<p>However, modern applications built with client-side MVC frameworks often see the role of PHP change to just interacting with server-side data storage.</p>
+
+<p>Let's take another look at this process with a diagram. In this diagram, we will assume the user is going to the Laravel website at <code>http://laravel.com/</code>. The following figure has circled numbers that will highlight the various stages of the request. A step-by-step explanation of each step follows the figure.</p>
+
+<p><img src="./How Does PHP Work With The Web Server And Browser_ - Stillat_files/ch1_request_lifecycle.png" alt="PHP And The Apache Web Server | A quick overview of how the various servers interact during the request lifecycle."></p>
+
+<dl>
+<dt>Step 1</dt>
+<dd>
+The user enters `http://laravel.com` into their browser and taps/hits 'enter'.
+</dd>
+
+<dt>Step 2</dt>
+<dd>
+After the user has tapped/hit 'enter', the browser sends the page request over the Internet to the web server.
+</dd>
+
+<dt>Step 3</dt>
+<dd>
+The web server <em>gets</em> the request and analyzes the request information. Apache realizes that we didn't specify a file, so it looks for a directory index and finds `index.php`.
+</dd>
+
+<dt>Step 4</dt>
+<dd>
+Since Apache knows to send files that end with the `.php` file extension to the PHP interpreter, it asks PHP to execute the file.
+</dd>
+
+<dt>Step 5</dt>
+<dd>
+In this step, PHP is executing the code contained in the `index.php` file from the request. During this step, PHP may interact with databases, the file system or make external API calls, amongst other things.
+</dd>
+
+<dt>Step 6</dt>
+<dd>
+After PHP has finished executing the `index.php` file, it sends the output back to Apache.
+</dd>
+
+<dt>Step 7</dt>
+<dd>
+Apache receives the output from PHP and sends it back over the Internet to a user's web browser. This is called the `web response`.
+</dd>
+
+<dt>Step 8</dt>
+<dd>
+The user's web browser receives the response from the server, and renders the web page on a computer or device.
+</dd>
+</dl>
+
+<p>As you can see, PHP interacts with a web server in a very real way. The actual request process is very simple, and one of the reasons that PHP is so well suited for web application development.</p>
+
+<h2>Conclusion</h2>
+
+<p>This concludes this first article in a little series about the basics of programming with PHP. The next articles will cover things such as variables, operators and functions. After that, we will take a dive into the world of Object Oriented Programing (OOP) and see how that fits in with PHP.</p>
+
+<p>I hope you enjoyed this article and if you have any comments or suggestions, feel free to leave a comment below or drop a line on Twitter or Google+.</p>
+
+                    </div>
+                    <div class="article__share text-center">
+                        <a class="btn bg--facebook btn--icon" id="fbShare" href="https://stillat.com/blog/2014/04/02/how-does-php-work-with-the-web-server-and-browser#">
+                                        <span class="btn__text">
+                                            <i class="socicon socicon-facebook"></i>
+                                            Share on Facebook
+                                        </span>
+                        </a>
+                        <a class="btn bg--twitter btn--icon" href="https://twitter.com/intent/tweet?text=How%20Does%20PHP%20Work%20With%20The%20Web%20Server%20And%20Browser?&amp;url=https://stillat.com/blog/2014/04/02/how-does-php-work-with-the-web-server-and-browser">
+                                        <span class="btn__text">
+                                            <i class="socicon socicon-twitter"></i>
+                                            Share on Twitter
+                                        </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container padding__bottom-20">
+            <div class="row">
+                <div class="col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+                    
+<h3>Join the Discussion</h3>
+
+    
+
+    
+    <h4>Leave a comment</h4>
+    <div class="row padding__bottom-20">
+        <form method="POST" action="https://stillat.com/!/Meerkat/socialize" =""="" data-meerkat-form="comment-form"><input type="hidden" name="_token" value="kE0yGeCCVFGpCEymQvd6XFtS4YM4eF5wstavB5A1"><input type="hidden" name="meerkat_context" value="3297e989-9c28-431d-bc71-f21da2c5de31"><input type="hidden" name="_params" value="eyJpdiI6ImIyaU1yVFdFN3ZuS0xJV3p6MzV3Tnc9PSIsInZhbHVlIjoiRVYzVXVPMjFoMTFxd1UreW5FSHFEcHgxcWpYbXF1cDlWUkZvZU5aMU1iZVZMMEM2Mm5rc2Rlb296RkhGMVFZXC8iLCJtYWMiOiIzNDBmZWQ2ZDU0MDM0ZWEyMzYxYmY3OThlOTc4ZTZmZjk0ZmEyMTkxZTdhMDUzMDYxOTRmM2ZhZjJlOTI3MWVmIn0=">            <div class="col-sm-6">
+                <label>Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Please enter your name. This will be public." value="">
+            </div>
+            <div class="col-sm-6">
+                <label>Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="Please enter your email. This remains private." value="">
+            </div>
+            <div class="col-sm-12">
+                <label>Comment:</label>
+                <textarea rows="4" id="comment" name="comment" placeholder="Enter your comment or feedback here (minimum of five characters)"></textarea>
+            </div>
+            <div class="col-sm-3">
+                <button class="btn btn--primary" type="submit">Submit Comment</button>
+            </div>
+        </form>
+    </div>
+
+
+
+
+<div style="display:none;" id="comment-template">
+    <div class="comment" data-meerkat-comment="{{ id }}">
+        <div class="comment__avatar">
+            <img alt="{{ name }}" src="./How Does PHP Work With The Web Server And Browser_ - Stillat_files/none.png">
+        </div>
+        <div class="comment__body">      
+            <h5 class="type--fine-print">{{ name }}</h5>
+            <div class="comment__meta">
+                <span>{{ datestring }}</span>
+            </div>
+            {{ comment }}
+        </div>
+    </div>
+</div>
+
+<div style="display:none;">
+    <form method="POST" action="https://stillat.com/!/Meerkat/socialize" data-meerkat-form="comment-reply-form" class="meerkat__reply--form"><input type="hidden" name="_token" value="kE0yGeCCVFGpCEymQvd6XFtS4YM4eF5wstavB5A1"><input type="hidden" name="meerkat_context" value="3297e989-9c28-431d-bc71-f21da2c5de31"><input type="hidden" name="_params" value="eyJpdiI6IkRXNGt2cDBUREdWemtmT1BlSnUzYkE9PSIsInZhbHVlIjoiRlZ0ZnVsVkM5OEVqSVwvcXhFdXU1N01zc0FZaW91WXgrQjFsd2lsWEN4eHhoQVpIYWM0WUlQcWxaWnZnYnR4aTkiLCJtYWMiOiI2MTc1YzkxMDM4NWRjMWUyNTIwNDA2NjUwM2JjMzJmZDkwZmY0MThlYzAwMTI1NGU0ZjYzMGQxYWE3NDM0YThkIn0="><div class="row">
+    <div class="col-sm-6 meerkat__form-element">
+        <label>Your Name:</label>
+        <input type="text" id="name" name="name" placeholder="Please enter your name. This will be public." value="">
+        <p class="text-danger" data-validation-error=""></p>
+    </div>
+    <div class="col-sm-6  meerkat__form-element">
+        <label>Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="Please enter your email. This remains private." value="">
+        <p class="text-danger" data-validation-error=""></p>
+    </div>
+    <div class="col-sm-12 meerkat__form-element">
+        <label>Comment:</label>
+        <textarea rows="4" id="comment" name="comment" placeholder="Enter your comment or feedback here (minimum of five characters)"></textarea>
+        <p class="text-danger" data-validation-error=""></p>
+    </div>
+    <div class="col-sm-3">
+        <button class="btn btn--primary" type="submit">Submit Reply</button>
+    </div>
+    <div class="col-sm-3">
+        <a href="https://stillat.com/blog/2014/04/02/how-does-php-work-with-the-web-server-and-browser#" data-meerkat-form="cancel-reply" class="btn">Cancel Reply</a>
+    </div>
+</div>
+</form>
+</div>
+<a name="discussion" id="discussion"></a>
+<div class="comments">
+    <ul class="comments__list">
+                        <li>
+                    <div class="comment" data-meerkat-comment="1500651693">
+                <div class="comment__avatar">
+                    <img alt="george" src="./How Does PHP Work With The Web Server And Browser_ - Stillat_files/98762ecfbfe6862534d65a69549de689.png">
+                </div>
+                <div class="comment__body">
+                    <a name="comment-1500651693"></a>                    
+                    <h5 class="type--fine-print">george</h5>
+                    <div class="comment__meta">
+                        <span>July 21, 2017 3:41 PM</span>
+                                                    <a href="https://stillat.com/blog/2014/04/02/how-does-php-work-with-the-web-server-and-browser#" data-meerkat-form="reply" data-meerkat-reply-to="1500651693">Reply</a>
+                                            </div>
+
+                                            <p>very helpful. Got a clear understanding</p>
+
+                                    </div>
+            </div>
+
+            
+                </li>
+                                <li>
+                    <div class="comment" data-meerkat-comment="1519562042">
+                <div class="comment__avatar">
+                    <img alt="Abdul Barik" src="./How Does PHP Work With The Web Server And Browser_ - Stillat_files/16a659eab0b169b7e327b0500defefe9.png">
+                </div>
+                <div class="comment__body">
+                    <a name="comment-1519562042"></a>                    
+                    <h5 class="type--fine-print">Abdul Barik</h5>
+                    <div class="comment__meta">
+                        <span>February 25, 2018 12:34 PM</span>
+                                                    <a href="https://stillat.com/blog/2014/04/02/how-does-php-work-with-the-web-server-and-browser#" data-meerkat-form="reply" data-meerkat-reply-to="1519562042">Reply</a>
+                                            </div>
+
+                                            <p>Great Content! I found after lot of googing!
+Thanks to this writter</p>
+
+                                    </div>
+            </div>
+
+            
+                </li>
+                                <li>
+                    <div class="comment" data-meerkat-comment="1520951041">
+                <div class="comment__avatar">
+                    <img alt="Santosh" src="./How Does PHP Work With The Web Server And Browser_ - Stillat_files/3e2a9f80f523ed9cb1a4e54644b3a592.png">
+                </div>
+                <div class="comment__body">
+                    <a name="comment-1520951041"></a>                    
+                    <h5 class="type--fine-print">Santosh</h5>
+                    <div class="comment__meta">
+                        <span>March 13, 2018 2:24 PM</span>
+                                                    <a href="https://stillat.com/blog/2014/04/02/how-does-php-work-with-the-web-server-and-browser#" data-meerkat-form="reply" data-meerkat-reply-to="1520951041">Reply</a>
+                                            </div>
+
+                                            <p>But how web server know to check index.php by default what will happen if index.html exists?</p>
+
+                                    </div>
+            </div>
+
+                                                <div class="comment" data-meerkat-comment="1569341412">
+                <div class="comment__avatar">
+                    <img alt="Rian" src="./How Does PHP Work With The Web Server And Browser_ - Stillat_files/75e12f5bc1bd0d22ad52159f5e8a4ddb.png">
+                </div>
+                <div class="comment__body">
+                    <a name="comment-1569341412"></a>                    
+                    <h5 class="type--fine-print">Rian</h5>
+                    <div class="comment__meta">
+                        <span>September 24, 2019 4:10 PM</span>
+                                                    <a href="https://stillat.com/blog/2014/04/02/how-does-php-work-with-the-web-server-and-browser#" data-meerkat-form="reply" data-meerkat-reply-to="1569341412">Reply</a>
+                                            </div>
+
+                                            <p>Web server have a configuration about priorities between index file extension. By default, index.php is the first one to be prioritized, then index.html</p>
+
+                                    </div>
+            </div>
+
+            
+                                    <div class="comment" data-meerkat-comment="1569341434">
+                <div class="comment__avatar">
+                    <img alt="Rian" src="./How Does PHP Work With The Web Server And Browser_ - Stillat_files/75e12f5bc1bd0d22ad52159f5e8a4ddb.png">
+                </div>
+                <div class="comment__body">
+                    <a name="comment-1569341434"></a>                    
+                    <h5 class="type--fine-print">Rian</h5>
+                    <div class="comment__meta">
+                        <span>September 24, 2019 4:10 PM</span>
+                                                    <a href="https://stillat.com/blog/2014/04/02/how-does-php-work-with-the-web-server-and-browser#" data-meerkat-form="reply" data-meerkat-reply-to="1569341434">Reply</a>
+                                            </div>
+
+                                            <p>Web server have a configuration about priorities between index file extension. By default, index.php is the first one to be prioritized, then index.html</p>
+
+                                    </div>
+            </div>
+
+            
+                                    <div class="comment" data-meerkat-comment="1569341435">
+                <div class="comment__avatar">
+                    <img alt="Rian" src="./How Does PHP Work With The Web Server And Browser_ - Stillat_files/75e12f5bc1bd0d22ad52159f5e8a4ddb.png">
+                </div>
+                <div class="comment__body">
+                    <a name="comment-1569341435"></a>                    
+                    <h5 class="type--fine-print">Rian</h5>
+                    <div class="comment__meta">
+                        <span>September 24, 2019 4:10 PM</span>
+                                                    <a href="https://stillat.com/blog/2014/04/02/how-does-php-work-with-the-web-server-and-browser#" data-meerkat-form="reply" data-meerkat-reply-to="1569341435">Reply</a>
+                                            </div>
+
+                                            <p>Web server have a configuration about priorities between index file extension. By default, index.php is the first one to be prioritized, then index.html</p>
+
+                                    </div>
+            </div>
+
+            
+                                    <div class="comment" data-meerkat-comment="1569341436">
+                <div class="comment__avatar">
+                    <img alt="Rian" src="./How Does PHP Work With The Web Server And Browser_ - Stillat_files/75e12f5bc1bd0d22ad52159f5e8a4ddb.png">
+                </div>
+                <div class="comment__body">
+                    <a name="comment-1569341436"></a>                    
+                    <h5 class="type--fine-print">Rian</h5>
+                    <div class="comment__meta">
+                        <span>September 24, 2019 4:10 PM</span>
+                                                    <a href="https://stillat.com/blog/2014/04/02/how-does-php-work-with-the-web-server-and-browser#" data-meerkat-form="reply" data-meerkat-reply-to="1569341436">Reply</a>
+                                            </div>
+
+                                            <p>Web server have a configuration about priorities between index file extension. By default, index.php is the first one to be prioritized, then index.html</p>
+
+                                    </div>
+            </div>
+
+            
+                
+            
+                </li>
+                                <li>
+                    <div class="comment" data-meerkat-comment="1521156023">
+                <div class="comment__avatar">
+                    <img alt="Zhenjie Hao" src="./How Does PHP Work With The Web Server And Browser_ - Stillat_files/3c76fec89876593919bc2df21f21f23b.png">
+                </div>
+                <div class="comment__body">
+                    <a name="comment-1521156023"></a>                    
+                    <h5 class="type--fine-print">Zhenjie Hao</h5>
+                    <div class="comment__meta">
+                        <span>March 15, 2018 11:20 PM</span>
+                                                    <a href="https://stillat.com/blog/2014/04/02/how-does-php-work-with-the-web-server-and-browser#" data-meerkat-form="reply" data-meerkat-reply-to="1521156023">Reply</a>
+                                            </div>
+
+                                            <p>Wow, it's really good passage to introduce how PHP and Apache work. Love it. Thanks!</p>
+
+                                    </div>
+            </div>
+
+            
+                </li>
+                
+    </ul>
+
+        <div class="pagination">
+        
+            </div>
+    
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </article>
+</section>
+<section class="bg--secondary">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2 class="under-yellow">Up Next</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                                                            <a href="https://stillat.com/blog/2014/04/01/laravel-4-working-with-checkboxes-and-input" class="feature feature-2 unmarg marg--bottom-10" title="Laravel 4: Working With Checkboxes and Input">
+			<img src="./How Does PHP Work With The Web Server And Browser_ - Stillat_files/laravel_60x60.png" class="img-responsive post__image" alt="">
+		<div class="feature__body unmarg">
+		<h5 class="unmarg--bottom">Laravel 4: Working With Che...</h5>
+		Inside of a Blade view, a checkbox can be created using the Form class:
+
+{{...
+	</div>
+</a>
+                                            <a href="https://stillat.com/blog/2014/03/27/laravel-calling-artisan-commands-from-your-application" class="feature feature-2 unmarg marg--bottom-10" title="Laravel: Calling Artisan Commands From Your Application">
+			<img src="./How Does PHP Work With The Web Server And Browser_ - Stillat_files/laravel_60x60.png" class="img-responsive post__image" alt="">
+		<div class="feature__body unmarg">
+		<h5 class="unmarg--bottom">Laravel: Calling Artisan Co...</h5>
+		This little tip will show you how to run Artisan commands from within your...
+	</div>
+</a>
+                    
+                
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                                                            <a href="https://stillat.com/blog/2014/03/25/laravel-4-default-events" class="feature feature-2 unmarg marg--bottom-10" title="Laravel 4: Default Events">
+			<img src="./How Does PHP Work With The Web Server And Browser_ - Stillat_files/laravel_60x60.png" class="img-responsive post__image" alt="">
+		<div class="feature__body unmarg">
+		<h5 class="unmarg--bottom">Laravel 4: Default Events</h5>
+		Laravel 4 provides a few events that are fired throughout your applications...
+	</div>
+</a>
+                                            <a href="https://stillat.com/blog/2014/03/06/modifying-the-windows-hosts-file" class="feature feature-2 unmarg marg--bottom-10" title="Modifying the Windows Hosts File">
+			<div style="background-color: #95a5a6;" class="post__image"><img src="./How Does PHP Work With The Web Server And Browser_ - Stillat_files/stillat_general_60x60.png" class="img-responsive" alt=""></div>
+		<div class="feature__body unmarg">
+		<h5 class="unmarg--bottom">Modifying the Windows Hosts...</h5>
+		This post will explain how to modify the hosts file on a Windows machine...
+	</div>
+</a>
+                    
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="subscribe-form-2 space--xs imagebg" data-gradient-bg="#4876BD,#5448BD,#8F48BD,#BD48B1"><canvas id="granim-0" width="1284" height="143"></canvas><canvas id="granim-3" width="1304" height="143"></canvas>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <p class="lead">Subscribe to our newsletter</p>
+            </div>
+            <div class="col-md-7 col-md-offset-1">
+                <form action="https://stillat.us16.list-manage.com/subscribe/post-json?u=8e3100fa2b37b4690e8afa258&amp;id=adb532ba93&amp;c=?" data-success="Thanks for signing up.  Please check your inbox for a confirmation email." data-error="Please provide your email address." novalidate="true" class="form--active">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <input class="validate-required validate-email" type="email" name="EMAIL" placeholder="Email Address">
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <button class="btn btn--primary type--uppercase" type="submit">Subscribe</button>
+                        </div>
+                    </div>
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                        <input type="text" name="b_8e3100fa2b37b4690e8afa258_adb532ba93" tabindex="-1" value="">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="space--sm footer-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-3 col-xs-6">
+                <h6 class="type--uppercase">Company</h6>
+                <ul class="list--hover">
+                    <li><a href="https://stillat.com/about/privacy">Privacy Policy</a></li>
+                    <li><a href="https://stillat.com/about/terms">Terms of Use</a></li>
+                    <li><a href="https://stillat.com/contact">Contact</a></li>
+                    <li><a href="https://stillat.com/about">About</a></li>
+                    <li><a href="https://stillat.com/about/faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-6 col-md-3 col-xs-6">
+                <h6 class="type--uppercase">Explore</h6>
+                <ul class="list--hover">
+                    <li><a href="https://stillat.com/about/statistics">Statistics</a></li>
+                    <li><a href="https://stillat.com/search">Search</a></li>
+                    <li><a href="https://stillat.com/blog">Blog</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-6 col-md-3 col-xs-6">
+                <h6 class="type--uppercase">Projects</h6>
+                <ul class="list--hover">
+                                        <li>
+                                                <a href="https://stillat.com/meerkat">Meerkat</a>
+                                            </li>
+                                        <li>
+                                                <a href="https://stillat.com/projects/view/linguistics-for-adobe-brackets">Linguistics ...</a>
+                                            </li>
+                                        <li>
+                                                <a href="https://stillat.com/projects/view/collector">Collector</a>
+                                            </li>
+                    
+                </ul>
+            </div>
+            <div class="col-sm-6 col-md-3 col-xs-6">
+                <h6 class="type--uppercase">Elsewhere</h6>
+                <ul class="list--hover">
+                    <li><a href="https://twitter.com/StillatLLC" title="Follow Stillat LLC on Twitter"><i class="socicon socicon-twitter icon icon--xs"></i>/StillatLLC</a></li>
+                    <li><a href="https://facebook.com/StillatLLC" title="Stillat LLC on Facebook"><i class="socicon socicon-facebook icon icon--xs"></i> Stillat LLC</a></li>
+                    <li>
+                        <a href="https://twitter.com/johnmkoster" title="Follow John Koster on Twitter"><i class="socicon socicon-twitter icon icon--xs"></i>/johnmkoster</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/JohnathonKoster" title="See John&#39;s experiments on GitHub"><i class="socicon socicon-github icon icon--xs"></i>/JohnathonKoster</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/stillat" title="Explore the Stillat packages on GitHub"><i class="socicon socicon-github icon icon--xs"></i>/stillat</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6"> <span class="type--fine-print">
+                © 2012 - 2019 Stillat LLC.</span>
+                <a class="type--fine-print" href="https://stillat.com/about/privacy">Privacy Policy</a> <a class="type--fine-print" href="https://stillat.com/about/terms">Terms of Use</a>
+                <br>
+                <address class="type--fine-print">
+                    PO Box 275 · Portland, ND 58274
+                </address>
+            </div>
+            <div class="col-sm-6 text-right text-left-xs">
+                <ul class="social-list list-inline list--hover">
+                    <li><a href="https://twitter.com/StillatLLC" title="Follow Stillat LLC on Twitter"><i class="socicon socicon-twitter icon icon--xs"></i></a></li>
+                    <li><a href="https://facebook.com/StillatLLC" title="Like Stillat LLC on Facebook"><i class="socicon socicon-facebook icon icon--xs"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+</div><div class="all-page-modals"></div>
+<script>window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function(f) {
+        t._e.push(f);
+    };
+
+    return t;
+}(document, "script", "twitter-wjs"));</script>
+
+<script type="text/javascript">
+    var _storePath = "https://bag.stillat.com";
+    var _ci_c_override = parseInt('0');
+    var _ci_u_override = '';
+    if (_ci_u_override.length > 0) { _ci_u_override = JSON.parse(_ci_u_override); } else { _ci_u_override = null; }
+    var _ci_t_override = '';
+</script>
+<script type="text/javascript" src="./How Does PHP Work With The Web Server And Browser_ - Stillat_files/reply-to.js"></script>
+<script src="./How Does PHP Work With The Web Server And Browser_ - Stillat_files/2018.js"></script>
+<script>
+    (function() {
+        $(document).ready(function () {
+            $("#fbShare").on("click",function(){
+                var fbpopup = window.open("https://www.facebook.com/sharer/sharer.php?u=https://stillat.com/blog/2014/04/02/how-does-php-work-with-the-web-server-and-browser", "pop", "width=600, height=400, scrollbars=no");
+                return false;
+            });
+        });
+    })();
+</script>
+
+
+<iframe scrolling="no" frameborder="0" allowtransparency="true" src="./How Does PHP Work With The Web Server And Browser_ - Stillat_files/widget_iframe.6a44a9d26983bbb5b04ae399f9e496fe.html" title="Twitter settings iframe" style="display: none;"></iframe><div id="lightboxOverlay" class="lightboxOverlay" style="display: none;"></div><div id="lightbox" class="lightbox" style="display: none;"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src="https://stillat.com/blog/2014/04/02/how-does-php-work-with-the-web-server-and-browser"><div class="lb-nav"><a class="lb-prev" href="https://stillat.com/blog/2014/04/02/how-does-php-work-with-the-web-server-and-browser"></a><a class="lb-next" href="https://stillat.com/blog/2014/04/02/how-does-php-work-with-the-web-server-and-browser"></a></div><div class="lb-loader"><a class="lb-cancel"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div><div class="lb-closeContainer"><a class="lb-close"></a></div></div></div></div><div class="container containerMeasure" style="opacity:0;pointer-events:none;"></div></body></html>

@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://www.php.net/manual/en/function.header.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" class=" js flexbox flexboxlegacy datauri"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PHP: header - Manual </title>
+
+ <link rel="shortcut icon" href="https://www.php.net/favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="https://www.php.net/releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="https://www.php.net/feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="https://www.php.net/manual/en/function.header.php">
+ <link rel="shorturl" href="https://www.php.net/header">
+ <link rel="alternate" href="https://www.php.net/header" hreflang="x-default">
+
+ <link rel="contents" href="https://www.php.net/manual/en/index.php">
+ <link rel="index" href="https://www.php.net/manual/en/ref.network.php">
+ <link rel="prev" href="https://www.php.net/manual/en/function.header-remove.php">
+ <link rel="next" href="https://www.php.net/manual/en/function.headers-list.php">
+
+ <link rel="alternate" href="https://www.php.net/manual/en/function.header.php" hreflang="en">
+ <link rel="alternate" href="https://www.php.net/manual/pt_BR/function.header.php" hreflang="pt_BR">
+ <link rel="alternate" href="https://www.php.net/manual/zh/function.header.php" hreflang="zh">
+ <link rel="alternate" href="https://www.php.net/manual/fr/function.header.php" hreflang="fr">
+ <link rel="alternate" href="https://www.php.net/manual/de/function.header.php" hreflang="de">
+ <link rel="alternate" href="https://www.php.net/manual/ja/function.header.php" hreflang="ja">
+ <link rel="alternate" href="https://www.php.net/manual/ro/function.header.php" hreflang="ro">
+ <link rel="alternate" href="https://www.php.net/manual/ru/function.header.php" hreflang="ru">
+ <link rel="alternate" href="https://www.php.net/manual/es/function.header.php" hreflang="es">
+ <link rel="alternate" href="https://www.php.net/manual/tr/function.header.php" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="./PHP_ header - Manual_files/cached.php" media="screen">
+<link rel="stylesheet" type="text/css" href="./PHP_ header - Manual_files/cached(1).php" media="screen">
+<link rel="stylesheet" type="text/css" href="./PHP_ header - Manual_files/cached(2).php" media="screen">
+<link rel="stylesheet" type="text/css" href="./PHP_ header - Manual_files/cached(3).php" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="https://www.php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script>
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="https://www.php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script src="https://www.php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <!--<base href="https://www.php.net/manual/en/function.header.php">--><base href=".">
+
+</head>
+<body class="docs " style="">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="https://www.php.net/" class="brand"><img src="./PHP_ header - Manual_files/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="https://www.php.net/downloads">Downloads</a></li>
+      <li class="active"><a href="https://www.php.net/docs.php">Documentation</a></li>
+      <li class=""><a href="https://www.php.net/get-involved">Get Involved</a></li>
+      <li class=""><a href="https://www.php.net/support">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="https://www.php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <span class="twitter-typeahead" style="position: relative; display: inline-block;"><input class="tt-hint search-query" type="text" autocomplete="off" spellcheck="off" disabled="" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);"><input type="search" name="pattern" class="search-query tt-query" placeholder="Search" accesskey="s" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;"><input type="submit" style="visibility: hidden; position: fixed"><span style="position: absolute; left: -9999px; visibility: hidden; white-space: nowrap; font-family: &quot;Fira Sans&quot;, &quot;Source Sans Pro&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></span><span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;"></span></span>
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<div class="headsup"><a href="https://www.php.net/conferences/index.php#id2019-11-27-1">php[tek] 2020</a></div>
+<nav id="trick"><div><dl>
+<dt><a href="https://www.php.net/manual/en/getting-started.php">Getting Started</a></dt>
+	<dd><a href="https://www.php.net/manual/en/introduction.php">Introduction</a></dd>
+	<dd><a href="https://www.php.net/manual/en/tutorial.php">A simple tutorial</a></dd>
+<dt><a href="https://www.php.net/manual/en/langref.php">Language Reference</a></dt>
+	<dd><a href="https://www.php.net/manual/en/language.basic-syntax.php">Basic syntax</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.types.php">Types</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.variables.php">Variables</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.constants.php">Constants</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.expressions.php">Expressions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.operators.php">Operators</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.control-structures.php">Control Structures</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.functions.php">Functions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.oop5.php">Classes and Objects</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.namespaces.php">Namespaces</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.errors.php">Errors</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.exceptions.php">Exceptions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.generators.php">Generators</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.references.php">References Explained</a></dd>
+	<dd><a href="https://www.php.net/manual/en/reserved.variables.php">Predefined Variables</a></dd>
+	<dd><a href="https://www.php.net/manual/en/reserved.exceptions.php">Predefined Exceptions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/reserved.interfaces.php">Predefined Interfaces and Classes</a></dd>
+	<dd><a href="https://www.php.net/manual/en/context.php">Context options and parameters</a></dd>
+	<dd><a href="https://www.php.net/manual/en/wrappers.php">Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href="https://www.php.net/manual/en/security.php">Security</a></dt>
+	<dd><a href="https://www.php.net/manual/en/security.intro.php">Introduction</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.general.php">General considerations</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.cgi-bin.php">Installed as CGI binary</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.apache.php">Installed as an Apache module</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.sessions.php">Session Security</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.filesystem.php">Filesystem Security</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.database.php">Database Security</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.errors.php">Error Reporting</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.globals.php">Using Register Globals</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.variables.php">User Submitted Data</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.magicquotes.php">Magic Quotes</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.hiding.php">Hiding PHP</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.current.php">Keeping Current</a></dd>
+<dt><a href="https://www.php.net/manual/en/features.php">Features</a></dt>
+	<dd><a href="https://www.php.net/manual/en/features.http-auth.php">HTTP authentication with PHP</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.cookies.php">Cookies</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.sessions.php">Sessions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.xforms.php">Dealing with XForms</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.file-upload.php">Handling file uploads</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.remote-files.php">Using remote files</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.connection-handling.php">Connection handling</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.persistent-connections.php">Persistent Database Connections</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.safe-mode.php">Safe Mode</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.commandline.php">Command line usage</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.gc.php">Garbage Collection</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.dtrace.php">DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href="https://www.php.net/manual/en/funcref.php">Function Reference</a></dt>
+	<dd><a href="https://www.php.net/manual/en/refs.basic.php.php">Affecting PHP's Behaviour</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.utilspec.audio.php">Audio Formats Manipulation</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.remote.auth.php">Authentication Services</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.utilspec.cmdline.php">Command Line Specific Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.compression.php">Compression and Archive Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.creditcard.php">Credit Card Processing</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.crypto.php">Cryptography Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.database.php">Database Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.calendar.php">Date and Time Related Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.fileprocess.file.php">File System Related Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.international.php">Human Language and Character Encoding Support</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.utilspec.image.php">Image Processing and Generation</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.remote.mail.php">Mail Related Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.math.php">Mathematical Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.utilspec.nontext.php">Non-Text MIME Output</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.fileprocess.process.php">Process Control Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.basic.other.php">Other Basic Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.remote.other.php">Other Services</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.search.php">Search Engine Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.utilspec.server.php">Server Specific Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.basic.session.php">Session Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.basic.text.php">Text Processing</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.basic.vartype.php">Variable and Type Related Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.webservice.php">Web Services</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.utilspec.windows.php">Windows Only Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.xml.php">XML Manipulation</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.ui.php">GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="https://www.php.net/manual/en/function.headers-list.php">
+          headers_list »
+        </a>
+      </div>
+              <div class="prev">
+        <a href="https://www.php.net/manual/en/function.header-remove.php">
+          « header_remove        </a>
+      </div>
+          <ul>
+            <li><a href="https://www.php.net/manual/en/index.php">PHP Manual</a></li>      <li><a href="https://www.php.net/manual/en/funcref.php">Function Reference</a></li>      <li><a href="https://www.php.net/manual/en/refs.remote.other.php">Other Services</a></li>      <li><a href="https://www.php.net/manual/en/book.network.php">Network</a></li>      <li><a href="https://www.php.net/manual/en/ref.network.php">Network Functions</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="https://www.php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value="en/function.header.php" selected="selected">English</option>
+            <option value="pt_BR/function.header.php">Brazilian Portuguese</option>
+            <option value="zh/function.header.php">Chinese (Simplified)</option>
+            <option value="fr/function.header.php">French</option>
+            <option value="de/function.header.php">German</option>
+            <option value="ja/function.header.php">Japanese</option>
+            <option value="ro/function.header.php">Romanian</option>
+            <option value="ru/function.header.php">Russian</option>
+            <option value="es/function.header.php">Spanish</option>
+            <option value="tr/function.header.php">Turkish</option>
+            <option value="help-translate.php">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://edit.php.net/?project=PHP&amp;perm=en/function.header.php">Edit</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=function.header">Report a Bug</a>
+    </div>
+  </div><div id="function.header" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">header</h1>
+  <p class="verinfo">(PHP 4, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">header</span> — <span class="dc-title">Send a raw HTTP header</span></p>
+
+ </div>
+ 
+ <div class="refsect1 description" id="refsect1-function.header-description">
+  <h3 class="title">Description<a class="genanchor" href="https://www.php.net/manual/en/function.header.php#refsect1-function.header-description"> ¶</a></h3>
+  <div class="methodsynopsis dc-description">
+   <span class="methodname"><strong>header</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$header</code></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$replace</code><span class="initializer"> = <strong><code>TRUE</code></strong></span></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$http_response_code</code></span>
+  ]] ) : <span class="type"><span class="type void">void</span></span></div>
+
+  <p class="para rdfs-comment">
+   <span class="function"><strong>header()</strong></span> is used to send a raw <acronym title="Hypertext Transfer Protocol">HTTP</acronym>
+   header. See the <a href="http://www.faqs.org/rfcs/rfc2616" class="link external">»&nbsp;HTTP/1.1 specification</a>
+   for more information on <acronym title="Hypertext Transfer Protocol">HTTP</acronym> headers.
+  </p>
+  <p class="para">
+   Remember that <span class="function"><strong>header()</strong></span> must be called before any
+   actual output is sent, either by normal HTML tags, blank lines in a
+   file, or from PHP. It is a very common error to read code with
+   <span class="function"><a href="https://www.php.net/manual/en/function.include.php" class="function">include</a></span>, or <span class="function"><a href="https://www.php.net/manual/en/function.require.php" class="function">require</a></span>, 
+   functions, or another file access function, and have spaces or empty
+   lines that are output before <span class="function"><strong>header()</strong></span> is called.
+   The same problem exists when using a single PHP/HTML file.
+   </p><div class="informalexample">
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+&lt;html&gt;<br><span style="color: #0000BB">&lt;?php<br></span><span style="color: #FF8000">/*&nbsp;This&nbsp;will&nbsp;give&nbsp;an&nbsp;error.&nbsp;Note&nbsp;the&nbsp;output<br>&nbsp;*&nbsp;above,&nbsp;which&nbsp;is&nbsp;before&nbsp;the&nbsp;header()&nbsp;call&nbsp;*/<br></span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'Location:&nbsp;http://www.example.com/'</span><span style="color: #007700">);<br>exit;<br></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.header-parameters">
+  <h3 class="title">Parameters<a class="genanchor" href="https://www.php.net/manual/en/function.header.php#refsect1-function.header-parameters"> ¶</a></h3>
+  <dl>
+
+    
+     <dt>
+<code class="parameter">header</code></dt>
+
+     <dd>
+
+      <p class="para">
+       The header string.
+      </p>
+      <p class="para">
+       There are two special-case header calls.  The first is a header
+       that starts with the string "<em>HTTP/</em>" (case is not
+       significant), which will be used to figure out the HTTP status
+       code to send. For example, if you have configured Apache to
+       use a PHP script to handle requests for missing files (using
+       the <em>ErrorDocument</em> directive), you may want to
+       make sure that your script generates the proper status code.
+      </p>
+      <div class="informalexample">
+        <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br>header</span><span style="color: #007700">(</span><span style="color: #DD0000">"HTTP/1.0&nbsp;404&nbsp;Not&nbsp;Found"</span><span style="color: #007700">);<br></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+        </div>
+
+       </div>
+      
+      <p class="para">
+       The second special case is the "Location:" header.  Not only does
+       it send this header back to the browser, but it also returns a
+       <em>REDIRECT</em> (302) status code to the browser
+       unless the <em>201</em> or
+       a <em>3xx</em> status code has already been set.
+      </p>
+      <div class="informalexample">
+        <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br>header</span><span style="color: #007700">(</span><span style="color: #DD0000">"Location:&nbsp;http://www.example.com/"</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">/*&nbsp;Redirect&nbsp;browser&nbsp;*/<br><br>/*&nbsp;Make&nbsp;sure&nbsp;that&nbsp;code&nbsp;below&nbsp;does&nbsp;not&nbsp;get&nbsp;executed&nbsp;when&nbsp;we&nbsp;redirect.&nbsp;*/<br></span><span style="color: #007700">exit;<br></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+        </div>
+
+       </div>
+      
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">replace</code></dt>
+
+     <dd>
+
+      <p class="para">
+       The optional <code class="parameter">replace</code> parameter indicates
+       whether the header should replace a previous similar header, or
+       add a second header of the same type.  By default it will replace,
+       but if you pass in <strong><code>FALSE</code></strong> as the second argument you can force
+       multiple headers of the same type.  For example:
+      </p>
+      <div class="informalexample">
+        <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br>header</span><span style="color: #007700">(</span><span style="color: #DD0000">'WWW-Authenticate:&nbsp;Negotiate'</span><span style="color: #007700">);<br></span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'WWW-Authenticate:&nbsp;NTLM'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">);<br></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+        </div>
+
+       </div>
+      
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">http_response_code</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Forces the HTTP response code to the specified value. Note that this 
+       parameter only has an effect if the <code class="parameter">header</code> is 
+       not empty.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.header-returnvalues">
+  <h3 class="title">Return Values<a class="genanchor" href="https://www.php.net/manual/en/function.header.php#refsect1-function.header-returnvalues"> ¶</a></h3>
+  <p class="para">
+   No value is returned.
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.header-changelog">
+  <h3 class="title">Changelog<a class="genanchor" href="https://www.php.net/manual/en/function.header.php#refsect1-function.header-changelog"> ¶</a></h3>
+  <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Description</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.1.2</td>
+       <td>
+        This function now prevents more than one header to be sent at once as
+        a protection against header injection attacks.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.header-examples">
+  <h3 class="title">Examples<a class="genanchor" href="https://www.php.net/manual/en/function.header.php#refsect1-function.header-examples"> ¶</a></h3>
+  <div class="example" id="example-5669">
+    <p><strong>Example #1 Download dialog</strong></p>
+    <div class="example-contents"><p>
+     If you want the user to be prompted to save the data you are
+     sending, such as a generated PDF file, you can use the <a href="http://www.faqs.org/rfcs/rfc2183" class="link external">»&nbsp;Content-Disposition</a> header to
+     supply a recommended filename and force the browser to display the
+     save dialog.
+    </p></div>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br></span><span style="color: #FF8000">//&nbsp;We'll&nbsp;be&nbsp;outputting&nbsp;a&nbsp;PDF<br></span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'Content-Type:&nbsp;application/pdf'</span><span style="color: #007700">);<br><br></span><span style="color: #FF8000">//&nbsp;It&nbsp;will&nbsp;be&nbsp;called&nbsp;downloaded.pdf<br></span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'Content-Disposition:&nbsp;attachment;&nbsp;filename="downloaded.pdf"'</span><span style="color: #007700">);<br><br></span><span style="color: #FF8000">//&nbsp;The&nbsp;PDF&nbsp;source&nbsp;is&nbsp;in&nbsp;original.pdf<br></span><span style="color: #0000BB">readfile</span><span style="color: #007700">(</span><span style="color: #DD0000">'original.pdf'</span><span style="color: #007700">);<br></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  
+  <div class="example" id="example-5670">
+    <p><strong>Example #2 Caching directives</strong></p>
+    <div class="example-contents"><p>
+     PHP scripts often generate dynamic content that must not be cached
+     by the client browser or any proxy caches between the server and the
+     client browser. Many proxies and clients can be forced to disable
+     caching with:
+    </p></div>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br>header</span><span style="color: #007700">(</span><span style="color: #DD0000">"Cache-Control:&nbsp;no-cache,&nbsp;must-revalidate"</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;HTTP/1.1<br></span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">"Expires:&nbsp;Sat,&nbsp;26&nbsp;Jul&nbsp;1997&nbsp;05:00:00&nbsp;GMT"</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;Date&nbsp;in&nbsp;the&nbsp;past<br></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><blockquote class="note"><p><strong class="note">Note</strong>: 
+      </p><p class="para">
+       You may find that your pages aren't cached even if you don't
+       output all of the headers above. There are a number of options
+       that users may be able to set for their browser that change its
+       default caching behavior. By sending the headers above, you should
+       override any settings that may otherwise cause the output of your
+       script to be cached.
+      </p>
+      <p class="para">
+       Additionally, <span class="function"><a href="https://www.php.net/manual/en/function.session-cache-limiter.php" class="function">session_cache_limiter()</a></span> and
+       the <em>session.cache_limiter</em> configuration
+       setting can be used to automatically generate the correct
+       caching-related headers when sessions are being used.
+      </p>
+     </blockquote>
+    </div>
+   </div>
+  
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.header-notes">
+  <h3 class="title">Notes<a class="genanchor" href="https://www.php.net/manual/en/function.header.php#refsect1-function.header-notes"> ¶</a></h3>
+  <blockquote class="note"><p><strong class="note">Note</strong>: 
+   </p><p class="para">
+    Headers will only be accessible and output when a SAPI that supports them
+    is in use.
+   </p>
+  </blockquote>
+
+  <blockquote class="note"><p><strong class="note">Note</strong>: 
+   </p><p class="para">
+    You can use output buffering to get around this problem,
+    with the overhead of all of your output to the browser being buffered
+    in the server until you send it. You can do this by calling
+    <span class="function"><a href="https://www.php.net/manual/en/function.ob-start.php" class="function">ob_start()</a></span> and <span class="function"><a href="https://www.php.net/manual/en/function.ob-end-flush.php" class="function">ob_end_flush()</a></span>
+    in your script, or setting the <em>output_buffering</em>
+    configuration directive on in your <var class="filename">php.ini</var> or
+    server configuration files.
+   </p>
+  </blockquote>
+  <blockquote class="note"><p><strong class="note">Note</strong>: 
+   </p><p class="para">
+    The HTTP status header line will always be the first sent
+    to the client, regardless of the actual <span class="function"><strong>header()</strong></span>
+    call being the first or not. The status may be overridden
+    by calling <span class="function"><strong>header()</strong></span> with a new status line
+    at any time unless the HTTP headers have already been sent.
+   </p>
+  </blockquote>
+  <blockquote class="note"><p><strong class="note">Note</strong>: 
+   </p><p class="para">
+    There is a bug in Microsoft Internet Explorer 4.01 that prevents
+    this from working. There is no workaround. There is also a bug
+    in Microsoft Internet Explorer 5.5 that interferes with this,
+    which can be resolved by upgrading to Service Pack 2 or later.
+   </p>
+  </blockquote>
+  <blockquote class="note"><p><strong class="note">Note</strong>: 
+   <span class="simpara">
+    If <a href="https://www.php.net/manual/en/ini.sect.safe-mode.php#ini.safe-mode" class="link">safe mode</a> is enabled the
+    uid of the script is added to the <em>realm</em> part
+    of the <em>WWW-Authenticate</em> header if you set
+    this header (used for HTTP Authentication).
+   </span>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">Note</strong>: 
+   </p><p class="para">
+    Most contemporary clients accept relative <acronym title="Uniform Resource Identifier">URI</acronym>s as argument to
+    <a href="http://tools.ietf.org/html/rfc7231#section-7.1.2" class="link external">»&nbsp;Location:</a>,
+    but some older clients require an absolute URI
+    including the scheme, hostname and absolute path. You can usually use
+    <var class="varname"><var class="varname"><a href="https://www.php.net/manual/en/reserved.variables.server.php" class="classname">$_SERVER['HTTP_HOST']</a></var></var>,
+    <var class="varname"><var class="varname"><a href="https://www.php.net/manual/en/reserved.variables.server.php" class="classname">$_SERVER['PHP_SELF']</a></var></var>
+    and <span class="function"><a href="https://www.php.net/manual/en/function.dirname.php" class="function">dirname()</a></span> to make an absolute URI from a
+    relative one yourself:
+    </p><div class="informalexample">
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br></span><span style="color: #FF8000">/*&nbsp;Redirect&nbsp;to&nbsp;a&nbsp;different&nbsp;page&nbsp;in&nbsp;the&nbsp;current&nbsp;directory&nbsp;that&nbsp;was&nbsp;requested&nbsp;*/<br></span><span style="color: #0000BB">$host&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'HTTP_HOST'</span><span style="color: #007700">];<br></span><span style="color: #0000BB">$uri&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">rtrim</span><span style="color: #007700">(</span><span style="color: #0000BB">dirname</span><span style="color: #007700">(</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'PHP_SELF'</span><span style="color: #007700">]),&nbsp;</span><span style="color: #DD0000">'/\\'</span><span style="color: #007700">);<br></span><span style="color: #0000BB">$extra&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'mypage.php'</span><span style="color: #007700">;<br></span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">"Location:&nbsp;http://</span><span style="color: #0000BB">$host$uri</span><span style="color: #DD0000">/</span><span style="color: #0000BB">$extra</span><span style="color: #DD0000">"</span><span style="color: #007700">);<br>exit;<br></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   
+  </blockquote>
+  <blockquote class="note"><p><strong class="note">Note</strong>: 
+   </p><p class="para">
+    Session ID is not passed with Location header even if <a href="https://www.php.net/manual/en/session.configuration.php#ini.session.use-trans-sid" class="link">session.use_trans_sid</a> is
+    enabled. It must by passed manually using <strong><code>SID</code></strong>
+    constant.
+   </p>
+  </blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.header-seealso">
+  <h3 class="title">See Also<a class="genanchor" href="https://www.php.net/manual/en/function.header.php#refsect1-function.header-seealso"> ¶</a></h3>
+  <ul class="simplelist">
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/en/function.headers-sent.php" class="function" rel="rdfs-seeAlso">headers_sent()</a> - Checks if or where headers have been sent</span></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/en/function.setcookie.php" class="function" rel="rdfs-seeAlso">setcookie()</a> - Send a cookie</span></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/en/function.http-response-code.php" class="function" rel="rdfs-seeAlso">http_response_code()</a> - Get or Set the HTTP response code</span></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/en/function.header-remove.php" class="function" rel="rdfs-seeAlso">header_remove()</a> - Remove previously set headers</span></li>
+    <li class="member">
+     The section on <a href="https://www.php.net/manual/en/features.http-auth.php" class="link">HTTP
+     authentication</a>
+    </li>
+   </ul>
+  
+ </div>
+
+
+</div>
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="https://www.php.net/manual/add-note.php?sect=function.header&amp;redirect=https://www.php.net/manual/en/function.header.php"><img src="./PHP_ header - Manual_files/notes-add@2x.png" alt="add a note" width="12" height="12"> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes <span class="count">36 notes</span></h3>
+ </div><div id="allnotes">
+  <div class="note" id="92305">  <div class="votes">
+    <div id="Vu92305">
+    <a href="https://www.php.net/manual/vote-note.php?id=92305&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd92305">
+    <a href="https://www.php.net/manual/vote-note.php?id=92305&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V92305" title="74% like this...">
+    198
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#92305" class="name">
+  <strong class="user"><em>mjt at jpeto dot net</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#92305"> ¶</a><div class="date" title="2009-07-17 11:01"><strong>10 years ago</strong></div>
+  <div class="text" id="Hcom92305">
+<div class="phpcode"><code><span class="html">
+I strongly recommend, that you use
+<br>
+<br>header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found");
+<br>
+<br>instead of 
+<br>
+<br>header("HTTP/1.1 404 Not Found");
+<br>
+<br>I had big troubles with an Apache/2.0.59 (Unix) answering in HTTP/1.0 while I (accidentially) added a "HTTP/1.1 200 Ok" - Header.
+<br>
+<br>Most of the pages were displayed correct, but on some of them apache added weird content to it:
+<br>
+<br>A 4-digits HexCode on top of the page (before any output of my php script), seems to be some kind of checksum, because it changes from page to page and browser to browser. (same code for same page and browser)
+<br>
+<br>"0" at the bottom of the page (after the complete output of my php script) 
+<br>
+<br>It took me quite a while to find out about the wrong protocol in the HTTP-header.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="97114">  <div class="votes">
+    <div id="Vu97114">
+    <a href="https://www.php.net/manual/vote-note.php?id=97114&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd97114">
+    <a href="https://www.php.net/manual/vote-note.php?id=97114&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V97114" title="70% like this...">
+    108
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#97114" class="name">
+  <strong class="user"><em>Marcel G</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#97114"> ¶</a><div class="date" title="2010-04-01 06:37"><strong>9 years ago</strong></div>
+  <div class="text" id="Hcom97114">
+<div class="phpcode"><code><span class="html">
+Several times this one is asked on the net but an answer could not be found in the docs on php.net ...
+<br>
+<br>If you want to redirect an user and tell him he will be redirected, e. g. "You will be redirected in about 5 secs. If not, click here." you cannot use header( 'Location: ...' ) as you can't sent any output before the headers are sent.
+<br>
+<br>So, either you have to use the HTML meta refresh thingy or you use the following:
+<br>
+<br><span class="default">&lt;?php
+<br>&nbsp; header</span><span class="keyword">( </span><span class="string">"refresh:5;url=wherever.php" </span><span class="keyword">);
+<br>&nbsp; echo </span><span class="string">'You\'ll be redirected in about 5 secs. If not, click &lt;a href="wherever.php"&gt;here&lt;/a&gt;.'</span><span class="keyword">;
+<br></span><span class="default">?&gt;
+<br></span>
+<br>Hth someone</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="78470">  <div class="votes">
+    <div id="Vu78470">
+    <a href="https://www.php.net/manual/vote-note.php?id=78470&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd78470">
+    <a href="https://www.php.net/manual/vote-note.php?id=78470&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V78470" title="67% like this...">
+    73
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#78470" class="name">
+  <strong class="user"><em>Dylan at WeDefy dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#78470"> ¶</a><div class="date" title="2007-10-13 08:17"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom78470">
+<div class="phpcode"><code><span class="html">
+A quick way to make redirects permanent or temporary is to make use of the $http_response_code parameter in header().<br><br><span class="default">&lt;?php<br></span><span class="comment">// 301 Moved Permanently<br></span><span class="default">header</span><span class="keyword">(</span><span class="string">"Location: /foo.php"</span><span class="keyword">,</span><span class="default">TRUE</span><span class="keyword">,</span><span class="default">301</span><span class="keyword">);<br><br></span><span class="comment">// 302 Found<br></span><span class="default">header</span><span class="keyword">(</span><span class="string">"Location: /foo.php"</span><span class="keyword">,</span><span class="default">TRUE</span><span class="keyword">,</span><span class="default">302</span><span class="keyword">);<br></span><span class="default">header</span><span class="keyword">(</span><span class="string">"Location: /foo.php"</span><span class="keyword">);<br><br></span><span class="comment">// 303 See Other<br></span><span class="default">header</span><span class="keyword">(</span><span class="string">"Location: /foo.php"</span><span class="keyword">,</span><span class="default">TRUE</span><span class="keyword">,</span><span class="default">303</span><span class="keyword">);<br><br></span><span class="comment">// 307 Temporary Redirect<br></span><span class="default">header</span><span class="keyword">(</span><span class="string">"Location: /foo.php"</span><span class="keyword">,</span><span class="default">TRUE</span><span class="keyword">,</span><span class="default">307</span><span class="keyword">);<br></span><span class="default">?&gt;<br></span><br>The HTTP status code changes the way browsers and robots handle redirects, so if you are using header(Location:) it's a good idea to set the status code at the same time.&nbsp; Browsers typically re-request a 307 page every time, cache a 302 page for the session, and cache a 301 page for longer, or even indefinitely.&nbsp; Search engines typically transfer "page rank" to the new location for 301 redirects, but not for 302, 303 or 307. If the status code is not specified, header('Location:') defaults to 302.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="61903">  <div class="votes">
+    <div id="Vu61903">
+    <a href="https://www.php.net/manual/vote-note.php?id=61903&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd61903">
+    <a href="https://www.php.net/manual/vote-note.php?id=61903&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V61903" title="63% like this...">
+    33
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#61903" class="name">
+  <strong class="user"><em>mandor at mandor dot net</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#61903"> ¶</a><div class="date" title="2006-02-14 05:14"><strong>13 years ago</strong></div>
+  <div class="text" id="Hcom61903">
+<div class="phpcode"><code><span class="html">
+When using PHP to output an image, it won't be cached by the client so if you don't want them to download the image each time they reload the page, you will need to emulate part of the HTTP protocol.<br><br>Here's how:<br><br><span class="default">&lt;?php<br><br>&nbsp; &nbsp; </span><span class="comment">// Test image.<br>&nbsp; &nbsp; </span><span class="default">$fn </span><span class="keyword">= </span><span class="string">'/test/foo.png'</span><span class="keyword">;<br><br>&nbsp; &nbsp; </span><span class="comment">// Getting headers sent by the client.<br>&nbsp; &nbsp; </span><span class="default">$headers </span><span class="keyword">= </span><span class="default">apache_request_headers</span><span class="keyword">(); <br><br>&nbsp; &nbsp; </span><span class="comment">// Checking if the client is validating his cache and if it is current.<br>&nbsp; &nbsp; </span><span class="keyword">if (isset(</span><span class="default">$headers</span><span class="keyword">[</span><span class="string">'If-Modified-Since'</span><span class="keyword">]) &amp;&amp; (</span><span class="default">strtotime</span><span class="keyword">(</span><span class="default">$headers</span><span class="keyword">[</span><span class="string">'If-Modified-Since'</span><span class="keyword">]) == </span><span class="default">filemtime</span><span class="keyword">(</span><span class="default">$fn</span><span class="keyword">))) {<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// Client's cache IS current, so we just respond '304 Not Modified'.<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">header</span><span class="keyword">(</span><span class="string">'Last-Modified: '</span><span class="keyword">.</span><span class="default">gmdate</span><span class="keyword">(</span><span class="string">'D, d M Y H:i:s'</span><span class="keyword">, </span><span class="default">filemtime</span><span class="keyword">(</span><span class="default">$fn</span><span class="keyword">)).</span><span class="string">' GMT'</span><span class="keyword">, </span><span class="default">true</span><span class="keyword">, </span><span class="default">304</span><span class="keyword">);<br>&nbsp; &nbsp; } else {<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// Image not cached or cache outdated, we respond '200 OK' and output the image.<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">header</span><span class="keyword">(</span><span class="string">'Last-Modified: '</span><span class="keyword">.</span><span class="default">gmdate</span><span class="keyword">(</span><span class="string">'D, d M Y H:i:s'</span><span class="keyword">, </span><span class="default">filemtime</span><span class="keyword">(</span><span class="default">$fn</span><span class="keyword">)).</span><span class="string">' GMT'</span><span class="keyword">, </span><span class="default">true</span><span class="keyword">, </span><span class="default">200</span><span class="keyword">);<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">header</span><span class="keyword">(</span><span class="string">'Content-Length: '</span><span class="keyword">.</span><span class="default">filesize</span><span class="keyword">(</span><span class="default">$fn</span><span class="keyword">));<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">header</span><span class="keyword">(</span><span class="string">'Content-Type: image/png'</span><span class="keyword">);<br>&nbsp; &nbsp; &nbsp; &nbsp; print </span><span class="default">file_get_contents</span><span class="keyword">(</span><span class="default">$fn</span><span class="keyword">);<br>&nbsp; &nbsp; }<br><br></span><span class="default">?&gt;<br></span><br>That way foo.png will be properly cached by the client and you'll save bandwith. :)</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="121642">  <div class="votes">
+    <div id="Vu121642">
+    <a href="https://www.php.net/manual/vote-note.php?id=121642&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd121642">
+    <a href="https://www.php.net/manual/vote-note.php?id=121642&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V121642" title="65% like this...">
+    7
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#121642" class="name">
+  <strong class="user"><em>David</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#121642"> ¶</a><div class="date" title="2017-09-15 04:26"><strong>2 years ago</strong></div>
+  <div class="text" id="Hcom121642">
+<div class="phpcode"><code><span class="html">
+It seems the note saying the URI must be absolute is obsolete. Found on <a href="https://en.wikipedia.org/wiki/HTTP_location" rel="nofollow" target="_blank">https://en.wikipedia.org/wiki/HTTP_location</a><br><br>«An obsolete version of the HTTP 1.1 specifications (IETF RFC 2616) required a complete absolute URI for redirection.[2] The IETF HTTP working group found that the most popular web browsers tolerate the passing of a relative URL[3] and, consequently, the updated HTTP 1.1 specifications (IETF RFC 7231) relaxed the original constraint, allowing the use of relative URLs in Location headers.»</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="122279">  <div class="votes">
+    <div id="Vu122279">
+    <a href="https://www.php.net/manual/vote-note.php?id=122279&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd122279">
+    <a href="https://www.php.net/manual/vote-note.php?id=122279&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V122279" title="64% like this...">
+    7
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#122279" class="name">
+  <strong class="user"><em>razvan_bc at yahoo dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#122279"> ¶</a><div class="date" title="2018-01-17 05:20"><strong>1 year ago</strong></div>
+  <div class="text" id="Hcom122279">
+<div class="phpcode"><code><span class="html">
+<span class="default">&lt;?php<br></span><span class="comment">/* This will give an error. Note the output<br> * above, which is before the header() call */<br></span><span class="default">header</span><span class="keyword">(</span><span class="string">'Location: <a href="http://www.example.com/" rel="nofollow" target="_blank">http://www.example.com/</a>'</span><span class="keyword">);<br>exit;<br></span><span class="default">?&gt;<br></span><br>this example is pretty good BUT in time you use "exit" the parser will still work to decide what's happening next the "exit" 's action should do ('cause if you check the manual exit works in others situations too).<br>SO MY POINT IS : you should use :<br><span class="default">&lt;?php<br><br>header</span><span class="keyword">(</span><span class="string">'Location: <a href="http://www.example.com/" rel="nofollow" target="_blank">http://www.example.com/</a>'</span><span class="keyword">);<br>die();<br><br></span><span class="default">?&gt;<br></span>'CAUSE all die function does is to stop the script ,there is no other place for interpretation and the scope you choose to break the action of your script is quickly DONE!!!<br><br>there are many situations&nbsp; with others examples and the right choose for small parts of your scrips that make differences when you write your php framework at well! <br><br>Thanks Rasmus Lerdorf and his team to wrap off parts of unusual php functionality ,php 7 roolez!!!!!</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="87449">  <div class="votes">
+    <div id="Vu87449">
+    <a href="https://www.php.net/manual/vote-note.php?id=87449&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd87449">
+    <a href="https://www.php.net/manual/vote-note.php?id=87449&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V87449" title="61% like this...">
+    25
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#87449" class="name">
+  <strong class="user"><em>bebertjean at yahoo dot fr</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#87449"> ¶</a><div class="date" title="2008-12-05 05:46"><strong>10 years ago</strong></div>
+  <div class="text" id="Hcom87449">
+<div class="phpcode"><code><span class="html">
+If using the 'header' function for the downloading of files, especially if you're passing the filename as a variable, remember to surround the filename with double quotes, otherwise you'll have problems in Firefox as soon as there's a space in the filename.<br><br>So instead of typing:<br><br><span class="default">&lt;?php<br>&nbsp; header</span><span class="keyword">(</span><span class="string">"Content-Disposition: attachment; filename=" </span><span class="keyword">. </span><span class="default">basename</span><span class="keyword">(</span><span class="default">$filename</span><span class="keyword">));<br></span><span class="default">?&gt;<br></span><br>you should type:<br><br><span class="default">&lt;?php<br>&nbsp; header</span><span class="keyword">(</span><span class="string">"Content-Disposition: attachment; filename=\"" </span><span class="keyword">. </span><span class="default">basename</span><span class="keyword">(</span><span class="default">$filename</span><span class="keyword">) . </span><span class="string">"\""</span><span class="keyword">);<br></span><span class="default">?&gt;<br></span><br>If you don't do this then when the user clicks on the link for a file named "Example file with spaces.txt", then Firefox's Save As dialog box will give it the name "Example", and it will have no extension.<br><br>See the page called "Filenames_with_spaces_are_truncated_upon_download" at <br><a href="http://kb.mozillazine.org/" rel="nofollow" target="_blank">http://kb.mozillazine.org/</a> for more information. (Sorry, the site won't let me post such a long link...)</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="108766">  <div class="votes">
+    <div id="Vu108766">
+    <a href="https://www.php.net/manual/vote-note.php?id=108766&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd108766">
+    <a href="https://www.php.net/manual/vote-note.php?id=108766&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V108766" title="61% like this...">
+    16
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#108766" class="name">
+  <strong class="user"><em>ben at indietorrent dot org</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#108766"> ¶</a><div class="date" title="2012-05-23 05:34"><strong>7 years ago</strong></div>
+  <div class="text" id="Hcom108766">
+<div class="phpcode"><code><span class="html">
+Be aware that sending binary files to the user-agent (browser) over an encrypted connection (SSL/TLS) will fail in IE (Internet Explorer) versions 5, 6, 7, and 8 if any of the following headers is included:<br><br>Cache-control:no-store<br>Cache-control:no-cache<br><br>See: <a href="http://support.microsoft.com/kb/323308" rel="nofollow" target="_blank">http://support.microsoft.com/kb/323308</a><br><br>Workaround: do not send those headers.<br><br>Also, be aware that IE versions 5, 6, 7, and 8 double-compress already-compressed files and do not reverse the process correctly, so ZIP files and similar are corrupted on download.<br><br>Workaround: disable compression (beyond text/html) for these particular versions of IE, e.g., using Apache's "BrowserMatch" directive. The following example disables compression in all versions of IE:<br><br>BrowserMatch ".*MSIE.*" gzip-only-text/html</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="118684">  <div class="votes">
+    <div id="Vu118684">
+    <a href="https://www.php.net/manual/vote-note.php?id=118684&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd118684">
+    <a href="https://www.php.net/manual/vote-note.php?id=118684&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V118684" title="56% like this...">
+    5
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#118684" class="name">
+  <strong class="user"><em>yjf_victor</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#118684"> ¶</a><div class="date" title="2016-01-19 02:23"><strong>3 years ago</strong></div>
+  <div class="text" id="Hcom118684">
+<div class="phpcode"><code><span class="html">
+According to the RFC 6226 (<a href="https://tools.ietf.org/html/rfc6266" rel="nofollow" target="_blank">https://tools.ietf.org/html/rfc6266</a>), the only way to send Content-Disposition Header with encoding is:<br><br>Content-Disposition: attachment;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; filename*= UTF-8''%e2%82%ac%20rates<br><br>for backward compatibility, what should be sent is:<br><br>Content-Disposition: attachment;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; filename="EURO rates";<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; filename*=utf-8''%e2%82%ac%20rates<br><br>As a result, we should use<br><br><span class="default">&lt;?php<br>$filename </span><span class="keyword">= </span><span class="string">'中文文件名.exe'</span><span class="keyword">;&nbsp;&nbsp; </span><span class="comment">// a filename in Chinese characters<br><br></span><span class="default">$contentDispositionField </span><span class="keyword">= </span><span class="string">'Content-Disposition: attachment; '<br>&nbsp; &nbsp; </span><span class="keyword">. </span><span class="default">sprintf</span><span class="keyword">(</span><span class="string">'filename="%s"; '</span><span class="keyword">, </span><span class="default">rawurlencode</span><span class="keyword">(</span><span class="default">$filename</span><span class="keyword">))<br>&nbsp; &nbsp; . </span><span class="default">sprintf</span><span class="keyword">(</span><span class="string">"filename*=utf-8''%s"</span><span class="keyword">, </span><span class="default">rawurlencode</span><span class="keyword">(</span><span class="default">$filename</span><span class="keyword">));<br><br></span><span class="default">header</span><span class="keyword">(</span><span class="string">'Content-Type: application/octet-stream'</span><span class="keyword">);<br><br></span><span class="default">header</span><span class="keyword">(</span><span class="default">$contentDispositionField</span><span class="keyword">);<br><br></span><span class="default">readfile</span><span class="keyword">(</span><span class="string">'file_to_download.exe'</span><span class="keyword">);<br></span><span class="default">?&gt;<br></span><br>I have tested the code in IE6-10, firefox and Chrome.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="85254">  <div class="votes">
+    <div id="Vu85254">
+    <a href="https://www.php.net/manual/vote-note.php?id=85254&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd85254">
+    <a href="https://www.php.net/manual/vote-note.php?id=85254&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V85254" title="56% like this...">
+    11
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#85254" class="name">
+  <strong class="user"><em>shutout2730 at yahoo dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#85254"> ¶</a><div class="date" title="2008-08-21 11:57"><strong>11 years ago</strong></div>
+  <div class="text" id="Hcom85254">
+<div class="phpcode"><code><span class="html">
+It is important to note that headers are actually sent when the first byte is output to the browser. If you are replacing headers in your scripts, this means that the placement of echo/print statements and output buffers may actually impact which headers are sent. In the case of redirects, if you forget to terminate your script after sending the header, adding a buffer or sending a character may change which page your users are sent to.<br><br>This redirects to 2.html since the second header replaces the first.<br><br><span class="default">&lt;?php<br>header</span><span class="keyword">(</span><span class="string">"location: 1.html"</span><span class="keyword">); <br></span><span class="default">header</span><span class="keyword">(</span><span class="string">"location: 2.html"</span><span class="keyword">); </span><span class="comment">//replaces 1.html<br></span><span class="default">?&gt;<br></span><br>This redirects to 1.html since the header is sent as soon as the echo happens. You also won't see any "headers already sent" errors because the browser follows the redirect before it can display the error.<br><br><span class="default">&lt;?php<br>header</span><span class="keyword">(</span><span class="string">"location: 1.html"</span><span class="keyword">);<br>echo </span><span class="string">"send data"</span><span class="keyword">; <br></span><span class="default">header</span><span class="keyword">(</span><span class="string">"location: 2.html"</span><span class="keyword">); </span><span class="comment">//1.html already sent <br></span><span class="default">?&gt;<br></span><br>Wrapping the previous example in an output buffer actually changes the behavior of the script! This is because headers aren't sent until the output buffer is flushed.<br><br><span class="default">&lt;?php<br>ob_start</span><span class="keyword">();<br></span><span class="default">header</span><span class="keyword">(</span><span class="string">"location: 1.html"</span><span class="keyword">); <br>echo </span><span class="string">"send data"</span><span class="keyword">; <br></span><span class="default">header</span><span class="keyword">(</span><span class="string">"location: 2.html"</span><span class="keyword">); </span><span class="comment">//replaces 1.html<br></span><span class="default">ob_end_flush</span><span class="keyword">(); </span><span class="comment">//now the headers are sent<br></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="99190">  <div class="votes">
+    <div id="Vu99190">
+    <a href="https://www.php.net/manual/vote-note.php?id=99190&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd99190">
+    <a href="https://www.php.net/manual/vote-note.php?id=99190&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V99190" title="53% like this...">
+    5
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#99190" class="name">
+  <strong class="user"><em>Cody G.</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#99190"> ¶</a><div class="date" title="2010-08-01 09:53"><strong>9 years ago</strong></div>
+  <div class="text" id="Hcom99190">
+<div class="phpcode"><code><span class="html">
+After lots of research and testing, I'd like to share my findings about my problems with Internet Explorer and file downloads.<br><br>&nbsp; Take a look at this code, which replicates the normal download of a Javascript:<br><br><span class="default">&lt;?php<br> </span><span class="keyword">if(</span><span class="default">strstr</span><span class="keyword">(</span><span class="default">$_SERVER</span><span class="keyword">[</span><span class="string">"HTTP_USER_AGENT"</span><span class="keyword">],</span><span class="string">"MSIE"</span><span class="keyword">)==</span><span class="default">false</span><span class="keyword">) {<br>&nbsp; </span><span class="default">header</span><span class="keyword">(</span><span class="string">"Content-type: text/javascript"</span><span class="keyword">);<br>&nbsp; </span><span class="default">header</span><span class="keyword">(</span><span class="string">"Content-Disposition: inline; filename=\"download.js\""</span><span class="keyword">);<br>&nbsp; </span><span class="default">header</span><span class="keyword">(</span><span class="string">"Content-Length: "</span><span class="keyword">.</span><span class="default">filesize</span><span class="keyword">(</span><span class="string">"my-file.js"</span><span class="keyword">));<br> } else {<br>&nbsp; </span><span class="default">header</span><span class="keyword">(</span><span class="string">"Content-type: application/force-download"</span><span class="keyword">);<br>&nbsp; </span><span class="default">header</span><span class="keyword">(</span><span class="string">"Content-Disposition: attachment; filename=\"download.js\""</span><span class="keyword">);<br>&nbsp; </span><span class="default">header</span><span class="keyword">(</span><span class="string">"Content-Length: "</span><span class="keyword">.</span><span class="default">filesize</span><span class="keyword">(</span><span class="string">"my-file.js"</span><span class="keyword">));<br> }<br> </span><span class="default">header</span><span class="keyword">(</span><span class="string">"Expires: Fri, 01 Jan 2010 05:00:00 GMT"</span><span class="keyword">);<br> if(</span><span class="default">strstr</span><span class="keyword">(</span><span class="default">$_SERVER</span><span class="keyword">[</span><span class="string">"HTTP_USER_AGENT"</span><span class="keyword">],</span><span class="string">"MSIE"</span><span class="keyword">)==</span><span class="default">false</span><span class="keyword">) {<br>&nbsp; </span><span class="default">header</span><span class="keyword">(</span><span class="string">"Cache-Control: no-cache"</span><span class="keyword">);<br>&nbsp; </span><span class="default">header</span><span class="keyword">(</span><span class="string">"Pragma: no-cache"</span><span class="keyword">);<br> }<br> include(</span><span class="string">"my-file.js"</span><span class="keyword">);<br></span><span class="default">?&gt;<br></span><br>Now let me explain:<br><br>&nbsp; I start out by checking for IE, then if not IE, I set Content-type (case-sensitive) to JS and set Content-Disposition (every header is case-sensitive from now on) to inline, because most browsers outside of IE like to display JS inline. (User may change settings). The Content-Length header is required by some browsers to activate download box. Then, if it is IE, the "application/force-download" Content-type is sometimes required to show the download box. Use this if you don't want your PDF to display in the browser (in IE). I use it here to make sure the box opens. Anyway, I set the Content-Disposition to attachment because I already know that the box will appear. Then I have the Content-Length again.<br><br>&nbsp; Now, here's my big point. I have the Cache-Control and Pragma headers sent only if not IE. THESE HEADERS WILL PREVENT DOWNLOAD ON IE!!! Only use the Expires header, after all, it will require the file to be downloaded again the next time. This is not a bug! IE stores downloads in the Temporary Internet Files folder until the download is complete. I know this because once I downloaded a huge file to My Documents, but the Download Dialog box put it in the Temp folder and moved it at the end. Just think about it. If IE requires the file to be downloaded to the Temp folder, setting the Cache-Control and Pragma headers will cause an error!<br><br>I hope this saves someone some time!<br>~Cody G.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="120498">  <div class="votes">
+    <div id="Vu120498">
+    <a href="https://www.php.net/manual/vote-note.php?id=120498&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd120498">
+    <a href="https://www.php.net/manual/vote-note.php?id=120498&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V120498" title="52% like this...">
+    1
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#120498" class="name">
+  <strong class="user"><em>chris at ocproducts dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#120498"> ¶</a><div class="date" title="2017-01-21 06:59"><strong>2 years ago</strong></div>
+  <div class="text" id="Hcom120498">
+<div class="phpcode"><code><span class="html">
+Note that 'session_start' may overwrite your custom cache headers.<br>To remedy this you need to call:<br><br>session_cache_limiter('');<br><br>...after you set your custom cache headers. It will tell the PHP session code to not do any cache header changes of its own.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="119014">  <div class="votes">
+    <div id="Vu119014">
+    <a href="https://www.php.net/manual/vote-note.php?id=119014&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd119014">
+    <a href="https://www.php.net/manual/vote-note.php?id=119014&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V119014" title="52% like this...">
+    1
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#119014" class="name">
+  <strong class="user"><em>nospam at nospam dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#119014"> ¶</a><div class="date" title="2016-03-17 08:50"><strong>3 years ago</strong></div>
+  <div class="text" id="Hcom119014">
+<div class="phpcode"><code><span class="html">
+<span class="default">&lt;?php<br><br></span><span class="comment">// Response codes behaviors when using <br></span><span class="default">header</span><span class="keyword">(</span><span class="string">'Location: /target.php'</span><span class="keyword">, </span><span class="default">true</span><span class="keyword">, </span><span class="default">$code</span><span class="keyword">) </span><span class="default">to forward user to another page</span><span class="keyword">:<br><br></span><span class="default">$code </span><span class="keyword">= </span><span class="default">301</span><span class="keyword">;<br></span><span class="comment">// Use when the old page has been "permanently moved and any future requests should be sent to the target page instead. PageRank may be transferred."<br><br></span><span class="default">$code </span><span class="keyword">= </span><span class="default">302</span><span class="keyword">; (default)<br></span><span class="comment">// "Temporary redirect so page is only cached if indicated by a Cache-Control or Expires header field."<br><br></span><span class="default">$code </span><span class="keyword">= </span><span class="default">303</span><span class="keyword">;<br></span><span class="comment">// "This method exists primarily to allow the output of a POST-activated script to redirect the user agent to a selected resource. The new URI is not a substitute reference for the originally requested resource and is not cached."<br><br></span><span class="default">$code </span><span class="keyword">= </span><span class="default">307</span><span class="keyword">;<br></span><span class="comment">// Beware that when used after a form is submitted using POST, it would carry over the posted values to the next page, such if target.php contains a form processing script, it will process the submitted info again!<br><br>// In other words, use 301 if permanent, 302 if temporary, and 303 if a results page from a submitted form.<br>// Maybe use 307 if a form processing script has moved.<br><br></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="85146">  <div class="votes">
+    <div id="Vu85146">
+    <a href="https://www.php.net/manual/vote-note.php?id=85146&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd85146">
+    <a href="https://www.php.net/manual/vote-note.php?id=85146&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V85146" title="52% like this...">
+    4
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#85146" class="name">
+  <strong class="user"><em>sk89q</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#85146"> ¶</a><div class="date" title="2008-08-16 11:41"><strong>11 years ago</strong></div>
+  <div class="text" id="Hcom85146">
+<div class="phpcode"><code><span class="html">
+You can use HTTP's etags and last modified dates to ensure that you're not sending the browser data it already has cached.
+<br>
+<br><span class="default">&lt;?php
+<br>$last_modified_time </span><span class="keyword">= </span><span class="default">filemtime</span><span class="keyword">(</span><span class="default">$file</span><span class="keyword">);
+<br></span><span class="default">$etag </span><span class="keyword">= </span><span class="default">md5_file</span><span class="keyword">(</span><span class="default">$file</span><span class="keyword">);
+<br>
+<br></span><span class="default">header</span><span class="keyword">(</span><span class="string">"Last-Modified: "</span><span class="keyword">.</span><span class="default">gmdate</span><span class="keyword">(</span><span class="string">"D, d M Y H:i:s"</span><span class="keyword">, </span><span class="default">$last_modified_time</span><span class="keyword">).</span><span class="string">" GMT"</span><span class="keyword">);
+<br></span><span class="default">header</span><span class="keyword">(</span><span class="string">"Etag: </span><span class="default">$etag</span><span class="string">"</span><span class="keyword">);
+<br>
+<br>if (@</span><span class="default">strtotime</span><span class="keyword">(</span><span class="default">$_SERVER</span><span class="keyword">[</span><span class="string">'HTTP_IF_MODIFIED_SINCE'</span><span class="keyword">]) == </span><span class="default">$last_modified_time </span><span class="keyword">||
+<br>&nbsp; &nbsp; </span><span class="default">trim</span><span class="keyword">(</span><span class="default">$_SERVER</span><span class="keyword">[</span><span class="string">'HTTP_IF_NONE_MATCH'</span><span class="keyword">]) == </span><span class="default">$etag</span><span class="keyword">) {
+<br>&nbsp; &nbsp; </span><span class="default">header</span><span class="keyword">(</span><span class="string">"HTTP/1.1 304 Not Modified"</span><span class="keyword">);
+<br>&nbsp; &nbsp; exit;
+<br>}
+<br></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="94118">  <div class="votes">
+    <div id="Vu94118">
+    <a href="https://www.php.net/manual/vote-note.php?id=94118&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd94118">
+    <a href="https://www.php.net/manual/vote-note.php?id=94118&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V94118" title="52% like this...">
+    3
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#94118" class="name">
+  <strong class="user"><em>dev at omikrosys dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#94118"> ¶</a><div class="date" title="2009-10-16 10:45"><strong>10 years ago</strong></div>
+  <div class="text" id="Hcom94118">
+<div class="phpcode"><code><span class="html">
+Just to inform you all, do not get confused between Content-Transfer-Encoding and Content-Encoding<br><br>Content-Transfer-Encoding specifies the encoding used to transfer the data within the HTTP protocol, like raw binary or base64. (binary is more compact than base64. base64 having 33% overhead).<br>Eg Use:- header('Content-Transfer-Encoding: binary');<br><br>Content-Encoding is used to apply things like gzip compression to the content/data.<br>Eg Use:- header('Content-Encoding: gzip');</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="122405">  <div class="votes">
+    <div id="Vu122405">
+    <a href="https://www.php.net/manual/vote-note.php?id=122405&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd122405">
+    <a href="https://www.php.net/manual/vote-note.php?id=122405&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V122405" title="50% like this...">
+    0
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#122405" class="name">
+  <strong class="user"><em>tim at sharpwebdevelopment dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#122405"> ¶</a><div class="date" title="2018-02-19 03:18"><strong>1 year ago</strong></div>
+  <div class="text" id="Hcom122405">
+<div class="phpcode"><code><span class="html">
+The header call can be misleading to novice php users.<br>when "header call" is stated, it refers the the top leftmost position of the file and not the "header()" function itself.<br>"&lt;?php" opening tag must be placed before anything else, even whitespace.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="86554">  <div class="votes">
+    <div id="Vu86554">
+    <a href="https://www.php.net/manual/vote-note.php?id=86554&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd86554">
+    <a href="https://www.php.net/manual/vote-note.php?id=86554&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V86554" title="50% like this...">
+    1
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#86554" class="name">
+  <strong class="user"><em>mzheng[no-spam-thx] at ariba dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#86554"> ¶</a><div class="date" title="2008-10-23 08:50"><strong>11 years ago</strong></div>
+  <div class="text" id="Hcom86554">
+<div class="phpcode"><code><span class="html">
+For large files (100+ MBs), I found that it is essential to flush the file content ASAP, otherwise the download dialog doesn't show until a long time or never. <br><br><span class="default">&lt;?php<br>header</span><span class="keyword">(</span><span class="string">"Content-Disposition: attachment; filename=" </span><span class="keyword">. </span><span class="default">urlencode</span><span class="keyword">(</span><span class="default">$file</span><span class="keyword">));&nbsp; &nbsp; <br></span><span class="default">header</span><span class="keyword">(</span><span class="string">"Content-Type: application/force-download"</span><span class="keyword">);<br></span><span class="default">header</span><span class="keyword">(</span><span class="string">"Content-Type: application/octet-stream"</span><span class="keyword">);<br></span><span class="default">header</span><span class="keyword">(</span><span class="string">"Content-Type: application/download"</span><span class="keyword">);<br></span><span class="default">header</span><span class="keyword">(</span><span class="string">"Content-Description: File Transfer"</span><span class="keyword">);&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <br></span><span class="default">header</span><span class="keyword">(</span><span class="string">"Content-Length: " </span><span class="keyword">. </span><span class="default">filesize</span><span class="keyword">(</span><span class="default">$file</span><span class="keyword">));<br></span><span class="default">flush</span><span class="keyword">(); </span><span class="comment">// this doesn't really matter.<br><br></span><span class="default">$fp </span><span class="keyword">= </span><span class="default">fopen</span><span class="keyword">(</span><span class="default">$file</span><span class="keyword">, </span><span class="string">"r"</span><span class="keyword">); <br>while (!</span><span class="default">feof</span><span class="keyword">(</span><span class="default">$fp</span><span class="keyword">))<br>{<br>&nbsp; &nbsp; echo </span><span class="default">fread</span><span class="keyword">(</span><span class="default">$fp</span><span class="keyword">, </span><span class="default">65536</span><span class="keyword">); <br>&nbsp; &nbsp; </span><span class="default">flush</span><span class="keyword">(); </span><span class="comment">// this is essential for large downloads<br></span><span class="keyword">}&nbsp; <br></span><span class="default">fclose</span><span class="keyword">(</span><span class="default">$fp</span><span class="keyword">); <br></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="116323">  <div class="votes">
+    <div id="Vu116323">
+    <a href="https://www.php.net/manual/vote-note.php?id=116323&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd116323">
+    <a href="https://www.php.net/manual/vote-note.php?id=116323&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V116323" title="49% like this...">
+    -1
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#116323" class="name">
+  <strong class="user"><em>Vinay Kotekar</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#116323"> ¶</a><div class="date" title="2014-12-12 01:34"><strong>4 years ago</strong></div>
+  <div class="text" id="Hcom116323" style="opacity: 0.75;">
+<div class="phpcode"><code><span class="html">
+Saving php file in ANSI&nbsp; no isuess but when saving the file in UTF-8 format for various reasons remember to save the file without any BOM ( byte-order mark) support.<br>Otherwise you will face problem of headers not being properly sent <br>eg. <br><span class="default">&lt;?php header</span><span class="keyword">(</span><span class="string">"Set-Cookie: name=user"</span><span class="keyword">);</span><span class="default">?&gt;<br></span><br>Would give something like this :-<br><br>Warning: Cannot modify header information - headers already sent by (output started at C:\www\info.php:1) in C:\www\info.php on line 1</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="96017">  <div class="votes">
+    <div id="Vu96017">
+    <a href="https://www.php.net/manual/vote-note.php?id=96017&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd96017">
+    <a href="https://www.php.net/manual/vote-note.php?id=96017&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V96017" title="48% like this...">
+    -1
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#96017" class="name">
+  <strong class="user"><em>Refugnic</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#96017"> ¶</a><div class="date" title="2010-02-03 05:43"><strong>9 years ago</strong></div>
+  <div class="text" id="Hcom96017" style="opacity: 0.75;">
+<div class="phpcode"><code><span class="html">
+My files are in a compressed state (bz2). When the user clicks the link, I want them to get the uncompressed version of the file.<br><br>After decompressing the file, I ran into the problem, that the download dialog would always pop up, even when I told the dialog to 'Always perform this operation with this file type'.<br><br>As I found out, the problem was in the header directive 'Content-Disposition', namely the 'attachment' directive.<br><br>If you want your browser to simulate a plain link to a file, either change 'attachment' to 'inline' or omit it alltogether and you'll be fine.<br><br>This took me a while to figure out and I hope it will help someone else out there, who runs into the same problem.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="92620">  <div class="votes">
+    <div id="Vu92620">
+    <a href="https://www.php.net/manual/vote-note.php?id=92620&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd92620">
+    <a href="https://www.php.net/manual/vote-note.php?id=92620&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V92620" title="47% like this...">
+    -4
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#92620" class="name">
+  <strong class="user"><em>Anonymous</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#92620"> ¶</a><div class="date" title="2009-07-31 08:02"><strong>10 years ago</strong></div>
+  <div class="text" id="Hcom92620" style="opacity: 0.45;">
+<div class="phpcode"><code><span class="html">
+I just want to add, becuase I see here lots of wrong formated headers.
+<br>
+<br>1. All used headers have first letters uppercase, so you MUST follow this. For example:
+<br>
+<br>Location, not location
+<br>Content-Type, not content-type, nor CONTENT-TYPE
+<br>
+<br>2. Then there MUST be colon and space, like
+<br>
+<br>good: header("Content-Type: text/plain");
+<br>wrong: header("Content-Type:text/plain");
+<br>
+<br>3. Location header MUST be absolute uri with scheme, domain, port, path, etc.
+<br>
+<br>good: header("Location: <a href="http://www.example.com/something.php?a=1" rel="nofollow" target="_blank">http://www.example.com/something.php?a=1</a>");
+<br>
+<br>4. Relative URIs are NOT allowed
+<br>
+<br>wrong:&nbsp; Location: /something.php?a=1
+<br>wrong:&nbsp; Location: ?a=1
+<br>
+<br>It will make proxy server and http clients happier.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="94114">  <div class="votes">
+    <div id="Vu94114">
+    <a href="https://www.php.net/manual/vote-note.php?id=94114&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd94114">
+    <a href="https://www.php.net/manual/vote-note.php?id=94114&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V94114" title="47% like this...">
+    -4
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#94114" class="name">
+  <strong class="user"><em>scott at lucentminds dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#94114"> ¶</a><div class="date" title="2009-10-16 04:42"><strong>10 years ago</strong></div>
+  <div class="text" id="Hcom94114" style="opacity: 0.45;">
+<div class="phpcode"><code><span class="html">
+If you want to remove a header and keep it from being sent as part of the header response, just provide nothing as the header value after the header name. For example...<br><br>PHP, by default, always returns the following header:<br><br>"Content-Type: text/html"<br><br>Which your entire header response will look like<br><br>HTTP/1.1 200 OK<br>Server: Apache/2.2.11 (Unix)<br>X-Powered-By: PHP/5.2.8<br>Date: Fri, 16 Oct 2009 23:05:07 GMT<br>Content-Type: text/html; charset=UTF-8<br>Connection: close<br><br>If you call the header name with no value like so...<br><br><span class="default">&lt;?php<br><br>&nbsp; &nbsp; header</span><span class="keyword">( </span><span class="string">'Content-Type:' </span><span class="keyword">);<br><br></span><span class="default">?&gt;<br></span><br>Your headers now look like this:<br><br>HTTP/1.1 200 OK<br>Server: Apache/2.2.11 (Unix)<br>X-Powered-By: PHP/5.2.8<br>Date: Fri, 16 Oct 2009 23:05:07 GMT<br>Connection: close</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="122807">  <div class="votes">
+    <div id="Vu122807">
+    <a href="https://www.php.net/manual/vote-note.php?id=122807&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd122807">
+    <a href="https://www.php.net/manual/vote-note.php?id=122807&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V122807" title="44% like this...">
+    -1
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#122807" class="name">
+  <strong class="user"><em>hamza dot eljaouhari dot etudes at gmail dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#122807"> ¶</a><div class="date" title="2018-06-06 07:56"><strong>1 year ago</strong></div>
+  <div class="text" id="Hcom122807" style="opacity: 0.75;">
+<div class="phpcode"><code><span class="html">
+// Beware that adding a space between the keyword "Location" and the colon causes an Internal Sever Error<br><br>//This line causes the error<br>&nbsp; &nbsp; &nbsp; &nbsp; 7<br>header('Location : index.php&amp;controller=produit&amp;action=index');<br><br>// While It must be written without the space<br> header('Location: index.php&amp;controller=produit&amp;action=index');</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="32569">  <div class="votes">
+    <div id="Vu32569">
+    <a href="https://www.php.net/manual/vote-note.php?id=32569&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd32569">
+    <a href="https://www.php.net/manual/vote-note.php?id=32569&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V32569" title="45% like this...">
+    -6
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#32569" class="name">
+  <strong class="user"><em>bMindful at fleetingiamge dot org</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#32569"> ¶</a><div class="date" title="2003-05-31 03:08"><strong>16 years ago</strong></div>
+  <div class="text" id="Hcom32569" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+If you haven't used, HTTP Response 204 can be very convenient. 204 tells the server to immediately termiante this request. This is helpful if you want a javascript (or similar) client-side function to execute a server-side function without refreshing or changing the current webpage. Great for updating database, setting global variables, etc.
+<br>
+<br>&nbsp; &nbsp;&nbsp; header("status: 204");&nbsp; (or the other call)
+<br>&nbsp; &nbsp;&nbsp; header("HTTP/1.0 204 No Response");</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="116358">  <div class="votes">
+    <div id="Vu116358">
+    <a href="https://www.php.net/manual/vote-note.php?id=116358&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd116358">
+    <a href="https://www.php.net/manual/vote-note.php?id=116358&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V116358" title="42% like this...">
+    -7
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#116358" class="name">
+  <strong class="user"><em>DC</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#116358"> ¶</a><div class="date" title="2014-12-18 01:14"><strong>4 years ago</strong></div>
+  <div class="text" id="Hcom116358" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+In the bottom note:<br><span class="default">&lt;?php <br>$uri&nbsp;&nbsp; </span><span class="keyword">= </span><span class="default">rtrim</span><span class="keyword">(</span><span class="default">dirname</span><span class="keyword">(</span><span class="default">$_SERVER</span><span class="keyword">[</span><span class="string">'REQUEST_URI'</span><span class="keyword">]), </span><span class="string">'/\\'</span><span class="keyword">);<br></span><span class="default">?&gt;<br></span>not $_SERVER['PHP_SELF']!<br><br>(But the strange behaviour of dirname is a problem for URL ending by a directory without file name!)</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="37645">  <div class="votes">
+    <div id="Vu37645">
+    <a href="https://www.php.net/manual/vote-note.php?id=37645&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd37645">
+    <a href="https://www.php.net/manual/vote-note.php?id=37645&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V37645" title="44% like this...">
+    -6
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#37645" class="name">
+  <strong class="user"><em>jp at webgraphe dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#37645"> ¶</a><div class="date" title="2003-11-21 03:56"><strong>16 years ago</strong></div>
+  <div class="text" id="Hcom37645" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+A call to session_write_close() before the statement
+<br>
+<br><span class="default">&lt;?php
+<br>&nbsp; &nbsp; header</span><span class="keyword">(</span><span class="string">"Location: URL"</span><span class="keyword">);
+<br>&nbsp; &nbsp; exit();
+<br></span><span class="default">?&gt;
+<br></span>
+<br>is recommended if you want to be sure the session is updated before proceeding to the redirection.
+<br>
+<br>We encountered a situation where the script accessed by the redirection wasn't loading the session correctly because the precedent script hadn't the time to update it (we used a database handler).
+<br>
+<br>JP.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="89452">  <div class="votes">
+    <div id="Vu89452">
+    <a href="https://www.php.net/manual/vote-note.php?id=89452&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd89452">
+    <a href="https://www.php.net/manual/vote-note.php?id=89452&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V89452" title="42% like this...">
+    -10
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#89452" class="name">
+  <strong class="user"><em>Jamesb</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#89452"> ¶</a><div class="date" title="2009-03-08 05:25"><strong>10 years ago</strong></div>
+  <div class="text" id="Hcom89452" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+Here is a php script I wrote to stream a file and crypt it with a xor operation on the bytes and with a key :
+<br>
+<br>The encryption works very good but the speed is decrease by 2, it is now 520KiB/s. The user is now asked for a md5 password (instead of keeping it in the code directly). There is some part in French because it's my native language so modify it as you want.
+<br>
+<br><span class="default">&lt;?php
+<br></span><span class="comment">// Stream files and encrypt the data on-the-fly
+<br>
+<br>// Settings
+<br>// -- File to stream
+<br></span><span class="default">$file </span><span class="keyword">= </span><span class="string">"FILE_out"</span><span class="keyword">;
+<br></span><span class="comment">// -- Reading buffer
+<br></span><span class="default">$bufferlength </span><span class="keyword">= </span><span class="default">3840</span><span class="keyword">;
+<br></span><span class="comment">// -- Key in hex
+<br>//$keychar = "9cdfb439c7876e703e307864c9167a15";
+<br>
+<br>// Function: Convertion hex key in a string into binary
+<br></span><span class="keyword">function </span><span class="default">hex2bin</span><span class="keyword">(</span><span class="default">$h</span><span class="keyword">) {
+<br>&nbsp; &nbsp; if (!</span><span class="default">is_string</span><span class="keyword">(</span><span class="default">$h</span><span class="keyword">)) return </span><span class="default">null</span><span class="keyword">;
+<br>&nbsp; &nbsp; </span><span class="default">$r </span><span class="keyword">= array();
+<br>&nbsp; &nbsp; for (</span><span class="default">$a</span><span class="keyword">=</span><span class="default">0</span><span class="keyword">; (</span><span class="default">$a</span><span class="keyword">*</span><span class="default">2</span><span class="keyword">)&lt;</span><span class="default">strlen</span><span class="keyword">(</span><span class="default">$h</span><span class="keyword">); </span><span class="default">$a</span><span class="keyword">++) {
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$ta </span><span class="keyword">= </span><span class="default">hexdec</span><span class="keyword">(</span><span class="default">$h</span><span class="keyword">[</span><span class="default">2</span><span class="keyword">*</span><span class="default">$a</span><span class="keyword">]);
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$tb </span><span class="keyword">= </span><span class="default">hexdec</span><span class="keyword">(</span><span class="default">$h</span><span class="keyword">[(</span><span class="default">2</span><span class="keyword">*</span><span class="default">$a</span><span class="keyword">+</span><span class="default">1</span><span class="keyword">)]);
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$r</span><span class="keyword">[</span><span class="default">$a</span><span class="keyword">] = (int) ((</span><span class="default">$ta </span><span class="keyword">&lt;&lt; </span><span class="default">4</span><span class="keyword">) + </span><span class="default">$tb</span><span class="keyword">);
+<br>&nbsp; &nbsp; }
+<br>&nbsp; &nbsp; return </span><span class="default">$r</span><span class="keyword">;
+<br>}
+<br>
+<br></span><span class="comment">// Function to send the auth headers
+<br></span><span class="keyword">function </span><span class="default">askPassword</span><span class="keyword">(</span><span class="default">$text</span><span class="keyword">=</span><span class="string">"Enter the password"</span><span class="keyword">) {
+<br>&nbsp; &nbsp; </span><span class="default">header</span><span class="keyword">(</span><span class="string">'WWW-Authenticate: Basic realm="'</span><span class="keyword">. </span><span class="default">utf8_decode</span><span class="keyword">(</span><span class="default">$text</span><span class="keyword">) .</span><span class="string">'"'</span><span class="keyword">);
+<br>&nbsp; &nbsp; </span><span class="default">header</span><span class="keyword">(</span><span class="string">'HTTP/1.0 401 Unauthorized'</span><span class="keyword">);
+<br>&nbsp; &nbsp; return </span><span class="default">1</span><span class="keyword">;
+<br>}
+<br>
+<br></span><span class="comment">// Key is asked at the first start
+<br></span><span class="keyword">if (!isset(</span><span class="default">$_SERVER</span><span class="keyword">[</span><span class="string">'PHP_AUTH_PW'</span><span class="keyword">])) {
+<br>&nbsp; &nbsp; </span><span class="default">askPassword</span><span class="keyword">();
+<br>&nbsp; &nbsp; echo </span><span class="string">"Une clé est nécessaire !&lt;br /&gt;"</span><span class="keyword">;
+<br>&nbsp; &nbsp; exit;
+<br>}
+<br></span><span class="comment">// Get the key in hex
+<br></span><span class="default">$keychar </span><span class="keyword">= </span><span class="default">$_SERVER</span><span class="keyword">[</span><span class="string">'PHP_AUTH_PW'</span><span class="keyword">];
+<br>
+<br></span><span class="comment">// Convert key and set the size of the key
+<br></span><span class="default">$key </span><span class="keyword">= </span><span class="default">hex2bin</span><span class="keyword">(</span><span class="default">$keychar</span><span class="keyword">);
+<br></span><span class="default">$keylength </span><span class="keyword">= </span><span class="default">count</span><span class="keyword">(</span><span class="default">$key</span><span class="keyword">);
+<br></span><span class="comment">// Teste si la clé est valide en hex
+<br></span><span class="keyword">if (</span><span class="default">$key </span><span class="keyword">== </span><span class="string">"" </span><span class="keyword">|| </span><span class="default">$keylength </span><span class="keyword">&lt;= </span><span class="default">4</span><span class="keyword">) {
+<br>&nbsp; &nbsp; </span><span class="default">askPassword</span><span class="keyword">(</span><span class="string">"Clé incorrecte !"</span><span class="keyword">);
+<br>&nbsp; &nbsp; </span><span class="comment">//echo "Clé incorrecte !&lt;br /&gt;";
+<br>&nbsp; &nbsp; </span><span class="keyword">exit();
+<br>}
+<br></span><span class="comment">// Teste si la clé est de longueur d'une puissance de 2
+<br></span><span class="keyword">if ( (</span><span class="default">$keylength</span><span class="keyword">%</span><span class="default">2</span><span class="keyword">) != </span><span class="default">0</span><span class="keyword">) {
+<br>&nbsp; &nbsp; </span><span class="default">askPassword</span><span class="keyword">(</span><span class="string">"Clé de longueur incorrecte (multiple de 2 uniquement)"</span><span class="keyword">);
+<br>&nbsp; &nbsp; </span><span class="comment">//echo "Clé de longueur incorrecte (puissance de 2 uniquement)&lt;br /&gt;";
+<br>&nbsp; &nbsp; </span><span class="keyword">exit();
+<br>}
+<br>
+<br></span><span class="comment">// Headers
+<br></span><span class="default">header</span><span class="keyword">(</span><span class="string">"Content-Type: application/octet-stream; "</span><span class="keyword">);
+<br></span><span class="default">header</span><span class="keyword">(</span><span class="string">"Content-Transfer-Encoding: binary"</span><span class="keyword">);
+<br></span><span class="default">header</span><span class="keyword">(</span><span class="string">"Content-Length: " </span><span class="keyword">. </span><span class="default">filesize</span><span class="keyword">(</span><span class="default">$file</span><span class="keyword">) .</span><span class="string">"; "</span><span class="keyword">);
+<br></span><span class="default">header</span><span class="keyword">(</span><span class="string">"filename=\""</span><span class="keyword">.</span><span class="default">$file</span><span class="keyword">.</span><span class="string">"\"; "</span><span class="keyword">);
+<br></span><span class="default">flush</span><span class="keyword">(); </span><span class="comment">// this doesn't really matter.
+<br>
+<br>// Opening the file in read-only
+<br></span><span class="default">$fp </span><span class="keyword">= </span><span class="default">fopen</span><span class="keyword">(</span><span class="default">$file</span><span class="keyword">, </span><span class="string">"r"</span><span class="keyword">);
+<br>while (!</span><span class="default">feof</span><span class="keyword">(</span><span class="default">$fp</span><span class="keyword">))
+<br>{
+<br>&nbsp; &nbsp; </span><span class="comment">// Read a buffer size of the file
+<br>&nbsp; &nbsp; </span><span class="default">$buffer </span><span class="keyword">= </span><span class="default">fread</span><span class="keyword">(</span><span class="default">$fp</span><span class="keyword">, </span><span class="default">$bufferlength</span><span class="keyword">);
+<br>&nbsp; &nbsp; </span><span class="default">$j</span><span class="keyword">=</span><span class="default">0</span><span class="keyword">;
+<br>&nbsp; &nbsp; for (</span><span class="default">$i</span><span class="keyword">=</span><span class="default">0</span><span class="keyword">; </span><span class="default">$i </span><span class="keyword">&lt; </span><span class="default">$bufferlength</span><span class="keyword">; </span><span class="default">$i</span><span class="keyword">++) {
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// The key is read in loop to crypt the whole file
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">if (</span><span class="default">$i</span><span class="keyword">%</span><span class="default">$keylength </span><span class="keyword">== </span><span class="default">0</span><span class="keyword">) {
+<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$j</span><span class="keyword">=</span><span class="default">0</span><span class="keyword">;
+<br>&nbsp; &nbsp; &nbsp; &nbsp; }
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// Apply a xor operation between the key and the file to crypt
+<br>&nbsp; &nbsp; &nbsp; &nbsp; // This operation eats a lots of CPU time (Stream at 1MiB/s on my server; Intel E2180)
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$tmp </span><span class="keyword">= </span><span class="default">pack</span><span class="keyword">(</span><span class="string">"C"</span><span class="keyword">, </span><span class="default">$key</span><span class="keyword">[</span><span class="default">$j</span><span class="keyword">]);
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$bufferE </span><span class="keyword">= ( </span><span class="default">$buffer</span><span class="keyword">[</span><span class="default">$i</span><span class="keyword">]^</span><span class="default">$tmp</span><span class="keyword">); </span><span class="comment">// &lt;==== Le fameux XOR
+<br>&nbsp; &nbsp; &nbsp; &nbsp; 
+<br>&nbsp; &nbsp; &nbsp; &nbsp; /*
+<br>&nbsp; &nbsp; &nbsp; &nbsp; echo "&lt;br /&gt;key[".$j."]: ";
+<br>&nbsp; &nbsp; &nbsp; &nbsp; var_dump($tmp);
+<br>&nbsp; &nbsp; &nbsp; &nbsp; echo "&lt;br /&gt;buffer[".$i."]: ";
+<br>&nbsp; &nbsp; &nbsp; &nbsp; var_dump($buffer[$i]);
+<br>&nbsp; &nbsp; &nbsp; &nbsp; echo "&lt;br /&gt;bufferE: ";
+<br>&nbsp; &nbsp; &nbsp; &nbsp; var_dump($bufferE);
+<br>&nbsp; &nbsp; &nbsp; &nbsp; echo "&lt;br /&gt;";
+<br>&nbsp; &nbsp; &nbsp; &nbsp; //*/
+<br>&nbsp; &nbsp; &nbsp; &nbsp; 
+<br>&nbsp; &nbsp; &nbsp; &nbsp; // Send the encrypted data
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">echo </span><span class="default">$bufferE</span><span class="keyword">;
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// Clean the memory
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$bufferE </span><span class="keyword">= </span><span class="string">""</span><span class="keyword">;
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$j</span><span class="keyword">++;
+<br>&nbsp; &nbsp; }
+<br>&nbsp; &nbsp; </span><span class="default">$buffer </span><span class="keyword">= </span><span class="string">""</span><span class="keyword">;
+<br>&nbsp; &nbsp; </span><span class="default">flush</span><span class="keyword">(); </span><span class="comment">// this is essential for large downloads
+<br>&nbsp; &nbsp; /*
+<br>&nbsp; &nbsp; fclose($fp);
+<br>&nbsp; &nbsp; exit();
+<br>&nbsp; &nbsp; //*/
+<br></span><span class="keyword">}
+<br></span><span class="comment">// Close the file and it's finished
+<br></span><span class="default">fclose</span><span class="keyword">(</span><span class="default">$fp</span><span class="keyword">);
+<br>
+<br></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="75507">  <div class="votes">
+    <div id="Vu75507">
+    <a href="https://www.php.net/manual/vote-note.php?id=75507&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd75507">
+    <a href="https://www.php.net/manual/vote-note.php?id=75507&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V75507" title="41% like this...">
+    -11
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#75507" class="name">
+  <strong class="user"><em>nobileelpirata at hotmail dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#75507"> ¶</a><div class="date" title="2007-06-02 03:04"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom75507" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+This is the Headers to force a browser to use fresh content (no caching) in HTTP/1.0 and HTTP/1.1:
+<br>
+<br><span class="default">&lt;?PHP
+<br>header</span><span class="keyword">( </span><span class="string">'Expires: Sat, 26 Jul 1997 05:00:00 GMT' </span><span class="keyword">);
+<br></span><span class="default">header</span><span class="keyword">( </span><span class="string">'Last-Modified: ' </span><span class="keyword">. </span><span class="default">gmdate</span><span class="keyword">( </span><span class="string">'D, d M Y H:i:s' </span><span class="keyword">) . </span><span class="string">' GMT' </span><span class="keyword">);
+<br></span><span class="default">header</span><span class="keyword">( </span><span class="string">'Cache-Control: no-store, no-cache, must-revalidate' </span><span class="keyword">);
+<br></span><span class="default">header</span><span class="keyword">( </span><span class="string">'Cache-Control: post-check=0, pre-check=0'</span><span class="keyword">, </span><span class="default">false </span><span class="keyword">);
+<br></span><span class="default">header</span><span class="keyword">( </span><span class="string">'Pragma: no-cache' </span><span class="keyword">);
+<br>
+<br></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="115804">  <div class="votes">
+    <div id="Vu115804">
+    <a href="https://www.php.net/manual/vote-note.php?id=115804&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd115804">
+    <a href="https://www.php.net/manual/vote-note.php?id=115804&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V115804" title="38% like this...">
+    -12
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#115804" class="name">
+  <strong class="user"><em>dheeraj dot br2 at gmail dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#115804"> ¶</a><div class="date" title="2014-09-26 05:50"><strong>5 years ago</strong></div>
+  <div class="text" id="Hcom115804" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+The piece of code in the manual which is as follows<br><br>&lt;html&gt;<br><span class="default">&lt;?php<br></span><span class="comment">/* This will give an error. Note the output<br> * above, which is before the header() call */<br></span><span class="default">header</span><span class="keyword">(</span><span class="string">'Location: <a href="http://www.example.com/" rel="nofollow" target="_blank">http://www.example.com/</a>'</span><span class="keyword">);<br>exit;<br></span><span class="default">?&gt;<br></span><br>this will not throw a warning as the .ini settings for output buffering is by default on.<br>to get the error you may have to change the server setting or simply add a line explicitly to close output buffering by using "ob_end_clean()" or similar</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="87348">  <div class="votes">
+    <div id="Vu87348">
+    <a href="https://www.php.net/manual/vote-note.php?id=87348&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd87348">
+    <a href="https://www.php.net/manual/vote-note.php?id=87348&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V87348" title="38% like this...">
+    -13
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#87348" class="name">
+  <strong class="user"><em>jamie</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#87348"> ¶</a><div class="date" title="2008-12-01 07:57"><strong>10 years ago</strong></div>
+  <div class="text" id="Hcom87348" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+The encoding of a file is discovered by the Content-Type, either in the HTML meta tag or as part of the HTTP header. Thus, the server and browser does not need - nor expect - a Unicode file to begin with a BOM mark. BOMs can confuse *nix systems too. More info at <a href="http://unicode.org/faq/utf_bom.html#bom1" rel="nofollow" target="_blank">http://unicode.org/faq/utf_bom.html#bom1</a><br><br>On another note: Safari can display CMYK images (at least the OS X version, because it uses the services of QuickTime)</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="95864">  <div class="votes">
+    <div id="Vu95864">
+    <a href="https://www.php.net/manual/vote-note.php?id=95864&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd95864">
+    <a href="https://www.php.net/manual/vote-note.php?id=95864&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V95864" title="38% like this...">
+    -12
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#95864" class="name">
+  <strong class="user"><em>this dot person at joaocunha dot eti dot br</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#95864"> ¶</a><div class="date" title="2010-01-26 10:39"><strong>9 years ago</strong></div>
+  <div class="text" id="Hcom95864" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+AVOID ZERO BYTE ORDER MARK!<br><br>Header MUST be sent before EVERYTHING in the page. Even a single space will break your script. In my case, there was BOM setted in the encoding, so I opened the file with notepad++ and set the encoding to UTF-8 (no BOM) and voila, everything is working great now.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="76758">  <div class="votes">
+    <div id="Vu76758">
+    <a href="https://www.php.net/manual/vote-note.php?id=76758&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd76758">
+    <a href="https://www.php.net/manual/vote-note.php?id=76758&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V76758" title="38% like this...">
+    -11
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#76758" class="name">
+  <strong class="user"><em>Kal</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#76758"> ¶</a><div class="date" title="2007-07-29 01:07"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom76758" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+I spent a long time trying to determine why Internet Explorer 7 wasn't prompting the user to save a download based on the filename specified on a "'Content-Disposition: attachment; filename=..." header line.<br><br>I eventually determined that my Apache installation was adding an additional header: "Vary: Host", which was throwing IE - as per <a href="http://support.microsoft.com/kb/824847" rel="nofollow" target="_blank">http://support.microsoft.com/kb/824847</a><br><br>I found manually setting the Vary header from within PHP as follows header('Vary: User-Agent'); allowed IE to behave as intended.<br><br>Hope this saves someone else some time,<br><br>- Kal</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="118189">  <div class="votes">
+    <div id="Vu118189">
+    <a href="https://www.php.net/manual/vote-note.php?id=118189&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd118189">
+    <a href="https://www.php.net/manual/vote-note.php?id=118189&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V118189" title="33% like this...">
+    -12
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#118189" class="name">
+  <strong class="user"><em>er dot ellison dot nyc at gmail dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#118189"> ¶</a><div class="date" title="2015-10-23 08:16"><strong>4 years ago</strong></div>
+  <div class="text" id="Hcom118189" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+DO NOT PUT space between location and the colon that comes after that , <br>// DO NOT USE THIS : <br>header("Location : #whatever"); // -&gt; will not work !<br><br>// INSTEAD USE THIS -&gt; <br>header("Location: #wahtever"); // -&gt; will work forever !</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="122494">  <div class="votes">
+    <div id="Vu122494">
+    <a href="https://www.php.net/manual/vote-note.php?id=122494&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd122494">
+    <a href="https://www.php.net/manual/vote-note.php?id=122494&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V122494" title="30% like this...">
+    -5
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#122494" class="name">
+  <strong class="user"><em>2962051004 at qq dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#122494"> ¶</a><div class="date" title="2018-03-11 11:36"><strong>1 year ago</strong></div>
+  <div class="text" id="Hcom122494" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+<span class="default">&lt;?php<br><br></span><span class="comment">/*<br>In some special cases, to disable a web page from being cached by the browser, the following function can implement this function:<br>*/<br></span><span class="keyword">function </span><span class="default">disabledcache</span><span class="keyword">()<br>{<br>&nbsp; &nbsp; </span><span class="default">header</span><span class="keyword">(</span><span class="string">"Expires: 0"</span><span class="keyword">); </span><span class="comment">// 向后兼容HTTP/1.0&nbsp;&nbsp; <br>&nbsp; &nbsp; </span><span class="default">header</span><span class="keyword">(</span><span class="string">"Pragma: no-cache"</span><span class="keyword">); </span><span class="comment">// 支持HTTP/1.1&nbsp;&nbsp; <br>&nbsp; &nbsp; </span><span class="default">header</span><span class="keyword">(</span><span class="string">"Cache-Control: no-cache,no-store,max-age=0,s-maxage=0,must-revalidate"</span><span class="keyword">);<br>}</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="102009">  <div class="votes">
+    <div id="Vu102009">
+    <a href="https://www.php.net/manual/vote-note.php?id=102009&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd102009">
+    <a href="https://www.php.net/manual/vote-note.php?id=102009&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V102009" title="30% like this...">
+    -30
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#102009" class="name">
+  <strong class="user"><em>cedric at gn dot apc dot org</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#102009"> ¶</a><div class="date" title="2011-01-22 11:47"><strong>8 years ago</strong></div>
+  <div class="text" id="Hcom102009" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+Setting a Location header "returns a REDIRECT (302) status code to the browser unless the 201 or a 3xx status code has already been set".&nbsp; If you are sending a response to a POST request, you might want to look at RFC 2616 sections 10.3.3 and 10.3.4.&nbsp;&nbsp; It is suggested that if you want the browser to immediately GET the resource in the Location header in this circumstance, you should use a 303 status code not the 302 (with the same link as hypertext in the body for very old browsers).&nbsp; This may have (rare) consequences as mentioned in bug 42969.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="122722">  <div class="votes">
+    <div id="Vu122722">
+    <a href="https://www.php.net/manual/vote-note.php?id=122722&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd122722">
+    <a href="https://www.php.net/manual/vote-note.php?id=122722&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V122722" title="22% like this...">
+    -10
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#122722" class="name">
+  <strong class="user"><em>ASchmidt at Anamera dot net</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#122722"> ¶</a><div class="date" title="2018-05-11 03:36"><strong>1 year ago</strong></div>
+  <div class="text" id="Hcom122722" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+Setting the "Location: " header has another undocumented side-effect! <br><br>It will also disregard any expressly set "Content-Type: " and forces:<br><br>"Content-Type: text/html; charset=UTF-8"<br><br>The HTTP RFCs don't call for such a drastic action. They simply state that a redirect content SHOULD include a link to the destination page (in which case ANY HTML compatible content type would do). But PHP even overrides a perfectly standards-compliant <br>"Content-Type: application/xhtml+xml"!</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="123003">  <div class="votes">
+    <div id="Vu123003">
+    <a href="https://www.php.net/manual/vote-note.php?id=123003&amp;page=function.header&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd123003">
+    <a href="https://www.php.net/manual/vote-note.php?id=123003&amp;page=function.header&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V123003" title="20% like this...">
+    -3
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.header.php#123003" class="name">
+  <strong class="user"><em>hrushiemail at gmail dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.header.php#123003"> ¶</a><div class="date" title="2018-08-03 09:34"><strong>1 year ago</strong></div>
+  <div class="text" id="Hcom123003" style="opacity: 0.55;">
+<div class="phpcode"><code><span class="html">
+[warning : "cannot modify header information"] in php<br>for fixing this issue follow below steps:<br><br>1) open your php.ini file.......<br>In that php.ini enable the output_buffering<br><br>&nbsp;&nbsp; output_buffering = 1<br><br>2) save the file<br>3) and restart your web server<br><br>for linux user type in terminal,<br>&nbsp; &nbsp; service httpd restart</span>
+</code></div>
+  </div>
+ </div></div>
+
+ <div class="foot"><a href="https://www.php.net/manual/add-note.php?sect=function.header&amp;redirect=https://www.php.net/manual/en/function.header.php"><img src="./PHP_ header - Manual_files/notes-add@2x.png" alt="add a note" width="12" height="12"> <small>add a note</small></a></div>
+</section>    </section><!-- layout-content -->
+        <aside class="layout-menu">
+
+        <ul class="parent-menu-list">
+                                    <li>
+                <a href="https://www.php.net/manual/en/ref.network.php">Network Functions</a>
+
+                                    <ul class="child-menu-list">
+
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.checkdnsrr.php" title="checkdnsrr">checkdnsrr</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.closelog.php" title="closelog">closelog</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.dns-check-record.php" title="dns_​check_​record">dns_​check_​record</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.dns-get-mx.php" title="dns_​get_​mx">dns_​get_​mx</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.dns-get-record.php" title="dns_​get_​record">dns_​get_​record</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.fsockopen.php" title="fsockopen">fsockopen</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.gethostbyaddr.php" title="gethostbyaddr">gethostbyaddr</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.gethostbyname.php" title="gethostbyname">gethostbyname</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.gethostbynamel.php" title="gethostbynamel">gethostbynamel</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.gethostname.php" title="gethostname">gethostname</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.getmxrr.php" title="getmxrr">getmxrr</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.getprotobyname.php" title="getprotobyname">getprotobyname</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.getprotobynumber.php" title="getprotobynumber">getprotobynumber</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.getservbyname.php" title="getservbyname">getservbyname</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.getservbyport.php" title="getservbyport">getservbyport</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.header-register-callback.php" title="header_​register_​callback">header_​register_​callback</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.header-remove.php" title="header_​remove">header_​remove</a>
+                        </li>
+                                                <li class="current">
+                            <a href="https://www.php.net/manual/en/function.header.php" title="header">header</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.headers-list.php" title="headers_​list">headers_​list</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.headers-sent.php" title="headers_​sent">headers_​sent</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.http-response-code.php" title="http_​response_​code">http_​response_​code</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.inet-ntop.php" title="inet_​ntop">inet_​ntop</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.inet-pton.php" title="inet_​pton">inet_​pton</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.ip2long.php" title="ip2long">ip2long</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.long2ip.php" title="long2ip">long2ip</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.openlog.php" title="openlog">openlog</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.pfsockopen.php" title="pfsockopen">pfsockopen</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.setcookie.php" title="setcookie">setcookie</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.setrawcookie.php" title="setrawcookie">setrawcookie</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.socket-get-status.php" title="socket_​get_​status">socket_​get_​status</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.socket-set-blocking.php" title="socket_​set_​blocking">socket_​set_​blocking</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.socket-set-timeout.php" title="socket_​set_​timeout">socket_​set_​timeout</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.syslog.php" title="syslog">syslog</a>
+                        </li>
+                        
+                    </ul>
+                
+            </li>
+                        
+                        <li>
+                <span class="header">Deprecated</span>
+                <ul class="child-menu-list">
+                                    <li class="">
+                        <a href="https://www.php.net/manual/en/function.define-syslog-variables.php" title="define_​syslog_​variables">define_​syslog_​variables</a>
+                    </li>
+                                </ul>
+            </li>
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="https://www.php.net/copyright.php">Copyright © 2001-2019 The PHP Group</a></li>
+        <li><a href="https://www.php.net/my.php">My PHP.net</a></li>
+        <li><a href="https://www.php.net/contact.php">Contact</a></li>
+        <li><a href="https://www.php.net/sites.php">Other PHP.net sites</a></li>
+        <li><a href="https://www.php.net/privacy.php">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script src="./PHP_ header - Manual_files/jquery.min.js"></script>
+<script src="./PHP_ header - Manual_files/cached(4).php"></script>
+<script src="./PHP_ header - Manual_files/cached(5).php"></script>
+<script src="./PHP_ header - Manual_files/cached(6).php"></script>
+<script src="./PHP_ header - Manual_files/cached(7).php"></script>
+<script src="./PHP_ header - Manual_files/cached(8).php"></script>
+<script src="./PHP_ header - Manual_files/cached(9).php"></script>
+
+<a id="toTop" href="javascript:;" style="display: none;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="./PHP_ header - Manual_files/to-top@2x.png"></a>
+
+
+
+</body></html>
